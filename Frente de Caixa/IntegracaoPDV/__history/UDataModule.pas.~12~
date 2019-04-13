@@ -1,0 +1,155 @@
+unit UDataModule;
+
+interface
+
+uses
+  SysUtils, Classes, WideStrings, DBXFirebird, Inifiles, DBXMySql, DB, SqlExpr, Forms,
+  FMTBcd, Windows, Dialogs;
+
+type
+  TFDataModule = class(TDataModule)
+    StoredProcedure: TSQLStoredProc;
+    ConexaoRetaguarda: TSQLConnection;
+    Q_Rap: TSQLQuery;
+    procedure CopiaCargaParaPDVs(NomeCaixa: String = '');
+    procedure CopiaCarga(NomeCaixa, LocalAppPath: String);
+    procedure DataModuleCreate(Sender: TObject);
+  private
+
+  public
+    RemoteAppPath, gsAppPath, QtdeECF: String;
+    function ConectaRetaguarda: Boolean;
+    procedure DesconectaRetaguarda;
+  end;
+
+var
+  FDataModule: TFDataModule;
+
+implementation
+
+uses UIntegracaoPDV;
+
+{$R *.dfm}
+
+procedure TFDataModule.DataModuleCreate(Sender: TObject);
+begin
+  ConectaRetaguarda;
+end;
+
+function TFDataModule.ConectaRetaguarda: Boolean;
+var
+  Parametros: TStrings;
+  BancoRetaguarda, Arquivo: String;
+  ArquivoIni: TIniFile;
+begin
+  Parametros := TStringList.Create;
+  ConexaoRetaguarda.Connected := False;
+
+  try
+    ArquivoIni := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'Conexao.ini');
+    BancoRetaguarda := UpperCase(ArquivoIni.ReadString('SGBD', 'BDRetaguarda', ''));
+    RemoteAppPath := UpperCase(ArquivoIni.ReadString('IMPORTA', 'REMOTEAPP', ''));
+    QtdeECF := UpperCase(ArquivoIni.ReadString('ECFS', 'QUANTIDADE', '1'));
+    Empresa := UpperCase(ArquivoIni.ReadString('ECFS', 'EMPRESA', '1'));
+    gsAppPath := ExtractFilePath(Application.ExeName);
+
+  finally
+    FreeAndNil(ArquivoIni);
+  end;
+
+  if BancoRetaguarda = 'MYSQL' then
+  begin
+    Arquivo := gsAppPath + 'MySQL_Retaguarda_conn.txt';
+    ConexaoRetaguarda.DriverName := 'MySQL';
+    ConexaoRetaguarda.ConnectionName := 'MySQLConnection';
+    ConexaoRetaguarda.GetDriverFunc := 'getSQLDriverMYSQL';
+    ConexaoRetaguarda.LibraryName := 'dbxmys.dll';
+    ConexaoRetaguarda.VendorLib := 'libmysql.dll';
+  end
+  else if BancoRetaguarda = 'FIREBIRD' then
+  begin
+    Arquivo := gsAppPath + 'Firebird_Retaguarda_conn.txt';
+    ConexaoRetaguarda.DriverName := 'Firebird';
+    ConexaoRetaguarda.ConnectionName := 'FBConnection';
+    ConexaoRetaguarda.GetDriverFunc := 'getSQLDriverINTERBASE';
+    ConexaoRetaguarda.LibraryName := 'dbxfb.dll';
+    ConexaoRetaguarda.VendorLib := 'fbclient.dll';
+  end;
+
+  Parametros.LoadFromFile(Arquivo);
+  ConexaoRetaguarda.Params := Parametros;
+  FreeAndNil(Parametros);
+  try
+    ConexaoRetaguarda.Connected := True;
+    Result := True;
+  except
+    on E: Exception Do
+    begin
+      Showmessage(E.Message);
+      Result := False;
+    end;
+  end;
+end;
+
+procedure TFDataModule.CopiaCargaParaPDVs(NomeCaixa: String = '');
+var
+  LocalAppPath: String;
+  i: integer;
+begin
+  LocalAppPath := ExtractFilePath(Application.ExeName) + 'Script\Carga.txt';
+  if not(DirectoryExists(RemoteAppPath)) then
+  begin
+    Showmessage(' Configure corretamente o diretorio de exportação no Parametros.ini');
+  end;
+
+  if NomeCaixa = '' then
+  begin
+    for i := 1 to StrToInt(QtdeECF) do
+    begin
+      CopiaCarga('Caixa' + IntToStr(i), LocalAppPath);
+    end;
+  end
+  else
+  begin
+    CopiaCarga(NomeCaixa, LocalAppPath);
+  end;
+end;
+
+procedure TFDataModule.CopiaCarga(NomeCaixa, LocalAppPath: String);
+var
+  PathRemoto: String;
+  j: integer;
+  Arquivo: TextFile;
+  Lista: TStringList;
+begin
+  ForceDirectories(RemoteAppPath + NomeCaixa);
+  PathRemoto := RemoteAppPath + NomeCaixa + '\Carga.txt';
+
+  if FileExists(PathRemoto) then
+  begin
+    try
+      Lista := TStringList.Create;
+      Lista.LoadFromFile(LocalAppPath);
+      AssignFile(Arquivo, PathRemoto);
+      Application.ProcessMessages;
+      Append(Arquivo);
+      for j := 0 to Lista.Count - 1 do
+      begin
+        Writeln(Arquivo, Lista.Strings[j]);
+        Application.ProcessMessages;
+      end;
+    finally
+      Lista.Free;
+      CloseFile(Arquivo);
+    end;
+  end
+  else
+    CopyFile(Pchar(LocalAppPath), Pchar(PathRemoto), False);
+end;
+
+procedure TFDataModule.DesconectaRetaguarda;
+begin
+  ConexaoRetaguarda.Connected := False;
+end;
+
+end.

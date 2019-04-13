@@ -1,0 +1,163 @@
+unit UDataModuleConexao;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Data.SqlExpr, IWSystem,
+  Data.DBXMySQL;
+
+type
+  TFDataModuleConexao = class(TDataModule)
+    Conexao: TSQLConnection;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+    var Banco: String;
+    procedure ConfigurarConexao(var pConexao: TSQLConnection; pBD: String);
+  public
+    { Public declarations }
+    procedure Conectar(BD: String);
+    procedure Desconectar;
+    function getConexao: TSQLConnection;
+    function getBanco: String;
+  end;
+
+var
+  FDataModuleConexao: TFDataModuleConexao;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TFDataModuleConexao.DataModuleCreate(Sender: TObject);
+begin
+  Conectar('Firebird');
+end;
+
+procedure TFDataModuleConexao.Conectar(BD: String);
+begin
+  Desconectar;
+  ConfigurarConexao(Conexao, BD);
+  Conexao.KeepConnection := True;
+  Conexao.AutoClone := False;
+  Conexao.Connected := True;
+  Banco := BD;
+end;
+
+procedure TFDataModuleConexao.Desconectar;
+begin
+  Conexao.Connected := False;
+end;
+
+function TFDataModuleConexao.getBanco: String;
+begin
+  Result := Banco;
+end;
+
+function TFDataModuleConexao.getConexao: TSQLConnection;
+begin
+  Result := Conexao;
+end;
+
+procedure TFDataModuleConexao.ConfigurarConexao(var pConexao: TSQLConnection; pBD: String);
+var
+  Arquivo: String;
+  Parametros: TStrings;
+begin
+  if pBD = 'Oracle' then
+  begin
+    //carrega o arquivo de parametros (neste caso o do MySQL)
+    Arquivo := gsAppPath + 'Oracle_DBExpress_conn.txt';
+
+    Conexao.DriverName     := 'Oracle';
+    Conexao.ConnectionName := 'OracleConnection';
+    Conexao.GetDriverFunc  := 'getSQLDriverORACLE';
+    Conexao.LibraryName    := 'dbxora.dll';
+    Conexao.VendorLib      := 'oci.dll';
+  end
+  else
+  if pBD = 'MSSQL' then
+  begin
+    //carrega o arquivo de parametros (neste caso o do MySQL)
+    Arquivo := gsAppPath + 'MSSQL_DBExpress_conn.txt';
+
+    Conexao.DriverName     := 'MSSQL';
+    Conexao.ConnectionName := 'MSSQLCONNECTION';
+    Conexao.GetDriverFunc  := 'getSQLDriverMSSQL';
+    Conexao.LibraryName    := 'dbxmss.dll';
+    Conexao.VendorLib      := 'oledb';
+  end
+  else
+  if pBD = 'Firebird' then
+  begin
+    //carrega o arquivo de parametros (neste caso o do MySQL)
+    Arquivo := gsAppPath + 'Firebird_DBExpress_conn.txt';
+
+    Conexao.DriverName     := 'Firebird';
+    Conexao.ConnectionName := 'FBConnection';
+    Conexao.GetDriverFunc  := 'getSQLDriverINTERBASE';
+    Conexao.LibraryName    := 'dbxfb.dll';
+    Conexao.VendorLib      := 'fbclient.dll';
+  end
+  else
+  if pBD = 'Interbase' then
+  begin
+    //carrega o arquivo de parametros (neste caso o do MySQL)
+    Arquivo := gsAppPath + 'Interbase_DBExpress_conn.txt';
+
+    Conexao.DriverName     := 'Interbase';
+    Conexao.ConnectionName := 'IBConnection';
+    Conexao.GetDriverFunc  := 'getSQLDriverINTERBASE';
+    Conexao.LibraryName    := 'dbxint.dll';
+    Conexao.VendorLib      := 'gds32.dll';
+  end
+  else
+  if pBD = 'MySQL' then
+  begin
+    //carrega o arquivo de parametros (neste caso o do MySQL)
+    Arquivo := gsAppPath + 'MySQL_DBExpress_conn.txt';
+
+    Conexao.DriverName     := 'MySQL';
+    Conexao.ConnectionName := 'MySQLConnection';
+    Conexao.GetDriverFunc  := 'getSQLDriverMYSQL';
+    Conexao.LibraryName    := 'dbxmys.dll';
+    Conexao.VendorLib      := 'libmysql.dll';
+  end
+  else
+  if pBD = 'DB2' then
+  begin
+    //carrega o arquivo de parametros (neste caso o do MySQL)
+    Arquivo := gsAppPath + 'DB2_DBExpress_conn.txt';
+
+    Conexao.DriverName     := 'Db2';
+    Conexao.ConnectionName := 'DB2Connection';
+    Conexao.GetDriverFunc  := 'getSQLDriverDB2';
+    Conexao.LibraryName    := 'dbxdb2.dll';
+    Conexao.VendorLib      := 'db2cli.dll';
+  end
+  else
+  if pBD = 'Postgres' then
+  begin
+    //carrega o arquivo de parametros (neste caso o do Postgres)
+    Arquivo := gsAppPath + 'Postgres_DBExpress_conn.txt';
+
+    Conexao.DriverName     := 'DevartPostgreSQL';
+    Conexao.ConnectionName := 'PostgreConnection';
+    Conexao.GetDriverFunc  := 'getSQLDriverPostgreSQL';
+    Conexao.LibraryName    := 'dbexppgsql40.dll';
+    Conexao.VendorLib      := 'not used';
+  end;
+  //variável para carregar os parametros do banco
+  Parametros := TStringList.Create;
+  try
+    Parametros.LoadFromFile(Arquivo);
+    Conexao.Params.Text := Parametros.Text;
+  finally
+    Parametros.Free;
+  end;
+  Conexao.LoginPrompt := False;
+end;
+
+end.

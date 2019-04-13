@@ -1,0 +1,458 @@
+object FDataModuleNFe: TFDataModuleNFe
+  OldCreateOrder = False
+  Height = 641
+  Width = 912
+  object CDSVolumes: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 22
+  end
+  object DSVolumes: TDataSource
+    DataSet = CDSVolumes
+    Left = 356
+    Top = 70
+  end
+  object CDSNfReferenciada: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_NFE_CABECALHO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'CODIGO_UF'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'ANO_MES'
+        DataType = ftString
+        Size = 4
+      end
+      item
+        Name = 'CNPJ'
+        DataType = ftString
+        Size = 14
+      end
+      item
+        Name = 'MODELO'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'SERIE'
+        DataType = ftString
+        Size = 3
+      end
+      item
+        Name = 'NUMERO_NF'
+        DataType = ftInteger
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 134
+    Data = {
+      D80000009619E0BD010000001800000008000000000003000000D80002494404
+      000100000000001049445F4E46455F4341424543414C484F0400010000000000
+      09434F4449474F5F554601004900000001000557494454480200020002000741
+      4E4F5F4D4553010049000000010005574944544802000200040004434E504A01
+      00490000000100055749445448020002000E00064D4F44454C4F010049000000
+      0100055749445448020002000200055345524945010049000000010005574944
+      5448020002000300094E554D45524F5F4E4604000100000000000000}
+    object CDSNfReferenciadaID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSNfReferenciadaID_NFE_CABECALHO: TIntegerField
+      FieldName = 'ID_NFE_CABECALHO'
+    end
+    object CDSNfReferenciadaCODIGO_UF: TStringField
+      FieldName = 'CODIGO_UF'
+      Size = 2
+    end
+    object CDSNfReferenciadaANO_MES: TStringField
+      FieldName = 'ANO_MES'
+      Size = 4
+    end
+    object CDSNfReferenciadaCNPJ: TStringField
+      FieldName = 'CNPJ'
+      Size = 14
+    end
+    object CDSNfReferenciadaMODELO: TStringField
+      FieldName = 'MODELO'
+      Size = 2
+    end
+    object CDSNfReferenciadaSERIE: TStringField
+      FieldName = 'SERIE'
+      Size = 3
+    end
+    object CDSNfReferenciadaNUMERO_NF: TIntegerField
+      FieldName = 'NUMERO_NF'
+    end
+  end
+  object DSNfReferenciada: TDataSource
+    DataSet = CDSNfReferenciada
+    Left = 356
+    Top = 182
+  end
+  object CDSCteReferenciado: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 134
+  end
+  object DSCteReferenciado: TDataSource
+    DataSet = CDSCteReferenciado
+    Left = 212
+    Top = 182
+  end
+  object CDSNfRuralReferenciada: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 22
+  end
+  object DSNfRuralReferenciada: TDataSource
+    DataSet = CDSNfRuralReferenciada
+    Left = 212
+    Top = 70
+  end
+  object CDSCupomReferenciado: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 254
+  end
+  object DSCupomReferenciado: TDataSource
+    DataSet = CDSCupomReferenciado
+    Left = 68
+    Top = 302
+  end
+  object CDSDuplicata: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 254
+  end
+  object DSDuplicata: TDataSource
+    DataSet = CDSDuplicata
+    Left = 212
+    Top = 302
+  end
+  object CDSNfeReferenciada: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 134
+  end
+  object DSNfeReferenciada: TDataSource
+    DataSet = CDSNfeReferenciada
+    Left = 68
+    Top = 182
+  end
+  object CDSNfeDetalhe: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 22
+  end
+  object DSNfeDetalhe: TDataSource
+    DataSet = CDSNfeDetalhe
+    Left = 68
+    Top = 70
+  end
+  object CDSReboque: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 254
+  end
+  object DSReboque: TDataSource
+    DataSet = CDSReboque
+    Left = 356
+    Top = 302
+  end
+  object CDSNfeImpostoCofins: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 492
+    Top = 22
+  end
+  object DSNfeImpostoCofins: TDataSource
+    DataSet = CDSNfeImpostoCofins
+    Left = 492
+    Top = 70
+  end
+  object CDSNfeImpostoIcms: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 492
+    Top = 134
+  end
+  object DSNfeImpostoIcms: TDataSource
+    DataSet = CDSNfeImpostoIcms
+    Left = 492
+    Top = 182
+  end
+  object CDSNfeImpostoImportacao: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 492
+    Top = 254
+  end
+  object DSNfeImpostoImportacao: TDataSource
+    DataSet = CDSNfeImpostoImportacao
+    Left = 492
+    Top = 302
+  end
+  object CDSNfeImpostoIpi: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 636
+    Top = 22
+  end
+  object DSNfeImpostoIpi: TDataSource
+    DataSet = CDSNfeImpostoIpi
+    Left = 636
+    Top = 70
+  end
+  object CDSNfeImpostoIssqn: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    IndexFieldNames = 'ID_NFE_DETALHE'
+    MasterFields = 'ID'
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 636
+    Top = 134
+  end
+  object DSNfeImpostoIssqn: TDataSource
+    DataSet = CDSNfeImpostoIssqn
+    Left = 636
+    Top = 182
+  end
+  object CDSNfeImpostoPis: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 636
+    Top = 254
+  end
+  object DSNfeImpostoPis: TDataSource
+    DataSet = CDSNfeImpostoPis
+    Left = 636
+    Top = 302
+  end
+  object CDSNfeDeclaracaoImportacao: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <
+      item
+        Name = 'DEFAULT_ORDER'
+      end
+      item
+        Name = 'CHANGEINDEX'
+      end>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 374
+  end
+  object DSNfeDeclaracaoImportacao: TDataSource
+    DataSet = CDSNfeDeclaracaoImportacao
+    Left = 68
+    Top = 422
+  end
+  object CDSNfeImportacaoDetalhe: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDeclaracaoImportacao
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 494
+  end
+  object DSNfeImportacaoDetalhe: TDataSource
+    DataSet = CDSNfeImportacaoDetalhe
+    Left = 68
+    Top = 542
+  end
+  object CDSNfeDetalheVeiculo: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 374
+  end
+  object DSNfeDetalheVeiculo: TDataSource
+    DataSet = CDSNfeDetalheVeiculo
+    Left = 212
+    Top = 422
+  end
+  object CDSNfeDetalheArmamento: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 494
+  end
+  object DSNfeDetalheArmamento: TDataSource
+    DataSet = CDSNfeDetalheArmamento
+    Left = 212
+    Top = 542
+  end
+  object CDSNfeDetalheCombustivel: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 374
+  end
+  object DSNfeDetalheCombustivel: TDataSource
+    DataSet = CDSNfeDetalheCombustivel
+    Left = 356
+    Top = 422
+  end
+  object CDSNfeDetalheMedicamento: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 494
+  end
+  object DSNfeDetalheMedicamento: TDataSource
+    DataSet = CDSNfeDetalheMedicamento
+    Left = 356
+    Top = 542
+  end
+  object CDSVolumesLacres: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSVolumes
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 492
+    Top = 374
+  end
+  object DSVolumesLacres: TDataSource
+    DataSet = CDSVolumesLacres
+    Left = 492
+    Top = 422
+  end
+  object CDSNfeNumero: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 492
+    Top = 494
+  end
+  object DSNfeNumero: TDataSource
+    DataSet = CDSNfeNumero
+    Left = 492
+    Top = 542
+  end
+end

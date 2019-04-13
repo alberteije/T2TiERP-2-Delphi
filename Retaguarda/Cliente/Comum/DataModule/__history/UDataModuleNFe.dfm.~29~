@@ -1,0 +1,914 @@
+object FDataModuleNFe: TFDataModuleNFe
+  OldCreateOrder = False
+  Height = 641
+  Width = 912
+  object CDSVolumes: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 22
+  end
+  object DSVolumes: TDataSource
+    DataSet = CDSVolumes
+    Left = 356
+    Top = 70
+  end
+  object CDSNfReferenciada: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_NFE_CABECALHO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'CODIGO_UF'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'ANO_MES'
+        DataType = ftString
+        Size = 4
+      end
+      item
+        Name = 'CNPJ'
+        DataType = ftString
+        Size = 14
+      end
+      item
+        Name = 'MODELO'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'SERIE'
+        DataType = ftString
+        Size = 3
+      end
+      item
+        Name = 'NUMERO_NF'
+        DataType = ftInteger
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 134
+    Data = {
+      D80000009619E0BD010000001800000008000000000003000000D80002494404
+      000100000000001049445F4E46455F4341424543414C484F0400010000000000
+      09434F4449474F5F554601004900000001000557494454480200020002000741
+      4E4F5F4D4553010049000000010005574944544802000200040004434E504A01
+      00490000000100055749445448020002000E00064D4F44454C4F010049000000
+      0100055749445448020002000200055345524945010049000000010005574944
+      5448020002000300094E554D45524F5F4E4604000100000000000000}
+    object CDSNfReferenciadaID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSNfReferenciadaID_NFE_CABECALHO: TIntegerField
+      FieldName = 'ID_NFE_CABECALHO'
+    end
+    object CDSNfReferenciadaCODIGO_UF: TStringField
+      FieldName = 'CODIGO_UF'
+      Size = 2
+    end
+    object CDSNfReferenciadaANO_MES: TStringField
+      FieldName = 'ANO_MES'
+      Size = 4
+    end
+    object CDSNfReferenciadaCNPJ: TStringField
+      FieldName = 'CNPJ'
+      Size = 14
+    end
+    object CDSNfReferenciadaMODELO: TStringField
+      FieldName = 'MODELO'
+      Size = 2
+    end
+    object CDSNfReferenciadaSERIE: TStringField
+      FieldName = 'SERIE'
+      Size = 3
+    end
+    object CDSNfReferenciadaNUMERO_NF: TIntegerField
+      FieldName = 'NUMERO_NF'
+    end
+  end
+  object DSNfReferenciada: TDataSource
+    DataSet = CDSNfReferenciada
+    Left = 356
+    Top = 182
+  end
+  object CDSCteReferenciado: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 134
+  end
+  object DSCteReferenciado: TDataSource
+    DataSet = CDSCteReferenciado
+    Left = 212
+    Top = 182
+  end
+  object CDSNfRuralReferenciada: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 22
+  end
+  object DSNfRuralReferenciada: TDataSource
+    DataSet = CDSNfRuralReferenciada
+    Left = 212
+    Top = 70
+  end
+  object CDSCupomReferenciado: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 254
+  end
+  object DSCupomReferenciado: TDataSource
+    DataSet = CDSCupomReferenciado
+    Left = 68
+    Top = 302
+  end
+  object CDSDuplicata: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 254
+  end
+  object DSDuplicata: TDataSource
+    DataSet = CDSDuplicata
+    Left = 212
+    Top = 302
+  end
+  object CDSNfeReferenciada: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 134
+  end
+  object DSNfeReferenciada: TDataSource
+    DataSet = CDSNfeReferenciada
+    Left = 68
+    Top = 182
+  end
+  object CDSNfeDetalhe: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 22
+  end
+  object DSNfeDetalhe: TDataSource
+    DataSet = CDSNfeDetalhe
+    Left = 68
+    Top = 70
+  end
+  object CDSReboque: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 254
+  end
+  object DSReboque: TDataSource
+    DataSet = CDSReboque
+    Left = 356
+    Top = 302
+  end
+  object CDSNfeImpostoCofins: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 492
+    Top = 22
+  end
+  object DSNfeImpostoCofins: TDataSource
+    DataSet = CDSNfeImpostoCofins
+    Left = 492
+    Top = 70
+  end
+  object CDSNfeImpostoIcms: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 492
+    Top = 134
+  end
+  object DSNfeImpostoIcms: TDataSource
+    DataSet = CDSNfeImpostoIcms
+    Left = 492
+    Top = 182
+  end
+  object CDSNfeImpostoImportacao: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 492
+    Top = 254
+  end
+  object DSNfeImpostoImportacao: TDataSource
+    DataSet = CDSNfeImpostoImportacao
+    Left = 492
+    Top = 302
+  end
+  object CDSNfeImpostoIpi: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_NFE_DETALHE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ENQUADRAMENTO_IPI'
+        DataType = ftString
+        Size = 5
+      end
+      item
+        Name = 'CNPJ_PRODUTOR'
+        DataType = ftString
+        Size = 14
+      end
+      item
+        Name = 'CODIGO_SELO_IPI'
+        DataType = ftString
+        Size = 60
+      end
+      item
+        Name = 'QUANTIDADE_SELO_IPI'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ENQUADRAMENTO_LEGAL_IPI'
+        Attributes = [faFixed]
+        DataType = ftString
+        Size = 3
+      end
+      item
+        Name = 'CST_IPI'
+        Attributes = [faFixed]
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'VALOR_BASE_CALCULO_IPI'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'ALIQUOTA_IPI'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'QUANTIDADE_UNIDADE_TRIBUTAVEL'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_UNIDADE_TRIBUTAVEL'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_IPI'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end>
+    IndexDefs = <>
+    IndexFieldNames = 'ID_NFE_DETALHE'
+    MasterFields = 'ID'
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 636
+    Top = 22
+    Data = {
+      200200009619E0BD02000000180000000D000000000003000000200202494404
+      000100000000000E49445F4E46455F444554414C484504000100000000001145
+      4E5155414452414D454E544F5F49504901004900000001000557494454480200
+      020005000D434E504A5F50524F4455544F520100490000000100055749445448
+      020002000E000F434F4449474F5F53454C4F5F49504901004900000001000557
+      49445448020002003C00135155414E5449444144455F53454C4F5F4950490400
+      01000000000017454E5155414452414D454E544F5F4C4547414C5F4950490100
+      490020000100055749445448020002000300074353545F495049010049002000
+      01000557494454480200020002001656414C4F525F424153455F43414C43554C
+      4F5F4950490C0012000000020008444543494D414C5302000200060005574944
+      54480200020014000C414C4951554F54415F4950490C00120000000200084445
+      43494D414C530200020006000557494454480200020014001D5155414E544944
+      4144455F554E49444144455F5452494255544156454C0C001200000002000844
+      4543494D414C530200020006000557494454480200020014001856414C4F525F
+      554E49444144455F5452494255544156454C0C0012000000020008444543494D
+      414C530200020006000557494454480200020014000956414C4F525F4950490C
+      0012000000020008444543494D414C5302000200060005574944544802000200
+      14000000}
+    object CDSNfeImpostoIpiID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSNfeImpostoIpiID_NFE_DETALHE: TIntegerField
+      FieldName = 'ID_NFE_DETALHE'
+    end
+    object CDSNfeImpostoIpiENQUADRAMENTO_IPI: TStringField
+      FieldName = 'ENQUADRAMENTO_IPI'
+      Size = 5
+    end
+    object CDSNfeImpostoIpiCNPJ_PRODUTOR: TStringField
+      FieldName = 'CNPJ_PRODUTOR'
+      Size = 14
+    end
+    object CDSNfeImpostoIpiCODIGO_SELO_IPI: TStringField
+      FieldName = 'CODIGO_SELO_IPI'
+      Size = 60
+    end
+    object CDSNfeImpostoIpiQUANTIDADE_SELO_IPI: TIntegerField
+      FieldName = 'QUANTIDADE_SELO_IPI'
+    end
+    object CDSNfeImpostoIpiENQUADRAMENTO_LEGAL_IPI: TStringField
+      FieldName = 'ENQUADRAMENTO_LEGAL_IPI'
+      FixedChar = True
+      Size = 3
+    end
+    object CDSNfeImpostoIpiCST_IPI: TStringField
+      FieldName = 'CST_IPI'
+      FixedChar = True
+      Size = 2
+    end
+    object CDSNfeImpostoIpiVALOR_BASE_CALCULO_IPI: TFMTBCDField
+      FieldName = 'VALOR_BASE_CALCULO_IPI'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIpiALIQUOTA_IPI: TFMTBCDField
+      FieldName = 'ALIQUOTA_IPI'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIpiQUANTIDADE_UNIDADE_TRIBUTAVEL: TFMTBCDField
+      FieldName = 'QUANTIDADE_UNIDADE_TRIBUTAVEL'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIpiVALOR_UNIDADE_TRIBUTAVEL: TFMTBCDField
+      FieldName = 'VALOR_UNIDADE_TRIBUTAVEL'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIpiVALOR_IPI: TFMTBCDField
+      FieldName = 'VALOR_IPI'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+  end
+  object DSNfeImpostoIpi: TDataSource
+    DataSet = CDSNfeImpostoIpi
+    Left = 636
+    Top = 70
+  end
+  object CDSNfeImpostoIssqn: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_NFE_DETALHE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'BASE_CALCULO_ISSQN'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'ALIQUOTA_ISSQN'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_ISSQN'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'MUNICIPIO_ISSQN'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ITEM_LISTA_SERVICOS'
+        DataType = ftInteger
+      end
+      item
+        Name = 'VALOR_DEDUCAO'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_OUTRAS_RETENCOES'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_DESCONTO_INCONDICIONADO'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_DESCONTO_CONDICIONADO'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_RETENCAO_ISS'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'INDICADOR_EXIGIBILIDADE_ISS'
+        DataType = ftInteger
+      end
+      item
+        Name = 'CODIGO_SERVICO'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'MUNICIPIO_INCIDENCIA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'PAIS_SEVICO_PRESTADO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'NUMERO_PROCESSO'
+        DataType = ftString
+        Size = 30
+      end
+      item
+        Name = 'INDICADOR_INCENTIVO_FISCAL'
+        DataType = ftInteger
+      end>
+    IndexDefs = <>
+    IndexFieldNames = 'ID_NFE_DETALHE'
+    MasterFields = 'ID'
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 636
+    Top = 134
+    Data = {
+      F00200009619E0BD020000001800000012000000000003000000F00202494404
+      000100000000000E49445F4E46455F444554414C484504000100000000001242
+      4153455F43414C43554C4F5F495353514E0C0012000000020008444543494D41
+      4C530200020006000557494454480200020014000E414C4951554F54415F4953
+      53514E0C0012000000020008444543494D414C53020002000600055749445448
+      0200020014000B56414C4F525F495353514E0C0012000000020008444543494D
+      414C530200020006000557494454480200020014000F4D554E49434950494F5F
+      495353514E0400010000000000134954454D5F4C495354415F5345525649434F
+      5304000100000000000D56414C4F525F4445445543414F0C0012000000020008
+      444543494D414C530200020006000557494454480200020014001656414C4F52
+      5F4F55545241535F524554454E434F45530C0012000000020008444543494D41
+      4C530200020006000557494454480200020014001D56414C4F525F444553434F
+      4E544F5F494E434F4E444943494F4E41444F0C0012000000020008444543494D
+      414C530200020006000557494454480200020014001B56414C4F525F44455343
+      4F4E544F5F434F4E444943494F4E41444F0C0012000000020008444543494D41
+      4C530200020006000557494454480200020014001256414C4F525F524554454E
+      43414F5F4953530C0012000000020008444543494D414C530200020006000557
+      494454480200020014001B494E44494341444F525F455849474942494C494441
+      44455F49535304000100000000000E434F4449474F5F5345525649434F010049
+      0000000100055749445448020002001400144D554E49434950494F5F494E4349
+      44454E434941040001000000000014504149535F53455649434F5F5052455354
+      41444F04000100000000000F4E554D45524F5F50524F434553534F0100490000
+      000100055749445448020002001E001A494E44494341444F525F494E43454E54
+      49564F5F46495343414C04000100000000000000}
+    object CDSNfeImpostoIssqnID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSNfeImpostoIssqnID_NFE_DETALHE: TIntegerField
+      FieldName = 'ID_NFE_DETALHE'
+    end
+    object CDSNfeImpostoIssqnBASE_CALCULO_ISSQN: TFMTBCDField
+      FieldName = 'BASE_CALCULO_ISSQN'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIssqnALIQUOTA_ISSQN: TFMTBCDField
+      FieldName = 'ALIQUOTA_ISSQN'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIssqnVALOR_ISSQN: TFMTBCDField
+      FieldName = 'VALOR_ISSQN'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIssqnMUNICIPIO_ISSQN: TIntegerField
+      FieldName = 'MUNICIPIO_ISSQN'
+    end
+    object CDSNfeImpostoIssqnITEM_LISTA_SERVICOS: TIntegerField
+      FieldName = 'ITEM_LISTA_SERVICOS'
+    end
+    object CDSNfeImpostoIssqnVALOR_DEDUCAO: TFMTBCDField
+      FieldName = 'VALOR_DEDUCAO'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIssqnVALOR_OUTRAS_RETENCOES: TFMTBCDField
+      FieldName = 'VALOR_OUTRAS_RETENCOES'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIssqnVALOR_DESCONTO_INCONDICIONADO: TFMTBCDField
+      FieldName = 'VALOR_DESCONTO_INCONDICIONADO'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIssqnVALOR_DESCONTO_CONDICIONADO: TFMTBCDField
+      FieldName = 'VALOR_DESCONTO_CONDICIONADO'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIssqnVALOR_RETENCAO_ISS: TFMTBCDField
+      FieldName = 'VALOR_RETENCAO_ISS'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoIssqnINDICADOR_EXIGIBILIDADE_ISS: TIntegerField
+      FieldName = 'INDICADOR_EXIGIBILIDADE_ISS'
+    end
+    object CDSNfeImpostoIssqnCODIGO_SERVICO: TStringField
+      FieldName = 'CODIGO_SERVICO'
+    end
+    object CDSNfeImpostoIssqnMUNICIPIO_INCIDENCIA: TIntegerField
+      FieldName = 'MUNICIPIO_INCIDENCIA'
+    end
+    object CDSNfeImpostoIssqnPAIS_SEVICO_PRESTADO: TIntegerField
+      FieldName = 'PAIS_SEVICO_PRESTADO'
+    end
+    object CDSNfeImpostoIssqnNUMERO_PROCESSO: TStringField
+      FieldName = 'NUMERO_PROCESSO'
+      Size = 30
+    end
+    object CDSNfeImpostoIssqnINDICADOR_INCENTIVO_FISCAL: TIntegerField
+      FieldName = 'INDICADOR_INCENTIVO_FISCAL'
+    end
+  end
+  object DSNfeImpostoIssqn: TDataSource
+    DataSet = CDSNfeImpostoIssqn
+    Left = 636
+    Top = 182
+  end
+  object CDSNfeImpostoPis: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_NFE_DETALHE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'CST_PIS'
+        Attributes = [faFixed]
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'QUANTIDADE_VENDIDA'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_BASE_CALCULO_PIS'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'ALIQUOTA_PIS_PERCENTUAL'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'ALIQUOTA_PIS_REAIS'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'VALOR_PIS'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end>
+    IndexDefs = <>
+    IndexFieldNames = 'ID_NFE_DETALHE'
+    MasterFields = 'ID'
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 636
+    Top = 254
+    Data = {
+      660100009619E0BD020000001800000008000000000003000000660102494404
+      000100000000000E49445F4E46455F444554414C484504000100000000000743
+      53545F5049530100490020000100055749445448020002000200125155414E54
+      49444144455F56454E444944410C0012000000020008444543494D414C530200
+      020006000557494454480200020014001656414C4F525F424153455F43414C43
+      554C4F5F5049530C0012000000020008444543494D414C530200020006000557
+      4944544802000200140017414C4951554F54415F5049535F50455243454E5455
+      414C0C0012000000020008444543494D414C5302000200060005574944544802
+      000200140012414C4951554F54415F5049535F52454149530C00120000000200
+      08444543494D414C530200020006000557494454480200020014000956414C4F
+      525F5049530C0012000000020008444543494D414C5302000200060005574944
+      54480200020014000000}
+    object CDSNfeImpostoPisID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSNfeImpostoPisID_NFE_DETALHE: TIntegerField
+      FieldName = 'ID_NFE_DETALHE'
+    end
+    object CDSNfeImpostoPisCST_PIS: TStringField
+      FieldName = 'CST_PIS'
+      FixedChar = True
+      Size = 2
+    end
+    object CDSNfeImpostoPisQUANTIDADE_VENDIDA: TFMTBCDField
+      FieldName = 'QUANTIDADE_VENDIDA'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoPisVALOR_BASE_CALCULO_PIS: TFMTBCDField
+      FieldName = 'VALOR_BASE_CALCULO_PIS'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoPisALIQUOTA_PIS_PERCENTUAL: TFMTBCDField
+      FieldName = 'ALIQUOTA_PIS_PERCENTUAL'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoPisALIQUOTA_PIS_REAIS: TFMTBCDField
+      FieldName = 'ALIQUOTA_PIS_REAIS'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSNfeImpostoPisVALOR_PIS: TFMTBCDField
+      FieldName = 'VALOR_PIS'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 20
+      Size = 6
+    end
+  end
+  object DSNfeImpostoPis: TDataSource
+    DataSet = CDSNfeImpostoPis
+    Left = 636
+    Top = 302
+  end
+  object CDSNfeDeclaracaoImportacao: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <
+      item
+        Name = 'DEFAULT_ORDER'
+      end
+      item
+        Name = 'CHANGEINDEX'
+      end>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 374
+  end
+  object DSNfeDeclaracaoImportacao: TDataSource
+    DataSet = CDSNfeDeclaracaoImportacao
+    Left = 68
+    Top = 422
+  end
+  object CDSNfeImportacaoDetalhe: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDeclaracaoImportacao
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 68
+    Top = 494
+  end
+  object DSNfeImportacaoDetalhe: TDataSource
+    DataSet = CDSNfeImportacaoDetalhe
+    Left = 68
+    Top = 542
+  end
+  object CDSNfeDetalheVeiculo: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 374
+  end
+  object DSNfeDetalheVeiculo: TDataSource
+    DataSet = CDSNfeDetalheVeiculo
+    Left = 212
+    Top = 422
+  end
+  object CDSNfeDetalheArmamento: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 212
+    Top = 494
+  end
+  object DSNfeDetalheArmamento: TDataSource
+    DataSet = CDSNfeDetalheArmamento
+    Left = 212
+    Top = 542
+  end
+  object CDSNfeDetalheCombustivel: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 374
+  end
+  object DSNfeDetalheCombustivel: TDataSource
+    DataSet = CDSNfeDetalheCombustivel
+    Left = 356
+    Top = 422
+  end
+  object CDSNfeDetalheMedicamento: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSNfeDetalhe
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 356
+    Top = 494
+  end
+  object DSNfeDetalheMedicamento: TDataSource
+    DataSet = CDSNfeDetalheMedicamento
+    Left = 356
+    Top = 542
+  end
+  object CDSVolumesLacres: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    MasterSource = DSVolumes
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    AfterEdit = ControlaPersistencia
+    Left = 492
+    Top = 374
+  end
+  object DSVolumesLacres: TDataSource
+    DataSet = CDSVolumesLacres
+    Left = 492
+    Top = 422
+  end
+  object CDSNfeNumero: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'SERIE'
+        DataType = ftString
+        Size = 3
+      end
+      item
+        Name = 'NUMERO'
+        DataType = ftInteger
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 492
+    Top = 494
+  end
+  object DSNfeNumero: TDataSource
+    DataSet = CDSNfeNumero
+    Left = 492
+    Top = 542
+  end
+end

@@ -1,0 +1,42 @@
+program T2TiERPFluxoCaixa;
+
+uses
+  Forms,
+  Windows,
+  Dialogs,
+  UsuarioController in '..\Comum\Controller\UsuarioController.pas',
+  UTelaCadastro in '..\Comum\Tela\UTelaCadastro.pas' {FTelaCadastro},
+  UTela in '..\Comum\Tela\UTela.pas' {FTela},
+  ULookup in '..\Comum\Tela\ULookup.pas' {FLookup},
+  UBase in '..\Comum\Tela\UBase.pas' {FBase},
+  UDataModule in '..\Comum\Tela\UDataModule.pas' {FDataModule: TDataModule},
+  UFiltro in '..\Comum\Tela\UFiltro.pas' {FFiltro},
+  ULogin in '..\Comum\Tela\ULogin.pas' {FLogin},
+  UsuarioVO in '..\..\Comum\VO\UsuarioVO.pas',
+  UFinDocumentoOrigem in 'Tela\UFinDocumentoOrigem.pas' {FFinDocumentoOrigem},
+  UPlanoCentroResultado in 'Tela\UPlanoCentroResultado.pas' {FPlanoCentroResultado},
+  UCentroResultado in 'Tela\UCentroResultado.pas' {FCentroResultado},
+  UPlanoNaturezaFinanceira in 'Tela\UPlanoNaturezaFinanceira.pas' {FPlanoNaturezaFinanceira},
+  UNaturezaFinanceira in 'Tela\UNaturezaFinanceira.pas' {FNaturezaFinanceira},
+  ViewSessaoEmpresaController in '..\Comum\Controller\ViewSessaoEmpresaController.pas',
+  ViewSessaoEmpresaVO in '..\..\Comum\VO\ViewSessaoEmpresaVO.pas',
+  ViewFinLancamentoPagarController in 'Controller\ViewFinLancamentoPagarController.pas',
+  ViewFinLancamentoPagarVO in '..\..\Comum\VO\ViewFinLancamentoPagarVO.pas',
+  ViewFinChequesEmSerController in 'Controller\ViewFinChequesEmSerController.pas',
+  ViewFinChequesEmSerVO in '..\..\Comum\VO\ViewFinChequesEmSerVO.pas',
+  ViewFinResumoTesourariaController in 'Controller\ViewFinResumoTesourariaController.pas',
+  ViewFinResumoTesourariaVO in '..\..\Comum\VO\ViewFinResumoTesourariaVO.pas',
+  ViewFinFluxoCaixaController in 'Controller\ViewFinFluxoCaixaController.pas',
+  ViewFinFluxoCaixaVO in '..\..\Comum\VO\ViewFinFluxoCaixaVO.pas',
+  UFinFluxoCaixa in 'Tela\UFinFluxoCaixa.pas' {FFinFluxoCaixa},
+  UMenu in 'Fluxo de Caixa\UMenu.pas' {FMenu};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFDataModule, FDataModule);
+  Application.CreateForm(TFMenu, FMenu);
+  Application.Run;
+end.

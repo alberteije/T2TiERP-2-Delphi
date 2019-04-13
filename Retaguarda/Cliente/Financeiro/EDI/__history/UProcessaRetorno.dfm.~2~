@@ -1,0 +1,279 @@
+object FProcessaRetorno: TFProcessaRetorno
+  Left = 427
+  Top = 319
+  BorderStyle = bsDialog
+  Caption = 'Tratamento de Arquivos de Retorno - EDI Banc'#225'rio'
+  ClientHeight = 332
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelCabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 65
+    Align = alTop
+    Color = 14537936
+    ParentBackground = False
+    TabOrder = 0
+    DesignSize = (
+      635
+      65)
+    object Bevel1: TBevel
+      Left = 61
+      Top = 50
+      Width = 567
+      Height = 6
+      Anchors = [akLeft, akTop, akRight]
+      ExplicitWidth = 415
+    end
+    object Image1: TImage
+      Left = 7
+      Top = 7
+      Width = 48
+      Height = 49
+      ParentShowHint = False
+      ShowHint = False
+      Transparent = True
+    end
+    object Label2: TLabel
+      Left = 62
+      Top = 24
+      Width = 397
+      Height = 23
+      Caption = 'EDI - Tratamento de Arquivos de Retorno'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object ActionToolBarPrincipal: TActionToolBar
+    AlignWithMargins = True
+    Left = 3
+    Top = 303
+    Width = 629
+    Height = 24
+    ActionManager = ActionManagerLocal
+    Align = alBottom
+    BiDiMode = bdRightToLeft
+    Caption = 'ActionToolBarPrincipal'
+    ColorMap.MenuColor = clMenu
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Orientation = boRightToLeft
+    ParentBiDiMode = False
+    ParentFont = False
+    Spacing = 5
+    ExplicitHeight = 26
+  end
+  object PageControlItens: TPageControl
+    Left = 0
+    Top = 65
+    Width = 635
+    Height = 237
+    ActivePage = tsDados
+    Align = alClient
+    TabOrder = 2
+    ExplicitWidth = 583
+    ExplicitHeight = 142
+    object tsDados: TTabSheet
+      Caption = 'Informa'#231#245'es sobre o processamento'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object PanelDados: TPanel
+        Left = 0
+        Top = 0
+        Width = 627
+        Height = 207
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        DesignSize = (
+          627
+          209)
+        object Bevel2: TBevel
+          Left = 3
+          Top = 3
+          Width = 621
+          Height = 200
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          ExplicitWidth = 569
+          ExplicitHeight = 301
+        end
+        object Grid: TJvDBUltimGrid
+          Left = 7
+          Top = 8
+          Width = 613
+          Height = 190
+          DataSource = DSRetorno
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+          TitleButtons = True
+          AlternateRowColor = 15593713
+          TitleArrow = True
+          SelectColumnsDialogStrings.Caption = 'Select columns'
+          SelectColumnsDialogStrings.OK = '&OK'
+          SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+          CanDelete = False
+          EditControls = <>
+          RowsHeight = 17
+          TitleRowHeight = 17
+          SortWith = swFields
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'NOSSO_NUMERO'
+              Title.Caption = 'Nosso N'#250'mero'
+              Width = 150
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'LOG'
+              Title.Caption = 'Resultado Processamento'
+              Width = 420
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+  object ActionManagerLocal: TActionManager
+    ActionBars.ShowHints = False
+    ActionBars = <
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionProcessarRetorno
+            Caption = '&Processar Retorno'
+            ImageIndex = 10
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionSair
+            Caption = '&Sair [F8]'
+            ImageIndex = 12
+            ShortCut = 119
+          end
+          item
+            Action = ActionProcessarRetorno
+            Caption = '&Processar Retorno'
+            ImageIndex = 28
+          end>
+        ActionBar = ActionToolBarPrincipal
+      end
+      item
+      end
+      item
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end>
+    DisabledImages = FDataModule.ImagensCadastrosD
+    Images = FDataModule.ImagensCadastros
+    Left = 464
+    Top = 40
+    StyleName = 'Ribbon - Silver'
+    object ActionProcessarRetorno: TAction
+      Category = 'Geral'
+      Caption = 'Processar Retorno'
+      ImageIndex = 28
+      OnExecute = ActionProcessarRetornoExecute
+    end
+    object ActionSair: TAction
+      Category = 'Geral'
+      Caption = 'Sair [F8]'
+      ImageIndex = 12
+      ShortCut = 119
+      OnExecute = ActionSairExecute
+    end
+  end
+  object DSRetorno: TDataSource
+    DataSet = CDSRetorno
+    Left = 344
+    Top = 8
+  end
+  object CDSRetorno: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'NOSSO_NUMERO'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'LOG'
+        DataType = ftString
+        Size = 100
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 272
+    Top = 8
+    Data = {
+      530000009619E0BD01000000180000000200000000000300000053000C4E4F53
+      534F5F4E554D45524F0100490000000100055749445448020002003200034C4F
+      4701004900000001000557494454480200020064000000}
+    object CDSRetornoNOSSO_NUMERO: TStringField
+      FieldName = 'NOSSO_NUMERO'
+      Size = 50
+    end
+    object CDSRetornoLOG: TStringField
+      FieldName = 'LOG'
+      Size = 100
+    end
+  end
+end

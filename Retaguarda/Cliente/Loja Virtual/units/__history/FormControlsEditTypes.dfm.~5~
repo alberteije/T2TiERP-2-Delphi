@@ -1,0 +1,105 @@
+object UniFormControlsEditTypes: TUniFormControlsEditTypes
+  Left = 0
+  Top = 0
+  Width = 779
+  Height = 499
+  OnCreate = UniFrameCreate
+  TabOrder = 0
+  ParentRTL = False
+  object UniContainerPanel1: TUniContainerPanel
+    Left = 0
+    Top = 0
+    Width = 779
+    Height = 499
+    Hint = ''
+    ParentColor = False
+    Align = alClient
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 0
+    ExplicitLeft = -88
+    ExplicitTop = 16
+    object UniEdit1: TUniEdit
+      Left = 16
+      Top = 36
+      Width = 489
+      Hint = ''
+      Text = 'UniEdit1'
+      TabOrder = 0
+    end
+    object UniLabel4: TUniLabel
+      Left = 16
+      Top = 17
+      Width = 31
+      Height = 13
+      Hint = ''
+      Caption = 'Nome:'
+      TabOrder = 1
+    end
+    object UniMemo1: TUniMemo
+      Left = 16
+      Top = 178
+      Width = 489
+      Height = 253
+      Hint = ''
+      TabOrder = 2
+    end
+    object UniButton1: TUniButton
+      Left = 384
+      Top = 447
+      Width = 121
+      Height = 25
+      Hint = ''
+      Caption = 'Enviar Mensagem'
+      TabOrder = 3
+    end
+    object UniEdit2: TUniEdit
+      Left = 16
+      Top = 84
+      Width = 489
+      Hint = ''
+      Text = 'UniEdit1'
+      TabOrder = 5
+    end
+    object UniLabel1: TUniLabel
+      Left = 16
+      Top = 65
+      Width = 32
+      Height = 13
+      Hint = ''
+      Caption = 'E-Mail:'
+      TabOrder = 6
+    end
+    object UniLabel2: TUniLabel
+      Left = 16
+      Top = 112
+      Width = 43
+      Height = 13
+      Hint = ''
+      Caption = 'Assunto:'
+      TabOrder = 7
+    end
+    object UniComboBox3: TUniComboBox
+      Left = 16
+      Top = 131
+      Width = 489
+      Hint = ''
+      Text = ''
+      Items.Strings = (
+        'D'#250'vidas'
+        'Elogio'
+        'Sugest'#245'es'
+        'Cr'#237'ticas')
+      ItemIndex = 0
+      TabOrder = 8
+    end
+    object UniLabel3: TUniLabel
+      Left = 16
+      Top = 159
+      Width = 55
+      Height = 13
+      Hint = ''
+      Caption = 'Mensagem:'
+      TabOrder = 9
+    end
+  end
+end

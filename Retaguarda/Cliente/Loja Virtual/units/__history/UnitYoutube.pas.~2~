@@ -1,0 +1,33 @@
+unit UnitYoutube;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, uniGUITypes, uniGUIAbstractClasses,
+  uniGUIClasses, uniGUIForm, Vcl.OleCtrls, SHDocVw;
+
+type
+  TUniFormYoutube = class(TUniForm)
+    WebBrowser1: TWebBrowser;
+    procedure UniFormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+uses
+  uniGUIApplication;
+
+{$R *.dfm}
+
+
+procedure TUniFormYoutube.UniFormCreate(Sender: TObject);
+begin
+  WebBrowser1.Navigate('c:\lixo\teste.html');
+end;
+
+end.

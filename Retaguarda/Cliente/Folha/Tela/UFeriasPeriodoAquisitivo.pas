@@ -1,0 +1,281 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela Férias Períodos Aquisitivos para o módulo Folha de Pagamento
+
+The MIT License
+
+Copyright: Copyright (C) 2016 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+@author Albert Eije
+@version 2.0
+******************************************************************************* }
+
+unit UFeriasPeriodoAquisitivo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, Menus, StdCtrls, ExtCtrls, Buttons, Grids, DBGrids,
+  JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, FeriasPeriodoAquisitivoVO, 
+  FeriasPeriodoAquisitivoController, Atributos, Constantes, LabeledCtrls, Mask, 
+  JvExMask, JvToolEdit, JvBaseEdits, StrUtils, Controller;
+
+type
+  [TFormDescription(TConstantes.MODULO_FOLHA_PAGAMENTO, 'Férias Períodos Aquisitivos')]
+
+  TFFeriasPeriodoAquisitivo = class(TFTelaCadastro)
+    BevelEdits: TBevel;
+    EditIdColaborador: TLabeledCalcEdit;
+    EditColaborador: TLabeledEdit;
+    EditDataInicio: TLabeledDateEdit;
+    EditDataFim: TLabeledDateEdit;
+    EditAfastamentoPrevidencia: TLabeledCalcEdit;
+    ComboBoxSituacao: TLabeledComboBox;
+    EditLimiteParaGozo: TLabeledDateEdit;
+    ComboBoxDescontarFaltas: TLabeledComboBox;
+    ComboBoxDesconsiderarAfastamento: TLabeledComboBox;
+    EditAfastamentoSemRemuneracao: TLabeledCalcEdit;
+    EditAfastamentoComRemuneracao: TLabeledCalcEdit;
+    EditDiasDireito: TLabeledCalcEdit;
+    EditDiasGozados: TLabeledCalcEdit;
+    EditDiasFaltas: TLabeledCalcEdit;
+    EditDiasRestantes: TLabeledCalcEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure EditIdColaboradorKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+    procedure ControlaBotoes; override;
+    procedure ControlaPopupMenu; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+  end;
+
+var
+  FFeriasPeriodoAquisitivo: TFFeriasPeriodoAquisitivo;
+
+implementation
+
+uses ViewPessoaColaboradorVO, ViewPessoaColaboradorController;
+
+{$R *.dfm}
+
+{$REGION 'Controles Infra'}
+procedure TFFeriasPeriodoAquisitivo.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TFeriasPeriodoAquisitivoVO;
+  ObjetoController := TFeriasPeriodoAquisitivoController.Create;
+
+  inherited;
+end;
+
+procedure TFFeriasPeriodoAquisitivo.ControlaBotoes;
+begin
+  inherited;
+
+  BotaoImprimir.Visible := False;
+end;
+
+procedure TFFeriasPeriodoAquisitivo.ControlaPopupMenu;
+begin
+  inherited;
+
+  MenuImprimir.Visible := False;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFFeriasPeriodoAquisitivo.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    EditIdColaborador.SetFocus;
+  end;
+end;
+
+function TFFeriasPeriodoAquisitivo.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditIdColaborador.SetFocus;
+  end;
+end;
+
+function TFFeriasPeriodoAquisitivo.DoExcluir: Boolean;
+begin
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('FeriasPeriodoAquisitivoController.TFeriasPeriodoAquisitivoController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('FeriasPeriodoAquisitivoController.TFeriasPeriodoAquisitivoController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+end;
+
+function TFFeriasPeriodoAquisitivo.DoSalvar: Boolean;
+begin
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TFeriasPeriodoAquisitivoVO.Create;
+
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).IdColaborador := EditIdColaborador.AsInteger;
+
+      /// EXERCICIO
+      ///  Inclua o nome do colaborador
+
+      //TFeriasPeriodoAquisitivoVO(ObjetoVO).ColaboradorNome := EditColaborador.Text;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).DataInicio := EditDataInicio.Date;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).DataFim := EditDataFim.Date;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).Situacao := IntToStr(ComboBoxSituacao.ItemIndex);
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).LimiteParaGozo := EditLimiteParaGozo.Date;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).DescontarFaltas := IfThen(ComboBoxDescontarFaltas.ItemIndex = 0, 'S', 'N');
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).DesconsiderarAfastamento := IfThen(ComboBoxDesconsiderarAfastamento.ItemIndex = 0, 'S', 'N');
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).AfastamentoPrevidencia := EditAfastamentoPrevidencia.AsInteger;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).AfastamentoSemRemun := EditAfastamentoSemRemuneracao.AsInteger;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).AfastamentoComRemun := EditAfastamentoComRemuneracao.AsInteger;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).DiasDireito := EditDiasDireito.AsInteger;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).DiasGozados := EditDiasGozados.AsInteger;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).DiasFaltas := EditDiasFaltas.AsInteger;
+      TFeriasPeriodoAquisitivoVO(ObjetoVO).DiasRestantes := EditDiasRestantes.AsInteger;
+
+      if StatusTela = stInserindo then
+      begin
+        TController.ExecutarMetodo('FeriasPeriodoAquisitivoController.TFeriasPeriodoAquisitivoController', 'Insere', [TFeriasPeriodoAquisitivoVO(ObjetoVO)], 'PUT', 'Lista');
+      end
+      else if StatusTela = stEditando then
+      begin
+        if TFeriasPeriodoAquisitivoVO(ObjetoVO).ToJSONString <> StringObjetoOld then
+        begin
+          TController.ExecutarMetodo('FeriasPeriodoAquisitivoController.TFeriasPeriodoAquisitivoController', 'Altera', [TFeriasPeriodoAquisitivoVO(ObjetoVO)], 'POST', 'Boolean');
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFFeriasPeriodoAquisitivo.GridParaEdits;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := TFeriasPeriodoAquisitivoVO(TController.BuscarObjeto('FeriasPeriodoAquisitivoController.TFeriasPeriodoAquisitivoController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditIdColaborador.AsInteger := TFeriasPeriodoAquisitivoVO(ObjetoVO).IdColaborador;
+//    EditColaborador.Text := TFeriasPeriodoAquisitivoVO(ObjetoVO).ColaboradorPessoaNome;
+    EditDataInicio.Date := TFeriasPeriodoAquisitivoVO(ObjetoVO).DataInicio;
+    EditDataFim.Date := TFeriasPeriodoAquisitivoVO(ObjetoVO).DataFim;
+    ComboBoxSituacao.ItemIndex := StrToInt(TFeriasPeriodoAquisitivoVO(ObjetoVO).Situacao);
+    EditLimiteParaGozo.Date := TFeriasPeriodoAquisitivoVO(ObjetoVO).LimiteParaGozo;
+    ComboBoxDescontarFaltas.ItemIndex := AnsiIndexStr(TFeriasPeriodoAquisitivoVO(ObjetoVO).DescontarFaltas, ['S', 'N']);
+    ComboBoxDesconsiderarAfastamento.ItemIndex := AnsiIndexStr(TFeriasPeriodoAquisitivoVO(ObjetoVO).DesconsiderarAfastamento, ['S', 'N']);
+    EditAfastamentoPrevidencia.AsInteger := TFeriasPeriodoAquisitivoVO(ObjetoVO).AfastamentoPrevidencia;
+    EditAfastamentoSemRemuneracao.AsInteger := TFeriasPeriodoAquisitivoVO(ObjetoVO).AfastamentoSemRemun;
+    EditAfastamentoComRemuneracao.AsInteger := TFeriasPeriodoAquisitivoVO(ObjetoVO).AfastamentoComRemun;
+    EditDiasDireito.AsInteger := TFeriasPeriodoAquisitivoVO(ObjetoVO).DiasDireito;
+    EditDiasGozados.AsInteger := TFeriasPeriodoAquisitivoVO(ObjetoVO).DiasGozados;
+    EditDiasFaltas.AsInteger := TFeriasPeriodoAquisitivoVO(ObjetoVO).DiasFaltas;
+    EditDiasRestantes.AsInteger := TFeriasPeriodoAquisitivoVO(ObjetoVO).DiasRestantes;
+
+    // Serializa o objeto para consultar posteriormente se houve alterações
+    FormatSettings.DecimalSeparator := '.';
+    StringObjetoOld := ObjetoVO.ToJSONString;
+    FormatSettings.DecimalSeparator := ',';
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Campos Transientes'}
+procedure TFFeriasPeriodoAquisitivo.EditIdColaboradorKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdColaborador.Value <> 0 then
+      Filtro := 'ID = ' + EditIdColaborador.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdColaborador.Clear;
+      EditColaborador.Clear;
+      if not PopulaCamposTransientes(Filtro, TViewPessoaColaboradorVO, TViewPessoaColaboradorController) then
+        PopulaCamposTransientesLookup(TViewPessoaColaboradorVO, TViewPessoaColaboradorController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdColaborador.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditColaborador.Text := CDSTransiente.FieldByName('NOME').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditDataInicio.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+end.
+

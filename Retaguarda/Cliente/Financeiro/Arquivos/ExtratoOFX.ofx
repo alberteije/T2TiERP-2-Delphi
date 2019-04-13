@@ -1,0 +1,132 @@
+OFXHEADER:100DATA:OFXSGMLVERSION:102SECURITY:NONEENCODING:USASCIICHARSET:1252COMPRESSION:NONEOLDFILEUID:NONENEWFILEUID:NONE<OFX>
+   <SIGNONMSGSRSV1>
+      <SONRS>
+         <STATUS>
+            <CODE>0</CODE>
+            <SEVERITY>INFO</SEVERITY>
+         </STATUS>
+         <DTSERVER>20130130120000[-3:BRT]</DTSERVER>
+         <LANGUAGE>POR</LANGUAGE>
+         <FI>
+            <ORG>Banco do Brasil</ORG>
+            <FID>1</FID>
+         </FI>
+      </SONRS>
+   </SIGNONMSGSRSV1>
+   <BANKMSGSRSV1>
+      <STMTTRNRS>
+         <TRNUID>1</TRNUID>
+         <STATUS>
+            <CODE>0</CODE>
+            <SEVERITY>INFO</SEVERITY>
+         </STATUS>
+         <STMTRS>
+            <CURDEF>BRL</CURDEF>
+            <BANKACCTFROM>
+               <BANKID>1</BANKID>
+               <BRANCHID>2906-8</BRANCHID>
+               <ACCTID>285718-9</ACCTID>
+               <ACCTTYPE>CHECKING</ACCTTYPE>
+            </BANKACCTFROM>
+            <BANKTRANLIST>
+               <DTSTART>20121031120000[-3:BRT]</DTSTART>
+               <DTEND>20121130120000[-3:BRT]</DTEND>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121101120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>-14.58</TRNAMT>
+                  <FITID>20121101114580</FITID>
+                  <CHECKNUM>000000167640</CHECKNUM>
+                  <REFNUM>167.640</REFNUM>
+                  <MEMO>Compra com Cartão - 01/01 18:47    PAPEL.COM</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121101120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>-30.00</TRNAMT>
+                  <FITID>20112312330000</FITID>
+                  <CHECKNUM>325123121933</CHECKNUM>
+                  <REFNUM>11.312.115.111.223</REFNUM>
+                  <MEMO>Saque com cartão - 01/01 13:25 SAO PAULO</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121105120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>4100.23</TRNAMT>
+                  <FITID>2012123132100230</FITID>
+                  <CHECKNUM>738977909446</CHECKNUM>
+                  <REFNUM>514.113.220.022.116</REFNUM>
+                  <MEMO>Transferência on line - 05/01 1233       1236-3 JOAO.COM</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121105120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>-13.60</TRNAMT>
+                  <FITID>20112313113600</FITID>
+                  <CHECKNUM>000012312310</CHECKNUM>
+                  <REFNUM>68.960</REFNUM>
+                  <MEMO>Compra com Cartão - 04/01 19:09 LANCHES.COM</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121105120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>-3000.00</TRNAMT>
+                  <FITID>20121112330000</FITID>
+                  <CHECKNUM>853213213237</CHECKNUM>
+                  <REFNUM>11.113.221.222.117</REFNUM>
+                  <MEMO>Saque com cartão - 01/11 18:53 FORTALEZA</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121105120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>-1730.18</TRNAMT>
+                  <FITID>201212123373180</FITID>
+                  <CHECKNUM>000000178781</CHECKNUM>
+                  <REFNUM>1100.501</REFNUM>
+                  <MEMO>Pagamento de Título - BANCO BRADESCO S.A.</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121105120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>-352.46</TRNAMT>
+                  <FITID>201212312352460</FITID>
+                  <CHECKNUM>000030464546</CHECKNUM>
+                  <REFNUM>31.144.555</REFNUM>
+                  <MEMO>Pagto cartão crédito</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121106120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>1070.99</TRNAMT>
+                  <FITID>201218797879990</FITID>
+                  <CHECKNUM>017898789256</CHECKNUM>
+                  <REFNUM>71.111.222.555.556</REFNUM>
+                  <MEMO>Depósito Online</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121112120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>-380.95</TRNAMT>
+                  <FITID>201211231312950</FITID>
+                  <CHECKNUM>000000546545</CHECKNUM>
+                  <REFNUM>123.123</REFNUM>
+                  <MEMO>Pagamento de Título - CAIXA ECONOMICA FEDERAL</MEMO>
+               </STMTTRN>
+               <STMTTRN>
+                  <TRNTYPE>OTHER</TRNTYPE>
+                  <DTPOSTED>20121121120000[-3:BRT]</DTPOSTED>
+                  <TRNAMT>-500.00</TRNAMT>
+                  <FITID>212321231239000</FITID>
+                  <CHECKNUM>000000850001</CHECKNUM>
+                  <REFNUM>850.001</REFNUM>
+                  <MEMO>Cheque Compensado</MEMO>
+               </STMTTRN>
+               <STMTTRN>                  <TRNTYPE>OTHER</TRNTYPE>                  <DTPOSTED>20121121120000[-3:BRT]</DTPOSTED>                  <TRNAMT>-1000.00</TRNAMT>                  <FITID>212321231239000</FITID>                  <CHECKNUM>000000850002</CHECKNUM>                  <REFNUM>850.002</REFNUM>                  <MEMO>Cheque Compensado</MEMO>               </STMTTRN>            </BANKTRANLIST>
+            <LEDGERBAL>
+               <BALAMT>1024.76</BALAMT>
+               <DTASOF>20121130120000[-3:BRT]</DTASOF>
+            </LEDGERBAL>
+         </STMTRS>
+      </STMTTRNRS>
+   </BANKMSGSRSV1>
+</OFX>

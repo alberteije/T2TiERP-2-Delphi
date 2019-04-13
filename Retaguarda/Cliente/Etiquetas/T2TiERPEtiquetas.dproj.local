@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/03/24 15:37:28.000.534,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UWmsRecebimento.pas=</Transaction>
+    <Transaction>2017/03/24 15:37:28.000.813,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UWmsParametro.pas=</Transaction>
+    <Transaction>2017/03/24 15:37:29.000.802,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UWmsColeta.pas=</Transaction>
+    <Transaction>2017/03/24 15:37:29.000.439,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UWmsExpedicao.pas=</Transaction>
+    <Transaction>2017/03/24 15:37:29.000.621,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UWmsEndereco.pas=</Transaction>
+    <Transaction>2017/03/24 15:37:29.000.972,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UWmsArmazenamento.pas=</Transaction>
+    <Transaction>2017/03/24 15:37:29.000.219,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UWmsOrdemSeparacao.pas=</Transaction>
+    <Transaction>2017/03/24 15:37:30.000.156,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UWmsAgendamento.pas=</Transaction>
+    <Transaction>2017/03/24 15:45:36.000.661,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UEtiquetaFormatoPapel.pas</Transaction>
+    <Transaction>2017/03/24 15:51:00.000.893,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\EtiquetaLayoutVO.pas</Transaction>
+    <Transaction>2017/03/24 15:51:00.000.567,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\EtiquetaTemplateVO.pas</Transaction>
+    <Transaction>2017/03/24 15:51:01.000.223,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\EtiquetaFormatoPapelVO.pas</Transaction>
+    <Transaction>2017/03/24 15:51:15.000.261,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\EtiquetaFormatoPapelController.pas</Transaction>
+    <Transaction>2017/03/24 15:51:15.000.580,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\EtiquetaLayoutController.pas</Transaction>
+    <Transaction>2017/03/24 15:51:15.000.845,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\EtiquetaTemplateController.pas</Transaction>
+    <Transaction>2017/03/24 16:05:41.000.310,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UEtiquetaLayout.pas</Transaction>
+    <Transaction>2017/03/24 18:05:47.000.474,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Etiquetas\Tela\UEtiquetaTemplate.pas</Transaction>
+  </Transactions>
+</BorlandProject>

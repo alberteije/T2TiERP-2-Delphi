@@ -1,0 +1,186 @@
+{ *******************************************************************************
+Title: T2TiPDV
+Description: Janela Menu Fiscal que deve ser chamada de qualquer lugar da
+aplicação
+
+The MIT License
+
+Copyright: Copyright (C) 2014 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com
+
+@author Albert Eije
+@version 2.0
+******************************************************************************* }
+unit UMenuFiscal;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, UBase,
+  Dialogs, StdCtrls, JvgListBox, JvExControls, JvLabel, pngimage, ExtCtrls,
+  JvExStdCtrls, JvButton, JvCtrls, Buttons, JvExButtons, JvBitBtn, jpeg, Tipos;
+
+type
+  TFMenuFiscal = class(TFBase)
+    panelMenuFiscal: TPanel;
+    imagePanelMenuFiscal: TImage;
+    labelMenuFiscal: TJvLabel;
+    listaMenuFiscal: TJvgListBox;
+    Image1: TImage;
+    GroupBox2: TGroupBox;
+    botaoCancela: TJvImgBtn;
+    btnLX: TButton;
+    btnLMFC: TButton;
+    btnLMFS: TButton;
+    btnRegistrosPAF: TButton;
+    btnArqMFD: TButton;
+    btnIdentificacaoPafEcf: TButton;
+    btnVendasPeriodo: TButton;
+    btnIndiceTecnico: TButton;
+    btnParametrosConfig: TButton;
+    Panel1: TPanel;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnLXClick(Sender: TObject);
+    procedure btnLMFCClick(Sender: TObject);
+    procedure btnLMFSClick(Sender: TObject);
+    procedure btnRegistrosPAFClick(Sender: TObject);
+    procedure btnArqMFDClick(Sender: TObject);
+    procedure btnIdentificacaoPafEcfClick(Sender: TObject);
+    procedure btnVendasPeriodoClick(Sender: TObject);
+    procedure btnIndiceTecnicoClick(Sender: TObject);
+    procedure btnParametrosConfigClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FMenuFiscal: TFMenuFiscal;
+  NomeArquivo: String;
+
+implementation
+
+uses UCaixa, ULMF, URegistrosPAF, UVendasPeriodo, UFichaTecnica,
+  UDataModule, PAFUtil;
+{$R *.dfm}
+
+procedure TFMenuFiscal.btnLXClick(Sender: TObject);
+begin
+  if Application.MessageBox('Confirma a emissão da Leitura X?', 'Emissão de Leitura X', Mb_YesNo + Mb_IconQuestion) = IdYes then
+    FDataModule.ACBrECF.PafMF_LX_Impressao;
+end;
+
+procedure TFMenuFiscal.btnLMFCClick(Sender: TObject);
+begin
+  Application.CreateForm(TFLMF, FLMF);
+  FLMF.ShowModal;
+end;
+
+procedure TFMenuFiscal.btnLMFSClick(Sender: TObject);
+begin
+  if Application.MessageBox('Deseja gerar o arquivo MF?', 'Pergunta do Sistema', Mb_YesNo + Mb_IconQuestion) = IdYes then
+  begin
+    try
+      NomeArquivo := ExtractFilePath(Application.ExeName) + 'ArquivoMF';
+      FDataModule.ACBrECF.ArquivoMF_DLL(NomeArquivo);
+      FDataModule.ACBrEAD.AssinarArquivoComEAD(NomeArquivo);
+      Application.MessageBox(PWideChar('Arquivo armazenado em: ' + NomeArquivo), 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    except
+      on E: Exception do
+        Application.MessageBox(PChar(E.Message), 'Erro do Sistema', MB_OK + MB_ICONERROR);
+    end;
+  end;
+end;
+
+procedure TFMenuFiscal.btnArqMFDClick(Sender: TObject);
+begin
+  if FDataModule.ACBrECF.MFD then
+  begin
+    if Application.MessageBox('Deseja gerar o arquivo MFD?', 'Pergunta do Sistema', Mb_YesNo + Mb_IconQuestion) = IdYes then
+    begin
+      try
+        NomeArquivo := ExtractFilePath(Application.ExeName) + 'ArquivoMFD';
+        FDataModule.ACBrECF.ArquivoMFD_DLL(NomeArquivo);
+        FDataModule.ACBrEAD.AssinarArquivoComEAD(NomeArquivo);
+        Application.MessageBox(PWideChar('Arquivo armazenado em: ' + NomeArquivo), 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      except
+        on E: Exception do
+          Application.MessageBox(PChar(E.Message), 'Erro do Sistema', MB_OK + MB_ICONERROR);
+      end;
+    end;
+  end
+  else
+    Application.MessageBox('Função não suportada pelo modelo de ECF utilizado', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+
+procedure TFMenuFiscal.btnIdentificacaoPafEcfClick(Sender: TObject);
+begin
+  if Application.MessageBox('Deseja imprimir o relatório IDENTIFICAÇÃO DO PAF-ECF?', 'Pergunta do Sistema', Mb_YesNo + Mb_IconQuestion) = IdYes then
+    TPAFUtil.IdentificacaoPafEcf;
+end;
+
+procedure TFMenuFiscal.btnVendasPeriodoClick(Sender: TObject);
+begin
+  Application.CreateForm(TFVendasPeriodo, FVendasPeriodo);
+  FVendasPeriodo.ShowModal;
+end;
+
+procedure TFMenuFiscal.btnIndiceTecnicoClick(Sender: TObject);
+begin
+  Application.CreateForm(TFFichaTecnica, FFichaTecnica);
+  FFichaTecnica.ShowModal;
+end;
+
+procedure TFMenuFiscal.btnParametrosConfigClick(Sender: TObject);
+begin
+  if Application.MessageBox('Deseja imprimir o relatório PARÂMETROS DE CONFIGURAÇÃO?', 'Pergunta do Sistema', Mb_YesNo + Mb_IconQuestion) = IdYes then
+    TPAFUtil.ParametrodeConfiguracao;
+end;
+
+procedure TFMenuFiscal.btnRegistrosPAFClick(Sender: TObject);
+begin
+  Application.CreateForm(TFRegistrosPAF, FRegistrosPAF);
+  FRegistrosPAF.ShowModal;
+end;
+
+procedure TFMenuFiscal.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+  FMenuFiscal := Nil;
+end;
+
+procedure TFMenuFiscal.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then
+  begin
+    FCaixa.editCodigo.SetFocus;
+    Close;
+  end;
+end;
+
+end.

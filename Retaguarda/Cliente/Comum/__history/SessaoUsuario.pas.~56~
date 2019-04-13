@@ -1,0 +1,180 @@
+unit SessaoUsuario;
+
+interface
+
+uses Classes, DSHTTP, UsuarioVO, Forms, Windows, IniFiles, SysUtils,
+  Generics.Collections, FuncaoVO, EmpresaVO, DataSnap.DSHTTPClient;
+
+type
+  TSessaoUsuario = class
+  private
+    FHttp: TDSHTTP;
+    FUrl: String;
+    FIdSessao: String;
+    FUsuario: TUsuarioVO;
+    FEmpresa: TEmpresaVO;
+    ListaPermissoes: TObjectList<TFuncaoVO>;
+    FCamadas: Integer;
+
+    class var FInstance: TSessaoUsuario;
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    class function Instance: TSessaoUsuario;
+
+    function AutenticaUsuario(pLogin, pSenha: String): Boolean;
+
+    //Permissões
+    procedure AtualizaPermissoes;
+    function TemAcesso(pFormulario, pNome: String): Boolean;
+    function Autenticado: Boolean;
+
+    property HTTP: TDSHTTP read FHttp;
+    property URL: String read FUrl;
+    property IdSessao: String read FIdSessao;
+    property Usuario: TUsuarioVO read FUsuario;
+    property Empresa: TEmpresaVO read FEmpresa write FEmpresa;
+    property Camadas: Integer read FCamadas write FCamadas;
+  end;
+
+implementation
+
+uses UsuarioController, FuncaoController, EmpresaController, Controller,
+UDataModuleConexao;
+{ TSessaoUsuario }
+
+constructor TSessaoUsuario.Create;
+var
+  Ini: TIniFile;
+  Servidor: String;
+  Porta: Integer;
+begin
+  inherited Create;
+
+  FHttp := TDSHTTP.Create;
+
+  Ini := TIniFile.Create(CaminhoApp + 'Conexao.ini');
+  try
+    with Ini do
+    begin
+      if not SectionExists('ServidorApp') then
+      begin
+        WriteString('ServidorApp','Servidor','localhost');
+        WriteInteger('ServidorApp','Porta',8080);
+      end;
+
+      Servidor := ReadString('ServidorApp','Servidor','localhost');
+      Porta := ReadInteger('ServidorApp','Porta',8080);
+      Camadas := ReadInteger('ServidorApp','Camadas',3);
+    end;
+
+    if Camadas = 2 then
+      Application.CreateForm(TFDataModuleConexao, FDataModuleConexao);
+  finally
+    Ini.Free;
+  end;
+
+  FUrl := 'http://'+Servidor+':'+IntToStr(Porta)+'/datasnap/restT2Ti/TController/ObjetoJson/';
+
+  ListaPermissoes := TObjectList<TFuncaoVO>.Create;
+end;
+
+destructor TSessaoUsuario.Destroy;
+begin
+  FHttp.Free;
+
+  FreeAndNil(FUsuario);
+  FreeAndNil(FEmpresa);
+
+  FreeAndNil(ListaPermissoes);
+  inherited;
+end;
+
+class function TSessaoUsuario.Instance: TSessaoUsuario;
+begin
+  if not Assigned(FInstance) then
+    FInstance := TSessaoUsuario.Create;
+
+  Result := FInstance;
+end;
+
+procedure TSessaoUsuario.AtualizaPermissoes;
+begin
+  ListaPermissoes.Free;
+
+  //se o usuário tem acesso completo, não precisa carregar as funções
+  if Usuario.PapelVO.AcessoCompleto <> 'S' then
+    ListaPermissoes := TFuncaoController.FuncoesUsuario
+  else
+    ListaPermissoes := TObjectList<TFuncaoVO>.Create;
+end;
+
+function TSessaoUsuario.Autenticado: Boolean;
+begin
+  Result := Assigned(FUsuario);
+end;
+
+function TSessaoUsuario.TemAcesso(pFormulario, pNome: String): Boolean;
+var
+  Enumerator: TEnumerator<TFuncaoVO>;
+begin
+  Result := False;
+
+  //se o usuário tiver acesso completo já retorna True
+  if Usuario.PapelVO.AcessoCompleto = 'S' then
+  begin
+    Result := True
+  end
+  else
+  begin
+    Enumerator := ListaPermissoes.GetEnumerator;
+    try
+      //with ListaPermissoes.GetEnumerator do
+      with Enumerator do
+      begin
+        while MoveNext do
+        begin
+          if (Current.Formulario = pFormulario) and (Current.Nome = pNome) then
+          begin
+            Result := (Current.Habilitado = 'S');
+            Break;
+          end;
+        end;
+      end;
+    finally
+      Enumerator.Free;
+    end;
+  end;
+end;
+
+function TSessaoUsuario.AutenticaUsuario(pLogin, pSenha: String): Boolean;
+var
+  SenhaCript: String;
+begin
+  FIdSessao := CriaGuidStr;
+  FIdSessao := MD5String(FIdSessao);
+  try
+    //Senha é criptografada com a senha digitada + login
+    SenhaCript := TUsuarioController.CriptografarLoginSenha(pLogin,pSenha);
+
+    FHttp.SetBasicAuthentication(pLogin+'|'+FIdSessao, SenhaCript);
+
+    TController.ExecutarMetodo('UsuarioController.TUsuarioController', 'Usuario', [pLogin, pSenha], 'GET', 'Objeto');
+    FUsuario := TUsuarioVO(TController.ObjetoConsultado);
+    if Assigned(FUsuario) then
+      FUsuario.Senha := pSenha;
+
+    Result := Assigned(FUsuario);
+  except
+    Application.MessageBox('Erro ao autenticar usuário.', 'Erro de Login', MB_OK+MB_ICONERROR);
+    raise;
+  end;
+
+  if Result then
+  begin
+    AtualizaPermissoes;
+  end;
+end;
+
+end.

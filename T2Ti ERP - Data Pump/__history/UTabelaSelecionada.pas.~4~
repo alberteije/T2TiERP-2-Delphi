@@ -1,0 +1,37 @@
+unit UTabelaSelecionada;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ActnList, ToolWin, ActnMan, ActnCtrls, ActnMenus,
+  PlatformDefaultStyleActnCtrls, Grids, DBGrids;
+
+type
+  TFTabelaSelecionada = class(TForm)
+    DBGridTabelaSelecionada: TDBGrid;
+    ActionManager1: TActionManager;
+    ActionMainMenuBar1: TActionMainMenuBar;
+    ActionFechar: TAction;
+    procedure ActionFecharExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FTabelaSelecionada: TFTabelaSelecionada;
+
+implementation
+
+uses UPrincipal;
+
+{$R *.dfm}
+
+procedure TFTabelaSelecionada.ActionFecharExecute(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

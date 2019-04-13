@@ -1,0 +1,29 @@
+program T2TiERPContratos;
+
+uses
+  Forms,
+  UBase in '..\Comum\Tela\UBase.pas' {FBase},
+  UDataModule in '..\Comum\Tela\UDataModule.pas' {FDataModule: TDataModule},
+  ULogin in '..\Comum\Tela\ULogin.pas' {FLogin},
+  UFiltro in '..\Comum\Tela\UFiltro.pas' {FFiltro},
+  UTela in '..\Comum\Tela\UTela.pas' {FTela},
+  UTelaCadastro in '..\Comum\Tela\UTelaCadastro.pas' {FTelaCadastro},
+  UMenu in 'Tela\UMenu.pas' {FMenu},
+  UContratoTipoServico in 'Tela\UContratoTipoServico.pas' {FContratoTipoServico},
+  UTipoContrato in 'Tela\UTipoContrato.pas' {FTipoContrato},
+  UContratoSolicitacaoServico in 'Tela\UContratoSolicitacaoServico.pas' {FContratoSolicitacaoServico},
+  UContrato in 'Tela\UContrato.pas' {FContrato},
+  ULookup in '..\Comum\Tela\ULookup.pas' {FLookup},
+  UContratoTemplate in 'Tela\UContratoTemplate.pas' {FContratoTemplate},
+  UDocumentoWord in 'Tela\UDocumentoWord.pas' {FDocumentoWord};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.Title := 'T2Ti ERP Gestão de Contratos';
+  Application.CreateForm(TFMenu, FMenu);
+  Application.CreateForm(TFDataModule, FDataModule);
+  Application.Run;
+end.

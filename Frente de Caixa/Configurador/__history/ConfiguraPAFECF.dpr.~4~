@@ -1,0 +1,23 @@
+program ConfiguraPAFECF;
+
+uses
+  Forms,
+  UConfiguracao in 'UConfiguracao.pas' {FConfiguracao},
+  UDataModule in 'UDataModule.pas' {FDataModule: TDataModule},
+  UConfigConexao in 'UConfigConexao.pas' {FConfigConexao},
+  Biblioteca in 'Biblioteca.pas',
+  Constantes in 'Constantes.pas',
+  USplash in 'USplash.pas' {FSplash},
+  ULogin in 'ULogin.pas' {FLogin},
+  UCaixa in 'UCaixa.pas' {FCaixa},
+  UPropriedades in 'UPropriedades.pas' {FPropriedades};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFConfiguracao, FConfiguracao);
+  Application.CreateForm(TFPropriedades, FPropriedades);
+  Application.Run;
+end.

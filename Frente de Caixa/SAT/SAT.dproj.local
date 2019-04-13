@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/01/12 16:29:49.000.190,=C:\Projetos\T2Ti ERP 2.0\Delphi\Frente de Caixa\SAT\Tela\UStatusOperacional.pas</Transaction>
+    <Transaction>2016/01/12 16:42:33.000.143,C:\Projetos\T2Ti ERP 2.0\Delphi\Frente de Caixa\SAT\Tela\UCarregaDAV.pas=</Transaction>
+    <Transaction>2016/01/12 17:46:02.000.225,C:\Projetos\T2Ti ERP 2.0\Delphi\Frente de Caixa\SAT\Tela\UListaNFCe.pas=</Transaction>
+    <Transaction>2016/01/12 17:47:09.000.581,=C:\Projetos\T2Ti ERP 2.0\Delphi\Frente de Caixa\SAT\Tela\UListaVendas.pas</Transaction>
+  </Transactions>
+</BorlandProject>

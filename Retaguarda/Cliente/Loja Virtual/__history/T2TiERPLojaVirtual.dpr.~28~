@@ -1,0 +1,113 @@
+{$define UNIGUI_VCL} // Comment out this line to turn this project into an ISAPI module'
+
+{$ifndef UNIGUI_VCL}
+library
+{$else}
+program
+{$endif}
+  T2TiERPLojaVirtual;
+
+uses
+  uniGUIISAPI,
+  Forms,
+  ServerModule in 'ServerModule.pas' {UniServerModule: TUniGUIServerModule},
+  MainModule in 'MainModule.pas' {UniMainModule: TUniGUIMainModule},
+  Main in 'Main.pas' {MainForm: TUniForm},
+  umain in 'units\umain.pas' {FrameMain: TUniFrame},
+  ShowSource in 'ShowSource.pas' {SourceForm: TUniForm},
+  HTML5CanvasCanvas in 'units\HTML5CanvasCanvas.pas' {UniHTML5CanvasCanvas: TUniFrame},
+  DatabaseDelayedSearch in 'units\DatabaseDelayedSearch.pas' {UniDatabaseDelayedSearch: TUniFrame},
+  FormControlsEditTypes in 'units\FormControlsEditTypes.pas' {UniFormControlsEditTypes: TUniFrame},
+  MessageBoxesDialogs in 'units\MessageBoxesDialogs.pas' {UniMessageBoxesDialogs: TUniFrame},
+  MessageBoxesAnonymousCallBack in 'units\MessageBoxesAnonymousCallBack.pas' {UniMessageBoxesAnonymousCallBack: TUniFrame},
+  FormsDynamicForm in 'units\FormsDynamicForm.pas' {UniFormsDynamicForm: TUniFrame},
+  FormsFormAnonymousCallBack in 'units\FormsFormAnonymousCallBack.pas' {UniFormsFormAnonymousCallBack: TUniFrame},
+  CallBackFormUnit in 'units\FormsFormCallBack\CallBackFormUnit.pas' {UniCallBackFormUnit: TUniForm},
+  FormsFormCallBack in 'units\FormsFormCallBack.pas' {UniFormsFormCallBack: TUniFrame},
+  FormsFormNavigation in 'units\FormsFormNavigation.pas' {UniFormsFormNavigation: TUniFrame},
+  NavigationUnit1 in 'units\FormsFormNavigation\NavigationUnit1.pas' {UniNavigationUnit1Form: TUniForm},
+  NavigationUnit2 in 'units\FormsFormNavigation\NavigationUnit2.pas' {UniNavigationUnit2Form: TUniForm},
+  NavigationUnit3 in 'units\FormsFormNavigation\NavigationUnit3.pas' {UniNavigationUnit3Form: TUniForm},
+  URLFrameSimpleWebBrowser in 'units\URLFrameSimpleWebBrowser.pas' {UniURLFrameSimpleWebBrowser: TUniFrame},
+  URLFrameURLHTMLFrame in 'units\URLFrameURLHTMLFrame.pas' {UniURLFrameURLHTMLFrame: TUniFrame},
+  MaskUniMask in 'units\MaskUniMask.pas' {UniMaskUniMask: TUniFrame},
+  MaskClientMask in 'units\MaskClientMask.pas' {UniMaskClientMask: TUniFrame},
+  MaskMaskData in 'units\MaskMaskData.pas' {UniMaskMaskData: TUniFrame},
+  FormsSubmitCancel in 'units\FormsSubmitCancel.pas' {UniFormsSubmitCancel: TUniFrame},
+  SubmitCancelUnit in 'units\FormsSubmitCancel\SubmitCancelUnit.pas' {UniForm1: TUniForm},
+  MenuPopUpMenu in 'units\MenuPopUpMenu.pas' {UniMenuPopUpMenu: TUniFrame},
+  FormsMonitoredKey in 'units\FormsMonitoredKey.pas' {UniFormsMonitoredKey: TUniFrame},
+  MonitoredKeyUnit in 'units\FormsMonitoredKey\MonitoredKeyUnit.pas' {UniForm2: TUniForm},
+  JQuerySampleBasicJQuery in 'units\JQuerySampleBasicJQuery.pas' {UniJQuerySampleBasicJQuery: TUniFrame},
+  EventModuleUnit in 'units\MiscellaneousCalendarPanel\EventModuleUnit.pas' {EventEditForm: TUniForm},
+  HTML5CanvasPaint in 'units\HTML5CanvasPaint.pas' {UniHTML5CanvasPaint: TUniFrame},
+  PaintSaveUnit in 'units\HTML5CanvasPaint\PaintSaveUnit.pas' {UniForm3: TUniForm},
+  DynamicUnit in 'units\FormsDynamicForm\DynamicUnit.pas' {UniForm4: TUniForm},
+  FormsFormTypes in 'units\FormsFormTypes.pas' {UniFormsFormTypes: TUniFrame},
+  DialogFormUnit in 'units\FormsFormTypes\DialogFormUnit.pas' {DialogForm: TUniForm},
+  NoneBorderFormUnit in 'units\FormsFormTypes\NoneBorderFormUnit.pas' {NoneBorderForm: TUniForm},
+  SingleBorderFormUnit in 'units\FormsFormTypes\SingleBorderFormUnit.pas' {SingleBorderForm: TUniForm},
+  SizeAbleFormUnit in 'units\FormsFormTypes\SizeAbleFormUnit.pas' {SizeableForm: TUniForm},
+  AllBorderIconOpenUnit in 'units\FormsFormTypes\AllBorderIconOpenUnit.pas' {AllBorderIconOpenForm: TUniForm},
+  OnlyCloseIconUnit in 'units\FormsFormTypes\OnlyCloseIconUnit.pas' {OnlyCloseIconForm: TUniForm},
+  FormShowNormalUnit in 'units\FormsFormTypes\FormShowNormalUnit.pas' {FormShowNormal: TUniForm},
+  FormShowModalUnit in 'units\FormsFormTypes\FormShowModalUnit.pas' {FormShowModal: TUniForm},
+  FormAlignUnit in 'units\FormControlsAlignAnchor\FormAlignUnit.pas' {FormAlign: TUniForm},
+  FormAnchorUnit in 'units\FormControlsAlignAnchor\FormAnchorUnit.pas' {FormAnchor: TUniForm},
+  MenuMainMenu in 'units\MenuMainMenu.pas' {UniMenuMainMenu: TUniFrame},
+  MainMenuUnit in 'units\MenuMainMenu\MainMenuUnit.pas' {MainMenuForm: TUniForm},
+  FrameMenu in 'units\MenuMainMenu\FrameMenu.pas' {UniMenuFrame: TUniFrame},
+  UnitFitForm in 'units\FormWithParentFitFormWithParent\UnitFitForm.pas' {UniFitForm: TUniForm},
+  UnitFrame in 'units\FormWithParentPanelFrameFormWithParent\UnitFrame.pas' {UniFrameForm: TUniForm},
+  UnitFrameContainer in 'units\FormWithParentPanelFrameFormWithParent\UnitFrameContainer.pas' {UniFrame3: TUniFrame},
+  UnitPer1 in 'units\FormWithParentPercentageFormWithParent\UnitPer1.pas' {UniPerForm1: TUniForm},
+  UnitPer2 in 'units\FormWithParentPercentageFormWithParent\UnitPer2.pas' {UniPerForm2: TUniForm},
+  UnitPer3 in 'units\FormWithParentPercentageFormWithParent\UnitPer3.pas' {UniPerForm3: TUniForm},
+  UnitPer4 in 'units\FormWithParentPercentageFormWithParent\UnitPer4.pas' {UniPerForm4: TUniForm},
+  UnitPer5 in 'units\FormWithParentPercentageFormWithParent\UnitPer5.pas' {UniPerForm5: TUniForm},
+  UnitBorder1 in 'units\FormWithParentBorderFormWithParent\UnitBorder1.pas' {UnitBorder1Form: TUniForm},
+  UnitBorder2 in 'units\FormWithParentBorderFormWithParent\UnitBorder2.pas' {UnitBorder2Form: TUniForm},
+  UnitBorder3 in 'units\FormWithParentBorderFormWithParent\UnitBorder3.pas' {UnitBorder3Form: TUniForm},
+  UnitBorder4 in 'units\FormWithParentBorderFormWithParent\UnitBorder4.pas' {UnitBorder4Form: TUniForm},
+  UnitBorder5 in 'units\FormWithParentBorderFormWithParent\UnitBorder5.pas' {UnitBorder5Form: TUniForm},
+  UnitFormWithParentFrame in 'units\FormWithParentFormInFrame\UnitFormWithParentFrame.pas' {UniFormFrame: TUniForm},
+  pdfform in 'units\MiscellaneousPDFViewer\pdfform.pas' {UniPDFForm: TUniForm},
+  HTTPCallbackNewBrowserWindow in 'units\HTTPCallbackNewBrowserWindow.pas' {UniHTTPCallbackNewBrowserWindow: TUniFrame},
+  HTTPCallbackHTMLFrame2 in 'units\HTTPCallbackHTMLFrame2.pas' {UniHTTPCallbackHTMLFrame2: TUniFrame},
+  HTTPCallbackHTMLFrame1 in 'units\HTTPCallbackHTMLFrame1.pas' {UniHTTPCallbackHTMLFrame1: TUniFrame},
+  HTMLFrameTwoUnit in 'units\HTTPCallbackHTMLFrame1\HTMLFrameTwoUnit.pas' {UniHTMLFrameTwoForm: TUniForm},
+  HTTPCallbackUrlFrameAutoTarget in 'units\HTTPCallbackUrlFrameAutoTarget.pas' {UniHTTPCallbackUrlFrameAutoTarget: TUniFrame},
+  AutoTargetUnit in 'units\HTTPCallbackUrlFrameAutoTarget\AutoTargetUnit.pas' {AutoTargetForm: TUniForm},
+  AnonymousCallBackUnit in 'units\FormsFormAnonymousCallBack\AnonymousCallBackUnit.pas' {UniAnonymousCallBackForm: TUniForm},
+  ComboTriggerUnit in 'units\FormControlsComboBoxTrigger\ComboTriggerUnit.pas' {ComboTrigger: TUniForm},
+  CompraCarrinho in 'units\CompraCarrinho.pas' {UniCompraCarrinho: TUniFrame};
+
+{$R *.res}
+
+{$ifndef UNIGUI_VCL}
+exports
+  GetExtensionVersion,
+  HttpExtensionProc,
+  TerminateExtension;
+{$endif}
+
+begin
+{$ifdef UNIGUI_VCL}
+  ReportMemoryLeaksOnShutdown := True;
+  Application.Initialize;
+  TUniServerModule.Create(Application);
+  Application.Run;
+{$endif}
+end.
+
+
+/// EXERCICIO
+///  Implemente o cadastro do cliente
+
+
+/// EXERCICIO
+///  Implemente a integração com o PagSeguro
+
+/// EXERCICIO
+///  Migre a infra da NF-e para o servidor e implemente a emissão
+///  da nota de forma automática

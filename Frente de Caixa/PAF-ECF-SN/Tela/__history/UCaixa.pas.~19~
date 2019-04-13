@@ -1,0 +1,3014 @@
+{ *******************************************************************************
+Title: T2TiPDV
+Description: Tela principal do PAF-ECF - Caixa.
+
+The MIT License
+
+Copyright: Copyright (C) 2014 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com
+
+@author Albert Eije
+@version 2.0
+******************************************************************************* }
+unit UCaixa;
+
+interface
+
+uses
+  Windows, Dialogs, pngimage, ExtCtrls, Classes, Messages, SysUtils, Variants,
+  Generics.Collections, Graphics, Controls, Forms, jpeg, StdCtrls, Buttons,
+  JvLabel, JvValidateEdit, JvgListBox, JvListBox, JvBaseDlg, JvCalc, JvExExtCtrls,
+  JvExtComponent, JvClock, JvExStdCtrls, JvEdit, JvExControls, ACBrBase, ACBrECF,
+  TypInfo, Constantes, ACBrBAL, ACBrDevice, ACBrInStore, JvAnimatedImage, JvGIFCtrl,
+  Mask, jvExMask, JvToolEdit, JvBaseEdits, ACBrLCB, inifiles, IndyPeerImpl,
+  AppEvnts, ACBrTEFDClass, Controller,UBase, Tipos, Biblioteca, DateUtils;
+
+type
+  TFCaixa = class(TFBase)
+    panelPrincipal: TPanel;
+    imagePrincipal: TImage;
+    labelDescricaoProduto: TJvLabel;
+    labelTotalGeral: TJvLabel;
+    labelMensagens: TJvLabel;
+    imageProduto: TImage;
+    Bobina: TJvListBox;
+    panelMenuPrincipal: TPanel;
+    imagePanelMenuPrincipal: TImage;
+    labelMenuPrincipal: TJvLabel;
+    listaMenuPrincipal: TJvgListBox;
+    panelMenuOperacoes: TPanel;
+    imagePanelMenuOperacoes: TImage;
+    labelMenuOperacoes: TJvLabel;
+    listaMenuOperacoes: TJvgListBox;
+    panelSubMenu: TPanel;
+    imagePanelSubMenu: TImage;
+    listaSupervisor: TJvgListBox;
+    listaGerente: TJvgListBox;
+    TimerMarketing: TTimer;
+    panelTitulo: TPanel;
+    panelBotoes: TPanel;
+    panelF1: TPanel;
+    labelF1: TLabel;
+    imageF1: TImage;
+    panelF7: TPanel;
+    labelF7: TLabel;
+    imageF7: TImage;
+    panelF2: TPanel;
+    labelF2: TLabel;
+    imageF2: TImage;
+    panelF3: TPanel;
+    labelF3: TLabel;
+    imageF3: TImage;
+    panelF4: TPanel;
+    labelF4: TLabel;
+    imageF4: TImage;
+    panelF5: TPanel;
+    labelF5: TLabel;
+    imageF5: TImage;
+    panelF6: TPanel;
+    labelF6: TLabel;
+    imageF6: TImage;
+    panelF8: TPanel;
+    labelF8: TLabel;
+    imageF8: TImage;
+    panelF9: TPanel;
+    labelF9: TLabel;
+    imageF9: TImage;
+    panelF10: TPanel;
+    labelF10: TLabel;
+    imageF10: TImage;
+    panelF11: TPanel;
+    labelF11: TLabel;
+    imageF11: TImage;
+    panelF12: TPanel;
+    labelF12: TLabel;
+    imageF12: TImage;
+    Calculadora: TJvCalculator;
+    Relogio: TJvClock;
+    labelOperador: TLabel;
+    labelCaixa: TLabel;
+    LabelDescontoAcrescimo: TLabel;
+    EditCodigo: TEdit;
+    ACBrBAL1: TACBrBAL;
+    ACBrInStore1: TACBrInStore;
+    edtNVenda: TLabel;
+    edtCOO: TLabel;
+    GifAnimadoRede: TJvGIFAnimator;
+    EditQuantidade: TJvCalcEdit;
+    EditUnitario: TJvCalcEdit;
+    EditTotalItem: TJvCalcEdit;
+    EditSubTotal: TJvCalcEdit;
+    ACBrLCB1: TACBrLCB;
+    GifAnimadoLogErro: TJvGIFAnimator;
+    ApplicationEvents1: TApplicationEvents;
+    LabelCliente: TLabel;
+    procedure EntradaDadosNF;
+    procedure InstanciaVendaAtual;
+    procedure DesmembraCodigoDigitado(CodigoDeBarraOuDescricaoOuIdProduto: String);
+    procedure MensagemDeProdutoNaoEncontrado;
+    procedure FechaMenuOperacoes;
+    procedure CarregaPreVenda(Numero: String);
+    procedure CarregaDAV(Numero: String);
+    procedure VerificaEstadoImpressora;
+    procedure VerificaGPAtivo;
+    procedure TrataExcecao(Sender: TObject; E: Exception);
+    procedure ConfiguraACBr;
+    procedure ConfiguraLayout;
+    procedure ExecutaOutrosProcedimentosDeAbertura;
+    procedure CompoeItemParaVenda;
+    procedure ParametrosIniciaisVenda;
+    procedure ConsultaProduto(Codigo: String; Tipo: Integer);
+    procedure ImprimeCabecalhoBobina;
+    procedure ImprimeItemBobina;
+    function VerificaVendaAberta: Boolean;
+    procedure LocalizaProduto;
+    procedure AcionaMenuPrincipal;
+    procedure AcionaMenuOperacoes;
+    procedure AcionaMenuFiscal;
+    procedure IdentificaCliente;
+    procedure IdentificaVendedor;
+    procedure ConfiguraConstantes;
+    procedure ConfiguraResolucao;
+    procedure IniciaMovimento;
+    procedure EncerraMovimento;
+    procedure CancelaCupom;
+    procedure Suprimento;
+    procedure Sangria;
+    procedure DescontoOuAcrescimo;
+    procedure TelaPadrao;
+    procedure IniciaVenda;
+    procedure IniciaEncerramentoVenda;
+    procedure ConcluiEncerramentoVenda;
+    procedure VendeItem;
+    procedure IniciaVendaDeItens;
+    procedure AtualizaTotais;
+    procedure FormCreate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure listaMenuPrincipalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure listaMenuOperacoesKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure listaGerenteKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure listaSupervisorKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure TimerMarketingTimer(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure panelF1MouseLeave(Sender: TObject);
+    procedure panelF1MouseEnter(Sender: TObject);
+    procedure panelF7MouseEnter(Sender: TObject);
+    procedure panelF7MouseLeave(Sender: TObject);
+    procedure panelF2MouseEnter(Sender: TObject);
+    procedure panelF2MouseLeave(Sender: TObject);
+    procedure panelF3MouseEnter(Sender: TObject);
+    procedure panelF3MouseLeave(Sender: TObject);
+    procedure panelF4MouseLeave(Sender: TObject);
+    procedure panelF5MouseEnter(Sender: TObject);
+    procedure panelF5MouseLeave(Sender: TObject);
+    procedure panelF6MouseEnter(Sender: TObject);
+    procedure panelF6MouseLeave(Sender: TObject);
+    procedure panelF8MouseEnter(Sender: TObject);
+    procedure panelF8MouseLeave(Sender: TObject);
+    procedure panelF9MouseEnter(Sender: TObject);
+    procedure panelF9MouseLeave(Sender: TObject);
+    procedure panelF10MouseEnter(Sender: TObject);
+    procedure panelF10MouseLeave(Sender: TObject);
+    procedure panelF11MouseEnter(Sender: TObject);
+    procedure panelF11MouseLeave(Sender: TObject);
+    procedure panelF12MouseEnter(Sender: TObject);
+    procedure panelF12MouseLeave(Sender: TObject);
+    procedure panelF4MouseEnter(Sender: TObject);
+    procedure panelF12Click(Sender: TObject);
+    procedure panelF1Click(Sender: TObject);
+    procedure panelF2Click(Sender: TObject);
+    procedure panelF3Click(Sender: TObject);
+    procedure panelF4Click(Sender: TObject);
+    procedure panelF5Click(Sender: TObject);
+    procedure panelF6Click(Sender: TObject);
+    procedure panelF7Click(Sender: TObject);
+    procedure panelF8Click(Sender: TObject);
+    procedure panelF9Click(Sender: TObject);
+    procedure panelF10Click(Sender: TObject);
+    procedure panelF11Click(Sender: TObject);
+    procedure EditCodigoKeyPress(Sender: TObject; var Key: Char);
+    procedure EditQuantidadeKeyPress(Sender: TObject; var Key: Char);
+    procedure EditQuantidadeExit(Sender: TObject);
+    procedure DesabilitaControlesVenda;
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure EditCodigoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure ConectaComBalanca;
+    procedure ACBrBAL1LePeso(Peso: Double; Resposta: AnsiString);
+    procedure FormShow(Sender: TObject);
+    procedure ConfiguraCores;
+    procedure ACBrLCB1LeCodigo(Sender: TObject);
+    procedure ConectaComLeitorSerial;
+    procedure GifAnimadoLogErroClick(Sender: TObject);
+    procedure ApplicationEvents1Message(var Msg: tagMSG; var Handled: Boolean);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    BalancaLePeso: Boolean;
+    procedure ShowHint(Sender: TObject);
+    procedure CancelaItem; overload;
+    procedure CancelaItem(cancela: Integer); overload;
+    { Private declarations }
+  public
+    procedure MenuSetaAcima(Indice: Integer; Lista: TJvgListBox);
+    procedure MenuSetaAbaixo(Indice: Integer; Lista: TJvgListBox);
+    procedure HabilitaControlesVenda;
+    { Public declarations }
+  end;
+
+var
+  FCaixa: TFCaixa;
+  ItemCupom: Integer;
+  SubTotal, TotalGeral, Desconto, Acrescimo: Extended;
+  Filtro, MD5: String;
+  MensagemPersistente: String;
+
+implementation
+
+uses
+  UImportaNumero, UIdentificaCliente, UValorReal,
+  UDescontoAcrescimo, UIniciaMovimento, UDataModule, UDataModuleConexao,
+  UEfetuaPagamento, UEncerraMovimento, UImportaCliente, UImportaProduto,
+  UMovimentoAberto, ULoginGerenteSupervisor,
+  UCargaPDV, ULocaliza, USplash, UCheques, ULogImportacao,
+  UNotaFiscal, UPenDrive, UMenuFiscal, UCarregaDav,
+
+  PAFUtil, ECFUtil,
+
+  EcfVendaDetalheVO, EcfProdutoVO, EcfPosicaoComponentesVO, EcfSangriaVO,
+  EcfFuncionarioVO, EcfSuprimentoVO, PreVendaDetalheVO, DAVDetalheVO,
+  EcfVendaCabecalhoVO, EcfAliquotasVO, PreVendaCabecalhoVO, DavCabecalhoVO;
+
+var
+  PreVenda: TPreVendaCabecalhoVO;
+  DavCabecalho: TDavCabecalhoVO;
+  VendaDetalhe: TEcfVendaDetalheVO;
+
+{$R *.dfm}
+
+{$REGION 'Procedimentos principais e de infra'}
+procedure TFCaixa.FormActivate(Sender: TObject);
+begin
+  FCaixa.Repaint;
+end;
+
+procedure TFCaixa.FormShow(Sender: TObject);
+begin
+  BalancaLePeso := False;
+end;
+
+procedure TFCaixa.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Sessao.Free;
+end;
+
+procedure TFCaixa.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  if (Sessao.StatusCaixa = scAberto) or (Sessao.StatusCaixa = scSomenteConsulta) or (Sessao.StatusCaixa = scFechado) then
+  begin
+    if Application.MessageBox('Tem Certeza Que Deseja Sair do Sistema?', 'Sair do Sistema', Mb_YesNo + Mb_IconQuestion) = IdYes then
+    begin
+      SetTaskBar(true);
+      FDataModule.ACBrECF.Desativar;
+      Application.Terminate;
+    end
+    else
+      CanClose := False;
+  end
+  else
+  begin
+    Application.MessageBox('Existe uma venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    CanClose := False;
+  end;
+end;
+
+procedure TFCaixa.FormCreate(Sender: TObject);
+begin
+  ConfiguraAmbiente;
+
+  Application.CreateForm(TFSplash, FSplash);
+  FSplash.Show;
+  FSplash.BringToFront;
+
+  Application.CreateForm(TFDataModule, FDataModule);
+  Application.CreateForm(TFDataModuleConexao, FDataModuleConexao);
+  Application.OnException := TrataExcecao;
+
+  DesabilitaControlesVenda;
+
+  Sessao.PopulaObjetosPrincipais;
+  Sessao.MenuAberto := snNao;
+  Sessao.StatusCaixa := scFechado;
+  Application.OnHint := ShowHint;
+
+  ConfiguraConstantes;
+  ConfiguraLayout;
+  ConfiguraResolucao;
+  ConfiguraCores;
+
+  try
+    try
+      ConfiguraACBr;
+    except
+    end;
+  finally
+    Application.ProcessMessages;
+    FreeAndNil(FSplash);
+    ExecutaOutrosProcedimentosDeAbertura;
+  end;
+end;
+
+procedure TFCaixa.ExecutaOutrosProcedimentosDeAbertura;
+begin
+  try
+    VerificaEstadoImpressora;
+    VerificaGPAtivo;
+    Application.ProcessMessages;
+  except
+  end;
+
+  try
+    MD5 := 'MD-5:' + TPAFUtil.GeraMD5;
+  except
+    Application.MessageBox('ECF não autorizado, faltam arquivos de sistema (MD5) - aplicação aberta apenas para consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Sessao.StatusCaixa := scSomenteConsulta;
+    labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+    MensagemPersistente := labelMensagens.Caption;
+  end;
+
+  TelaPadrao;
+  Application.ProcessMessages;
+
+  if Assigned(Sessao.Movimento) then
+  begin
+    Application.CreateForm(TFMovimentoAberto, FMovimentoAberto);
+    FMovimentoAberto.ShowModal;
+  end;
+
+  // só continua o procedimento caso o usuário não cancele a tela FMovimentoAberto
+  if Sessao.StatusCaixa <> scUsuarioCancelouTelaMovimento then
+  begin
+    HabilitaControlesVenda;
+    try
+      if not TPAFUtil.ECFAutorizado then
+      begin
+        Application.MessageBox('ECF não autorizado - aplicação aberta apenas para consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+        Sessao.StatusCaixa := scSomenteConsulta;
+        labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+        MensagemPersistente := labelMensagens.Caption;
+      end;
+
+      if not VerificaVendaAberta then
+      begin
+        if not TPAFUtil.ConfereGT then
+        begin
+          Application.MessageBox('Grande total inválido - entre em contato com a Software House.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+          Sessao.StatusCaixa := scSomenteConsulta;
+          labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+          MensagemPersistente := labelMensagens.Caption;
+        end;
+      end;
+    except
+      labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+      MensagemPersistente := labelMensagens.Caption;
+    end;
+  end;
+
+  if Sessao.Configuracao.EcfConfiguracaoBalancaVO.Modelo > 0 then
+    try
+      ConectaComBalanca;
+    except
+      Application.MessageBox('Balança não conectada ou desligada!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end;
+
+  if Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.Usa = 'S' then
+    try
+      ConectaComLeitorSerial;
+    except
+      Application.MessageBox('Leitor de Código de Barras Serial não conectado ou está desligado!' + #13 + 'Verifique os cabos e reveja as configurações do dispositivo!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end;
+
+  if (Sessao.Configuracao.UsaTecladoReduzido = 'S') then
+  begin
+    labelF6.Caption := 'F6 - Localizar';
+    panelF1.Visible := False;
+    panelF11.Visible := False;
+  end;
+
+  try
+    if Date <> EncodeDate(YearOf(FDataModule.ACBrECF.DataHora), MonthOf(FDataModule.ACBrECF.DataHora), DayOf(FDataModule.ACBrECF.DataHora)) then
+    begin
+      Application.MessageBox('Data do ECF diferente da data do computador - aplicação aberta apenas para consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      Sessao.StatusCaixa := scSomenteConsulta;
+      labelMensagens.Caption := 'Data do ECF diferente da data do computador. Terminal em Estado Somente Consulta';
+      MensagemPersistente := labelMensagens.Caption;
+    end;
+  except
+  end;
+
+  if Sessao.Configuracao.EcfImpressoraVO.Serie <> FDataModule.ACBrECF.NumSerie then
+  begin
+    Application.MessageBox('Número de Série do ECF diferente do cadastrado no computador - aplicação aberta apenas para consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Sessao.StatusCaixa := scSomenteConsulta;
+    labelMensagens.Caption := 'Número de Série do ECF diferente do cadastrado na base. Terminal em Estado Somente Consulta';
+    MensagemPersistente := labelMensagens.Caption;
+  end;
+end;
+
+procedure TFCaixa.ConfiguraLayout;
+begin
+  panelTitulo.Caption := Sessao.Configuracao.TituloTelaCaixa + '   Build : ' + VersaoExe(Application.ExeName, 'V');
+
+  if FileExists(Sessao.Configuracao.CaminhoImagensLayout + Sessao.Configuracao.EcfResolucaoVO.ImagemTela) then
+    imagePrincipal.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensLayout + Sessao.Configuracao.EcfResolucaoVO.ImagemTela)
+  else
+    Sessao.Configuracao.CaminhoImagensLayout := 'Imagens\imgLayout\';
+
+  imagePrincipal.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensLayout + Sessao.Configuracao.EcfResolucaoVO.ImagemTela);
+  imagePanelMenuPrincipal.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensLayout + Sessao.Configuracao.EcfResolucaoVO.ImagemMenu);
+  imagePanelMenuOperacoes.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensLayout + Sessao.Configuracao.EcfResolucaoVO.ImagemMenu);
+  imagePanelSubMenu.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensLayout + Sessao.Configuracao.EcfResolucaoVO.ImagemSubMenu);
+end;
+
+procedure TFCaixa.VerificaGPAtivo;
+begin
+  Application.CreateForm(TFEfetuaPagamento, FEfetuaPagamento);
+  try
+    FEfetuaPagamento.ACBrTEFD.Inicializar(TACBrTEFDTipo(1));
+  except
+  end;
+  FEfetuaPagamento.Free;
+end;
+
+procedure TFCaixa.VerificaEstadoImpressora;
+var
+  Estado: String;
+begin
+  Estado := Sessao.Estados[FDataModule.ACBrECF.Estado];
+  if (Estado = 'Não Inicializada') then
+  begin
+    Application.MessageBox('Estado da impressora fiscal: Não Inicializada. Aplicação será aberta para somente consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Sessao.StatusCaixa := scSomenteConsulta;
+  end;
+  if (Estado = 'Desconhecido') then
+  begin
+    Application.MessageBox('Estado da impressora fiscal: Desconhecido. Aplicação será aberta para somente consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Sessao.StatusCaixa := scSomenteConsulta;
+  end;
+  if (Estado = 'Venda') or (Estado = 'Pagamento') then
+  begin
+    TController.ExecutarMetodo('VendaController.TVendaController', 'ExisteVendaAberta', [], 'GET', 'Boolean');
+    if not TController.RetornoBoolean then
+    begin
+      // se por um acaso ocorrer de existir um cupom aberto no ecf e nenhuma venda com status 'A' no BD
+      Application.MessageBox('Existe um cupom aberto inconsistente. Cupom fiscal será cancelado.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      TECFUtil.CancelaCupom;
+    end;
+  end;
+  if Estado = 'Requer X' then
+  begin
+    if Application.MessageBox('É necessário emitir uma Leitura X. Deseja fazer isso agora?', 'Leitura X', Mb_YesNo + Mb_IconQuestion) = IdYes then
+      TECFUtil.LeituraX;
+  end;
+  if Estado = 'Requer Z' then
+  begin
+    if Application.MessageBox('É necessário emitir uma Redução Z. Deseja fazer isso agora?', 'Leitura Z', Mb_YesNo + Mb_IconQuestion) = IdYes then
+      TECFUtil.ReducaoZ;
+  end;
+end;
+
+Procedure TFCaixa.TrataExcecao(Sender: TObject; E: Exception);
+begin
+  Application.MessageBox(PChar(E.Message), 'Erro do Sistema', MB_OK + MB_ICONERROR);
+  if UEfetuaPagamento.TransacaoComTef then
+  begin
+    FEfetuaPagamento.ACBrTEFD.CancelarTransacoesPendentes;
+    FEfetuaPagamento.FechaVendaComProblemas;
+    UEfetuaPagamento.PodeFechar := true;
+    FEfetuaPagamento.Close;
+    if not FDataModule.ACBrECF.EmLinha(0) then
+      Sessao.StatusCaixa := scSomenteConsulta
+    else
+    begin
+      try
+        TECFUtil.CancelaCupom;
+      except
+      end;
+      Sessao.VendaAtual.Ccf := StrToIntDef(FDataModule.ACBrECF.NumCCF, 0);
+      Sessao.VendaAtual.Coo := StrToInt(FDataModule.ACBrECF.NumCOO);
+      Sessao.VendaAtual.ValorCancelado := Sessao.VendaAtual.ValorVenda;
+      Sessao.VendaAtual.StatusVenda := 'C';
+      Sessao.VendaAtual.CupomCancelado := 'S';
+      Sessao.VendaAtual.ValorFinal := 0;
+
+      TController.ExecutarMetodo('VendaController.TVendaController', 'CancelaVenda', [Sessao.VendaAtual], 'POST', 'Boolean');
+      ExecutarIntegracao('EXPORTA_VENDA');
+      Sessao.StatusCaixa := scAberto;
+    end;
+    TelaPadrao;
+    Application.MessageBox('ECF com problemas ou desligado. Venda cancelada.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  end;
+end;
+
+procedure TFCaixa.ConfiguraACBr;
+begin
+  FDataModule.ACBrECF.Modelo := TACBrECFModelo(GetEnumValue(TypeInfo(TACBrECFModelo), Sessao.Configuracao.EcfImpressoraVO.ModeloAcbr));
+  FDataModule.ACBrECF.Porta := Sessao.Configuracao.PortaECF;
+  FDataModule.ACBrECF.TimeOut := Sessao.Configuracao.TimeOutECF;
+  FDataModule.ACBrECF.IntervaloAposComando := Sessao.Configuracao.IntervaloECF;
+  FDataModule.ACBrECF.Device.Baud := Sessao.Configuracao.BitsPorSegundo;
+  try
+    FSplash.lbMensagem.Caption := 'Conectando ao ECF...';
+    FSplash.lbMensagem.Refresh;
+    FDataModule.ACBrECF.Ativar;
+    FSplash.lbMensagem.Caption := 'ECF conectado!';
+    FSplash.lbMensagem.Refresh;
+    FSplash.imgECF.Visible := true;
+    FSplash.imgTEF.Visible := true;
+  except
+    FSplash.lbMensagem.Caption := 'Falha ao tentar conectar ECF!';
+    FSplash.lbMensagem.Refresh;
+    Application.MessageBox('ECF com problemas ou desligado. Aplicação será aberta para somente consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    FCaixa.Show;
+    DesabilitaControlesVenda;
+
+    Sessao.StatusCaixa := scSomenteConsulta;
+    TelaPadrao;
+  end;
+
+  FDataModule.ACBrECF.CarregaAliquotas;
+  if FDataModule.ACBrECF.Aliquotas.Count <= 0 then
+  begin
+    Application.MessageBox('ECF sem alíquotas cadastradas. Aplicação será aberta para somente consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Sessao.StatusCaixa := scSomenteConsulta;
+  end;
+
+  FDataModule.ACBrECF.CarregaFormasPagamento;
+
+  if FDataModule.ACBrECF.FormasPagamento.Count <= 0 then
+  begin
+    Application.MessageBox('ECF sem formas de pagamento cadastradas. Aplicação será aberta para somente consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Sessao.StatusCaixa := scSomenteConsulta;
+  end;
+end;
+
+procedure TFCaixa.ConfiguraConstantes;
+begin
+  Constantes.TConstantes.DECIMAIS_QUANTIDADE := Sessao.Configuracao.DecimaisQuantidade;
+  Constantes.TConstantes.DECIMAIS_VALOR := Sessao.Configuracao.DecimaisValor;
+end;
+
+procedure TFCaixa.ConfiguraCores;
+begin
+  listaMenuPrincipal.HotTrackColor := StringToColor(Sessao.Configuracao.EcfResolucaoVO.HotTrackColor);
+  listaMenuPrincipal.ItemStyle.Font.Name := Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontName;
+  listaMenuPrincipal.ItemStyle.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontColor);
+  listaMenuPrincipal.ItemSelStyle.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.ItemSelStyleColor);
+
+  listaMenuOperacoes.HotTrackColor := StringToColor(Sessao.Configuracao.EcfResolucaoVO.HotTrackColor);
+  listaMenuOperacoes.ItemStyle.Font.Name := Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontName;
+  listaMenuOperacoes.ItemStyle.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontColor);
+  listaMenuOperacoes.ItemSelStyle.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.ItemSelStyleColor);
+
+  listaGerente.HotTrackColor := StringToColor(Sessao.Configuracao.EcfResolucaoVO.HotTrackColor);
+  listaGerente.ItemStyle.Font.Name := Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontName;
+  listaGerente.ItemStyle.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontColor);
+  listaGerente.ItemSelStyle.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.ItemSelStyleColor);
+
+  listaSupervisor.HotTrackColor := StringToColor(Sessao.Configuracao.EcfResolucaoVO.HotTrackColor);
+  listaSupervisor.ItemStyle.Font.Name := Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontName;
+  listaSupervisor.ItemStyle.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontColor);
+  listaSupervisor.ItemSelStyle.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.ItemSelStyleColor);
+
+  if trim(Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontStyle) = '' then
+  begin
+    listaMenuPrincipal.ItemStyle.Font.Style := [];
+    listaMenuOperacoes.ItemStyle.Font.Style := [];
+    listaGerente.ItemStyle.Font.Style := [];
+    listaSupervisor.ItemStyle.Font.Style := [];
+  end;
+  if trim(Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontStyle) = 'NEGRITO' then
+  begin
+    listaMenuPrincipal.ItemStyle.Font.Style := [fsBold];
+    listaMenuOperacoes.ItemStyle.Font.Style := [fsBold];
+    listaGerente.ItemStyle.Font.Style := [fsBold];
+    listaSupervisor.ItemStyle.Font.Style := [fsBold];
+  end;
+  if trim(Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontStyle) = 'ITALICO' then
+  begin
+    listaMenuPrincipal.ItemStyle.Font.Style := [fsItalic];
+    listaMenuOperacoes.ItemStyle.Font.Style := [fsItalic];
+    listaGerente.ItemStyle.Font.Style := [fsItalic];
+    listaSupervisor.ItemStyle.Font.Style := [fsItalic];
+  end;
+  if trim(Sessao.Configuracao.EcfResolucaoVO.ItemStyleFontStyle) = 'SUBLINHADO' then
+  begin
+    listaMenuPrincipal.ItemStyle.Font.Style := [fsUnderLine];
+    listaMenuOperacoes.ItemStyle.Font.Style := [fsUnderLine];
+    listaGerente.ItemStyle.Font.Style := [fsUnderLine];
+    listaSupervisor.ItemStyle.Font.Style := [fsUnderLine];
+  end;
+
+  if trim(Sessao.Configuracao.EcfResolucaoVO.EditsColor) <> '' then
+  begin
+    EditCodigo.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsColor);
+    EditQuantidade.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsColor);
+    EditUnitario.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsColor);
+    EditTotalItem.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsColor);
+    EditSubTotal.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsColor);
+  end;
+
+  if trim(Sessao.Configuracao.EcfResolucaoVO.EditsFontColor) <> '' then
+  begin
+    EditCodigo.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsFontColor);
+    EditQuantidade.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsFontColor);
+    EditUnitario.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsFontColor);
+    EditTotalItem.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsFontColor);
+    EditSubTotal.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsFontColor);
+  end;
+
+  if trim(Sessao.Configuracao.EcfResolucaoVO.EditsDisabledColor) <> '' then
+  begin
+    EditQuantidade.DisabledColor := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsDisabledColor);
+    EditUnitario.DisabledColor := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsDisabledColor);
+    EditTotalItem.DisabledColor := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsDisabledColor);
+    EditSubTotal.DisabledColor := StringToColor(Sessao.Configuracao.EcfResolucaoVO.EditsDisabledColor);
+  end;
+
+  if trim(Sessao.Configuracao.EcfResolucaoVO.EditsFontName) <> '' then
+  begin
+    EditCodigo.Font.Name := Sessao.Configuracao.EcfResolucaoVO.EditsFontName;
+    EditQuantidade.Font.Name := Sessao.Configuracao.EcfResolucaoVO.EditsFontName;
+    EditUnitario.Font.Name := Sessao.Configuracao.EcfResolucaoVO.EditsFontName;
+    EditTotalItem.Font.Name := Sessao.Configuracao.EcfResolucaoVO.EditsFontName;
+    EditSubTotal.Font.Name := Sessao.Configuracao.EcfResolucaoVO.EditsFontName;
+  end;
+
+  if trim(Sessao.Configuracao.EcfResolucaoVO.EditsFontStyle) = '' then
+  begin
+    EditCodigo.Font.Style := [];
+    EditQuantidade.Font.Style := [];
+    EditUnitario.Font.Style := [];
+    EditTotalItem.Font.Style := [];
+    EditSubTotal.Font.Style := [];
+  end;
+  if Sessao.Configuracao.EcfResolucaoVO.EditsFontStyle = 'NEGRITO' then
+  begin
+    EditCodigo.Font.Style := [fsBold];
+    EditQuantidade.Font.Style := [fsBold];
+    EditUnitario.Font.Style := [fsBold];
+    EditTotalItem.Font.Style := [fsBold];
+    EditSubTotal.Font.Style := [fsBold];
+  end;
+  if Sessao.Configuracao.EcfResolucaoVO.EditsFontStyle = 'ITALICO' then
+  begin
+    EditCodigo.Font.Style := [fsItalic];
+    EditQuantidade.Font.Style := [fsItalic];
+    EditUnitario.Font.Style := [fsItalic];
+    EditTotalItem.Font.Style := [fsItalic];
+    EditSubTotal.Font.Style := [fsItalic];
+  end;
+  if Sessao.Configuracao.EcfResolucaoVO.EditsFontStyle = 'SUBLINHADO' then
+  begin
+    EditCodigo.Font.Style := [fsUnderLine];
+    EditQuantidade.Font.Style := [fsUnderLine];
+    EditUnitario.Font.Style := [fsUnderLine];
+    EditTotalItem.Font.Style := [fsUnderLine];
+    EditSubTotal.Font.Style := [fsUnderLine];
+  end;
+
+  labelTotalGeral.Font.Color := StringToColor(Sessao.Configuracao.EcfResolucaoVO.LabelTotalGeralFontColor);
+end;
+
+procedure TFCaixa.ConfiguraResolucao;
+var
+  i, j: Integer;
+  ListaPosicoes: TObjectList<TEcfPosicaoComponentesVO>;
+  PosicaoComponente: TEcfPosicaoComponentesVO;
+  NomeComponente: String;
+begin
+  ListaPosicoes := Sessao.Configuracao.EcfResolucaoVO.ListaEcfPosicaoComponentesVO;
+
+  for j := 0 to componentcount - 1 do
+  begin
+    NomeComponente := components[j].Name;
+    for i := 0 to ListaPosicoes.Count - 1 do
+    begin
+      PosicaoComponente := ListaPosicoes.Items[i];
+      if PosicaoComponente.Nome = NomeComponente then
+      begin
+        (components[j] as TControl).Height := PosicaoComponente.Altura;
+        (components[j] as TControl).Left := PosicaoComponente.Esquerda;
+        (components[j] as TControl).Top := PosicaoComponente.Topo;
+        (components[j] as TControl).Width := PosicaoComponente.Largura;
+        if PosicaoComponente.TamanhoFonte <> 0 then
+        begin
+          if (components[j] is TEdit) then
+            (components[j] as TEdit).Font.Size := PosicaoComponente.TamanhoFonte;
+          if (components[j] is TJvListBox) then
+            (components[j] as TJvListBox).Font.Size := PosicaoComponente.TamanhoFonte;
+          if (components[j] is TJvLabel) then
+            (components[j] as TJvLabel).Font.Size := PosicaoComponente.TamanhoFonte;
+          if (components[j] is TPanel) then
+            (components[j] as TPanel).Font.Size := PosicaoComponente.TamanhoFonte;
+          if (components[j] is TJvCalcEdit) then
+            (components[j] as TJvCalcEdit).Font.Size := PosicaoComponente.TamanhoFonte;
+        end;
+        if (components[j] is TLabel) then
+          (components[j] as TLabel).Caption := PosicaoComponente.Texto;
+        break;
+      end;
+    end;
+  end;
+  FCaixa.Left := 0;
+  FCaixa.Top := 0;
+  FCaixa.Width := Sessao.Configuracao.EcfResolucaoVO.Largura;
+  FCaixa.Height := Sessao.Configuracao.EcfResolucaoVO.Altura;
+
+  FCaixa.AutoSize := true;
+end;
+
+function TFCaixa.VerificaVendaAberta: Boolean;
+var
+  i: Integer;
+  NovoCupom: Boolean;
+begin
+  NovoCupom := False;
+
+  Filtro := 'STATUS_VENDA = ' + QuotedStr('A');
+  Sessao.VendaAtual := TEcfVendaCabecalhoVO(TController.BuscarObjeto('VendaController.TVendaController', 'ConsultaObjeto', [Filtro], 'GET'));
+  if Assigned(Sessao.VendaAtual) then
+  begin
+
+    if Sessao.Estados[FDataModule.ACBrECF.Estado] = 'Livre' then
+    begin
+      TECFUtil.AbreCupom;
+      NovoCupom := true;
+    end;
+
+    ImprimeCabecalhoBobina;
+    ParametrosIniciaisVenda;
+
+    Sessao.StatusCaixa := scVendaRecuperadaDavPreVenda;
+
+    labelMensagens.Caption := 'Venda recuperada em andamento..';
+
+    for i := 0 to Sessao.VendaAtual.ListaEcfVendaDetalheVO.Count - 1 do
+    begin
+      VendaDetalhe := Sessao.VendaAtual.ListaEcfVendaDetalheVO.Items[i];
+      ConsultaProduto(VendaDetalhe.GTIN, 2);
+      CompoeItemParaVenda;
+      ImprimeItemBobina;
+      SubTotal := SubTotal + VendaDetalhe.ValorTotal;
+      TotalGeral := TotalGeral + VendaDetalhe.ValorTotal;
+      AtualizaTotais;
+      if NovoCupom then
+        TECFUtil.VendeItem(VendaDetalhe);
+    end;
+
+    Bobina.ItemIndex := Bobina.Items.Count - 1;
+    Sessao.StatusCaixa := scVendaEmAndamento;
+    Result := True;
+  end
+  else
+    Result := False;
+end;
+
+procedure TFCaixa.ShowHint(Sender: TObject);
+begin
+  if Application.Hint <> '' then
+    labelMensagens.Caption := Application.Hint
+  else
+    labelMensagens.Caption := MensagemPersistente;
+end;
+
+procedure TFCaixa.TelaPadrao;
+begin
+  if Assigned(Sessao.VendaAtual) then
+    Sessao.LiberaVendaAtual;
+
+  if not Assigned(Sessao.Movimento) then
+  begin
+    labelMensagens.Caption := 'CAIXA FECHADO';
+    IniciaMovimento; // se o caixa estiver fechado abre o iniciaMovimento
+  end
+  else if Sessao.Movimento.StatusMovimento = 'T' then
+    labelMensagens.Caption := 'SAIDA TEMPORÁRIA'
+  else
+    labelMensagens.Caption := 'CAIXA ABERTO';
+
+  if Sessao.StatusCaixa = scVendaEmAndamento then
+    labelMensagens.Caption := 'Venda em andamento...';
+
+  if Sessao.StatusCaixa = scSomenteConsulta then
+    labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+
+  MensagemPersistente := labelMensagens.Caption;
+
+  if Assigned(Sessao.Movimento) then
+  begin
+    LabelCaixa.Caption := 'Terminal: ' + Sessao.Movimento.EcfCaixaVO.Nome;
+    LabelOperador.Caption := 'Operador: ' + Sessao.Movimento.EcfOperadorVO.Login;
+  end;
+
+  EditQuantidade.Text := '1';
+  EditCodigo.Text := '';
+  EditUnitario.Text := '0';
+  EditTotalItem.Text := '0';
+  EditSubTotal.Text := '0';
+  labelTotalGeral.Caption := '0,00';
+  labelDescricaoProduto.Caption := '';
+  LabelDescontoAcrescimo.Caption := '';
+  LabelCliente.Caption := '';
+  edtNVenda.Caption := '';
+  edtCOO.Caption := '';
+
+  SubTotal := 0;
+  TotalGeral := 0;
+  Desconto := 0;
+  Acrescimo := 0;
+
+  Bobina.Clear;
+
+  if Sessao.Configuracao.MarketingAtivo = 'S' then
+    TimerMarketing.Enabled := true
+  else
+  begin
+    if FileExists(Sessao.Configuracao.CaminhoImagensProdutos + 'padrao.png') then
+      imageProduto.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensProdutos + 'padrao.png')
+    else
+      imageProduto.Picture.LoadFromFile('Imagens\imgProdutos\padrao.png')
+  end;
+end;
+
+procedure TFCaixa.TimerMarketingTimer(Sender: TObject);
+var
+  Aleatorio: Integer;
+begin
+  if Sessao.StatusCaixa = scAberto then
+  begin
+    Aleatorio := 1 + Random(5);
+    if FileExists(Sessao.Configuracao.CaminhoImagensMarketing + IntToStr(Aleatorio) + '.jpg') then
+      imageProduto.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensMarketing + IntToStr(Aleatorio) + '.jpg')
+    else
+      imageProduto.Picture.LoadFromFile('Imagens\imgMarketing\' + IntToStr(Aleatorio) + '.jpg')
+  end;
+end;
+
+procedure TFCaixa.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  // F1 - Identifica Cliente
+  if (Key = VK_F1) and (Sessao.Configuracao.UsaTecladoReduzido = 'N') then
+    IdentificaCliente;
+
+  // F2 - Menu Principal
+  if Key = VK_F2 then
+    AcionaMenuPrincipal;
+
+  // F3 - Menu Operações
+  if Key = VK_F3 then
+    AcionaMenuOperacoes;
+
+  // F4 - Menu Fiscal
+  // chamado pelo ApplicationEvents
+
+  // F5 - Entrada de Dados de NF
+  if Key = VK_F5 then
+    EntradaDadosNF;
+
+  // F6 - Localiza Produto
+  if Key = VK_F6 then
+    LocalizaProduto;
+
+  // F7 - Encerra Venda
+  if Key = VK_F7 then
+    IniciaEncerramentoVenda;
+
+  // F8 - Cancela Item
+  if Key = VK_F8 then
+    CancelaItem;
+
+  // F9 - Cancela Cupom
+  if Key = VK_F9 then
+    CancelaCupom;
+
+  // F10 - Concede Desconto
+  if Key = VK_F10 then
+    DescontoOuAcrescimo;
+
+  // F11 - Identifica Vendedor
+  if (Key = VK_F11) and (Sessao.Configuracao.UsaTecladoReduzido = 'N') then
+    IdentificaVendedor;
+
+  // F12 - Sai do Caixa
+  if Key = VK_F12 then
+    Close;
+
+  if (ssctrl in Shift) and CharInSet(chr(Key), ['C', 'c']) then
+  begin
+    Application.CreateForm(TFCheques, FCheques);
+    FCheques.ShowModal;
+  end;
+
+  if (ssctrl in Shift) and CharInSet(chr(Key), ['B', 'b']) then
+  begin
+    if Sessao.Configuracao.EcfConfiguracaoBalancaVO.Modelo > 0 then
+    begin
+      try
+        BalancaLePeso := True;
+        ACBrBAL1.LePeso(Sessao.Configuracao.EcfConfiguracaoBalancaVO.TimeOut);
+        EditCodigo.Text := '';
+        EditCodigo.SetFocus;
+      except
+        Application.MessageBox('Balança não conectada ou desligada!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    end;
+  end;
+end;
+
+procedure TFCaixa.GifAnimadoLogErroClick(Sender: TObject);
+begin
+  Application.CreateForm(TFLogImportacao, FLogImportacao);
+  FLogImportacao.ShowModal;
+end;
+
+procedure TFCaixa.AcionaMenuPrincipal;
+begin
+  if Sessao.StatusCaixa <> scSomenteConsulta then
+  begin
+    if Sessao.StatusCaixa <> scVendaEmAndamento then
+    begin
+      if Sessao.MenuAberto = snNao then
+      begin
+        Sessao.MenuAberto := snSim;
+        panelMenuPrincipal.Visible := true;
+        listaMenuPrincipal.SetFocus;
+        listaMenuPrincipal.ItemIndex := 0;
+        DesabilitaControlesVenda;
+      end
+    end
+    else
+      Application.MessageBox('Existe uma venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  end
+  else
+    Application.MessageBox('Terminal em Estado Somente Consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+
+procedure TFCaixa.AcionaMenuOperacoes;
+begin
+  if Sessao.StatusCaixa <> scSomenteConsulta then
+  begin
+    if Sessao.StatusCaixa <> scVendaEmAndamento then
+    begin
+      if Sessao.MenuAberto = snNao then
+      begin
+        Sessao.MenuAberto := snSim;
+        panelMenuOperacoes.Visible := true;
+        listaMenuOperacoes.SetFocus;
+        listaMenuOperacoes.ItemIndex := 0;
+        DesabilitaControlesVenda;
+      end;
+    end
+    else
+      Application.MessageBox('Existe uma venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  end
+  else
+    Application.MessageBox('Terminal em Estado Somente Consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+
+// O Codigo abaixo é para fazer a chamada do Menu Fiscal a partir de qualquer lugar do sistema.
+procedure TFCaixa.ApplicationEvents1Message(var Msg: tagMSG; var Handled: Boolean);
+var
+  Key: Word;
+begin
+  case Msg.Message Of
+    WM_KeyDown, WM_SysKeyDown:
+      begin
+        Key := Msg.wParam;
+        if (Key = VK_F4) Then
+        begin
+          AcionaMenuFiscal;
+        end;
+      end;
+  end;
+end;
+
+procedure TFCaixa.AcionaMenuFiscal;
+var
+  GuardaMenu: TSimNao;
+begin
+  GuardaMenu := Sessao.MenuAberto;
+  try
+    if Sessao.StatusCaixa <> scVendaEmAndamento then
+    begin
+      Sessao.MenuAberto := snSim;
+      if not Assigned(FMenuFiscal) then
+      begin
+        Application.CreateForm(TFMenuFiscal, FMenuFiscal);
+        FMenuFiscal.ShowModal;
+      end
+      else
+        FMenuFiscal.BringToFront;
+    end
+    else
+      Application.MessageBox('Existe uma venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  finally
+    Sessao.MenuAberto := GuardaMenu;
+  end;
+end;
+
+procedure TFCaixa.ACBrLCB1LeCodigo(Sender: TObject);
+begin
+  if EditCodigo.Focused then // Para evitar que ponha o codigo no campo quantidade por exemplo
+  begin
+    EditCodigo.Text := ACBrLCB1.UltimoCodigo; // Preenche o Edit com o codigo lido
+    keybd_event(VK_RETURN, 0, 0, 0); // Simula o acionamento da tecla ENTER
+  end;
+end;
+
+procedure TFCaixa.MenuSetaAbaixo(Indice: Integer; Lista: TJvgListBox);
+begin
+  if Indice = Lista.Count - 1 then
+    labelMensagens.Caption := Lista.Items[Lista.ItemIndex]
+  else
+    labelMensagens.Caption := Lista.Items[Lista.ItemIndex + 1];
+end;
+
+procedure TFCaixa.MenuSetaAcima(Indice: Integer; Lista: TJvgListBox);
+begin
+  if Indice = 0 then
+    labelMensagens.Caption := Lista.Items[Lista.ItemIndex]
+  else
+    labelMensagens.Caption := Lista.Items[Lista.ItemIndex - 1];
+end;
+{$ENDREGION}
+
+{$REGION 'Procedimentos referentes ao Menu Principal e seus SubMenus'}
+procedure TFCaixa.listaMenuPrincipalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then
+  begin
+    panelMenuPrincipal.Visible := False;
+    labelMensagens.Caption := MensagemPersistente;
+    Sessao.MenuAberto := snNao;
+    panelSubMenu.Visible := False;
+    //
+    HabilitaControlesVenda;
+    EditCodigo.SetFocus;
+  end;
+
+  if Key = VK_UP then
+    MenuSetaAcima(listaMenuPrincipal.ItemIndex, listaMenuPrincipal);
+
+  if Key = VK_DOWN then
+    MenuSetaAbaixo(listaMenuPrincipal.ItemIndex, listaMenuPrincipal);
+
+  if Key = VK_RETURN then
+  begin
+    // chama submenu do supervisor
+    if listaMenuPrincipal.ItemIndex = 0 then
+    begin
+      Application.CreateForm(TFLoginGerenteSupervisor, FLoginGerenteSupervisor);
+      try
+        FLoginGerenteSupervisor.GerenteOuSupervisor := 'S';
+        if (FLoginGerenteSupervisor.ShowModal = MROK) then
+        begin
+          if FLoginGerenteSupervisor.LoginOK then
+          begin
+            panelSubMenu.Visible := true;
+            listaSupervisor.BringToFront;
+            listaSupervisor.SetFocus;
+            listaSupervisor.ItemIndex := 0;
+          end
+          else
+            Application.MessageBox('Supervisor - dados incorretos.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+        end;
+      finally
+        if Assigned(FLoginGerenteSupervisor) then
+          FLoginGerenteSupervisor.Free;
+      end;
+    end;
+
+    // chama submenu do gerente
+    if listaMenuPrincipal.ItemIndex = 1 then
+    begin
+      Application.CreateForm(TFLoginGerenteSupervisor, FLoginGerenteSupervisor);
+      try
+        FLoginGerenteSupervisor.GerenteOuSupervisor := 'G';
+        if (FLoginGerenteSupervisor.ShowModal = MROK) then
+        begin
+          if FLoginGerenteSupervisor.LoginOK then
+          begin
+            panelSubMenu.Visible := true;
+            listaGerente.BringToFront;
+            listaGerente.SetFocus;
+            listaGerente.ItemIndex := 0;
+          end
+          else
+            Application.MessageBox('Gerente - dados incorretos.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+        end;
+      finally
+        if Assigned(FLoginGerenteSupervisor) then
+          FLoginGerenteSupervisor.Free;
+      end;
+    end;
+
+    // saida temporária
+    if listaMenuPrincipal.ItemIndex = 2 then
+    begin
+      if Sessao.StatusCaixa = scAberto then
+      begin
+        if Application.MessageBox('Deseja fechar o caixa temporariamente?', 'Fecha o caixa temporariamente', Mb_YesNo + Mb_IconQuestion) = IdYes then
+        begin
+          Sessao.Movimento.StatusMovimento := 'T';
+          TController.ExecutarMetodo('EcfMovimentoController.TEcfMovimentoController', 'Altera', [Sessao.Movimento], 'POST', 'Boolean');
+          Application.CreateForm(TFMovimentoAberto, FMovimentoAberto);
+          FMovimentoAberto.ShowModal;
+        end;
+      end
+      else
+        Application.MessageBox('Status do caixa não permite saída temporária.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end;
+
+    // atualiza estoque
+    if listaMenuPrincipal.ItemIndex = 3 then
+    begin
+      if Application.MessageBox('Deseja realizar o procedimento de atualização de estoque?', 'Atualização do Estoque', Mb_YesNo + Mb_IconQuestion) = IdYes then
+      begin
+        labelMensagens.Caption := 'Atualizando Estoque. Aguarde...';
+        if TPAFUtil.AtualizarEstoque(True) then
+          LabelMensagens.Caption := 'Estoque Atualizado.'
+        else
+          LabelMensagens.Caption := 'Problemas na Atualização do Estoque.'
+      end;
+    end;
+  end;
+end;
+
+procedure TFCaixa.listaSupervisorKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then
+  begin
+    panelSubMenu.Visible := False;
+    listaMenuPrincipal.SetFocus;
+    listaMenuPrincipal.ItemIndex := 0;
+  end;
+
+  if Key = VK_UP then
+    MenuSetaAcima(listaSupervisor.ItemIndex, listaSupervisor);
+
+  if Key = VK_DOWN then
+    MenuSetaAbaixo(listaSupervisor.ItemIndex, listaSupervisor);
+
+  if Key = VK_RETURN then
+  begin
+    // inicia movimento
+    if listaSupervisor.ItemIndex = 0 then
+      IniciaMovimento;
+    // encerra movimento
+    if listaSupervisor.ItemIndex = 1 then
+      EncerraMovimento;
+    // suprimento
+    if listaSupervisor.ItemIndex = 3 then
+      Suprimento;
+    // sangria
+    if listaSupervisor.ItemIndex = 4 then
+      Sangria;
+    // Redução Z
+    if listaSupervisor.ItemIndex = 6 then
+    begin
+      if Application.MessageBox('Tem Certeza Que Deseja Executar a Redução Z?' + #13 + #13 + 'O Movimento da Impressora Será Suspenso no dia de Hoje.', 'Redução Z', Mb_YesNo + Mb_IconQuestion) = IdYes then
+      begin
+        try
+          TECFUtil.ReducaoZ;
+        finally
+          panelSubMenu.Visible := False;
+          panelMenuPrincipal.Visible := False;
+          Sessao.MenuAberto := snNao;
+          HabilitaControlesVenda;
+          TelaPadrao;
+          EditCodigo.SetFocus;
+        end;
+      end;
+    end;
+  end;
+end;
+
+procedure TFCaixa.listaGerenteKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then
+  begin
+    panelSubMenu.Visible := False;
+    listaMenuPrincipal.SetFocus;
+    listaMenuPrincipal.ItemIndex := 0;
+  end;
+
+  if Key = VK_UP then
+    MenuSetaAcima(listaGerente.ItemIndex, listaGerente);
+
+  if Key = VK_DOWN then
+    MenuSetaAbaixo(listaGerente.ItemIndex, listaGerente);
+
+  if Key = VK_RETURN then
+  begin
+    // inicia movimento
+    if listaGerente.ItemIndex = 0 then
+      IniciaMovimento;
+    // encerra movimento
+    if listaGerente.ItemIndex = 1 then
+      EncerraMovimento;
+    // suprimento
+    if listaGerente.ItemIndex = 3 then
+      Suprimento;
+    // sangria
+    if listaGerente.ItemIndex = 4 then
+      Sangria;
+    // Redução Z
+    if listaGerente.ItemIndex = 6 then
+    begin
+      if Application.MessageBox('Tem Certeza Que Deseja Executar a Redução Z?' + #13 + #13 + 'O Movimento da Impressora Será Suspenso no dia de Hoje.', 'Redução Z', Mb_YesNo + Mb_IconQuestion) = IdYes then
+      begin
+        try
+          TECFUtil.ReducaoZ;
+        finally
+          panelSubMenu.Visible := False;
+          panelMenuPrincipal.Visible := False;
+          Sessao.MenuAberto := snNao;
+          HabilitaControlesVenda;
+          TelaPadrao;
+          EditCodigo.SetFocus;
+        end;
+      end;
+    end;
+    // consultar cliente
+    if listaGerente.ItemIndex = 8 then
+    begin
+      Application.CreateForm(TFImportaCliente, FImportaCliente);
+      FImportaCliente.ShowModal;
+    end;
+
+    // funções administrativas do TEF
+    if listaGerente.ItemIndex = 10 then
+    begin
+      Application.CreateForm(TFEfetuaPagamento, FEfetuaPagamento);
+      try
+        FEfetuaPagamento.ACBrTEFD.Inicializar(TACBrTEFDTipo(1));
+        FEfetuaPagamento.ACBrTEFD.ADM(TACBrTEFDTipo(1));
+      except
+        Application.MessageBox('Problemas no GP TEFDIAL.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+      FEfetuaPagamento.Free;
+    end;
+
+    // Importar Tabelas com Dispositivo (pen-drive)
+    if listaGerente.ItemIndex = 12 then
+    begin
+      TimerIntegracao.Enabled := False;
+      Application.CreateForm(TFPenDrive, FPenDrive);
+      FPenDrive.Rotina := 'IMPORTA';
+      FPenDrive.ShowModal;
+      TimerIntegracao.Enabled := true;
+    end;
+
+    // Exportar Tabelas com Dispositivo (pen-drive)
+    if listaGerente.ItemIndex = 13 then
+    begin
+      TimerIntegracao.Enabled := False;
+      Application.CreateForm(TFPenDrive, FPenDrive);
+      FPenDrive.Rotina := 'EXPORTA';
+      FPenDrive.ShowModal;
+      TimerIntegracao.Enabled := true;
+    end;
+  end;
+end;
+
+procedure TFCaixa.IniciaMovimento;
+begin
+  TimerIntegracao.Enabled := False;
+  try
+    if not Assigned(Sessao.Movimento) then
+    begin
+      Application.CreateForm(TFIniciaMovimento, FIniciaMovimento);
+      FIniciaMovimento.ShowModal;
+    end
+    else
+    begin
+      Application.MessageBox('Já existe um movimento aberto.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+    end;
+  finally
+    TimerIntegracao.Enabled := true;
+  end;
+end;
+
+procedure TFCaixa.EncerraMovimento;
+begin
+  if not Assigned(Sessao.Movimento) then
+    Application.MessageBox('Não existe um movimento aberto.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+  else
+  begin
+    Application.CreateForm(TFEncerraMovimento, FEncerraMovimento);
+    FEncerraMovimento.ShowModal;
+  end;
+  TelaPadrao;
+end;
+
+procedure TFCaixa.Suprimento;
+var
+  Suprimento: TEcfSuprimentoVO;
+  ValorSuprimento: Extended;
+begin
+  if not Assigned(Sessao.Movimento) then
+    Application.MessageBox('Não existe um movimento aberto.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+  else
+  begin
+    Application.CreateForm(TFValorReal, FValorReal);
+    FValorReal.Caption := 'Suprimento';
+    FValorReal.LabelEntrada.Caption := 'Informe o valor do suprimento:';
+    try
+      if (FValorReal.ShowModal = MROK) then
+      begin
+        ValorSuprimento := FValorReal.EditEntrada.Value;
+
+        try
+          TECFUtil.Suprimento(ValorSuprimento, Sessao.Configuracao.DescricaoSuprimento);
+        finally
+        end;
+        Suprimento := TEcfSuprimentoVO.Create;
+        Suprimento.IdEcfMovimento := Sessao.Movimento.Id;
+        Suprimento.DataSuprimento := EncodeDate(YearOf(FDataModule.ACBrECF.DataHora), MonthOf(FDataModule.ACBrECF.DataHora), DayOf(FDataModule.ACBrECF.DataHora));
+        Suprimento.Valor := ValorSuprimento;
+        TController.ExecutarMetodo('EcfSuprimentoController.TEcfSuprimentoController', 'Insere', [Suprimento], 'PUT', 'Lista');
+        Sessao.Movimento.TotalSuprimento := Sessao.Movimento.TotalSuprimento + ValorSuprimento;
+        TController.ExecutarMetodo('EcfMovimentoController.TEcfMovimentoController', 'Altera', [Sessao.Movimento], 'POST', 'Boolean');
+      end;
+    finally
+    end;
+  end;
+end;
+
+procedure TFCaixa.Sangria;
+var
+  Sangria: TEcfSangriaVO;
+  ValorSangria: Extended;
+begin
+  if not Assigned(Sessao.Movimento) then
+    Application.MessageBox('Não existe um movimento aberto.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+  else
+  begin
+    Application.CreateForm(TFValorReal, FValorReal);
+    FValorReal.Caption := 'Sangria';
+    FValorReal.LabelEntrada.Caption := 'Informe o valor da sangria:';
+    try
+      if (FValorReal.ShowModal = MROK) then
+      begin
+        ValorSangria := FValorReal.EditEntrada.Value;
+
+        try
+          TECFUtil.Sangria(ValorSangria, Sessao.Configuracao.DescricaoSangria);
+        finally
+        end;
+
+        Sangria := TEcfSangriaVO.Create;
+        Sangria.IdEcfMovimento := Sessao.Movimento.Id;
+        Sangria.DataSangria := EncodeDate(YearOf(FDataModule.ACBrECF.DataHora), MonthOf(FDataModule.ACBrECF.DataHora), DayOf(FDataModule.ACBrECF.DataHora));
+        Sangria.Valor := ValorSangria;
+        TController.ExecutarMetodo('EcfSangriaController.TEcfSangriaController', 'Insere', [Sangria], 'PUT', 'Lista');
+        Sessao.Movimento.TotalSangria := Sessao.Movimento.TotalSangria + ValorSangria;
+        TController.ExecutarMetodo('EcfMovimentoController.TEcfMovimentoController', 'Altera', [Sessao.Movimento], 'POST', 'Boolean');
+      end;
+    finally
+    end;
+  end;
+end;
+
+procedure TFCaixa.DescontoOuAcrescimo;
+var
+  // 0-Desconto em Dinheiro
+  // 1-Desconto Percentual
+  // 2-Acréscimo em Dinheiro
+  // 3-Acréscimo Percentual
+  // 5-Cancela o Desconto ou Acréscimo
+
+  Operacao: Integer;
+  Valor: Extended;
+begin
+  if Sessao.StatusCaixa <> scSomenteConsulta then
+  begin
+    if Sessao.StatusCaixa = scVendaEmAndamento then
+    begin
+      Application.CreateForm(TFLoginGerenteSupervisor, FLoginGerenteSupervisor);
+      try
+        if (FLoginGerenteSupervisor.ShowModal = MROK) then
+        begin
+          if FLoginGerenteSupervisor.LoginOK then
+          begin
+            Application.CreateForm(TFDescontoAcrescimo, FDescontoAcrescimo);
+            FDescontoAcrescimo.Caption := 'Desconto ou Acréscimo';
+            try
+              if (FDescontoAcrescimo.ShowModal = MROK) then
+              begin
+                Operacao := FDescontoAcrescimo.ComboOperacao.ItemIndex;
+                Valor := FDescontoAcrescimo.EditEntrada.Value;
+
+                // desconto em valor
+                if Operacao = 0 then
+                begin
+                  if Valor >= Sessao.VendaAtual.ValorVenda then
+                    Application.MessageBox('Desconto não pode ser superior ou igual ao valor da venda.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+                  else
+                  begin
+                    if Valor <= 0 then
+                      Application.MessageBox('Valor zerado ou negativo. Operação não realizada.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+                    else
+                    begin
+                      Desconto := Desconto + Valor;
+                      AtualizaTotais;
+                    end;
+                  end;
+                end; // if Operacao = 0 then
+
+                // desconto em taxa
+                if Operacao = 1 then
+                begin
+                  if Valor > 99 then
+                    Application.MessageBox('Desconto não pode ser superior a 100%.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+                  else
+                  begin
+                    if Valor <= 0 then
+                      Application.MessageBox('Valor zerado ou negativo. Operação não realizada.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+                    else
+                    begin
+                      Sessao.VendaAtual.TaxaDesconto := 100 - (((100 - Sessao.VendaAtual.TaxaDesconto) / 100) * ((100 - Valor) / 100)) * 100;
+
+                      Desconto := Desconto + TruncaValor(SubTotal * (Valor / 100), Constantes.TConstantes.DECIMAIS_VALOR);
+                      AtualizaTotais;
+                    end;
+                  end;
+                end; // if Operacao = 1 then
+
+                // acrescimo em valor
+                if Operacao = 2 then
+                begin
+                  if Valor <= 0 then
+                    Application.MessageBox('Valor zerado ou negativo. Operação não realizada.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+                  else if Valor >= Sessao.VendaAtual.ValorVenda then
+                    Application.MessageBox('Valor do acréscimo não pode ser igual ou superior ao valor da venda!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+                  else
+                  begin
+                    Acrescimo := Acrescimo + Valor;
+                    AtualizaTotais;
+                  end;
+                end; // if Operacao = 2 then
+
+                // acrescimo em taxa
+                if Operacao = 3 then
+                begin
+                  if Valor <= 0 then
+                    Application.MessageBox('Valor zerado ou negativo. Operação não realizada.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+                  else if Valor > 99 then
+                    Application.MessageBox('Acréscimo não pode ser superior a 100%!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+                  else
+                  begin
+                    Sessao.VendaAtual.TaxaAcrescimo := (((100 + Valor) / 100) * ((100 + Sessao.VendaAtual.TaxaAcrescimo) / 100)) / 100;
+                    Acrescimo := Acrescimo + TruncaValor(SubTotal * (Valor / 100), Constantes.TConstantes.DECIMAIS_VALOR);
+                    AtualizaTotais;
+                  end;
+                end; // if Operacao = 3 then
+
+                // cancela desconto ou acrescimo
+                if Operacao = 5 then
+                begin
+                  Sessao.VendaAtual.TaxaAcrescimo := 0;
+                  Sessao.VendaAtual.TaxaDesconto := 0;
+                  Acrescimo := 0;
+                  Desconto := 0;
+                  AtualizaTotais;
+                end; // if Operacao = 5 then
+
+              end;
+            finally
+              if Assigned(FDescontoAcrescimo) then
+                FDescontoAcrescimo.Free;
+            end;
+          end
+          else
+            Application.MessageBox('Login - dados incorretos.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+        end; // if (FLoginGerenteSupervisor.ShowModal = MROK) then
+      finally
+        if Assigned(FLoginGerenteSupervisor) then
+          FLoginGerenteSupervisor.Free;
+      end;
+    end
+    else
+      Application.MessageBox('Não existe venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  end
+  else
+    Application.MessageBox('Terminal em Estado Somente Consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+{$ENDREGION}
+
+{$REGION 'Procedimentos referentes ao Menu Operações e seus SubMenus'}
+procedure TFCaixa.listaMenuOperacoesKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  ini: TIniFile;
+  RegistraPreVenda: String;
+begin
+  try
+    ini := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'ArquivoAuxiliar.ini');
+    RegistraPreVenda := UpperCase(Codifica('D', ini.ReadString('ESTABELECIMENTO', 'REGISTRAPREVENDA', '')));
+  finally
+    ini.Free;
+  end;
+
+  if Key = VK_ESCAPE then
+  begin
+    FechaMenuOperacoes;
+  end;
+
+  if Key = VK_UP then
+    MenuSetaAcima(listaMenuOperacoes.ItemIndex, listaMenuOperacoes);
+
+  if Key = VK_DOWN then
+    MenuSetaAbaixo(listaMenuOperacoes.ItemIndex, listaMenuOperacoes);
+
+  if Key = VK_RETURN then
+  begin
+
+    if RegistraPreVenda = 'REGISTRA' then
+    begin
+      // carrega pre-venda
+      if listaMenuOperacoes.ItemIndex = 0 then
+      begin
+        if Sessao.StatusCaixa = scAberto then
+        begin
+          if TController.ServidorAtivo then
+          begin
+            Application.CreateForm(TFImportaNumero, FImportaNumero);
+            FImportaNumero.Caption := 'Carrega Pré-Venda';
+            FImportaNumero.LabelEntrada.Caption := 'Informe o número da Pré-Venda';
+            try
+              if (FImportaNumero.ShowModal = MROK) then
+              begin
+                FechaMenuOperacoes;
+                CarregaPreVenda(FImportaNumero.EditEntrada.Text);
+              end;
+            finally
+              if Assigned(FImportaNumero) then
+                FImportaNumero.Free;
+            end;
+          end
+          else
+            Application.MessageBox('Não foi possível conectar ao Servidor de Aplicações, tente mais tarde!', 'Informação do Sistema', MB_OK + MB_ICONERROR);
+        end // if Sessao.StatusCaixa = 0 then
+        else
+          Application.MessageBox('Já existe uma venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      end; // if listaMenuOperacoes.ItemIndex = 0 then
+
+    end; // if RegistraPreVenda = 'REGISTRA' then
+
+    // carrega dav
+    if listaMenuOperacoes.ItemIndex = 1 then
+    begin
+      if Sessao.StatusCaixa = scAberto then
+      begin
+        if TController.ServidorAtivo then
+        begin
+          Application.CreateForm(TFCarregaDAV, FCarregaDAV);
+          try
+            if (FCarregaDAV.ShowModal = MROK) then
+            begin
+              FechaMenuOperacoes;
+              CarregaDAV(FCarregaDAV.CDSMestre.FieldByName('ID').AsString);
+            end;
+          finally
+            if Assigned(FCarregaDAV) then
+              FCarregaDAV.Free;
+          end;
+        end
+        else
+          Application.MessageBox('Não foi possível conectar ao Servidor de Aplicações, tente mais tarde!', 'Informação do Sistema', MB_OK + MB_ICONERROR);
+      end
+      else
+        Application.MessageBox('Já existe uma venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end;
+
+  end; // if Key = VK_RETURN then
+end;
+
+procedure TFCaixa.FechaMenuOperacoes;
+begin
+  panelMenuOperacoes.Visible := False;
+  labelMensagens.Caption := MensagemPersistente;
+  Sessao.MenuAberto := snNao;
+  HabilitaControlesVenda;
+  EditCodigo.SetFocus;
+end;
+
+procedure TFCaixa.CarregaPreVenda(Numero: String);
+var
+  Camadas, I: Integer;
+begin
+  try
+    // Guarda Camadas. Se ocorrer algum problema, no Finally tem que setar o mesmo valor
+    Camadas := Sessao.Camadas;
+
+    Sessao.Camadas := 3;
+    Filtro := 'SITUACAO = ' + QuotedStr('P') + ' and ID=' + Numero;
+    PreVenda := TPreVendaCabecalhoVO(TController.BuscarObjeto('PreVendaController.TPreVendaController', 'ConsultaObjeto', [Filtro], 'GET'));
+    Sessao.Camadas := 2;
+
+    if Assigned(PreVenda) then
+    begin
+      if PreVenda.ListaPreVendaDetalheVO.Count > 0 then
+      begin
+        IniciaVenda;
+        Sessao.StatusCaixa := scVendaRecuperadaDavPreVenda;
+        Sessao.VendaAtual.IdEcfPreVendaCabecalho := PreVenda.Id;
+        for i := 0 to PreVenda.ListaPreVendaDetalheVO.Count - 1 do
+        begin
+          VendaDetalhe := TEcfVendaDetalheVO.Create;
+          VendaDetalhe.EcfProdutoVO := TEcfProdutoVO(TController.BuscarObjeto('ProdutoController.TProdutoController', 'ConsultaPorTipo', [PreVenda.ListaPreVendaDetalheVO.Items[I].IdProduto.ToString, 4], 'GET'));
+
+          VendaDetalhe.Quantidade := PreVenda.ListaPreVendaDetalheVO.Items[I].Quantidade;
+          VendaDetalhe.ValorUnitario := PreVenda.ListaPreVendaDetalheVO.Items[I].ValorUnitario;
+          VendaDetalhe.ValorTotal := PreVenda.ListaPreVendaDetalheVO.Items[I].ValorTotal;
+          VendeItem;
+          SubTotal := SubTotal + VendaDetalhe.ValorTotal;
+          TotalGeral := TotalGeral + VendaDetalhe.ValorTotal;
+          AtualizaTotais;
+          if PreVenda.ListaPreVendaDetalheVO.Items[I].Cancelado = 'S' then
+          begin
+            TECFUtil.CancelaItem(ItemCupom);
+
+            VendaDetalhe.TotalizadorParcial := 'Can-T';
+            VendaDetalhe.Cancelado := 'S';
+            VendaDetalhe.Ccf := StrToIntDef(FDataModule.ACBrECF.NumCCF, 0);
+            VendaDetalhe.Coo := StrToInt(FDataModule.ACBrECF.NumCOO);
+            TController.ExecutarMetodo('VendaController.TVendaController', 'CancelaItemVenda', [VendaDetalhe], 'POST', 'Boolean');
+  
+            Bobina.Items.Add(StringOfChar('*', 48));
+            Bobina.Items.Add(StringOfChar('0', 3 - Length(IntToStr(ItemCupom))) + IntToStr(ItemCupom) + '  ' + VendaDetalhe.GTIN + StringOfChar(' ', 14 - Length(VendaDetalhe.GTIN)) + ' ' + Copy(VendaDetalhe.EcfProdutoVO.DescricaoPDV, 1, 28));
+
+            Bobina.Items.Add('ITEM CANCELADO');
+            Bobina.Items.Add(StringOfChar('*', 48));
+
+            SubTotal := SubTotal - VendaDetalhe.ValorTotal;
+            TotalGeral := TotalGeral - VendaDetalhe.ValorTotal;
+
+            // cancela possíveis descontos ou acrescimos
+            Bobina.ItemIndex := Bobina.Items.Count - 1;
+            AtualizaTotais;
+          end;
+        end;
+        Bobina.ItemIndex := Bobina.Items.Count - 1;
+        EditCodigo.SetFocus;
+        Sessao.StatusCaixa := scVendaEmAndamento;
+      end
+      else
+        Application.MessageBox('Pré-Venda sem itens.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end
+    else
+      Application.MessageBox('Pré-Venda inexistente ou já efetivada/mesclada.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  finally
+    Sessao.Camadas := Camadas;
+  end;
+end;
+
+procedure TFCaixa.CarregaDAV(Numero: String);
+var
+  Camadas, I: Integer;
+begin
+  try
+    // Guarda Camadas. Se ocorrer algum problema, no Finally tem que setar o mesmo valor
+    Camadas := Sessao.Camadas;
+
+    Sessao.Camadas := 3;
+    Filtro := 'SITUACAO = ' + QuotedStr('P') + ' and ID=' + Numero;
+    DavCabecalho := TDavCabecalhoVO(TController.BuscarObjeto('DAVController.TDAVController', 'ConsultaObjeto', [Filtro], 'GET'));
+    Sessao.Camadas := 2;
+
+    if Assigned(DavCabecalho) then
+    begin
+      if DavCabecalho.ListaDavDetalheVO.Count > 0 then
+      begin
+        IniciaVenda;
+        Sessao.StatusCaixa := scVendaRecuperadaDavPreVenda;
+        Sessao.VendaAtual.IdEcfDAV := DavCabecalho.Id;
+        for i := 0 to DavCabecalho.ListaDavDetalheVO.Count - 1 do
+        begin
+          VendaDetalhe := TEcfVendaDetalheVO.Create;
+          VendaDetalhe.EcfProdutoVO := TEcfProdutoVO(TController.BuscarObjeto('ProdutoController.TProdutoController', 'ConsultaPorTipo', [DavCabecalho.ListaDavDetalheVO.Items[I].IdProduto.ToString, 4], 'GET'));
+
+          VendaDetalhe.Quantidade := DavCabecalho.ListaDavDetalheVO.Items[I].Quantidade;
+          VendaDetalhe.ValorUnitario := DavCabecalho.ListaDavDetalheVO.Items[I].ValorUnitario;
+          VendaDetalhe.ValorTotal := DavCabecalho.ListaDavDetalheVO.Items[I].ValorTotal;
+          VendeItem;
+          SubTotal := SubTotal + VendaDetalhe.ValorTotal;
+          TotalGeral := TotalGeral + VendaDetalhe.ValorTotal;
+          AtualizaTotais;
+
+          if DavCabecalho.ListaDavDetalheVO.Items[I].Cancelado = 'S' then
+          begin
+            TECFUtil.CancelaItem(ItemCupom);
+            VendaDetalhe.TotalizadorParcial := 'Can-T';
+            VendaDetalhe.Cancelado := 'S';
+            VendaDetalhe.Ccf := StrToIntDef(FDataModule.ACBrECF.NumCCF, 0);
+            VendaDetalhe.Coo := StrToInt(FDataModule.ACBrECF.NumCOO);
+            TController.ExecutarMetodo('VendaController.TVendaController', 'CancelaItemVenda', [VendaDetalhe], 'POST', 'Boolean');
+
+            Bobina.Items.Add(StringOfChar('*', 48));
+            Bobina.Items.Add(StringOfChar('0', 3 - Length(IntToStr(ItemCupom))) + IntToStr(ItemCupom) + '  ' + VendaDetalhe.GTIN + StringOfChar(' ', 14 - Length(VendaDetalhe.GTIN)) + ' ' + Copy(VendaDetalhe.EcfProdutoVO.DescricaoPDV, 1, 28));
+
+            Bobina.Items.Add('ITEM CANCELADO');
+            Bobina.Items.Add(StringOfChar('*', 48));
+
+            SubTotal := SubTotal - VendaDetalhe.ValorTotal;
+            TotalGeral := TotalGeral - VendaDetalhe.ValorTotal;
+
+            // cancela possíveis descontos ou acrescimos
+            Bobina.ItemIndex := Bobina.Items.Count - 1; // Quando o item é cancelado, a "bobina" do aplicativo não avançava
+            AtualizaTotais;
+          end;
+
+        end;
+        Bobina.ItemIndex := Bobina.Items.Count - 1;
+        EditCodigo.SetFocus;
+        Sessao.StatusCaixa := scVendaEmAndamento;
+      end
+      else
+        Application.MessageBox('DAV sem itens.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end
+    else
+      Application.MessageBox('DAV inexistente ou já efetivado/mesclado.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  finally
+    Sessao.Camadas := Camadas;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Procedimentos para controle da venda'}
+procedure TFCaixa.LocalizaProduto;
+begin
+  if Sessao.Configuracao.UsaTecladoReduzido = 'S' then
+  begin
+    Application.CreateForm(TFLocaliza, FLocaliza);
+    FLocaliza.ShowModal;
+  end
+  else
+  begin
+    Application.CreateForm(TFImportaProduto, FImportaProduto);
+    FImportaProduto.ShowModal;
+    if (Sessao.StatusCaixa = scVendaEmAndamento) and (trim(EditCodigo.Text) <> '') then
+    begin
+      EditCodigo.SetFocus;
+      IniciaVendaDeItens;
+    end;
+  end;
+end;
+
+procedure TFCaixa.IdentificaCliente;
+begin
+  if Sessao.StatusCaixa <> scSomenteConsulta then
+  begin
+    InstanciaVendaAtual;
+    Application.CreateForm(TFIdentificaCliente, FIdentificaCliente);
+    FIdentificaCliente.ShowModal;
+    if Sessao.VendaAtual.CpfCnpjCliente <> '' then
+    begin
+      if Sessao.StatusCaixa = scAberto  then
+      begin
+        IniciaVenda;
+      end;
+      FDataModule.ACBrECF.IdentificaConsumidor(Sessao.VendaAtual.CpfCnpjCliente, Sessao.VendaAtual.NomeCliente);
+      LabelCliente.Caption := 'Cliente: ' + Sessao.VendaAtual.NomeCliente + ' - ' + Sessao.VendaAtual.CpfCnpjCliente;
+    end;
+  end
+  else
+  begin
+    Application.CreateForm(TFImportaCliente, FImportaCliente);
+    FImportaCliente.QuemChamou := 'Caixa';
+    FImportaCliente.ShowModal;
+  end;
+end;
+
+procedure TFCaixa.IdentificaVendedor;
+var
+  Vendedor: TEcfFuncionarioVO;
+begin
+  try
+    if Sessao.StatusCaixa = scVendaEmAndamento then
+    begin
+      Application.CreateForm(TFImportaNumero, FImportaNumero);
+      FImportaNumero.Caption := 'Identifica Vendedor';
+      FImportaNumero.LabelEntrada.Caption := 'Informe o código do vendedor';
+      try
+        if (FImportaNumero.ShowModal = MROK) then
+        begin
+          Filtro := 'ID = ' + FImportaNumero.EditEntrada.Text;
+          Vendedor := TEcfFuncionarioVO(TController.BuscarObjeto('EcfFuncionarioController.TEcfFuncionarioController', 'ConsultaObjeto', [Filtro], 'GET'));
+
+          if Assigned(Vendedor) then
+            Sessao.VendaAtual.IdEcfFuncionario := Vendedor.Id
+          else
+            Application.MessageBox('Vendedor: código inválido ou inexistente.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+        end;
+      except
+      end;
+    end
+    else
+      Application.MessageBox('Não existe venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  finally
+    FreeAndNil(Vendedor);
+  end;
+end;
+
+procedure TFCaixa.IniciaVenda;
+begin
+  Bobina.Items.Text := '';
+
+  if not Assigned(Sessao.Movimento) then
+    Application.MessageBox('Não existe um movimento aberto.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+  else
+  begin
+    if not TPAFUtil.ECFAutorizado then
+    begin
+      Application.MessageBox('ECF não autorizado - aplicação aberta apenas para consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      Sessao.StatusCaixa := scSomenteConsulta;
+      labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+      MensagemPersistente := labelMensagens.Caption;
+      Abort;
+    end
+    else if not TPAFUtil.ConfereGT then
+    begin
+      Application.MessageBox('Grande total inválido - entre em contato com a Software House.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      Sessao.StatusCaixa := scSomenteConsulta;
+      labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+      MensagemPersistente := labelMensagens.Caption;
+      Abort;
+    end
+    else
+    begin
+      try
+        FDataModule.ACBrECF.TestaPodeAbrirCupom;
+      except
+        TelaPadrao;
+        EditCodigo.SetFocus;
+      end;
+      // instancia venda
+      InstanciaVendaAtual;
+
+      // parametro para identificar o cliente na abertura do cupom (nota paulista)
+      if (Sessao.Configuracao.PedeCpfCupom = 'S') and (Sessao.VendaAtual.CpfCnpjCliente = '') then
+      begin
+        IdentificaCliente;
+      end;
+
+      // abre o cupom
+      TECFUtil.AbreCupom;
+
+      ImprimeCabecalhoBobina;
+      ParametrosIniciaisVenda;
+      Sessao.StatusCaixa := scVendaEmAndamento;
+      labelMensagens.Caption := 'Venda em andamento...';
+
+      Sessao.VendaAtual.IdEcfMovimento := Sessao.Movimento.Id;
+      Sessao.VendaAtual.DataVenda := EncodeDate(YearOf(FDataModule.ACBrECF.DataHora), MonthOf(FDataModule.ACBrECF.DataHora), DayOf(FDataModule.ACBrECF.DataHora));
+      Sessao.VendaAtual.HoraVenda := FormatDateTime('hh:nn:ss', FDataModule.ACBrECF.DataHora);
+      Sessao.VendaAtual.StatusVenda := 'A';
+      Sessao.VendaAtual.CFOP := Sessao.Configuracao.CFOPECF;
+      Sessao.VendaAtual.Coo := StrToInt(FDataModule.ACBrECF.NumCOO);
+      Sessao.VendaAtual.Ccf := StrToIntDef(FDataModule.ACBrECF.NumCCF, 0); // para resolver problemas com impressoras matricias que devolvem NULL
+
+      TController.ExecutarMetodo('VendaController.TVendaController', 'Insere', [Sessao.VendaAtual], 'PUT', 'Objeto');
+      Sessao.LiberaVendaAtual;
+      Sessao.VendaAtual := TEcfVendaCabecalhoVO(TController.ObjetoConsultado);
+
+      EditCodigo.SetFocus;
+      EditCodigo.SelectAll;
+
+      edtNVenda.Caption := 'VENDA nº ' + IntToStr(Sessao.VendaAtual.Id);
+      edtCOO.Caption := 'CUPOM nº ' + IntToStr(Sessao.VendaAtual.Coo);
+    end;
+  end;
+end;
+
+procedure TFCaixa.InstanciaVendaAtual;
+begin
+  // instancia venda
+  if not Assigned(Sessao.VendaAtual) then
+    Sessao.VendaAtual := TEcfVendaCabecalhoVO.Create;
+end;
+
+procedure TFCaixa.ParametrosIniciaisVenda;
+begin
+  TimerMarketing.Enabled := False;
+
+  if FileExists(Sessao.Configuracao.CaminhoImagensProdutos + 'padrao.png') then
+    imageProduto.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensProdutos + 'padrao.png')
+  else
+    imageProduto.Picture.LoadFromFile('Imagens\imgProdutos\padrao.png');
+
+  ItemCupom := 0;
+  SubTotal := 0;
+  TotalGeral := 0;
+end;
+
+procedure TFCaixa.ImprimeCabecalhoBobina;
+begin
+  Bobina.Items.Add(StringOfChar('-', 48));
+  Bobina.Items.Add('               ** CUPOM FISCAL **               ');
+  Bobina.Items.Add(StringOfChar('-', 48));
+  Bobina.Items.Add('ITEM CÓDIGO         DESCRIÇÃO                   ');
+  Bobina.Items.Add('QTD.     UN      VL.UNIT.(R$) ST    VL.ITEM(R$)');
+  Bobina.Items.Add(StringOfChar('-', 48));
+end;
+
+procedure TFCaixa.IniciaVendaDeItens;
+var
+  Unitario, Quantidade, Total: Extended;
+  Estado: String;
+begin
+  TimerIntegracao.Enabled := False;
+  if Sessao.StatusCaixa <> scSomenteConsulta then
+  begin
+
+    try
+      Estado := Sessao.Estados[FDataModule.ACBrECF.Estado];
+      if (Estado = 'Requer Z') or (Estado = 'Bloqueada') then
+      begin
+        Sessao.StatusCaixa := scSomenteConsulta;
+        labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+        MensagemPersistente := labelMensagens.Caption;
+        if (Estado = 'Requer Z') then
+          Application.MessageBox('Impressora Requer Redução Z!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+        else
+          Application.MessageBox('Impressora Bloqueada Até o Final do Dia!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+        TelaPadrao;
+        EditCodigo.SetFocus;
+        Exit;
+      end;
+    except
+      Sessao.StatusCaixa := scSomenteConsulta;
+      labelMensagens.Caption := 'Terminal em Estado Somente Consulta';
+      MensagemPersistente := labelMensagens.Caption;
+      Application.MessageBox('Impressora Bloqueada ou Desligada  ou  Sem Papel  ou Fora de Linha!' + #13 + 'Caso a Impressora esteja ligada, com Papel e Em Linha' + #13 + 'Verifique se os cabos  estão  devidamente  conectados.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      TelaPadrao;
+      EditCodigo.SetFocus;
+      Exit;
+    end;
+
+    if TECFUtil.ImpressoraOK then
+    begin
+      if not Assigned(Sessao.Movimento) then
+      begin
+        labelMensagens.Caption := 'CAIXA FECHADO';
+        IniciaMovimento; // se o caixa estiver fechado abre o iniciaMovimento
+        Abort;
+      end;
+
+      if Sessao.MenuAberto = snNao then
+      begin
+        if Sessao.StatusCaixa = scAberto then
+        begin
+          IniciaVenda;
+        end;
+        if trim(EditCodigo.Text) <> '' then
+        begin
+          VendaDetalhe := TEcfVendaDetalheVO.Create;
+          DesmembraCodigoDigitado(trim(EditCodigo.Text));
+          Application.ProcessMessages;
+
+          if Assigned(VendaDetalhe.EcfProdutoVO) then
+          begin
+            if VendaDetalhe.EcfProdutoVO.ValorVenda <= 0 then
+            begin
+              Application.MessageBox('Produto não pode ser vendido com valor Zerado ou negativo!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+              EditCodigo.SetFocus;
+              EditCodigo.SelectAll;
+              FreeAndNil(VendaDetalhe);
+              Abort;
+            end;
+
+            labelMensagens.Caption := 'Venda em andamento...';
+            MensagemPersistente := labelMensagens.Caption;
+
+            if ACBrInStore1.Peso > 0 then
+              EditQuantidade.Value := ACBrInStore1.Peso;
+
+            if ACBrInStore1.Total > 0 then
+              EditQuantidade.Text := FormataFloat('Q', (ACBrInStore1.Total / VendaDetalhe.EcfProdutoVO.ValorVenda));
+
+            if (VendaDetalhe.EcfProdutoVO.UnidadeEcfProdutoVO.PodeFracionar = 'N') and (Frac(StrToFloat(EditQuantidade.Text)) > 0) then
+            begin
+              Application.MessageBox('Produto não pode ser vendido com quantidade fracionada.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+              EditUnitario.Text := '0';
+              EditTotalItem.Text := '0';
+              EditQuantidade.Text := '1';
+              labelDescricaoProduto.Caption := '';
+              EditCodigo.Text := '';
+              EditCodigo.SetFocus;
+              FreeAndNil(VendaDetalhe);
+            end
+            else
+            begin
+              EditUnitario.Text := FormataFloat('V', VendaDetalhe.EcfProdutoVO.ValorVenda);
+              labelDescricaoProduto.Caption := VendaDetalhe.EcfProdutoVO.DescricaoPDV;
+              // carrega imagem do produto
+              if FileExists(Sessao.Configuracao.CaminhoImagensProdutos + VendaDetalhe.EcfProdutoVO.GTIN + '.jpg') then
+                imageProduto.Picture.LoadFromFile(Sessao.Configuracao.CaminhoImagensProdutos + VendaDetalhe.EcfProdutoVO.GTIN + '.jpg')
+              else
+                imageProduto.Picture.LoadFromFile('Imagens\imgProdutos\padrao.png');
+
+              Unitario := EditUnitario.Value;
+              Quantidade := EditQuantidade.Value;
+
+              VendeItem;
+
+              Total := VendaDetalhe.ValorTotal;
+              EditTotalItem.Value := VendaDetalhe.ValorTotal;
+
+              SubTotal := SubTotal + VendaDetalhe.ValorTotal;
+              TotalGeral := TotalGeral + VendaDetalhe.ValorTotal;
+              AtualizaTotais;
+              EditCodigo.Clear;
+              EditCodigo.SetFocus;
+              EditQuantidade.Text := '1';
+              Application.ProcessMessages;
+            end; // if (Produto.PodeFracionarUnidade = 'N') and (Frac(StrToFloat(EditQuantidade.Text))>0) then
+          end
+          else
+          begin
+            MensagemDeProdutoNaoEncontrado;
+          end; // if Produto.Id <> 0 then
+        end; // if trim(EditCodigo.Text) <> '' then
+      end; // if Sessao.MenuAberto = 0 then
+    end; // if UECF.ImpressoraOK then
+  end; // if Sessao.StatusCaixa <> 3 then
+end;
+
+procedure TFCaixa.ConsultaProduto(Codigo: String; Tipo: Integer);
+begin
+  VendaDetalhe.EcfProdutoVO := TEcfProdutoVO(TController.BuscarObjeto('ProdutoController.TProdutoController', 'ConsultaPorTipo', [Codigo, Tipo], 'GET'));
+end;
+
+procedure TFCaixa.MensagemDeProdutoNaoEncontrado;
+begin
+  Application.MessageBox('Código não encontrado.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  EditUnitario.Text := '0';
+  EditTotalItem.Text := '0';
+  EditQuantidade.Text := '1';
+  labelDescricaoProduto.Caption := '';
+  EditCodigo.SetFocus;
+  EditCodigo.SelectAll;
+end;
+
+procedure TFCaixa.DesmembraCodigoDigitado(CodigoDeBarraOuDescricaoOuIdProduto: string);
+var
+  IdentificadorBalanca, vCodDescrId: String;
+  LengthInteiro, LengthCodigo: Integer;
+begin
+
+  IdentificadorBalanca := Sessao.Configuracao.EcfConfiguracaoBalancaVO.Identificador;
+  vCodDescrId := CodigoDeBarraOuDescricaoOuIdProduto;
+  LengthInteiro := Length(DevolveInteiro(vCodDescrId));
+  LengthCodigo := Length(vCodDescrId);
+  ACBrInStore1.ZerarDados;
+
+  try
+    if (LengthInteiro = LengthCodigo) and (LengthCodigo <= 4) and (BalancaLePeso = True) then
+    begin
+      ConsultaProduto(vCodDescrId, 1);
+      if Assigned(VendaDetalhe.EcfProdutoVO) then
+        Exit;
+    end;
+  finally
+    BalancaLePeso := False;
+  end;
+
+  if ((LengthInteiro = 13) and (LengthCodigo = 13)) or ((LengthInteiro = 14) and (LengthCodigo = 14)) then
+  begin
+    if (LengthInteiro = 13) and (IdentificadorBalanca = Copy(vCodDescrId, 1, 1)) then
+    begin
+      ACBrInStore1.Codificacao := trim(Sessao.Configuracao.EcfConfiguracaoBalancaVO.TipoConfiguracao);
+      ACBrInStore1.Desmembrar(trim(vCodDescrId));
+      ConsultaProduto(ACBrInStore1.Codigo, 1);
+      if Assigned(VendaDetalhe.EcfProdutoVO) then
+        Exit
+      else
+        ACBrInStore1.ZerarDados;
+    end;
+    ConsultaProduto(vCodDescrId, 2);
+    if Assigned(VendaDetalhe.EcfProdutoVO) then
+      Exit;
+  end;
+
+  if LengthInteiro = LengthCodigo then
+  begin
+    ConsultaProduto(Copy(vCodDescrId, 1, 10), 4);
+    if Assigned(VendaDetalhe.EcfProdutoVO) then
+      Exit;
+  end
+  else
+  begin
+    Application.CreateForm(TFImportaProduto, FImportaProduto);
+    FImportaProduto.EditLocaliza.Text := vCodDescrId;
+    FImportaProduto.ShowModal;
+    if (Length(DevolveInteiro(EditCodigo.Text))) = (Length(trim(EditCodigo.Text))) then
+    begin
+      VendaDetalhe.EcfProdutoVO.Id := 0;
+      ConsultaProduto(trim(EditCodigo.Text), 4);
+    end
+    else
+    begin
+      MensagemDeProdutoNaoEncontrado;
+      Abort;
+    end;
+  end;
+end;
+
+procedure TFCaixa.EditCodigoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  case Key of
+    VK_RETURN:
+      if trim(EditCodigo.Text) <> '' then
+        IniciaVendaDeItens;
+  end;
+end;
+
+procedure TFCaixa.EditCodigoKeyPress(Sender: TObject; var Key: Char);
+var
+  Quantidade: Extended;
+begin
+  if Key = '.' then
+    Key := FormatSettings.DecimalSeparator;
+
+  if (Key = #13) and (trim(EditCodigo.Text) = '') then
+  begin
+    Key := #0;
+    Perform(Wm_NextDlgCtl, 0, 0);
+  end;
+
+  if Key = '*' then
+  begin
+    Key := #0;
+    try
+      Quantidade := StrToFloat(EditCodigo.Text);
+      if (Quantidade <= 0) or (Quantidade > 999) then
+      begin
+        Application.MessageBox('Quantidade inválida.', 'Erro', MB_OK + MB_ICONERROR);
+        EditCodigo.Text := '';
+        EditQuantidade.Text := '1';
+      end
+      else
+      begin
+        EditQuantidade.Text := EditCodigo.Text;
+        EditCodigo.Text := '';
+      end;
+    except
+      Application.MessageBox('Quantidade inválida.', 'Erro', MB_OK + MB_ICONERROR);
+      EditCodigo.Text := '';
+      EditQuantidade.Text := '1';
+    end;
+  end;
+end;
+
+procedure TFCaixa.EditQuantidadeKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then
+  begin
+    Key := #0;
+    Perform(Wm_NextDlgCtl, 0, 0);
+  end;
+end;
+
+procedure TFCaixa.EditQuantidadeExit(Sender: TObject);
+begin
+  if (EditQuantidade.Value <= 0) or (EditQuantidade.Value > 999) then
+  begin
+    Application.MessageBox('Quantidade inválida.', 'Erro', MB_OK + MB_ICONERROR);
+    EditQuantidade.Value := 1;
+  end;
+end;
+
+procedure TFCaixa.VendeItem;
+var
+  EcfAliquotaVO: TEcfAliquotasVO;
+begin
+  try
+    CompoeItemParaVenda;
+
+    Filtro := 'ECF_ICMS_ST = ' + QuotedStr(VendaDetalhe.EcfIcmsSt);
+    EcfAliquotaVO := TEcfAliquotasVO(TController.BuscarObjeto('EcfAliquotasController.TEcfAliquotasController', 'ConsultaObjeto', [Filtro], 'GET'));
+
+    if not Assigned(EcfAliquotaVO) then
+    begin
+      Application.MessageBox('Produto com ICMS Não Definido!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      EditUnitario.Text := '0';
+      EditTotalItem.Text := '0';
+      EditCodigo.SetFocus;
+      EditCodigo.SelectAll;
+      Dec(ItemCupom);
+      FreeAndNil(VendaDetalhe);
+      Abort;
+    end;
+
+    if VendaDetalhe.EcfIcmsSt = '' then
+    begin
+      Application.MessageBox('Produto com ICMS Não Cadastrado na Impressora!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      EditUnitario.Text := '0';
+      EditTotalItem.Text := '0';
+      EditCodigo.SetFocus;
+      EditCodigo.SelectAll;
+      Dec(ItemCupom);
+      FreeAndNil(VendaDetalhe);
+      Abort;
+    end;
+
+    if VendaDetalhe.GTIN = '' then
+    begin
+      Application.MessageBox('Produto com Código ou GTIN Não Definido!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      EditUnitario.Text := '0';
+      EditTotalItem.Text := '0';
+      EditCodigo.SetFocus;
+      EditCodigo.SelectAll;
+      Dec(ItemCupom);
+      FreeAndNil(VendaDetalhe);
+      Abort;
+    end;
+
+    if VendaDetalhe.EcfProdutoVO.DescricaoPDV = '' then
+    begin
+      Application.MessageBox('Produto com Descrição Não Definida!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      EditUnitario.Text := '0';
+      EditTotalItem.Text := '0';
+      EditCodigo.SetFocus;
+      EditCodigo.SelectAll;
+      Dec(ItemCupom);
+      FreeAndNil(VendaDetalhe);
+      Abort;
+    end;
+
+    if VendaDetalhe.EcfProdutoVO.UnidadeEcfProdutoVO.Sigla = '' then
+    begin
+      Application.MessageBox('Produto com Unidade Não Definida!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      EditUnitario.Text := '0';
+      EditTotalItem.Text := '0';
+      EditCodigo.SetFocus;
+      EditCodigo.SelectAll;
+      Dec(ItemCupom);
+      FreeAndNil(VendaDetalhe);
+      Abort;
+    end;
+
+    // vende item
+    TECFUtil.VendeItem(VendaDetalhe);
+
+    VendaDetalhe.Ccf := StrToIntDef(FDataModule.ACBrECF.NumCCF, 0);
+    VendaDetalhe.Coo := StrToInt(FDataModule.ACBrECF.NumCOO);
+    // Pega o valor do item do ECF
+    VendaDetalhe.ValorTotal := FDataModule.ACBrECF.Subtotal - SubTotal;
+
+    TController.ExecutarMetodo('VendaController.TVendaController', 'InsereItem', [VendaDetalhe], 'PUT', 'Objeto');
+    FreeAndNil(VendaDetalhe);
+    VendaDetalhe := TEcfVendaDetalheVO(TController.ObjetoConsultado);
+    Sessao.VendaAtual.ListaEcfVendaDetalheVO.Add(VendaDetalhe);
+    ImprimeItemBobina;
+    Bobina.ItemIndex := Bobina.Items.Count - 1;
+
+  finally
+    FreeAndNil(EcfAliquotaVO);
+  end;
+end;
+
+procedure TFCaixa.CompoeItemParaVenda;
+begin
+  inc(ItemCupom);
+  VendaDetalhe.IdEcfProduto := VendaDetalhe.EcfProdutoVO.Id;
+  VendaDetalhe.CFOP := Sessao.Configuracao.CFOPECF;
+  VendaDetalhe.IdEcfVendaCabecalho := Sessao.VendaAtual.Id;
+  VendaDetalhe.CST := VendaDetalhe.EcfProdutoVO.CST;
+  VendaDetalhe.EcfIcmsSt := VendaDetalhe.EcfProdutoVO.EcfIcmsSt;
+  VendaDetalhe.TaxaICMS := VendaDetalhe.EcfProdutoVO.AliquotaICMS;
+  VendaDetalhe.TotalizadorParcial := VendaDetalhe.EcfProdutoVO.TotalizadorParcial;
+
+  if trim(VendaDetalhe.EcfProdutoVO.GTIN) = '' then
+    VendaDetalhe.GTIN := IntToStr(VendaDetalhe.EcfProdutoVO.Id)
+  else
+    VendaDetalhe.GTIN := VendaDetalhe.EcfProdutoVO.GTIN;
+
+  VendaDetalhe.Item := ItemCupom;
+  if VendaDetalhe.EcfProdutoVO.IPPT = 'T' then
+    VendaDetalhe.MovimentaEstoque := 'S'
+  else
+    VendaDetalhe.MovimentaEstoque := 'N';
+  if Sessao.StatusCaixa = scVendaEmAndamento then
+  begin
+    VendaDetalhe.Quantidade := EditQuantidade.Value;
+    VendaDetalhe.ValorUnitario := EditUnitario.Value;
+    VendaDetalhe.ValorTotal := EditTotalItem.Value;
+    VendaDetalhe.TotalItem := EditTotalItem.Value;
+  end;
+end;
+
+procedure TFCaixa.ImprimeItemBobina;
+var
+  Quantidade, Unitario, Total, Unidade: String;
+begin
+  Quantidade := FloatToStrF(VendaDetalhe.Quantidade, ffNumber, 8, 3);
+  Unitario := FloatToStrF(VendaDetalhe.ValorUnitario, ffNumber, 13, 2);
+  Total := FloatToStrF(VendaDetalhe.ValorTotal, ffNumber, 14, 2);
+  Bobina.Items.Add(StringOfChar('0', 3 - Length(IntToStr(ItemCupom))) + IntToStr(ItemCupom) + '  ' + VendaDetalhe.GTIN + StringOfChar(' ', 14 - Length(VendaDetalhe.GTIN)) + ' ' + Copy(VendaDetalhe.EcfProdutoVO.DescricaoPDV, 1, 28));
+
+  Unidade := trim(Copy(VendaDetalhe.EcfProdutoVO.UnidadeEcfProdutoVO.Sigla, 1, 3));
+
+  Bobina.Items.Add(StringOfChar(' ', 8 - Length(Quantidade)) + Quantidade + ' ' + StringOfChar(' ', 3 - Length(Unidade)) + Unidade + ' x ' + StringOfChar(' ', 13 - Length(Unitario)) + Unitario + ' ' + StringOfChar(' ', 5 - Length(VendaDetalhe.EcfIcmsSt)) + VendaDetalhe.EcfIcmsSt + StringOfChar(' ', 14 - Length(Total)) + Total);
+end;
+
+procedure TFCaixa.AtualizaTotais;
+var
+  DescontoAcrescimo: Extended;
+begin
+  Sessao.VendaAtual.ValorVenda := SubTotal;
+  Sessao.VendaAtual.Desconto := Desconto;
+  Sessao.VendaAtual.Acrescimo := Acrescimo;
+
+  Sessao.VendaAtual.ValorFinal := TotalGeral - Desconto + Acrescimo;
+  DescontoAcrescimo := Acrescimo - Desconto;
+
+  if DescontoAcrescimo < 0 then
+  begin
+    LabelDescontoAcrescimo.Caption := 'Desconto: R$ ' + FormatFloat('0.00', -DescontoAcrescimo);
+    LabelDescontoAcrescimo.Font.Color := clRed;
+    Sessao.VendaAtual.Desconto := -DescontoAcrescimo;
+    Sessao.VendaAtual.Acrescimo := 0;
+  end
+  else if DescontoAcrescimo > 0 then
+  begin
+    LabelDescontoAcrescimo.Caption := 'Acréscimo: R$ ' + FormatFloat('0.00', DescontoAcrescimo);
+    LabelDescontoAcrescimo.Font.Color := clBlue;
+    Sessao.VendaAtual.Desconto := 0;
+    Sessao.VendaAtual.Acrescimo := DescontoAcrescimo;
+  end
+  else
+  begin
+    LabelDescontoAcrescimo.Caption := '';
+    Sessao.VendaAtual.TaxaAcrescimo := 0;
+    Sessao.VendaAtual.TaxaDesconto := 0;
+    Acrescimo := 0;
+    Desconto := 0;
+  end;
+
+  if ((Sessao.VendaAtual.ValorFinal < Sessao.VendaAtual.ValorVenda) and (Sessao.VendaAtual.TaxaDesconto <> 0) and (Desconto <> ((1 - (Sessao.VendaAtual.ValorFinal / Sessao.VendaAtual.ValorVenda)) * 100))) then
+  begin
+    Sessao.VendaAtual.TaxaDesconto := (1 - (Sessao.VendaAtual.ValorFinal / Sessao.VendaAtual.ValorVenda)) * 100;
+    Sessao.VendaAtual.TaxaAcrescimo := 0;
+  end;
+
+  if ((Sessao.VendaAtual.ValorFinal > Sessao.VendaAtual.ValorVenda) and (Sessao.VendaAtual.TaxaAcrescimo <> 0) and (Acrescimo <> ((Sessao.VendaAtual.ValorFinal / Sessao.VendaAtual.ValorVenda) * 100) - 100)) then
+  begin
+    Sessao.VendaAtual.TaxaAcrescimo := ((Sessao.VendaAtual.ValorFinal / Sessao.VendaAtual.ValorVenda) * 100) - 100;
+    Sessao.VendaAtual.TaxaDesconto := 0;
+  end;
+
+  EditSubTotal.Text := FormatFloat('0.00', Sessao.VendaAtual.ValorVenda);
+  labelTotalGeral.Caption := Format('%18.2n', [Sessao.VendaAtual.ValorFinal]);
+end;
+
+procedure TFCaixa.IniciaEncerramentoVenda;
+begin
+  if Sessao.StatusCaixa <> scSomenteConsulta then
+  begin
+    if Sessao.StatusCaixa = scVendaEmAndamento then
+    begin
+      if Sessao.VendaAtual.ListaEcfVendaDetalheVO.Count > 0 then
+      begin
+        Sessao.VendaAtual.CupomCancelado := 'N';
+        if Sessao.VendaAtual.ValorFinal <= 0 then
+        begin
+          if Application.MessageBox('Todos os itens foram cancelados.' + #13 + #13 + 'Deseja cancelar o cupom?', 'Cancelar o cupom', Mb_YesNo + Mb_IconQuestion) = IdYes then
+            CancelaCupom;
+          Abort;
+        end;
+
+        Application.CreateForm(TFEfetuaPagamento, FEfetuaPagamento);
+        FEfetuaPagamento.ShowModal;
+        edtNVenda.Caption := '';
+        edtCOO.Caption := '';
+      end
+      else
+        Application.MessageBox('A venda não contém itens.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end
+    else
+      Application.MessageBox('Não existe venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  end
+  else
+    Application.MessageBox('Terminal em Estado Somente Consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+
+procedure TFCaixa.ConcluiEncerramentoVenda;
+var
+  Camadas, I: Integer;
+begin
+  try
+    // Guarda Camadas. Se ocorrer algum problema, no Finally tem que setar o mesmo valor
+    Camadas := Sessao.Camadas;
+
+    if Sessao.VendaAtual.IdEcfPreVendaCabecalho > 0 then
+    begin
+      Sessao.Camadas := 3;
+      PreVenda.Ccf := Sessao.VendaAtual.Ccf;
+      PreVenda.Situacao := 'E';
+      TController.ExecutarMetodo('PreVendaController.TPreVendaController', 'Altera', [PreVenda], 'POST', 'Boolean');
+      Sessao.Camadas := 2;
+    end;
+
+    if Sessao.VendaAtual.IdEcfDav > 0 then
+    begin
+      Sessao.Camadas := 3;
+      DavCabecalho.NumeroEcf := FDataModule.ACBrECF.NumECF;
+      DavCabecalho.Ccf := Sessao.VendaAtual.Ccf;
+      DavCabecalho.Coo := Sessao.VendaAtual.Coo;
+      DavCabecalho.Situacao := 'E';
+      TController.ExecutarMetodo('DAVController.TDAVController', 'AlteraPaf', [DavCabecalho], 'POST', 'Boolean');
+      Sessao.Camadas := 2;
+    end;
+
+    TController.ExecutarMetodo('VendaController.TVendaController', 'Altera', [Sessao.VendaAtual], 'POST', 'Boolean');
+
+    LabelMensagens.Caption := 'Aguarde, Exportando Dados';
+    ExecutarIntegracao('EXPORTA_VENDA');
+  finally
+    Sessao.Camadas := Camadas;
+    FreeAndNil(PreVenda);
+    FreeAndNil(DavCabecalho);
+    TPAFUtil.GravarIdUltimaVenda;
+    TelaPadrao;
+  end;
+end;
+
+procedure TFCaixa.CancelaCupom;
+begin
+  if Sessao.StatusCaixa <> scSomenteConsulta then
+  begin
+    if not Assigned(Sessao.Movimento) then
+      Application.MessageBox('Não existe um movimento aberto.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION)
+    else
+    begin
+      Application.CreateForm(TFLoginGerenteSupervisor, FLoginGerenteSupervisor);
+      try
+        if (FLoginGerenteSupervisor.ShowModal = MROK) then
+        begin
+          if FLoginGerenteSupervisor.LoginOK then
+          begin
+            if (Sessao.StatusCaixa = scVendaEmAndamento) or (Sessao.StatusCaixa = scVendaRecuperadaDavPreVenda) then
+            begin
+              if Application.MessageBox('Deseja cancelar o cupom atual?', 'Pergunta do Sistema', Mb_YesNo + Mb_IconQuestion) = IdYes then
+              begin
+                TECFUtil.CancelaCupom;
+                Sessao.VendaAtual.Ccf := StrToIntDef(FDataModule.ACBrECF.NumCCF, 0);
+                Sessao.VendaAtual.Coo := StrToInt(FDataModule.ACBrECF.NumCOO);
+                Sessao.VendaAtual.ValorCancelado := Sessao.VendaAtual.ValorVenda;
+                Sessao.VendaAtual.StatusVenda := 'C';
+                Sessao.VendaAtual.CupomCancelado := 'S';
+                Sessao.VendaAtual.ValorFinal := 0;
+
+                TController.ExecutarMetodo('VendaController.TVendaController', 'CancelaVenda', [Sessao.VendaAtual], 'POST', 'Boolean');
+                ExecutarIntegracao('EXPORTA_VENDA');
+
+                Sessao.StatusCaixa := scAberto;
+                TelaPadrao;
+              end;
+            end
+            else if (Sessao.StatusCaixa = scAberto) then
+            begin
+              if Application.MessageBox('Deseja cancelar o cupom anterior?', 'Pergunta do Sistema', Mb_YesNo + Mb_IconQuestion) = IdYes then
+              begin
+                try
+                  TECFUtil.CancelaCupom;
+                  Filtro := 'ID = ' + TPAFUtil.RecuperarIdUltimaVenda;
+                  Sessao.VendaAtual := TEcfVendaCabecalhoVO(TController.BuscarObjeto('VendaController.TVendaController', 'ConsultaObjeto', [Filtro], 'GET'));
+
+                  Sessao.VendaAtual.ValorCancelado := Sessao.VendaAtual.ValorVenda;
+                  Sessao.VendaAtual.StatusVenda := 'C';
+                  Sessao.VendaAtual.CupomCancelado := 'S';
+                  Sessao.VendaAtual.ValorFinal := 0;
+
+                  TController.ExecutarMetodo('VendaController.TVendaController', 'CancelaVenda', [Sessao.VendaAtual], 'POST', 'Boolean');
+                  ExecutarIntegracao('EXPORTA_VENDA');
+
+                  Sessao.StatusCaixa := scAberto;
+                  TelaPadrao;
+                except
+                end;
+              end;
+            end;
+          end
+          else
+            Application.MessageBox('Login - dados incorretos.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+        end;
+      finally
+        if Assigned(FLoginGerenteSupervisor) then
+          FLoginGerenteSupervisor.Free;
+      end;
+    end;
+  end
+  else
+    Application.MessageBox('Terminal em Estado Somente Consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+
+procedure TFCaixa.CancelaItem;
+var
+  cancela: Integer;
+begin
+  if Sessao.StatusCaixa <> scSomenteConsulta then
+  begin
+    if Sessao.StatusCaixa = scVendaEmAndamento then
+    begin
+      Application.CreateForm(TFLoginGerenteSupervisor, FLoginGerenteSupervisor);
+      try
+        if (FLoginGerenteSupervisor.ShowModal = MROK) then
+        begin
+          if FLoginGerenteSupervisor.LoginOK then
+          begin
+
+            Application.CreateForm(TFImportaNumero, FImportaNumero);
+            FImportaNumero.Caption := 'Cancelar Item';
+            FImportaNumero.LabelEntrada.Caption := 'Informe o número do Item';
+            try
+              if (FImportaNumero.ShowModal = MROK) then
+              begin
+                cancela := FImportaNumero.EditEntrada.AsInteger;
+                if cancela > 0 then
+                begin
+                  if cancela <= Sessao.VendaAtual.ListaEcfVendaDetalheVO.Count then
+                  begin
+                    VendaDetalhe := Sessao.VendaAtual.ListaEcfVendaDetalheVO.Items[cancela - 1];
+
+                    if VendaDetalhe.Cancelado <> 'S' then
+                    begin
+                      TECFUtil.CancelaItem(cancela);
+
+                      VendaDetalhe.TotalizadorParcial := 'Can-T';
+                      VendaDetalhe.Cancelado := 'S';
+                      VendaDetalhe.Ccf := StrToIntDef(FDataModule.ACBrECF.NumCCF, 0);
+                      VendaDetalhe.Coo := StrToInt(FDataModule.ACBrECF.NumCOO);
+
+                      TController.ExecutarMetodo('VendaController.TVendaController', 'CancelaItemVenda', [VendaDetalhe], 'POST', 'Boolean');
+
+                      Bobina.Items.Add(StringOfChar('*', 48));
+                      Bobina.Items.Add(StringOfChar('0', 3 - Length(IntToStr(cancela))) + IntToStr(cancela) + '  ' + VendaDetalhe.GTIN + StringOfChar(' ', 14 - Length(VendaDetalhe.GTIN)) + ' ' + Copy(VendaDetalhe.EcfProdutoVO.DescricaoPDV, 1, 28));
+
+                      Bobina.Items.Add('ITEM CANCELADO');
+                      Bobina.Items.Add(StringOfChar('*', 48));
+
+                      SubTotal := SubTotal - VendaDetalhe.ValorTotal;
+                      TotalGeral := TotalGeral - VendaDetalhe.ValorTotal;
+
+                      // cancela possíveis descontos ou acrescimos
+                      Desconto := 0;
+                      Acrescimo := 0;
+                      Sessao.VendaAtual.TaxaAcrescimo := 0;
+                      Sessao.VendaAtual.TaxaDesconto := 0;
+                      Bobina.ItemIndex := Bobina.Items.Count - 1; // Quando o item é cancelado, a "bobina" do aplicativo não avançava
+                      AtualizaTotais;
+                    end
+                    else
+                      Application.MessageBox('O item solicitado já foi cancelado.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+                  end
+                  else
+                    Application.MessageBox('O item solicitado não existe na venda atual.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+                end
+                else
+                  Application.MessageBox('Informe um número de item válido.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+              end;
+            finally
+              if Assigned(FImportaNumero) then
+                FImportaNumero.Free;
+            end;
+          end
+          else
+            Application.MessageBox('Login - dados incorretos.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+        end;
+      finally
+        if Assigned(FLoginGerenteSupervisor) then
+          FLoginGerenteSupervisor.Free;
+      end;
+    end
+    else
+      Application.MessageBox('Não existe venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+  end
+  else
+    Application.MessageBox('Terminal em Estado Somente Consulta.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+
+procedure TFCaixa.CancelaItem(cancela: Integer);
+begin
+  try
+    if cancela > 0 then
+    begin
+      if cancela <= Sessao.VendaAtual.ListaEcfVendaDetalheVO.Count then
+      begin
+        VendaDetalhe := Sessao.VendaAtual.ListaEcfVendaDetalheVO.Items[cancela - 1];
+
+        if VendaDetalhe.Cancelado <> 'S' then
+        begin
+
+          TECFUtil.CancelaItem(cancela);
+
+          VendaDetalhe.TotalizadorParcial := 'Can-T';
+          VendaDetalhe.Cancelado := 'S';
+          VendaDetalhe.Ccf := StrToIntDef(FDataModule.ACBrECF.NumCCF, 0);
+          VendaDetalhe.Coo := StrToInt(FDataModule.ACBrECF.NumCOO);
+
+          TController.ExecutarMetodo('VendaController.TVendaController', 'CancelaItemVenda', [VendaDetalhe], 'POST', 'Boolean');
+
+          Bobina.Items.Add(StringOfChar('*', 48));
+          Bobina.Items.Add(StringOfChar('0', 3 - Length(IntToStr(cancela))) + IntToStr(cancela) + '  ' + VendaDetalhe.GTIN + StringOfChar(' ', 14 - Length(VendaDetalhe.GTIN)) + ' ' + Copy(VendaDetalhe.EcfProdutoVO.DescricaoPDV, 1, 28));
+
+          Bobina.Items.Add('ITEM CANCELADO');
+          Bobina.Items.Add(StringOfChar('*', 48));
+
+          SubTotal := SubTotal - VendaDetalhe.ValorTotal;
+          TotalGeral := TotalGeral - VendaDetalhe.ValorTotal;
+
+          // cancela possíveis descontos ou acrescimos
+          Desconto := 0;
+          Acrescimo := 0;
+          Sessao.VendaAtual.TaxaAcrescimo := 0;
+          Sessao.VendaAtual.TaxaDesconto := 0;
+
+          AtualizaTotais;
+        end
+        else
+          Application.MessageBox('O item solicitado já foi cancelado.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+      end
+      else
+        Application.MessageBox('O item solicitado não existe na venda atual.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end;
+  finally
+  end;
+end;
+
+procedure TFCaixa.DesabilitaControlesVenda;
+begin
+  EditCodigo.Enabled := False;
+  EditQuantidade.Enabled := False;
+  EditUnitario.Enabled := False;
+  EditTotalItem.Enabled := False;
+  EditSubTotal.Enabled := False;
+  Bobina.Enabled := False;
+  panelBotoes.Enabled := False;
+  FCaixa.KeyPreview := False;
+  TimerIntegracao.Enabled := False;
+end;
+
+procedure TFCaixa.HabilitaControlesVenda;
+begin
+  EditCodigo.Enabled := true;
+  EditQuantidade.Enabled := true;
+  EditUnitario.Enabled := true;
+  EditTotalItem.Enabled := true;
+  EditSubTotal.Enabled := true;
+  Bobina.Enabled := true;
+  panelBotoes.Enabled := true;
+  FCaixa.KeyPreview := true;
+
+  if Sessao.Configuracao.TipoIntegracao > 0 then
+  begin
+    if Sessao.Configuracao.TimerIntegracao > 0 then
+      TimerIntegracao.Interval := Sessao.Configuracao.TimerIntegracao * 1000;
+    TimerIntegracao.Enabled := true;
+  end;
+end;
+
+procedure TFCaixa.EntradaDadosNF;
+var
+  GuardaStatus: TStatusCaixa;
+begin
+  if (Sessao.Configuracao.PermiteLancarNfManual = 'N') then
+  begin
+    Application.MessageBox('Lançamento de notas manuais não disponivel.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Exit;
+  end;
+
+  if (Sessao.StatusCaixa <> scVendaEmAndamento) then
+  begin
+    try
+      GuardaStatus := Sessao.StatusCaixa;
+      Sessao.StatusCaixa := scInformandoDadosNF;
+      TimerIntegracao.Enabled := False;
+      Application.CreateForm(TFNotaFiscal, FNotaFiscal);
+      FNotaFiscal.ShowModal;
+      Application.OnHint := ShowHint;
+    finally
+      Sessao.StatusCaixa := GuardaStatus;
+    end;
+  end
+  else
+    Application.MessageBox('Existe uma venda em andamento.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+{$ENDREGION}
+
+{$REGION 'Aparência e controle dos painéis com as funções do programa - F1 a F12'}
+procedure TFCaixa.panelF1MouseEnter(Sender: TObject);
+begin
+  panelF1.BevelOuter := bvRaised;
+  panelF1.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF1MouseLeave(Sender: TObject);
+begin
+  panelF1.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF1Click(Sender: TObject);
+begin
+  IdentificaCliente;
+end;
+
+procedure TFCaixa.panelF2MouseEnter(Sender: TObject);
+begin
+  panelF2.BevelOuter := bvRaised;
+  panelF2.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF2MouseLeave(Sender: TObject);
+begin
+  panelF2.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF2Click(Sender: TObject);
+begin
+  AcionaMenuPrincipal;
+end;
+
+procedure TFCaixa.panelF3MouseEnter(Sender: TObject);
+begin
+  panelF3.BevelOuter := bvRaised;
+  panelF3.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF3MouseLeave(Sender: TObject);
+begin
+  panelF3.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF3Click(Sender: TObject);
+begin
+  AcionaMenuOperacoes;
+end;
+
+procedure TFCaixa.panelF4MouseEnter(Sender: TObject);
+begin
+  panelF4.BevelOuter := bvRaised;
+  panelF4.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF4MouseLeave(Sender: TObject);
+begin
+  panelF4.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF4Click(Sender: TObject);
+begin
+  AcionaMenuFiscal;
+end;
+
+procedure TFCaixa.panelF5MouseEnter(Sender: TObject);
+begin
+  panelF5.BevelOuter := bvRaised;
+  panelF5.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF5MouseLeave(Sender: TObject);
+begin
+  panelF5.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF5Click(Sender: TObject);
+begin
+  EntradaDadosNF;
+end;
+
+procedure TFCaixa.panelF6MouseEnter(Sender: TObject);
+begin
+  panelF6.BevelOuter := bvRaised;
+  panelF6.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF6MouseLeave(Sender: TObject);
+begin
+  panelF6.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF6Click(Sender: TObject);
+begin
+  LocalizaProduto;
+end;
+
+procedure TFCaixa.panelF7MouseEnter(Sender: TObject);
+begin
+  panelF7.BevelOuter := bvRaised;
+  panelF7.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF7MouseLeave(Sender: TObject);
+begin
+  panelF7.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF7Click(Sender: TObject);
+begin
+  IniciaEncerramentoVenda;
+end;
+
+procedure TFCaixa.panelF8MouseEnter(Sender: TObject);
+begin
+  panelF8.BevelOuter := bvRaised;
+  panelF8.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF8MouseLeave(Sender: TObject);
+begin
+  panelF8.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF8Click(Sender: TObject);
+begin
+  CancelaItem;
+end;
+
+procedure TFCaixa.panelF9MouseEnter(Sender: TObject);
+begin
+  panelF9.BevelOuter := bvRaised;
+  panelF9.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF9MouseLeave(Sender: TObject);
+begin
+  panelF9.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF9Click(Sender: TObject);
+begin
+  CancelaCupom;
+end;
+
+procedure TFCaixa.panelF10MouseEnter(Sender: TObject);
+begin
+  panelF10.BevelOuter := bvRaised;
+  panelF10.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF10MouseLeave(Sender: TObject);
+begin
+  panelF10.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF10Click(Sender: TObject);
+begin
+  DescontoOuAcrescimo;
+end;
+
+procedure TFCaixa.panelF11MouseEnter(Sender: TObject);
+begin
+  panelF11.BevelOuter := bvRaised;
+  panelF11.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF11MouseLeave(Sender: TObject);
+begin
+  panelF11.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF11Click(Sender: TObject);
+begin
+  IdentificaVendedor;
+end;
+
+procedure TFCaixa.panelF12MouseEnter(Sender: TObject);
+begin
+  panelF12.BevelOuter := bvRaised;
+  panelF12.BevelWidth := 2;
+end;
+
+procedure TFCaixa.panelF12MouseLeave(Sender: TObject);
+begin
+  panelF12.BevelOuter := bvNone;
+end;
+
+procedure TFCaixa.panelF12Click(Sender: TObject);
+begin
+  Close;
+end;
+{$ENDREGION}
+
+{$REGION 'Procedimentos para ler peso direto das balanças componente ACBrBal'}
+procedure TFCaixa.ConectaComBalanca; // novo procedimento balança
+begin
+  // se houver conecção aberta, Fecha a conecção
+  if ACBrBAL1.Ativo then
+    ACBrBAL1.Desativar;
+
+  // configura porta de comunicação
+  ACBrBAL1.Modelo := TACBrBALModelo(Sessao.Configuracao.EcfConfiguracaoBalancaVO.Modelo);
+  ACBrBAL1.Device.HandShake := TACBrHandShake(Sessao.Configuracao.EcfConfiguracaoBalancaVO.HandShake);
+  ACBrBAL1.Device.Parity := TACBrSerialParity(Sessao.Configuracao.EcfConfiguracaoBalancaVO.Parity);
+  ACBrBAL1.Device.Stop := TACBrSerialStop(Sessao.Configuracao.EcfConfiguracaoBalancaVO.StopBits);
+  ACBrBAL1.Device.Data := Sessao.Configuracao.EcfConfiguracaoBalancaVO.DataBits;
+  ACBrBAL1.Device.Baud := Sessao.Configuracao.EcfConfiguracaoBalancaVO.BaudRate;
+  ACBrBAL1.Device.Porta := Sessao.Configuracao.EcfConfiguracaoBalancaVO.Porta;
+  // Conecta com a balança
+  ACBrBAL1.Ativar;
+end;
+
+procedure TFCaixa.ConectaComLeitorSerial;
+begin
+  // se houver conecção aberta, Fecha a conecção
+  if ACBrLCB1.Ativo then
+    ACBrBAL1.Desativar;
+
+  // configura porta de comunicação
+  ACBrLCB1.Porta := Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.Porta;
+  ACBrLCB1.Device.Baud := Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.Baud;
+  ACBrLCB1.Sufixo := Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.Sufixo;
+  ACBrLCB1.Intervalo := Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.Intervalo;
+  ACBrLCB1.Device.Data := Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.DataBits;
+  ACBrLCB1.Device.Parity := TACBrSerialParity(Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.Parity);
+
+  if Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.HardFlow = 'N' then
+    ACBrLCB1.Device.HardFlow := False
+  else
+    ACBrLCB1.Device.HardFlow := True;
+
+  if Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.SoftFlow = 'N' then
+    ACBrLCB1.Device.SoftFlow := False
+  else
+    ACBrLCB1.Device.SoftFlow := True;
+
+  ACBrLCB1.Device.HandShake := TACBrHandShake(Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.HandShake);
+  ACBrLCB1.Device.Stop := TACBrSerialStop(Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.StopBits);
+
+  if Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.UsarFila = 'S' Then
+    ACBrLCB1.UsarFila := True
+  else
+    ACBrLCB1.UsarFila := False;
+
+  if Sessao.Configuracao.EcfConfiguracaoLeitorSerVO.ExcluirSufixo = 'S' then
+    ACBrLCB1.ExcluirSufixo := True
+  else
+    ACBrLCB1.ExcluirSufixo := False;
+
+  ACBrLCB1.Ativar;
+end;
+
+procedure TFCaixa.ACBrBAL1LePeso(Peso: Double; Resposta: AnsiString);
+var
+  valid: Integer;
+begin
+  EditCodigo.Text := FormatFloat('##0.000', Peso) + '*';
+  if Peso > 0 then
+  begin
+    labelMensagens.Caption := 'Leitura da Balança OK !';
+    EditQuantidade.Text := FormatFloat('##0.000', Peso);
+    EditCodigo.SetFocus;
+  end
+  else
+  begin
+    valid := Trunc(ACBrBAL1.UltimoPesoLido);
+    case valid of
+      0:
+        labelMensagens.Caption := 'Coloque o produto sobre a Balança!';
+      -1:
+        labelMensagens.Caption := 'Tente Nova Leitura';
+      -2:
+        labelMensagens.Caption := 'Peso Negativo !';
+      -10:
+        labelMensagens.Caption := 'Sobrepeso !';
+    end;
+  end;
+end;
+{$ENDREGION}
+
+end.

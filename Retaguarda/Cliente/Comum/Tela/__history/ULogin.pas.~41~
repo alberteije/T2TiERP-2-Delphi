@@ -1,0 +1,173 @@
+{ *******************************************************************************
+  Title: T2Ti ERP
+  Description: Tela de login do ERP.
+
+  The MIT License
+
+  Copyright: Copyright (C) 2015 T2Ti.COM
+
+  Permission is hereby granted, free of charge, to any person
+  obtaining a copy of this software and associated documentation
+  files (the "Software"), to deal in the Software without
+  restriction, including without limitation the rights to use,
+  copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the
+  Software is furnished to do so, subject to the following
+  conditions:
+
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  OTHER DEALINGS IN THE SOFTWARE.
+
+  The author may be contacted at:
+  fabio_thz@yahoo.com.br | t2ti.com@gmail.com</p>
+
+  @author Fábio Thomaz
+  @version 2.0
+  ******************************************************************************* }
+unit ULogin;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UBase, StdCtrls, ExtCtrls, Buttons, jpeg, DB, DBClient, Grids,
+  DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, ShellApi, IniFiles, Biblioteca;
+
+type
+  TFLogin = class(TFBase)
+    Label1: TLabel;
+    Label2: TLabel;
+    Image1: TImage;
+    BotaoConfirma: TBitBtn;
+    EditLogin: TEdit;
+    EditSenha: TEdit;
+    BotaoCancela: TBitBtn;
+    CDSEmpresaUsuario: TClientDataSet;
+    DSEmpresaUsuario: TDataSource;
+    CDSEmpresaUsuarioID_EMPRESA: TIntegerField;
+    CDSEmpresaUsuarioID_PESSOA: TIntegerField;
+    CDSEmpresaUsuarioRAZAO_SOCIAL: TStringField;
+    Grid: TJvDBUltimGrid;
+    procedure BotaoCancelaClick(Sender: TObject);
+    procedure BotaoConfirmaClick(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure FormShow(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure GridKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+    function DoLogin: Boolean;
+  public
+    { Public declarations }
+    Logado: Boolean;
+  end;
+
+var
+  FLogin: TFLogin;
+
+implementation
+
+uses ViewSessaoEmpresaController, EmpresaController, Controller, EmpresaSessaoVO;
+
+{$R *.dfm}
+{ TFLogin }
+
+procedure TFLogin.BotaoCancelaClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TFLogin.BotaoConfirmaClick(Sender: TObject);
+var
+  Filtro: String;
+begin
+  try
+    if DoLogin then
+    begin
+      Logado := True;
+
+      Filtro := 'ID_PESSOA = ' + IntToStr(Sessao.Usuario.ColaboradorVO.IdPessoa);
+      TViewSessaoEmpresaController.SetDataSet(CDSEmpresaUsuario);
+      TController.ExecutarMetodo('ViewSessaoEmpresaController.TViewSessaoEmpresaController', 'Consulta', [Filtro, '0', False], 'GET', 'Lista');
+
+      //TViewSessaoEmpresaController.Consulta('ID_PESSOA = ' + IntToStr(Sessao.Usuario.ColaboradorVO.IdPessoa), '0', False);
+
+      if CDSEmpresaUsuario.RecordCount > 1 then
+      begin
+        Self.Height := 335;
+        Self.Grid.SetFocus;
+      end
+      else
+      begin
+        Filtro := 'ID=' + CDSEmpresaUsuario.FieldByName('ID_EMPRESA').AsString;
+        TController.ExecutarMetodo('EmpresaController.TEmpresaController', 'EmpresaSessao', [Filtro], 'GET', 'Objeto');
+        Sessao.Empresa := TEmpresaSessaoVO(TController.ObjetoConsultado);
+
+        //Sessao.Empresa := TEmpresaController.EmpresaSessao('ID=' + CDSEmpresaUsuarioID_EMPRESA.AsString);
+        Close;
+      end;
+    end
+    else
+    begin
+      Application.MessageBox('Não foi possível realizar o login.', 'Atenção', MB_OK + MB_ICONWARNING);
+      EditLogin.SetFocus;
+    end;
+  except
+  end;
+end;
+
+function TFLogin.DoLogin: Boolean;
+begin
+  try
+    Result := Sessao.AutenticaUsuario(EditLogin.Text, EditSenha.Text);
+  except
+    Result := False;
+  end;
+end;
+
+procedure TFLogin.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  inherited;
+  CanClose := Logado;
+end;
+
+procedure TFLogin.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_F11 then
+    BotaoCancela.Click;
+  if Key = VK_F12 then
+    BotaoConfirma.Click;
+end;
+
+procedure TFLogin.FormShow(Sender: TObject);
+begin
+  inherited;
+  Logado := False;
+  EditLogin.SetFocus;
+end;
+
+procedure TFLogin.GridKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if key = VK_RETURN then
+  begin
+    Filtro := 'ID=' + CDSEmpresaUsuarioID_EMPRESA.AsString;
+    TController.ExecutarMetodo('EmpresaController.TEmpresaController', 'EmpresaSessao', [Filtro], 'GET', 'Objeto');
+    Sessao.Empresa := TEmpresaSessaoVO(TController.ObjetoConsultado);
+
+    //Sessao.Empresa := TEmpresaController.EmpresaSessao('ID=' + CDSEmpresaUsuarioID_EMPRESA.AsString);
+    Close;
+  end;
+end;
+
+end.

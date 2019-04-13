@@ -1,0 +1,451 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela para Cadastrar Pagamentos Fixos
+
+The MIT License
+
+Copyright: Copyright (C) 2016 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+@author Albert Eije (t2ti.com@gmail.com)
+@version 2.0
+******************************************************************************* }
+unit UFinPagamentoFixo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, DB, DBClient, Menus, StdCtrls, ExtCtrls, Buttons, Grids,
+  DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, FinPagamentoFixoVO,
+  FinPagamentoFixoController, Tipos, Atributos, Constantes, LabeledCtrls, JvToolEdit,
+  Mask, JvExMask, JvBaseEdits, Math, StrUtils, ActnList, Generics.Collections,
+  RibbonSilverStyleActnCtrls, ActnMan, ToolWin, ActnCtrls, ShellApi, AdmParametroVO,
+  System.Actions, Controller;
+
+type
+  [TFormDescription(TConstantes.MODULO_CONTAS_PAGAR, 'Pagamento Fixo')]
+
+  TFFinPagamentoFixo = class(TFTelaCadastro)
+    PanelParcelas: TPanel;
+    PanelMestre: TPanel;
+    EditIdFornecedor: TLabeledCalcEdit;
+    EditFornecedor: TLabeledEdit;
+    EditIdDocumentoOrigem: TLabeledCalcEdit;
+    EditDocumentoOrigem: TLabeledEdit;
+    ComboBoxPagamentoCompartilhado: TLabeledComboBox;
+    EditPrimeiroVencimento: TLabeledDateEdit;
+    EditQuantidadeParcelas: TLabeledCalcEdit;
+    EditValorAPagar: TLabeledCalcEdit;
+    EditValorTotal: TLabeledCalcEdit;
+    EditDataLancamento: TLabeledDateEdit;
+    EditNumeroDocumento: TLabeledEdit;
+    EditIntervalorEntreParcelas: TLabeledCalcEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure ActionGerarParcelasExecute(Sender: TObject);
+    procedure CDSParcelaPagarBeforeDelete(DataSet: TDataSet);
+    procedure GerarParcelas;
+    procedure ActionAcionarGedExecute(Sender: TObject);
+    procedure EditIdFornecedorKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EditIdDocumentoOrigemKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure ActionGerarPagamentoFixoExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+
+  end;
+
+var
+  FFinPagamentoFixo: TFFinPagamentoFixo;
+  AdmParametroVO: TAdmParametroVO;
+
+implementation
+
+uses ULookup, Biblioteca, UDataModule,
+  FinDocumentoOrigemVO, FinDocumentoOrigemController, ViewPessoaFornecedorVO,
+  ViewPessoaFornecedorController;
+{$R *.dfm}
+
+{$REGION 'Infra'}
+procedure TFFinPagamentoFixo.FormCreate(Sender: TObject);
+var
+  Filtro: String;
+begin
+  ClasseObjetoGridVO := TFinPagamentoFixoVO;
+  ObjetoController := TFinPagamentoFixoController.Create;
+
+  inherited;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFFinPagamentoFixo.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    EditIdFornecedor.SetFocus;
+  end;
+end;
+
+function TFFinPagamentoFixo.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditIdFornecedor.SetFocus;
+  end;
+end;
+
+function TFFinPagamentoFixo.DoExcluir: Boolean;
+begin
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('FinPagamentoFixoController.TFinPagamentoFixoController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('FinPagamentoFixoController.TFinPagamentoFixoController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+end;
+
+function TFFinPagamentoFixo.DoSalvar: Boolean;
+begin
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TFinPagamentoFixoVO.Create;
+
+      TFinPagamentoFixoVO(ObjetoVO).IdFornecedor := EditIdFornecedor.AsInteger;
+      TFinPagamentoFixoVO(ObjetoVO).FornecedorNome := EditFornecedor.Text;
+      TFinPagamentoFixoVO(ObjetoVO).IdFinDocumentoOrigem := EditIdDocumentoOrigem.AsInteger;
+      TFinPagamentoFixoVO(ObjetoVO).DocumentoOrigemSigla := EditDocumentoOrigem.Text;
+      TFinPagamentoFixoVO(ObjetoVO).PagamentoCompartilhado := IfThen(ComboBoxPagamentoCompartilhado.ItemIndex = 0, 'S', 'N');
+      TFinPagamentoFixoVO(ObjetoVO).QuantidadeParcela := EditQuantidadeParcelas.AsInteger;
+      TFinPagamentoFixoVO(ObjetoVO).ValorTotal := EditValorTotal.Value;
+      TFinPagamentoFixoVO(ObjetoVO).ValorAPagar := EditValorAPagar.Value;
+      TFinPagamentoFixoVO(ObjetoVO).DataLancamento := EditDataLancamento.Date;
+      TFinPagamentoFixoVO(ObjetoVO).NumeroDocumento := EditNumeroDocumento.Text;
+      TFinPagamentoFixoVO(ObjetoVO).PrimeiroVencimento := EditPrimeiroVencimento.Date;
+      TFinPagamentoFixoVO(ObjetoVO).IntervaloEntreParcelas := EditIntervalorEntreParcelas.AsInteger;
+
+      if StatusTela = stInserindo then
+      begin
+        TController.ExecutarMetodo('FinPagamentoFixoController.TFinPagamentoFixoController', 'Insere', [TFinPagamentoFixoVO(ObjetoVO)], 'PUT', 'Lista');
+      end
+      else if StatusTela = stEditando then
+      begin
+        if TFinPagamentoFixoVO(ObjetoVO).ToJSONString <> StringObjetoOld then
+        begin
+          TController.ExecutarMetodo('FinPagamentoFixoController.TFinPagamentoFixoController', 'Altera', [TFinPagamentoFixoVO(ObjetoVO)], 'POST', 'Boolean');
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Campos Transientes'}
+procedure TFFinPagamentoFixo.EditIdFornecedorKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdFornecedor.Value <> 0 then
+      Filtro := 'ID = ' + EditIdFornecedor.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdFornecedor.Clear;
+      EditFornecedor.Clear;
+      if not PopulaCamposTransientes(Filtro, TViewPessoaFornecedorVO, TViewPessoaFornecedorController) then
+        PopulaCamposTransientesLookup(TViewPessoaFornecedorVO, TViewPessoaFornecedorController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdFornecedor.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditFornecedor.Text := CDSTransiente.FieldByName('NOME').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditIdDocumentoOrigem.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+
+procedure TFFinPagamentoFixo.EditIdDocumentoOrigemKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdDocumentoOrigem.Value <> 0 then
+      Filtro := 'ID = ' + EditIdDocumentoOrigem.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdDocumentoOrigem.Clear;
+      EditDocumentoOrigem.Clear;
+      if not PopulaCamposTransientes(Filtro, TFinDocumentoOrigemVO, TFinDocumentoOrigemController) then
+        PopulaCamposTransientesLookup(TFinDocumentoOrigemVO, TFinDocumentoOrigemController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdDocumentoOrigem.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditDocumentoOrigem.Text := CDSTransiente.FieldByName('SIGLA_DOCUMENTO').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditNumeroDocumento.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFFinPagamentoFixo.GridParaEdits;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := TFinPagamentoFixoVO(TController.BuscarObjeto('FinPagamentoFixoController.TFinPagamentoFixoController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditIdFornecedor.AsInteger := TFinPagamentoFixoVO(ObjetoVO).IdFornecedor;
+    EditFornecedor.Text := TFinPagamentoFixoVO(ObjetoVO).FornecedorNome;
+    EditIdDocumentoOrigem.AsInteger := TFinPagamentoFixoVO(ObjetoVO).IdFinDocumentoOrigem;
+    EditDocumentoOrigem.Text := TFinPagamentoFixoVO(ObjetoVO).DocumentoOrigemSigla;
+    ComboBoxPagamentoCompartilhado.ItemIndex := IfThen(TFinPagamentoFixoVO(ObjetoVO).PagamentoCompartilhado = 'S', 0, 1);
+    EditQuantidadeParcelas.AsInteger := TFinPagamentoFixoVO(ObjetoVO).QuantidadeParcela;
+    EditValorTotal.Value := TFinPagamentoFixoVO(ObjetoVO).ValorTotal;
+    EditValorAPagar.Value := TFinPagamentoFixoVO(ObjetoVO).ValorAPagar;
+    EditDataLancamento.Date := TFinPagamentoFixoVO(ObjetoVO).DataLancamento;
+    EditNumeroDocumento.Text := TFinPagamentoFixoVO(ObjetoVO).NumeroDocumento;
+    EditPrimeiroVencimento.Date := TFinPagamentoFixoVO(ObjetoVO).PrimeiroVencimento;
+    EditIntervalorEntreParcelas.AsInteger := TFinPagamentoFixoVO(ObjetoVO).IntervaloEntreParcelas;
+
+    // Serializa o objeto para consultar posteriormente se houve alterações
+    FormatSettings.DecimalSeparator := '.';
+    StringObjetoOld := ObjetoVO.ToJSONString;
+    FormatSettings.DecimalSeparator := ',';
+  end;
+end;
+
+procedure TFFinPagamentoFixo.CDSParcelaPagarBeforeDelete(DataSet: TDataSet);
+begin
+end;
+{$ENDREGION}
+
+{$REGION 'Actions'}
+procedure TFFinPagamentoFixo.ActionAcionarGedExecute(Sender: TObject);
+var
+  Parametros: String;
+begin
+  if EditNumeroDocumento.Text <> '' then
+  begin
+    {
+      Parametros
+      1 - Login
+      2 - Senha
+      3 - Aplicação que chamou
+      4 - Nome do arquivo (Aplicacao que chamou + Tela que chamou + Numero Apólice
+      }
+
+    try
+      EditImagemDocumento.Text := 'LANCAMENTO_PAGAR_' + MD5String(EditNumeroDocumento.Text);
+
+      Parametros := Sessao.Usuario.Login + ' ' +
+                    Sessao.Usuario.Senha + ' ' +
+                    'FINANCEIRO' + ' ' +
+                    EditImagemDocumento.Text;
+      ShellExecute(
+            Handle,
+            'open',
+            'T2TiERPGed.exe',
+            PChar(Parametros),
+            '',
+            SW_SHOWNORMAL
+            );
+    except
+      Application.MessageBox('Erro ao tentar executar o módulo.', 'Erro do Sistema', MB_OK + MB_ICONERROR);
+    end;
+  end
+  else
+  begin
+    Application.MessageBox('É preciso informar o número do documento.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    EditNumeroDocumento.SetFocus;
+  end;
+end;
+
+procedure TFFinPagamentoFixo.ActionGerarParcelasExecute(Sender: TObject);
+begin
+  if EditIdContaCaixa.AsInteger <=0 then
+  begin
+    Application.MessageBox('É necessário informar a conta/caixa para previsão das parcelas.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    EditIdContaCaixa.SetFocus;
+    Exit;
+  end;
+
+  if not CDSParcelaPagar.IsEmpty then
+  begin
+    if Application.MessageBox('Já existem parcelas geradas e serão excluídas. Deseja continuar?', 'Pergunta do Sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+    begin
+      CDSParcelaPagar.DisableControls;
+      CDSParcelaPagar.First;
+      while not CDSParcelaPagar.Eof do
+      begin
+        if CDSParcelaPagarID.AsInteger > 0 then
+          TFinParcelaPagarController.Exclui(CDSParcelaPagarID.AsInteger);
+
+        CDSParcelaPagar.Next;
+      end;
+      CDSParcelaPagar.First;
+      CDSParcelaPagar.EnableControls;
+
+      CDSParcelaPagar.EmptyDataSet;
+      GerarParcelas;
+    end;
+  end
+  else
+    GerarParcelas;
+end;
+
+procedure TFFinPagamentoFixo.GerarParcelas;
+var
+  i: integer;
+  Vencimento: TDate;
+  SomaParcelas, Residuo: Extended;
+  FornecedorVO: TViewPessoaFornecedorVO;
+  Filtro: String;
+begin
+  if EditQuantidadeParcelas.AsInteger <= 0 then
+    EditQuantidadeParcelas.AsInteger := 1;
+
+  if EditPrimeiroVencimento.Text = '  /  /    ' then
+    EditPrimeiroVencimento.Date := Date;
+
+  Vencimento := EditPrimeiroVencimento.Date;
+  SomaParcelas := 0;
+  Residuo := 0;
+
+  Filtro := 'ID=' + QuotedStr(EditIdFornecedor.Text);
+  FornecedorVO := TViewPessoaFornecedorVO(TController.BuscarObjeto('ViewPessoaFornecedorController.TViewPessoaFornecedorController', 'ConsultaObjeto', [Filtro], 'GET'));
+
+  for i := 0 to EditQuantidadeParcelas.AsInteger - 1 do
+  begin
+    CDSParcelaPagar.Append;
+    CDSParcelaPagar.FieldByName('NUMERO_PARCELA').AsInteger := i+1;
+    CDSParcelaPagar.FieldByName('ID_CONTA_CAIXA').AsInteger := EditIdContaCaixa.AsInteger;
+    CDSParcelaPagar.FieldByName('DATA_EMISSAO').AsString := DateToStr(Date);
+    CDSParcelaPagar.FieldByName('DATA_VENCIMENTO').AsString := DateToStr(Vencimento + (EditIntervalorEntreParcelas.AsInteger * i));
+    CDSParcelaPagar.FieldByName('DESCONTO_ATE').AsString := DateToStr(Date);
+    CDSParcelaPagar.FieldByName('SOFRE_RETENCAO').AsString := FornecedorVO.SofreRetencao;
+    CDSParcelaPagar.FieldByName('VALOR').AsFloat := ArredondaTruncaValor('A', EditValorAPagar.Value / EditQuantidadeParcelas.AsInteger, Constantes.TConstantes.DECIMAIS_VALOR);
+    CDSParcelaPagar.FieldByName('CONTA_CAIXA.NOME').AsString := EditContaCaixa.Text;
+    CDSParcelaPagar.Post;
+
+    SomaParcelas := SomaParcelas + CDSParcelaPagar.FieldByName('VALOR').AsFloat;
+  end;
+
+  // calcula o resíduo e lança na última parcela
+  Residuo := EditValorAPagar.Value - SomaParcelas;
+  CDSParcelaPagar.Edit;
+  CDSParcelaPagar.FieldByName('VALOR').AsFloat := CDSParcelaPagar.FieldByName('VALOR').AsFloat + Residuo;
+  CDSParcelaPagar.Post;
+end;
+
+procedure TFFinPagamentoFixo.ActionGerarPagamentoFixoExecute(Sender: TObject);
+var
+  PagamentoFixoVO: TFinPagamentoFixoVO;
+begin
+  /// EXERCICIO - VERIFIQUE SE ESSE PAGAMENTO JA FOI MARCADO COMO FIXO E AJA DE ACORDO
+  ///  01 - APAGUE O REGISTRO ANTERIOR E GRAVE O NOVO
+  ///  02 - ALTERE O REGISTRO ANTERIOR
+  ///  03 - INFORME QUE JÁ EXISE UM PAGAMENTO FIXO ARMAZENADO E QUE NÃO É POSSÍVEL REALIZAR ALTERAÇÕES
+  ///  04 - SOLICITE UMA AÇÃO DO USUÁRIO
+
+  if Application.MessageBox('Deseja gravar esse pagamento como recorrente? (Lançamento Mensal)', 'Pergunta do Sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+  begin
+    PagamentoFixoVO := TFinPagamentoFixoVO.Create;
+
+    PagamentoFixoVO.IdFornecedor := EditIdFornecedor.AsInteger;
+    PagamentoFixoVO.IdFinDocumentoOrigem := EditIdDocumentoOrigem.AsInteger;
+    PagamentoFixoVO.PagamentoCompartilhado := IfThen(ComboBoxPagamentoCompartilhado.ItemIndex = 0, 'S', 'N');
+    PagamentoFixoVO.QuantidadeParcela := EditQuantidadeParcelas.AsInteger;
+    PagamentoFixoVO.ValorTotal := EditValorTotal.Value;
+    PagamentoFixoVO.ValorAPagar := EditValorAPagar.Value;
+    PagamentoFixoVO.DataLancamento := EditDataLancamento.Date;
+    PagamentoFixoVO.NumeroDocumento := EditNumeroDocumento.Text;
+    PagamentoFixoVO.ImagemDocumento := EditImagemDocumento.Text;
+    PagamentoFixoVO.PrimeiroVencimento := EditPrimeiroVencimento.Date;
+    PagamentoFixoVO.IntervaloEntreParcelas := EditIntervalorEntreParcelas.AsInteger;
+
+    TController.ExecutarMetodo('FinPagamentoFixoController.TFinPagamentoFixoController', 'Insere', [PagamentoFixoVO], 'PUT', 'Lista');
+
+    Application.MessageBox('Lançamento realizado com sucesso.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+  end;
+end;
+
+{$ENDREGION}
+
+end.

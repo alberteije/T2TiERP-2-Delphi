@@ -1,0 +1,467 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela Cadastro de Escalas para o Ponto Eletrônico
+
+The MIT License
+
+Copyright: Copyright (C) 2016 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+@author Albert Eije (alberteije@gmail.com)
+@version 2.0
+******************************************************************************* }
+unit UPontoEscala;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, DB, DBClient, Menus, StdCtrls, ExtCtrls, Buttons, Grids,
+  DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, PontoEscalaVO,
+  PontoEscalaController, Tipos, Atributos, Constantes, LabeledCtrls, JvToolEdit,
+  Mask, JvExMask, JvBaseEdits, Math, StrUtils, ActnList, Generics.Collections,
+  RibbonSilverStyleActnCtrls, ActnMan, ToolWin, ActnCtrls, JvgStringGrid, Controller;
+
+type
+  [TFormDescription(TConstantes.MODULO_PONTO_ELETRONICO, 'Escalas')]
+
+  TFPontoEscala = class(TFTelaCadastro)
+    DSPontoTurma: TDataSource;
+    CDSPontoTurma: TClientDataSet;
+    CDSPontoTurmaID: TIntegerField;
+    CDSPontoTurmaID_PONTO_ESCALA: TIntegerField;
+    CDSPontoTurmaCODIGO: TStringField;
+    CDSPontoTurmaNOME: TStringField;
+    PanelMestre: TPanel;
+    EditNome: TLabeledEdit;
+    EditDescontoHoraDia: TLabeledMaskEdit;
+    EditDescontoDsr: TLabeledMaskEdit;
+    PageControlItens: TPageControl;
+    tsItens: TTabSheet;
+    PanelItens: TPanel;
+    GridTurmas: TJvDBUltimGrid;
+    GroupBoxHorarios: TGroupBox;
+    GridHorarios: TJvDBUltimGrid;
+    DSHorarios: TDataSource;
+    CDSHorarios: TClientDataSet;
+    CDSHorariosDIA: TStringField;
+    CDSHorariosNOME: TStringField;
+    CDSPontoTurmaPERSISTE: TStringField;
+    CDSHorariosCODIGO: TStringField;
+    procedure FormCreate(Sender: TObject);
+    procedure GridDblClick(Sender: TObject);
+    procedure GridTurmasKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure CDSPontoTurmaAfterEdit(DataSet: TDataSet);
+    procedure CDSPontoTurmaBeforeDelete(DataSet: TDataSet);
+    procedure GridHorariosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure CDSHorariosAfterPost(DataSet: TDataSet);
+
+  private
+    { Private declarations }
+    procedure PopularGridHorarios;
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+    procedure LimparCampos; override;
+    procedure ControlaBotoes; override;
+    procedure ControlaPopupMenu; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+
+    procedure ConfigurarLayoutTela;
+  end;
+
+var
+  FPontoEscala: TFPontoEscala;
+
+implementation
+
+uses ULookup, Biblioteca, UDataModule, PontoTurmaController, PontoTurmaVO,
+  PontoHorarioVO, PontoHorarioController;
+{$R *.dfm}
+
+{$REGION 'Infra'}
+procedure TFPontoEscala.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TPontoEscalaVO;
+  ObjetoController := TPontoEscalaController.Create;
+
+  inherited;
+end;
+
+procedure TFPontoEscala.LimparCampos;
+begin
+  inherited;
+  CDSPontoTurma.EmptyDataSet;
+  CDSHorarios.EmptyDataSet;
+end;
+
+procedure TFPontoEscala.ConfigurarLayoutTela;
+begin
+  PanelEdits.Enabled := True;
+
+  if StatusTela = stNavegandoEdits then
+  begin
+    PanelMestre.Enabled := False;
+    PanelItens.Enabled := False;
+  end
+  else
+  begin
+    PanelMestre.Enabled := True;
+    PanelItens.Enabled := True;
+  end;
+end;
+
+procedure TFPontoEscala.ControlaBotoes;
+begin
+  inherited;
+
+  BotaoImprimir.Visible := False;
+end;
+
+procedure TFPontoEscala.ControlaPopupMenu;
+begin
+  inherited;
+
+  MenuImprimir.Visible := False;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFPontoEscala.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    ConfigurarLayoutTela;
+    PopularGridHorarios;
+    EditNome.SetFocus;
+  end;
+end;
+
+function TFPontoEscala.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    ConfigurarLayoutTela;
+    PopularGridHorarios;
+    EditNome.SetFocus;
+  end;
+end;
+
+function TFPontoEscala.DoExcluir: Boolean;
+begin
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('PontoEscalaController.TPontoEscalaController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('PontoEscalaController.TPontoEscalaController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+end;
+
+function TFPontoEscala.DoSalvar: Boolean;
+var
+  PontoTurma: TPontoTurmaVO;
+begin
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TPontoEscalaVO.Create;
+
+      TPontoEscalaVO(ObjetoVO).IdEmpresa := Sessao.Empresa.Id;
+      TPontoEscalaVO(ObjetoVO).Nome := EditNome.Text;
+      TPontoEscalaVO(ObjetoVO).DescontoHoraDia := EditDescontoHoraDia.Text;
+      TPontoEscalaVO(ObjetoVO).DescontoDsr := EditDescontoDsr.Text;
+
+      // Horários
+      CDSHorarios.DisableControls;
+      CDSHorarios.First;
+      while not CDSHorarios.Eof do
+      begin
+        TPontoEscalaVO(ObjetoVO).CodigoHorarioDomingo := CDSHorariosCODIGO.AsString;
+        CDSHorarios.Next;
+        TPontoEscalaVO(ObjetoVO).CodigoHorarioSegunda := CDSHorariosCODIGO.AsString;
+        CDSHorarios.Next;
+        TPontoEscalaVO(ObjetoVO).CodigoHorarioTerca := CDSHorariosCODIGO.AsString;
+        CDSHorarios.Next;
+        TPontoEscalaVO(ObjetoVO).CodigoHorarioQuarta := CDSHorariosCODIGO.AsString;
+        CDSHorarios.Next;
+        TPontoEscalaVO(ObjetoVO).CodigoHorarioQuinta := CDSHorariosCODIGO.AsString;
+        CDSHorarios.Next;
+        TPontoEscalaVO(ObjetoVO).CodigoHorarioSexta := CDSHorariosCODIGO.AsString;
+        CDSHorarios.Next;
+        TPontoEscalaVO(ObjetoVO).CodigoHorarioSabado := CDSHorariosCODIGO.AsString;
+        CDSHorarios.Next;
+      end;
+      CDSHorarios.First;
+      CDSHorarios.EnableControls;
+
+      // Turmas
+      TPontoEscalaVO(ObjetoVO).ListaPontoTurmaVO := TObjectList<TPontoTurmaVO>.Create;
+      CDSPontoTurma.DisableControls;
+      CDSPontoTurma.First;
+      while not CDSPontoTurma.Eof do
+      begin
+        if (CDSPontoTurmaPERSISTE.AsString = 'S') or (CDSPontoTurmaID.AsInteger = 0) then
+        begin
+          PontoTurma := TPontoTurmaVO.Create;
+          PontoTurma.Id := CDSPontoTurmaID.AsInteger;
+          PontoTurma.IdPontoEscala := TPontoEscalaVO(ObjetoVO).Id;
+          PontoTurma.Codigo := CDSPontoTurmaCODIGO.AsString;
+          PontoTurma.Nome := CDSPontoTurmaNOME.AsString;
+
+          TPontoEscalaVO(ObjetoVO).ListaPontoTurmaVO.Add(PontoTurma);
+        end;
+
+        CDSPontoTurma.Next;
+      end;
+      CDSPontoTurma.EnableControls;
+
+      if StatusTela = stInserindo then
+      begin
+        TController.ExecutarMetodo('PontoEscalaController.TPontoEscalaController', 'Insere', [TPontoEscalaVO(ObjetoVO)], 'PUT', 'Lista');
+      end
+      else if StatusTela = stEditando then
+      begin
+        if TPontoEscalaVO(ObjetoVO).ToJSONString <> StringObjetoOld then
+        begin
+          TController.ExecutarMetodo('PontoEscalaController.TPontoEscalaController', 'Altera', [TPontoEscalaVO(ObjetoVO)], 'POST', 'Boolean');
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFPontoEscala.GridDblClick(Sender: TObject);
+begin
+  inherited;
+  ConfigurarLayoutTela;
+  PopularGridHorarios;
+end;
+
+procedure TFPontoEscala.GridParaEdits;
+var
+  PontoTurmaEnumerator: TEnumerator<TPontoTurmaVO>;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := TCompraTipoPedidoVO(TController.BuscarObjeto('CompraTipoPedidoController.TCompraTipoPedidoController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+
+    ObjetoVO := ObjetoController.VO<TPontoEscalaVO>(IdRegistroSelecionado);
+    if StatusTela = stEditando then
+      ObjetoOldVO := ObjetoController.VO<TPontoEscalaVO>(IdRegistroSelecionado);
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditNome.Text := TPontoEscalaVO(ObjetoVO).Nome;
+    EditDescontoHoraDia.Text := TPontoEscalaVO(ObjetoVO).DescontoHoraDia;
+    EditDescontoDsr.Text := TPontoEscalaVO(ObjetoVO).DescontoDsr;
+
+    // Turmas
+    PontoTurmaEnumerator := TPontoEscalaVO(ObjetoVO).ListaPontoTurmaVO.GetEnumerator;
+    try
+      with PontoTurmaEnumerator do
+      begin
+        while MoveNext do
+        begin
+          CDSPontoTurma.Append;
+
+          CDSPontoTurmaID.AsInteger := Current.Id;
+          CDSPontoTurmaID_PONTO_ESCALA.AsInteger := Current.IdPontoEscala;
+          CDSPontoTurmaCODIGO.AsString := Current.Codigo;
+          CDSPontoTurmaNOME.AsString := Current.Nome;
+
+          CDSPontoTurma.Post;
+        end;
+      end;
+    finally
+      PontoTurmaEnumerator.Free;
+    end;
+    TPontoEscalaVO(ObjetoVO).ListaPontoTurmaVO := Nil;
+    if Assigned(TPontoEscalaVO(ObjetoOldVO)) then
+      TPontoEscalaVO(ObjetoOldVO).ListaPontoTurmaVO := Nil;
+  end;
+end;
+
+procedure TFPontoEscala.GridHorariosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_F1 then
+  begin
+    try
+      PopulaCamposTransientesLookup(TPontoHorarioVO, TPontoHorarioController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+      CDSHorarios.Edit;
+      CDSHorariosCODIGO.AsString := ULookup.FLookup.CDSLookup.FieldByName('CODIGO').AsString;
+      CDSHorariosNOME.AsString := ULookup.FLookup.CDSLookup.FieldByName('NOME').AsString;
+      CDSHorarios.Post;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+
+procedure TFPontoEscala.GridTurmasKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  If Key = VK_RETURN then
+    GridTurmas.SelectedIndex := GridTurmas.SelectedIndex + 1;
+end;
+
+procedure TFPontoEscala.CDSHorariosAfterPost(DataSet: TDataSet);
+begin
+  if CDSHorariosDIA.AsString = '' then
+    CDSHorarios.Delete;
+end;
+
+procedure TFPontoEscala.CDSPontoTurmaAfterEdit(DataSet: TDataSet);
+begin
+  CDSPontoTurmaPERSISTE.AsString := 'S';
+end;
+
+procedure TFPontoEscala.CDSPontoTurmaBeforeDelete(DataSet: TDataSet);
+begin
+  if CDSPontoTurmaID.AsInteger > 0 then
+    TPontoTurmaController.Exclui(CDSPontoTurmaID.AsInteger);
+end;
+
+procedure TFPontoEscala.PopularGridHorarios;
+var
+  i: Integer;
+begin
+  CDSHorarios.DisableControls;
+  for i := 1 to 7 do
+  begin
+    CDSHorarios.Append;
+    case i of
+      1:
+        begin
+          CDSHorariosDIA.AsString := 'Domingo';
+          if (StatusTela = stEditando) or (StatusTela = stNavegandoEdits) then
+          begin
+            CDSHorariosCODIGO.AsString := TPontoEscalaVO(ObjetoVO).CodigoHorarioDomingo;
+            ConsultaGenerica('CODIGO = ' + QuotedStr(TPontoEscalaVO(ObjetoVO).CodigoHorarioDomingo), TPontoHorarioVO, TPontoHorarioController);
+            CDSHorariosNOME.AsString := CDSConsultaGenerica.FieldByName('NOME').AsString;
+          end;
+        end;
+      2:
+        begin
+          CDSHorariosDIA.AsString := 'Segunda';
+          if (StatusTela = stEditando) or (StatusTela = stNavegandoEdits) then
+          begin
+            CDSHorariosCODIGO.AsString := TPontoEscalaVO(ObjetoVO).CodigoHorarioSegunda;
+            ConsultaGenerica('CODIGO = ' + QuotedStr(TPontoEscalaVO(ObjetoVO).CodigoHorarioSegunda), TPontoHorarioVO, TPontoHorarioController);
+            CDSHorariosNOME.AsString := CDSConsultaGenerica.FieldByName('NOME').AsString;
+          end;
+        end;
+      3:
+        begin
+          CDSHorariosDIA.AsString := 'Terça';
+          if (StatusTela = stEditando) or (StatusTela = stNavegandoEdits) then
+          begin
+            CDSHorariosCODIGO.AsString := TPontoEscalaVO(ObjetoVO).CodigoHorarioTerca;
+            ConsultaGenerica('CODIGO = ' + QuotedStr(TPontoEscalaVO(ObjetoVO).CodigoHorarioTerca), TPontoHorarioVO, TPontoHorarioController);
+            CDSHorariosNOME.AsString := CDSConsultaGenerica.FieldByName('NOME').AsString;
+          end;
+        end;
+      4:
+        begin
+          CDSHorariosDIA.AsString := 'Quarta';
+          if (StatusTela = stEditando) or (StatusTela = stNavegandoEdits) then
+          begin
+            CDSHorariosCODIGO.AsString := TPontoEscalaVO(ObjetoVO).CodigoHorarioQuarta;
+            ConsultaGenerica('CODIGO = ' + QuotedStr(TPontoEscalaVO(ObjetoVO).CodigoHorarioQuarta), TPontoHorarioVO, TPontoHorarioController);
+            CDSHorariosNOME.AsString := CDSConsultaGenerica.FieldByName('NOME').AsString;
+          end;
+        end;
+      5:
+        begin
+          CDSHorariosDIA.AsString := 'Quinta';
+          if (StatusTela = stEditando) or (StatusTela = stNavegandoEdits) then
+          begin
+            CDSHorariosCODIGO.AsString := TPontoEscalaVO(ObjetoVO).CodigoHorarioQuinta;
+            ConsultaGenerica('CODIGO = ' + QuotedStr(TPontoEscalaVO(ObjetoVO).CodigoHorarioQuinta), TPontoHorarioVO, TPontoHorarioController);
+            CDSHorariosNOME.AsString := CDSConsultaGenerica.FieldByName('NOME').AsString;
+          end;
+        end;
+      6:
+        begin
+          CDSHorariosDIA.AsString := 'Sexta';
+          if (StatusTela = stEditando) or (StatusTela = stNavegandoEdits) then
+          begin
+            CDSHorariosCODIGO.AsString := TPontoEscalaVO(ObjetoVO).CodigoHorarioSexta;
+            ConsultaGenerica('CODIGO = ' + QuotedStr(TPontoEscalaVO(ObjetoVO).CodigoHorarioSexta), TPontoHorarioVO, TPontoHorarioController);
+            CDSHorariosNOME.AsString := CDSConsultaGenerica.FieldByName('NOME').AsString;
+          end;
+        end;
+      7:
+        begin
+          CDSHorariosDIA.AsString := 'Sábado';
+          if (StatusTela = stEditando) or (StatusTela = stNavegandoEdits) then
+          begin
+            CDSHorariosCODIGO.AsString := TPontoEscalaVO(ObjetoVO).CodigoHorarioSabado;
+            ConsultaGenerica('CODIGO = ' + QuotedStr(TPontoEscalaVO(ObjetoVO).CodigoHorarioSabado), TPontoHorarioVO, TPontoHorarioController);
+            CDSHorariosNOME.AsString := CDSConsultaGenerica.FieldByName('NOME').AsString;
+          end;
+        end;
+    end;
+    CDSHorarios.Post;
+  end;
+  CDSHorarios.First;
+  CDSHorarios.EnableControls;
+end;
+{$ENDREGION}
+
+end.

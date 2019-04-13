@@ -1,0 +1,80 @@
+<!-- !DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" --> 
+<html> 
+<head> 
+  <title>Suporte por Chat T2Ti</title> 
+  <script type="text/javascript" src="webfiles/Base64Encoder.js"></script>
+  <script type="text/javascript" src="webfiles/json2.js"></script> 
+  <script type="text/javascript" src="webfiles/ServerFunctionExecutor.js"></script>
+  <script type="text/javascript" src="webfiles/CallbackFramework.js"></script>
+  <script type="text/javascript" src="webfiles/JSProxy.js"></script>
+  <script type="text/javascript" src="webfiles/ChatRoom.js"></script>
+  <link rel="stylesheet" type="text/css" href="webfiles/ChatRoom.css" />
+</head> 
+<body> 
+
+<div id="modal">
+  <div id="overlay"></div>
+  <div id="modalcontent">
+    <form onsubmit="sendPrivateMessage(); return false;">
+      <label for="chosenuser">Selecionar usuário para enviar:</label><br />
+      <input id="chosenuser" type="text" value="" /><br />
+      <select id="privateusers" name="privateusers" onChange="updateChosenUser()">
+      </select><br /><br />
+      <input id="sendPrivateButton" type="submit" value="SEND" />
+    </form>
+    <div id="privatecancel"><a href="" onclick="toggleModal();return false;">cancelar</a></div>
+  </div>
+</div>
+
+<div id="userlistlabel">
+<table>
+  <tr>
+    <td style="width: 195px; height: 100px;" valign="bottom"><img src="webFiles/users.png"/></td>
+  </tr>
+</table>
+</div>
+
+<div id="framecontentLeft">
+  <div id="userlist">[sem usuários]</div>
+</div>
+
+<div id="framecontentTop">
+<table>
+  <tr>
+    <td><img src="webfiles/title.png"/></td>
+  </tr>
+  <tr>
+    <td>
+    <div id="loginlabel"></div>
+	</td>
+  </tr>
+</table>
+</div>
+
+<div id="framecontentBottom">
+  <table style="padding: 0px; font-size: x-small;">
+    <tr>
+      <td style="padding: 0px; width: 100%;">
+        <form onsubmit="return false;">
+          <input id="messageField" onkeypress="sendOnEnter(event)" type="text" style="width: 100%;" value="" />
+        </form>
+      </td>
+      <td>
+        <form onsubmit="sendMessage(); return false;">
+          <input id="sendButton" type="submit" value="Enviar" />
+        </form>    
+      </td>
+      <!--td>
+        <form onsubmit="openPrivateMessageDialog(); return false;">
+          <input type="submit" value="SEND PRIVATE" />
+        </form>  
+      </td-->
+    </tr>
+  </table>
+</div>
+
+<div id="maincontent">
+  <div id="chatarea"><small><i>Bem vindo ao bate papo.</i></small><br /></div>
+</div>
+</body> 
+</html>

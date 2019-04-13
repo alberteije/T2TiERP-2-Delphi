@@ -1,0 +1,367 @@
+object FSelecionaCheque: TFSelecionaCheque
+  Left = 366
+  Top = 147
+  BorderStyle = bsDialog
+  Caption = 'Informa'#231#227'o dos Dados do Cheque Recebido'
+  ClientHeight = 402
+  ClientWidth = 583
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelCabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 583
+    Height = 65
+    Align = alTop
+    Color = 14537936
+    ParentBackground = False
+    TabOrder = 0
+    DesignSize = (
+      583
+      65)
+    object Bevel1: TBevel
+      Left = 61
+      Top = 50
+      Width = 515
+      Height = 6
+      Anchors = [akLeft, akTop, akRight]
+      ExplicitWidth = 415
+    end
+    object Image1: TImage
+      Left = 7
+      Top = 7
+      Width = 48
+      Height = 49
+      ParentShowHint = False
+      ShowHint = False
+      Transparent = True
+    end
+    object Label2: TLabel
+      Left = 62
+      Top = 24
+      Width = 416
+      Height = 23
+      Caption = 'Informa'#231#227'o dos Dados do Cheque Recebido'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object ActionToolBarPrincipal: TActionToolBar
+    AlignWithMargins = True
+    Left = 3
+    Top = 375
+    Width = 577
+    Height = 24
+    ActionManager = ActionManagerLocal
+    Align = alBottom
+    BiDiMode = bdRightToLeft
+    Caption = 'ActionToolBarPrincipal'
+    ColorMap.MenuColor = clMenu
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Orientation = boRightToLeft
+    ParentBiDiMode = False
+    ParentFont = False
+    Spacing = 5
+  end
+  object PageControlItens: TPageControl
+    Left = 0
+    Top = 65
+    Width = 583
+    Height = 307
+    ActivePage = tsDados
+    Align = alClient
+    TabOrder = 2
+    ExplicitWidth = 483
+    ExplicitHeight = 225
+    object tsDados: TTabSheet
+      Caption = 'Informa'#231#227'o dos dados e sele'#231#227'o do cheque'
+      object PanelDados: TPanel
+        Left = 0
+        Top = 0
+        Width = 575
+        Height = 279
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        DesignSize = (
+          575
+          279)
+        object Bevel2: TBevel
+          Left = 3
+          Top = 3
+          Width = 569
+          Height = 270
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          ExplicitHeight = 301
+        end
+        object EditBomPara: TLabeledDateEdit
+          Left = 153
+          Top = 157
+          Width = 138
+          Height = 21
+          ShowNullDate = False
+          TabOrder = 10
+          DateEditLabel.Width = 89
+          DateEditLabel.Height = 13
+          DateEditLabel.Caption = 'Cheque Bom Para:'
+        end
+        object EditValorCheque: TLabeledCalcEdit
+          Left = 297
+          Top = 157
+          Width = 138
+          Height = 21
+          DisplayFormat = ',0.00##'
+          TabOrder = 11
+          DecimalPlacesAlwaysShown = False
+          CalcEditLabel.Width = 83
+          CalcEditLabel.Height = 13
+          CalcEditLabel.Caption = 'Valor do Cheque:'
+        end
+        object MemoHistorico: TLabeledMemo
+          Left = 9
+          Top = 197
+          Width = 556
+          Height = 66
+          ScrollBars = ssVertical
+          TabOrder = 12
+          MemoLabel.Width = 45
+          MemoLabel.Height = 13
+          MemoLabel.Caption = 'Hist'#243'rico:'
+        end
+        object EditIdPessoa: TLabeledCalcEdit
+          Left = 9
+          Top = 24
+          Width = 61
+          Height = 21
+          DisplayFormat = '#'
+          ParentShowHint = False
+          ShowButton = False
+          ShowHint = False
+          TabOrder = 0
+          DecimalPlacesAlwaysShown = False
+          OnExit = EditIdPessoaExit
+          OnKeyDown = EditIdPessoaKeyDown
+          OnKeyPress = EditIdPessoaKeyPress
+          CalcEditLabel.Width = 61
+          CalcEditLabel.Height = 13
+          CalcEditLabel.Caption = 'Pessoa [F1]:'
+        end
+        object EditPessoa: TLabeledEdit
+          Left = 70
+          Top = 24
+          Width = 495
+          Height = 21
+          TabStop = False
+          Anchors = [akLeft, akTop, akRight]
+          Color = clInfoBk
+          EditLabel.Width = 6
+          EditLabel.Height = 13
+          EditLabel.Caption = '  '
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object EditCodigoBanco: TLabeledEdit
+          Left = 128
+          Top = 112
+          Width = 82
+          Height = 21
+          EditLabel.Width = 69
+          EditLabel.Height = 13
+          EditLabel.Caption = 'C'#243'digo Banco:'
+          MaxLength = 10
+          TabOrder = 5
+        end
+        object EditCodigoAgencia: TLabeledEdit
+          Left = 216
+          Top = 112
+          Width = 82
+          Height = 21
+          EditLabel.Width = 78
+          EditLabel.Height = 13
+          EditLabel.Caption = 'C'#243'digo Ag'#234'ncia:'
+          MaxLength = 10
+          TabOrder = 6
+        end
+        object EditNumeroConta: TLabeledEdit
+          Left = 304
+          Top = 112
+          Width = 146
+          Height = 21
+          EditLabel.Width = 73
+          EditLabel.Height = 13
+          EditLabel.Caption = 'N'#250'mero Conta:'
+          MaxLength = 20
+          TabOrder = 7
+        end
+        object EditDataEmissao: TLabeledDateEdit
+          Left = 9
+          Top = 157
+          Width = 138
+          Height = 21
+          ShowNullDate = False
+          TabOrder = 9
+          DateEditLabel.Width = 68
+          DateEditLabel.Height = 13
+          DateEditLabel.Caption = 'Data Emiss'#227'o:'
+        end
+        object EditNumeroCheque: TLabeledCalcEdit
+          Left = 456
+          Top = 112
+          Width = 109
+          Height = 21
+          DisplayFormat = '#'
+          ParentShowHint = False
+          ShowButton = False
+          ShowHint = False
+          TabOrder = 8
+          DecimalPlacesAlwaysShown = False
+          CalcEditLabel.Width = 81
+          CalcEditLabel.Height = 13
+          CalcEditLabel.Caption = 'N'#250'mero Cheque:'
+        end
+        object EditCpfCnpj: TLabeledEdit
+          Left = 9
+          Top = 112
+          Width = 113
+          Height = 21
+          EditLabel.Width = 58
+          EditLabel.Height = 13
+          EditLabel.Caption = 'CPF / CNPJ:'
+          MaxLength = 14
+          TabOrder = 4
+        end
+        object EditIdContaCaixa: TLabeledCalcEdit
+          Left = 9
+          Top = 69
+          Width = 61
+          Height = 21
+          DisplayFormat = '#'
+          ParentShowHint = False
+          ShowButton = False
+          ShowHint = False
+          TabOrder = 2
+          DecimalPlacesAlwaysShown = False
+          OnExit = EditIdContaCaixaExit
+          OnKeyDown = EditIdContaCaixaKeyDown
+          OnKeyPress = EditIdContaCaixaKeyPress
+          CalcEditLabel.Width = 86
+          CalcEditLabel.Height = 13
+          CalcEditLabel.Caption = 'Conta Caixa [F1]:'
+        end
+        object EditContaCaixa: TLabeledEdit
+          Left = 70
+          Top = 69
+          Width = 495
+          Height = 21
+          TabStop = False
+          Anchors = [akLeft, akTop, akRight]
+          Color = clInfoBk
+          EditLabel.Width = 6
+          EditLabel.Height = 13
+          EditLabel.Caption = '  '
+          ReadOnly = True
+          TabOrder = 3
+        end
+      end
+    end
+  end
+  object ActionManagerLocal: TActionManager
+    ActionBars.ShowHints = False
+    ActionBars = <
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionCancelar
+            Caption = '&Cancelar [F11]'
+            ImageIndex = 10
+            ShortCut = 122
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionConfirmar
+            Caption = 'C&onfirmar [F12]'
+            ImageIndex = 9
+          end
+          item
+            Action = ActionCancelar
+            Caption = '&Cancelar [F11]'
+            ImageIndex = 10
+            ShortCut = 122
+          end>
+        ActionBar = ActionToolBarPrincipal
+      end
+      item
+      end
+      item
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end>
+    DisabledImages = FDataModule.ImagensCadastrosD
+    Images = FDataModule.ImagensCadastros
+    Left = 488
+    Top = 16
+    StyleName = 'Ribbon - Silver'
+    object ActionCancelar: TAction
+      Category = 'Geral'
+      Caption = 'Cancelar [F11]'
+      ImageIndex = 10
+      ShortCut = 122
+      OnExecute = ActionCancelarExecute
+    end
+    object ActionConfirmar: TAction
+      Category = 'Geral'
+      Caption = 'Confirmar [F12]'
+      ImageIndex = 9
+      OnExecute = ActionConfirmarExecute
+    end
+  end
+end

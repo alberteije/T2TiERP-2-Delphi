@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/08/02 00:30:08.000.204,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Comissoes\Tela\UComissaoPerfil.pas</Transaction>
+    <Transaction>2016/08/02 00:31:39.000.898,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\ComissaoPerfilVO.pas</Transaction>
+    <Transaction>2016/08/02 00:31:52.000.733,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\ComissaoPerfilController.pas</Transaction>
+    <Transaction>2016/08/02 00:37:35.000.472,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\BancoDTO.pas</Transaction>
+    <Transaction>2016/08/02 00:38:10.000.500,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\PessoaController.pas=</Transaction>
+    <Transaction>2016/08/02 00:38:16.000.694,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\BancoController.pas=</Transaction>
+    <Transaction>2016/08/02 00:39:46.000.317,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\BancoDTO.pas=</Transaction>
+    <Transaction>2016/08/02 00:48:42.000.150,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\ComissaoObjetivoController.pas</Transaction>
+    <Transaction>2016/08/02 00:48:48.000.898,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\ComissaoObjetivoVO.pas</Transaction>
+    <Transaction>2016/08/02 00:49:02.000.886,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Comissoes\Tela\UComissaoObjetivo.pas</Transaction>
+  </Transactions>
+</BorlandProject>

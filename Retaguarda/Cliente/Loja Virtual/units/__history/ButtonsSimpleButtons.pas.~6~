@@ -1,0 +1,41 @@
+// Simple Buttons = Buttons
+unit ButtonsSimpleButtons;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, uniGUITypes, uniGUIAbstractClasses,
+  uniGUIClasses, uniGUIFrame, uniButton, uniGUIBaseClasses, uniPanel,
+  Vcl.OleCtrls, SHDocVw, uniHTMLFrame;
+
+type
+  TUniButtonsSimpleButtons = class(TUniFrame)
+    UniContainerPanel1: TUniContainerPanel;
+    UniButton1: TUniButton;
+    UniButton2: TUniButton;
+    UniButton3: TUniButton;
+    UniButton4: TUniButton;
+    UniButton5: TUniButton;
+    UniButton6: TUniButton;
+    UniHTMLFrame1: TUniHTMLFrame;
+    procedure UniFrameCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TUniButtonsSimpleButtons.UniFrameCreate(Sender: TObject);
+begin
+  UniHTMLFrame1.Enabled := True;
+end;
+
+initialization
+  RegisterClass(TUniButtonsSimpleButtons);
+end.

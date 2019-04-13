@@ -1,0 +1,68 @@
+object FDataModule: TFDataModule
+  OldCreateOrder = False
+  Height = 297
+  Width = 602
+  object ACBrNFe: TACBrNFe
+    Configuracoes.Geral.SSLLib = libCapicomDelphiSoap
+    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
+    Configuracoes.Geral.IdCSC = '000001'
+    Configuracoes.Geral.CSC = '7F14A1F57FF04520B38329B4EFCAAF77'
+    Configuracoes.Geral.IncluirQRCodeXMLNFCe = False
+    Configuracoes.WebServices.UF = 'SP'
+    Configuracoes.WebServices.AguardarConsultaRet = 0
+    Configuracoes.WebServices.QuebradeLinha = '|'
+    DANFE = ACBrNFeDANFEFR
+    Left = 40
+    Top = 128
+  end
+  object ACBrNFeDANFEFR: TACBrNFeDANFEFR
+    ACBrNFe = ACBrNFe
+    PathPDF = 'C:\Arquivos de programas\Embarcadero\RAD Studio\7.0\bin\'
+    MostrarPreview = True
+    MostrarStatus = True
+    TipoDANFE = tiSemGeracao
+    NumCopias = 1
+    ImprimeNomeFantasia = False
+    ImprimirDescPorc = False
+    ImprimirTotalLiquido = False
+    MargemInferior = 0.800000000000000000
+    MargemSuperior = 0.800000000000000000
+    MargemEsquerda = 0.600000000000000000
+    MargemDireita = 0.510000000000000000
+    CasasDecimais.Formato = tdetInteger
+    CasasDecimais._qCom = 2
+    CasasDecimais._vUnCom = 2
+    CasasDecimais._Mask_qCom = '###,###,###,##0.00'
+    CasasDecimais._Mask_vUnCom = '###,###,###,##0.00'
+    ExibirResumoCanhoto = False
+    FormularioContinuo = False
+    TamanhoFonte_DemaisCampos = 10
+    ProdutosPorPagina = 0
+    ImprimirDetalhamentoEspecifico = True
+    NFeCancelada = False
+    ImprimirItens = True
+    ViaConsumidor = True
+    TamanhoLogoHeight = 0
+    TamanhoLogoWidth = 0
+    RecuoEndereco = 0
+    RecuoEmpresa = 0
+    LogoemCima = False
+    TamanhoFonteEndereco = 0
+    RecuoLogo = 0
+    TributosSeparadamente = False
+    EspessuraBorda = 1
+    ExibirTotalTributosItem = False
+    ExibeCampoFatura = True
+    TributosPercentual = ptValorProdutos
+    ImprimirUnQtVlComercial = iuComercial
+    Detalhado = False
+    DescricaoViaEstabelec = 'Via do Consumidor'
+    ExpandirDadosAdicionaisAuto = False
+    ImprimirDadosArma = True
+    QuebraLinhaEmDetalhamentoEspecifico = True
+    IncorporarBackgroundPdf = True
+    IncorporarFontesPdf = True
+    Left = 120
+    Top = 128
+  end
+end

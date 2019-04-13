@@ -1,0 +1,591 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{49DD69F7-1FA4-4C7C-89B9-1EA4E11DD7F2}</ProjectGuid>
+        <MainSource>T2TiERPPontoEletronico.dpr</MainSource>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <ProjectVersion>15.3</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>17</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_UsePackage>vclx;vcl;vclimg;dbrtl;Rave77VCL;bdertl;rtl;vclactnband;vcldb;vcldbx;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;VclSmp;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapServer;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;JclDeveloperTools;Jcl;JclVcl;JclContainers;JvCore;JvSystem;JvStdCtrls;JvAppFrm;JvBands;JvDB;JvDlgs;JvBDE;JvControls;JvCmp;JvCrypt;JvCustom;JvDocking;JvDotNetCtrls;JvGlobus;JvHMI;JvJans;JvManagedThreads;JvMM;JvNet;JvPageComps;JvPascalInterpreter;JvPluginSystem;JvPrintPreview;JvRuntimeDesign;JvTimeFramework;JvWizards;JvXPCtrls;ACBrSerial;synapse;ACBrDiversos;ACBrComum;ACBr_Boleto;ACBr_BoletoFC_Fortes;ACBr_NFe2;PCN2;ACBrCapicom;ACBr_PAF;ACBr_SPED;ACBr_Sintegra;ACBr_TEFD;ACBrNFeDanfeRV;LabeledControls;DTwain;rppack_del2009;T2Ti;ACBr_Ponto;DelPrint2010;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_DependencyCheckOutputName>T2TiERPPontoEletronico.exe</DCC_DependencyCheckOutputName>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Platform>x86</DCC_Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Icon_MainIcon>T2TiERPPontoEletronico_Icon.ico</Icon_MainIcon>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>T2TiERPPontoEletronico_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="Tela\UMenu.pas">
+            <Form>FMenu</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoParametro.pas">
+            <Form>FPontoParametro</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoHorario.pas">
+            <Form>FPontoHorario</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoRelogio.pas">
+            <Form>FPontoRelogio</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoAbono.pas">
+            <Form>FPontoAbono</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoEscala.pas">
+            <Form>FPontoEscala</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoBancoHoras.pas">
+            <Form>FPontoBancoHoras</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoHorarioAutorizado.pas">
+            <Form>FPontoHorarioAutorizado</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoGeracaoArquivos.pas">
+            <Form>FPontoGeracaoArquivos</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoEspelho.pas">
+            <Form>FPontoEspelho</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoClassificacaoJornada.pas">
+            <Form>FPontoClassificacaoJornada</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoRegistroIncluidoAFD.pas">
+            <Form>FPontoRegistroIncluidoAFD</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UPontoTratamentoArquivoAFD.pas">
+            <Form>FPontoTratamentoArquivoAFD</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Comum\Atributos.pas"/>
+        <DCCReference Include="..\..\..\Comum\Biblioteca.pas"/>
+        <DCCReference Include="..\..\..\Comum\Constantes.pas"/>
+        <DCCReference Include="..\..\..\Comum\Conversor.pas"/>
+        <DCCReference Include="..\..\..\Comum\NotificationService.pas"/>
+        <DCCReference Include="..\..\..\Comum\T2TiORM.pas"/>
+        <DCCReference Include="..\..\..\Comum\Tipos.pas"/>
+        <DCCReference Include="..\..\..\Comum\DataModule\UDataModuleConexao.pas">
+            <Form>FDataModuleConexao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\Comum\Controller.pas"/>
+        <DCCReference Include="..\..\Comum\SessaoUsuario.pas"/>
+        <DCCReference Include="..\..\Comum\DataModule\UDataModule.pas">
+            <Form>FDataModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Comum\Controller\EmpresaController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\FuncaoController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\UsuarioController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\ViewSessaoEmpresaController.pas"/>
+        <DCCReference Include="..\..\Comum\Tela\UBase.pas">
+            <Form>FBase</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\Comum\Tela\UTela.pas">
+            <Form>FTela</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\Comum\Tela\UFiltro.pas">
+            <Form>FFiltro</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\Comum\Tela\ULogin.pas">
+            <Form>FLogin</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\Comum\Tela\ULookup.pas">
+            <Form>FLookup</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\Comum\Tela\UTelaCadastro.pas">
+            <Form>FTelaCadastro</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Comum\Controller\ViewPontoMarcacaoController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\ViewPontoEscalaTurmaController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoAbonoController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoAbonoUtilizacaoController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoBancoHorasController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoBancoHorasUtilizacaoController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoClassificacaoJornadaController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoEscalaController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoFechamentoJornadaController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoHorarioController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoHorarioAutorizadoController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoMarcacaoController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoParametroController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoRelogioController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\PontoTurmaController.pas"/>
+        <DCCReference Include="..\..\..\Comum\Controller\ViewPessoaColaboradorController.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinLancamentoPagarVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EstoqueReajusteCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EstoqueReajusteDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\RequisicaoInternaCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\RequisicaoInternaDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaCondicoesPagamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaOrcamentoCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaRomaneioEntregaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaFreteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaOrcamentoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaCondicoesParcelasVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaComissaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContratoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContratoSolicitacaoServicoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewContratoDadosContratanteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContratoTemplateVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TipoContratoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContratoTipoServicoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContratoPrevFaturamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContratoHistoricoReajusteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContratoHistFaturamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\GedDocumentoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\GedDocumentoCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\GedVersaoDocumentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\GedTipoDocumentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NotaFiscalTipoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SimplesNacionalCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SimplesNacionalDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FiscalParametroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FiscalLivroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FiscalTermoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FornecedorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewConciliaFornecedorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewConciliaClienteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilContaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CnaeVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SocioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilLivroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilDreCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilEncerramentoExeCabVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilIndiceVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilLancamentoCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilLancamentoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilLancamentoOrcadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\AidfAimdfVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\IndiceEconomicoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FapVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PlanoContaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PlanoContaRefSpedVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\QuadroSocietarioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\RegistroCartorioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EmpresaCnaeVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SocioDependenteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SocioParticipacaoSocietariaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilTermoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilParametroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilLoteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilLancamentoPadraoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilIndiceValorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilFechamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilEncerramentoExeDetVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilDreDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaLancamentoCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FeriasPeriodoAquisitivoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\GuiasAcumuladasVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaPppVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaValeTransporteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EmpresaTransporteItinerarioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaAfastamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaInssVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaLancamentoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaPlanoSaudeVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaHistoricoSalarialVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaRescisaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaTipoAfastamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaPppFatorRiscoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaPppExameMedicoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaPppCatVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaPppAtividadeVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaParametroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaLancamentoComissaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaInssServicoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaInssRetencaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaFeriasColetivasVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaFechamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FolhaEventoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewPessoaColaboradorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoMarcacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoHorarioAutorizadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoBancoHorasVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoAbonoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoEscalaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewPontoMarcacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewPontoEscalaTurmaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoTurmaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoRelogioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoParametroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoHorarioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoFechamentoJornadaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoBancoHorasUtilizacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoClassificacaoJornadaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PontoAbonoUtilizacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimApoliceSeguroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimBemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimMovimentacaoBemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimGrupoBemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimDepreciacaoBemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimEstadoConservacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimIndiceAtualizacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimTaxaDepreciacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimTipoAquisicaoBemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimTipoMovimentacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContabilHistoricoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SeguradoraVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PatrimDocumentoBemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContaCaixaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinExtratoContaBancoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinChequeEmitidoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinChequeRecebidoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinResumoTesourariaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinChequeNaoCompensadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinFechamentoCaixaBancoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinMovimentoCaixaBancoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinFluxoCaixaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinLancamentoReceberVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinCobrancaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinCobrancaParcelaReceberVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewPessoaClienteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinLancamentoReceberVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinParcelaReceberVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinParcelaRecebimentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinLctoReceberNtFinanceiraVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinLancamentoPagarVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinParcelaPagarVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraRequisicaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinPagamentoFixoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinLctoPagarNtFinanceiraVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinParcelaPagamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinChequeEmitidoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinChequesEmSerVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinConfiguracaoBoletoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CentroResultadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfSintegra60mVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NaturezaFinanceiraVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinStatusParcelaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PlanoCentroResultadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinDocumentoOrigemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinTipoPagamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FinTipoRecebimentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\OrcamentoFluxoCaixaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\OrcamentoFluxoCaixaPeriodoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PlanoNaturezaFinanceiraVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinTotalRecebimentosDiaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewFinTotalPagamentosDiaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\OrcamentoEmpresarialVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\OrcamentoFluxoCaixaDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\OrcamentoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\OrcamentoPeriodoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraRequisicaoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraPedidoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\AdmParametroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraCotacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewCompraMapaComparativoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraPedidoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraFornecedorCotacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraTipoPedidoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewCompraItemCotacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraCotacaoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewPessoaTransportadoraVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewPessoaFornecedorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraTipoRequisicaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ProdutoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ProdutoSubGrupoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewCompraReqItemCotadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraReqCotacaoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CompraCotacaoPedidoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ConvenioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\BancoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\UnidadeProdutoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\AgenciaBancoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\AlmoxarifadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\AtividadeForCliVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CargoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CboVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CepVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CfopVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ChequeVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ClienteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CodigoGpsVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ColaboradorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ContadorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CsosnAVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CsosnBVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CstCofinsVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CstIcmsAVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CstIcmsBVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CstIpiVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\CstPisVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela4310VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela4313VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela4314VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela4315VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela4316VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela435VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela436VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela437VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EfdTabela439VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EmpresaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EstadoCivilVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FeriadosVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\MunicipioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NcmVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NivelFormacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\OperadoraCartaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\OperadoraPlanoSaudeVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PaisVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ProdutoLoteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ProdutoMarcaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SalarioMinimoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SefipCategoriaTrabalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SefipCodigoMovimentacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SefipCodigoRecolhimentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SetorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SindicatoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SituacaoColaboradorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SituacaoDocumentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\SituacaoForCliVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TalonarioChequeVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TipoAdmissaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TipoColaboradorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TipoDesligamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TipoItemSpedVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TipoReceitaDipiVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TipoRelacionamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\UfVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ProdutoGrupoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FiscalNotaFiscalEntradaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributIcmsUfVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributConfiguraOfGtVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributCofinsCodApuracaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributIpiDipiVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributPisCodApuracaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributIcmsCustomDetVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributIcmsCustomCabVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributIssVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributGrupoTributarioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\TributOperacaoFiscalVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\AdministrativoFormularioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendedorVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDeclaracaoImportacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\DavDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PreVendaDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PreVendaCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\DavDetalheAlteracaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\DavCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSintegra61rVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSintegra60rVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSintegra60dVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfSintegra60aVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FiscalApuracaoIcmsVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfVendaDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfVendaCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfR03VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfR02VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedC490VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedC425VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedC370VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedC390VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedC321VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedC300VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedC190VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedNfeDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfNotaFiscalCabecalhoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfImpressoraVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\UnidadeConversaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ProdutoAlteracaoItemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedNfeDestinatarioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedNfeEmitenteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSpedNfeItemVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeConfiguracaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\UsuarioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PessoaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetEspecificoArmamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetEspecificoCombustivelVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetEspecificoMedicamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetEspecificoVeiculoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDuplicataVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeFaturaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeImportacaoDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeLocalEntregaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeLocalRetiradaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeNfReferenciadaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeProcessoReferenciadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeProdRuralReferenciadaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeReferenciadaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeTransporteReboqueVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeTransporteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeTransporteVolumeLacreVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeTransporteVolumeVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeCteReferenciadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeCupomFiscalReferenciadoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDestinatarioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetalheImpostoCofinsVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetalheImpostoIcmsVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetalheImpostoIiVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetalheImpostoIpiVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetalheImpostoIssqnVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeDetalheImpostoPisVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PessoaEnderecoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeCanaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewTributacaoCofinsVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewTributacaoPisVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewTributacaoIpiVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewTributacaoIcmsCustomVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewTributacaoIcmsVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewTributacaoIssVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeNumeroVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeFormaPagamentoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeExportacaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeEmitenteVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeCanaFornecimentoDiarioVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeCanaDeducoesSafraVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\NfeAcessoXmlVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PessoaContatoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PessoaTelefoneVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EmpresaEnderecoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EmpresaTelefoneVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EmpresaContatoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PessoaAlteracaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfE3VO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\EcfProdutoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\FuncaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PapelFuncaoVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PapelVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PessoaFisicaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\PessoaJuridicaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\VendaDetalheVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\ViewSessaoEmpresaVO.pas"/>
+        <DCCReference Include="..\..\..\Comum\VO\JSonVO.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">T2TiERPPontoEletronico.dpr</Source>
+                </Source>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1046</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k190.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp190.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android" ActiveMobileDevice="Nexus4">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

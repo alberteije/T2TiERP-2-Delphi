@@ -1,0 +1,502 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Configuração de acesso ao Banco de Dados.
+
+The MIT License
+
+Copyright: Copyright (C) 2014 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+@author Gilson Santos (gilson.ti@gmail.com)
+@version 2.0
+******************************************************************************* }
+
+unit UConfigConexao;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, StdCtrls, JvExStdCtrls, JvButton, JvCtrls, JvExButtons,
+  JvBitBtn, pngimage, ExtCtrls, Mask, JvComponentBase, JvEnterTab,
+  JvExMask, JvToolEdit, JvExControls, IniFiles, jpeg, ComCtrls, Biblioteca;
+
+type
+  TFConfigConexao = class(TForm)
+    Image1: TImage;
+    botaoConfirma: TJvBitBtn;
+    botaoCancela: TJvImgBtn;
+    JvEnterAsTab1: TJvEnterAsTab;
+    OpenDialog: TOpenDialog;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    GroupBox1: TGroupBox;
+    botaoTestaLocal: TSpeedButton;
+    Label2: TLabel;
+    imgFirebird: TImage;
+    Label3: TLabel;
+    Label1: TLabel;
+    imgMySQL: TImage;
+    rdgTpConexaoLocal: TRadioGroup;
+    edtServidorLocal: TEdit;
+    edtCaminhoLocal: TJvFilenameEdit;
+    cbxBanco: TComboBox;
+    procedure rdgTpConexaoLocalClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure botaoTestaLocalClick(Sender: TObject);
+    procedure botaoConfirmaClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure botaoCancelaClick(Sender: TObject);
+    procedure edtCaminhoLocalButtonClick(Sender: TObject);
+    procedure botaoTestarBalcaoClick(Sender: TObject);
+    procedure cbxBancoBalcaoSelect(Sender: TObject);
+    procedure cbxBancoSelect(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FConfigConexao: TFConfigConexao;
+  Banco: String;
+
+implementation
+
+uses UDataModule;
+
+{$R *.dfm}
+
+procedure TFConfigConexao.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+  FConfigConexao := Nil;
+end;
+
+procedure TFConfigConexao.FormCreate(Sender: TObject);
+var
+  Arquivo, sAux, BaseDados, Caminho, Servidor, i: Integer;
+  Parametros: TStrings;
+  ArquivoIni: TIniFile;
+begin
+  PageControl1.TabIndex := 0;
+
+  try
+    ArquivoIni := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'Conexao.ini');
+    Banco := UpperCase(ArquivoIni.ReadString('SGBD', 'BD', ''));
+  finally
+    ArquivoIni.Free;
+  end;
+
+  if Banco = 'FIREBIRD' then
+  begin
+    Arquivo := CaminhoApp + 'Firebird_DBExpress_conn.txt';
+    imgFirebird.Visible := True;
+    imgFirebird.BringToFront;
+  end
+  else if Banco = 'MYSQL' then
+  begin
+    Arquivo := CaminhoApp + 'MySQL_DBExpress_conn.txt';
+    imgMySQL.Visible := True;
+    imgMySQL.BringToFront;
+  end;
+
+  Parametros := TStringList.Create;
+
+  try
+    Parametros.LoadFromFile(Arquivo);
+    for i := 0 to Pred(Parametros.Count) do
+    begin
+      sAux := Parametros[i];
+      if Banco = 'FIREBIRD' then
+      begin
+        if Pos('Database=', sAux) = 1 then
+          BaseDados := sAux;
+      end
+      else if Banco = 'MYSQL' then
+      begin
+        if Pos('HostName=', sAux) = 1 then
+          Servidor := sAux;
+
+        if Pos('Database=', sAux) = 1 then
+          BaseDados := sAux;
+      end;
+    end;
+  finally
+    FreeAndNil(Parametros);
+  end;
+
+  /// Configura edits para Conexao Local
+  if Banco = 'FIREBIRD' then
+  begin
+    i := 0;
+    sAux := BaseDados;
+    while Pos(':', sAux) <> 0 do
+    begin
+      delete(sAux, Pos(':', sAux), 1);
+      Inc(i);
+    end;
+
+    if i > 1 then
+    begin
+      Servidor := copy(BaseDados, Pos('=', BaseDados) + 1, Pos(':', BaseDados) - Pos('=', BaseDados) - 1);
+      Caminho := copy(BaseDados, Pos(':', BaseDados) + 1, length(trim(BaseDados)));
+    end
+    else
+    begin
+      Servidor := 'localhost';
+      Caminho := copy(BaseDados, Pos('=', BaseDados) + 1, length(trim(BaseDados)));
+    end;
+  end;
+
+  if Banco = 'MYSQL' then
+  begin
+    delete(Servidor, 1, Pos('=', Servidor));
+    delete(BaseDados, 1, Pos('=', BaseDados));
+    Caminho := BaseDados;
+  end;
+
+  for i := 0 to cbxBanco.Items.Count - 1 do
+  begin
+    if cbxBanco.Items[i] = Banco then
+    begin
+      cbxBanco.ItemIndex := i;
+      break;
+    end;
+  end;
+
+  edtServidorLocal.Text := Servidor;
+  edtCaminhoLocal.Text := Caminho;
+end;
+
+procedure TFConfigConexao.rdgTpConexaoLocalClick(Sender: TObject);
+begin
+  If rdgTpConexaoLocal.ItemIndex = 0 then
+  begin
+    edtServidorLocal.Enabled := False;
+    edtServidorLocal.Text := 'localhost';
+  end
+  else
+  begin
+    edtServidorLocal.Enabled := True;
+  end;
+
+end;
+
+procedure TFConfigConexao.botaoCancelaClick(Sender: TObject);
+begin
+  // Application.Terminate;
+  ModalResult := mrCancel;
+end;
+
+procedure TFConfigConexao.botaoConfirmaClick(Sender: TObject);
+var
+  i: Integer;
+  Arquivo, sAux: String;
+  Parametros: TStrings;
+  ini: TIniFile;
+begin
+
+  if trim(edtServidorLocal.Text) = '' then
+  begin
+    Application.MessageBox('Informe o Nome ou IP do Servidor!', 'Informação do Sistema', MB_OK + MB_ICONWARNING);
+    edtServidorLocal.SetFocus;
+    exit;
+  end;
+
+  if trim(edtCaminhoLocal.Text) = '' then
+  begin
+    Application.MessageBox('Informe o caminho do banco de dados!', 'Informação do Sistema', MB_OK + MB_ICONWARNING);
+    edtCaminhoLocal.SetFocus;
+    exit;
+  end;
+
+  if cbxBanco.Text = 'MYSQL' then
+    Arquivo := CaminhoApp + 'MySQL_DBExpress_conn.txt'
+  else if cbxBanco.Text = 'FIREBIRD' then
+    Arquivo := CaminhoApp + 'Firebird_DBExpress_conn.txt';
+
+  try
+    Parametros := TStringList.Create;
+    Parametros.LoadFromFile(Arquivo);
+
+    for i := 0 to Pred(Parametros.Count) do
+    begin
+      sAux := Parametros[i];
+      if cbxBanco.Text = 'FIREBIRD' then
+      begin
+        if Pos('Database=', sAux) = 1 then
+          Parametros[i] := 'Database=' + edtServidorLocal.Text + ':' + edtCaminhoLocal.Text;
+      end
+      else if cbxBanco.Text = 'MYSQL' then // Considenrando que usaremos sempre o usuario e senha "root" e "root"
+      begin
+        if Pos('HostName=', sAux) = 1 then
+          Parametros[i] := 'HostName=' + edtServidorLocal.Text;
+
+        if Pos('Database=', sAux) = 1 then
+          Parametros[i] := 'Database=' + edtCaminhoLocal.Text;
+      end;
+    end;
+
+    Parametros.SaveToFile(Arquivo);
+
+    if cbxBancoBalcao.Text = 'MYSQL' then
+      Arquivo := gsAppPath + 'MySQL_Balcao_conn.txt'
+    else if cbxBancoBalcao.Text = 'FIREBIRD' then
+      Arquivo := gsAppPath + 'Firebird_Balcao_conn.txt';
+
+    Parametros.LoadFromFile(Arquivo);
+
+    for i := 0 to Pred(Parametros.Count) do
+    begin
+      sAux := Parametros[i];
+      if cbxBancoBalcao.Text = 'FIREBIRD' then
+      begin
+        if Pos('Database=', sAux) = 1 then
+          Parametros[i] := 'Database=' + edtServidorBalcao.Text + ':' + edtCaminhoBalcao.Text;
+      end
+      else if cbxBancoBalcao.Text = 'MYSQL' then // Considenrando que usaremos sempre o usuario e senha "root" e "root"
+      begin
+        if Pos('HostName=', sAux) = 1 then
+          Parametros[i] := 'HostName=' + edtServidorBalcao.Text;
+
+        if Pos('Database=', sAux) = 1 then
+          Parametros[i] := 'Database=' + edtCaminhoBalcao.Text;
+
+      end;
+
+    end;
+
+    Parametros.SaveToFile(Arquivo);
+
+    ini := TIniFile.Create(gsAppPath + 'Conexao.ini');
+    ini.WriteString('SGBD', 'BD', cbxBanco.Text);
+    ini.WriteString('SGBD', 'BDBalcao', cbxBancoBalcao.Text);
+
+  finally
+    FreeAndNil(Parametros);
+    FreeAndNil(ini);
+  end;
+
+  ModalResult := mrok;
+
+  // Application.Run;
+
+end;
+
+procedure TFConfigConexao.botaoTestaLocalClick(Sender: TObject);
+var
+  i: Integer;
+  sAux, Arquivo: String;
+  Parametros: TStrings;
+begin
+
+  FDataModule.Conexao.Connected := False;
+
+  if cbxBanco.Text = 'MYSQL' then
+  begin
+    Arquivo := gsAppPath + 'MySQL_DBExpress_conn.txt';
+    FDataModule.Conexao.DriverName := 'MySQL';
+    FDataModule.Conexao.ConnectionName := 'MySQLConnection';
+    FDataModule.Conexao.GetDriverFunc := 'getSQLDriverMYSQL';
+    FDataModule.Conexao.LibraryName := 'dbxmys.dll';
+    FDataModule.Conexao.VendorLib := 'libmysql.dll';
+  end
+  else if cbxBanco.Text = 'FIREBIRD' then
+  begin
+    Arquivo := gsAppPath + 'Firebird_DBExpress_conn.txt';
+    FDataModule.Conexao.DriverName := 'Firebird';
+    FDataModule.Conexao.ConnectionName := 'FBConnection';
+    FDataModule.Conexao.GetDriverFunc := 'getSQLDriverINTERBASE';
+    FDataModule.Conexao.LibraryName := 'dbxfb.dll';
+    FDataModule.Conexao.VendorLib := 'fbclient.dll';
+  end;
+
+  {
+    Arquivo := Application.GetNamePath + 'Firebird_DBExpress_conn.txt';
+    FDataModule.Conexao.DriverName     := 'Firebird';
+    FDataModule.Conexao.ConnectionName := 'FBConnection';
+    FDataModule.Conexao.GetDriverFunc  := 'getSQLDriverINTERBASE';
+    FDataModule.Conexao.LibraryName    := 'dbxfb.dll';
+    FDataModule.Conexao.VendorLib      := 'fbclient.dll';
+  }
+
+  try
+    Parametros := TStringList.Create;
+    Parametros.LoadFromFile(Arquivo);
+
+    for i := 0 to Pred(Parametros.Count) do
+    begin
+      sAux := Parametros[i];
+      if cbxBanco.Text = 'FIREBIRD' then
+      begin
+        if Pos('Database=', sAux) = 1 then
+          Parametros[i] := 'Database=' + edtServidorLocal.Text + ':' + edtCaminhoLocal.Text;
+      end
+      else if cbxBanco.Text = 'MYSQL' then
+      begin
+        if Pos('HostName=', sAux) = 1 then
+          Parametros[i] := 'HostName=' + edtServidorLocal.Text;
+        if Pos('Database=', sAux) = 1 then
+          Parametros[i] := 'Database=' + edtCaminhoLocal.Text;
+      end;
+
+    end;
+
+    FDataModule.Conexao.Params := Parametros;
+  finally
+    FreeAndNil(Parametros);
+  end;
+
+  try
+    FDataModule.Conexao.Connected := True;
+    botaoConfirma.Enabled := True;
+  except
+    raise exception.Create('Falha na Conexão!');
+    botaoConfirma.Enabled := False;
+  end;
+
+  Application.MessageBox('Conexão realizada com sucesso!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+
+end;
+
+procedure TFConfigConexao.botaoTestarBalcaoClick(Sender: TObject);
+var
+  i: Integer;
+  sAux, Arquivo: String;
+  Parametros: TStrings;
+begin
+
+  FDataModule.ConexaoBalcao.Connected := False;
+
+  if cbxBancoBalcao.Text = 'MYSQL' then
+  begin
+    Arquivo := gsAppPath + 'MySQL_Balcao_conn.txt';
+    FDataModule.ConexaoBalcao.DriverName := 'MySQL';
+    FDataModule.ConexaoBalcao.ConnectionName := 'MySQLConnection';
+    FDataModule.ConexaoBalcao.GetDriverFunc := 'getSQLDriverMYSQL';
+    FDataModule.ConexaoBalcao.LibraryName := 'dbxmys.dll';
+    FDataModule.ConexaoBalcao.VendorLib := 'libmysql.dll';
+  end
+  else if cbxBancoBalcao.Text = 'FIREBIRD' then
+  begin
+    Arquivo := gsAppPath + 'Firebird_Balcao_conn.txt';
+    FDataModule.ConexaoBalcao.DriverName := 'Firebird';
+    FDataModule.ConexaoBalcao.ConnectionName := 'FBConnection';
+    FDataModule.ConexaoBalcao.GetDriverFunc := 'getSQLDriverINTERBASE';
+    FDataModule.ConexaoBalcao.LibraryName := 'dbxfb.dll';
+    FDataModule.ConexaoBalcao.VendorLib := 'fbclient.dll';
+  end;
+
+  {
+    Arquivo := Application.GetNamePath + 'Firebird_DBExpress_conn.txt';
+    FDataModule.Conexao.DriverName     := 'Firebird';
+    FDataModule.Conexao.ConnectionName := 'FBConnection';
+    FDataModule.Conexao.GetDriverFunc  := 'getSQLDriverINTERBASE';
+    FDataModule.Conexao.LibraryName    := 'dbxfb.dll';
+    FDataModule.Conexao.VendorLib      := 'fbclient.dll';
+  }
+
+  try
+    Parametros := TStringList.Create;
+    Parametros.LoadFromFile(Arquivo);
+
+    for i := 0 to Pred(Parametros.Count) do
+    begin
+      sAux := Parametros[i];
+      if cbxBancoBalcao.Text = 'FIREBIRD' then
+      begin
+        if Pos('Database=', sAux) <> 0 then
+          Parametros[i] := 'Database=' + edtServidorBalcao.Text + ':' + edtCaminhoBalcao.Text;
+      end
+      else if cbxBancoBalcao.Text = 'MYSQL' then
+      begin
+        if Pos('HostName=', sAux) <> 0 then
+          Parametros[i] := 'HostName=' + edtServidorBalcao.Text;
+        if Pos('Database=', sAux) <> 0 then
+          Parametros[i] := 'Database=' + edtCaminhoBalcao.Text;
+      end;
+
+    end;
+
+    FDataModule.ConexaoBalcao.Params := Parametros;
+  finally
+    FreeAndNil(Parametros);
+  end;
+
+  try
+    FDataModule.ConexaoBalcao.Connected := True;
+    botaoConfirma.Enabled := True;
+  except
+    raise exception.Create('Falha na Conexão!');
+    botaoConfirma.Enabled := False;
+  end;
+
+  Application.MessageBox('Conexão realizada com sucesso!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+
+end;
+
+procedure TFConfigConexao.cbxBancoBalcaoSelect(Sender: TObject);
+begin
+  if cbxBancoBalcao.Text = 'MYSQL' then
+  begin
+    imgMySQLBalcao.Visible := True;
+    imgMySQLBalcao.BringToFront;
+  end
+  else if cbxBancoBalcao.Text = 'FIREBIRD' then
+  begin
+    imgFireBirdBalcao.Visible := True;
+    imgFireBirdBalcao.BringToFront;
+  end;
+end;
+
+procedure TFConfigConexao.cbxBancoSelect(Sender: TObject);
+begin
+  if cbxBanco.Text = 'MYSQL' then
+  begin
+    imgMySQL.Visible := True;
+    imgMySQL.BringToFront;
+  end
+  else if cbxBanco.Text = 'FIREBIRD' then
+  begin
+    imgFirebird.Visible := True;
+    imgFirebird.BringToFront;
+  end;
+end;
+
+procedure TFConfigConexao.edtCaminhoLocalButtonClick(Sender: TObject);
+begin
+  // if cbxBanco.Text = 'MySQL' then
+  // begin
+  // MessageDlg('Digite o nome da base de dados para MySQL',mtInformation,[mbOK],0);
+  // Exit;
+  // end;
+
+  // OpenDialog.DefaultExt := '*.fdb';
+  // edtCaminho.Text := OpenDialog.FileName;
+end;
+
+end.

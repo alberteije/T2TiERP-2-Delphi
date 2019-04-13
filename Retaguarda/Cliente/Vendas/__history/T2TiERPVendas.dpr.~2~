@@ -1,0 +1,26 @@
+program T2TiERPVendas;
+
+uses
+  Forms,
+  UTelaCadastro in '..\Comum\Tela\UTelaCadastro.pas' {FTelaCadastro},
+  UTela in '..\Comum\Tela\UTela.pas' {FTela},
+  ULookup in '..\Comum\Tela\ULookup.pas' {FLookup},
+  UBase in '..\Comum\Tela\UBase.pas' {FBase},
+  UFiltro in '..\Comum\Tela\UFiltro.pas' {FFiltro},
+  ULogin in '..\Comum\Tela\ULogin.pas' {FLogin},
+  UMenu in 'Tela\UMenu.pas' {FMenu},
+  UTipoNotaFiscal in 'Tela\UTipoNotaFiscal.pas' {FTipoNotaFiscal},
+  UCondicoesPagamento in 'Tela\UCondicoesPagamento.pas' {FCondicoesPagamento},
+  UOrcamentoPedidoVenda in 'Tela\UOrcamentoPedidoVenda.pas' {FOrcamentoPedidoVenda},
+  UVenda in 'Tela\UVenda.pas' {FVenda},
+  UFreteVenda in 'Tela\UFreteVenda.pas' {FFreteVenda},
+  UVendaRomaneioEntrega in 'Tela\UVendaRomaneioEntrega.pas' {FVendaRomaneioEntrega};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFMenu, FMenu);
+  Application.Run;
+end.

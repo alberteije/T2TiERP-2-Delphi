@@ -1,0 +1,233 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela Para Formação de Preços de Produtos
+
+The MIT License
+
+Copyright: Copyright (C) 2016 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com
+
+@author Albert Eije (alberteije@gmail.com)
+@version 2.0
+******************************************************************************* }
+unit UFormacaoPreco;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, Menus, StdCtrls, ExtCtrls, Buttons, Grids, DBGrids,
+  JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, LabeledCtrls, Atributos, Constantes,
+  Mask, JvExMask, JvToolEdit, JvBaseEdits, DB, DBClient, Generics.Collections,
+  ActnList, RibbonSilverStyleActnCtrls, ActnMan, ToolWin, ActnCtrls, Biblioteca,
+  StrUtils, System.Actions, Controller;
+
+type
+  [TFormDescription(TConstantes.MODULO_ESTOQUE, 'Formação de Preços')]
+
+  TFFormacaoPreco = class(TFTelaCadastro)
+    BevelEdits: TBevel;
+    CDSFormacaoPreco: TClientDataSet;
+    DSFormacaoPreco: TDataSource;
+    GroupBoxParcelas: TGroupBox;
+    GridItens: TJvDBUltimGrid;
+    ActionManager: TActionManager;
+    ActionRealizarCalculos: TAction;
+    ActionToolBarEdits: TActionToolBar;
+    EditIdSubgrupoProduto: TLabeledCalcEdit;
+    EditGrupoProduto: TLabeledEdit;
+    EditSubGrupoProduto: TLabeledEdit;
+    CDSFormacaoPrecoID: TIntegerField;
+    CDSFormacaoPrecoNOME: TStringField;
+    CDSFormacaoPrecoVALOR_COMPRA: TFloatField;
+    CDSFormacaoPrecoVALOR_VENDA: TFloatField;
+    CDSFormacaoPrecoMARKUP: TFloatField;
+    CDSFormacaoPrecoENCARGOS_SOBRE_VENDA: TFloatField;
+    EditEncargos: TLabeledCalcEdit;
+    EditMarkup: TLabeledCalcEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure ActionRealizarCalculosExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+    procedure ControlaBotoes; override;
+    procedure ControlaPopupMenu; override;
+    procedure LimparCampos; override;
+
+    // Controles CRUD
+    function DoEditar: Boolean; override;
+    function DoSalvar: Boolean; override;
+  end;
+
+var
+  FFormacaoPreco: TFFormacaoPreco;
+
+implementation
+
+uses UDataModule, ProdutoSubGrupoVO, ProdutoSubGrupoController, ProdutoVO, ProdutoController;
+{$R *.dfm}
+
+{$REGION 'Infra'}
+procedure TFFormacaoPreco.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TProdutoSubGrupoVO;
+  ObjetoController := TProdutoSubGrupoController.Create;
+
+  inherited;
+end;
+
+procedure TFFormacaoPreco.ControlaBotoes;
+begin
+  inherited;
+
+  BotaoImprimir.Visible := False;
+  BotaoInserir.Visible := False;
+  BotaoExcluir.Visible := False;
+  BotaoAlterar.Caption := 'Formar Preços [F3]';
+  BotaoAlterar.Hint := 'Formar Preços [F3]';
+  BotaoAlterar.Width := 120;
+end;
+
+procedure TFFormacaoPreco.ControlaPopupMenu;
+begin
+  inherited;
+
+  menuImprimir.Visible := False;
+  MenuInserir.Visible := False;
+  MenuExcluir.Visible := False;
+  MenuAlterar.Caption := 'Formar Preços [F3]';
+end;
+
+procedure TFFormacaoPreco.LimparCampos;
+begin
+  inherited;
+  CDSFormacaoPreco.EmptyDataSet;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFFormacaoPreco.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditIdSubgrupoProduto.SetFocus;
+  end;
+end;
+
+function TFFormacaoPreco.DoSalvar: Boolean;
+var
+  ProdutoVO: TProdutoVO;
+begin
+  Result := inherited DoSalvar;
+  if Result then
+  begin
+    try
+      CDSFormacaoPreco.DisableControls;
+      CDSFormacaoPreco.First;
+      while not CDSFormacaoPreco.Eof do
+      begin
+        ProdutoVO := TProdutoVO.Create;
+        ProdutoVO.Id := CDSFormacaoPrecoID.AsInteger;
+        ProdutoVO.Markup := CDSFormacaoPrecoMARKUP.AsExtended;
+        ProdutoVO.ValorVenda := CDSFormacaoPrecoVALOR_VENDA.AsExtended;
+
+        TController.ExecutarMetodo('ProdutoController.TProdutoController', 'Altera', [ProdutoVO], 'POST', 'Boolean');
+
+        CDSFormacaoPreco.Next;
+      end;
+      CDSFormacaoPreco.EnableControls;
+
+      Result := True;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFFormacaoPreco.GridParaEdits;
+begin
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := TProdutoSubGrupoVO(TController.BuscarObjeto('ProdutoSubGrupoController.TProdutoSubGrupoController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditIdSubgrupoProduto.AsInteger := TProdutoSubGrupoVO(ObjetoVO).Id;
+    EditGrupoProduto.Text := TProdutoSubGrupoVO(ObjetoVO).ProdutoGrupoVO.Nome;
+    EditSubGrupoProduto.Text := TProdutoSubGrupoVO(ObjetoVO).Nome;
+
+    // Itens
+    TProdutoController.SetDataSet(CDSFormacaoPreco);
+    TController.ExecutarMetodo('ProdutoController.TProdutoController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+
+    TProdutoController.Consulta('ID_SUB_GRUPO = ' + EditIdSubgrupoProduto.Text, 0);
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Actions'}
+procedure TFFormacaoPreco.ActionRealizarCalculosExecute(Sender: TObject);
+begin
+  {
+  C = Valor Compra
+  E = % de encargos sobre vendas
+  M = % markup  sobre o custo
+  P = preço de venda
+
+  P = C(1 + M) ÷  (1-E)
+  }
+
+  CDSFormacaoPreco.DisableControls;
+  CDSFormacaoPreco.First;
+  while not CDSFormacaoPreco.Eof do
+  begin
+    CDSFormacaoPreco.Edit;
+
+    if EditMarkup.Value > 0 then
+      CDSFormacaoPrecoMARKUP.AsExtended := EditMarkup.Value;
+
+    if EditEncargos.Value > 0 then
+      CDSFormacaoPrecoENCARGOS_SOBRE_VENDA.AsExtended := EditEncargos.Value;
+
+    CDSFormacaoPrecoVALOR_VENDA.AsExtended := CDSFormacaoPrecoVALOR_COMPRA.AsFloat * (1 + (CDSFormacaoPrecoMARKUP.AsFloat / 100))
+                                                    / (1 - (CDSFormacaoPrecoENCARGOS_SOBRE_VENDA.AsFloat / 100));
+    CDSFormacaoPrecoVALOR_VENDA.AsExtended := ArredondaTruncaValor('A', CDSFormacaoPrecoVALOR_VENDA.AsExtended, Constantes.TConstantes.DECIMAIS_VALOR);
+    CDSFormacaoPreco.Post;
+    CDSFormacaoPreco.Next;
+  end;
+  CDSFormacaoPreco.First;
+  CDSFormacaoPreco.EnableControls;
+end;
+{$ENDREGION}
+
+end.

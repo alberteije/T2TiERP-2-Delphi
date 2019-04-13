@@ -1,0 +1,26 @@
+program T2TiERPAFV;
+
+uses
+  FMX.Forms,
+  UMenu in 'Tela\UMenu.pas' {FMenu},
+  Atributos in '..\..\Comum\Atributos.pas',
+  Constantes in '..\..\Comum\Constantes.pas',
+  VO in '..\..\Comum\VO\VO.pas',
+  JSonVO in '..\..\Comum\VO\JSonVO.pas',
+  Biblioteca in 'Comum\Biblioteca.pas',
+  Controller in 'Comum\Controller.pas',
+  SessaoUsuario in 'Comum\SessaoUsuario.pas',
+  BancoController in 'Controller\BancoController.pas',
+  EmpresaController in 'Controller\EmpresaController.pas',
+  FuncaoController in 'Controller\FuncaoController.pas',
+  UsuarioController in 'Controller\UsuarioController.pas',
+  UCliente in 'Tela\UCliente.pas' {FCliente};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFMenu, FMenu);
+  Application.CreateForm(TFCliente, FCliente);
+  Application.Run;
+end.

@@ -1,0 +1,45 @@
+object FDataModuleConexao: TFDataModuleConexao
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 150
+  Width = 215
+  object Conexao: TSQLConnection
+    DriverName = 'MySQL'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverUnit=Data.DBXMySQL'
+      
+        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver190.' +
+        'bpl'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
+        'nd.Data.DbxCommonDriver,Version=19.0.0.0,Culture=neutral,PublicK' +
+        'eyToken=91d62ebb5b0d1b1b'
+      
+        'MetaDataPackageLoader=TDBXMySqlMetaDataCommandFactory,DbxMySQLDr' +
+        'iver190.bpl'
+      
+        'MetaDataAssemblyLoader=Borland.Data.TDBXMySqlMetaDataCommandFact' +
+        'ory,Borland.Data.DbxMySQLDriver,Version=19.0.0.0,Culture=neutral' +
+        ',PublicKeyToken=91d62ebb5b0d1b1b'
+      'GetDriverFunc=getSQLDriverMYSQL'
+      'LibraryName=dbxmys.dll'
+      'LibraryNameOsx=libsqlmys.dylib'
+      'VendorLib=LIBMYSQL.dll'
+      'VendorLibWin64=libmysql.dll'
+      'VendorLibOsx=libmysqlclient.dylib'
+      'HostName=localhost'
+      'Database=nfedelphi'
+      'User_Name=root'
+      'Password=root'
+      'MaxBlobSize=-1'
+      'LocaleCode=0000'
+      'Compressed=False'
+      'Encrypted=False'
+      'BlobSize=-1'
+      'ErrorResourceFile=')
+    Connected = True
+    Left = 32
+    Top = 16
+  end
+end

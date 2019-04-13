@@ -1,0 +1,351 @@
+unit UPrincipal;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DBXpress, WideStrings, Buttons, StdCtrls, DB, SqlExpr, ExtCtrls,
+  ComCtrls, FMTBcd, MidasLib, DBClient, Menus, DBCtrls, DBXMsSQL, DBXInterbase,
+  DBXOracle, DBXFirebird, DBXMySql, JvEnterTab, LabeledCtrls, JvToolEdit,
+  JvComponentBase, Mask, JvExMask, Grids, DBGrids, ToolWin, ActnMan, ActnCtrls,
+  PlatformDefaultStyleActnCtrls, ActnList, ImgList;
+
+type
+  TFPrincipal = class(TForm)
+    PanelVinculos: TPanel;
+    PanelDadosSH: TPanel;
+    StatusBar1: TStatusBar;
+    EntidadeSH: TSQLDataSet;
+    Splitter1: TSplitter;
+    JvEnterAsTab1: TJvEnterAsTab;
+    Panel4: TPanel;
+    EditBuscaTabelaSH: TLabeledEdit;
+    Panel1: TPanel;
+    GroupBoxSGBDSH: TGroupBox;
+    Label7: TLabel;
+    EditHostSH: TLabeledEdit;
+    ComboConexaoSH: TLabeledComboBox;
+    EditUsuarioSH: TLabeledEdit;
+    EditSenhaSH: TLabeledEdit;
+    BotaoConectarSH: TBitBtn;
+    GroupBoxSGBDCliente: TGroupBox;
+    Label1: TLabel;
+    EditHostCliente: TLabeledEdit;
+    ComboConexaoCliente: TLabeledComboBox;
+    EditUsuarioCliente: TLabeledEdit;
+    EditSenhaCliente: TLabeledEdit;
+    BotaoConectarCliente: TBitBtn;
+    EditBancoDadosSH: TJvFilenameEdit;
+    EditBancoDadosCliente: TJvFilenameEdit;
+    PanelDadosCliente: TPanel;
+    Splitter3: TSplitter;
+    Panel5: TPanel;
+    EditBuscaTabelaCliente: TLabeledEdit;
+    EntidadeCliente: TSQLDataSet;
+    GroupBox2: TGroupBox;
+    DBGrid2: TDBGrid;
+    CDSVinculos: TClientDataSet;
+    CDSVinculosTABELA_SH: TStringField;
+    CDSVinculosCAMPO_SH: TStringField;
+    CDSVinculosTABELA_CLIENTE: TStringField;
+    CDSVinculosCAMPO_CLIENTE: TStringField;
+    CDSVinculosVALOR_CAMPO: TStringField;
+    DSVinculos: TDataSource;
+    ActionManager1: TActionManager;
+    ActionToolBar1: TActionToolBar;
+    ImageListBotaoNormal: TImageList;
+    ImageListBotaoDesabilitado: TImageList;
+    ActionCopiarDados: TAction;
+    ActionToolBar2: TActionToolBar;
+    Panel2: TPanel;
+    ListaTabelasSH: TListBox;
+    Splitter2: TSplitter;
+    ListaCamposSH: TListBox;
+    ActionToolBar3: TActionToolBar;
+    Panel3: TPanel;
+    ListaCamposCliente: TListBox;
+    Splitter4: TSplitter;
+    ListaTabelasCliente: TListBox;
+    ActionInserirSH: TAction;
+    ActionEditarSH: TAction;
+    ActionInserirCliente: TAction;
+    ActionEditarCliente: TAction;
+    QConsultaSH: TSQLQuery;
+    QConsultaCliente: TSQLQuery;
+    ActionLimparGrid: TAction;
+    TTabelaCliente: TSQLTable;
+    TTabelaSH: TSQLTable;
+    ActionExcluirLinha: TAction;
+    ConexaoSH: TSQLConnection;
+    ConexaoCliente: TSQLConnection;
+    procedure ListaTabelasSHClick(Sender: TObject);
+    procedure EditBuscaTabelaSHChange(Sender: TObject);
+    procedure BotaoConectarSHClick(Sender: TObject);
+    procedure BotaoConectarClienteClick(Sender: TObject);
+    procedure ListaTabelasClienteClick(Sender: TObject);
+    procedure EditBuscaTabelaClienteChange(Sender: TObject);
+    procedure ActionInserirSHExecute(Sender: TObject);
+    procedure ActionEditarSHExecute(Sender: TObject);
+    procedure ActionInserirClienteExecute(Sender: TObject);
+    procedure ActionEditarClienteExecute(Sender: TObject);
+    procedure ActionLimparGridExecute(Sender: TObject);
+    procedure ActionCopiarDadosExecute(Sender: TObject);
+    procedure ListaTabelasClienteDblClick(Sender: TObject);
+    procedure ListaTabelasSHDblClick(Sender: TObject);
+    procedure ActionExcluirLinhaExecute(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPrincipal: TFPrincipal;
+
+implementation
+
+uses
+  ConexaoBD, UTabelaSelecionada;
+{$R *.dfm}
+
+
+{$REGION 'Software House'}
+procedure TFPrincipal.BotaoConectarSHClick(Sender: TObject);
+var
+  List: TStringList;
+begin
+  List := TStringList.Create;
+
+  TDBExpress.HostName := EditHostSH.Text;
+  TDBExpress.Database := EditBancoDadosSH.Text;
+  TDBExpress.User_Name := EditUsuarioSH.Text;
+  TDBExpress.Password := EditSenhaSH.Text;
+
+  TDBExpress.Conectar(ComboConexaoSH.Text);
+  EntidadeSH.SQLConnection := TDBExpress.getConexao;
+  QConsultaSH.SQLConnection := TDBExpress.getConexao;
+  TTabelaSH.SQLConnection := TDBExpress.getConexao;
+  ConexaoSH := TDBExpress.getConexao;
+
+  EntidadeSH.SQLConnection.GetTableNames(List, false);
+  if ListaTabelasSH.itemindex > -1 then
+    if ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex] <> '' then
+      EntidadeSH.SQLConnection.GetFieldNames(ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex], ListaCamposSH.Items);
+
+  ListaTabelasSH.Items.Assign(List);
+  EditBuscaTabelaSH.SetFocus;
+  List.Free;
+end;
+
+procedure TFPrincipal.ListaTabelasSHClick(Sender: TObject);
+begin
+  EntidadeSH.SQLConnection.GetFieldNames(ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex], ListaCamposSH.Items);
+  //
+  QConsultaSH.Active := false;
+  QConsultaSH.CommandText := 'select count(*) as TOTAL from ' + ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex];
+  QConsultaSH.Active := True;
+  StatusBar1.Panels[0].Text := 'Total Registros: ' + QConsultaSH.FieldByName('TOTAL').AsString;
+end;
+
+procedure TFPrincipal.EditBuscaTabelaSHChange(Sender: TObject);
+begin
+  ListaTabelasSH.Perform(LB_SELECTSTRING, 0, LongInt(PChar(EditBuscaTabelaSH.Text)));
+end;
+
+procedure TFPrincipal.ActionInserirSHExecute(Sender: TObject);
+begin
+  CDSVinculos.Append;
+  CDSVinculosTABELA_SH.AsString := ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex];
+  CDSVinculosCAMPO_SH.AsString := ListaCamposSH.Items.Strings[ListaCamposSH.itemindex];
+  CDSVinculos.Post;
+end;
+
+procedure TFPrincipal.ActionEditarSHExecute(Sender: TObject);
+begin
+  CDSVinculos.Edit;
+  CDSVinculosTABELA_SH.AsString := ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex];
+  CDSVinculosCAMPO_SH.AsString := ListaCamposSH.Items.Strings[ListaCamposSH.itemindex];
+  CDSVinculos.Post;
+end;
+
+procedure TFPrincipal.ListaTabelasSHDblClick(Sender: TObject);
+begin
+  TTabelaSH.Close;
+  TTabelaSH.TableName := ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex];
+  TTabelaSH.Open;
+  FTabelaSelecionada.DSPTabelaSelecionada.DataSet := TTabelaSH;
+  FTabelaSelecionada.CDSTabelaSelecionada.Close;
+  FTabelaSelecionada.CDSTabelaSelecionada.Open;
+  FTabelaSelecionada.Caption := 'Tabela Selecionada - SH: ' + ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex];
+  FTabelaSelecionada.ShowModal;
+end;
+{$ENDREGION}
+
+{$REGION 'Cliente'}
+procedure TFPrincipal.BotaoConectarClienteClick(Sender: TObject);
+var
+  List: TStringList;
+begin
+  List := TStringList.Create;
+
+  TDBExpress.HostName := EditHostCliente.Text;
+  TDBExpress.Database := EditBancoDadosCliente.Text;
+  TDBExpress.User_Name := EditUsuarioCliente.Text;
+  TDBExpress.Password := EditSenhaCliente.Text;
+
+  TDBExpress.Conectar(ComboConexaoCliente.Text);
+  EntidadeCliente.SQLConnection := TDBExpress.getConexao;
+  QConsultaCliente.SQLConnection := TDBExpress.getConexao;
+  TTabelaCliente.SQLConnection := TDBExpress.getConexao;
+  ConexaoCliente := TDBExpress.getConexao;
+
+  EntidadeCliente.SQLConnection.GetTableNames(List, false);
+  if ListaTabelasCliente.itemindex > -1 then
+    if ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex] <> '' then
+      EntidadeCliente.SQLConnection.GetFieldNames(ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex], ListaCamposCliente.Items);
+
+  ListaTabelasCliente.Items.Assign(List);
+  EditBuscaTabelaCliente.SetFocus;
+  List.Free;
+end;
+
+procedure TFPrincipal.ListaTabelasClienteClick(Sender: TObject);
+begin
+  EntidadeCliente.SQLConnection.GetFieldNames(ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex], ListaCamposCliente.Items);
+  //
+  QConsultaCliente.Active := false;
+  QConsultaCliente.CommandText := 'select count(*) as TOTAL from ' + ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex];
+  QConsultaCliente.Active := True;
+  StatusBar1.Panels[2].Text := 'Total Registros: ' + QConsultaCliente.FieldByName('TOTAL').AsString;
+end;
+
+procedure TFPrincipal.EditBuscaTabelaClienteChange(Sender: TObject);
+begin
+  ListaTabelasCliente.Perform(LB_SELECTSTRING, 0, LongInt(PChar(EditBuscaTabelaCliente.Text)));
+end;
+
+procedure TFPrincipal.ActionInserirClienteExecute(Sender: TObject);
+begin
+  CDSVinculos.Append;
+  CDSVinculosTABELA_CLIENTE.AsString := ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex];
+  CDSVinculosCAMPO_CLIENTE.AsString := ListaCamposCliente.Items.Strings[ListaCamposCliente.itemindex];
+  CDSVinculos.Post;
+end;
+
+procedure TFPrincipal.ActionEditarClienteExecute(Sender: TObject);
+begin
+  CDSVinculos.Edit;
+  CDSVinculosTABELA_CLIENTE.AsString := ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex];
+  CDSVinculosCAMPO_CLIENTE.AsString := ListaCamposCliente.Items.Strings[ListaCamposCliente.itemindex];
+  CDSVinculos.Post;
+end;
+
+procedure TFPrincipal.ListaTabelasClienteDblClick(Sender: TObject);
+begin
+  TTabelaCliente.Close;
+  TTabelaCliente.TableName := ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex];
+  TTabelaCliente.Open;
+  FTabelaSelecionada.DSPTabelaSelecionada.DataSet := TTabelaCliente;
+  FTabelaSelecionada.CDSTabelaSelecionada.Close;
+  FTabelaSelecionada.CDSTabelaSelecionada.Open;
+  FTabelaSelecionada.Caption := 'Tabela Selecionada - Cliente: ' + ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex];
+  FTabelaSelecionada.ShowModal;
+end;
+{$ENDREGION}
+
+{$REGION 'Vínculos'}
+procedure TFPrincipal.ActionLimparGridExecute(Sender: TObject);
+begin
+  if Application.MessageBox('Deseja limpar o conteúdo da Grid?', 'Pergunta do Sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+  begin
+    CDSVinculos.EmptyDataSet;
+  end;
+end;
+
+procedure TFPrincipal.ActionExcluirLinhaExecute(Sender: TObject);
+begin
+  if Application.MessageBox('Deseja excluir a linha selecionada?', 'Pergunta do Sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+  begin
+    CDSVinculos.Delete;
+  end;
+end;
+
+procedure TFPrincipal.ActionCopiarDadosExecute(Sender: TObject);
+var
+  Scripts: TStringList;
+  Transacao: TTransactionDesc;
+  i: Integer;
+  Values, Campos, Linha: String;
+begin
+  try
+    if Application.MessageBox('Deseja copiar os dados das tabelas selecionadas?', 'Pergunta do Sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+    begin
+
+      // Gerar Scripts
+      TTabelaCliente.Close;
+      TTabelaCliente.TableName := ListaTabelasCliente.Items.Strings[ListaTabelasCliente.itemindex];
+      TTabelaCliente.Open;
+
+      Scripts := TStringList.Create;
+      //
+      TTabelaCliente.First;
+      while not TTabelaCliente.Eof do
+      begin
+        Linha := ' INSERT INTO ' + ListaTabelasSH.Items.Strings[ListaTabelasSH.itemindex] + ' ';
+        //
+        CDSVinculos.First;
+        while not CDSVinculos.Eof do
+        begin
+          Campos := Campos + CDSVinculosCAMPO_SH.AsString + ',';
+          Values := Values + QuotedStr( TTabelaCliente.FieldByName(CDSVinculosCAMPO_CLIENTE.AsString).AsString ) + ',';
+          CDSVinculos.Next;
+        end;
+        Delete(Campos, Length(Campos), 1);
+        Delete(Values, Length(Values), 1);
+
+        Linha := Linha + '(' + Campos + ') VALUES (' + Values + ');';
+        Scripts.Add(Linha);
+
+        Campos := '';
+        Values := '';
+        TTabelaCliente.Next;
+      end;
+
+
+      // Executar Scripts
+      Transacao.TransactionID := 1;
+      Transacao.IsolationLevel := xilREADCOMMITTED;
+      try
+        for i := 0 to (Scripts.Count - 1) do
+        begin
+          try
+            ConexaoSH.StartTransaction(Transacao);
+            ConexaoSH.ExecuteDirect(Scripts[i]);
+            ConexaoSH.Commit(Transacao);
+          except
+            on E: Exception do
+            begin
+              ConexaoSH.Rollback(Transacao);
+              ShowMessage(E.Message);
+              Exit;
+            end;
+          end;
+        end;
+      except
+        on E: Exception do
+        begin
+          ShowMessage(E.Message);
+          Exit;
+        end;
+      end;
+
+      Application.MessageBox('Copia efetuada com sucesso.', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    end;
+  finally
+    Scripts.Free;
+  end;
+end;
+{$ENDREGION}
+
+end.

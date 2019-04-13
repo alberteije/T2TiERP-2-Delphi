@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CFe>
+   <infCFe versaoDadosEnt="0.06">
+      <ide>
+         <CNPJ>11111111111111</CNPJ>
+         <signAC>eije1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</signAC>
+         <numeroCaixa>001</numeroCaixa>
+      </ide>
+      <emit>
+         <CNPJ>11111111111111</CNPJ>
+         <IE>111111111111</IE>
+         <IM>123123</IM>
+         <cRegTribISSQN>1</cRegTribISSQN>
+         <indRatISSQN>N</indRatISSQN>
+      </emit>
+      <dest>
+      </dest>
+      <det nItem="1">
+         <prod>
+            <cProd>7896019606226</cProd>
+            <cEAN>7896019606226</cEAN>
+            <xProd>NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xProd>
+            <NCM>17049010</NCM>
+            <CFOP>5102</CFOP>
+            <uCom>UN</uCom>
+            <qCom>1.0000</qCom>
+            <vUnCom>6.00</vUnCom>
+            <indRegra>A</indRegra>
+         </prod>
+         <imposto>
+            <vItem12741>0.72</vItem12741>
+            <ICMS>
+               <ICMSSN102>
+                  <Orig>0</Orig>
+                  <CSOSN>102</CSOSN>
+               </ICMSSN102>
+            </ICMS>
+            <PIS>
+               <PISSN>
+                  <CST>49</CST>
+               </PISSN>
+            </PIS>
+            <COFINS>
+               <COFINSSN>
+                  <CST>49</CST>
+               </COFINSSN>
+            </COFINS>
+         </imposto>
+      </det>
+      <total>
+         <vCFeLei12741>0.72</vCFeLei12741>
+      </total>
+      <pgto>
+         <MP>
+            <cMP>01</cMP>
+            <vMP>6.00</vMP>
+         </MP>
+      </pgto>
+      <infAdic>
+         <infCpl>SAT - T2Ti.COM</infCpl>
+      </infAdic>
+   </infCFe>
+</CFe>

@@ -1,0 +1,49 @@
+object FDataModule: TFDataModule
+  OldCreateOrder = False
+  Height = 99
+  Width = 453
+  object StoredProcedure: TSQLStoredProc
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftFloat
+        Precision = 4
+        Name = 'PQTDE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDate
+        Precision = 4
+        Name = 'PDATA'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Precision = 4
+        Name = 'PID'
+        ParamType = ptInput
+      end>
+    SQLConnection = ConexaoBalcao
+    StoredProcName = 'ALTERA_QTDE_PRODUTO'
+    Left = 144
+    Top = 32
+  end
+  object ConexaoBalcao: TSQLConnection
+    DriverName = 'MySQL'
+    LoginPrompt = False
+    Params.Strings = (
+      'Database=mini'
+      'HostName=localhost'
+      'Password=root'
+      'User_Name=root')
+    Left = 56
+    Top = 32
+  end
+  object Q_Rap: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = ConexaoBalcao
+    Left = 232
+    Top = 32
+  end
+end

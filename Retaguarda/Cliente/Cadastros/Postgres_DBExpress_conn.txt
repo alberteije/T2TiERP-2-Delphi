@@ -1,0 +1,7 @@
+DriverName=DevartPostgreSQL
+HostName=localhost
+Database=t2tierp
+User_Name=postgres
+Password=root
+BlobSize=-1
+LoginPrompt=False

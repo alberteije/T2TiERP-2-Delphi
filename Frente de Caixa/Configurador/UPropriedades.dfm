@@ -1,0 +1,29 @@
+object FPropriedades: TFPropriedades
+  Left = 304
+  Top = 174
+  BorderStyle = bsDialog
+  Caption = 'Propriedades'
+  ClientHeight = 505
+  ClientWidth = 354
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDefault
+  PixelsPerInch = 96
+  TextHeight = 13
+  object JvInspector: TJvInspector
+    Left = 0
+    Top = 0
+    Width = 354
+    Height = 505
+    Align = alClient
+    Divider = 118
+    ItemHeight = 16
+    TabStop = True
+    TabOrder = 0
+  end
+end

@@ -1,0 +1,102 @@
+object FProduto: TFProduto
+  Left = 0
+  Top = 0
+  Caption = 'Produto'
+  ClientHeight = 436
+  ClientWidth = 299
+  Position = poScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop, dkiPhone, dkiPad]
+  OnShow = FormShow
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object ToolBar1: TToolBar
+    Height = 48.000000000000000000
+    TabOrder = 0
+    Width = 299.000000000000000000
+    object lblTitle1: TLabel
+      Align = alContents
+      Height = 48.000000000000000000
+      StyleLookup = 'toollabel'
+      Text = 'Dados do Produto'
+      TextAlign = taCenter
+      Width = 299.000000000000000000
+    end
+    object BotaoSelecionar: TSpeedButton
+      Align = alRight
+      Height = 48.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Position.X = 234.000000000000000000
+      Text = 'Selecionar'
+      Width = 60.000000000000000000
+      OnClick = BotaoSelecionarClick
+    end
+  end
+  object ListViewProduto: TListView
+    ItemAppearanceClassName = 'TListItemAppearance'
+    ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = alClient
+    Height = 388.000000000000000000
+    TabOrder = 1
+    Width = 299.000000000000000000
+    OnItemClick = ListViewProdutoItemClick
+  end
+  object FDMemTableProduto: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'NOME'
+        DataType = ftString
+        Size = 100
+      end
+      item
+        Name = 'VALOR_VENDA'
+        DataType = ftFloat
+        Precision = 2
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 216
+    Top = 312
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = FDMemTableProduto
+    ScopeMappings = <>
+    Left = 136
+    Top = 208
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 36
+    Top = 117
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'NOME'
+      Control = ListViewProduto
+      FillExpressions = <>
+      AutoBufferCount = False
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'VALOR_VENDA'
+      FillBreakGroups = <>
+    end
+  end
+end

@@ -1,0 +1,45 @@
+program T2TiERPNFCe;
+
+uses
+  FMX.Forms,
+  UMenu in 'Tela\UMenu.pas' {FMenu},
+  UCliente in 'Tela\UCliente.pas' {FCliente},
+  UProduto in 'Tela\UProduto.pas' {FProduto},
+  ControleEstoqueController in 'Controller\ControleEstoqueController.pas',
+  Controller in 'Controller\Controller.pas',
+  DAVController in 'Controller\DAVController.pas',
+  DavDetalheController in 'Controller\DavDetalheController.pas',
+  EmpresaEnderecoController in 'Controller\EmpresaEnderecoController.pas',
+  FinLancamentoReceberController in 'Controller\FinLancamentoReceberController.pas',
+  NfceConfiguracaoController in 'Controller\NfceConfiguracaoController.pas',
+  NfceFechamentoController in 'Controller\NfceFechamentoController.pas',
+  NfceMovimentoController in 'Controller\NfceMovimentoController.pas',
+  NfceOperadorController in 'Controller\NfceOperadorController.pas',
+  NfceSangriaController in 'Controller\NfceSangriaController.pas',
+  NfceSuprimentoController in 'Controller\NfceSuprimentoController.pas',
+  NfceTipoPagamentoController in 'Controller\NfceTipoPagamentoController.pas',
+  NfceTurnoController in 'Controller\NfceTurnoController.pas',
+  NfeConfiguracaoController in 'Controller\NfeConfiguracaoController.pas',
+  NfeFormaPagamentoController in 'Controller\NfeFormaPagamentoController.pas',
+  NfeNumeroController in 'Controller\NfeNumeroController.pas',
+  ProdutoController in 'Controller\ProdutoController.pas',
+  VendaController in 'Controller\VendaController.pas',
+  VendedorController in 'Controller\VendedorController.pas',
+  ViewNfceClienteController in 'Controller\ViewNfceClienteController.pas',
+  Atributos in 'Util\Atributos.pas',
+  Biblioteca in 'Util\Biblioteca.pas',
+  Constantes in 'Util\Constantes.pas',
+  Conversor in 'Util\Conversor.pas',
+  SessaoUsuario in 'Util\SessaoUsuario.pas',
+  T2TiORM in 'Util\T2TiORM.pas',
+  Tipos in 'Util\Tipos.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFMenu, FMenu);
+  Application.CreateForm(TFCliente, FCliente);
+  Application.CreateForm(TFProduto, FProduto);
+  Application.Run;
+end.

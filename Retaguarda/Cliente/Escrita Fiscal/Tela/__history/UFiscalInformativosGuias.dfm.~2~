@@ -1,0 +1,286 @@
+object FFiscalInformativosGuias: TFFiscalInformativosGuias
+  Left = 419
+  Top = 305
+  BorderStyle = bsDialog
+  Caption = 'Informativos e Guias'
+  ClientHeight = 247
+  ClientWidth = 662
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelCabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 662
+    Height = 65
+    Align = alTop
+    Color = 14537936
+    ParentBackground = False
+    TabOrder = 0
+    object Bevel1: TBevel
+      Left = 61
+      Top = 50
+      Width = 595
+      Height = 6
+    end
+    object Image1: TImage
+      Left = 7
+      Top = 7
+      Width = 48
+      Height = 49
+      ParentShowHint = False
+      ShowHint = False
+      Transparent = True
+    end
+    object Label2: TLabel
+      Left = 62
+      Top = 24
+      Width = 200
+      Height = 23
+      Caption = 'Informativos e Guias'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object ActionToolBarPrincipal: TActionToolBar
+    AlignWithMargins = True
+    Left = 3
+    Top = 220
+    Width = 656
+    Height = 24
+    ActionManager = ActionManagerLocal
+    Align = alBottom
+    BiDiMode = bdRightToLeft
+    Caption = 'ActionToolBarPrincipal'
+    ColorMap.MenuColor = clMenu
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Orientation = boRightToLeft
+    ParentBiDiMode = False
+    ParentFont = False
+    Spacing = 5
+  end
+  object PageControlItens: TPageControl
+    Left = 0
+    Top = 65
+    Width = 662
+    Height = 152
+    ActivePage = tsGuias
+    Align = alClient
+    TabOrder = 2
+    object tsGuias: TTabSheet
+      Caption = 'Guias'
+      ImageIndex = 3
+      object Panel1: TPanel
+        Left = 0
+        Top = 0
+        Width = 654
+        Height = 124
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        object GroupBox10: TGroupBox
+          Left = 7
+          Top = 4
+          Width = 636
+          Height = 109
+          Caption = 'DARF:'
+          TabOrder = 0
+          object EditValorMulta: TLabeledCalcEdit
+            Left = 139
+            Top = 80
+            Width = 121
+            Height = 21
+            DisplayFormat = '###,###,##0.00'
+            TabOrder = 5
+            DecimalPlacesAlwaysShown = False
+            CalcEditLabel.Width = 57
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Valor Multa:'
+          end
+          object EditValorJuros: TLabeledCalcEdit
+            Left = 266
+            Top = 80
+            Width = 121
+            Height = 21
+            DisplayFormat = '###,###,##0.00'
+            TabOrder = 6
+            DecimalPlacesAlwaysShown = False
+            CalcEditLabel.Width = 57
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Valor Juros:'
+          end
+          object EditDataVencimento: TLabeledDateEdit
+            Left = 139
+            Top = 32
+            Width = 121
+            Height = 21
+            ShowNullDate = False
+            TabOrder = 1
+            DateEditLabel.Width = 85
+            DateEditLabel.Height = 13
+            DateEditLabel.Caption = 'Data Vencimento:'
+          end
+          object EditPeriodoApuracao: TLabeledDateEdit
+            Left = 12
+            Top = 32
+            Width = 121
+            Height = 21
+            ShowNullDate = False
+            TabOrder = 0
+            DateEditLabel.Width = 89
+            DateEditLabel.Height = 13
+            DateEditLabel.Caption = 'Per'#237'odo Apura'#231#227'o:'
+          end
+          object EditCodigoReceita: TLabeledMaskEdit
+            Left = 266
+            Top = 32
+            Width = 105
+            Height = 21
+            Alignment = taCenter
+            EditLabel.Width = 91
+            EditLabel.Height = 13
+            EditLabel.Caption = 'C'#243'digo da Receita:'
+            MaxLength = 4
+            TabOrder = 2
+            Text = '____'
+            Required = False
+            EditMask = '####'
+            MaskState = [msMasked]
+          end
+          object EditNumeroReferencia: TLabeledMaskEdit
+            Left = 377
+            Top = 32
+            Width = 248
+            Height = 21
+            EditLabel.Width = 111
+            EditLabel.Height = 13
+            EditLabel.Caption = 'N'#250'mero de Refer'#234'ncia:'
+            TabOrder = 3
+            Required = False
+            MaskState = []
+          end
+          object EditValorPrincipal: TLabeledCalcEdit
+            Left = 12
+            Top = 80
+            Width = 121
+            Height = 21
+            DisplayFormat = '###,###,##0.00'
+            TabOrder = 4
+            DecimalPlacesAlwaysShown = False
+            CalcEditLabel.Width = 70
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Valor Principal:'
+          end
+          object EditValorTotal: TLabeledCalcEdit
+            Left = 393
+            Top = 80
+            Width = 121
+            Height = 21
+            DisplayFormat = '###,###,##0.00'
+            TabOrder = 7
+            DecimalPlacesAlwaysShown = False
+            CalcEditLabel.Width = 55
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Valor Total:'
+          end
+        end
+      end
+    end
+  end
+  object ActionManagerLocal: TActionManager
+    ActionBars.ShowHints = False
+    ActionBars = <
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionCancelar
+            Caption = '&Cancelar [F11]'
+            ImageIndex = 10
+            ShortCut = 122
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionSair
+            Caption = '&Sair [F8]'
+            ImageIndex = 12
+            ShortCut = 119
+          end
+          item
+            Action = ActionGerarDarf
+            Caption = '&Gerar DARF'
+            ImageIndex = 26
+          end>
+        ActionBar = ActionToolBarPrincipal
+      end
+      item
+      end
+      item
+      end
+      item
+      end
+      item
+      end>
+    DisabledImages = FDataModule.ImagensCadastrosD
+    Images = FDataModule.ImagensCadastros
+    Left = 552
+    Top = 8
+    StyleName = 'Ribbon - Silver'
+    object ActionCancelar: TAction
+      Category = 'Geral'
+      Caption = 'Cancelar [F11]'
+      ImageIndex = 10
+      ShortCut = 122
+      OnExecute = ActionCancelarExecute
+    end
+    object ActionSair: TAction
+      Category = 'Geral'
+      Caption = 'Sair [F8]'
+      ImageIndex = 12
+      ShortCut = 119
+      OnExecute = ActionSairExecute
+    end
+    object ActionGerarDarf: TAction
+      Category = 'Guias'
+      Caption = 'Gerar DARF'
+      ImageIndex = 26
+      OnExecute = ActionGerarDarfExecute
+    end
+  end
+end

@@ -1,0 +1,49 @@
+object FYoutube: TFYoutube
+  Left = 0
+  Top = 0
+  ClientHeight = 209
+  ClientWidth = 472
+  Caption = 'FYoutube'
+  OldCreateOrder = False
+  MonitoredKeys.Keys = <>
+  OnCreate = UniFormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object UniHTMLFrame1: TUniHTMLFrame
+    Left = 0
+    Top = 0
+    Width = 472
+    Height = 209
+    Hint = ''
+    HTML.Strings = (
+      '<!DOCTYPE html>'
+      '<html>'
+      '<body>'
+      ''
+      '<iframe id="myVideo"  width="100%" height="100%"'
+      
+        '  src="https://www.youtube.com/watch?v=58B9WqE9-dY"allowfullscre' +
+        'en'
+      '</iframe>'
+      ''
+      '<script type='#39'text/javascript'#39'>'
+      
+        '    document.getElementById('#39'myVideo'#39').addEventListener('#39'ended'#39',' +
+        'myHandler,false);'
+      '    function myHandler(e) {'
+      '         MainForm.panelvideo.setVisible(false);'
+      '         MainForm.panelchart.setVisible(true);'
+      '         MainForm.panelchart.collapse();'
+      '    }'
+      '</script>'
+      ''
+      '</body>'
+      '</html>')
+    Align = alClient
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    ExplicitLeft = 16
+    ExplicitTop = 16
+    ExplicitWidth = 256
+    ExplicitHeight = 128
+  end
+end

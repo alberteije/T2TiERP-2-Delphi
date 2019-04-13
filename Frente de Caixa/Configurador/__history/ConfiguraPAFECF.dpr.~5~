@@ -1,0 +1,27 @@
+program ConfiguraPAFECF;
+
+uses
+  Forms,
+  UConfiguracao in 'UConfiguracao.pas' {FConfiguracao},
+  UDataModule in 'UDataModule.pas' {FDataModule: TDataModule},
+  UConfigConexao in 'UConfigConexao.pas' {FConfigConexao},
+  USplash in 'USplash.pas' {FSplash},
+  ULogin in 'ULogin.pas' {FLogin},
+  UCaixa in 'UCaixa.pas' {FCaixa},
+  UPropriedades in 'UPropriedades.pas' {FPropriedades},
+  EcfPosicaoComponentesVO in '..\PAF-ECF\VO\EcfPosicaoComponentesVO.pas',
+  VO in '..\PAF-ECF\VO\VO.pas',
+  Atributos in '..\PAF-ECF\Util\Atributos.pas',
+  T2TiORM in '..\PAF-ECF\Util\T2TiORM.pas',
+  Biblioteca in '..\PAF-ECF\Util\Biblioteca.pas',
+  Constantes in '..\PAF-ECF\Util\Constantes.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFConfiguracao, FConfiguracao);
+  Application.CreateForm(TFPropriedades, FPropriedades);
+  Application.Run;
+end.

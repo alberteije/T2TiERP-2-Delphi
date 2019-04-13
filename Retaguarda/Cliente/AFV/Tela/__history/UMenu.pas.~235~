@@ -1,0 +1,275 @@
+unit UMenu;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Gestures, System.Actions, FMX.ActnList, FMX.TabControl,
+  FMX.ListView.Types, Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti,
+  System.Bindings.Outputs, Fmx.Bind.Editors, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.Bind.Components, Data.Bind.DBScope,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FMX.ListView,
+  DBXJSON, DBXJSONReflect, DBXCommon, DSHTTPClient, IndyPeerImpl, FMX.Layouts,
+  FMX.Memo, Generics.Collections, Controller, UCliente, FMX.WebBrowser,
+  FMX.Edit, FMX.DateTimeCtrls, UProduto;
+
+type
+  TFMenu = class(TForm)
+    TabControl1: TTabControl;
+    TabItem1: TTabItem;
+    TabControl2: TTabControl;
+    TabItem5: TTabItem;
+    ToolBar1: TToolBar;
+    lblTitle1: TLabel;
+    btnNext: TSpeedButton;
+    TabItem6: TTabItem;
+    ToolBar2: TToolBar;
+    lblTitle2: TLabel;
+    btnBack: TSpeedButton;
+    TabItem2: TTabItem;
+    ToolBar3: TToolBar;
+    lblTitle3: TLabel;
+    TabItem3: TTabItem;
+    ToolBar4: TToolBar;
+    lblTitle4: TLabel;
+    TabItem4: TTabItem;
+    ToolBar5: TToolBar;
+    lblTitle5: TLabel;
+    ActionList1: TActionList;
+    ChangeTabAction1: TChangeTabAction;
+    ChangeTabAction2: TChangeTabAction;
+    GestureManager1: TGestureManager;
+    BotaoConsultaCliente: TSpeedButton;
+    ListViewCliente: TListView;
+    FDMemTableCliente: TFDMemTable;
+    BindSourceDBCliente: TBindSourceDB;
+    BindingsListCliente: TBindingsList;
+    LinkListControlToField1: TLinkListControlToField;
+    WebBrowser1: TWebBrowser;
+    ImageControl1: TImageControl;
+    FDMemTableProduto: TFDMemTable;
+    BotaoProduto: TSpeedButton;
+    ListViewProduto: TListView;
+    BindSourceDB1: TBindSourceDB;
+    LinkListControlToField2: TLinkListControlToField;
+    ListViewMetas: TListView;
+    Label1: TLabel;
+    LabelMeta: TLabel;
+    BotaoMeta: TSpeedButton;
+    BotaoItemPedido: TSpeedButton;
+    BotaoIncluirPedido: TSpeedButton;
+    EditDataPedido: TCalendarEdit;
+    Label2: TLabel;
+    ListViewItemPedido: TListView;
+    CDSVendaDetalhe: TFDMemTable;
+    BindSourceDB2: TBindSourceDB;
+    LinkListControlToField3: TLinkListControlToField;
+    procedure BotaoConsultaClienteClick(Sender: TObject);
+
+    procedure ListViewClienteItemClick(const Sender: TObject;  const AItem: TListViewItem);
+    procedure TabControl2Change(Sender: TObject);
+    procedure BotaoProdutoClick(Sender: TObject);
+    procedure BotaoMetaClick(Sender: TObject);
+    procedure BotaoIncluirPedidoClick(Sender: TObject);
+    procedure BotaoItemPedidoClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FMenu: TFMenu;
+
+implementation
+
+{$R *.fmx}
+
+uses ViewPessoaClienteVO, ProdutoVO, VendedorVO, VendaCabecalhoVO, VendaDetalheVO;
+
+procedure TFMenu.BotaoConsultaClienteClick(Sender: TObject);
+var
+  ClienteVO : TViewPessoaClienteVO;
+  ListaCliente: TObjectList<TViewPessoaClienteVO>;
+  i: Integer;
+begin
+  try
+    try
+      ListaCliente := TObjectList<TViewPessoaClienteVO>(TController.BuscarLista('ViewPessoaClienteController.TViewPessoaClienteController', 'ConsultaLista', ['ID>0'], 'GET'));
+      ClienteVO := TViewPessoaClienteVO.Create;
+
+      FDMemTableCliente.EmptyDataSet;
+
+      for I := 0 to ListaCliente.Count - 1 do
+      begin
+        ClienteVO := ListaCliente[I];
+
+        FDMemTableCliente.Append;
+        FDMemTableCliente.FieldByName('ID').AsInteger := ClienteVO.Id;
+        FDMemTableCliente.FieldByName('FONE').AsString := ClienteVO.Fone;
+        FDMemTableCliente.FieldByName('NOME').AsString := ClienteVO.Nome;
+        FDMemTableCliente.FieldByName('EMAIL').AsString := ClienteVO.Email;
+        FDMemTableCliente.Post;
+      end;
+
+    except
+      on E: Exception do
+        ShowMessage(E.Message);
+    end;
+  finally
+  end;
+end;
+
+procedure TFMenu.BotaoMetaClick(Sender: TObject);
+var
+  VendedorVO : TVendedorVO;
+  i: Integer;
+begin
+  try
+    try
+
+      /// EXERCICIO
+      ///  Pegue o nome do colaborador
+      ///
+      /// EXERCICIO
+      ///  Pense numa maneira de estabelecer metas por cliente.
+
+      VendedorVO := TVendedorVO(TController.BuscarObjeto('VendedorController.TVendedorController', 'ConsultaObjeto', ['ID=1'], 'GET'));
+
+      if Assigned(VendedorVO) then
+      begin
+        LabelMeta.Text :=  formatfloat('###,###.00', VendedorVO.MetaVendas);
+      end;
+
+    except
+      on E: Exception do
+        ShowMessage(E.Message);
+    end;
+  finally
+  end;
+end;
+
+procedure TFMenu.BotaoProdutoClick(Sender: TObject);
+var
+  ProdutoVO : TProdutoVO;
+  ListaProduto: TObjectList<TProdutoVO>;
+  i: Integer;
+begin
+  /// EXERCICIO
+  ///  Utilize as tabelas TABELA_PRECO e TABELA_PRECO_PRODUTO
+  try
+    try
+      ListaProduto := TObjectList<TProdutoVO>(TController.BuscarLista('ProdutoController.TProdutoController', 'ConsultaLista', ['ID>0'], 'GET'));
+      ProdutoVO := TProdutoVO.Create;
+
+      FDMemTableProduto.EmptyDataSet;
+
+      for I := 0 to ListaProduto.Count - 1 do
+      begin
+        ProdutoVO := ListaProduto[I];
+
+        FDMemTableProduto.Append;
+        FDMemTableProduto.FieldByName('ID').AsInteger := ProdutoVO.Id;
+        FDMemTableProduto.FieldByName('NOME').AsString := ProdutoVO.Nome;
+
+        /// EXERCICIO
+        ///  Tente formatar o valor da venda na lista
+
+        FDMemTableProduto.FieldByName('VALOR_VENDA').AsFloat := ProdutoVO.ValorVenda;
+        FDMemTableProduto.Post;
+      end;
+
+    except
+      on E: Exception do
+        ShowMessage(E.Message);
+    end;
+  finally
+  end;
+end;
+
+procedure TFMenu.BotaoIncluirPedidoClick(Sender: TObject);
+var
+  VendaCabecalhoVO: TVendaCabecalhoVO;
+  VendaDetalhe: TVendaDetalheVO;
+begin
+  try
+    try
+      VendaCabecalhoVO.IdTipoNotaFiscal := 1;
+      VendaCabecalhoVO.IdVendedor := 1;
+      VendaCabecalhoVO.IdCliente := 1;
+      VendaCabecalhoVO.IdVendaCondicoesPagamento := 1;
+      VendaCabecalhoVO.DataVenda := EditDataPedido.Date;
+      VendaCabecalhoVO.ValorTotal := 100;
+
+
+      // Itens da venda
+      VendaCabecalhoVO.ListaVendaDetalheVO := TObjectList<TVendaDetalheVO>.Create;
+      CDSVendaDetalhe.Open;
+      CDSVendaDetalhe.DisableControls;
+      CDSVendaDetalhe.First;
+      while not CDSVendaDetalhe.Eof do
+      begin
+        VendaDetalhe := TVendaDetalheVO.Create;
+        VendaDetalhe.IdProduto := CDSVendaDetalhe.FieldByName('ID_PRODUTO').AsInteger;
+        VendaDetalhe.Quantidade := 1;
+        VendaDetalhe.ValorUnitario := CDSVendaDetalhe.FieldByName('VALOR_UNITARIO').AsExtended;
+
+        VendaCabecalhoVO.ListaVendaDetalheVO.Add(VendaDetalhe);
+
+        CDSVendaDetalhe.Next;
+      end;
+
+      TController.ExecutarMetodo('VendaCabecalhoController.TVendaCabecalhoController', 'Insere', [TVendaCabecalhoVO(VendaCabecalhoVO)], 'PUT', 'Lista');
+
+      /// EXERCICIO
+      ///  Implemente a exclusão do Item
+      ///
+      /// EXERCICIO
+      ///  Implemente a consulta dos pedidos do cliente
+      ///
+      /// EXERCICIO
+      ///  Implemente a edição do pedido
+      ///
+      /// EXERCICIO
+      ///  Pegue os dados do vendedor da sessão - implemente o login
+      ///
+      /// EXERCICIO
+      ///  Implemente a consulta ao cliente
+      ///
+      /// EXERCICIO
+      ///  Implemente a consulta às condições de pagamento
+      ///
+      /// EXERCICIO
+      ///  Implemente o calculo do valor total ao incluir o item
+    except
+      on E: Exception do
+        ShowMessage(E.Message);
+    end;
+  finally
+  end;
+end;
+
+procedure TFMenu.BotaoItemPedidoClick(Sender: TObject);
+begin
+  FProduto.Show;
+end;
+
+procedure TFMenu.ListViewClienteItemClick(const Sender: TObject; const AItem: TListViewItem);
+begin
+  FCliente.Show;
+end;
+
+procedure TFMenu.TabControl2Change(Sender: TObject);
+begin
+  /// EXERCICIO
+  ///  Crie uma tabela de roteiros no banco de dados
+  ///  Marque os pontos do roteiro no mapa
+  ///  Para isso estude como funciona o esquema de mapas no Android e no iOS
+  ///  Ou tente usar o WebBrowser com o Google Maps apenas em todas as plataformas
+  WebBrowser1.Navigate('https://www.google.com.br/maps/@-15.8330974,-48.0431515,14z');
+end;
+
+end.

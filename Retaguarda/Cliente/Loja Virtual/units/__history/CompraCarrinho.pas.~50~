@@ -1,0 +1,137 @@
+// Carrinho = Compra
+unit CompraCarrinho;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, uniGUITypes, uniGUIAbstractClasses,
+  uniGUIClasses, uniGUIFrame, DB, uniBasicGrid, uniDBGrid, uniEdit,
+  uniLabel, uniGUIBaseClasses, uniPanel, MainModule, ServerModule, DBClient,
+  Data.FMTBcd, Data.SqlExpr, Datasnap.Provider, uniButton, uniBitBtn,
+  uniSpeedButton, uniDBNavigator, uniDBText, uniThreadTimer, uniTimer, uniImage,
+  Main, Vcl.Imaging.pngimage, CloudBase, CloudBaseWin, CloudCustomPayPal,
+  CloudPayPal;
+
+type
+  TUniCompraCarrinho = class(TUniFrame)
+    UniContainerPanel1: TUniContainerPanel;
+    UniDBGrid1: TUniDBGrid;
+    DataSource1: TDataSource;
+    UniLabel2: TUniLabel;
+    UniDBNavigator1: TUniDBNavigator;
+    UniTimer1: TUniTimer;
+    AdvPayPal1: TAdvPayPal;
+    UniSpeedButton1: TUniSpeedButton;
+    procedure UniTimer1Timer(Sender: TObject);
+    procedure AdvPayPal1PaymentCancelled(Sender: TObject);
+    procedure AdvPayPal1PaymentFailed(Sender: TObject);
+    procedure UniFrameCreate(Sender: TObject);
+    procedure UniSpeedButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+uses
+  uniGUIForm;
+
+{$R *.dfm}
+{$I APPIDS.INC}
+
+procedure TUniCompraCarrinho.AdvPayPal1PaymentCancelled(Sender: TObject);
+begin
+  ShowMessage('Pagamento Cancelado pelo Usuário.');
+end;
+
+procedure TUniCompraCarrinho.AdvPayPal1PaymentFailed(Sender: TObject);
+begin
+  ShowMessage('Erro no Processamento: ' + #13 + AdvPayPal1.PaymentError.ErrorMessage);
+end;
+
+procedure TUniCompraCarrinho.UniFrameCreate(Sender: TObject);
+begin
+  AdvPayPal1.App.Key := PayPalAppKey;
+  AdvPayPal1.App.Secret := PayPalAppSecret;
+end;
+
+procedure TUniCompraCarrinho.UniTimer1Timer(Sender: TObject);
+begin
+  UniLabel2.Caption := 'R$ ' + MainForm.CDSCarrinho.FieldByName('TOTAL').AsString;
+end;
+
+procedure TUniCompraCarrinho.UniSpeedButton1Click(Sender: TObject);
+var
+  pi: TPayPalItem;
+begin
+  Screen.Cursor := crHourGlass;
+
+  // Moeda selecionada
+  AdvPayPal1.Transaction.Currency := pcBRL;
+
+  // Valor do seguro
+  AdvPayPal1.Transaction.Insurance := 5;
+
+  // Valor do frete
+  AdvPayPal1.Transaction.Shipping := 5;
+
+  AdvPayPal1.Transaction.Items.Clear;
+
+  MainForm.CDSCarrinho.DisableControls;
+  MainForm.CDSCarrinho.First;
+  while not MainForm.CDSCarrinho.Eof do
+  begin
+    pi := AdvPayPal1.Transaction.Items.Add;
+    pi.Price := MainForm.CDSCarrinho.FieldByName('VALOR').AsFloat;
+    pi.Name := MainForm.CDSCarrinho.FieldByName('NOME').AsString;
+    pi.Description := MainForm.CDSCarrinho.FieldByName('DESCRICAO').AsString;
+    pi.Quantity := MainForm.CDSCarrinho.FieldByName('QUANTIDADE').AsInteger;
+
+
+    MainForm.CDSCarrinho := TCompraRequisicaoDetalheVO.Create;
+    CompraRequisicaoDetalhe.Id := CDSCompraRequisicaoDetalhe.FieldByName('ID').AsInteger;
+    CompraRequisicaoDetalhe.IdCompraRequisicao := TCompraRequisicaoVO(ObjetoVO).Id;
+    CompraRequisicaoDetalhe.IdProduto := CDSCompraRequisicaoDetalhe.FieldByName('ID_PRODUTO').AsInteger;
+    //CompraRequisicaoDetalhe.ProdutoNome := CDSCompraRequisicaoDetalheProdutoNome.AsString;
+    CompraRequisicaoDetalhe.Quantidade := MainForm.CDSCarrinho.FieldByName('QUANTIDADE').AsFloat;
+    CompraRequisicaoDetalhe.QuantidadeCotada := CDSCompraRequisicaoDetalhe.FieldByName('QUANTIDADE_COTADA').AsFloat;
+    CompraRequisicaoDetalhe.ItemCotado := CDSCompraRequisicaoDetalhe.FieldByName('ITEM_COTADO').AsString;
+    TCompraRequisicaoVO(ObjetoVO).ListaCompraRequisicaoDetalheVO.Add(CompraRequisicaoDetalhe);
+    CDSCompraRequisicaoDetalhe.Next;
+  end;
+  CDSCompraRequisicaoDetalhe.First;
+  CDSCompraRequisicaoDetalhe.EnableControls;
+
+
+  for I := 0 to ListView1.Items.Count - 1 do
+  begin
+    if ListView1.Items[I].Checked then
+    begin
+      ItemSelected := true;
+      pi := AdvPayPal1.Transaction.Items.Add;
+      pi.Price := StrToFloat(ListView1.Items[I].SubItems[2]);
+      pi.Name := ListView1.Items[I].SubItems[0];
+      pi.Description := ListView1.Items[I].SubItems[1];
+      pi.Quantity := StrToInt(ListView1.Items[I].Caption);
+    end;
+  end;
+
+  if ItemSelected then
+  begin
+    Button2.Enabled := false;
+    AdvPayPal1.DoPayment
+  end
+  else
+  begin
+    Screen.Cursor := crDefault;
+    ShowMessage('Please select at least 1 product from the list');
+  end;
+end;
+
+initialization
+  RegisterClass(TUniCompraCarrinho);
+
+end.

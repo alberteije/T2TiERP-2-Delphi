@@ -1,0 +1,23 @@
+program T2TiERPCaixaBanco;
+
+uses
+  Forms,
+  Windows,
+  Dialogs,
+  UTelaCadastro in '..\Comum\Tela\UTelaCadastro.pas' {FTelaCadastro},
+  UTela in '..\Comum\Tela\UTela.pas' {FTela},
+  ULookup in '..\Comum\Tela\ULookup.pas' {FLookup},
+  UBase in '..\Comum\Tela\UBase.pas' {FBase},
+  UFiltro in '..\Comum\Tela\UFiltro.pas' {FFiltro},
+  ULogin in '..\Comum\Tela\ULogin.pas' {FLogin},
+  UMenu in 'Caixa e Bancos\UMenu.pas' {FMenu};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.Title := 'T2Ti ERP Caixa e Bancos';
+  Application.CreateForm(TFMenu, FMenu);
+  Application.Run;
+end.

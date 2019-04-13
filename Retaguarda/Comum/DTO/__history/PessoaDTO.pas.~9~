@@ -1,0 +1,69 @@
+unit PessoaDTO;
+
+interface
+
+uses
+  Atributos, Classes, Constantes, Generics.Collections,,
+
+  SynCommons,
+  mORMot,
+
+  PessoaFisicaDTO, PessoaJuridicaDTO, PessoaEnderecoDTO, PessoaContatoDTO,
+  PessoaTelefoneDTO;
+
+type
+  TPessoa = class(TSQLRecord)
+  private
+    FPK: Integer;
+    FNOME: RawUTF8;
+    FTIPO: RawUTF8;
+    FEMAIL: RawUTF8;
+    FSITE: RawUTF8;
+    FCLIENTE: RawUTF8;
+    FFORNECEDOR: RawUTF8;
+    FCOLABORADOR: RawUTF8;
+    FTRANSPORTADORA: RawUTF8;
+
+    //1:N
+    FListaPessoaContatoVO: TPessoa_Contato;
+    FListaPessoaEnderecoVO: TPessoa_Endereco;
+    FListaPessoaTelefoneVO: TPessoa_Telefone;
+
+    //1:1
+    FPessoaFisicaVO: TPessoa_Fisica;
+    FPessoaJuridicaVO: TPessoa_Juridica;
+
+  public
+    //1:1
+    property PessoaFisicaVO: TPessoa_Fisica read FPessoaFisicaVO write FPessoaFisicaVO;
+    property PessoaJuridicaVO: TPessoa_Juridica read FPessoaJuridicaVO write FPessoaJuridicaVO;
+
+    //1:N
+    property ListaPessoaContatoVO: TObjectList<TPessoa_Contato> read FListaPessoaContatoVO write FListaPessoaContatoVO;
+    property ListaPessoaEnderecoVO: TPessoa_Endereco read FListaPessoaEnderecoVO write FListaPessoaEnderecoVO;
+    property ListaPessoaTelefoneVO: TPessoa_Telefone read FListaPessoaTelefoneVO write FListaPessoaTelefoneVO;
+
+  published
+    [TPK('ID', [ldGrid, ldLookup, ldComboBox])]
+    property PK: Integer  read FPK write FPK;
+    [TColumn('NOME', 'Nome', [ldGrid, ldLookup,ldComboBox], False)]
+    property Nome: RawUTF8  read FNOME write FNOME;
+    [TColumn('TIPO','Tipo',40,[ldGrid, ldLookup] ,False)]
+    property Tipo: RawUTF8  read FTIPO write FTIPO;
+    [TColumn('EMAIL','Email',[ldGrid, ldLookup] ,False)]
+    property Email: RawUTF8  read FEMAIL write FEMAIL;
+    [TColumn('SITE','Site',[ldGrid, ldLookup] ,False)]
+    property Site: RawUTF8  read FSITE write FSITE;
+    [TColumn('CLIENTE','Cliente',50,[],False)]
+    property Cliente: RawUTF8  read FCLIENTE write FCLIENTE;
+    [TColumn('FORNECEDOR','Fornecedor',60,[],False)]
+    property Fornecedor: RawUTF8  read FFORNECEDOR write FFORNECEDOR;
+    [TColumn('COLABORADOR','Colaborador',70,[],False)]
+    property Colaborador: RawUTF8  read FCOLABORADOR write FCOLABORADOR;
+    [TColumn('TRANSPORTADORA','Transportadora',80,[],False)]
+    property Transportadora: RawUTF8  read FTRANSPORTADORA write FTRANSPORTADORA;
+  end;
+
+implementation
+
+end.

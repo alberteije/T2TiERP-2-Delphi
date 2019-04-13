@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/07/18 02:34:38.000.178,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\BancoDTO.pas</Transaction>
+    <Transaction>2016/07/18 02:34:59.000.761,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\BancoDTO.pas=</Transaction>
+    <Transaction>2016/07/18 02:43:51.000.713,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\BancoDTO.pas</Transaction>
+    <Transaction>2016/07/22 12:59:00.000.879,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Atributos.pas</Transaction>
+    <Transaction>2016/07/22 14:53:36.000.855,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaContatoDTO.pas</Transaction>
+    <Transaction>2016/07/22 14:53:36.000.930,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaEnderecoDTO.pas</Transaction>
+    <Transaction>2016/07/22 14:53:36.000.879,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaDTO.pas</Transaction>
+    <Transaction>2016/07/22 14:53:37.000.117,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaTelefoneDTO.pas</Transaction>
+    <Transaction>2016/07/22 14:53:37.000.083,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaJuridicaDTO.pas</Transaction>
+    <Transaction>2016/07/22 14:53:37.000.043,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaFisicaDTO.pas</Transaction>
+    <Transaction>2016/07/22 14:54:13.000.929,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Constantes.pas</Transaction>
+    <Transaction>2016/07/22 14:59:56.000.761,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Constantes.pas=</Transaction>
+    <Transaction>2016/07/22 14:59:56.000.723,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaContatoDTO.pas=</Transaction>
+    <Transaction>2016/07/22 14:59:56.000.600,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaTelefoneDTO.pas=</Transaction>
+    <Transaction>2016/07/22 14:59:56.000.649,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaFisicaDTO.pas=</Transaction>
+    <Transaction>2016/07/22 14:59:56.000.670,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaEnderecoDTO.pas=</Transaction>
+    <Transaction>2016/07/22 14:59:56.000.691,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaDTO.pas=</Transaction>
+    <Transaction>2016/07/22 14:59:56.000.623,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaJuridicaDTO.pas=</Transaction>
+    <Transaction>2016/07/22 15:01:44.000.405,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaTelefoneDTO.pas</Transaction>
+    <Transaction>2016/07/22 15:01:53.000.283,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Constantes.pas</Transaction>
+    <Transaction>2016/07/22 15:02:36.000.294,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Constantes.pas=</Transaction>
+    <Transaction>2016/07/22 15:08:28.000.514,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Constantes.pas</Transaction>
+    <Transaction>2016/07/22 15:08:38.000.668,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaContatoDTO.pas</Transaction>
+    <Transaction>2016/07/22 15:08:38.000.733,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaEnderecoDTO.pas</Transaction>
+    <Transaction>2016/07/22 15:08:38.000.796,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaFisicaDTO.pas</Transaction>
+    <Transaction>2016/07/22 15:08:38.000.702,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaDTO.pas</Transaction>
+    <Transaction>2016/07/22 15:08:38.000.814,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\PessoaJuridicaDTO.pas</Transaction>
+    <Transaction>2016/07/22 16:18:46.979,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\AtributosDTO.pas</Transaction>
+    <Transaction>2016/07/22 17:36:31.385,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\DTO\AtributosDTO.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

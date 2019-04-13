@@ -1,0 +1,42 @@
+program T2TiERPPatrimonio;
+
+uses
+  Forms,
+  UBase in '..\Comum\Tela\UBase.pas' {FBase},
+  UFiltro in '..\Comum\Tela\UFiltro.pas' {FFiltro},
+  ULogin in '..\Comum\Tela\ULogin.pas' {FLogin},
+  ULookup in '..\Comum\Tela\ULookup.pas' {FLookup},
+  UTela in '..\Comum\Tela\UTela.pas' {FTela},
+  UTelaCadastro in '..\Comum\Tela\UTelaCadastro.pas' {FTelaCadastro},
+  UMenu in 'Tela\UMenu.pas' {FMenu},
+  UPatrimIndiceAtualizacao in 'Tela\UPatrimIndiceAtualizacao.pas' {FPatrimIndiceAtualizacao},
+  UPatrimTaxaDepreciacao in 'Tela\UPatrimTaxaDepreciacao.pas' {FPatrimTaxaDepreciacao},
+  UPatrimTipoAquisicaoBem in 'Tela\UPatrimTipoAquisicaoBem.pas' {FPatrimTipoAquisicaoBem},
+  UPatrimTipoMovimentacao in 'Tela\UPatrimTipoMovimentacao.pas' {FPatrimTipoMovimentacao},
+  UPatrimEstadoConservacao in 'Tela\UPatrimEstadoConservacao.pas' {FPatrimEstadoConservacao},
+  UPatrimGrupoBem in 'Tela\UPatrimGrupoBem.pas' {FPatrimGrupoBem},
+  USeguradora in 'Tela\USeguradora.pas' {FSeguradora},
+  UPatrimApoliceSeguro in 'Tela\UPatrimApoliceSeguro.pas' {FPatrimApoliceSeguro},
+  UPatrimBem in 'Tela\UPatrimBem.pas' {FPatrimBem},
+  Controller in '..\Comum\Controller.pas',
+  SessaoUsuario in '..\Comum\SessaoUsuario.pas',
+  UDataModule in '..\Comum\DataModule\UDataModule.pas' {FDataModule: TDataModule},
+  Atributos in '..\..\Comum\Atributos.pas',
+  Biblioteca in '..\..\Comum\Biblioteca.pas',
+  Constantes in '..\..\Comum\Constantes.pas',
+  Conversor in '..\..\Comum\Conversor.pas',
+  NotificationService in '..\..\Comum\NotificationService.pas',
+  T2TiORM in '..\..\Comum\T2TiORM.pas',
+  Tipos in '..\..\Comum\Tipos.pas',
+  UDataModuleConexao in '..\..\Comum\DataModule\UDataModuleConexao.pas' {FDataModuleConexao: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFMenu, FMenu);
+  Application.CreateForm(TFDataModule, FDataModule);
+  Application.CreateForm(TFDataModuleConexao, FDataModuleConexao);
+  Application.Run;
+end.

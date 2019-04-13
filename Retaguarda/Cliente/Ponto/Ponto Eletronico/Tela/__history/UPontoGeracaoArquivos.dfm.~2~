@@ -1,0 +1,1423 @@
+object FPontoGeracaoArquivos: TFPontoGeracaoArquivos
+  Left = 327
+  Top = 206
+  BorderStyle = bsDialog
+  Caption = 'Gera'#231#227'o de Arquivos'
+  ClientHeight = 416
+  ClientWidth = 892
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelCabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 892
+    Height = 65
+    Align = alTop
+    Color = 14537936
+    ParentBackground = False
+    TabOrder = 0
+    DesignSize = (
+      892
+      65)
+    object Bevel1: TBevel
+      Left = 61
+      Top = 50
+      Width = 550
+      Height = 6
+      Anchors = [akLeft, akTop, akRight]
+    end
+    object Image1: TImage
+      Left = 7
+      Top = 7
+      Width = 48
+      Height = 49
+      Transparent = True
+    end
+    object Label2: TLabel
+      Left = 62
+      Top = 24
+      Width = 196
+      Height = 23
+      Caption = 'Gera'#231#227'o de Arquivos'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Bevel2: TBevel
+      Left = 615
+      Top = 7
+      Width = 267
+      Height = 49
+      Anchors = [akTop, akRight]
+    end
+    object EditDataInicial: TLabeledDateEdit
+      Left = 624
+      Top = 29
+      Width = 118
+      Height = 21
+      Date = 40909.000000000000000000
+      Anchors = [akTop, akRight]
+      ShowNullDate = False
+      TabOrder = 0
+      DateEditLabel.Width = 57
+      DateEditLabel.Height = 13
+      DateEditLabel.Caption = 'Data Inicial:'
+    end
+    object EditDataFinal: TLabeledDateEdit
+      Left = 757
+      Top = 29
+      Width = 118
+      Height = 21
+      Date = 41274.000000000000000000
+      Anchors = [akTop, akRight]
+      ShowNullDate = False
+      TabOrder = 1
+      DateEditLabel.Width = 52
+      DateEditLabel.Height = 13
+      DateEditLabel.Caption = 'Data Final:'
+    end
+  end
+  object ActionToolBarGrid: TActionToolBar
+    AlignWithMargins = True
+    Left = 3
+    Top = 389
+    Width = 886
+    Height = 24
+    ActionManager = ActionManagerLocal
+    Align = alBottom
+    BiDiMode = bdRightToLeft
+    Caption = 'ActionToolBarGrid'
+    ColorMap.MenuColor = clMenu
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Orientation = boRightToLeft
+    ParentBiDiMode = False
+    ParentFont = False
+    Spacing = 5
+  end
+  object PageControlDados: TPageControl
+    Left = 0
+    Top = 65
+    Width = 892
+    Height = 321
+    ActivePage = TabSheetPontoMarcacao
+    Align = alClient
+    TabOrder = 2
+    ExplicitHeight = 319
+    object TabSheetPontoMarcacao: TTabSheet
+      Caption = 'Marca'#231#245'es'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object Grid: TJvDBUltimGrid
+        Left = 0
+        Top = 0
+        Width = 884
+        Height = 293
+        Align = alClient
+        DataSource = DSViewPontoMarcacao
+        ReadOnly = True
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        SelectColumnsDialogStrings.Caption = 'Select columns'
+        SelectColumnsDialogStrings.OK = '&OK'
+        SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+        CanDelete = False
+        EditControls = <>
+        RowsHeight = 17
+        TitleRowHeight = 17
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'DATA_MARCACAO'
+            Title.Caption = 'Data Marca'#231#227'o'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'HORA_MARCACAO'
+            Title.Caption = 'Hora Marca'#231#227'o'
+            Width = 80
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PIS_NUMERO'
+            Title.Caption = 'PIS'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PESSOA_NOME'
+            Title.Caption = 'Colaborador'
+            Width = 300
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TIPO_MARCACAO'
+            Title.Caption = 'Tipo Marca'#231#227'o'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TIPO_REGISTRO'
+            Title.Caption = 'Tipo Registro'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PAR_ENTRADA_SAIDA'
+            Title.Caption = 'Par Entrada/Sa'#237'da'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'JUSTIFICATIVA'
+            Title.Caption = 'Justificativa'
+            Width = 280
+            Visible = True
+          end>
+      end
+    end
+    object TabSheetFechamento: TTabSheet
+      Caption = 'Fechamento Jornada'
+      ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object GridFechamento: TJvDBUltimGrid
+        Left = 0
+        Top = 0
+        Width = 884
+        Height = 293
+        Align = alClient
+        DataSource = DSPontoFechamentoJornada
+        ReadOnly = True
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        SelectColumnsDialogStrings.Caption = 'Select columns'
+        SelectColumnsDialogStrings.OK = '&OK'
+        SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+        CanDelete = False
+        EditControls = <>
+        RowsHeight = 17
+        TitleRowHeight = 17
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'DATA_FECHAMENTO'
+            Title.Caption = 'Data'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DIA_SEMANA'
+            Title.Caption = 'Dia'
+            Width = 60
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'NOME_COLABORADOR'
+            Title.Caption = 'Colaborador'
+            Width = 300
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PIS_NUMERO'
+            Title.Caption = 'PIS'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'ENTRADA01'
+            Title.Caption = 'Entrada 01'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SAIDA01'
+            Title.Caption = 'Sa'#237'da 01'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'ENTRADA02'
+            Title.Caption = 'Entrada 02'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SAIDA02'
+            Title.Caption = 'Sa'#237'da 02'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'ENTRADA03'
+            Title.Caption = 'Entrada 03'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SAIDA03'
+            Title.Caption = 'Sa'#237'da 03'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'ENTRADA04'
+            Title.Caption = 'Entrada 04'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SAIDA04'
+            Title.Caption = 'Sa'#237'da 04'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'ENTRADA05'
+            Title.Caption = 'Entrada 05'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SAIDA05'
+            Title.Caption = 'Sa'#237'da 05'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'HORA_EXTRA01'
+            Title.Caption = 'Hora Extra 01'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PERCENTUAL_HORA_EXTRA01'
+            Title.Caption = 'Percentual HE 01'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'MODALIDADE_HORA_EXTRA01'
+            Title.Caption = 'Modalidade HE 01'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'HORA_EXTRA02'
+            Title.Caption = 'Hora Extra 02'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PERCENTUAL_HORA_EXTRA02'
+            Title.Caption = 'Percentual HE 02'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'MODALIDADE_HORA_EXTRA02'
+            Title.Caption = 'Modalidade HE 02'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'HORA_EXTRA03'
+            Title.Caption = 'Hora Extra 03'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PERCENTUAL_HORA_EXTRA03'
+            Title.Caption = 'Percentual HE 03'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'MODALIDADE_HORA_EXTRA03'
+            Title.Caption = 'Modalidade HE 03'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'HORA_EXTRA04'
+            Title.Caption = 'Hora Extra 04'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PERCENTUAL_HORA_EXTRA04'
+            Title.Caption = 'Percentual HE 04'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'MODALIDADE_HORA_EXTRA04'
+            Title.Caption = 'Modalidade HE 04'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'FALTA_ATRASO'
+            Title.Caption = 'Horas de Falta/Atraso'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'HORA_INICIO_JORNADA'
+            Title.Caption = 'In'#237'cio da Jornada'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'HORA_FIM_JORNADA'
+            Title.Caption = 'Fim da Jornada'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CODIGO_HORARIO'
+            Title.Caption = 'C'#243'digo Hor'#225'rio'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CARGA_HORARIA_ESPERADA'
+            Title.Caption = 'Carga Hor'#225'ria Esperada'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CARGA_HORARIA_DIURNA'
+            Title.Caption = 'Carga Hor'#225'ria Diurna'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CARGA_HORARIA_NOTURNA'
+            Title.Caption = 'Carga Hor'#225'ria Noturna'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CARGA_HORARIA_TOTAL'
+            Title.Caption = 'Carga Hor'#225'ria Total'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'COMPENSAR'
+            Title.Caption = 'Compensar'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'BANCO_HORAS'
+            Title.Caption = 'Banco de Horas'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'OBSERVACAO'
+            Title.Caption = 'Observa'#231#227'o'
+            Width = 300
+            Visible = True
+          end>
+      end
+    end
+  end
+  object CDSViewPontoMarcacao: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_COLABORADOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_PONTO_RELOGIO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'DATA_MARCACAO'
+        DataType = ftDate
+      end
+      item
+        Name = 'HORA_MARCACAO'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'TIPO_MARCACAO'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'TIPO_REGISTRO'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'JUSTIFICATIVA'
+        DataType = ftString
+        Size = 100
+      end
+      item
+        Name = 'NSR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'PAR_ENTRADA_SAIDA'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'PIS_NUMERO'
+        DataType = ftString
+        Size = 12
+      end
+      item
+        Name = 'PESSOA_NOME'
+        DataType = ftString
+        Size = 150
+      end
+      item
+        Name = 'NUMERO_SERIE'
+        DataType = ftString
+        Size = 50
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 80
+    Top = 256
+    Data = {
+      850100009619E0BD01000000180000000D000000000003000000850102494404
+      000100000000000E49445F434F4C41424F5241444F5204000100000000001049
+      445F504F4E544F5F52454C4F47494F04000100000000000D444154415F4D4152
+      434143414F04000600000000000D484F52415F4D4152434143414F0100490000
+      0001000557494454480200020008000D5449504F5F4D4152434143414F010049
+      00000001000557494454480200020014000D5449504F5F524547495354524F01
+      004900000001000557494454480200020014000D4A5553544946494341544956
+      410100490000000100055749445448020002006400034E535204000100000000
+      00115041525F454E54524144415F534149444101004900000001000557494454
+      480200020002000A5049535F4E554D45524F0100490000000100055749445448
+      020002000C000B504553534F415F4E4F4D450100490000000100055749445448
+      0200020096000C4E554D45524F5F534552494501004900000001000557494454
+      480200020032000000}
+    object CDSViewPontoMarcacaoID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSViewPontoMarcacaoID_COLABORADOR: TIntegerField
+      FieldName = 'ID_COLABORADOR'
+    end
+    object CDSViewPontoMarcacaoID_PONTO_RELOGIO: TIntegerField
+      FieldName = 'ID_PONTO_RELOGIO'
+    end
+    object CDSViewPontoMarcacaoDATA_MARCACAO: TDateField
+      FieldName = 'DATA_MARCACAO'
+      EditMask = '##/##/####;0;_'
+    end
+    object CDSViewPontoMarcacaoHORA_MARCACAO: TStringField
+      FieldName = 'HORA_MARCACAO'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSViewPontoMarcacaoTIPO_MARCACAO: TStringField
+      FieldName = 'TIPO_MARCACAO'
+    end
+    object CDSViewPontoMarcacaoTIPO_REGISTRO: TStringField
+      FieldName = 'TIPO_REGISTRO'
+    end
+    object CDSViewPontoMarcacaoJUSTIFICATIVA: TStringField
+      FieldName = 'JUSTIFICATIVA'
+      Size = 100
+    end
+    object CDSViewPontoMarcacaoNSR: TIntegerField
+      FieldName = 'NSR'
+    end
+    object CDSViewPontoMarcacaoPIS_NUMERO: TStringField
+      FieldName = 'PIS_NUMERO'
+      Size = 12
+    end
+    object CDSViewPontoMarcacaoPESSOA_NOME: TStringField
+      FieldName = 'PESSOA_NOME'
+      Size = 150
+    end
+    object CDSViewPontoMarcacaoNUMERO_SERIE: TStringField
+      FieldName = 'NUMERO_SERIE'
+      Size = 50
+    end
+    object CDSViewPontoMarcacaoPAR_ENTRADA_SAIDA: TStringField
+      FieldName = 'PAR_ENTRADA_SAIDA'
+      Size = 2
+    end
+  end
+  object DSViewPontoMarcacao: TDataSource
+    DataSet = CDSViewPontoMarcacao
+    Left = 208
+    Top = 256
+  end
+  object ActionManagerLocal: TActionManager
+    ActionBars.ShowHints = False
+    ActionBars = <
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end
+      item
+      end
+      item
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionSair
+            Caption = '&Sair [F8]'
+            ImageIndex = 12
+            ShortCut = 119
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Action = ActionGerarACJEF
+            Caption = 'G&erar ACJEF'
+            ImageIndex = 27
+          end
+          item
+            Action = ActionGerarAFDT
+            Caption = '&Gerar AFDT'
+            ImageIndex = 31
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Action = ActionConsultarDados
+            Caption = '&Consultar Dados [F9]'
+            ImageIndex = 32
+            ShortCut = 120
+          end>
+        ActionBar = ActionToolBarGrid
+      end>
+    DisabledImages = FDataModule.ImagensCadastrosD
+    Images = FDataModule.ImagensCadastros
+    Left = 200
+    Top = 360
+    StyleName = 'Ribbon - Silver'
+    object ActionSair: TAction
+      Category = 'Op'#231#245'es'
+      Caption = 'Sair [F8]'
+      ImageIndex = 12
+      ShortCut = 119
+      OnExecute = ActionSairExecute
+    end
+    object ActionConsultarDados: TAction
+      Category = 'Op'#231#245'es'
+      Caption = 'Consultar Dados [F9]'
+      ImageIndex = 32
+      ShortCut = 120
+      OnExecute = ActionConsultarDadosExecute
+    end
+    object ActionGerarAFDT: TAction
+      Category = 'Op'#231#245'es'
+      Caption = 'Gerar AFDT'
+      ImageIndex = 31
+      OnExecute = ActionGerarAFDTExecute
+    end
+    object ActionGerarACJEF: TAction
+      Category = 'Op'#231#245'es'
+      Caption = 'Gerar ACJEF'
+      ImageIndex = 27
+      OnExecute = ActionGerarACJEFExecute
+    end
+  end
+  object CDSPontoHorario: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_EMPRESA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'TIPO'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'CODIGO'
+        DataType = ftString
+        Size = 4
+      end
+      item
+        Name = 'NOME'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'TIPO_TRABALHO'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'CARGA_HORARIA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA01'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA01'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA02'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA02'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA03'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA03'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA04'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA04'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA05'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA05'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'NAO_REGISTRAR_GERA'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'HORA_FECHAMENTO_DIA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'TOLERANCIA_EXTRA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'TOLERANCIA_FALTA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'CARGA_DIARIA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'CARGA_SEMANAL'
+        DataType = ftInteger
+      end
+      item
+        Name = 'CARGA_MENSAL'
+        DataType = ftInteger
+      end
+      item
+        Name = 'HORA_INICIO_JORNADA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'HORA_FIM_JORNADA'
+        DataType = ftString
+        Size = 8
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 384
+    Top = 304
+    Data = {
+      110300009619E0BD01000000180000001A000000000003000000110302494404
+      000100000000000A49445F454D50524553410400010000000000045449504F01
+      0049000000010005574944544802000200010006434F4449474F010049000000
+      0100055749445448020002000400044E4F4D4501004900000001000557494454
+      480200020032000D5449504F5F54524142414C484F0100490000000100055749
+      4454480200020001000D43415247415F484F5241524941010049000000010005
+      574944544802000200080009454E545241444130310100490000000100055749
+      4454480200020008000753414944413031010049000000010005574944544802
+      000200080009454E545241444130320100490000000100055749445448020002
+      0008000753414944413032010049000000010005574944544802000200080009
+      454E545241444130330100490000000100055749445448020002000800075341
+      4944413033010049000000010005574944544802000200080009454E54524144
+      4130340100490000000100055749445448020002000800075341494441303401
+      0049000000010005574944544802000200080009454E54524144413035010049
+      0000000100055749445448020002000800075341494441303501004900000001
+      00055749445448020002000800124E414F5F5245474953545241525F47455241
+      010049000000010005574944544802000200010013484F52415F46454348414D
+      454E544F5F444941010049000000010005574944544802000200080010544F4C
+      4552414E4349415F455854524101004900000001000557494454480200020008
+      0010544F4C4552414E4349415F46414C54410100490000000100055749445448
+      0200020008000C43415247415F44494152494104000100000000000D43415247
+      415F53454D414E414C04000100000000000C43415247415F4D454E53414C0400
+      01000000000013484F52415F494E4943494F5F4A4F524E414441010049000000
+      010005574944544802000200080010484F52415F46494D5F4A4F524E41444101
+      004900000001000557494454480200020008000000}
+    object CDSPontoHorarioID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSPontoHorarioID_EMPRESA: TIntegerField
+      FieldName = 'ID_EMPRESA'
+    end
+    object CDSPontoHorarioTIPO: TStringField
+      FieldName = 'TIPO'
+      Size = 1
+    end
+    object CDSPontoHorarioNOME: TStringField
+      FieldName = 'NOME'
+      Size = 50
+    end
+    object CDSPontoHorarioTIPO_TRABALHO: TStringField
+      FieldName = 'TIPO_TRABALHO'
+      Size = 1
+    end
+    object CDSPontoHorarioCARGA_HORARIA: TStringField
+      FieldName = 'CARGA_HORARIA'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioENTRADA01: TStringField
+      FieldName = 'ENTRADA01'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioSAIDA01: TStringField
+      FieldName = 'SAIDA01'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioENTRADA02: TStringField
+      FieldName = 'ENTRADA02'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioSAIDA02: TStringField
+      FieldName = 'SAIDA02'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioENTRADA03: TStringField
+      FieldName = 'ENTRADA03'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioSAIDA03: TStringField
+      FieldName = 'SAIDA03'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioENTRADA04: TStringField
+      FieldName = 'ENTRADA04'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioSAIDA04: TStringField
+      FieldName = 'SAIDA04'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioENTRADA05: TStringField
+      FieldName = 'ENTRADA05'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioSAIDA05: TStringField
+      FieldName = 'SAIDA05'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioNAO_REGISTRAR_GERA: TStringField
+      FieldName = 'NAO_REGISTRAR_GERA'
+      Size = 1
+    end
+    object CDSPontoHorarioHORA_FECHAMENTO_DIA: TStringField
+      FieldName = 'HORA_FECHAMENTO_DIA'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioTOLERANCIA_EXTRA: TStringField
+      FieldName = 'TOLERANCIA_EXTRA'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioTOLERANCIA_FALTA: TStringField
+      FieldName = 'TOLERANCIA_FALTA'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioCARGA_DIARIA: TIntegerField
+      FieldName = 'CARGA_DIARIA'
+    end
+    object CDSPontoHorarioCARGA_SEMANAL: TIntegerField
+      FieldName = 'CARGA_SEMANAL'
+    end
+    object CDSPontoHorarioCARGA_MENSAL: TIntegerField
+      FieldName = 'CARGA_MENSAL'
+    end
+    object CDSPontoHorarioHORA_INICIO_JORNADA: TStringField
+      FieldName = 'HORA_INICIO_JORNADA'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioHORA_FIM_JORNADA: TStringField
+      FieldName = 'HORA_FIM_JORNADA'
+      EditMask = '##:##:##;1;_'
+      Size = 8
+    end
+    object CDSPontoHorarioCODIGO: TStringField
+      FieldName = 'CODIGO'
+      Size = 4
+    end
+  end
+  object CDSPontoFechamentoJornada: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_PONTO_CLASSIFICACAO_JORNADA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_COLABORADOR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'DATA_FECHAMENTO'
+        DataType = ftDate
+      end
+      item
+        Name = 'DIA_SEMANA'
+        DataType = ftString
+        Size = 7
+      end
+      item
+        Name = 'CODIGO_HORARIO'
+        DataType = ftString
+        Size = 4
+      end
+      item
+        Name = 'CARGA_HORARIA_ESPERADA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'CARGA_HORARIA_DIURNA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'CARGA_HORARIA_NOTURNA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'CARGA_HORARIA_TOTAL'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA01'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA01'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA02'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA02'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA03'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA03'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA04'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA04'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'ENTRADA05'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'SAIDA05'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'HORA_INICIO_JORNADA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'HORA_FIM_JORNADA'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'HORA_EXTRA01'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'PERCENTUAL_HORA_EXTRA01'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'MODALIDADE_HORA_EXTRA01'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'HORA_EXTRA02'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'PERCENTUAL_HORA_EXTRA02'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'MODALIDADE_HORA_EXTRA02'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'HORA_EXTRA03'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'PERCENTUAL_HORA_EXTRA03'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'MODALIDADE_HORA_EXTRA03'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'HORA_EXTRA04'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'PERCENTUAL_HORA_EXTRA04'
+        DataType = ftFMTBcd
+        Precision = 20
+        Size = 6
+      end
+      item
+        Name = 'MODALIDADE_HORA_EXTRA04'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'NOME_COLABORADOR'
+        DataType = ftString
+        Size = 150
+      end
+      item
+        Name = 'COMPENSAR'
+        DataType = ftString
+        Size = 1
+      end
+      item
+        Name = 'BANCO_HORAS'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'OBSERVACAO'
+        DataType = ftString
+        Size = 250
+      end
+      item
+        Name = 'FALTA_ATRASO'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'PIS_NUMERO'
+        DataType = ftString
+        Size = 12
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 404
+    Top = 217
+    Data = {
+      B40500009619E0BD020000001800000028000000000003000000B40502494404
+      000100000000001E49445F504F4E544F5F434C415353494649434143414F5F4A
+      4F524E41444104000100000000000E49445F434F4C41424F5241444F52040001
+      00000000000F444154415F46454348414D454E544F04000600000000000A4449
+      415F53454D414E4101004900000001000557494454480200020007000E434F44
+      49474F5F484F524152494F010049000000010005574944544802000200040016
+      43415247415F484F52415249415F455350455241444101004900000001000557
+      494454480200020008001443415247415F484F52415249415F444955524E4101
+      004900000001000557494454480200020008001543415247415F484F52415249
+      415F4E4F5455524E410100490000000100055749445448020002000800134341
+      5247415F484F52415249415F544F54414C010049000000010005574944544802
+      000200080009454E545241444130310100490000000100055749445448020002
+      0008000753414944413031010049000000010005574944544802000200080009
+      454E545241444130320100490000000100055749445448020002000800075341
+      4944413032010049000000010005574944544802000200080009454E54524144
+      4130330100490000000100055749445448020002000800075341494441303301
+      0049000000010005574944544802000200080009454E54524144413034010049
+      0000000100055749445448020002000800075341494441303401004900000001
+      0005574944544802000200080009454E54524144413035010049000000010005
+      5749445448020002000800075341494441303501004900000001000557494454
+      4802000200080013484F52415F494E4943494F5F4A4F524E4144410100490000
+      00010005574944544802000200080010484F52415F46494D5F4A4F524E414441
+      01004900000001000557494454480200020008000C484F52415F455854524130
+      3101004900000001000557494454480200020008001750455243454E5455414C
+      5F484F52415F455854524130310C0012000000020008444543494D414C530200
+      02000600055749445448020002001400174D4F44414C49444144455F484F5241
+      5F4558545241303101004900000001000557494454480200020001000C484F52
+      415F455854524130320100490000000100055749445448020002000800175045
+      5243454E5455414C5F484F52415F455854524130320C00120000000200084445
+      43494D414C53020002000600055749445448020002001400174D4F44414C4944
+      4144455F484F52415F4558545241303201004900000001000557494454480200
+      020001000C484F52415F45585452413033010049000000010005574944544802
+      00020008001750455243454E5455414C5F484F52415F455854524130330C0012
+      000000020008444543494D414C53020002000600055749445448020002001400
+      174D4F44414C49444144455F484F52415F455854524130330100490000000100
+      0557494454480200020001000C484F52415F4558545241303401004900000001
+      000557494454480200020008001750455243454E5455414C5F484F52415F4558
+      54524130340C0012000000020008444543494D414C5302000200060005574944
+      5448020002001400174D4F44414C49444144455F484F52415F45585452413034
+      0100490000000100055749445448020002000100104E4F4D455F434F4C41424F
+      5241444F52010049000000010005574944544802000200960009434F4D50454E
+      53415201004900000001000557494454480200020001000B42414E434F5F484F
+      52415301004900000001000557494454480200020008000A4F42534552564143
+      414F010049000000010005574944544802000200FA000C46414C54415F415452
+      41534F01004900000001000557494454480200020008000A5049535F4E554D45
+      524F0100490000000100055749445448020002000C000000}
+    object CDSPontoFechamentoJornadaID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSPontoFechamentoJornadaID_PONTO_CLASSIFICACAO_JORNADA: TIntegerField
+      FieldName = 'ID_PONTO_CLASSIFICACAO_JORNADA'
+    end
+    object CDSPontoFechamentoJornadaID_COLABORADOR: TIntegerField
+      FieldName = 'ID_COLABORADOR'
+    end
+    object CDSPontoFechamentoJornadaDATA_FECHAMENTO: TDateField
+      FieldName = 'DATA_FECHAMENTO'
+      EditMask = '##/##/####'
+    end
+    object CDSPontoFechamentoJornadaDIA_SEMANA: TStringField
+      FieldName = 'DIA_SEMANA'
+      Size = 7
+    end
+    object CDSPontoFechamentoJornadaCODIGO_HORARIO: TStringField
+      FieldName = 'CODIGO_HORARIO'
+      Size = 4
+    end
+    object CDSPontoFechamentoJornadaCARGA_HORARIA_ESPERADA: TStringField
+      FieldName = 'CARGA_HORARIA_ESPERADA'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaCARGA_HORARIA_DIURNA: TStringField
+      FieldName = 'CARGA_HORARIA_DIURNA'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaCARGA_HORARIA_NOTURNA: TStringField
+      FieldName = 'CARGA_HORARIA_NOTURNA'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaCARGA_HORARIA_TOTAL: TStringField
+      FieldName = 'CARGA_HORARIA_TOTAL'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaENTRADA01: TStringField
+      FieldName = 'ENTRADA01'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaSAIDA01: TStringField
+      FieldName = 'SAIDA01'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaENTRADA02: TStringField
+      FieldName = 'ENTRADA02'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaSAIDA02: TStringField
+      FieldName = 'SAIDA02'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaENTRADA03: TStringField
+      FieldName = 'ENTRADA03'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaSAIDA03: TStringField
+      FieldName = 'SAIDA03'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaENTRADA04: TStringField
+      FieldName = 'ENTRADA04'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaSAIDA04: TStringField
+      FieldName = 'SAIDA04'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaENTRADA05: TStringField
+      FieldName = 'ENTRADA05'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaSAIDA05: TStringField
+      FieldName = 'SAIDA05'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaHORA_INICIO_JORNADA: TStringField
+      FieldName = 'HORA_INICIO_JORNADA'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaHORA_FIM_JORNADA: TStringField
+      FieldName = 'HORA_FIM_JORNADA'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaHORA_EXTRA01: TStringField
+      FieldName = 'HORA_EXTRA01'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaPERCENTUAL_HORA_EXTRA01: TFMTBCDField
+      FieldName = 'PERCENTUAL_HORA_EXTRA01'
+      DisplayFormat = '##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSPontoFechamentoJornadaMODALIDADE_HORA_EXTRA01: TStringField
+      FieldName = 'MODALIDADE_HORA_EXTRA01'
+      Size = 1
+    end
+    object CDSPontoFechamentoJornadaHORA_EXTRA02: TStringField
+      FieldName = 'HORA_EXTRA02'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaPERCENTUAL_HORA_EXTRA02: TFMTBCDField
+      FieldName = 'PERCENTUAL_HORA_EXTRA02'
+      DisplayFormat = '##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSPontoFechamentoJornadaMODALIDADE_HORA_EXTRA02: TStringField
+      FieldName = 'MODALIDADE_HORA_EXTRA02'
+      Size = 1
+    end
+    object CDSPontoFechamentoJornadaHORA_EXTRA03: TStringField
+      FieldName = 'HORA_EXTRA03'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaPERCENTUAL_HORA_EXTRA03: TFMTBCDField
+      FieldName = 'PERCENTUAL_HORA_EXTRA03'
+      DisplayFormat = '##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSPontoFechamentoJornadaMODALIDADE_HORA_EXTRA03: TStringField
+      FieldName = 'MODALIDADE_HORA_EXTRA03'
+      Size = 1
+    end
+    object CDSPontoFechamentoJornadaHORA_EXTRA04: TStringField
+      FieldName = 'HORA_EXTRA04'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaPERCENTUAL_HORA_EXTRA04: TFMTBCDField
+      FieldName = 'PERCENTUAL_HORA_EXTRA04'
+      DisplayFormat = '##0.00'
+      Precision = 20
+      Size = 6
+    end
+    object CDSPontoFechamentoJornadaMODALIDADE_HORA_EXTRA04: TStringField
+      FieldName = 'MODALIDADE_HORA_EXTRA04'
+      Size = 1
+    end
+    object CDSPontoFechamentoJornadaNOME_COLABORADOR: TStringField
+      FieldName = 'NOME_COLABORADOR'
+      Size = 150
+    end
+    object CDSPontoFechamentoJornadaCOMPENSAR: TStringField
+      FieldName = 'COMPENSAR'
+      Size = 1
+    end
+    object CDSPontoFechamentoJornadaBANCO_HORAS: TStringField
+      FieldName = 'BANCO_HORAS'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaOBSERVACAO: TStringField
+      FieldName = 'OBSERVACAO'
+      Size = 250
+    end
+    object CDSPontoFechamentoJornadaFALTA_ATRASO: TStringField
+      FieldName = 'FALTA_ATRASO'
+      EditMask = '##:##:##'
+      Size = 8
+    end
+    object CDSPontoFechamentoJornadaPIS_NUMERO: TStringField
+      FieldName = 'PIS_NUMERO'
+      Size = 12
+    end
+  end
+  object DSPontoFechamentoJornada: TDataSource
+    DataSet = CDSPontoFechamentoJornada
+    Left = 572
+    Top = 217
+  end
+end

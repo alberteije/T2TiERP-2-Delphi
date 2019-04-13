@@ -1,0 +1,32 @@
+unit UDanfe;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.OleCtnrs;
+
+type
+  TFDanfe = class(TForm)
+    OleContainer1: TOleContainer;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FDanfe: TFDanfe;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFDanfe.FormShow(Sender: TObject);
+begin
+  OleContainer1.AutoActivate:= aaGetFocus;
+  OleContainer1.CreateLinkToFile('C:\T2Ti\NFe\PDF\53170310793118000178650010004571401004571400-nfe.pdf', True);
+end;
+
+end.
