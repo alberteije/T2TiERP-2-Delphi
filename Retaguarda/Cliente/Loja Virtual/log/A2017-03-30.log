@@ -1,0 +1,178 @@
+T2TiERPLojaVirtual.exe: 00014300: 15:47:35 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00018CE0: 15:47:35 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00018E94: 15:47:35 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0001908C: 15:47:35 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00016E78: 15:47:36 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00018B38: 15:47:36 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00018FD0: 15:47:37 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000193CC: 15:47:37 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000188E0: 15:50:38 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 000188E0: 15:50:53 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00018B38: 15:50:54 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00018D54: 15:50:54 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00018364: 15:50:54 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019260: 15:50:56 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00018EF4: 15:50:56 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00019204: 15:50:56 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000017E0: 15:50:56 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000017E0: 15:53:39 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 000017E0: 15:54:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019408: 15:54:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00019578: 15:54:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019448: 15:54:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00019580: 15:54:03 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0001957C: 15:54:03 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000195BC: 15:56:50 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:06 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000195BC: 16:00:07 [Indy]:EIdNotConnected : Not Connected : Addr: $006B02BA
+T2TiERPLojaVirtual.exe: 0001976C: 16:00:07 [Indy]:EIdNotConnected : Not Connected : Addr: $006B02BA
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:07 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:07 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:07 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:07 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:07 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:07 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:08 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00012C20: 16:00:08 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000196EC: 16:00:53 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000196EC: 16:00:53 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000196EC: 16:00:53 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000196EC: 16:00:53 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000196EC: 16:00:53 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000193F4: 16:01:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019368: 16:01:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000197A0: 16:01:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000193FC: 16:01:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0001950C: 16:01:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019580: 16:01:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000196A4: 16:01:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000197FC: 16:01:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00019524: 16:01:35 [127.0.0.1]:EOleError : Could not obtain OLE control window handle : Addr: $009DCCCE
+T2TiERPLojaVirtual.exe: 00019524: 16:01:57 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019264: 16:01:57 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000190E4: 16:01:57 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019764: 16:01:57 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000196A8: 16:01:58 [127.0.0.1]:Exception raised while destroying session: Access violation at address 00000000. Read of address 00000000
+T2TiERPLojaVirtual.exe: 000196A8: 16:01:58 [127.0.0.1]:EAccessViolation : Access violation at address 00000000. Read of address 00000000 : Addr: $00000000
+T2TiERPLojaVirtual.exe: 00019608: 16:01:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019548: 16:01:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000191F0: 16:01:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000197D0: 16:01:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00019634: 16:04:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019634: 16:04:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00018D54: 16:04:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00019718: 16:04:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000195FC: 16:04:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0001942C: 16:04:53 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000194A0: 16:04:53 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019758: 16:04:53 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0001977C: 16:05:23 [127.0.0.1]:EOleError : Could not obtain OLE control window handle : Addr: $009DCCCE
+T2TiERPLojaVirtual.exe: 000196A8: 16:07:38 [127.0.0.1]:Exception raised while destroying session: Access violation at address 00022A57. Write of address 00000003
+T2TiERPLojaVirtual.exe: 000196A8: 16:07:38 [127.0.0.1]:EAccessViolation : Access violation at address 00022A57. Write of address 00000003 : Addr: $00022A57
+T2TiERPLojaVirtual.exe: 000194D4: 16:07:39 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 000194D4: 16:08:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019844: 16:08:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00019884: 16:08:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019854: 16:08:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00019888: 16:08:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0001988C: 16:08:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019890: 16:08:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019898: 16:08:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0001989C: 16:11:10 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 000198A0: 16:13:12 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019B8C: 16:13:12 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00019B98: 16:13:12 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019B90: 16:13:12 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00019B9C: 16:13:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00019BA4: 16:13:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019BA8: 16:13:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019BB0: 16:13:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000192D4: 16:16:21 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 000192D4: 16:16:23 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019958: 16:16:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00019838: 16:16:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000197EC: 16:16:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019940: 16:16:25 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019984: 16:16:25 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0001993C: 16:16:25 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000187B0: 16:19:14 [127.0.0.1]:EOleException : O servidor emitiu uma exceção : Addr: $009E307B
+T2TiERPLojaVirtual.exe: 0001975C: 16:19:19 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 0001975C: 16:19:22 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000187B0: 16:19:22 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000197AC: 16:19:22 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019440: 16:19:22 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00019B90: 16:19:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000198A0: 16:19:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0001981C: 16:19:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019780: 16:19:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00019838: 16:19:44 [127.0.0.1]:EOleException : O servidor emitiu uma exceção : Addr: $009E307B
+T2TiERPLojaVirtual.exe: 00019958: 16:19:52 [127.0.0.1]:EOleException : O servidor emitiu uma exceção : Addr: $009E307B
+T2TiERPLojaVirtual.exe: 00019958: 16:20:13 [127.0.0.1]:EOleException : O servidor emitiu uma exceção : Addr: $009E307B
+T2TiERPLojaVirtual.exe: 00019958: 16:20:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00019838: 16:20:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00019A84: 16:20:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019920: 16:20:18 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00019AF0: 16:20:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00019AF8: 16:20:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000199D0: 16:20:33 [127.0.0.1]:EOleException : O servidor emitiu uma exceção : Addr: $009E307B
+T2TiERPLojaVirtual.exe: 0001980C: 16:20:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000085CC: 16:20:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007764: 16:20:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00005150: 16:20:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0001997C: 16:20:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000085B4: 16:21:08 [127.0.0.1]:EOleException : O servidor emitiu uma exceção : Addr: $009E307B
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:17 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000078A8: 16:21:17 [Indy]:EIdNotConnected : Not Connected : Addr: $006B02BA
+T2TiERPLojaVirtual.exe: 000085B4: 16:21:17 [Indy]:EIdNotConnected : Not Connected : Addr: $006B02BA
+T2TiERPLojaVirtual.exe: 00008B2C: 16:21:17 [Indy]:EIdNotConnected : Not Connected : Addr: $006B02BA
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:18 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:18 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:18 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:18 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:18 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:18 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:18 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000196EC: 16:21:18 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:25 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:26 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:26 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:26 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:26 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:37 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00019B8C: 16:21:38 [Indy]:EIdNotConnected : Not Connected : Addr: $006B02BA
+T2TiERPLojaVirtual.exe: 00019A90: 16:21:38 [Indy]:EIdNotConnected : Not Connected : Addr: $006B02BA
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:38 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:38 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:38 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:38 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:38 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:38 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:38 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 0000A0C4: 16:21:38 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000184FC: 16:21:42 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000184FC: 16:21:42 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000184FC: 16:21:42 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000184FC: 16:21:42 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000184FC: 16:21:42 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00019570: 16:21:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000199A0: 16:21:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000080DC: 16:21:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007900: 16:21:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00004D0C: 16:21:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000082B0: 16:21:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008970: 16:21:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008218: 16:21:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00008004: 16:22:09 [127.0.0.1]:EOleError : Could not obtain OLE control window handle : Addr: $009DCCCE
+T2TiERPLojaVirtual.exe: 00019B14: 16:24:37 [127.0.0.1]:Exception raised while destroying session: Access violation at address 00000000. Read of address 00000000
+T2TiERPLojaVirtual.exe: 00019B14: 16:24:37 [127.0.0.1]:EAccessViolation : Access violation at address 00000000. Read of address 00000000 : Addr: $00000000
+T2TiERPLojaVirtual.exe: 000199D0: 16:24:38 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073B978

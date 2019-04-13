@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011/08/25 16:18:07.935.pas,C:\T2Ti\branches\Outros Projetos\Configuracao_PAFECF\VO\SerieEcfVO.pas=C:\T2Ti\branches\Outros Projetos\Configuracao_PAFECF\Unit1.pas</Transaction>
+    <Transaction>2011/08/25 16:31:28.279.pas,C:\T2Ti\branches\Outros Projetos\Configuracao_PAFECF\Controller\SerieEcfController.pas=C:\T2Ti\branches\Outros Projetos\Configuracao_PAFECF\Unit1.pas</Transaction>
+    <Transaction>2011/08/26 08:33:04.203.pas,C:\T2Ti\branches\Outros Projetos\Configuracao_PAFECF\Controller\SerieEcfController.pas=</Transaction>
+    <Transaction>2011/08/26 08:33:13.218.pas,C:\T2Ti\branches\Outros Projetos\Configuracao_PAFECF\VO\SerieEcfVO.pas=</Transaction>
+    <Transaction>2013/03/20 17:06:58.569.pas,C:\Documents and Settings\Eije\Desktop\T2Ti ERP\Fontes\PAF\Configurador\UPropriedades.pas=C:\Documents and Settings\Eije\Desktop\T2Ti ERP\Fontes\PAF\Configurador\Unit1.pas</Transaction>
+    <Transaction>2013/03/20 17:06:58.569.dfm,C:\Documents and Settings\Eije\Desktop\T2Ti ERP\Fontes\PAF\Configurador\UPropriedades.dfm=C:\Documents and Settings\Eije\Desktop\T2Ti ERP\Fontes\PAF\Configurador\Unit1.dfm</Transaction>
+    <Transaction>2014/08/05 17:38:57.000.248,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\UUsuario.pas=</Transaction>
+    <Transaction>2014/08/05 17:39:23.000.301,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\UTurno.pas=</Transaction>
+    <Transaction>2014/08/05 17:39:52.000.717,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\TurnoVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:39:55.000.104,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\TotalTipoPagamentoVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:39:58.000.458,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\TipoPagamentoVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:00.000.641,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\ResolucaoVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:02.000.949,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\PosicaoComponentesVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:05.000.860,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\OperadorVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:08.000.791,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\MeiosPagamentoVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:11.000.121,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\FuncionarioVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:13.000.481,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\ConfiguracaoVO.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:34.000.965,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\Controller\TurnoController.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:37.000.345,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\Controller\TotalTipoPagamentoController.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:39.000.579,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\Controller\OperadorFuncionarioController.pas=</Transaction>
+    <Transaction>2014/08/05 17:40:41.000.769,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\Controller\ConfiguracaoController.pas=</Transaction>
+    <Transaction>2014/08/05 19:40:26.000.450,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\EcfPosicaoComponentesVO.pas</Transaction>
+    <Transaction>2014/08/05 19:42:24.000.358,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\VO\EcfPosicaoComponentesVO.pas=</Transaction>
+    <Transaction>2014/08/05 19:42:56.000.854,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\VO.pas</Transaction>
+    <Transaction>2014/08/05 19:42:56.000.829,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfPosicaoComponentesVO.pas</Transaction>
+    <Transaction>2014/08/05 19:43:17.000.123,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Util\Atributos.pas</Transaction>
+    <Transaction>2014/08/05 19:43:17.000.154,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Util\T2TiORM.pas</Transaction>
+    <Transaction>2014/08/05 19:43:24.000.418,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\Biblioteca.pas=</Transaction>
+    <Transaction>2014/08/05 19:43:37.000.017,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\Constantes.pas=</Transaction>
+    <Transaction>2014/08/05 19:44:01.000.976,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Util\Biblioteca.pas</Transaction>
+    <Transaction>2014/08/05 19:44:02.000.000,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Util\Constantes.pas</Transaction>
+    <Transaction>2014/08/05 19:47:44.000.986,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfConfiguracaoVO.pas</Transaction>
+    <Transaction>2014/08/05 19:49:32.000.432,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfCaixaVO.pas</Transaction>
+    <Transaction>2014/08/05 19:49:32.000.480,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfConfiguracaoBalancaVO.pas</Transaction>
+    <Transaction>2014/08/05 19:49:32.000.514,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfConfiguracaoLeitorSerVO.pas</Transaction>
+    <Transaction>2014/08/05 19:49:32.000.636,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfResolucaoVO.pas</Transaction>
+    <Transaction>2014/08/05 19:49:32.000.541,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfEmpresaVO.pas</Transaction>
+    <Transaction>2014/08/05 19:49:32.000.607,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfRelatorioGerencialVO.pas</Transaction>
+    <Transaction>2014/08/05 19:49:32.000.576,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\VO\EcfImpressoraVO.pas</Transaction>
+    <Transaction>2014/08/05 19:52:27.000.645,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Controller\EcfConfiguracaoController.pas</Transaction>
+    <Transaction>2014/08/05 20:10:04.000.941,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Controller\Controller.pas</Transaction>
+    <Transaction>2014/08/05 20:10:28.000.320,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Util\SessaoUsuario.pas</Transaction>
+    <Transaction>2014/08/05 20:13:58.000.152,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Util\SessaoUsuario.pas=</Transaction>
+    <Transaction>2014/08/05 20:14:34.000.047,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Controller\EcfConfiguracaoController.pas=</Transaction>
+    <Transaction>2014/08/05 20:15:36.000.418,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\Controller\Controller.pas=</Transaction>
+    <Transaction>2014/08/05 20:15:42.000.800,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\Controller\EcfConfiguracaoController.pas</Transaction>
+    <Transaction>2014/08/05 20:17:31.000.956,=C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\PAF-ECF\DataModule\UDataModuleConexao.pas</Transaction>
+    <Transaction>2014/08/05 20:20:26.000.197,C:\Projetos\T2Ti ERP 2.0\Delphi\PAF\Configurador\ULogin.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

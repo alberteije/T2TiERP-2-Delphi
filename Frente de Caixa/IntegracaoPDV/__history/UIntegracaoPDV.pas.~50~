@@ -1,0 +1,148 @@
+unit UIntegracaoPDV;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, Generics.Collections, StdCtrls, Buttons, FileCtrl, Registry,
+  JvComponentBase, JvTrayIcon, ComCtrls, JvExComCtrls, IniFiles, JvProgressBar;
+
+type
+  TFIntegracaoPDV = class(TForm)
+    TimerIntegracao: TTimer;
+    ListTXT: TFileListBox;
+    JvTrayIcon1: TJvTrayIcon;
+    pBanco: TProgressBar;
+    pLabel: TPanel;
+    ListSemaforo: TFileListBox;
+    ListEstoque: TFileListBox;
+    procedure FormCreate(Sender: TObject);
+    procedure TimerIntegracaoTimer(Sender: TObject);
+    function ImportaPDV: Boolean;
+  private
+    Contador: Integer;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FIntegracaoPDV: TFIntegracaoPDV;
+  RemoteAppPath: String;
+
+implementation
+
+uses Biblioteca, ImportaController, LogImportacaoController, R06VO;
+{$R *.dfm}
+
+{
+  Procedimentos executados quando o formulário é criado
+}
+procedure TFIntegracaoPDV.FormCreate(Sender: TObject);
+var
+  ArquivoIni: TIniFile;
+begin
+  try
+    ArquivoIni := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'Conexao.ini');
+    BancoRetaguarda := UpperCase(ArquivoIni.ReadString('SGBD', 'BDRetaguarda', ''));
+    RemoteAppPath := UpperCase(ArquivoIni.ReadString('IMPORTA', 'REMOTEAPP', ''));
+    gsAppPath := ExtractFilePath(Application.ExeName);
+
+  finally
+    FreeAndNil(ArquivoIni);
+  end;
+
+  Contador := 0;
+  pLabel.Caption := '';
+  TimerIntegracao.Enabled := True;
+end;
+
+{
+  Timer que controla a integração
+}
+procedure TFIntegracaoPDV.TimerIntegracaoTimer(Sender: TObject);
+begin
+  if ImportaPDV then
+  begin
+    if pBanco.Position >= 30 then
+      pBanco.Position := 1;
+
+    pBanco.Position := pBanco.Position + 1;
+    TimerIntegracao.Enabled := True;
+  end;
+end;
+
+{
+  Método chamado pelo Timer que controla a integração
+}
+function TFIntegracaoPDV.ImportaPDV: Boolean;
+var
+  RemoteApp, LocalApp: String;
+  i: integer;
+  iContaTXT: integer;
+  DataTXT: TDate;
+  Filtro, tupla: String;
+  ObjetoJson: TJSONObject;
+  ArquivoImportaPDV: TextFile;
+begin
+  try
+    TimerIntegracao.Enabled := False;
+
+    try
+      Result := false;
+
+      // aponta o componente ListSemaforo para o caminho remoto para verificar se algum caixa está copiando um arquivo
+      ListSemaforo.Mask := '*.semaforo';
+      ListSemaforo.Directory := FDataModule.RemoteAppPath;
+      ListSemaforo.Update;
+
+      // aponta o componente ListTXT para o caminho remoto para carregar os arquivos TXT
+      ListTXT.Mask := '*.txt';
+      ListTXT.Directory := FDataModule.RemoteAppPath;
+      ListTXT.Update;
+
+      // caso não exista o diretória, cria
+      ForceDirectories(ExtractFilePath(Application.ExeName) + 'Script');
+
+      // executa o laço pela quantidade de arquivos "TXT" que foram carregados no componente ListTXT
+      for iContaTXT := 0 to ListTXT.Count - 1 do
+      begin
+        // seta a variável com o nome do arquivo selecionado no momento no componente ListTXT
+        RemoteApp := FDataModule.RemoteAppPath + RemoteApp + ListTXT.Items[iContaTXT];
+
+        // se não existir "semaforo", ou seja, não existe nenhum processo sendo realizado na pasta, continua a execução
+        if ListSemaforo.Count <= 0 then
+        begin
+
+          // se existir o arquivo, continua a execução
+          if FileExists(RemoteApp) then
+          begin
+
+            // recebe o caminho da aplicação + pasta 'script' + Nome do arquivo
+            LocalApp := ExtractFilePath(Application.ExeName) + 'Script\' + ExtractFileName(RemoteApp);
+
+            // copia o arquivo do caminho remoto para ao local e se der certo continua a execucao
+            if CopyFile(PChar(RemoteApp), PChar(LocalApp), false) then
+            begin
+              // chama o método para importar os dados do PDV e se der certo remove o arquivo remoto
+              if TImportaController.ImportarDadosDoPDV(LocalApp) then
+              begin
+                if Biblioteca.MD5File(LocalApp) = Biblioteca.MD5File(RemoteApp) then
+                  DeleteFile(PChar(RemoteApp));
+              end;
+            end;
+          end;
+        end;
+        RemoteApp := '';
+      end;
+    except
+      // Se ocorrer algum erro, grava o log de importação
+      on E: Exception do
+        TLogImportacaoController.GravarLogImportacao(LocalApp, E.Message);
+    end;
+  finally
+    Result := True;
+  end;
+end;
+
+end.

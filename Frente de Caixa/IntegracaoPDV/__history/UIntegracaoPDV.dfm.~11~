@@ -1,0 +1,86 @@
+object FIntegracaoPDV: TFIntegracaoPDV
+  Left = 480
+  Top = 207
+  Caption = 'Integracao com o PDV'
+  ClientHeight = 82
+  ClientWidth = 479
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pLabel: TPanel
+    Left = 0
+    Top = 0
+    Width = 479
+    Height = 66
+    Align = alClient
+    BevelInner = bvLowered
+    BevelKind = bkFlat
+    Caption = 'Integra'#231#227'o PDV...'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    ExplicitHeight = 55
+  end
+  object ListSemaforo: TFileListBox
+    Left = 215
+    Top = 8
+    Width = 98
+    Height = 41
+    ItemHeight = 19
+    TabOrder = 3
+    Visible = False
+  end
+  object ListTXT: TFileListBox
+    Left = 88
+    Top = 8
+    Width = 97
+    Height = 41
+    ItemHeight = 13
+    TabOrder = 0
+    Visible = False
+  end
+  object pBanco: TProgressBar
+    Left = 0
+    Top = 66
+    Width = 479
+    Height = 16
+    Align = alBottom
+    Max = 30
+    TabOrder = 1
+    ExplicitTop = 55
+  end
+  object ListEstoque: TFileListBox
+    Left = 87
+    Top = 107
+    Width = 98
+    Height = 41
+    ItemHeight = 19
+    TabOrder = 4
+    Visible = False
+  end
+  object TimerIntegracao: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = TimerIntegracaoTimer
+    Left = 392
+    Top = 8
+  end
+  object JvTrayIcon1: TJvTrayIcon
+    Active = True
+    IconIndex = 0
+    Visibility = [tvVisibleTaskList, tvAutoHide, tvRestoreDbClick, tvMinimizeDbClick]
+    Left = 336
+    Top = 8
+  end
+end

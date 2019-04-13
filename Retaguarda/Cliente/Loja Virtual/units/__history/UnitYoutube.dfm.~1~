@@ -1,0 +1,11 @@
+object UniFormYoutube: TUniFormYoutube
+  Left = 0
+  Top = 0
+  ClientHeight = 209
+  ClientWidth = 472
+  Caption = 'UniFormYoutube'
+  OldCreateOrder = False
+  MonitoredKeys.Keys = <>
+  PixelsPerInch = 96
+  TextHeight = 13
+end

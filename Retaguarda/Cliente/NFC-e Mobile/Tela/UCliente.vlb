@@ -1,0 +1,9 @@
+﻿[FMenu.FDMemTableCliente]
+Visible=False
+
+[FMenu.FDMemTableProduto]
+Visible=False
+
+[FMenu.CDSVendaDetalhe]
+Visible=False
+

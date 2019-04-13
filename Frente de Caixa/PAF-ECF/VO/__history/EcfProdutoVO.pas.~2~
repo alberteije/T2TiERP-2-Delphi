@@ -1,0 +1,185 @@
+{*******************************************************************************
+Title: T2Ti ERP                                                                 
+Description:  VO  relacionado à tabela [PRODUTO] do PAF
+                                                                                
+The MIT License                                                                 
+                                                                                
+Copyright: Copyright (C) 2010 T2Ti.COM                                          
+                                                                                
+Permission is hereby granted, free of charge, to any person                     
+obtaining a copy of this software and associated documentation                  
+files (the "Software"), to deal in the Software without                         
+restriction, including without limitation the rights to use,                    
+copy, modify, merge, publish, distribute, sublicense, and/or sell               
+copies of the Software, and to permit persons to whom the                       
+Software is furnished to do so, subject to the following                        
+conditions:                                                                     
+                                                                                
+The above copyright notice and this permission notice shall be                  
+included in all copies or substantial portions of the Software.                 
+                                                                                
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,                 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES                 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND                        
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT                     
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,                    
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING                    
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR                   
+OTHER DEALINGS IN THE SOFTWARE.                                                 
+                                                                                
+       The author may be contacted at:                                          
+           t2ti.com@gmail.com                                                   
+                                                                                
+@author Albert Eije (t2ti.com@gmail.com)                    
+@version 1.0                                                                    
+*******************************************************************************}
+unit EcfProdutoVO;
+
+interface
+
+uses
+  VO, Atributos, Classes, Constantes, Generics.Collections, DB, SysUtils,
+  UnidadeProdutoVO;
+
+type
+  [TEntity]
+  [TTable('PRODUTO')]
+  TEcfProdutoVO = class(TVO)
+  private
+    FID: Integer;
+    FID_UNIDADE_PRODUTO: Integer;
+    FGTIN: String;
+    FCODIGO_INTERNO: String;
+    FNOME: String;
+    FDESCRICAO: String;
+    FDESCRICAO_PDV: String;
+    FVALOR_VENDA: Extended;
+    FQUANTIDADE_ESTOQUE: Extended;
+    FESTOQUE_MINIMO: Extended;
+    FESTOQUE_MAXIMO: Extended;
+    FIAT: String;
+    FIPPT: String;
+    FNCM: String;
+    FTIPO_ITEM_SPED: String;
+    FTAXA_IPI: Extended;
+    FTAXA_ISSQN: Extended;
+    FTAXA_PIS: Extended;
+    FTAXA_COFINS: Extended;
+    FTAXA_ICMS: Extended;
+    FCST: String;
+    FCSOSN: String;
+    FTOTALIZADOR_PARCIAL: String;
+    FECF_ICMS_ST: String;
+    FCODIGO_BALANCA: Integer;
+    FPAF_P_ST: String;
+    FLOGSS: String;
+
+    FUnidadeProdutoSigla: String;
+
+    FUnidadeEcfProdutoVO: TUnidadeProdutoVO;
+
+  public
+    constructor Create; override;
+    destructor Destroy; override;
+
+    [TId('ID')]
+    [TGeneratedValue(sAuto)]
+    [TFormatter(ftZerosAEsquerda, taCenter)]
+    property Id: Integer  read FID write FID;
+
+    [TColumn('GTIN', 'Gtin', 112, [ldGrid, ldLookup, ldCombobox], False)]
+    property Gtin: String  read FGTIN write FGTIN;
+    [TColumn('DESCRICAO_PDV', 'Descricao Pdv', 240, [ldGrid, ldLookup, ldCombobox], False)]
+    property DescricaoPdv: String  read FDESCRICAO_PDV write FDESCRICAO_PDV;
+
+    [TColumn('ID_UNIDADE_PRODUTO', 'Id Unidade Produto', 80, [], False)]
+    [TFormatter(ftZerosAEsquerda, taCenter)]
+    property IdUnidadeProduto: Integer  read FID_UNIDADE_PRODUTO write FID_UNIDADE_PRODUTO;
+    [TColumnDisplay('UNIDADE_PRODUTO.SIGLA', 'Unidade', 100, [ldGrid, ldLookup], ftString, 'UnidadeEcfProdutoVO.TUnidadeEcfProdutoVO', True)]
+    property UnidadeProdutoSigla: String read FUnidadeProdutoSigla write FUnidadeProdutoSigla;
+
+    [TColumn('CODIGO_INTERNO', 'Codigo Interno', 100, [], False)]
+    property CodigoInterno: String  read FCODIGO_INTERNO write FCODIGO_INTERNO;
+    [TColumn('NOME', 'Nome', 450, [], False)]
+    property Nome: String  read FNOME write FNOME;
+    [TColumn('DESCRICAO', 'Descricao', 450, [], False)]
+    property Descricao: String  read FDESCRICAO write FDESCRICAO;
+
+    [TColumn('VALOR_VENDA', 'Valor Venda', 128, [ldGrid, ldLookup, ldCombobox], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property ValorVenda: Extended  read FVALOR_VENDA write FVALOR_VENDA;
+    [TColumn('QUANTIDADE_ESTOQUE', 'Qtd Estoque', 128, [ldGrid, ldLookup, ldCombobox], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property QuantidadeEstoque: Extended  read FQUANTIDADE_ESTOQUE write FQUANTIDADE_ESTOQUE;
+
+    [TColumn('ESTOQUE_MINIMO', 'Estoque Min', 128, [], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property EstoqueMinimo: Extended  read FESTOQUE_MINIMO write FESTOQUE_MINIMO;
+    [TColumn('ESTOQUE_MAXIMO', 'Estoque Max', 128, [], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property EstoqueMaximo: Extended  read FESTOQUE_MAXIMO write FESTOQUE_MAXIMO;
+
+    [TColumn('IAT', 'Iat', 50, [ldGrid, ldLookup, ldCombobox], False)]
+    property Iat: String  read FIAT write FIAT;
+    [TColumn('IPPT', 'Ippt', 50, [ldGrid, ldLookup, ldCombobox], False)]
+    property Ippt: String  read FIPPT write FIPPT;
+    [TColumn('NCM', 'Ncm', 80, [ldGrid, ldLookup, ldCombobox], False)]
+    property Ncm: String  read FNCM write FNCM;
+
+    [TColumn('TIPO_ITEM_SPED', 'Tipo Item Sped', 16, [], False)]
+    property TipoItemSped: String  read FTIPO_ITEM_SPED write FTIPO_ITEM_SPED;
+
+    [TColumn('TAXA_IPI', 'Taxa Ipi', 128, [], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property AliquotaIpi: Extended  read FTAXA_IPI write FTAXA_IPI;
+    [TColumn('TAXA_ISSQN', 'Taxa Issqn', 128, [], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property AliquotaIssqn: Extended  read FTAXA_ISSQN write FTAXA_ISSQN;
+    [TColumn('TAXA_PIS', 'Taxa Pis', 128, [], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property AliquotaPis: Extended  read FTAXA_PIS write FTAXA_PIS;
+    [TColumn('TAXA_COFINS', 'Taxa Cofins', 128, [], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property AliquotaCofins: Extended  read FTAXA_COFINS write FTAXA_COFINS;
+    [TColumn('TAXA_ICMS', 'Taxa Icms', 128, [], False)]
+    [TFormatter(ftFloatComSeparador, taRightJustify)]
+    property AliquotaICMS: Extended  read FTAXA_ICMS write FTAXA_ICMS;
+
+    [TColumn('CST', 'Cst', 50, [ldGrid, ldLookup, ldCombobox], False)]
+    property Cst: String  read FCST write FCST;
+    [TColumn('CSOSN', 'Csosn', 50, [ldGrid, ldLookup, ldCombobox], False)]
+    property Csosn: String  read FCSOSN write FCSOSN;
+
+    [TColumn('TOTALIZADOR_PARCIAL', 'Totalizador Parcial', 120, [ldGrid, ldLookup, ldCombobox], False)]
+    property TotalizadorParcial: String  read FTOTALIZADOR_PARCIAL write FTOTALIZADOR_PARCIAL;
+
+    [TColumn('ECF_ICMS_ST', 'Ecf Icms St', 32, [], False)]
+    property EcfIcmsSt: String  read FECF_ICMS_ST write FECF_ICMS_ST;
+    [TColumn('CODIGO_BALANCA', 'Codigo Balanca', 80, [], False)]
+    [TFormatter(ftZerosAEsquerda, taCenter)]
+    property CodigoBalanca: Integer  read FCODIGO_BALANCA write FCODIGO_BALANCA;
+    [TColumn('PAF_P_ST', 'Paf P St', 8, [], False)]
+    property PafProdutoST: String  read FPAF_P_ST write FPAF_P_ST;
+    [TColumn('LOGSS', 'Log', 8, [], False)]
+    property HashRegistro: String  read FLOGSS write FLOGSS;
+
+    [TAssociation('ID', 'ID_UNIDADE_PRODUTO')]
+    property UnidadeEcfProdutoVO: TUnidadeProdutoVO read FUnidadeEcfProdutoVO write FUnidadeEcfProdutoVO;
+
+  end;
+
+implementation
+
+destructor TEcfProdutoVO.Destroy;
+begin
+  FreeAndNil(FUnidadeEcfProdutoVO);
+  inherited;
+end;
+
+initialization
+  Classes.RegisterClass(TEcfProdutoVO);
+
+finalization
+  Classes.UnRegisterClass(TEcfProdutoVO);
+
+end.

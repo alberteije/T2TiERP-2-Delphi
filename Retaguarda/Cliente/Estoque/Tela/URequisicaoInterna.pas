@@ -1,0 +1,442 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela de Requisições Internas de Material
+
+The MIT License
+
+Copyright: Copyright (C) 2016 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com
+
+@author Albert Eije (alberteije@gmail.com)
+@version 2.0
+******************************************************************************* }
+unit URequisicaoInterna;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, Menus, StdCtrls, ExtCtrls, Buttons, Grids, DBGrids,
+  JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, LabeledCtrls, Atributos, Constantes,
+  Mask, JvExMask, JvToolEdit, JvBaseEdits, DB, DBClient, Generics.Collections,
+  ActnList, ToolWin, ActnMan, ActnCtrls, StrUtils, PlatformDefaultStyleActnCtrls,
+  System.Actions, Controller;
+
+type
+  [TFormDescription(TConstantes.MODULO_ESTOQUE, 'Requisição Interna de Material')]
+
+  TFRequisicaoInterna = class(TFTelaCadastro)
+    BevelEdits: TBevel;
+    CDSRequisicaoInternaDetalhe: TClientDataSet;
+    DSRequisicaoInternaDetalhe: TDataSource;
+    GroupBoxParcelas: TGroupBox;
+    GridItens: TJvDBUltimGrid;
+    EditIdColaborador: TLabeledCalcEdit;
+    EditColaborador: TLabeledEdit;
+    EditDataRequisicao: TLabeledDateEdit;
+    CDSRequisicaoInternaDetalheID: TIntegerField;
+    CDSRequisicaoInternaDetalheID_REQUISICAO_INTERNA_CABECALHO: TIntegerField;
+    CDSRequisicaoInternaDetalheID_PRODUTO: TIntegerField;
+    CDSRequisicaoInternaDetalheQUANTIDADE: TFloatField;
+    CDSRequisicaoInternaDetalhePRODUTONOME: TStringField;
+    CDSRequisicaoInternaDetalheQUANTIDADE_ESTOQUE: TFloatField;
+    ActionToolBar1: TActionToolBar;
+    ActionManager1: TActionManager;
+    ActionAdicionarItem: TAction;
+    [TComponentDescription('Pode Deferir?')]
+    ActionDeferirSolicitacao: TAction;
+    [TComponentDescription('Pode Indeferir?')]
+    ActionIndeferirSolicitacao: TAction;
+    CDSRequisicaoInternaDetalhePERSISTE: TStringField;
+    PopupMenu1: TPopupMenu;
+    ExcluirItem1: TMenuItem;
+    procedure FormCreate(Sender: TObject);
+    procedure CDSRequisicaoInternaDetalheAfterEdit(DataSet: TDataSet);
+    procedure GridItensKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure ActionAdicionarItemExecute(Sender: TObject);
+    procedure ExcluirItem1Click(Sender: TObject);
+    procedure ActionDeferirSolicitacaoExecute(Sender: TObject);
+    procedure ActionIndeferirSolicitacaoExecute(Sender: TObject);
+    procedure EditIdColaboradorKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+    procedure LimparCampos; override;
+    procedure ControlaBotoes; override;
+    procedure ControlaPopupMenu; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+  end;
+
+var
+  FRequisicaoInterna: TFRequisicaoInterna;
+  CriterioRapido: String;
+
+implementation
+
+uses RequisicaoInternaCabecalhoController, RequisicaoInternaCabecalhoVO,
+  RequisicaoInternaDetalheVO, UDataModule, ViewPessoaColaboradorVO,
+  ViewPessoaColaboradorController, ProdutoVO, ProdutoController,
+  RequisicaoInternaDetalheController;
+{$R *.dfm}
+
+{$REGION 'Infra'}
+procedure TFRequisicaoInterna.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TRequisicaoInternaCabecalhoVO;
+  ObjetoController := TRequisicaoInternaCabecalhoController.Create;
+
+  inherited;
+end;
+
+procedure TFRequisicaoInterna.LimparCampos;
+begin
+  CriterioRapido := EditCriterioRapido.Text;
+  inherited;
+  CDSRequisicaoInternaDetalhe.EmptyDataSet;
+end;
+
+procedure TFRequisicaoInterna.ControlaBotoes;
+begin
+  inherited;
+
+  BotaoImprimir.Visible := False;
+end;
+
+procedure TFRequisicaoInterna.ControlaPopupMenu;
+begin
+  inherited;
+
+  menuImprimir.Visible := False;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFRequisicaoInterna.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    EditIdColaborador.SetFocus;
+  end;
+end;
+
+function TFRequisicaoInterna.DoEditar: Boolean;
+var
+  Mensagem: String;
+begin
+  if CDSGrid.FieldByName('SITUACAO').AsString <> 'A' then
+  begin
+    case AnsiIndexStr(CDSGrid.FieldByName('SITUACAO').AsString, ['D', 'I']) of
+      0:
+        Mensagem := ' - Situação: Deferida';
+      1:
+        Mensagem := ' - Situação: Indeferida';
+    end;
+
+    Application.MessageBox(PChar('Esse registro não pode ser alterado' + Mensagem), 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    Exit(False);
+  end;
+
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditIdColaborador.SetFocus;
+  end;
+end;
+
+function TFRequisicaoInterna.DoExcluir: Boolean;
+begin
+  if CDSGrid.FieldByName('SITUACAO').AsString <> 'A' then
+  begin
+    Application.MessageBox(PChar('Esse registro não pode ser excluído'), 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    Exit(False);
+  end;
+
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('RequisicaoInternaCabecalhoController.TRequisicaoInternaCabecalhoController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('RequisicaoInternaCabecalhoController.TRequisicaoInternaCabecalhoController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+end;
+
+function TFRequisicaoInterna.DoSalvar: Boolean;
+var
+  RequisicaoInternaDetalhe: TRequisicaoInternaDetalheVO;
+begin
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TRequisicaoInternaCabecalhoVO.Create;
+
+      TRequisicaoInternaCabecalhoVO(ObjetoVO).IdColaborador := EditIdColaborador.AsInteger;
+      TRequisicaoInternaCabecalhoVO(ObjetoVO).DataRequisicao := EditDataRequisicao.Date;
+      TRequisicaoInternaCabecalhoVO(ObjetoVO).Situacao := 'A';
+
+      if StatusTela = stEditando then
+        TRequisicaoInternaCabecalhoVO(ObjetoVO).Id := IdRegistroSelecionado;
+
+      // Itens
+      TRequisicaoInternaCabecalhoVO(ObjetoVO).ListaRequisicaoInterna := TObjectList<TRequisicaoInternaDetalheVO>.Create;
+      CDSRequisicaoInternaDetalhe.DisableControls;
+      CDSRequisicaoInternaDetalhe.First;
+      while not CDSRequisicaoInternaDetalhe.Eof do
+      begin
+        if (CDSRequisicaoInternaDetalhePERSISTE.AsString = 'S') or (CDSRequisicaoInternaDetalheID.AsInteger = 0) then
+        begin
+          RequisicaoInternaDetalhe := TRequisicaoInternaDetalheVO.Create;
+          RequisicaoInternaDetalhe.Id := CDSRequisicaoInternaDetalheID.AsInteger;
+          RequisicaoInternaDetalhe.IdReqInternaCabecalho := TRequisicaoInternaCabecalhoVO(ObjetoVO).Id;
+          RequisicaoInternaDetalhe.IdProduto := CDSRequisicaoInternaDetalheID_PRODUTO.AsInteger;
+          RequisicaoInternaDetalhe.Quantidade := CDSRequisicaoInternaDetalheQUANTIDADE.AsFloat;
+
+          TRequisicaoInternaCabecalhoVO(ObjetoVO).ListaRequisicaoInterna.Add(RequisicaoInternaDetalhe);
+        end;
+
+        CDSRequisicaoInternaDetalhe.Next;
+      end;
+      CDSRequisicaoInternaDetalhe.EnableControls;
+
+      if StatusTela = stInserindo then
+      begin
+        TController.ExecutarMetodo('RequisicaoInternaCabecalhoController.TRequisicaoInternaCabecalhoController', 'Insere', [TRequisicaoInternaCabecalhoVO(ObjetoVO)], 'PUT', 'Lista');
+      end
+      else if StatusTela = stEditando then
+      begin
+        if TRequisicaoInternaCabecalhoVO(ObjetoVO).ToJSONString <> StringObjetoOld then
+        begin
+          TController.ExecutarMetodo('RequisicaoInternaCabecalhoController.TRequisicaoInternaCabecalhoController', 'Altera', [TRequisicaoInternaCabecalhoVO(ObjetoVO)], 'POST', 'Boolean');
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFRequisicaoInterna.GridItensKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_F1 then
+  begin
+    ActionAdicionarItem.Execute;
+  end;
+  If Key = VK_RETURN then
+    EditIdColaborador.SetFocus;
+end;
+
+procedure TFRequisicaoInterna.GridParaEdits;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := TRequisicaoInternaCabecalhoVO(TController.BuscarObjeto('RequisicaoInternaCabecalhoController.TRequisicaoInternaCabecalhoController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditIdColaborador.AsInteger := TRequisicaoInternaCabecalhoVO(ObjetoVO).IdColaborador;
+    EditColaborador.Text := TRequisicaoInternaCabecalhoVO(ObjetoVO).ColaboradorPessoaNome;
+    EditDataRequisicao.Date := TRequisicaoInternaCabecalhoVO(ObjetoVO).DataRequisicao;
+
+    // Preenche as grids internas com os dados das Listas que vieram no objeto
+    TController.TratarRetorno<TRequisicaoInternaDetalheVO>(TRequisicaoInternaCabecalhoVO(ObjetoVO).ListaRequisicaoInterna, True, True, CDSRequisicaoInternaDetalhe);
+
+    // Limpa as listas para comparar posteriormente se houve inclusões/alterações e subir apenas o necessário para o servidor
+    TRequisicaoInternaCabecalhoVO(ObjetoVO).ListaRequisicaoInterna.Clear;
+
+    // Serializa o objeto para consultar posteriormente se houve alterações
+    FormatSettings.DecimalSeparator := '.';
+    StringObjetoOld := ObjetoVO.ToJSONString;
+    FormatSettings.DecimalSeparator := ',';
+  end;
+end;
+
+procedure TFRequisicaoInterna.CDSRequisicaoInternaDetalheAfterEdit(DataSet: TDataSet);
+begin
+  CDSRequisicaoInternaDetalhePERSISTE.AsString := 'S';
+end;
+
+procedure TFRequisicaoInterna.ExcluirItem1Click(Sender: TObject);
+begin
+  if CDSRequisicaoInternaDetalhe.IsEmpty then
+    Application.MessageBox('Não existe registro selecionado.', 'Erro', MB_OK + MB_ICONERROR)
+  else
+  begin
+    if Application.MessageBox('Deseja realmente excluir o registro selecionado?', 'Pergunta do sistema', MB_YESNO + MB_ICONQUESTION) = IDYES then
+    begin
+      if StatusTela = stInserindo then
+        CDSRequisicaoInternaDetalhe.Delete
+      else if StatusTela = stEditando then
+      begin
+        TController.ExecutarMetodo('RequisicaoInternaDetalheController.TRequisicaoInternaDetalheController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+        if TController.RetornoBoolean then
+          CDSRequisicaoInternaDetalhe.Delete;
+      end;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Campos Transientes'}
+procedure TFRequisicaoInterna.EditIdColaboradorKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdColaborador.Value <> 0 then
+      Filtro := 'ID = ' + EditIdColaborador.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdColaborador.Clear;
+      EditColaborador.Clear;
+      if not PopulaCamposTransientes(Filtro, TViewPessoaColaboradorVO, TViewPessoaColaboradorController) then
+        PopulaCamposTransientesLookup(TViewPessoaColaboradorVO, TViewPessoaColaboradorController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdColaborador.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditColaborador.Text := CDSTransiente.FieldByName('NOME').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditDataRequisicao.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+
+{$ENDREGION}
+
+{$REGION 'Actions'}
+procedure TFRequisicaoInterna.ActionAdicionarItemExecute(Sender: TObject);
+begin
+  try
+    PopulaCamposTransientesLookup(TProdutoVO, TProdutoController);
+    if CDSTransiente.RecordCount > 0 then
+    begin
+      CDSRequisicaoInternaDetalhe.Append;
+      CDSRequisicaoInternaDetalheID_PRODUTO.AsInteger := CDSTransiente.FieldByName('ID').AsInteger;
+      CDSRequisicaoInternaDetalhePRODUTONOME.AsString := CDSTransiente.FieldByName('NOME').AsString;
+      CDSRequisicaoInternaDetalheQUANTIDADE_ESTOQUE.AsExtended := CDSTransiente.FieldByName('QUANTIDADE_ESTOQUE').AsExtended;
+    end;
+  finally
+    CDSTransiente.Close;
+  end;
+end;
+
+procedure TFRequisicaoInterna.ActionDeferirSolicitacaoExecute(Sender: TObject);
+var
+  RequisicaoInternaDetalhe: TRequisicaoInternaDetalheVO;
+begin
+  if StatusTela = stInserindo then
+    Application.MessageBox('A requisição ainda não foi salva.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION)
+  else if StatusTela = stEditando then
+  begin
+    TRequisicaoInternaCabecalhoVO(ObjetoVO).Situacao := 'D';
+
+    // Itens
+    TRequisicaoInternaCabecalhoVO(ObjetoVO).ListaRequisicaoInterna := TObjectList<TRequisicaoInternaDetalheVO>.Create;
+    CDSRequisicaoInternaDetalhe.DisableControls;
+    CDSRequisicaoInternaDetalhe.First;
+    while not CDSRequisicaoInternaDetalhe.Eof do
+    begin
+      RequisicaoInternaDetalhe := TRequisicaoInternaDetalheVO.Create;
+      RequisicaoInternaDetalhe.Id := CDSRequisicaoInternaDetalheID.AsInteger;
+      RequisicaoInternaDetalhe.IdReqInternaCabecalho := TRequisicaoInternaCabecalhoVO(ObjetoVO).Id;
+      RequisicaoInternaDetalhe.IdProduto := CDSRequisicaoInternaDetalheID_PRODUTO.AsInteger;
+      RequisicaoInternaDetalhe.Quantidade := CDSRequisicaoInternaDetalheQUANTIDADE.AsFloat;
+      TRequisicaoInternaCabecalhoVO(ObjetoVO).ListaRequisicaoInterna.Add(RequisicaoInternaDetalhe);
+
+      CDSRequisicaoInternaDetalhe.Next;
+    end;
+    CDSRequisicaoInternaDetalhe.EnableControls;
+
+    TController.ExecutarMetodo('RequisicaoInternaCabecalhoController.TRequisicaoInternaCabecalhoController', 'Altera', [TRequisicaoInternaCabecalhoVO(ObjetoVO)], 'POST', 'Boolean');
+    if TController.RetornoBoolean then
+    begin
+      Application.MessageBox('Requisição deferida com sucesso.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      BotaoCancelar.Click;
+      EditCriterioRapido.Text := CriterioRapido;
+      BotaoConsultar.Click;
+    end;
+  end;
+end;
+
+procedure TFRequisicaoInterna.ActionIndeferirSolicitacaoExecute(Sender: TObject);
+begin
+  if StatusTela = stInserindo then
+    Application.MessageBox('A requisição ainda não foi salva.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION)
+  else if StatusTela = stEditando then
+  begin
+    TRequisicaoInternaCabecalhoVO(ObjetoVO).Situacao := 'I';
+
+    TController.ExecutarMetodo('RequisicaoInternaCabecalhoController.TRequisicaoInternaCabecalhoController', 'Altera', [TRequisicaoInternaCabecalhoVO(ObjetoVO)], 'POST', 'Boolean');
+    if TController.RetornoBoolean then
+    begin
+      Application.MessageBox('Requisição indeferida com sucesso.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      BotaoCancelar.Click;
+      EditCriterioRapido.Text := CriterioRapido;
+      BotaoConsultar.Click;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+end.
+

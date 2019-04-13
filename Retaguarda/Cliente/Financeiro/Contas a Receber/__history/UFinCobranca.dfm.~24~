@@ -1,0 +1,721 @@
+inherited FFinCobranca: TFFinCobranca
+  Left = 318
+  Top = 144
+  Caption = 'Cobran'#231'a'
+  ClientHeight = 510
+  ClientWidth = 988
+  ExplicitWidth = 1004
+  ExplicitHeight = 549
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited PageControl: TPageControl
+    Width = 988
+    Height = 479
+    ActivePage = PaginaEdits
+    ExplicitWidth = 988
+    ExplicitHeight = 479
+    inherited PaginaGrid: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 980
+      ExplicitHeight = 451
+      inherited PanelGrid: TPanel
+        Width = 980
+        Height = 451
+        ExplicitWidth = 980
+        ExplicitHeight = 451
+        inherited Grid: TJvDBUltimGrid
+          Width = 980
+          Height = 399
+        end
+        inherited PanelFiltroRapido: TPanel
+          Top = 399
+          Width = 980
+          ExplicitTop = 399
+          ExplicitWidth = 980
+          inherited BotaoConsultar: TSpeedButton
+            ExplicitLeft = 825
+          end
+          inherited EditCriterioRapido: TLabeledMaskEdit
+            Width = 679
+            ExplicitWidth = 679
+          end
+        end
+      end
+    end
+    inherited PaginaEdits: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 980
+      ExplicitHeight = 451
+      inherited PanelEdits: TPanel
+        Width = 980
+        Height = 451
+        ExplicitWidth = 980
+        ExplicitHeight = 451
+        object PanelParcelas: TPanel
+          Left = 4
+          Top = 4
+          Width = 972
+          Height = 443
+          Align = alClient
+          TabOrder = 1
+          DesignSize = (
+            972
+            443)
+          object PageControlItensLancamento: TPageControl
+            Left = 6
+            Top = 152
+            Width = 954
+            Height = 282
+            ActivePage = tsParcelasVencidas
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            TabOrder = 0
+            object tsParcelasVencidas: TTabSheet
+              Caption = 'Parcelas Vencidas'
+              ImageIndex = 1
+              ExplicitHeight = 287
+              object PanelParcelasVencidas: TPanel
+                Left = 0
+                Top = 0
+                Width = 946
+                Height = 254
+                Align = alClient
+                BevelOuter = bvNone
+                TabOrder = 0
+                ExplicitHeight = 287
+                object GridParcelasVencidas: TJvDBUltimGrid
+                  Left = 0
+                  Top = 0
+                  Width = 946
+                  Height = 254
+                  Align = alClient
+                  DataSource = DSParcelasVencidas
+                  TabOrder = 0
+                  TitleFont.Charset = DEFAULT_CHARSET
+                  TitleFont.Color = clWindowText
+                  TitleFont.Height = -11
+                  TitleFont.Name = 'Tahoma'
+                  TitleFont.Style = []
+                  OnKeyDown = GridParcelasKeyDown
+                  TitleButtons = True
+                  AlternateRowColor = 15593713
+                  TitleArrow = True
+                  SelectColumnsDialogStrings.Caption = 'Select columns'
+                  SelectColumnsDialogStrings.OK = '&OK'
+                  SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+                  CanDelete = False
+                  EditControls = <>
+                  RowsHeight = 17
+                  TitleRowHeight = 17
+                  SortWith = swFields
+                end
+              end
+            end
+            object tsParcelasSimuladoAcordo: TTabSheet
+              Caption = 'Parcelas Simulado / Acordo'
+              ExplicitHeight = 287
+              object PanelItensLancamento: TPanel
+                Left = 0
+                Top = 0
+                Width = 946
+                Height = 254
+                Align = alClient
+                BevelOuter = bvNone
+                TabOrder = 0
+                ExplicitHeight = 287
+                object GridParcelas: TJvDBUltimGrid
+                  Left = 0
+                  Top = 0
+                  Width = 946
+                  Height = 254
+                  Align = alClient
+                  DataSource = DSParcelaReceber
+                  TabOrder = 0
+                  TitleFont.Charset = DEFAULT_CHARSET
+                  TitleFont.Color = clWindowText
+                  TitleFont.Height = -11
+                  TitleFont.Name = 'Tahoma'
+                  TitleFont.Style = []
+                  OnKeyDown = GridParcelasKeyDown
+                  TitleButtons = True
+                  AlternateRowColor = 15593713
+                  TitleArrow = True
+                  SelectColumnsDialogStrings.Caption = 'Select columns'
+                  SelectColumnsDialogStrings.OK = '&OK'
+                  SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+                  CanDelete = False
+                  EditControls = <>
+                  RowsHeight = 17
+                  TitleRowHeight = 17
+                  SortWith = swFields
+                  Columns = <
+                    item
+                      Expanded = False
+                      FieldName = 'ID_FIN_LANCAMENTO_RECEBER'
+                      Title.Caption = 'ID Lan'#231'amento'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'ID_FIN_PARCELA_RECEBER'
+                      Title.Caption = 'ID Parcela'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'DATA_VENCIMENTO'
+                      Title.Caption = 'Vencimento'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'VALOR_PARCELA'
+                      Title.Caption = 'Valor Parcela'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'VALOR_JURO_SIMULADO'
+                      Title.Caption = 'Juros Simulado'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'VALOR_JURO_ACORDO'
+                      Title.Caption = 'Valor Juros Acordo'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'VALOR_MULTA_SIMULADO'
+                      Title.Caption = 'Multa Simulado'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'VALOR_MULTA_ACORDO'
+                      Title.Caption = 'Valor Multa Acordo'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'VALOR_RECEBER_SIMULADO'
+                      Title.Caption = 'Valor Receber Simulado'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'VALOR_RECEBER_ACORDO'
+                      Title.Caption = 'Valor Receber Acordo'
+                      Visible = True
+                    end>
+                end
+              end
+            end
+          end
+          object ActionToolBar2: TActionToolBar
+            AlignWithMargins = True
+            Left = 4
+            Top = 4
+            Width = 964
+            Height = 26
+            ActionManager = ActionManager
+            BiDiMode = bdRightToLeft
+            Caption = 'ActionToolBarEdits'
+            Color = clMenuBar
+            ColorMap.DisabledFontColor = 7171437
+            ColorMap.HighlightColor = clWhite
+            ColorMap.BtnSelectedColor = clBtnFace
+            ColorMap.BtnSelectedFont = clBlack
+            ColorMap.UnusedColor = clWhite
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            Orientation = boRightToLeft
+            ParentBiDiMode = False
+            ParentFont = False
+            Spacing = 0
+          end
+        end
+        object PanelMestre: TPanel
+          Left = 10
+          Top = 44
+          Width = 954
+          Height = 105
+          Anchors = [akLeft, akTop, akRight]
+          BevelOuter = bvLowered
+          TabOrder = 0
+          DesignSize = (
+            954
+            105)
+          object EditIdCliente: TLabeledCalcEdit
+            Left = 9
+            Top = 24
+            Width = 61
+            Height = 21
+            DisplayFormat = '#'
+            ParentShowHint = False
+            ShowButton = False
+            ShowHint = False
+            TabOrder = 0
+            DecimalPlacesAlwaysShown = False
+            OnKeyUp = EditIdClienteKeyUp
+            CalcEditLabel.Width = 60
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Cliente [F1]:'
+          end
+          object EditCliente: TLabeledEdit
+            Left = 70
+            Top = 24
+            Width = 873
+            Height = 21
+            TabStop = False
+            Anchors = [akLeft, akTop, akRight]
+            Color = clInfoBk
+            EditLabel.Width = 6
+            EditLabel.Height = 13
+            EditLabel.Caption = '  '
+            ReadOnly = True
+            TabOrder = 1
+          end
+          object EditDataAcertoPagamento: TLabeledDateEdit
+            Left = 318
+            Top = 73
+            Width = 121
+            Height = 21
+            ShowNullDate = False
+            TabOrder = 5
+            DateEditLabel.Width = 93
+            DateEditLabel.Height = 13
+            DateEditLabel.Caption = 'Acerto Pagamento:'
+          end
+          object EditValorTotal: TLabeledCalcEdit
+            Left = 823
+            Top = 73
+            Width = 120
+            Height = 21
+            DisplayFormat = '###,###,##0.00'
+            ShowButton = False
+            TabOrder = 8
+            DecimalPlacesAlwaysShown = False
+            CalcEditLabel.Width = 107
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Valor Total a Receber:'
+          end
+          object EditDataContato: TLabeledDateEdit
+            Left = 9
+            Top = 73
+            Width = 121
+            Height = 21
+            ShowNullDate = False
+            TabOrder = 2
+            DateEditLabel.Width = 69
+            DateEditLabel.Height = 13
+            DateEditLabel.Caption = 'Data Contato:'
+          end
+          object EditHoraContato: TLabeledMaskEdit
+            Left = 136
+            Top = 73
+            Width = 75
+            Height = 21
+            EditLabel.Width = 69
+            EditLabel.Height = 13
+            EditLabel.Caption = 'Hora Contato:'
+            MaxLength = 8
+            TabOrder = 3
+            Text = '__:__:__'
+            Required = False
+            EditMask = '##:##:##;1;_'
+            MaskState = [msMasked]
+          end
+          object EditTelefoneContato: TLabeledMaskEdit
+            Left = 217
+            Top = 73
+            Width = 95
+            Height = 21
+            EditLabel.Width = 70
+            EditLabel.Height = 13
+            EditLabel.Caption = 'Fone Contato:'
+            MaxLength = 13
+            TabOrder = 4
+            Text = '(__)____-____'
+            Required = False
+            EditMask = '(##)####-####;1;_'
+            MaskState = [msMasked]
+          end
+          object EditValorTotalJuros: TLabeledCalcEdit
+            Left = 571
+            Top = 73
+            Width = 120
+            Height = 21
+            DisplayFormat = '###,###,##0.00'
+            ShowButton = False
+            TabOrder = 6
+            DecimalPlacesAlwaysShown = False
+            CalcEditLabel.Width = 84
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Valor Total Juros:'
+          end
+          object EditValorTotalMulta: TLabeledCalcEdit
+            Left = 697
+            Top = 73
+            Width = 120
+            Height = 21
+            DisplayFormat = '###,###,##0.00'
+            ShowButton = False
+            TabOrder = 7
+            DecimalPlacesAlwaysShown = False
+            CalcEditLabel.Width = 84
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Valor Total Multa:'
+          end
+          object EditValorTotalAtrasado: TLabeledCalcEdit
+            Left = 445
+            Top = 73
+            Width = 120
+            Height = 21
+            DisplayFormat = '###,###,##0.00'
+            ShowButton = False
+            TabOrder = 9
+            DecimalPlacesAlwaysShown = False
+            CalcEditLabel.Width = 107
+            CalcEditLabel.Height = 13
+            CalcEditLabel.Caption = 'Valor Total em Atraso:'
+          end
+        end
+      end
+    end
+  end
+  inherited PanelToolBar: TPanel
+    Width = 988
+    ExplicitWidth = 988
+    inherited BotaoSair: TSpeedButton
+      Left = 884
+      ExplicitLeft = 889
+    end
+    inherited BotaoExportar: TSpeedButton
+      Left = 784
+      ExplicitLeft = 799
+    end
+    inherited BotaoImprimir: TSpeedButton
+      Left = 674
+      ExplicitLeft = 719
+    end
+    inherited BotaoSeparador1: TSpeedButton
+      Left = 774
+      ExplicitLeft = 895
+      ExplicitTop = -4
+    end
+    inherited BotaoFiltrar: TSpeedButton
+      Left = 574
+      ExplicitLeft = 639
+    end
+  end
+  object ActionManager: TActionManager
+    ActionBars.ShowHints = False
+    ActionBars = <
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionConsultarParcelas
+            Caption = '&Consultar Parcelas em Atraso'
+            ImageIndex = 29
+          end>
+      end
+      item
+        Items = <
+          item
+            Action = ActionConsultarParcelas
+            Caption = '&Consultar Parcelas em Atraso'
+            ImageIndex = 29
+          end>
+      end
+      item
+        Items = <
+          item
+            Action = ActionMarcarDataHoraContato
+            Caption = '&Data/Hora Contato'
+            ImageIndex = 27
+          end
+          item
+            Action = ActionConsultarParcelas
+            Caption = '&Consultar Parcelas em Atraso'
+            ImageIndex = 29
+          end>
+      end
+      item
+        Items = <
+          item
+            Action = ActionMarcarDataHoraContato
+            Caption = '&Data/Hora Contato'
+            ImageIndex = 27
+          end
+          item
+            Action = ActionConsultarParcelas
+            Caption = '&Consultar Parcelas em Atraso'
+            ImageIndex = 29
+          end>
+      end
+      item
+        Items = <
+          item
+            Action = ActionMarcarDataHoraContato
+            Caption = '&Data/Hora Contato'
+            ImageIndex = 27
+          end
+          item
+            Action = ActionConsultarParcelas
+            Caption = '&Consultar Parcelas em Atraso'
+            ImageIndex = 29
+          end>
+      end
+      item
+        Items = <
+          item
+            Action = ActionMarcarDataHoraContato
+            Caption = '&Data/Hora Contato'
+            ImageIndex = 27
+          end
+          item
+            Action = ActionCalcularMultaJuros
+            Caption = 'C&alcular Juros / Multa'
+            ImageIndex = 30
+          end
+          item
+            Action = ActionSimularValores
+            Caption = '&Simular Valores'
+            ImageIndex = 31
+          end
+          item
+            Action = ActionConsultarParcelas
+            Caption = '&Consultar Parcelas em Atraso'
+            ImageIndex = 29
+          end>
+        ActionBar = ActionToolBar2
+      end>
+    DisabledImages = FDataModule.ImagensCadastrosD
+    Images = FDataModule.ImagensCadastros
+    Left = 792
+    Top = 352
+    StyleName = 'Ribbon - Silver'
+    object ActionConsultarParcelas: TAction
+      Category = 'Cobranca'
+      Caption = 'Consultar Parcelas em Atraso'
+      ImageIndex = 29
+      OnExecute = ActionConsultarParcelasExecute
+    end
+    object ActionMarcarDataHoraContato: TAction
+      Category = 'Cobranca'
+      Caption = 'Data/Hora Contato'
+      ImageIndex = 27
+      OnExecute = ActionMarcarDataHoraContatoExecute
+    end
+    object ActionCalcularMultaJuros: TAction
+      Category = 'Cobranca'
+      Caption = 'Calcular Juros / Multa'
+      ImageIndex = 30
+      OnExecute = ActionCalcularMultaJurosExecute
+    end
+    object ActionSimularValores: TAction
+      Category = 'Cobranca'
+      Caption = 'Simular Valores'
+      ImageIndex = 31
+      OnExecute = ActionSimularValoresExecute
+    end
+  end
+  object DSParcelaReceber: TDataSource
+    DataSet = CDSParcelaReceber
+    Left = 64
+    Top = 360
+  end
+  object CDSParcelaReceber: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_FIN_COBRANCA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_FIN_LANCAMENTO_RECEBER'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_FIN_PARCELA_RECEBER'
+        DataType = ftInteger
+      end
+      item
+        Name = 'DATA_VENCIMENTO'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'VALOR_PARCELA'
+        DataType = ftFMTBcd
+        Precision = 15
+        Size = 6
+      end
+      item
+        Name = 'VALOR_JURO_SIMULADO'
+        DataType = ftFMTBcd
+        Precision = 15
+        Size = 6
+      end
+      item
+        Name = 'VALOR_MULTA_SIMULADO'
+        DataType = ftFMTBcd
+        Precision = 15
+        Size = 6
+      end
+      item
+        Name = 'VALOR_RECEBER_SIMULADO'
+        DataType = ftFMTBcd
+        Precision = 15
+        Size = 6
+      end
+      item
+        Name = 'VALOR_JURO_ACORDO'
+        DataType = ftFMTBcd
+        Precision = 15
+        Size = 6
+      end
+      item
+        Name = 'VALOR_MULTA_ACORDO'
+        DataType = ftFMTBcd
+        Precision = 15
+        Size = 6
+      end
+      item
+        Name = 'VALOR_RECEBER_ACORDO'
+        DataType = ftFMTBcd
+        Precision = 15
+        Size = 6
+      end
+      item
+        Name = 'PERSISTE'
+        DataType = ftString
+        Size = 1
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    AfterEdit = CDSParcelaReceberAfterEdit
+    AfterPost = CDSParcelaReceberAfterPost
+    BeforeDelete = CDSParcelaReceberBeforeDelete
+    Left = 64
+    Top = 408
+    Data = {
+      300200009619E0BD02000000180000000D000000000003000000300202494404
+      000100000000000F49445F46494E5F434F4252414E4341040001000000000019
+      49445F46494E5F4C414E43414D454E544F5F5245434542455204000100000000
+      001649445F46494E5F50415243454C415F524543454245520400010000000000
+      0F444154415F56454E43494D454E544F08000800000000000D56414C4F525F50
+      415243454C410A0012000000020008444543494D414C53020002000600055749
+      445448020002000F001356414C4F525F4A55524F5F53494D554C41444F0A0012
+      000000020008444543494D414C53020002000600055749445448020002000F00
+      1456414C4F525F4D554C54415F53494D554C41444F0A00120000000200084445
+      43494D414C53020002000600055749445448020002000F001656414C4F525F52
+      4543454245525F53494D554C41444F0A0012000000020008444543494D414C53
+      020002000600055749445448020002000F001156414C4F525F4A55524F5F4143
+      4F52444F0A0012000000020008444543494D414C530200020006000557494454
+      48020002000F001256414C4F525F4D554C54415F41434F52444F0A0012000000
+      020008444543494D414C53020002000600055749445448020002000F00145641
+      4C4F525F524543454245525F41434F52444F0A0012000000020008444543494D
+      414C53020002000600055749445448020002000F000850455253495354450100
+      4900000001000557494454480200020001000000}
+    object CDSParcelaReceberID: TIntegerField
+      FieldName = 'ID'
+    end
+    object CDSParcelaReceberID_FIN_PARCELA_RECEBER: TIntegerField
+      FieldName = 'ID_FIN_PARCELA_RECEBER'
+    end
+    object CDSParcelaReceberID_FIN_COBRANCA: TIntegerField
+      FieldName = 'ID_FIN_COBRANCA'
+    end
+    object CDSParcelaReceberVALOR_JURO_SIMULADO: TFMTBCDField
+      FieldName = 'VALOR_JURO_SIMULADO'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 15
+      Size = 6
+    end
+    object CDSParcelaReceberVALOR_MULTA_SIMULADO: TFMTBCDField
+      FieldName = 'VALOR_MULTA_SIMULADO'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 15
+      Size = 6
+    end
+    object CDSParcelaReceberVALOR_RECEBER_SIMULADO: TFMTBCDField
+      FieldName = 'VALOR_RECEBER_SIMULADO'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 15
+      Size = 6
+    end
+    object CDSParcelaReceberVALOR_JURO_ACORDO: TFMTBCDField
+      FieldName = 'VALOR_JURO_ACORDO'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 15
+      Size = 6
+    end
+    object CDSParcelaReceberVALOR_MULTA_ACORDO: TFMTBCDField
+      FieldName = 'VALOR_MULTA_ACORDO'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 15
+      Size = 6
+    end
+    object CDSParcelaReceberVALOR_RECEBER_ACORDO: TFMTBCDField
+      FieldName = 'VALOR_RECEBER_ACORDO'
+      DisplayFormat = '###,###,##0.00'
+      Precision = 15
+      Size = 6
+    end
+    object CDSParcelaReceberPERSISTE: TStringField
+      FieldName = 'PERSISTE'
+      Size = 1
+    end
+    object CDSParcelaReceberID_FIN_LANCAMENTO_RECEBER: TIntegerField
+      FieldName = 'ID_FIN_LANCAMENTO_RECEBER'
+    end
+    object CDSParcelaReceberDATA_VENCIMENTO: TDateTimeField
+      FieldName = 'DATA_VENCIMENTO'
+    end
+    object CDSParcelaReceberVALOR_PARCELA: TFMTBCDField
+      FieldName = 'VALOR_PARCELA'
+      Precision = 15
+      Size = 6
+    end
+  end
+  object CDSParcelasVencidas: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    BeforePost = CDSParcelasVencidasBeforePost
+    Left = 250
+    Top = 362
+  end
+  object DSParcelasVencidas: TDataSource
+    DataSet = CDSParcelasVencidas
+    Left = 250
+    Top = 410
+  end
+end

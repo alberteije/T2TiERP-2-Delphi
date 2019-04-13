@@ -1,0 +1,30 @@
+program T2TiERPConciliacaoContabil;
+
+uses
+  Forms,
+  Windows,
+  Dialogs,
+  UTelaCadastro in '..\Comum\Tela\UTelaCadastro.pas' {FTelaCadastro},
+  UTela in '..\Comum\Tela\UTela.pas' {FTela},
+  ULookup in '..\Comum\Tela\ULookup.pas' {FLookup},
+  UBase in '..\Comum\Tela\UBase.pas' {FBase},
+  UDataModule in '..\Comum\Tela\UDataModule.pas' {FDataModule: TDataModule},
+  UFiltro in '..\Comum\Tela\UFiltro.pas' {FFiltro},
+  ULogin in '..\Comum\Tela\ULogin.pas' {FLogin},
+  UMenu in 'Tela\UMenu.pas' {FMenu},
+  UConciliacaoBancaria in 'Tela\UConciliacaoBancaria.pas' {FConciliacaoBancaria},
+  UConciliacaoCliente in 'Tela\UConciliacaoCliente.pas' {FConciliacaoCliente},
+  UConciliacaoFornecedor in 'Tela\UConciliacaoFornecedor.pas' {FConciliacaoFornecedor},
+  UConciliaContabilLancamento in 'Tela\UConciliaContabilLancamento.pas' {FConciliaContabilLancamento},
+  UComposicaoSaldo in 'Tela\UComposicaoSaldo.pas' {FComposicaoSaldo};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.Title := 'T2Ti ERP Conciliação Contábil';
+  Application.CreateForm(TFMenu, FMenu);
+  Application.CreateForm(TFDataModule, FDataModule);
+  Application.Run;
+end.

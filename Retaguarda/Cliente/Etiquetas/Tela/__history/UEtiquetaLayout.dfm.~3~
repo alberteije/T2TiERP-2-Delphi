@@ -1,0 +1,121 @@
+inherited FEtiquetaLayout: TFEtiquetaLayout
+  Tag = 1
+  Left = 368
+  Top = 180
+  Caption = 'Ag'#234'ncias Banc'#225'rias'
+  ClientHeight = 506
+  ClientWidth = 863
+  ExplicitTop = -33
+  ExplicitWidth = 879
+  ExplicitHeight = 545
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited PageControl: TPageControl
+    Width = 863
+    Height = 475
+    ActivePage = PaginaEdits
+    ExplicitWidth = 863
+    ExplicitHeight = 475
+    inherited PaginaGrid: TTabSheet
+      ExplicitWidth = 855
+      ExplicitHeight = 447
+      inherited PanelGrid: TPanel
+        Width = 855
+        Height = 447
+        ExplicitWidth = 855
+        ExplicitHeight = 447
+        inherited Grid: TJvDBUltimGrid
+          Width = 855
+          Height = 395
+        end
+        inherited PanelFiltroRapido: TPanel
+          Top = 395
+          Width = 855
+          ExplicitTop = 395
+          ExplicitWidth = 855
+          inherited BotaoConsultar: TSpeedButton
+            Left = 723
+            ExplicitLeft = 879
+          end
+          inherited EditCriterioRapido: TLabeledMaskEdit
+            Width = 554
+            ExplicitWidth = 554
+          end
+        end
+      end
+    end
+    inherited PaginaEdits: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 855
+      ExplicitHeight = 447
+      inherited PanelEdits: TPanel
+        Width = 855
+        Height = 447
+        ExplicitWidth = 855
+        ExplicitHeight = 447
+        object EditIdFormatoPapel: TLabeledCalcEdit
+          Left = 20
+          Top = 32
+          Width = 61
+          Height = 21
+          ShowButton = False
+          TabOrder = 0
+          DecimalPlacesAlwaysShown = False
+          OnKeyUp = EditIdFormatoPapelKeyUp
+          CalcEditLabel.Width = 96
+          CalcEditLabel.Height = 13
+          CalcEditLabel.Caption = 'Formato Papel [F1]:'
+        end
+        object EditFormatoPapel: TLabeledEdit
+          Left = 82
+          Top = 32
+          Width = 752
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          Color = clInfoBk
+          EditLabel.Width = 6
+          EditLabel.Height = 13
+          EditLabel.Caption = '  '
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object EditCodigoFabricante: TLabeledEdit
+          Left = 19
+          Top = 80
+          Width = 815
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          EditLabel.Width = 91
+          EditLabel.Height = 13
+          EditLabel.Caption = 'C'#243'digo Fabricante:'
+          TabOrder = 2
+        end
+      end
+    end
+  end
+  inherited PanelToolBar: TPanel
+    Width = 863
+    ExplicitWidth = 863
+    inherited BotaoSair: TSpeedButton
+      Left = 759
+      ExplicitLeft = 759
+    end
+    inherited BotaoExportar: TSpeedButton
+      Left = 659
+      ExplicitLeft = 815
+    end
+    inherited BotaoImprimir: TSpeedButton
+      Left = 559
+      ExplicitLeft = 715
+    end
+    inherited BotaoSeparador1: TSpeedButton
+      Left = 449
+      ExplicitLeft = 605
+    end
+    inherited BotaoFiltrar: TSpeedButton
+      Left = 459
+      ExplicitLeft = 615
+    end
+  end
+end

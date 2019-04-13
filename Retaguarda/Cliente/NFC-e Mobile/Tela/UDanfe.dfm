@@ -1,0 +1,32 @@
+object FDanfe: TFDanfe
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'DANFE'
+  ClientHeight = 436
+  ClientWidth = 293
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object OleContainer1: TOleContainer
+    Left = 0
+    Top = 0
+    Width = 293
+    Height = 436
+    Align = alClient
+    Caption = 'OleContainer1'
+    TabOrder = 0
+    ExplicitLeft = 72
+    ExplicitTop = 16
+    ExplicitWidth = 121
+    ExplicitHeight = 121
+  end
+end

@@ -1,0 +1,38 @@
+unit UDanfe;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
+  RLFilters, RLPDFFilter;
+
+type
+  TFDanfe = class(TForm)
+    ToolBar1: TToolBar;
+    lblTitle1: TLabel;
+    btnNext: TSpeedButton;
+    RLPDFFilter1: TRLPDFFilter;
+    procedure btnNextClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FDanfe: TFDanfe;
+
+implementation
+
+{$R *.fmx}
+
+uses UMenu;
+
+procedure TFDanfe.btnNextClick(Sender: TObject);
+begin
+  //Close;
+  RLPDFFilter1.
+end;
+
+end.

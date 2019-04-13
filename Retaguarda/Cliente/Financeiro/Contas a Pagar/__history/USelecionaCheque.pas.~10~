@@ -1,0 +1,136 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela para selecionar o cheque para pagamento
+
+The MIT License
+
+Copyright: Copyright (C) 2016 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+@author Albert Eije (alberteije@gmail.com)
+@version 2.0
+******************************************************************************* }
+unit USelecionaCheque;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBClient, Grids, DBGrids, StdCtrls, ExtCtrls, ActnList,
+  RibbonSilverStyleActnCtrls, ActnMan, ToolWin, ActnCtrls, LabeledCtrls, ComCtrls,
+  JvExDBGrids, JvDBGrid, JvDBUltimGrid, JvBaseEdits, Mask, Controller,
+  JvExMask, JvToolEdit, UFinParcelaPagamento, Biblioteca, System.Actions,
+  Vcl.Imaging.pngimage;
+
+type
+  TFSelecionaCheque = class(TForm)
+    PanelCabecalho: TPanel;
+    Bevel1: TBevel;
+    Image1: TImage;
+    Label2: TLabel;
+    ActionToolBarPrincipal: TActionToolBar;
+    ActionManagerLocal: TActionManager;
+    ActionCancelar: TAction;
+    PageControlItens: TPageControl;
+    tsDados: TTabSheet;
+    PanelDados: TPanel;
+    CDSChequesEmSer: TClientDataSet;
+    DSChequesEmSer: TDataSource;
+    GridCheques: TJvDBUltimGrid;
+    CDSChequesEmSerID_CONTA_CAIXA: TIntegerField;
+    CDSChequesEmSerNOME_CONTA_CAIXA: TStringField;
+    CDSChequesEmSerTALAO: TStringField;
+    CDSChequesEmSerNUMERO_TALAO: TIntegerField;
+    CDSChequesEmSerNUMERO_CHEQUE: TIntegerField;
+    CDSChequesEmSerID_TALAO: TIntegerField;
+    CDSChequesEmSerID_CHEQUE: TIntegerField;
+    EditBomPara: TLabeledDateEdit;
+    EditValorCheque: TLabeledCalcEdit;
+    MemoHistorico: TLabeledMemo;
+    Bevel2: TBevel;
+    EditNominalA: TLabeledEdit;
+    ActionConfirmar: TAction;
+    procedure ActionCancelarExecute(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ActionConfirmarExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Confirmou: Boolean;
+  end;
+
+var
+  FSelecionaCheque: TFSelecionaCheque;
+
+implementation
+
+uses
+  UMenu, ViewFinChequesEmSerController;
+{$R *.dfm}
+
+procedure TFSelecionaCheque.ActionCancelarExecute(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFSelecionaCheque.ActionConfirmarExecute(Sender: TObject);
+begin
+  if Trim(RetiraMascara(EditBomPara.Text)) = '' then
+  begin
+    Application.MessageBox('É necessário informar a data do cheque.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    EditBomPara.SetFocus;
+    Exit;
+  end;
+  if EditValorCheque.Value <= 0 then
+  begin
+    Application.MessageBox('É necessário informar o valor do cheque.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    EditValorCheque.SetFocus;
+    Exit;
+  end;
+  Confirmou := True;
+  Close;
+end;
+
+procedure TFSelecionaCheque.FormShow(Sender: TObject);
+var
+  Filtro: String;
+begin
+  Confirmou := False;
+  TViewFinChequesEmSerController.SetDataSet(CDSChequesEmSer);
+  if ((FMenu.JvPageList.ActivePage.Components[0] as TForm) as TFFinParcelaPagamento).EditIdContaCaixa.Value > 0 then
+  begin
+    Filtro := 'ID_CONTA_CAIXA=' + QuotedStr(((FMenu.JvPageList.ActivePage.Components[0] as TForm) as TFFinParcelaPagamento).EditIdContaCaixa.Text);
+    TController.ExecutarMetodo('ViewFinChequesEmSerController.TViewFinChequesEmSerController', 'Consulta', [Filtro, '0', False], 'GET', 'Lista');
+
+    TViewFinChequesEmSerController.Consulta(, 0)
+  end
+  else
+    TViewFinChequesEmSerController.Consulta('ID_CONTA_CAIXA > 0', 0);
+  EditNominalA.SetFocus;
+end;
+
+end.

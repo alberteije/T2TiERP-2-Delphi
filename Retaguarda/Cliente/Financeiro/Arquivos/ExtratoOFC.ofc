@@ -1,0 +1,113 @@
+<OFC>
+   <DTD>2</DTD>
+   <CPAGE>1252</CPAGE>
+   <ACCTSTMT>
+      <ACCTFROM>
+         <BANKID>001</BANKID>
+         <BRANCHID>112-0</BRANCHID>
+         <ACCTID>00000137537</ACCTID>
+         <ACCTTYPE>0</ACCTTYPE>
+      </ACCTFROM>
+      <STMTRS>
+         <DTSTART>20120720</DTSTART>
+         <DTEND>20120802</DTEND>
+         <LEDGER>1287.63</LEDGER>
+         <STMTTRN>
+            <TRNTYPE>1</TRNTYPE>
+            <DTPOSTED>20120723</DTPOSTED>
+            <TRNAMT>-80.00</TRNAMT>
+            <FITID>20120723180000</FITID>
+            <CHKNUM>72867680</CHKNUM>
+            <MEMO>Saque com cartão - 23/07 18:50 SAA-SAO SILVANO</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>1</TRNTYPE>
+            <DTPOSTED>20120724</DTPOSTED>
+            <TRNAMT>-248.19</TRNAMT>
+            <FITID>201207241248190</FITID>
+            <CHKNUM>00047346</CHKNUM>
+            <MEMO>Pagto Mensalidade Seguro</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>1</TRNTYPE>
+            <DTPOSTED>20120726</DTPOSTED>
+            <TRNAMT>-90.00</TRNAMT>
+            <FITID>20120726190000</FITID>
+            <CHKNUM>00850556</CHKNUM>
+            <MEMO>Cheque Compensado</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>0</TRNTYPE>
+            <DTPOSTED>20120726</DTPOSTED>
+            <TRNAMT>70.00</TRNAMT>
+            <FITID>20120726070000</FITID>
+            <CHKNUM>74142394</CHKNUM>
+            <MEMO>Desbloqueio de depósito</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>1</TRNTYPE>
+            <DTPOSTED>20120730</DTPOSTED>
+            <TRNAMT>-50.00</TRNAMT>
+            <FITID>20120730150000</FITID>
+            <CHKNUM>00141292</CHKNUM>
+            <MEMO>Compra com Cartão - 28/07 11:28  RODODIESEL</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>0</TRNTYPE>
+            <DTPOSTED>20120730</DTPOSTED>
+            <TRNAMT>50.00</TRNAMT>
+            <FITID>20120730050000</FITID>
+            <CHKNUM>00141292</CHKNUM>
+            <MEMO>Estorno de Débito</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>1</TRNTYPE>
+            <DTPOSTED>20120730</DTPOSTED>
+            <TRNAMT>-50.00</TRNAMT>
+            <FITID>20120730150001</FITID>
+            <CHKNUM>00341352</CHKNUM>
+            <MEMO>Compra com Cartão - 28/07 11:29  RODODIESEL</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>0</TRNTYPE>
+            <DTPOSTED>20120731</DTPOSTED>
+            <TRNAMT>1500.00</TRNAMT>
+            <FITID>2012073101500000</FITID>
+            <CHKNUM>67969476</CHKNUM>
+            <MEMO>Depósito Online</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>0</TRNTYPE>
+            <DTPOSTED>20120731</DTPOSTED>
+            <TRNAMT>670.55</TRNAMT>
+            <FITID>201207310670550</FITID>
+            <CHKNUM>00069743</CHKNUM>
+            <MEMO>Recebimento de Proventos - NICCHIO SOBRINHO CAFE S/A</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>1</TRNTYPE>
+            <DTPOSTED>20120801</DTPOSTED>
+            <TRNAMT>-100.00</TRNAMT>
+            <FITID>201208011100000</FITID>
+            <CHKNUM>00145315</CHKNUM>
+            <MEMO>Compra com Cartão - 01/08 12:35    POSTO PARADA IBIR</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>1</TRNTYPE>
+            <DTPOSTED>20120801</DTPOSTED>
+            <TRNAMT>-200.00</TRNAMT>
+            <FITID>201208011200000</FITID>
+            <CHKNUM>00011697</CHKNUM>
+            <MEMO>Transferência Agendada - 30/07 2289      11697-1 LUCILENE MARIA</MEMO>
+         </STMTTRN>
+         <STMTTRN>
+            <TRNTYPE>1</TRNTYPE>
+            <DTPOSTED>20120801</DTPOSTED>
+            <TRNAMT>-800.00</TRNAMT>
+            <FITID>201208011800000</FITID>
+            <CHKNUM>00011876</CHKNUM>
+            <MEMO>Transferência Agendada - 30/07 3678      11876-1 NEANDER PASSAM</MEMO>
+         </STMTTRN>
+      </STMTRS>
+   </ACCTSTMT>
+</OFC>

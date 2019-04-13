@@ -1,0 +1,446 @@
+{ *******************************************************************************
+  Title: T2Ti ERP
+  Description: Janela de filtro que será utilizada por toda a aplicação
+
+  The MIT License
+
+  Copyright: Copyright (C) 2015 T2Ti.COM
+
+  Permission is hereby granted, free of charge, to any person
+  obtaining a copy of this software and associated documentation
+  files (the "Software"), to deal in the Software without
+  restriction, including without limitation the rights to use,
+  copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the
+  Software is furnished to do so, subject to the following
+  conditions:
+
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  OTHER DEALINGS IN THE SOFTWARE.
+
+  The author may be contacted at:
+  t2ti.com@gmail.com</p>
+
+  @author Albert Eije (T2Ti.COM)
+  @version 2.0
+  ******************************************************************************* }
+unit UFiltro;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Buttons, ComCtrls, JvgGroupBox, JvExStdCtrls,
+  JvGroupBox, JvExExtCtrls, JvRadioGroup, IWSystem, Menus, DBClient,
+  JvExControls, JvEnterTab, JvComponentBase, UBase, DB, LabeledCtrls, VO,
+  Rtti, Atributos;
+
+type
+
+  TItemListBox = class
+  private
+    FCampo: string;
+  public
+    property Campo: string read FCampo write FCampo;
+  end;
+
+  TFFiltro = class(TFBase)
+    BotaoResult: TBitBtn;
+    JvgGroupBox1: TJvgGroupBox;
+    ListaCampos: TListBox;
+    ListaOperadores: TListBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    GrupoEOU: TJvRadioGroup;
+    JvgGroupBox2: TJvgGroupBox;
+    Label6: TLabel;
+    MemoSQL: TMemo;
+    ListaCriterios: TListBox;
+    JvgGroupBox3: TJvgGroupBox;
+    Label3: TLabel;
+    ListaSalvos: TListBox;
+    Label4: TLabel;
+    BotaoAdicionaCriterio: TSpeedButton;
+    BotaoRemoveCriterio: TSpeedButton;
+    BotaoSalvarFiltro: TSpeedButton;
+    BotaoAplicarFiltro: TSpeedButton;
+    BotaoLimparCriterios: TSpeedButton;
+    BotalESC: TBitBtn;
+    PopupMenu: TPopupMenu;
+    CarregarFiltro1: TMenuItem;
+    ExcluirFiltro1: TMenuItem;
+    EditExpressao: TLabeledMaskEdit;
+    function defineEOU: String;
+    function defineOperador: String;
+    procedure CarregaFiltros;
+    procedure BotaoAplicarFiltroClick(Sender: TObject);
+    procedure BotaoAdicionaCriterioClick(Sender: TObject);
+    procedure BotaoRemoveCriterioClick(Sender: TObject);
+    procedure BotaoLimparCriteriosClick(Sender: TObject);
+    procedure BotaoSalvarFiltroClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure CarregarFiltro1Click(Sender: TObject);
+    procedure ExcluirFiltro1Click(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EditExpressaoEnter(Sender: TObject);
+    procedure ListaCamposClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    QuemChamou: String;
+    CDSUtilizado: TClientDataSet;
+    DataSetField: TField;
+    DataSet: TClientDataSet;
+    VO: TVO;
+    procedure FormataCampoData;
+    procedure PopulaListaCamposComVO(pListBox: TCustomListBox; pVO: TVO);
+
+  end;
+
+var
+  FFiltro: TFFiltro;
+
+implementation
+
+uses UDataModule;
+{$R *.dfm}
+
+procedure TFFiltro.PopulaListaCamposComVO(pListBox: TCustomListBox; pVO: TVO);
+var
+  Contexto: TRttiContext;
+  Tipo: TRttiType;
+  Propriedade: TRttiProperty;
+  Atributo: TCustomAttribute;
+  Item: TItemListBox;
+begin
+  try
+    Contexto := TRttiContext.Create;
+    Tipo := Contexto.GetType(pVO.ClassType);
+
+    while pListBox.Items.Count > 0 do
+    begin
+      Item := TItemListBox(pListBox.Items.Objects[0]);
+      Item.Free;
+      pListBox.Items.Delete(0);
+    end;
+
+    for Propriedade in Tipo.GetProperties do
+    begin
+      for Atributo in Propriedade.GetAttributes do
+      begin
+        if Atributo is TId then
+        begin
+          Item := TItemListBox.Create;
+          Item.Campo := 'ID';
+          pListBox.AddItem(Item.Campo, Item);
+        end
+        else if Atributo is Atributos.TColumn then
+        begin
+          Item := TItemListBox.Create;
+          Item.Campo := (Atributo as Atributos.TColumn).Caption;
+          pListBox.AddItem(Item.Campo, Item);
+        end;
+      end;
+    end;
+  finally
+    Contexto.Free;
+  end;
+end;
+
+procedure TFFiltro.CarregaFiltros;
+var
+  F: TSearchRec;
+  Ret: Integer;
+begin
+  ListaSalvos.Clear;
+  Ret := FindFirst(gsAppPath + 'Filtros\*.*', faAnyFile, F);
+  try
+    while Ret = 0 do
+    begin
+      if Copy(F.Name, 1, Length(QuemChamou) + 1) = QuemChamou + 'L' then
+        ListaSalvos.Items.Add(Copy(F.Name, Length(QuemChamou) + 2, Length(F.Name)));
+      Ret := FindNext(F);
+    end;
+  finally
+
+    FindClose(F);
+  end;
+end;
+
+procedure TFFiltro.CarregarFiltro1Click(Sender: TObject);
+begin
+  if ListaSalvos.ItemIndex = -1 then
+  begin
+    Application.MessageBox('Selecione um filtro para carregar.', 'Erro', MB_OK + MB_ICONERROR);
+  end
+  else
+  begin
+    MemoSQL.Lines.LoadFromFile(gsAppPath + 'Filtros\' + QuemChamou + 'M' + ListaSalvos.Items.Strings[ListaSalvos.ItemIndex]);
+    ListaCriterios.Items.LoadFromFile(gsAppPath + 'Filtros\' + QuemChamou + 'L' + ListaSalvos.Items.Strings[ListaSalvos.ItemIndex]);
+  end;
+end;
+
+function TFFiltro.defineEOU: String;
+begin
+  if GrupoEOU.ItemIndex = 0 then
+    result := ' AND'
+  else
+    result := ' OR';
+end;
+
+function TFFiltro.defineOperador: String;
+var
+  idx: Integer;
+begin
+  idx := ListaCampos.ItemIndex;
+
+  DataSetField := DataSet.FindField(DataSet.FieldList.Fields[idx].FieldName);
+
+  if (DataSetField.DataType = ftDateTime) then
+  begin
+    result := ' IN ' + '(' + Quotedstr(FormatDateTime('yyyy-mm-dd', StrToDate(EditExpressao.Text))) + ')';
+  end
+  else
+  begin
+    case ListaOperadores.ItemIndex of
+      0:
+        begin
+          result := '=' + Quotedstr(EditExpressao.Text);
+        end;
+      1:
+        begin
+          result := '<>' + Quotedstr(EditExpressao.Text);
+        end;
+      2:
+        begin
+          result := '<' + Quotedstr(EditExpressao.Text);
+        end;
+      3:
+        begin
+          result := '>' + Quotedstr(EditExpressao.Text);
+        end;
+      4:
+        begin
+          result := '<=' + Quotedstr(EditExpressao.Text);
+        end;
+      5:
+        begin
+          result := '>=' + Quotedstr(EditExpressao.Text);
+        end;
+      6:
+        begin
+          result := ' IS NULL ';
+        end;
+      7:
+        begin
+          result := ' IS NOT NULL ';
+        end;
+      8:
+        begin
+          result := ' LIKE ' + Quotedstr(EditExpressao.Text + '*');
+        end;
+      9:
+        begin
+          result := ' LIKE ' + Quotedstr('*' + EditExpressao.Text);
+        end;
+      10:
+        begin
+          result := ' LIKE ' + Quotedstr('*' + EditExpressao.Text + '*');
+        end;
+    end;
+  end;
+end;
+
+procedure TFFiltro.EditExpressaoEnter(Sender: TObject);
+begin
+  CustomKeyPreview := False;
+  FormataCampoData;
+  EditExpressao.SelectAll;
+end;
+
+procedure TFFiltro.ExcluirFiltro1Click(Sender: TObject);
+begin
+  if ListaSalvos.ItemIndex = -1 then
+  begin
+    Application.MessageBox('Selecione um filtro para excluir.', 'Erro', MB_OK + MB_ICONERROR);
+  end
+  else
+  begin
+    DeleteFile(gsAppPath + 'Filtros\' + QuemChamou + 'M' + ListaSalvos.Items.Strings[ListaSalvos.ItemIndex]);
+    DeleteFile(gsAppPath + 'Filtros\' + QuemChamou + 'L' + ListaSalvos.Items.Strings[ListaSalvos.ItemIndex]);
+    CarregaFiltros;
+    BotaoLimparCriterios.Click;
+  end;
+end;
+
+procedure TFFiltro.FormActivate(Sender: TObject);
+begin
+  PopulaListaCamposComVO(ListaCampos, VO);
+  CarregaFiltros;
+  ListaCampos.ItemIndex := 0;
+  ListaOperadores.ItemIndex := 0;
+  ListaSalvos.SetFocus;
+end;
+
+procedure TFFiltro.BotaoAdicionaCriterioClick(Sender: TObject);
+var
+  Criterio: String;
+  ConsultaSQL: String;
+  idx: Integer;
+begin
+  if ListaCampos.ItemIndex = -1 then
+  begin
+    Application.MessageBox('É necessário selecionar um campo.', 'Erro', MB_OK + MB_ICONERROR);
+  end
+  else
+  begin
+
+    Criterio := '';
+    ConsultaSQL := '';
+    idx := ListaCampos.ItemIndex;
+
+    if ListaCriterios.Count > 0 then
+    begin
+      Criterio := '[' + GrupoEOU.Items.Strings[GrupoEOU.ItemIndex] + ']';
+      ConsultaSQL := defineEOU;
+    end;
+
+    if (ListaOperadores.ItemIndex = 6) or (ListaOperadores.ItemIndex = 7) then
+    begin
+      // Critério
+      Criterio := Criterio + ' ' + '[' + DataSet.FieldList.Fields[idx].FieldName + ']' + ' [' + ListaOperadores.Items.Strings[ListaOperadores.ItemIndex] + '] ';
+      ListaCriterios.Items.Add(Criterio);
+
+      // Consulta SQL
+      ConsultaSQL := ConsultaSQL + ' ' + '[' + DataSet.FieldList.Fields[idx].FieldName + ']' + defineOperador;
+      MemoSQL.Lines.Add(ConsultaSQL);
+    end
+    else
+    begin
+      if EditExpressao.Text <> '' then
+      begin
+        // Critério
+        Criterio := Criterio + ' ' + '[' + DataSet.FieldList.Fields[idx].FieldName + ']' + ' [' + ListaOperadores.Items.Strings[ListaOperadores.ItemIndex] + '] ' + '"' + EditExpressao.Text + '"';
+        ListaCriterios.Items.Add(Criterio);
+
+        // Consulta SQL
+        ConsultaSQL := ConsultaSQL + ' ' + '[' + DataSet.FieldList.Fields[idx].FieldName + ']' + defineOperador;
+        MemoSQL.Lines.Add(ConsultaSQL);
+      end
+      else
+      begin
+        Application.MessageBox('Não existe expressão para filtro.', 'Erro', MB_OK + MB_ICONERROR);
+        EditExpressao.SetFocus;
+      end;
+    end;
+  end;
+end;
+
+procedure TFFiltro.BotaoRemoveCriterioClick(Sender: TObject);
+begin
+  if ListaCriterios.ItemIndex = -1 then
+  begin
+    Application.MessageBox('Selecione um critério para remover.', 'Erro', MB_OK + MB_ICONERROR);
+  end
+  else
+  begin
+    if (ListaCriterios.ItemIndex = 0) and (ListaCriterios.Items.Count > 1) then
+    begin
+      if Application.MessageBox('Primeiro critério selecionado. Existem outros critérios. Todos os critérios serão excluídos. Continua?', 'Pergunta do sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+      begin
+        ListaCriterios.Clear;
+        MemoSQL.Clear;
+      end;
+    end
+    else
+    begin
+      MemoSQL.Lines.Delete(ListaCriterios.ItemIndex);
+      ListaCriterios.DeleteSelected;
+    end;
+  end;
+end;
+
+procedure TFFiltro.BotaoSalvarFiltroClick(Sender: TObject);
+var
+  NomeFiltro: String;
+begin
+  if ListaCriterios.ItemIndex = -1 then
+  begin
+    Application.MessageBox('Não existem critérios para salvar um filtro.', 'Erro', MB_OK + MB_ICONERROR);
+  end
+  else
+  begin
+    NomeFiltro := InputBox('Nome do filtro', 'Informe o nome do filtro para armazenamento:', '');
+    if Trim(NomeFiltro) <> '' then
+    begin
+      if not DirectoryExists(gsAppPath + 'Filtros\') then
+        CreateDir(gsAppPath + 'Filtros\');
+      ListaCriterios.Items.SaveToFile(gsAppPath + 'Filtros\' + QuemChamou + 'L' + NomeFiltro);
+      MemoSQL.Lines.SaveToFile(gsAppPath + 'Filtros\' + QuemChamou + 'M' + NomeFiltro);
+      CarregaFiltros;
+    end;
+  end;
+end;
+
+procedure TFFiltro.BotaoAplicarFiltroClick(Sender: TObject);
+begin
+  BotaoResult.Click;
+end;
+
+procedure TFFiltro.BotaoLimparCriteriosClick(Sender: TObject);
+begin
+  ListaCriterios.Clear;
+  MemoSQL.Clear;
+end;
+
+procedure TFFiltro.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_F2 then
+    BotaoAdicionaCriterio.Click;
+  if Key = VK_F4 then
+    BotaoRemoveCriterio.Click;
+  if Key = VK_F5 then
+    BotaoAplicarFiltro.Click;
+  if Key = VK_F11 then
+    BotaoLimparCriterios.Click;
+  if Key = VK_F12 then
+    BotaoSalvarFiltro.Click;
+end;
+
+procedure TFFiltro.ListaCamposClick(Sender: TObject);
+begin
+  inherited;
+  FormataCampoData;
+end;
+
+procedure TFFiltro.FormataCampoData;
+var
+  Item: String;
+  idx: Integer;
+begin
+  DataSet := CDSUtilizado;
+  idx := ListaCampos.ItemIndex;
+  Item := DataSet.FieldList.Fields[idx].FieldName;
+  DataSetField := DataSet.FindField(Item);
+  if DataSetField.DataType = ftDateTime then
+  begin
+    EditExpressao.EditMask := '99/99/9999;1;_';
+    EditExpressao.Clear;
+  end
+  else
+    EditExpressao.EditMask := '';
+  EditExpressao.Clear;
+end;
+
+end.

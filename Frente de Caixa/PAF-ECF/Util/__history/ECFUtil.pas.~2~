@@ -1,0 +1,291 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Procedimentos e funções relacionados ao ECF.
+
+The MIT License
+
+Copyright: Copyright (C) 2010 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+Albert Eije (T2Ti.COM)
+@version 2.0
+******************************************************************************* }
+unit ECFUtil;
+
+interface
+
+uses
+  Classes, SysUtils, Windows, Forms, Controller, Controls, IniFiles, Tipos,
+  PAFUtil, EcfVendaDetalheVO, EcfTotalTipoPagamentoVO, Biblioteca, DateUtils;
+
+type
+  TECFUtil = class(TController)
+  private
+  public
+    class procedure LeituraX;
+    class procedure ReducaoZ;
+
+    class procedure Suprimento(Valor: Extended; Descricao: String);
+    class procedure Sangria(Valor: Extended; Descricao: String);
+
+    class procedure AbreCupom(CPFouCNPJ: String = ''; Nome: String = ''; Endereco: String = '');
+    class procedure CancelaCupom;
+    class procedure SubTotalizaCupom(AscDesc: Extended);
+    class procedure FechaCupom(Observacao: String);
+
+    class procedure VendeItem(VendaDetalhe: TEcfVendaDetalheVO);
+    class procedure CancelaItem(Item: Integer);
+
+    class procedure EfetuaFormaPagamento(TotalTipoPagamento: TEcfTotalTipoPagamentoVO);
+
+    class function ImpressoraOK(Msg: Integer = 1): Boolean;
+    class procedure PrimeiraReducaoDoMes;
+  end;
+
+implementation
+
+uses
+  UCaixa, UDataModule, UEncerraMovimento, UIniciaMovimento;
+
+{$REGION 'Comandos do ECF'}
+class procedure TECFUtil.LeituraX;
+begin
+  try
+    FDataModule.ACBrECF.LeituraX;
+  except
+    Application.MessageBox('Falha ao Realizar a Leitura X! Verifique a impressora e tente novamente!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+end;
+
+class procedure TECFUtil.ReducaoZ;
+var
+  Estado: String;
+  DataMovimento: TDateTime;
+begin
+  if ImpressoraOK then
+  begin
+    DataMovimento := FDataModule.ACBrECF.DataMovimento;
+    Estado := Sessao.Estados[FDataModule.ACBrECF.Estado];
+    if Estado <> 'Requer Z' then
+    begin
+      try
+        if Sessao.Movimento.Id <> 0 then
+        begin
+          try
+            Application.CreateForm(TFEncerraMovimento, FEncerraMovimento);
+            if FEncerraMovimento.ShowModal <> MROk then
+            begin
+              Application.MessageBox('É Necessário Encerrar o Movimento Para Emitir a Redução Z!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+              Exit;
+            end
+            else
+            begin
+              // ALTERAR - DESCOMENTAR E ARRUMAR QUANDO CORRIGIR AS PREVENDAS - TPreVendaController.CancelaPreVendasPendentes(DataMovimento);
+            end; // if FEncerraMovimento.ShowModal <> MROk then
+          finally
+            FreeAndNil(FEncerraMovimento);
+          end;
+          Sessao.StatusCaixa := scSomenteConsulta
+        end; // if Movimento.Id <> 0 then
+      finally
+      end;
+    end; // if Estado <> 'Requer Z' then
+
+    FCaixa.LabelMensagens.Caption := 'Redução Z - Aguarde!';
+
+    FDataModule.ACBrECF.Desativar;
+    FDataModule.ACBrECF.Ativar;
+
+    TPAFUtil.GravarR02R03;
+
+    FDataModule.ACBrECF.ReducaoZ;
+
+    Estado := Sessao.Estados[FDataModule.ACBrECF.Estado];
+
+    if Estado <> 'Bloqueada' then
+    begin
+      try
+        // ALTERAR - DESCOMENTAR E ARRUMAR QUANDO CORRIGIR AS PREVENDAS - TPreVendaController.CancelaPreVendasPendentes(DataMovimento);
+        if Sessao.Movimento.Id <> 0 then
+        begin
+          Sessao.Movimento.DataFechamento := EncodeDate(YearOf(FDataModule.ACBrECF.DataHora), MonthOf(FDataModule.ACBrECF.DataHora), DayOf(FDataModule.ACBrECF.DataHora));
+          Sessao.Movimento.HoraFechamento := FormatDateTime('hh:nn:ss', FDataModule.ACBrECF.DataHora);
+          Sessao.Movimento.StatusMovimento := 'F';
+          TController.ExecutarMetodo('EcfMovimentoController.TEcfMovimentoController', 'Altera', [Sessao.Movimento], 'POST', 'Boolean');
+          try
+            Application.CreateForm(TFEncerraMovimento, FEncerraMovimento);
+            FEncerraMovimento.ImprimeFechamento;
+          finally
+            FreeAndNil(FEncerraMovimento);
+          end;
+          Application.CreateForm(TFIniciaMovimento, FIniciaMovimento);
+          FIniciaMovimento.ShowModal;
+        end; // if Movimento.Id <> 0 then
+      finally
+      end;
+    end; // if Estado <> 'Bloqueada' then
+
+    TController.ExecutarMetodo('LogssController.TLogssController', 'AtualizarQuantidades', [], 'POST', 'Boolean');
+    TPAFUtil.GerarRegistrosPAF(DataMovimento, DataMovimento, 'T', '', '', '', DataParaTexto(DataMovimento));
+
+    if not FDataModule.ACBrECF.MFD then
+      PrimeiraReducaoDoMes;
+
+    FCaixa.LabelMensagens.Caption := 'Movimento do ECF Encerrado.';
+  end;
+end;
+
+class procedure TECFUtil.Suprimento(Valor: Extended; Descricao: String);
+begin
+  try
+    FDataModule.ACBrECF.Suprimento(Valor, 'SUPRIMENTO', Descricao, 'DINHEIRO');
+  except
+    Application.MessageBox('Falha ao Registrar o Suprimento de Caixa! Verifique a impressora e tente novamente!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+end;
+
+class procedure TECFUtil.Sangria(Valor: Extended; Descricao: String);
+begin
+  try
+    FDataModule.ACBrECF.Sangria(Valor, 'SANGRIA', Descricao, 'DINHEIRO');
+  except
+    Application.MessageBox('Falha ao Registrar a Sangria de Caixa! Verifique a impressora e tente novamente!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+end;
+
+class procedure TECFUtil.AbreCupom(CPFouCNPJ, Nome, Endereco: String);
+begin
+  try
+    FDataModule.ACBrECF.AbreCupom(CPFouCNPJ, Nome, Endereco);
+  except
+    Application.MessageBox('Falha ao Abrir o Cupom! Verifique a impressora e tente novamente!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+end;
+
+class procedure TECFUtil.CancelaCupom;
+begin
+  try
+    FDataModule.ACBrECF.CancelaCupom;
+  except
+    Application.MessageBox('Falha ao Cancelar Cupom! Verifique a impressora e tente novamente!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+  TPAFUtil.AtualizaGT;
+end;
+
+class procedure TECFUtil.SubTotalizaCupom(AscDesc: Extended);
+begin
+  try
+    FDataModule.ACBrECF.SubTotalizaCupom(AscDesc);
+  except
+    Application.MessageBox('Falha ao Sub Totalizar o Cupom!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+end;
+
+class procedure TECFUtil.FechaCupom(Observacao: String);
+begin
+  try
+    FDataModule.ACBrECF.FechaCupom(Observacao);
+  except
+    Application.MessageBox('Falha ao Fechar o Cupom!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+  TPAFUtil.AtualizaGT;
+end;
+
+class procedure TECFUtil.VendeItem(VendaDetalhe: TEcfVendaDetalheVO);
+begin
+  try
+    FDataModule.ACBrECF.VendeItem(VendaDetalhe.GTIN, VendaDetalhe.EcfProdutoVO.DescricaoPDV, VendaDetalhe.EcfProdutoVO.EcfIcmsSt, VendaDetalhe.Quantidade, VendaDetalhe.ValorUnitario);
+  except
+    Application.MessageBox('Falha ao Registrar Item!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+end;
+
+class procedure TECFUtil.CancelaItem(Item: Integer);
+begin
+  try
+    FDataModule.ACBrECF.CancelaItemVendido(Item);
+  except
+    Application.MessageBox('Falha no Cancelamento do Ítem!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+end;
+
+class procedure TECFUtil.EfetuaFormaPagamento(TotalTipoPagamento: TEcfTotalTipoPagamentoVO);
+begin
+  try
+    FDataModule.ACBrECF.EfetuaPagamento(TotalTipoPagamento.EcfTipoPagamentoVO.Codigo, TotalTipoPagamento.Valor);
+  except
+    Application.MessageBox('Falha ao Efetuar Pagamento!', 'Informação do Sistema', MB_OK + MB_ICONINFORMATION);
+    Abort;
+  end;
+end;
+{$ENDREGION 'Comandos do ECF'}
+
+{$REGION 'Demais Procedimentos'}
+class function TECFUtil.ImpressoraOK(Msg: Integer = 1): Boolean; // por padrão Msg vai ser 1 não modificando o funcionamento atual da função.
+var
+  Mensagem, Estado: String;
+begin
+  Result := True;
+  Estado := Sessao.Estados[FDataModule.ACBrECF.Estado];
+  if (Estado = 'Não Inicializada') or (Estado = 'Desconhecido') or (Estado = 'Bloqueada') then
+  begin
+    if Msg = 1 then
+      Mensagem := 'Estado da Impressora: ' + Estado + '.'
+    else if Msg = 2 then // caso a chamada seja feita passando o parâmetro Msg com o valor 2 exibe uma mensagem diferente.
+      Mensagem := 'Não é possível iniciar o movimento pois o estado da impressora é: ' + Estado + '.';
+    Application.MessageBox(PWideChar(Mensagem), 'Erro do Sistema', MB_OK + MB_ICONERROR);
+    result := false;
+  end;
+end;
+
+class procedure TECFUtil.PrimeiraReducaoDoMes;
+var
+  Filtro, DataInicio, DataFim: String;
+begin
+  DataInicio := '01' + Copy(DateToStr(FDataModule.ACBrECF.DataHora), 3, 8);
+  DataFim := UltimoDiaMes(FDataModule.ACBrECF.DataHora) + Copy(DateToStr(FDataModule.ACBrECF.DataHora), 3, 8);
+
+  Filtro := 'SERIE_ECF = ' + QuotedStr(Sessao.Configuracao.EcfImpressoraVO.Serie) + ' AND (DATA_MOVIMENTO between ' + QuotedStr(DataInicio) + ' and ' + QuotedStr(DataFim) + ')';
+  TController.ExecutarMetodo('R02Controller.TR02Controller', 'Consulta', [Filtro, '-1', false], 'GET', 'Lista');
+
+  if Assigned(TController.ListaObjetoConsultado) then
+  begin
+    if TController.ListaObjetoConsultado.Count = 1 then
+      FDataModule.ACBrECF.LeituraMemoriaFiscal(StrToDateTime(DataInicio), StrToDateTime(DataFim), true)
+  end;
+end;
+{$ENDREGION 'Demais Procedimentos'}
+
+end.

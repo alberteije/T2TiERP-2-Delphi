@@ -1,0 +1,1359 @@
+C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\SM\RESTserver.exe 0.0.0.0 (2016-07-22 19:26:48)Host=T2TI_ERP_2 User=t2ti CPU=1*9-6-14857:FFFB8B070B22985E OS=15.0=6.2.9200 Wow64=1 Freq=2338444Environment variables=ALLUSERSPROFILE=C:\ProgramData	APPDATA=C:\Users\t2ti\AppData\Roaming	BDS=c:\program files (x86)\embarcadero\rad studio\12.0	BDSAppDataBaseDir=BDS	BDSBIN=c:\program files (x86)\embarcadero\rad studio\12.0\bin	BDSCOMMONDIR=C:\Users\Public\Documents\RAD Studio\12.0	BDSINCLUDE=c:\program files (x86)\embarcadero\rad studio\12.0\include	BDSLIB=c:\program files (x86)\embarcadero\rad studio\12.0\lib	BDSPLATFORMSDKSDIR=C:\Users\t2ti\Documents\RAD Studio\SDKs	BDSPROFILESDIR=C:\Users\t2ti\Documents\RAD Studio\Profiles	BDSPROJECTSDIR=C:\Users\t2ti\Documents\RAD Studio\Projects	BDSUSERDIR=C:\Users\t2ti\Documents\RAD Studio\12.0	CG_BOOST_ROOT=C:\Program Files (x86)\Embarcadero\RAD Studio\7.0\include\boost_1_39	CommonProgramFiles=C:\Program Files (x86)\Common Files	CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files	CommonProgramW6432=C:\Program Files\Common Files	COMPUTERNAME=T2TI_ERP_2	ComSpec=C:\Windows\system32\cmd.exe	DELPHI=c:\program files (x86)\embarcadero\rad studio\12.0	DEMOSDIR=C:\Users\Public\Documents\RAD Studio\12.0\Samples\	FP_NO_HOST_CHECK=NO	HOMEDRIVE=C:	HOMEPATH=\Users\t2ti	IBREDISTDIR=C:\Users\Public\Documents\InterBase\redist\InterBaseXE3	IB_Protocol=gds_db	InterBase=C:\Program Files (x86)\Embarcadero\RAD Studio\12.0\InterBaseXE3	LOCALAPPDATA=C:\Users\t2ti\AppData\Local	LOGONSERVER=\\T2TI_ERP_2	MOZ_PLUGIN_PATH=C:\Program Files (x86)\Foxit Software\Foxit Reader\plugins\	NUMBER_OF_PROCESSORS=1	OS=Windows_NT	Path=C:\Users\Public\Documents\InterBase\redist\InterBaseXE3\win32_togo;C:\Users\Public\Documents\InterBase\redist\InterBaseXE3\win64_togo;C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\binaries\php\php_runningversion;C:\Program Files (x86)\Embarcadero\Studio\16.0\bin;C:\Users\Public\Documents\Embarcadero\Studio\16.0\Bpl;C:\Program Files (x86)\Embarcadero\Studio\16.0\bin64;C:\Users\Public\Documents\Embarcadero\Studio\16.0\Bpl\Win64;C:\Program Files (x86)\CollabNet;C:\Program Files (x86)\Embarcadero\RAD Studio\12.0\bin;C:\Users\Public\Documents\RAD Studio\12.0\Bpl;C:\Program Files (x86)\Embarcadero\RAD Studio\12.0\bin64;C:\Users\Public\Documents\RAD Studio\12.0\Bpl\Win64;C:\Program Files (x86)\Embarcadero\RAD Studio\7.0\bin;C:\Users\Public\Documents\RAD Studio\7.0\Bpl;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Users\Public\Documents\RAD Studio\12.0\PlatformSDKs\adt-bundle-windows-x86-20130522\sdk\tools\lib\;C:\Users\Public\Documents\RAD Studio\12.0\PlatformSDKs\adt-bundle-windows-x86-20130522\sdk\tools\;C:\Users\Public\Documents\RAD Studio\12.0\PlatformSDKs\adt-bundle-windows-x86-20130522\sdk\platform-tools\;C:\Program Files\Java\jdk1.6.0_45\bin;C:\Documents and Settings\All Users\Documentos\RAD Studio\12.0\Bpl;C:\Componentes\Delphi\Fortes\fortesreport-ce-master\Binary\LibD19;C:\Componentes\Delphi\ACBr2\Lib\Delphi\LibD19	PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC	PROCESSOR_ARCHITECTURE=x86	PROCESSOR_ARCHITEW6432=AMD64	PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel	PROCESSOR_LEVEL=6	PROCESSOR_REVISION=3a09	ProductVersion=12.0	ProgramData=C:\ProgramData	ProgramFiles=C:\Program Files (x86)	ProgramFiles(x86)=C:\Program Files (x86)	ProgramW6432=C:\Program Files	PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\	PUBLIC=C:\Users\Public	SESSIONNAME=Console	SystemDrive=C:	SystemRoot=C:\Windows	TEMP=C:\Users\t2ti\AppData\Local\Temp	TMP=C:\Users\t2ti\AppData\Local\Temp	USERDOMAIN=t2ti_erp_2	USERDOMAIN_ROAMINGPROFILE=t2ti_erp_2	USERNAME=t2ti	USERPROFILE=C:\Users\t2ti	VS120COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\	windir=C:\WindowsTSQLLog 1.18.2774 FTS3 2016-07-22T22:26:4820160722 22264819  !  +    SynDBODBC.TODBCConnection(020DE750).006DC711 
+20160722 22264819  !  -    00.000.005
+20160722 22264819  !  +    006DC12F 
+20160722 22264823  ! debug 	Connected to PostgreSQL using PSQLODBC35W.DLL 9.3.2 recognized as PostgreSQL
+20160722 22264823  !  -    00.051.108
+20160722 22264823  !  +    SynSQLite3.TSQLDatabase(0216A9C0).DBOpen 
+20160722 22264823  ! DB    	SynSQLite3.TSQLDatabase(0216A9C0) ":memory:" database file opened with PageSize=4096 and CacheSize=-2000
+20160722 22264823  !  -    00.000.527
+20160722 22264823  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 27us  returned 0 rows SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';
+20160722 22264823  ! DB    mORMotSQLite3.TSQLRestServerDB(027D6C80) CreateMissingTables on {"TSQLDatabase(0216A9C0)":{"FileName":":memory:","IsMemory":true,"UseCache":true,"TransactionActive":false,"BusyTimeout":0,"CacheSize":-2000,"PageSize":4096,"PageCount":0,"FileSize":0,"WALMode":false,"Synchronous":"smFull","LockingMode":"lmNormal","MemoryMappedMB":0,"user_version":0,"OpenV2Flags":6,"BackupBackgroundInProcess":false,"BackupBackgroundLastTime":"","BackupBackgroundLastFileName":"","SQLite3Library":{"TSQLite3LibraryStatic(020D00F0)":{"Version":"3.13.0 with internal MM"}}}}
+20160722 22264823  ! DB    mORMotSQLite3.TSQLRestServerDB(027D6C80) "GetTables":[]
+20160722 22264823  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 3us  BEGIN TRANSACTION;
+20160722 22264823  !  +    mORMotDB.TSQLRestStorageExternal(020D8310).Create TPessoa
+20160722 22264823  ! info  	mORMotDB.TSQLRestStorageExternal(020D8310) TPessoa {"TODBCConnectionProperties(020B8730)":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":"dPostgreSQL","DBMSEngineName":"PostgreSQL","BatchSendingAbilities":["cCreate"],"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}} Server={"TSQLRestServerDB(027D6C80)":{"DB":{"TSQLDatabase(0216A9C0)":{"FileName":":memory:","IsMemory":true,"UseCache":true,"TransactionActive":true,"BusyTimeout":0,"CacheSize":-2000,"PageSize":4096,"PageCount":1,"FileSize":4096,"WALMode":false,"Synchronous":"smFull","LockingMode":"lmNormal","MemoryMappedMB":0,"user_version":0,"OpenV2Flags":6,"BackupBackgroundInProcess":false,"BackupBackgroundLastTime":"","BackupBackgroundLastFileName":"","SQLite3Library":{"TSQLite3LibraryStatic(020D00F0)":{"Version":"3.13.0 with internal MM"}}}},"StatementLastException":"","NoAJAXJSON":false,"Options":[],"HandleAuthentication":false,"BypassORMAuthentication":[],"Stats":{"StartDate":"2016-07-22 22:26:48","Success":0,"ServiceMethod":0,"ServiceInterface":0,"OutcomingFiles":0,"CurrentThreadCount":0,"Created":0,"Read":0,"Updated":0,"Deleted":0,"ClientsCurrent":0,"ClientsMax":0,"CurrentRequestCount":0,"Input":{"Bytes":0,"Text":"0 B"},"Output":{"Bytes":0,"Text":"0 B"},"InputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"OutputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"Processing":false,"TaskCount":0,"TotalTime":{"MicroSec":0,"Text":"0us"},"LastTime":{"MicroSec":0,"Text":"0us"},"MinimalTime":{"MicroSec":0,"Text":"0us"},"AverageTime":{"MicroSec":0,"Text":"0us"},"MaximalTime":{"MicroSec":0,"Text":"0us"},"PerSec":0,"Errors":0,"LastError":null},"StatLevels":["mlTables","mlMethods","mlInterfaces","mlSQLite3"],"StaticVirtualTableDirect":true,"ServerTimeStamp":135319479984}}
+20160722 22264823  !  +    	SynDBODBC.TODBCStatement(020A4760).006DE879 
+20160722 22264823  !  -    	00.000.039
+20160722 22264823  !  +    	SynDBODBC.TODBCStatement(020A4760).006DDFC8 
+20160722 22264823  ! SQL   		SynDBODBC.TODBCStatement(020A4760) select COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE, 0 INDEX_COUNT from INFORMATION_SCHEMA.COLUMNS where UPPER(TABLE_SCHEMA) = 'PUBLIC' and UPPER(TABLE_NAME) = 'PESSOA'
+20160722 22264824  !  -    	00.028.001
+20160722 22264824  ! debug 	mORMotDB.TSQLRestStorageExternal(020D8310) "GetFields":[{"ColumnName":"id","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"nome","ColumnTypeNative":"character varying","ColumnLength":150,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"tipo","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"email","ColumnTypeNative":"character varying","ColumnLength":250,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"site","ColumnTypeNative":"character varying","ColumnLength":250,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"cliente","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"fornecedor","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"colaborador","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"transportadora","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"pessoafisicavo","ColumnTypeNative":"bigint","ColumnLength":0,"ColumnPrecision":64,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"pessoajuridicavo","ColumnTypeNative":"bigint","ColumnLength":0,"ColumnPrecision":64,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"listapessoacontatovo","ColumnTypeNative":"bigint","ColumnLength":0,"ColumnPrecision":64,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"listapessoaenderecovo","ColumnTypeNative":"bigint","ColumnLength":0,"ColumnPrecision":64,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"listapessoatelefonevo","ColumnTypeNative":"bigint","ColumnLength":0,"ColumnPrecision":64,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"pk","ColumnTypeNative":"bigint","ColumnLength":0,"ColumnPrecision":64,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false}]
+20160722 22264824  !  -    00.028.840
+20160722 22264824  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 29.04ms  CREATE VIRTUAL TABLE Pessoa USING External(PK INTEGER, Nome TEXT COLLATE SYSTEMNOCASE, Tipo TEXT COLLATE SYSTEMNOCASE, Email TEXT COLLATE SYSTEMNOCASE, Site TEXT COLLATE SYSTEMNOCASE, Cliente TEXT COLLATE SYSTEMNOCASE, Fornecedor TEXT COLLATE SYSTEMNOCASE, Colaborador TEXT COLLATE SYSTEMNOCASE, Transportadora TEXT COLLATE SYSTEMNOCASE);
+20160722 22264824  !  +    mORMotDB.TSQLRestStorageExternal(020D8200).Create TBanco
+20160722 22264824  ! info  	mORMotDB.TSQLRestStorageExternal(020D8200) TBanco {"TODBCConnectionProperties(020B8730)":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":"dPostgreSQL","DBMSEngineName":"PostgreSQL","BatchSendingAbilities":["cCreate"],"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}} Server={"TSQLRestServerDB(027D6C80)":{"DB":{"TSQLDatabase(0216A9C0)":{"FileName":":memory:","IsMemory":true,"UseCache":true,"TransactionActive":true,"BusyTimeout":0,"CacheSize":-2000,"PageSize":4096,"PageCount":1,"FileSize":4096,"WALMode":false,"Synchronous":"smFull","LockingMode":"lmNormal","MemoryMappedMB":0,"user_version":0,"OpenV2Flags":6,"BackupBackgroundInProcess":false,"BackupBackgroundLastTime":"","BackupBackgroundLastFileName":"","SQLite3Library":{"TSQLite3LibraryStatic(020D00F0)":{"Version":"3.13.0 with internal MM"}}}},"StatementLastException":"","NoAJAXJSON":false,"Options":[],"HandleAuthentication":false,"BypassORMAuthentication":[],"Stats":{"StartDate":"2016-07-22 22:26:48","Success":0,"ServiceMethod":0,"ServiceInterface":0,"OutcomingFiles":0,"CurrentThreadCount":0,"Created":0,"Read":0,"Updated":0,"Deleted":0,"ClientsCurrent":0,"ClientsMax":0,"CurrentRequestCount":0,"Input":{"Bytes":0,"Text":"0 B"},"Output":{"Bytes":0,"Text":"0 B"},"InputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"OutputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"Processing":false,"TaskCount":0,"TotalTime":{"MicroSec":0,"Text":"0us"},"LastTime":{"MicroSec":0,"Text":"0us"},"MinimalTime":{"MicroSec":0,"Text":"0us"},"AverageTime":{"MicroSec":0,"Text":"0us"},"MaximalTime":{"MicroSec":0,"Text":"0us"},"PerSec":0,"Errors":0,"LastError":null},"StatLevels":["mlTables","mlMethods","mlInterfaces","mlSQLite3"],"StaticVirtualTableDirect":true,"ServerTimeStamp":135319479984}}
+20160722 22264824  !  +    	SynDBODBC.TODBCStatement(020A4A60).006DE879 
+20160722 22264824  !  -    	00.000.014
+20160722 22264824  !  +    	SynDBODBC.TODBCStatement(020A4A60).006DDFC8 
+20160722 22264824  ! SQL   		SynDBODBC.TODBCStatement(020A4A60) select COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE, 0 INDEX_COUNT from INFORMATION_SCHEMA.COLUMNS where UPPER(TABLE_SCHEMA) = 'PUBLIC' and UPPER(TABLE_NAME) = 'BANCO'
+20160722 22264825  !  -    	00.004.730
+20160722 22264825  ! debug 	mORMotDB.TSQLRestStorageExternal(020D8200) "GetFields":[{"ColumnName":"id","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"codigo","ColumnTypeNative":"character varying","ColumnLength":10,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"nome","ColumnTypeNative":"character varying","ColumnLength":100,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"url","ColumnTypeNative":"character varying","ColumnLength":250,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"pk","ColumnTypeNative":"bigint","ColumnLength":0,"ColumnPrecision":64,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false}]
+20160722 22264825  !  -    00.005.082
+20160722 22264825  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 5.21ms  CREATE VIRTUAL TABLE Banco USING External(PK INTEGER, Codigo TEXT COLLATE SYSTEMNOCASE, Nome TEXT COLLATE SYSTEMNOCASE, Url TEXT COLLATE SYSTEMNOCASE);
+20160722 22264825  !  +    mORMotDB.TSQLRestStorageExternal(020D80F0).Create TPessoa_Telefone
+20160722 22264825  ! info  	mORMotDB.TSQLRestStorageExternal(020D80F0) TPessoa_Telefone {"TODBCConnectionProperties(020B8730)":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":"dPostgreSQL","DBMSEngineName":"PostgreSQL","BatchSendingAbilities":["cCreate"],"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}} Server={"TSQLRestServerDB(027D6C80)":{"DB":{"TSQLDatabase(0216A9C0)":{"FileName":":memory:","IsMemory":true,"UseCache":true,"TransactionActive":true,"BusyTimeout":0,"CacheSize":-2000,"PageSize":4096,"PageCount":1,"FileSize":4096,"WALMode":false,"Synchronous":"smFull","LockingMode":"lmNormal","MemoryMappedMB":0,"user_version":0,"OpenV2Flags":6,"BackupBackgroundInProcess":false,"BackupBackgroundLastTime":"","BackupBackgroundLastFileName":"","SQLite3Library":{"TSQLite3LibraryStatic(020D00F0)":{"Version":"3.13.0 with internal MM"}}}},"StatementLastException":"","NoAJAXJSON":false,"Options":[],"HandleAuthentication":false,"BypassORMAuthentication":[],"Stats":{"StartDate":"2016-07-22 22:26:48","Success":0,"ServiceMethod":0,"ServiceInterface":0,"OutcomingFiles":0,"CurrentThreadCount":0,"Created":0,"Read":0,"Updated":0,"Deleted":0,"ClientsCurrent":0,"ClientsMax":0,"CurrentRequestCount":0,"Input":{"Bytes":0,"Text":"0 B"},"Output":{"Bytes":0,"Text":"0 B"},"InputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"OutputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"Processing":false,"TaskCount":0,"TotalTime":{"MicroSec":0,"Text":"0us"},"LastTime":{"MicroSec":0,"Text":"0us"},"MinimalTime":{"MicroSec":0,"Text":"0us"},"AverageTime":{"MicroSec":0,"Text":"0us"},"MaximalTime":{"MicroSec":0,"Text":"0us"},"PerSec":0,"Errors":0,"LastError":null},"StatLevels":["mlTables","mlMethods","mlInterfaces","mlSQLite3"],"StaticVirtualTableDirect":true,"ServerTimeStamp":135319479984}}
+20160722 22264825  !  +    	SynDBODBC.TODBCStatement(020A4760).006DE879 
+20160722 22264825  !  -    	00.000.011
+20160722 22264825  !  +    	SynDBODBC.TODBCStatement(020A4760).006DDFC8 
+20160722 22264825  ! SQL   		SynDBODBC.TODBCStatement(020A4760) select COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE, 0 INDEX_COUNT from INFORMATION_SCHEMA.COLUMNS where UPPER(TABLE_SCHEMA) = 'PUBLIC' and UPPER(TABLE_NAME) = 'PESSOA_TELEFONE'
+20160722 22264825  !  -    	00.011.929
+20160722 22264825  ! debug 	mORMotDB.TSQLRestStorageExternal(020D80F0) "GetFields":[{"ColumnName":"id","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"id_pessoa","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"tipo","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"numero","ColumnTypeNative":"character varying","ColumnLength":14,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"observacao","ColumnTypeNative":"text","ColumnLength":0,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false}]
+20160722 22264825  !  -    00.012.314
+20160722 22264825  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 12.46ms  CREATE VIRTUAL TABLE Pessoa_Telefone USING External(Id_Pessoa INTEGER, Tipo INTEGER, Numero TEXT COLLATE SYSTEMNOCASE, Observacao TEXT COLLATE SYSTEMNOCASE);
+20160722 22264825  !  +    mORMotDB.TSQLRestStorageExternal(020D7ED0).Create TPessoa_Endereco
+20160722 22264825  ! info  	mORMotDB.TSQLRestStorageExternal(020D7ED0) TPessoa_Endereco {"TODBCConnectionProperties(020B8730)":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":"dPostgreSQL","DBMSEngineName":"PostgreSQL","BatchSendingAbilities":["cCreate"],"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}} Server={"TSQLRestServerDB(027D6C80)":{"DB":{"TSQLDatabase(0216A9C0)":{"FileName":":memory:","IsMemory":true,"UseCache":true,"TransactionActive":true,"BusyTimeout":0,"CacheSize":-2000,"PageSize":4096,"PageCount":1,"FileSize":4096,"WALMode":false,"Synchronous":"smFull","LockingMode":"lmNormal","MemoryMappedMB":0,"user_version":0,"OpenV2Flags":6,"BackupBackgroundInProcess":false,"BackupBackgroundLastTime":"","BackupBackgroundLastFileName":"","SQLite3Library":{"TSQLite3LibraryStatic(020D00F0)":{"Version":"3.13.0 with internal MM"}}}},"StatementLastException":"","NoAJAXJSON":false,"Options":[],"HandleAuthentication":false,"BypassORMAuthentication":[],"Stats":{"StartDate":"2016-07-22 22:26:48","Success":0,"ServiceMethod":0,"ServiceInterface":0,"OutcomingFiles":0,"CurrentThreadCount":0,"Created":0,"Read":0,"Updated":0,"Deleted":0,"ClientsCurrent":0,"ClientsMax":0,"CurrentRequestCount":0,"Input":{"Bytes":0,"Text":"0 B"},"Output":{"Bytes":0,"Text":"0 B"},"InputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"OutputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"Processing":false,"TaskCount":0,"TotalTime":{"MicroSec":0,"Text":"0us"},"LastTime":{"MicroSec":0,"Text":"0us"},"MinimalTime":{"MicroSec":0,"Text":"0us"},"AverageTime":{"MicroSec":0,"Text":"0us"},"MaximalTime":{"MicroSec":0,"Text":"0us"},"PerSec":0,"Errors":0,"LastError":null},"StatLevels":["mlTables","mlMethods","mlInterfaces","mlSQLite3"],"StaticVirtualTableDirect":true,"ServerTimeStamp":135319479984}}
+20160722 22264825  !  +    	SynDBODBC.TODBCStatement(020A4A60).006DE879 
+20160722 22264825  !  -    	00.000.022
+20160722 22264825  !  +    	SynDBODBC.TODBCStatement(020A4A60).006DDFC8 
+20160722 22264825  ! SQL   		SynDBODBC.TODBCStatement(020A4A60) select COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE, 0 INDEX_COUNT from INFORMATION_SCHEMA.COLUMNS where UPPER(TABLE_SCHEMA) = 'PUBLIC' and UPPER(TABLE_NAME) = 'PESSOA_ENDERECO'
+20160722 22264826  !  -    	00.004.876
+20160722 22264826  ! debug 	mORMotDB.TSQLRestStorageExternal(020D7ED0) "GetFields":[{"ColumnName":"id","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"id_pessoa","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"logradouro","ColumnTypeNative":"character varying","ColumnLength":60,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"numero","ColumnTypeNative":"character varying","ColumnLength":10,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"complemento","ColumnTypeNative":"character varying","ColumnLength":60,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"bairro","ColumnTypeNative":"character varying","ColumnLength":60,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"cidade","ColumnTypeNative":"character varying","ColumnLength":60,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"cep","ColumnTypeNative":"character varying","ColumnLength":8,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"fone","ColumnTypeNative":"character varying","ColumnLength":14,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"municipio_ibge","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"uf","ColumnTypeNative":"character","ColumnLength":2,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"principal","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"entrega","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"cobranca","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"correspondencia","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false}]
+20160722 22264826  !  -    00.010.001
+20160722 22264826  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 10.21ms  CREATE VIRTUAL TABLE Pessoa_Endereco USING External(Id_Pessoa INTEGER, Logradouro TEXT COLLATE SYSTEMNOCASE, Numero TEXT COLLATE SYSTEMNOCASE, Complemento TEXT COLLATE SYSTEMNOCASE, Bairro TEXT COLLATE SYSTEMNOCASE, Cidade TEXT COLLATE SYSTEMNOCASE, Cep TEXT COLLATE SYSTEMNOCASE, Fone TEXT COLLATE SYSTEMNOCASE, Municipio_Ibge INTEGER, Uf TEXT COLLATE SYSTEMNOCASE, Principal TEXT COLLATE SYSTEMNOCASE, Entrega TEXT COLLATE SYSTEMNOCASE, Cobranca TEXT COLLATE SYSTEMNOCASE, Correspondencia TEXT COLLATE SYSTEMNOCASE);
+20160722 22264826  !  +    mORMotDB.TSQLRestStorageExternal(020D7A90).Create TPessoa_Contato
+20160722 22264826  ! info  	mORMotDB.TSQLRestStorageExternal(020D7A90) TPessoa_Contato {"TODBCConnectionProperties(020B8730)":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":"dPostgreSQL","DBMSEngineName":"PostgreSQL","BatchSendingAbilities":["cCreate"],"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}} Server={"TSQLRestServerDB(027D6C80)":{"DB":{"TSQLDatabase(0216A9C0)":{"FileName":":memory:","IsMemory":true,"UseCache":true,"TransactionActive":true,"BusyTimeout":0,"CacheSize":-2000,"PageSize":4096,"PageCount":1,"FileSize":4096,"WALMode":false,"Synchronous":"smFull","LockingMode":"lmNormal","MemoryMappedMB":0,"user_version":0,"OpenV2Flags":6,"BackupBackgroundInProcess":false,"BackupBackgroundLastTime":"","BackupBackgroundLastFileName":"","SQLite3Library":{"TSQLite3LibraryStatic(020D00F0)":{"Version":"3.13.0 with internal MM"}}}},"StatementLastException":"","NoAJAXJSON":false,"Options":[],"HandleAuthentication":false,"BypassORMAuthentication":[],"Stats":{"StartDate":"2016-07-22 22:26:48","Success":0,"ServiceMethod":0,"ServiceInterface":0,"OutcomingFiles":0,"CurrentThreadCount":0,"Created":0,"Read":0,"Updated":0,"Deleted":0,"ClientsCurrent":0,"ClientsMax":0,"CurrentRequestCount":0,"Input":{"Bytes":0,"Text":"0 B"},"Output":{"Bytes":0,"Text":"0 B"},"InputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"OutputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"Processing":false,"TaskCount":0,"TotalTime":{"MicroSec":0,"Text":"0us"},"LastTime":{"MicroSec":0,"Text":"0us"},"MinimalTime":{"MicroSec":0,"Text":"0us"},"AverageTime":{"MicroSec":0,"Text":"0us"},"MaximalTime":{"MicroSec":0,"Text":"0us"},"PerSec":0,"Errors":0,"LastError":null},"StatLevels":["mlTables","mlMethods","mlInterfaces","mlSQLite3"],"StaticVirtualTableDirect":true,"ServerTimeStamp":135319479984}}
+20160722 22264826  !  +    	SynDBODBC.TODBCStatement(020A4BE0).006DE879 
+20160722 22264826  !  -    	00.000.022
+20160722 22264826  !  +    	SynDBODBC.TODBCStatement(020A4BE0).006DDFC8 
+20160722 22264826  ! SQL   		SynDBODBC.TODBCStatement(020A4BE0) select COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE, 0 INDEX_COUNT from INFORMATION_SCHEMA.COLUMNS where UPPER(TABLE_SCHEMA) = 'PUBLIC' and UPPER(TABLE_NAME) = 'PESSOA_CONTATO'
+20160722 22264826  !  -    	00.006.449
+20160722 22264827  ! debug 	mORMotDB.TSQLRestStorageExternal(020D7A90) "GetFields":[{"ColumnName":"id","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"id_pessoa","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"nome","ColumnTypeNative":"character varying","ColumnLength":100,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"email","ColumnTypeNative":"character varying","ColumnLength":250,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"fone_comercial","ColumnTypeNative":"character varying","ColumnLength":14,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"fone_residencial","ColumnTypeNative":"character varying","ColumnLength":14,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"fone_celular","ColumnTypeNative":"character varying","ColumnLength":14,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false}]
+20160722 22264827  !  -    00.006.976
+20160722 22264827  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 7.17ms  CREATE VIRTUAL TABLE Pessoa_Contato USING External(Id_Pessoa INTEGER, Nome TEXT COLLATE SYSTEMNOCASE, Email TEXT COLLATE SYSTEMNOCASE, Fone_Comercial TEXT COLLATE SYSTEMNOCASE, Fone_Residencial TEXT COLLATE SYSTEMNOCASE, Fone_Celular TEXT COLLATE SYSTEMNOCASE);
+20160722 22264827  !  +    mORMotDB.TSQLRestStorageExternal(020D7980).Create TPessoa_Fisica
+20160722 22264827  ! info  	mORMotDB.TSQLRestStorageExternal(020D7980) TPessoa_Fisica {"TODBCConnectionProperties(020B8730)":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":"dPostgreSQL","DBMSEngineName":"PostgreSQL","BatchSendingAbilities":["cCreate"],"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}} Server={"TSQLRestServerDB(027D6C80)":{"DB":{"TSQLDatabase(0216A9C0)":{"FileName":":memory:","IsMemory":true,"UseCache":true,"TransactionActive":true,"BusyTimeout":0,"CacheSize":-2000,"PageSize":4096,"PageCount":1,"FileSize":4096,"WALMode":false,"Synchronous":"smFull","LockingMode":"lmNormal","MemoryMappedMB":0,"user_version":0,"OpenV2Flags":6,"BackupBackgroundInProcess":false,"BackupBackgroundLastTime":"","BackupBackgroundLastFileName":"","SQLite3Library":{"TSQLite3LibraryStatic(020D00F0)":{"Version":"3.13.0 with internal MM"}}}},"StatementLastException":"","NoAJAXJSON":false,"Options":[],"HandleAuthentication":false,"BypassORMAuthentication":[],"Stats":{"StartDate":"2016-07-22 22:26:48","Success":0,"ServiceMethod":0,"ServiceInterface":0,"OutcomingFiles":0,"CurrentThreadCount":0,"Created":0,"Read":0,"Updated":0,"Deleted":0,"ClientsCurrent":0,"ClientsMax":0,"CurrentRequestCount":0,"Input":{"Bytes":0,"Text":"0 B"},"Output":{"Bytes":0,"Text":"0 B"},"InputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"OutputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"Processing":false,"TaskCount":0,"TotalTime":{"MicroSec":0,"Text":"0us"},"LastTime":{"MicroSec":0,"Text":"0us"},"MinimalTime":{"MicroSec":0,"Text":"0us"},"AverageTime":{"MicroSec":0,"Text":"0us"},"MaximalTime":{"MicroSec":0,"Text":"0us"},"PerSec":0,"Errors":0,"LastError":null},"StatLevels":["mlTables","mlMethods","mlInterfaces","mlSQLite3"],"StaticVirtualTableDirect":true,"ServerTimeStamp":135319479984}}
+20160722 22264827  !  +    	SynDBODBC.TODBCStatement(020A4CA0).006DE879 
+20160722 22264827  !  -    	00.000.014
+20160722 22264827  !  +    	SynDBODBC.TODBCStatement(020A4CA0).006DDFC8 
+20160722 22264827  ! SQL   		SynDBODBC.TODBCStatement(020A4CA0) select COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE, 0 INDEX_COUNT from INFORMATION_SCHEMA.COLUMNS where UPPER(TABLE_SCHEMA) = 'PUBLIC' and UPPER(TABLE_NAME) = 'PESSOA_FISICA'
+20160722 22264827  !  -    	00.007.038
+20160722 22264827  ! debug 	mORMotDB.TSQLRestStorageExternal(020D7980) "GetFields":[{"ColumnName":"id","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"id_pessoa","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"id_estado_civil","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"cpf","ColumnTypeNative":"character varying","ColumnLength":11,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"rg","ColumnTypeNative":"character varying","ColumnLength":20,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"orgao_rg","ColumnTypeNative":"character varying","ColumnLength":20,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"data_emissao_rg","ColumnTypeNative":"date","ColumnLength":0,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":5,"ColumnIndexed":false},{"ColumnName":"data_nascimento","ColumnTypeNative":"date","ColumnLength":0,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":5,"ColumnIndexed":false},{"ColumnName":"sexo","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"naturalidade","ColumnTypeNative":"character varying","ColumnLength":100,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"nacionalidade","ColumnTypeNative":"character varying","ColumnLength":100,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"raca","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"tipo_sangue","ColumnTypeNative":"character","ColumnLength":3,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"cnh_numero","ColumnTypeNative":"character varying","ColumnLength":20,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"cnh_categoria","ColumnTypeNative":"character","ColumnLength":2,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"cnh_vencimento","ColumnTypeNative":"date","ColumnLength":0,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":5,"ColumnIndexed":false},{"ColumnName":"titulo_eleitoral_numero","ColumnTypeNative":"character varying","ColumnLength":20,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"titulo_eleitoral_zona","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"titulo_eleitoral_secao","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"reservista_numero","ColumnTypeNative":"character varying","ColumnLength":20,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"reservista_categoria","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"nome_mae","ColumnTypeNative":"character varying","ColumnLength":100,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"nome_pai","ColumnTypeNative":"character varying","ColumnLength":100,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false}]
+20160722 22264827  !  -    00.007.644
+20160722 22264827  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 7.87ms  CREATE VIRTUAL TABLE Pessoa_Fisica USING External(Id_Pessoa INTEGER, Id_Estado_Civil INTEGER, Cpf TEXT COLLATE SYSTEMNOCASE, Rg TEXT COLLATE SYSTEMNOCASE, Orgao_Rg TEXT COLLATE SYSTEMNOCASE, Data_Emissao_Rg TEXT COLLATE ISO8601, Data_Nascimento TEXT COLLATE ISO8601, Sexo TEXT COLLATE SYSTEMNOCASE, Naturalidade TEXT COLLATE SYSTEMNOCASE, Nacionalidade TEXT COLLATE SYSTEMNOCASE, Raca TEXT COLLATE SYSTEMNOCASE, Tipo_Sangue TEXT COLLATE SYSTEMNOCASE, Cnh_Numero TEXT COLLATE SYSTEMNOCASE, Cnh_Categoria TEXT COLLATE SYSTEMNOCASE, Cnh_Vencimento TEXT COLLATE ISO8601, Titulo_Eleitoral_Numero TEXT COLLATE SYSTEMNOCASE, Titulo_Eleitoral_Zona INTEGER, Titulo_Eleitoral_Secao INTEGER, Reservista_Numero TEXT COLLATE SYSTEMNOCASE, Reservista_Categoria INTEGER, Nome_Mae TEXT COLLATE SYSTEMNOCASE, Nome_Pai TEXT COLLATE SYSTEMNOCASE);
+20160722 22264827  !  +    mORMotDB.TSQLRestStorageExternal(020D7870).Create TPessoa_Juridica
+20160722 22264827  ! info  	mORMotDB.TSQLRestStorageExternal(020D7870) TPessoa_Juridica {"TODBCConnectionProperties(020B8730)":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":"dPostgreSQL","DBMSEngineName":"PostgreSQL","BatchSendingAbilities":["cCreate"],"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}} Server={"TSQLRestServerDB(027D6C80)":{"DB":{"TSQLDatabase(0216A9C0)":{"FileName":":memory:","IsMemory":true,"UseCache":true,"TransactionActive":true,"BusyTimeout":0,"CacheSize":-2000,"PageSize":4096,"PageCount":1,"FileSize":4096,"WALMode":false,"Synchronous":"smFull","LockingMode":"lmNormal","MemoryMappedMB":0,"user_version":0,"OpenV2Flags":6,"BackupBackgroundInProcess":false,"BackupBackgroundLastTime":"","BackupBackgroundLastFileName":"","SQLite3Library":{"TSQLite3LibraryStatic(020D00F0)":{"Version":"3.13.0 with internal MM"}}}},"StatementLastException":"","NoAJAXJSON":false,"Options":[],"HandleAuthentication":false,"BypassORMAuthentication":[],"Stats":{"StartDate":"2016-07-22 22:26:48","Success":0,"ServiceMethod":0,"ServiceInterface":0,"OutcomingFiles":0,"CurrentThreadCount":0,"Created":0,"Read":0,"Updated":0,"Deleted":0,"ClientsCurrent":0,"ClientsMax":0,"CurrentRequestCount":0,"Input":{"Bytes":0,"Text":"0 B"},"Output":{"Bytes":0,"Text":"0 B"},"InputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"OutputThroughput":{"BytesPerSec":0,"Text":"0 B/s"},"Processing":false,"TaskCount":0,"TotalTime":{"MicroSec":0,"Text":"0us"},"LastTime":{"MicroSec":0,"Text":"0us"},"MinimalTime":{"MicroSec":0,"Text":"0us"},"AverageTime":{"MicroSec":0,"Text":"0us"},"MaximalTime":{"MicroSec":0,"Text":"0us"},"PerSec":0,"Errors":0,"LastError":null},"StatLevels":["mlTables","mlMethods","mlInterfaces","mlSQLite3"],"StaticVirtualTableDirect":true,"ServerTimeStamp":135319479984}}
+20160722 22264827  !  +    	SynDBODBC.TODBCStatement(020A4CA0).006DE879 
+20160722 22264827  !  -    	00.000.014
+20160722 22264827  !  +    	SynDBODBC.TODBCStatement(020A4CA0).006DDFC8 
+20160722 22264827  ! SQL   		SynDBODBC.TODBCStatement(020A4CA0) select COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE, 0 INDEX_COUNT from INFORMATION_SCHEMA.COLUMNS where UPPER(TABLE_SCHEMA) = 'PUBLIC' and UPPER(TABLE_NAME) = 'PESSOA_JURIDICA'
+20160722 22264828  !  -    	00.007.496
+20160722 22264828  ! debug 	mORMotDB.TSQLRestStorageExternal(020D7870) "GetFields":[{"ColumnName":"id","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"id_pessoa","ColumnTypeNative":"integer","ColumnLength":0,"ColumnPrecision":32,"ColumnScale":0,"ColumnType":2,"ColumnIndexed":false},{"ColumnName":"cnpj","ColumnTypeNative":"character varying","ColumnLength":14,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"fantasia","ColumnTypeNative":"character varying","ColumnLength":150,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"inscricao_municipal","ColumnTypeNative":"character varying","ColumnLength":30,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"inscricao_estadual","ColumnTypeNative":"character varying","ColumnLength":30,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"data_constituicao","ColumnTypeNative":"date","ColumnLength":0,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":5,"ColumnIndexed":false},{"ColumnName":"tipo_regime","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"crt","ColumnTypeNative":"character","ColumnLength":1,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false},{"ColumnName":"suframa","ColumnTypeNative":"character varying","ColumnLength":9,"ColumnPrecision":0,"ColumnScale":0,"ColumnType":6,"ColumnIndexed":false}]
+20160722 22264828  !  -    00.007.967
+20160722 22264828  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 8.16ms  CREATE VIRTUAL TABLE Pessoa_Juridica USING External(Id_Pessoa INTEGER, Cnpj TEXT COLLATE SYSTEMNOCASE, Fantasia TEXT COLLATE SYSTEMNOCASE, Inscricao_Municipal TEXT COLLATE SYSTEMNOCASE, Inscricao_Estadual TEXT COLLATE SYSTEMNOCASE, Data_Constituicao TEXT COLLATE ISO8601, Tipo_Regime TEXT COLLATE SYSTEMNOCASE, Crt TEXT COLLATE SYSTEMNOCASE, Suframa TEXT COLLATE SYSTEMNOCASE);
+20160722 22264828  !  +    SynDBODBC.TODBCStatement(020A4CA0).006DE879 
+20160722 22264828  !  -    00.000.012
+20160722 22264828  !  +    SynDBODBC.TODBCStatement(020A4CA0).006DDFC8 
+20160722 22264828  ! SQL   	SynDBODBC.TODBCStatement(020A4CA0) select ID from public.Pessoa limit 1
+20160722 22264828  !  -    00.002.996
+20160722 22264828  !  +    SynDBODBC.TODBCStatement(020A4D60).006DE879 
+20160722 22264828  !  -    00.000.012
+20160722 22264828  !  +    SynDBODBC.TODBCStatement(020A4D60).006DDFC8 
+20160722 22264828  ! SQL   	SynDBODBC.TODBCStatement(020A4D60) select ID from public.Banco limit 1
+20160722 22264828  !  -    00.007.535
+20160722 22264828  !  +    SynDBODBC.TODBCStatement(020A4E20).006DE879 
+20160722 22264828  !  -    00.000.015
+20160722 22264828  !  +    SynDBODBC.TODBCStatement(020A4E20).006DDFC8 
+20160722 22264828  ! SQL   	SynDBODBC.TODBCStatement(020A4E20) select ID from public.Pessoa_Telefone limit 1
+20160722 22264828  !  -    00.002.255
+20160722 22264828  !  +    SynDBODBC.TODBCStatement(020A4EE0).006DE879 
+20160722 22264828  !  -    00.000.010
+20160722 22264828  !  +    SynDBODBC.TODBCStatement(020A4EE0).006DDFC8 
+20160722 22264828  ! SQL   	SynDBODBC.TODBCStatement(020A4EE0) select ID from public.Pessoa_Endereco limit 1
+20160722 22264829  !  -    00.002.938
+20160722 22264829  !  +    SynDBODBC.TODBCStatement(020A4FA0).006DE879 
+20160722 22264829  !  -    00.000.011
+20160722 22264829  !  +    SynDBODBC.TODBCStatement(020A4FA0).006DDFC8 
+20160722 22264829  ! SQL   	SynDBODBC.TODBCStatement(020A4FA0) select ID from public.Pessoa_Contato limit 1
+20160722 22264829  !  -    00.002.040
+20160722 22264829  !  +    SynDBODBC.TODBCStatement(020A5060).006DE879 
+20160722 22264829  !  -    00.000.014
+20160722 22264829  !  +    SynDBODBC.TODBCStatement(020A5060).006DDFC8 
+20160722 22264829  ! SQL   	SynDBODBC.TODBCStatement(020A5060) CREATE INDEX NDXPessoa_ContatoId_Pessoa ON public.Pessoa_Contato(Id_Pessoa)
+20160722 22264829  ! EXC   	EODBCException {"Statement":{"SQL":"CREATE INDEX NDXPessoa_ContatoId_Pessoa ON public.Pessoa_Contato(Id_Pessoa)","SQLWithInlinedParams":"CREATE INDEX NDXPessoa_ContatoId_Pessoa ON public.Pessoa_Contato(Id_Pessoa)","CurrentRow":0,"TotalRowsRetrieved":0,"Connection":{"DBMSName":"PostgreSQL","DBMSVersion":"9.3.2","DriverName":"PSQLODBC35W.DLL","Connected":true,"ServerTimeStampAtConnection":"2016-07-22T22:26:48","TotalConnectionCount":1,"TransactionCount":0,"InTransaction":false,"RollbackOnDisconnect":true,"LastErrorMessage":"","LastErrorWasAboutConnection":false,"Properties":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":9,"DBMSEngineName":"PostgreSQL","BatchSendingAbilities":1,"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}}},"Message":"TODBCStatement - TODBCLib error: [42P07] ERRO: relação \"ndxpessoa_contatoid_pessoa\" já existe;\nError while executing the query (7)\r\n"} at 006DF104  stack trace API 005507FC 00550824 0040A60C 
+20160722 22264829  !  -    00.001.172
+20160722 22264829  !  +    SynDBODBC.TODBCStatement(020A5060).006DE879 
+20160722 22264829  !  -    00.000.007
+20160722 22264829  !  +    SynDBODBC.TODBCStatement(020A5060).006DDFC8 
+20160722 22264829  ! SQL   	SynDBODBC.TODBCStatement(020A5060) select ID from public.Pessoa_Fisica limit 1
+20160722 22264829  !  -    00.009.242
+20160722 22264829  !  +    SynDBODBC.TODBCStatement(020A5120).006DE879 
+20160722 22264829  !  -    00.000.016
+20160722 22264829  !  +    SynDBODBC.TODBCStatement(020A5120).006DDFC8 
+20160722 22264829  ! SQL   	SynDBODBC.TODBCStatement(020A5120) select ID from public.Pessoa_Juridica limit 1
+20160722 22264830  !  -    00.002.038
+20160722 22264830  ! SQL   SynSQLite3.TSQLDatabase(0216A9C0) 27us  COMMIT TRANSACTION;
+20160722 22264830  !  +    mORMotHttpServer.TSQLHttpServer(020FD840).Create useHttpApiRegisteringURI (secNone) on port 888
+20160722 22264830  ! http  	mORMotHttpServer.TSQLHttpServer(020FD840) http.sys registration of http://+:888/root
+20160722 22264830  " info  SetThreadName 37724=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  " trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=0000935C ThreadCount=1
+20160722 22264830  ! http  	mORMotHttpServer.TSQLHttpServer(020FD840) {"THttpApiServer(020A51E0)":{"Cloned":false,"RegisteredUrl":"http://+:888/root/","HTTPQueueLength":1000,"MaxBandwidth":-1,"MaxConnections":-1,"APIVersion":"HTTP API 2.0","ServerName":"Synopse mORMot (Windows)","ProcessName":"root "}} initialized for root
+20160722 22264830  !  -    00.002.517
+20160722 22264830  # info  SetThreadName 37732=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  # trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009364 ThreadCount=2
+20160722 22264830  $ info  SetThreadName 37736=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  $ trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009368 ThreadCount=3
+20160722 22264830  % info  SetThreadName 37740=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  % trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=0000936C ThreadCount=4
+20160722 22264830  & info  SetThreadName 37744=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  & trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009370 ThreadCount=5
+20160722 22264830  ' info  SetThreadName 37748=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  ' trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009374 ThreadCount=6
+20160722 22264830  ( info  SetThreadName 37752=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  ( trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009378 ThreadCount=7
+20160722 22264830  ) info  SetThreadName 37756=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  ) trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=0000937C ThreadCount=8
+20160722 22264830  * info  SetThreadName 37760=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  * trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009380 ThreadCount=9
+20160722 22264830  + info  SetThreadName 37764=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  + trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009384 ThreadCount=10
+20160722 22264830  , info  SetThreadName 37768=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  , trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009388 ThreadCount=11
+20160722 22264830  - info  SetThreadName 37772=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  - trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=0000938C ThreadCount=12
+20160722 22264830  . info  SetThreadName 37776=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  . trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009390 ThreadCount=13
+20160722 22264830  / info  SetThreadName 37780=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  / trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009394 ThreadCount=14
+20160722 22264830  0 info  SetThreadName 37784=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  0 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=00009398 ThreadCount=15
+20160722 22264830  1 info  SetThreadName 37788=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  1 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=0000939C ThreadCount=16
+20160722 22264830  2 info  SetThreadName 37792=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  2 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093A0 ThreadCount=17
+20160722 22264830  3 info  SetThreadName 37796=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  3 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093A4 ThreadCount=18
+20160722 22264830  4 info  SetThreadName 37800=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  4 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093A8 ThreadCount=19
+20160722 22264830  5 info  SetThreadName 37804=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  5 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093AC ThreadCount=20
+20160722 22264830  6 info  SetThreadName 37808=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  6 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093B0 ThreadCount=21
+20160722 22264830  7 info  SetThreadName 37812=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  7 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093B4 ThreadCount=22
+20160722 22264830  8 info  SetThreadName 37816=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  8 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093B8 ThreadCount=23
+20160722 22264830  9 info  SetThreadName 37820=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  9 trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093BC ThreadCount=24
+20160722 22264830  : info  SetThreadName 37824=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  : trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093C0 ThreadCount=25
+20160722 22264830  ; info  SetThreadName 37828=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  ; trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093C4 ThreadCount=26
+20160722 22264830  < info  SetThreadName 37832=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  < trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093C8 ThreadCount=27
+20160722 22264830  = info  SetThreadName 37836=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  = trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093CC ThreadCount=28
+20160722 22264830  > info  SetThreadName 37840=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  > trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093D0 ThreadCount=29
+20160722 22264830  ? info  SetThreadName 37844=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  ? trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093D4 ThreadCount=30
+20160722 22264830  @ info  SetThreadName 37848=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  @ trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093D8 ThreadCount=31
+20160722 22264830  A info  SetThreadName 37852=TSQLHttpServer 888/root THttpApiServer
+20160722 22264830  A trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(THttpApiServer) root=root ThreadID=000093DC ThreadCount=32
+20160722 22280149  "  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22280149  " call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22280149  " srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 47 us
+20160722 22280149  " ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480065
+20160722 22280149  "  -    00.000.053
+20160722 22280149  #  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22280149  B info  SetThreadName 36512=TSQLRestRoutingREST "root" execORMGet
+20160722 22280149  B trace mORMotSQLite3.TSQLRestServerDB(027D6C80) BeginCurrentThread(TSynBackgroundThreadMethod) root=root ThreadID=00008EA0 ThreadCount=33
+20160722 22280149  B  +    SynDBODBC.TODBCConnection(020DECD0).006DC711 
+20160722 22280149  B  -    00.000.000
+20160722 22280149  B  +    SynDBODBC.TODBCStatement(020A69E0).006DE879 
+20160722 22280149  B  +    	006DC12F 
+20160722 22280150  B debug 		Connected to PostgreSQL using PSQLODBC35W.DLL 9.3.2 recognized as PostgreSQL
+20160722 22280150  B  +    		SynDBODBC.TODBCStatement(020A6AA0).006DE879 
+20160722 22280150  B  -    		00.000.016
+20160722 22280150  B  +    		SynDBODBC.TODBCStatement(020A6AA0).006DDFC8 
+20160722 22280150  B SQL   			SynDBODBC.TODBCStatement(020A6AA0) SELECT LOCALTIMESTAMP
+20160722 22280150  B  -    		00.001.941
+20160722 22280150  B  -    	00.024.824
+20160722 22280150  B  -    00.024.849
+20160722 22280150  B  +    SynDBODBC.TODBCStatement(020A69E0).006DDFC8 
+20160722 22280150  B SQL   	SynDBODBC.TODBCStatement(020A69E0) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22280150  B  -    00.007.080
+20160722 22280150  # srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 32334 us
+20160722 22280150  #  -    00.032.378
+20160722 22280353  $  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22280353  $ call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22280353  $ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 15 us
+20160722 22280353  $ ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480067
+20160722 22280353  $  -    00.000.020
+20160722 22280353  %  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A6C20).006DE879 
+20160722 22280353  B  -    00.000.031
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22280353  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22280353  B  -    00.000.735
+20160722 22280353  % srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 866 us
+20160722 22280353  %  -    00.000.872
+20160722 22280353  &  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=335)
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DE879 
+20160722 22280353  B  -    00.000.016
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22280353  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=
+20160722 22280353  B EXC   	EODBCException {"Statement":{"SQL":"select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=","SQLWithInlinedParams":"select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=","CurrentRow":0,"TotalRowsRetrieved":0,"Connection":{"DBMSName":"PostgreSQL","DBMSVersion":"9.3.2","DriverName":"PSQLODBC35W.DLL","Connected":true,"ServerTimeStampAtConnection":"2016-07-22T19:28:01","TotalConnectionCount":1,"TransactionCount":0,"InTransaction":false,"RollbackOnDisconnect":true,"LastErrorMessage":"","LastErrorWasAboutConnection":false,"Properties":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":9,"DBMSEngineName":"PostgreSQL","BatchSendingAbilities":1,"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}}},"Message":"TODBCStatement - TODBCLib error: [42601] ERRO: erro de sintaxe no fim da entrada;\nError while executing the query (7)\r\n"} at 006DF104  stack trace API 005507FC 00550824 0040A484 779D2E43 779D2CBB 006DF104 006DE4CF 006B5F22 006BE14D 005D7DDD 00609FF8 0054A11C 00549BF1 0054995F 004BE4F8 0040AF26 7541850D 779EBF39 779EBF0C 
+20160722 22280353  B  -    00.001.115
+20160722 22280353  & EXC   	EODBCException {"Statement":{"SQL":"","SQLWithInlinedParams":"","CurrentRow":0,"TotalRowsRetrieved":0,"Connection":{"DBMSName":"PostgreSQL","DBMSVersion":"9.3.2","DriverName":"PSQLODBC35W.DLL","Connected":true,"ServerTimeStampAtConnection":"2016-07-22T19:28:01","TotalConnectionCount":1,"TransactionCount":0,"InTransaction":false,"RollbackOnDisconnect":true,"LastErrorMessage":"","LastErrorWasAboutConnection":false,"Properties":{"Engine":"ODBC","ServerName":"","DatabaseNameSafe":"Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***","UserID":"POSTGRES","DBMS":9,"DBMSEngineName":"PostgreSQL","BatchSendingAbilities":1,"BatchMaxSentAtOnce":4096,"LoggedSQLMaxSize":0,"LogSQLStatementOnException":false,"ForcedSchemaName":"public","UseCache":true,"RollbackOnDisconnect":true,"StoreVoidStringAsNull":false}}},"Message":"TODBCStatement - TODBCLib error: [42601] ERRO: erro de sintaxe no fim da entrada;\nError while executing the query (7)\r\n"} at 00549EF0  stack trace API 005507FC 00550824 0040A60C 
+20160722 22280353  & debug 	mORMotSQLite3.TSQLRestServerDB(027D6C80) TSQLRestRoutingREST.Error: {  "errorCode":500,  "error":  {"EODBCException":{   "ClassName":"EODBCException",   "Address":"0213A7B8",   "Statement": {    "ClassName":"TODBCStatement",    "Address":"020A6CE0",    "SQL": "",    "SQLWithInlinedParams": "",    "CurrentRow": 0,    "TotalRowsRetrieved": 0,    "Connection": {     "ClassName":"TODBCConnection",     "Address":"020DECD0",     "DBMSName": "PostgreSQL",     "DBMSVersion": "9.3.2",     "DriverName": "PSQLODBC35W.DLL",     "Connected": true,     "ServerTimeStampAtConnection": "2016-07-22T19:28:01",     "TotalConnectionCount": 1,     "TransactionCount": 0,     "InTransaction": false,     "RollbackOnDisconnect": true,     "LastErrorMessage": "",     "LastErrorWasAboutConnection": false,     "Properties": {      "ClassName":"TODBCConnectionProperties",      "Address":"020B8730",      "Engine": "ODBC",      "ServerName": "",      "DatabaseNameSafe": "Driver=PostgreSQL Unicode;Database=t2tierp;Server=localhost;Port=5432;UID=postgres;Pwd=***",      "UserID": "POSTGRES",      "DBMS": "dPostgreSQL",      "DBMSEngineName": "PostgreSQL",      "BatchSendingAbilities": ["cCreate"],      "BatchMaxSentAtOnce": 4096,      "LoggedSQLMaxSize": 0,      "LogSQLStatementOnException": false,      "ForcedSchemaName": "public",      "UseCache": true,      "RollbackOnDisconnect": true,      "StoreVoidStringAsNull": false     }    }   },   "Message": "TODBCStatement - TODBCLib error: [42601] ERRO: erro de sintaxe no fim da entrada;\nError while executing the query (7)\r\n"  }}  }
+20160722 22280353  & srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 500 with outlen=1506 in 1309 us
+20160722 22280353  &  -    00.001.314
+20160722 22280353  '  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DE879 
+20160722 22280353  B  -    00.000.000
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22280353  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22280353  B  -    00.003.073
+20160722 22280353  ' srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 3161 us
+20160722 22280353  '  -    00.003.172
+20160722 22280353  (  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A6F20).006DE879 
+20160722 22280353  B  -    00.000.029
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22280353  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22280353  B  -    00.006.916
+20160722 22280353  ( srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 7059 us
+20160722 22280353  (  -    00.007.073
+20160722 22280353  )  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A70A0).006DE879 
+20160722 22280353  B  -    00.000.065
+20160722 22280353  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22280353  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22280353  B  -    00.002.882
+20160722 22280354  ) srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 3101 us
+20160722 22280354  )  -    00.003.113
+20160722 22313251  *  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22313251  * call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22313251  * srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 24 us
+20160722 22313251  * ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480288
+20160722 22313251  *  -    00.000.062
+20160722 22313251  +  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22313251  B  +    SynDBODBC.TODBCStatement(020A7220).006DE879 
+20160722 22313251  B  -    00.000.048
+20160722 22313251  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22313251  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22313251  B  -    00.000.839
+20160722 22313251  + srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 1028 us
+20160722 22313251  +  -    00.001.033
+20160722 22313461  ,  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22313461  , call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22313461  , srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 14 us
+20160722 22313461  , ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480290
+20160722 22313461  ,  -    00.000.020
+20160722 22313461  -  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22313461  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22313461  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22313461  B  -    00.000.500
+20160722 22313461  - srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 579 us
+20160722 22313461  -  -    00.000.585
+20160722 22313461  .  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=341)
+20160722 22313461  B  +    SynDBODBC.TODBCStatement(020A72E0).006DE879 
+20160722 22313461  B  -    00.000.040
+20160722 22313461  B  +    SynDBODBC.TODBCStatement(020A72E0).006DDFC8 
+20160722 22313461  B SQL   	SynDBODBC.TODBCStatement(020A72E0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 22313461  B  -    00.004.091
+20160722 22313461  . srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 4248 us
+20160722 22313461  .  -    00.004.259
+20160722 22313461  /  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22313461  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22313461  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22313461  B  -    00.000.316
+20160722 22313461  / srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 375 us
+20160722 22313461  /  -    00.000.380
+20160722 22313461  0  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22313461  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22313461  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22313461  B  -    00.000.285
+20160722 22313461  0 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 354 us
+20160722 22313461  0  -    00.000.358
+20160722 22313461  1  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22313461  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22313461  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22313461  B  -    00.000.326
+20160722 22313461  1 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 373 us
+20160722 22313461  1  -    00.000.378
+20160722 22330519  2  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22330519  2 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22330519  2 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 25 us
+20160722 22330519  2 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480389
+20160722 22330519  2  -    00.000.030
+20160722 22330519  3  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22330519  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22330519  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22330519  B  -    00.001.441
+20160722 22330519  3 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 1598 us
+20160722 22330519  3  -    00.001.604
+20160722 22330700  4  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22330700  4 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22330700  4 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 15 us
+20160722 22330700  4 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480391
+20160722 22330700  4  -    00.000.021
+20160722 22330700  5  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22330700  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22330700  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22330700  B  -    00.001.399
+20160722 22330700  5 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 1478 us
+20160722 22330700  5  -    00.001.485
+20160722 22330700  6  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=341)
+20160722 22330700  B  +    SynDBODBC.TODBCStatement(020A72E0).006DDFC8 
+20160722 22330700  B SQL   	SynDBODBC.TODBCStatement(020A72E0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 22330700  B  -    00.000.426
+20160722 22330700  6 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 531 us
+20160722 22330700  6  -    00.000.535
+20160722 22330700  7  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22330700  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22330700  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22330700  B  -    00.000.276
+20160722 22330700  7 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 319 us
+20160722 22330700  7  -    00.000.324
+20160722 22330700  8  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22330700  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22330700  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22330700  B  -    00.003.469
+20160722 22330700  8 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 3554 us
+20160722 22330700  8  -    00.003.593
+20160722 22330700  9  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22330700  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22330700  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22330700  B  -    00.000.314
+20160722 22330700  9 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 386 us
+20160722 22330700  9  -    00.000.390
+20160722 22385551  :  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22385551  : call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22385551  : srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 24 us
+20160722 22385551  : ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480759
+20160722 22385551  :  -    00.000.030
+20160722 22385551  ;  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22385551  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22385551  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22385551  B  -    00.000.647
+20160722 22385551  ; srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 832 us
+20160722 22385551  ;  -    00.000.836
+20160722 22385733  <  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22385733  < call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22385733  < srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 22385733  < ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480761
+20160722 22385733  <  -    00.000.021
+20160722 22385733  =  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22385733  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22385733  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22385733  B  -    00.000.478
+20160722 22385733  = srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 550 us
+20160722 22385733  =  -    00.000.572
+20160722 22385733  >  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=341)
+20160722 22385733  B  +    SynDBODBC.TODBCStatement(020A72E0).006DDFC8 
+20160722 22385733  B SQL   	SynDBODBC.TODBCStatement(020A72E0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 22385733  B  -    00.000.319
+20160722 22385733  > srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 403 us
+20160722 22385733  >  -    00.000.407
+20160722 22385733  ?  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22385733  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22385733  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22385733  B  -    00.000.259
+20160722 22385733  ? srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 304 us
+20160722 22385733  ?  -    00.000.309
+20160722 22385733  @  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22385733  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22385733  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22385733  B  -    00.000.308
+20160722 22385733  @ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 372 us
+20160722 22385733  @  -    00.000.376
+20160722 22385733  A  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22385733  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22385733  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22385733  B  -    00.003.021
+20160722 22385733  A srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 3087 us
+20160722 22385733  A  -    00.003.095
+20160722 22402360  "  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22402360  " call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22402360  " srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 23 us
+20160722 22402360  " ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480855
+20160722 22402360  "  -    00.000.029
+20160722 22402360  #  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22402360  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22402360  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22402360  B  -    00.000.707
+20160722 22402360  # srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 864 us
+20160722 22402360  #  -    00.000.870
+20160722 22402533  $  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22402533  $ call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22402533  $ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 15 us
+20160722 22402533  $ ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480857
+20160722 22402533  $  -    00.000.020
+20160722 22402533  %  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22402533  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22402533  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22402533  B  -    00.000.472
+20160722 22402533  % srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 544 us
+20160722 22402533  %  -    00.000.549
+20160722 22402533  &  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 22402533  B  +    SynDBODBC.TODBCStatement(020A6DA0).006DE879 
+20160722 22402533  B  -    00.000.035
+20160722 22402533  B  +    SynDBODBC.TODBCStatement(020A6DA0).006DDFC8 
+20160722 22402533  B SQL   	SynDBODBC.TODBCStatement(020A6DA0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 22402533  B  -    00.000.328
+20160722 22402533  & srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 474 us
+20160722 22402533  &  -    00.000.480
+20160722 22402533  '  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22402533  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22402533  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22402533  B  -    00.000.259
+20160722 22402533  ' srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 303 us
+20160722 22402533  '  -    00.000.307
+20160722 22402533  (  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22402533  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22402533  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22402533  B  -    00.000.272
+20160722 22402533  ( srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 334 us
+20160722 22402533  (  -    00.000.339
+20160722 22402534  )  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22402534  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22402534  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22402534  B  -    00.000.247
+20160722 22402534  ) srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 291 us
+20160722 22402534  )  -    00.000.295
+20160722 22405712  *  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22405712  * call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22405712  * srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 19 us
+20160722 22405712  * ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480889
+20160722 22405712  *  -    00.000.025
+20160722 22405712  +  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22405712  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22405712  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22405712  B  -    00.000.538
+20160722 22405712  + srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 653 us
+20160722 22405712  +  -    00.000.659
+20160722 22405824  ,  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22405824  , call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22405824  , srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 22405824  , ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319480890
+20160722 22405824  ,  -    00.000.021
+20160722 22405824  -  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22405824  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22405824  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22405824  B  -    00.000.540
+20160722 22405824  - srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 613 us
+20160722 22405824  -  -    00.000.617
+20160722 22424335  .  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22424335  . call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22424335  . srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 24 us
+20160722 22424335  . ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481003
+20160722 22424335  .  -    00.000.030
+20160722 22424335  /  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22424335  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22424335  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22424335  B  -    00.000.652
+20160722 22424335  / srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 821 us
+20160722 22424335  /  -    00.000.827
+20160722 22424461  0  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22424461  0 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22424461  0 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 22424461  0 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481004
+20160722 22424461  0  -    00.000.022
+20160722 22424461  1  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22424461  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22424461  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22424461  B  -    00.000.405
+20160722 22424461  1 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 478 us
+20160722 22424461  1  -    00.000.484
+20160722 22424461  2  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22424461  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22424461  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22424461  B  -    00.000.307
+20160722 22424461  2 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 360 us
+20160722 22424461  2  -    00.000.365
+20160722 22424461  3  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22424461  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22424461  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22424461  B  -    00.000.298
+20160722 22424461  3 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 365 us
+20160722 22424461  3  -    00.000.370
+20160722 22424461  4  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22424461  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22424461  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22424461  B  -    00.000.310
+20160722 22424461  4 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 358 us
+20160722 22424461  4  -    00.000.363
+20160722 22474542  5  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22474542  5 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22474542  5 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 26 us
+20160722 22474542  5 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481325
+20160722 22474542  5  -    00.000.032
+20160722 22474542  6  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22474542  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22474542  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22474542  B  -    00.000.580
+20160722 22474542  6 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 748 us
+20160722 22474542  6  -    00.000.753
+20160722 22474706  7  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22474706  7 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22474706  7 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 2 us
+20160722 22474706  7 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481327
+20160722 22474706  7  -    00.000.009
+20160722 22474706  8  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22474706  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22474706  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22474706  B  -    00.000.449
+20160722 22474706  8 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 521 us
+20160722 22474706  8  -    00.000.526
+20160722 22474706  9  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 22474706  B  +    SynDBODBC.TODBCStatement(020A75E0).006DE879 
+20160722 22474706  B  -    00.000.035
+20160722 22474706  B  +    SynDBODBC.TODBCStatement(020A75E0).006DDFC8 
+20160722 22474706  B SQL   	SynDBODBC.TODBCStatement(020A75E0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 22474706  B  -    00.000.774
+20160722 22474706  9 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 1051 us
+20160722 22474706  9  -    00.001.059
+20160722 22474706  :  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22474706  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22474706  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22474706  B  -    00.000.180
+20160722 22474706  : srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 223 us
+20160722 22474706  :  -    00.000.227
+20160722 22474706  ;  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22474706  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22474706  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22474706  B  -    00.000.209
+20160722 22474706  ; srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 304 us
+20160722 22474706  ;  -    00.000.309
+20160722 22474706  <  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22474706  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22474706  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22474706  B  -    00.000.171
+20160722 22474706  < srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 226 us
+20160722 22474706  <  -    00.000.230
+20160722 22485735  =  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22485735  = call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22485735  = srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 26 us
+20160722 22485735  = ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481401
+20160722 22485735  =  -    00.000.033
+20160722 22485735  >  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22485735  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22485735  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22485735  B  -    00.000.560
+20160722 22485735  > srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 720 us
+20160722 22485735  >  -    00.000.728
+20160722 22485850  ?  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22485850  ? call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22485850  ? srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 22485850  ? ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481402
+20160722 22485850  ?  -    00.000.021
+20160722 22485850  @  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22485850  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22485850  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22485850  B  -    00.000.416
+20160722 22485850  @ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 494 us
+20160722 22485850  @  -    00.000.501
+20160722 22485850  A  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 22485850  B  +    SynDBODBC.TODBCStatement(020A76A0).006DE879 
+20160722 22485850  B  -    00.000.024
+20160722 22485850  B  +    SynDBODBC.TODBCStatement(020A76A0).006DDFC8 
+20160722 22485850  B SQL   	SynDBODBC.TODBCStatement(020A76A0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 22485850  B  -    00.000.507
+20160722 22485850  A srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 783 us
+20160722 22485850  A  -    00.000.790
+20160722 22485850  "  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22485850  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22485850  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22485850  B  -    00.000.000
+20160722 22485850  " srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 6 us
+20160722 22485850  "  -    00.000.011
+20160722 22485850  #  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22485850  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22485850  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22485850  B  -    00.000.208
+20160722 22485850  # srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 271 us
+20160722 22485850  #  -    00.000.276
+20160722 22485851  $  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22485851  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22485851  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22485851  B  -    00.000.407
+20160722 22485851  $ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 497 us
+20160722 22485851  $  -    00.000.503
+20160722 22525533  %  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22525533  % call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22525533  % srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 25 us
+20160722 22525533  % ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481655
+20160722 22525533  %  -    00.000.062
+20160722 22525533  &  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22525533  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22525533  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22525533  B  -    00.000.534
+20160722 22525533  & srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 683 us
+20160722 22525533  &  -    00.000.689
+20160722 22525739  '  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22525739  ' call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22525739  ' srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 15 us
+20160722 22525739  ' ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481657
+20160722 22525739  '  -    00.000.021
+20160722 22525739  (  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22525739  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22525739  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22525739  B  -    00.000.395
+20160722 22525739  ( srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 432 us
+20160722 22525739  (  -    00.000.434
+20160722 22525739  )  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 22525739  B  +    SynDBODBC.TODBCStatement(020A7520).006DE879 
+20160722 22525739  B  -    00.000.026
+20160722 22525739  B  +    SynDBODBC.TODBCStatement(020A7520).006DDFC8 
+20160722 22525739  B SQL   	SynDBODBC.TODBCStatement(020A7520) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 22525739  B  -    00.000.647
+20160722 22525739  ) srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 893 us
+20160722 22525739  )  -    00.000.899
+20160722 22525739  *  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 22525739  B  +    SynDBODBC.TODBCStatement(020A7820).006DE879 
+20160722 22525739  B  -    00.000.010
+20160722 22525739  B  +    SynDBODBC.TODBCStatement(020A7820).006DDFC8 
+20160722 22525739  B SQL   	SynDBODBC.TODBCStatement(020A7820) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=1
+20160722 22525739  B  -    00.002.759
+20160722 22525739  * srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 2934 us
+20160722 22525739  *  -    00.002.942
+20160722 22525739  +  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22525739  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22525739  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22525739  B  -    00.000.193
+20160722 22525739  + srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 236 us
+20160722 22525739  +  -    00.000.241
+20160722 22525739  ,  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22525739  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22525739  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22525739  B  -    00.000.224
+20160722 22525739  , srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 285 us
+20160722 22525739  ,  -    00.000.285
+20160722 22525739  -  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22525739  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22525739  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22525739  B  -    00.000.226
+20160722 22525739  - srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 282 us
+20160722 22525739  -  -    00.000.287
+20160722 22553051  .  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22553051  . call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22553051  . srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 24 us
+20160722 22553051  . ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481822
+20160722 22553051  .  -    00.000.030
+20160722 22553051  /  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 22553051  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 22553051  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 22553051  B  -    00.000.559
+20160722 22553051  / srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 688 us
+20160722 22553051  /  -    00.000.695
+20160722 22553405  0  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22553405  0 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22553405  0 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 22553405  0 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481826
+20160722 22553405  0  -    00.000.021
+20160722 22553405  1  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 22553405  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22553405  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 22553405  B  -    00.000.390
+20160722 22553405  1 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 463 us
+20160722 22553405  1  -    00.000.469
+20160722 22553405  2  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 22553405  B  +    SynDBODBC.TODBCStatement(020A7760).006DE879 
+20160722 22553405  B  -    00.000.047
+20160722 22553405  B  +    SynDBODBC.TODBCStatement(020A7760).006DDFC8 
+20160722 22553405  B SQL   	SynDBODBC.TODBCStatement(020A7760) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 22553405  B  -    00.000.727
+20160722 22553405  2 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 1085 us
+20160722 22553405  2  -    00.001.121
+20160722 22553405  3  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 22553405  B  +    SynDBODBC.TODBCStatement(020A7820).006DE879 
+20160722 22553405  B  -    00.000.009
+20160722 22553405  B  +    SynDBODBC.TODBCStatement(020A7820).006DDFC8 
+20160722 22553405  B SQL   	SynDBODBC.TODBCStatement(020A7820) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=1
+20160722 22553405  B  -    00.000.351
+20160722 22553405  3 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 511 us
+20160722 22553405  3  -    00.000.517
+20160722 22553405  4  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22553405  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22553405  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 22553405  B  -    00.000.214
+20160722 22553405  4 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 256 us
+20160722 22553405  4  -    00.000.261
+20160722 22553405  5  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22553405  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22553405  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 22553405  B  -    00.000.239
+20160722 22553405  5 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 313 us
+20160722 22553405  5  -    00.000.318
+20160722 22553405  6  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22553405  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22553405  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 22553405  B  -    00.000.094
+20160722 22553405  6 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 122 us
+20160722 22553405  6  -    00.000.122
+20160722 22554619  7  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 22554619  7 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 22554619  7 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 22554619  7 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319481838
+20160722 22554619  7  -    00.000.022
+20160722 22554619  8  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/2 inlen=0)
+20160722 22554619  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 22554619  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=2
+20160722 22554619  B  -    00.000.189
+20160722 22554619  8 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=165 in 231 us
+20160722 22554619  8  -    00.000.231
+20160722 22554619  9  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 22554619  B  +    SynDBODBC.TODBCStatement(020A73A0).006DE879 
+20160722 22554619  B  -    00.000.020
+20160722 22554619  B  +    SynDBODBC.TODBCStatement(020A73A0).006DDFC8 
+20160722 22554619  B SQL   	SynDBODBC.TODBCStatement(020A73A0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=2
+20160722 22554619  B  -    00.000.505
+20160722 22554619  9 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=380 in 765 us
+20160722 22554619  9  -    00.000.770
+20160722 22554619  :  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 22554619  B  +    SynDBODBC.TODBCStatement(020A7820).006DE879 
+20160722 22554619  B  -    00.000.009
+20160722 22554619  B  +    SynDBODBC.TODBCStatement(020A7820).006DDFC8 
+20160722 22554619  B SQL   	SynDBODBC.TODBCStatement(020A7820) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=2
+20160722 22554619  B  -    00.003.029
+20160722 22554619  : srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=219 in 3328 us
+20160722 22554619  :  -    00.003.338
+20160722 22554619  ;  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 22554619  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 22554619  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=2
+20160722 22554619  B  -    00.000.200
+20160722 22554619  ; srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 257 us
+20160722 22554619  ;  -    00.000.263
+20160722 22554619  <  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 22554619  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 22554619  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=2
+20160722 22554619  B  -    00.000.216
+20160722 22554619  < srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=278 in 281 us
+20160722 22554619  <  -    00.000.285
+20160722 22554619  =  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 22554619  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 22554619  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=2
+20160722 22554619  B  -    00.000.210
+20160722 22554619  = srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 268 us
+20160722 22554619  =  -    00.000.272
+20160722 23143720  >  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23143720  > call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23143720  > srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 23 us
+20160722 23143720  > ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319483301
+20160722 23143720  >  -    00.000.029
+20160722 23143720  ?  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23143720  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23143720  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 23143720  B  -    00.000.502
+20160722 23143720  ? srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 656 us
+20160722 23143720  ?  -    00.000.662
+20160722 23200655  @  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23200655  @ call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23200655  @ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 24 us
+20160722 23200655  @ ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319483654
+20160722 23200655  @  -    00.000.030
+20160722 23200655  A  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23200655  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23200655  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 23200655  B  -    00.000.519
+20160722 23200655  A srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 698 us
+20160722 23200655  A  -    00.000.703
+20160722 23362407  "  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23362407  " call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23362407  " srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 24 us
+20160722 23362407  " ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484696
+20160722 23362407  "  -    00.000.030
+20160722 23362407  #  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23362407  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23362407  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 23362407  B  -    00.000.536
+20160722 23362407  # srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 693 us
+20160722 23362407  #  -    00.000.699
+20160722 23362749  $  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23362749  $ call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23362749  $ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 15 us
+20160722 23362749  $ ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484699
+20160722 23362749  $  -    00.000.020
+20160722 23362749  %  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/1 inlen=0)
+20160722 23362749  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 23362749  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=1
+20160722 23362749  B  -    00.000.667
+20160722 23362749  % srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=163 in 765 us
+20160722 23362749  %  -    00.000.771
+20160722 23362749  &  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 23362749  B  +    SynDBODBC.TODBCStatement(020A75E0).006DE879 
+20160722 23362749  B  -    00.000.025
+20160722 23362749  B  +    SynDBODBC.TODBCStatement(020A75E0).006DDFC8 
+20160722 23362749  B SQL   	SynDBODBC.TODBCStatement(020A75E0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=1
+20160722 23362749  B  -    00.000.611
+20160722 23362749  & srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=509 in 859 us
+20160722 23362749  &  -    00.000.865
+20160722 23362749  '  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 23362749  B  +    SynDBODBC.TODBCStatement(020A7820).006DE879 
+20160722 23362749  B  -    00.000.010
+20160722 23362749  B  +    SynDBODBC.TODBCStatement(020A7820).006DDFC8 
+20160722 23362749  B SQL   	SynDBODBC.TODBCStatement(020A7820) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=1
+20160722 23362749  B  -    00.000.328
+20160722 23362749  ' srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 446 us
+20160722 23362749  '  -    00.000.446
+20160722 23362749  (  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 23362749  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 23362749  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=1
+20160722 23362749  B  -    00.000.203
+20160722 23362749  ( srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=124 in 269 us
+20160722 23362749  (  -    00.000.274
+20160722 23362749  )  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 23362749  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 23362749  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=1
+20160722 23362749  B  -    00.000.197
+20160722 23362749  ) srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=276 in 257 us
+20160722 23362749  )  -    00.000.261
+20160722 23362749  *  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 23362749  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 23362749  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=1
+20160722 23362749  B  -    00.000.220
+20160722 23362749  * srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=75 in 265 us
+20160722 23362749  *  -    00.000.269
+20160722 23370634  +  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23370634  + call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23370634  + srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 20 us
+20160722 23370634  + ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484742
+20160722 23370634  +  -    00.000.026
+20160722 23370634  ,  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(POST root/Pessoa inlen=123)
+20160722 23370634  B  +    SynDBODBC.TODBCStatement(020A78E0).006DE879 
+20160722 23370634  B  -    00.000.038
+20160722 23370634  B  +    SynDBODBC.TODBCStatement(020A78E0).006DDFC8 
+20160722 23370634  B SQL   	SynDBODBC.TODBCStatement(020A78E0) select max(ID) from public.Pessoa
+20160722 23370634  B  -    00.001.047
+20160722 23370634  B  +    SynDBODBC.TODBCStatement(020A76A0).006DE879 
+20160722 23370634  B  -    00.000.015
+20160722 23370634  B  +    SynDBODBC.TODBCStatement(020A76A0).006DDFC8 
+20160722 23370634  B SQL   	SynDBODBC.TODBCStatement(020A76A0) insert into public.Pessoa (ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora) values (3,0,'1','F','2','3','S','N','N','N')
+20160722 23370634  B  -    00.000.979
+20160722 23370634  , srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   POST root/Pessoa ORM-Get -> 201 with outlen=0 in 2221 us
+20160722 23370634  ,  -    00.002.228
+20160722 23371929  -  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(POST root/Pessoa_Fisica inlen=428)
+20160722 23371929  B  +    SynDBODBC.TODBCStatement(020A75E0).006DE879 
+20160722 23371929  B  -    00.000.058
+20160722 23371929  B  +    SynDBODBC.TODBCStatement(020A75E0).006DDFC8 
+20160722 23371929  B SQL   	SynDBODBC.TODBCStatement(020A75E0) select max(ID) from public.Pessoa_Fisica
+20160722 23371929  B  -    00.000.750
+20160722 23371929  B  +    SynDBODBC.TODBCStatement(020A7820).006DE879 
+20160722 23371929  B  -    00.000.010
+20160722 23371929  B  +    SynDBODBC.TODBCStatement(020A7820).006DDFC8 
+20160722 23371929  B SQL   	SynDBODBC.TODBCStatement(020A7820) insert into public.Pessoa_Fisica (ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai) values (2,3,1,'11111111111','','','','2016-01-01','','123','456','N','A','','','','',0,0,'',0,'99','55')
+20160722 23371943  B  -    00.219.894
+20160722 23371943  - srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   POST root/Pessoa_Fisica ORM-Get -> 201 with outlen=0 in 220830 us
+20160722 23371943  -  -    00.220.863
+20160722 23373831  .  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(POST root/Pessoa_Contato inlen=98)
+20160722 23373831  B  +    SynDBODBC.TODBCStatement(020A7B20).006DE879 
+20160722 23373831  B  -    00.000.032
+20160722 23373831  B  +    SynDBODBC.TODBCStatement(020A7B20).006DDFC8 
+20160722 23373831  B SQL   	SynDBODBC.TODBCStatement(020A7B20) select max(ID) from public.Pessoa_Contato
+20160722 23373831  B  -    00.000.608
+20160722 23373831  B  +    SynDBODBC.TODBCStatement(020A7BE0).006DE879 
+20160722 23373831  B  -    00.000.012
+20160722 23373831  B  +    SynDBODBC.TODBCStatement(020A7BE0).006DDFC8 
+20160722 23373831  B SQL   	SynDBODBC.TODBCStatement(020A7BE0) insert into public.Pessoa_Contato (ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular) values (1,3,'5','6','','','')
+20160722 23373831  B  -    00.001.849
+20160722 23373831  . srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   POST root/Pessoa_Contato ORM-Get -> 201 with outlen=0 in 2646 us
+20160722 23373831  .  -    00.002.675
+20160722 23375525  /  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(POST root/Pessoa_Endereco inlen=199)
+20160722 23375525  B  +    SynDBODBC.TODBCStatement(020A7CA0).006DE879 
+20160722 23375525  B  -    00.000.028
+20160722 23375525  B  +    SynDBODBC.TODBCStatement(020A7CA0).006DDFC8 
+20160722 23375525  B SQL   	SynDBODBC.TODBCStatement(020A7CA0) select max(ID) from public.Pessoa_Endereco
+20160722 23375525  B  -    00.000.895
+20160722 23375525  B  +    SynDBODBC.TODBCStatement(020A7D60).006DE879 
+20160722 23375525  B  -    00.000.011
+20160722 23375525  B  +    SynDBODBC.TODBCStatement(020A7D60).006DDFC8 
+20160722 23375525  B SQL   	SynDBODBC.TODBCStatement(020A7D60) insert into public.Pessoa_Endereco (ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia) values (3,3,'8','9','','','','','',0,'','N','N','N','N')
+20160722 23375525  B  -    00.000.889
+20160722 23375525  / srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   POST root/Pessoa_Endereco ORM-Get -> 201 with outlen=0 in 1927 us
+20160722 23375525  /  -    00.001.936
+20160722 23384108  0  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23384108  0 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23384108  0 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 25 us
+20160722 23384108  0 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484841
+20160722 23384108  0  -    00.000.031
+20160722 23384108  1  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23384108  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23384108  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%*%'
+20160722 23384108  B  -    00.000.390
+20160722 23384108  1 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=135 in 513 us
+20160722 23384108  1  -    00.000.518
+20160722 23384243  2  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23384243  2 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23384243  2 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 17 us
+20160722 23384243  2 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484842
+20160722 23384243  2  -    00.000.022
+20160722 23384243  3  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23384243  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23384243  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%*%'
+20160722 23384243  B  -    00.000.411
+20160722 23384243  3 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=135 in 1205 us
+20160722 23384243  3  -    00.001.239
+20160722 23384631  4  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23384631  4 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23384631  4 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 17 us
+20160722 23384631  4 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484846
+20160722 23384631  4  -    00.000.023
+20160722 23384631  5  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23384631  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23384631  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%A%'
+20160722 23384631  B  -    00.000.443
+20160722 23384631  5 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=332 in 544 us
+20160722 23384631  5  -    00.000.551
+20160722 23384931  6  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23384931  6 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23384931  6 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 17 us
+20160722 23384931  6 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484849
+20160722 23384931  6  -    00.000.022
+20160722 23384931  7  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23384931  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23384931  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%1%'
+20160722 23384931  B  -    00.000.416
+20160722 23384931  7 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=133 in 545 us
+20160722 23384931  7  -    00.000.551
+20160722 23385454  8  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23385454  8 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23385454  8 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 19 us
+20160722 23385454  8 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484854
+20160722 23385454  8  -    00.000.026
+20160722 23385454  9  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23385454  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23385454  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%%%'
+20160722 23385454  B  -    00.000.454
+20160722 23385454  9 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=463 in 569 us
+20160722 23385454  9  -    00.000.575
+20160722 23385939  :  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23385939  : call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23385939  : srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 17 us
+20160722 23385939  : ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319484859
+20160722 23385939  :  -    00.000.023
+20160722 23385939  ;  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/3 inlen=0)
+20160722 23385939  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 23385939  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=3
+20160722 23385939  B  -    00.000.451
+20160722 23385939  ; srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=130 in 530 us
+20160722 23385939  ;  -    00.000.536
+20160722 23385939  <  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 23385939  B  +    SynDBODBC.TODBCStatement(020A7760).006DE879 
+20160722 23385939  B  -    00.002.226
+20160722 23385939  B  +    SynDBODBC.TODBCStatement(020A7760).006DDFC8 
+20160722 23385939  B SQL   	SynDBODBC.TODBCStatement(020A7760) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=3
+20160722 23385939  B  -    00.000.749
+20160722 23385939  < srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=463 in 3233 us
+20160722 23385939  <  -    00.003.243
+20160722 23385939  =  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 23385939  B  +    SynDBODBC.TODBCStatement(020A79A0).006DE879 
+20160722 23385939  B  -    00.000.012
+20160722 23385939  B  +    SynDBODBC.TODBCStatement(020A79A0).006DDFC8 
+20160722 23385939  B SQL   	SynDBODBC.TODBCStatement(020A79A0) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=3
+20160722 23385939  B  -    00.000.346
+20160722 23385939  = srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 533 us
+20160722 23385939  =  -    00.000.538
+20160722 23385939  >  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 23385939  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 23385939  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=3
+20160722 23385939  B  -    00.000.227
+20160722 23385939  > srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=108 in 278 us
+20160722 23385939  >  -    00.000.283
+20160722 23385939  ?  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 23385939  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 23385939  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=3
+20160722 23385939  B  -    00.000.198
+20160722 23385939  ? srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=211 in 258 us
+20160722 23385939  ?  -    00.000.262
+20160722 23385939  @  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 23385939  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 23385939  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=3
+20160722 23385939  B  -    00.000.000
+20160722 23385939  @ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=87 in 13 us
+20160722 23385939  @  -    00.000.017
+20160722 23450717  A  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23450717  A call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23450717  A srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 26 us
+20160722 23450717  A ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485255
+20160722 23450717  A  -    00.000.031
+20160722 23450717  "  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23450717  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23450717  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%%%'
+20160722 23450717  B  -    00.000.532
+20160722 23450717  " srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=463 in 657 us
+20160722 23450717  "  -    00.000.726
+20160722 23450920  #  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23450920  # call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23450920  # srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 15 us
+20160722 23450920  # ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485257
+20160722 23450920  #  -    00.000.020
+20160722 23450920  $  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/3 inlen=0)
+20160722 23450920  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 23450920  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=3
+20160722 23450920  B  -    00.000.430
+20160722 23450920  $ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=130 in 500 us
+20160722 23450920  $  -    00.000.505
+20160722 23450920  %  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 23450920  B  +    SynDBODBC.TODBCStatement(020A73A0).006DE879 
+20160722 23450920  B  -    00.000.025
+20160722 23450920  B  +    SynDBODBC.TODBCStatement(020A73A0).006DDFC8 
+20160722 23450920  B SQL   	SynDBODBC.TODBCStatement(020A73A0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=3
+20160722 23450920  B  -    00.000.624
+20160722 23450920  % srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=463 in 861 us
+20160722 23450920  %  -    00.000.866
+20160722 23450920  &  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 23450920  B  +    SynDBODBC.TODBCStatement(020A7760).006DE879 
+20160722 23450920  B  -    00.000.010
+20160722 23450920  B  +    SynDBODBC.TODBCStatement(020A7760).006DDFC8 
+20160722 23450920  B SQL   	SynDBODBC.TODBCStatement(020A7760) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=3
+20160722 23450920  B  -    00.000.342
+20160722 23450920  & srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 397 us
+20160722 23450920  &  -    00.000.398
+20160722 23450920  '  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 23450920  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 23450920  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=3
+20160722 23450920  B  -    00.000.193
+20160722 23450920  ' srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=108 in 243 us
+20160722 23450920  '  -    00.000.248
+20160722 23450920  (  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 23450920  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 23450920  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=3
+20160722 23450920  B  -    00.000.213
+20160722 23450920  ( srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=211 in 271 us
+20160722 23450920  (  -    00.000.276
+20160722 23450920  )  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 23450920  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 23450920  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=3
+20160722 23450920  B  -    00.000.206
+20160722 23450920  ) srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=87 in 242 us
+20160722 23450920  )  -    00.000.246
+20160722 23451158  *  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23451158  * call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23451158  * srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 0 us
+20160722 23451158  * ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485259
+20160722 23451158  *  -    00.000.000
+20160722 23451158  +  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(PUT root/Pessoa/3 inlen=124)
+20160722 23451158  B  +    SynDBODBC.TODBCStatement(020A7A60).006DE879 
+20160722 23451158  B  -    00.000.028
+20160722 23451158  B  +    SynDBODBC.TODBCStatement(020A7A60).006DDFC8 
+20160722 23451158  B SQL   	SynDBODBC.TODBCStatement(020A7A60) update public.Pessoa set PK=0,Nome='12',Tipo='F',Email='2',Site='3',Cliente='S',Fornecedor='N',Colaborador='N',Transportadora='N' where ID=3
+20160722 23451158  B  -    00.001.151
+20160722 23451158  + srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   PUT root/Pessoa ORM-Get -> 200 with outlen=0 in 1251 us
+20160722 23451158  +  -    00.001.258
+20160722 23451927  ,  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23451927  , call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23451927  , srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 18 us
+20160722 23451927  , ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485267
+20160722 23451927  ,  -    00.000.023
+20160722 23451927  -  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23451927  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23451927  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%%%'
+20160722 23451927  B  -    00.000.469
+20160722 23451927  - srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=464 in 590 us
+20160722 23451927  -  -    00.000.596
+20160722 23453905  .  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23453905  . call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23453905  . srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 18 us
+20160722 23453905  . ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485287
+20160722 23453905  .  -    00.000.024
+20160722 23453905  /  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/3 inlen=0)
+20160722 23453905  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 23453905  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=3
+20160722 23453905  B  -    00.000.412
+20160722 23453905  / srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=131 in 491 us
+20160722 23453905  /  -    00.000.497
+20160722 23453905  0  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 23453905  B  +    SynDBODBC.TODBCStatement(020A73A0).006DE879 
+20160722 23453905  B  -    00.000.021
+20160722 23453905  B  +    SynDBODBC.TODBCStatement(020A73A0).006DDFC8 
+20160722 23453905  B SQL   	SynDBODBC.TODBCStatement(020A73A0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=3
+20160722 23453905  B  -    00.000.578
+20160722 23453905  0 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=463 in 944 us
+20160722 23453905  0  -    00.000.950
+20160722 23453905  1  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 23453905  B  +    SynDBODBC.TODBCStatement(020A7760).006DE879 
+20160722 23453905  B  -    00.000.014
+20160722 23453905  B  +    SynDBODBC.TODBCStatement(020A7760).006DDFC8 
+20160722 23453905  B SQL   	SynDBODBC.TODBCStatement(020A7760) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=3
+20160722 23453905  B  -    00.000.397
+20160722 23453905  1 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 1242 us
+20160722 23453905  1  -    00.001.242
+20160722 23453905  2  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 23453905  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 23453905  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=3
+20160722 23453905  B  -    00.000.200
+20160722 23453905  2 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=108 in 254 us
+20160722 23453905  2  -    00.000.259
+20160722 23453905  3  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 23453905  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 23453905  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=3
+20160722 23453905  B  -    00.000.211
+20160722 23453905  3 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=211 in 272 us
+20160722 23453905  3  -    00.000.277
+20160722 23453905  4  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 23453905  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 23453905  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=3
+20160722 23453905  B  -    00.000.193
+20160722 23453905  4 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=87 in 231 us
+20160722 23453905  4  -    00.000.236
+20160722 23454924  5  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23454924  5 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23454924  5 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 23454924  5 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485297
+20160722 23454924  5  -    00.000.021
+20160722 23454924  6  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(PUT root/Pessoa/3 inlen=124)
+20160722 23454924  B  +    SynDBODBC.TODBCStatement(020A7A60).006DDFC8 
+20160722 23454924  B SQL   	SynDBODBC.TODBCStatement(020A7A60) update public.Pessoa set PK=0,Nome='12',Tipo='F',Email='2',Site='3',Cliente='S',Fornecedor='N',Colaborador='N',Transportadora='N' where ID=3
+20160722 23454924  B  -    00.000.761
+20160722 23454924  6 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   PUT root/Pessoa ORM-Get -> 200 with outlen=0 in 821 us
+20160722 23454924  6  -    00.000.827
+20160722 23472800  7  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23472800  7 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23472800  7 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 26 us
+20160722 23472800  7 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485404
+20160722 23472800  7  -    00.000.031
+20160722 23472800  8  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23472800  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23472800  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%%%'
+20160722 23472800  B  -    00.000.614
+20160722 23472800  8 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=464 in 782 us
+20160722 23472800  8  -    00.000.788
+20160722 23472931  9  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23472931  9 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23472931  9 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 23472931  9 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485405
+20160722 23472931  9  -    00.000.022
+20160722 23472931  :  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/3 inlen=0)
+20160722 23472931  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 23472931  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=3
+20160722 23472931  B  -    00.000.430
+20160722 23472931  : srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=131 in 508 us
+20160722 23472931  :  -    00.000.515
+20160722 23472931  ;  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 23472931  B  +    SynDBODBC.TODBCStatement(020A73A0).006DE879 
+20160722 23472931  B  -    00.000.025
+20160722 23472931  B  +    SynDBODBC.TODBCStatement(020A73A0).006DDFC8 
+20160722 23472931  B SQL   	SynDBODBC.TODBCStatement(020A73A0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=3
+20160722 23472931  B  -    00.001.071
+20160722 23472931  ; srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=463 in 1317 us
+20160722 23472931  ;  -    00.001.323
+20160722 23472931  <  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 23472931  B  +    SynDBODBC.TODBCStatement(020A7760).006DE879 
+20160722 23472931  B  -    00.000.010
+20160722 23472931  B  +    SynDBODBC.TODBCStatement(020A7760).006DDFC8 
+20160722 23472931  B SQL   	SynDBODBC.TODBCStatement(020A7760) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=3
+20160722 23472931  B  -    00.000.419
+20160722 23472931  < srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 637 us
+20160722 23472931  <  -    00.000.643
+20160722 23472931  =  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 23472931  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 23472931  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=3
+20160722 23472931  B  -    00.000.199
+20160722 23472931  = srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=108 in 251 us
+20160722 23472931  =  -    00.000.256
+20160722 23472931  >  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 23472931  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 23472931  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=3
+20160722 23472931  B  -    00.000.233
+20160722 23472931  > srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=211 in 293 us
+20160722 23472931  >  -    00.000.293
+20160722 23472931  ?  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 23472931  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 23472931  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=3
+20160722 23472931  B  -    00.000.191
+20160722 23472931  ? srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=87 in 230 us
+20160722 23472931  ?  -    00.000.234
+20160722 23473434  @  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23473434  @ call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23473434  @ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 23473434  @ ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485410
+20160722 23473434  @  -    00.000.021
+20160722 23473434  A  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(PUT root/Pessoa/3 inlen=124)
+20160722 23473434  B  +    SynDBODBC.TODBCStatement(020A7A60).006DDFC8 
+20160722 23473434  B SQL   	SynDBODBC.TODBCStatement(020A7A60) update public.Pessoa set PK=0,Nome='12',Tipo='F',Email='2',Site='3',Cliente='S',Fornecedor='N',Colaborador='N',Transportadora='N' where ID=3
+20160722 23473434  B  -    00.000.829
+20160722 23473434  A srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   PUT root/Pessoa ORM-Get -> 200 with outlen=0 in 892 us
+20160722 23473434  A  -    00.000.899
+20160722 23504357  "  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23504357  " call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23504357  " srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 27 us
+20160722 23504357  " ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485611
+20160722 23504357  "  -    00.000.033
+20160722 23504357  #  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23504357  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23504357  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%%%'
+20160722 23504357  B  -    00.000.620
+20160722 23504357  # srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=464 in 791 us
+20160722 23504357  #  -    00.000.797
+20160722 23504548  $  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23504548  $ call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23504548  $ srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 17 us
+20160722 23504548  $ ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485613
+20160722 23504548  $  -    00.000.023
+20160722 23504548  %  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/3 inlen=0)
+20160722 23504548  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 23504548  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=3
+20160722 23504548  B  -    00.000.426
+20160722 23504548  % srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=131 in 499 us
+20160722 23504548  %  -    00.000.505
+20160722 23504548  &  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 23504548  B  +    SynDBODBC.TODBCStatement(020A79A0).006DE879 
+20160722 23504548  B  -    00.000.026
+20160722 23504548  B  +    SynDBODBC.TODBCStatement(020A79A0).006DDFC8 
+20160722 23504548  B SQL   	SynDBODBC.TODBCStatement(020A79A0) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=3
+20160722 23504548  B  -    00.000.645
+20160722 23504548  & srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=463 in 902 us
+20160722 23504548  &  -    00.000.908
+20160722 23504548  '  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 23504548  B  +    SynDBODBC.TODBCStatement(020A6DA0).006DE879 
+20160722 23504548  B  -    00.000.010
+20160722 23504548  B  +    SynDBODBC.TODBCStatement(020A6DA0).006DDFC8 
+20160722 23504548  B SQL   	SynDBODBC.TODBCStatement(020A6DA0) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=3
+20160722 23504548  B  -    00.000.349
+20160722 23504548  ' srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 514 us
+20160722 23504548  '  -    00.000.520
+20160722 23504548  (  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 23504548  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 23504548  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=3
+20160722 23504548  B  -    00.000.447
+20160722 23504548  ( srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=108 in 930 us
+20160722 23504548  (  -    00.000.960
+20160722 23504548  )  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 23504548  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 23504548  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=3
+20160722 23504548  B  -    00.000.201
+20160722 23504548  ) srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=211 in 260 us
+20160722 23504548  )  -    00.000.265
+20160722 23504548  *  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 23504548  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 23504548  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=3
+20160722 23504548  B  -    00.000.203
+20160722 23504548  * srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=87 in 252 us
+20160722 23504548  *  -    00.000.256
+20160722 23535924  +  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23535924  + call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23535924  + srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 14 us
+20160722 23535924  + ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485819
+20160722 23535924  +  -    00.000.020
+20160722 23535924  ,  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(POST root/Pessoa inlen=123)
+20160722 23535924  B  +    SynDBODBC.TODBCStatement(020A76A0).006DDFC8 
+20160722 23535924  B SQL   	SynDBODBC.TODBCStatement(020A76A0) insert into public.Pessoa (ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora) values (4,0,'9','F','9','9','S','N','N','N')
+20160722 23535924  B  -    00.003.297
+20160722 23535924  , srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   POST root/Pessoa ORM-Get -> 201 with outlen=0 in 3412 us
+20160722 23535924  ,  -    00.003.423
+20160722 23535924  -  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(POST root/Pessoa_Fisica inlen=422)
+20160722 23535924  B  +    SynDBODBC.TODBCStatement(020A7820).006DDFC8 
+20160722 23535924  B SQL   	SynDBODBC.TODBCStatement(020A7820) insert into public.Pessoa_Fisica (ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai) values (3,4,1,'99999999999','','','','2016-01-01','','9','9','B','A','','','','',0,0,'',0,'9','9')
+20160722 23535924  B  -    00.001.782
+20160722 23535924  - srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   POST root/Pessoa_Fisica ORM-Get -> 201 with outlen=0 in 1849 us
+20160722 23535924  -  -    00.001.877
+20160722 23535924  .  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(POST root/Pessoa_Contato inlen=98)
+20160722 23535924  B  +    SynDBODBC.TODBCStatement(020A7BE0).006DDFC8 
+20160722 23535924  B SQL   	SynDBODBC.TODBCStatement(020A7BE0) insert into public.Pessoa_Contato (ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular) values (2,4,'9','9','','','')
+20160722 23535924  B  -    00.000.567
+20160722 23535924  . srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   POST root/Pessoa_Contato ORM-Get -> 201 with outlen=0 in 576 us
+20160722 23535924  .  -    00.000.583
+20160722 23535924  /  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(POST root/Pessoa_Endereco inlen=200)
+20160722 23535924  B  +    SynDBODBC.TODBCStatement(020A7D60).006DDFC8 
+20160722 23535924  B SQL   	SynDBODBC.TODBCStatement(020A7D60) insert into public.Pessoa_Endereco (ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia) values (4,4,'9','9','9','','','','',0,'','N','N','N','N')
+20160722 23535924  B  -    00.000.530
+20160722 23535924  / srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   POST root/Pessoa_Endereco ORM-Get -> 201 with outlen=0 in 575 us
+20160722 23535924  /  -    00.000.580
+20160722 23540408  0  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23540408  0 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23540408  0 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 23540408  0 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485828
+20160722 23540408  0  -    00.000.021
+20160722 23540408  1  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=117)
+20160722 23540408  B  +    SynDBODBC.TODBCStatement(020A7220).006DDFC8 
+20160722 23540408  B SQL   	SynDBODBC.TODBCStatement(020A7220) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where Nome like '%%%'
+20160722 23540408  B  -    00.000.351
+20160722 23540408  1 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=595 in 483 us
+20160722 23540408  1  -    00.000.488
+20160722 23540753  2  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23540753  2 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23540753  2 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 17 us
+20160722 23540753  2 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485831
+20160722 23540753  2  -    00.000.022
+20160722 23540753  3  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/Pessoa/4 inlen=0)
+20160722 23540753  B  +    SynDBODBC.TODBCStatement(020A6C20).006DDFC8 
+20160722 23540753  B SQL   	SynDBODBC.TODBCStatement(020A6C20) select ID,PK,Nome,Tipo,Email,Site,Cliente,Fornecedor,Colaborador,Transportadora from public.Pessoa where ID=4
+20160722 23540753  B  -    00.000.401
+20160722 23540753  3 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/Pessoa ORM-Get -> 200 with outlen=130 in 472 us
+20160722 23540753  3  -    00.000.478
+20160722 23540753  4  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=337)
+20160722 23540753  B  +    SynDBODBC.TODBCStatement(020A7E20).006DE879 
+20160722 23540753  B  -    00.000.025
+20160722 23540753  B  +    SynDBODBC.TODBCStatement(020A7E20).006DDFC8 
+20160722 23540753  B SQL   	SynDBODBC.TODBCStatement(020A7E20) select ID,Id_Pessoa,Id_Estado_Civil,Cpf,Rg,Orgao_Rg,Data_Emissao_Rg,Data_Nascimento,Sexo,Naturalidade,Nacionalidade,Raca,Tipo_Sangue,Cnh_Numero,Cnh_Categoria,Cnh_Vencimento,Titulo_Eleitoral_Numero,Titulo_Eleitoral_Zona,Titulo_Eleitoral_Secao,Reservista_Numero,Reservista_Categoria,Nome_Mae,Nome_Pai from public.Pessoa_Fisica where Id_Pessoa=4
+20160722 23540753  B  -    00.000.574
+20160722 23540753  4 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=457 in 847 us
+20160722 23540753  4  -    00.000.853
+20160722 23540753  5  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=155)
+20160722 23540753  B  +    SynDBODBC.TODBCStatement(020A79A0).006DE879 
+20160722 23540753  B  -    00.000.009
+20160722 23540753  B  +    SynDBODBC.TODBCStatement(020A79A0).006DDFC8 
+20160722 23540753  B SQL   	SynDBODBC.TODBCStatement(020A79A0) select ID,Id_Pessoa,Cnpj,Fantasia,Inscricao_Municipal,Inscricao_Estadual,Data_Constituicao,Tipo_Regime,Crt,Suframa from public.Pessoa_Juridica where Id_Pessoa=4
+20160722 23540753  B  -    00.000.368
+20160722 23540753  5 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=170 in 532 us
+20160722 23540753  5  -    00.000.538
+20160722 23540753  6  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=119)
+20160722 23540753  B  +    SynDBODBC.TODBCStatement(020A6CE0).006DDFC8 
+20160722 23540753  B SQL   	SynDBODBC.TODBCStatement(020A6CE0) select ID,Id_Pessoa,Nome,Email,Fone_Comercial,Fone_Residencial,Fone_Celular from public.Pessoa_Contato where Id_Pessoa=4
+20160722 23540753  B  -    00.000.186
+20160722 23540753  6 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=108 in 236 us
+20160722 23540753  6  -    00.000.240
+20160722 23540753  7  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=178)
+20160722 23540753  B  +    SynDBODBC.TODBCStatement(020A6F20).006DDFC8 
+20160722 23540753  B SQL   	SynDBODBC.TODBCStatement(020A6F20) select ID,Id_Pessoa,Logradouro,Numero,Complemento,Bairro,Cidade,Cep,Fone,Municipio_Ibge,Uf,Principal,Entrega,Cobranca,Correspondencia from public.Pessoa_Endereco where Id_Pessoa=4
+20160722 23540753  B  -    00.000.200
+20160722 23540753  7 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=212 in 259 us
+20160722 23540753  7  -    00.000.264
+20160722 23540753  8  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root inlen=87)
+20160722 23540753  B  +    SynDBODBC.TODBCStatement(020A70A0).006DDFC8 
+20160722 23540753  B SQL   	SynDBODBC.TODBCStatement(020A70A0) select ID,Id_Pessoa,Tipo,Numero,Observacao from public.Pessoa_Telefone where Id_Pessoa=4
+20160722 23540753  B  -    00.000.185
+20160722 23540753  8 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/ ORM-Get -> 200 with outlen=87 in 222 us
+20160722 23540753  8  -    00.000.226
+20160722 23541032  9  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(GET root/TimeStamp inlen=0)
+20160722 23541032  9 call  	mORMotSQLite3.TSQLRestServerDB(027D6C80) TimeStamp 
+20160722 23541032  9 srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   GET root/TimeStamp SOA-Method -> 200 with outlen=12 in 16 us
+20160722 23541032  9 ret   	mORMotSQLite3.TSQLRestServerDB(027D6C80) 135319485834
+20160722 23541032  9  -    00.000.022
+20160722 23541032  :  +    mORMotSQLite3.TSQLRestServerDB(027D6C80).URI(PUT root/Pessoa/4 inlen=124)
+20160722 23541032  B  +    SynDBODBC.TODBCStatement(020A7A60).006DDFC8 
+20160722 23541032  B SQL   	SynDBODBC.TODBCStatement(020A7A60) update public.Pessoa set PK=0,Nome='99',Tipo='F',Email='9',Site='9',Cliente='S',Fornecedor='N',Colaborador='N',Transportadora='N' where ID=4
+20160722 23541032  B  -    00.000.839
+20160722 23541032  : srvr  	mORMotSQLite3.TSQLRestServerDB(027D6C80)   PUT root/Pessoa ORM-Get -> 

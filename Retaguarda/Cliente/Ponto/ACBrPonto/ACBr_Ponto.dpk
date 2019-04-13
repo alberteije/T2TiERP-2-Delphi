@@ -1,0 +1,47 @@
+package ACBr_Ponto;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'ACBr Automação Comercial Brasil - Ponto Eletrônico (http://acbr.sourceforge.net/)'}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  designide,
+  ACBr_SPED;
+
+contains
+  ACBrPonto in 'ACBrPonto.pas',
+  ACBrPonto_AFD in 'ACBrPonto_AFD.pas',
+  ACBrPonto_AFD_Class in 'ACBrPonto_AFD_Class.pas',
+  ACBrPonto_AFDT in 'ACBrPonto_AFDT.pas',
+  ACBrPonto_AFDT_Class in 'ACBrPonto_AFDT_Class.pas',
+  ACBrPonto_ACJEF in 'ACBrPonto_ACJEF.pas',
+  ACBrPonto_ACJEF_Class in 'ACBrPonto_ACJEF_Class.pas';
+
+end.
+

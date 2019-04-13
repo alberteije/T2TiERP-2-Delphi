@@ -1,0 +1,47 @@
+program T2TiERPAFV;
+
+uses
+  FMX.Forms,
+  UMenu in 'Tela\UMenu.pas' {FMenu},
+  Atributos in '..\..\Comum\Atributos.pas',
+  Constantes in '..\..\Comum\Constantes.pas',
+  VO in '..\..\Comum\VO\VO.pas',
+  JSonVO in '..\..\Comum\VO\JSonVO.pas',
+  ClienteVO in 'VO\ClienteVO.pas',
+  ColaboradorVO in 'VO\ColaboradorVO.pas',
+  EmpresaContatoVO in 'VO\EmpresaContatoVO.pas',
+  EmpresaEnderecoVO in 'VO\EmpresaEnderecoVO.pas',
+  EmpresaTelefoneVO in 'VO\EmpresaTelefoneVO.pas',
+  EmpresaVO in 'VO\EmpresaVO.pas',
+  UnidadeProdutoVO in 'VO\UnidadeProdutoVO.pas',
+  UsuarioVO in 'VO\UsuarioVO.pas',
+  VendaCabecalhoVO in 'VO\VendaCabecalhoVO.pas',
+  VendaComissaoVO in 'VO\VendaComissaoVO.pas',
+  VendaCondicoesPagamentoVO in 'VO\VendaCondicoesPagamentoVO.pas',
+  VendaCondicoesParcelasVO in 'VO\VendaCondicoesParcelasVO.pas',
+  VendaDetalheVO in 'VO\VendaDetalheVO.pas',
+  VendaFreteVO in 'VO\VendaFreteVO.pas',
+  VendedorVO in 'VO\VendedorVO.pas',
+  ViewPessoaClienteVO in 'VO\ViewPessoaClienteVO.pas',
+  ViewPessoaColaboradorVO in 'VO\ViewPessoaColaboradorVO.pas',
+  ViewSessaoEmpresaVO in 'VO\ViewSessaoEmpresaVO.pas',
+  BancoVO in 'VO\BancoVO.pas',
+  PapelFuncaoVO in 'VO\PapelFuncaoVO.pas',
+  FuncaoVO in 'VO\FuncaoVO.pas',
+  Biblioteca in 'Comum\Biblioteca.pas',
+  Controller in 'Comum\Controller.pas',
+  SessaoUsuario in 'Comum\SessaoUsuario.pas',
+  BancoController in 'Controller\BancoController.pas',
+  EmpresaController in 'Controller\EmpresaController.pas',
+  FuncaoController in 'Controller\FuncaoController.pas',
+  UsuarioController in 'Controller\UsuarioController.pas',
+  UCliente in 'Tela\UCliente.pas' {FCliente};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFMenu, FMenu);
+  Application.CreateForm(TFCliente, FCliente);
+  Application.Run;
+end.

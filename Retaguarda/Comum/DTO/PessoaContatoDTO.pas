@@ -1,0 +1,49 @@
+unit PessoaContatoDTO;
+
+interface
+
+uses
+  Atributos, Constantes, Classes,
+
+  SynCommons,
+  mORMot;
+
+type
+  TPessoa_Contato = class(TSQLRecord)
+  private
+    FID_PESSOA: TID;
+    FNOME: RawUTF8;
+    FEMAIL: RawUTF8;
+    FFONE_COMERCIAL: RawUTF8;
+    FFONE_RESIDENCIAL: RawUTF8;
+    FFONE_CELULAR: RawUTF8;
+
+    //Usado no lado cliente para controlar quais registros serão persistidos
+    FPersiste: String;
+
+  public
+    [TColumn('PERSISTE', 'Persiste', 60, [], True)]
+    property Persiste: String  read FPersiste write FPersiste;
+
+  published
+    [TColumn('ID_PESSOA', 'Id Pessoa', 80, [], False)]
+    [TFormatter(ftZerosAEsquerda, taCenter)]
+    property Id_Pessoa: TID  read FID_PESSOA write FID_PESSOA;
+    [TColumn('NOME', 'Nome', 450, [ldGrid, ldLookup, ldCombobox], False)]
+    property Nome: RawUTF8  read FNOME write FNOME;
+    [TColumn('EMAIL', 'Email', 450, [ldGrid, ldLookup, ldCombobox], False)]
+    property Email: RawUTF8  read FEMAIL write FEMAIL;
+    [TColumn('FONE_COMERCIAL', 'Fone Comercial', 112, [ldGrid, ldLookup, ldCombobox], False)]
+    [TFormatter(ftTelefone, taLeftJustify)]
+    property Fone_Comercial: RawUTF8  read FFONE_COMERCIAL write FFONE_COMERCIAL;
+    [TColumn('FONE_RESIDENCIAL', 'Fone Residencial', 112, [ldGrid, ldLookup, ldCombobox], False)]
+    [TFormatter(ftTelefone, taLeftJustify)]
+    property Fone_Residencial: RawUTF8  read FFONE_RESIDENCIAL write FFONE_RESIDENCIAL;
+    [TColumn('FONE_CELULAR', 'Fone Celular', 112, [ldGrid, ldLookup, ldCombobox], False)]
+    [TFormatter(ftTelefone, taLeftJustify)]
+    property Fone_Celular: RawUTF8  read FFONE_CELULAR write FFONE_CELULAR;
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/05/30 18:32:55.115.pas,C:\Documents and Settings\Eije\Desktop\T2Ti ERP\Fontes\ERP\Cliente\Cadastros Base\Tela\UContador.pas=</Transaction>
+    <Transaction>2012/05/30 18:32:55.135.dfm,C:\Documents and Settings\Eije\Desktop\T2Ti ERP\Fontes\ERP\Cliente\Cadastros Base\Tela\UContador.dfm=</Transaction>
+    <Transaction>2012/05/30 18:32:58.059.pas,C:\Documents and Settings\Eije\Desktop\T2Ti ERP\Fontes\ERP\Cliente\Cadastros Base\Controller\ContadorController.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

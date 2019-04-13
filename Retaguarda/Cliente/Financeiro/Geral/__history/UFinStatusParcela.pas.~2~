@@ -1,0 +1,199 @@
+{ *******************************************************************************
+  Title: T2Ti ERP
+  Description: Janela Cadastro de Status da Parcela
+
+  The MIT License
+
+  Copyright: Copyright (C) 2016 T2Ti.COM
+
+  Permission is hereby granted, free of charge, to any person
+  obtaining a copy of this software and associated documentation
+  files (the "Software"), to deal in the Software without
+  restriction, including without limitation the rights to use,
+  copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the
+  Software is furnished to do so, subject to the following
+  conditions:
+
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  OTHER DEALINGS IN THE SOFTWARE.
+
+  The author may be contacted at:
+  t2ti.com@gmail.com</p>
+
+  @author Albert Eije
+  @version 1.0
+  ******************************************************************************* }
+unit UFinStatusParcela;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, DB, DBClient, Menus, StdCtrls, ExtCtrls, Buttons, Grids,
+  DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, FinStatusParcelaVO,
+  FinStatusParcelaController, Tipos, Atributos, Constantes, LabeledCtrls, StrUtils;
+
+type
+  [TFormDescription(TConstantes.MODULO_FINANCEIRO, 'Status Parcela')]
+
+  TFFinStatusParcela = class(TFTelaCadastro)
+    BevelEdits: TBevel;
+    EditDescricao: TLabeledEdit;
+    MemoProcedimento: TLabeledMemo;
+    EditSituacao: TLabeledEdit;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+  end;
+
+var
+  FFinStatusParcela: TFFinStatusParcela;
+
+implementation
+
+{$R *.dfm}
+
+{$REGION 'Infra'}
+procedure TFFinStatusParcela.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TFinStatusParcelaVO;
+  ObjetoController := TFinStatusParcelaController.Create;
+
+  inherited;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFFinStatusParcela.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    EditSituacao.SetFocus;
+  end;
+end;
+
+function TFFinStatusParcela.DoEditar: Boolean;
+begin
+  if AnsiIndexStr(CDSGrid.FieldByName('SITUACAO').AsString, ['01', '02', '03', '04']) <> -1 then
+  begin
+    Application.MessageBox('Esse registro não pode ser alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    Exit(False);
+  end;
+
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditSituacao.SetFocus;
+  end;
+end;
+
+function TFFinStatusParcela.DoExcluir: Boolean;
+begin
+  if AnsiIndexStr(CDSGrid.FieldByName('SITUACAO').AsString, ['01', '02', '03', '04']) <> -1 then
+  begin
+    Application.MessageBox('Esse registro não pode ser excluído.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    Exit(False);
+  end;
+
+  if inherited DoExcluir then
+  begin
+    try
+      Result := TFinStatusParcelaController(ObjetoController).Exclui(IdRegistroSelecionado);
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TFinStatusParcelaController(ObjetoController).Consulta(Filtro, Pagina);
+end;
+
+function TFFinStatusParcela.DoSalvar: Boolean;
+begin
+  if AnsiIndexStr(EditSituacao.Text, ['01', '02', '03', '04']) <> -1 then
+  begin
+    Application.MessageBox('O código informado para a situação não pode ser cadastrado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    EditSituacao.SetFocus;
+    Exit(False);
+  end;
+
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TFinStatusParcelaVO.Create;
+
+      TFinStatusParcelaVO(ObjetoVO).IdEmpresa := Sessao.IdEmpresa;
+      TFinStatusParcelaVO(ObjetoVO).Situacao := EditSituacao.Text;
+      TFinStatusParcelaVO(ObjetoVO).Descricao := EditDescricao.Text;
+      TFinStatusParcelaVO(ObjetoVO).Procedimento := MemoProcedimento.Text;
+
+      if StatusTela = stInserindo then
+        Result := TFinStatusParcelaController(ObjetoController).Insere(TFinStatusParcelaVO(ObjetoVO))
+      else if StatusTela = stEditando then
+      begin
+        if TFinStatusParcelaVO(ObjetoVO).ToJSONString <> TFinStatusParcelaVO(ObjetoOldVO).ToJSONString then
+        begin
+          TFinStatusParcelaVO(ObjetoVO).Id := IdRegistroSelecionado;
+          Result := TFinStatusParcelaController(ObjetoController).Altera(TFinStatusParcelaVO(ObjetoVO), TFinStatusParcelaVO(ObjetoOldVO));
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFFinStatusParcela.GridParaEdits;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := ObjetoController.VO<TFinStatusParcelaVO>(IdRegistroSelecionado);
+    if StatusTela = stEditando then
+      ObjetoOldVO := ObjetoController.VO<TFinStatusParcelaVO>(IdRegistroSelecionado);
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditSituacao.Text := TFinStatusParcelaVO(ObjetoVO).Situacao;
+    EditDescricao.Text := TFinStatusParcelaVO(ObjetoVO).Descricao;
+    MemoProcedimento.Text := TFinStatusParcelaVO(ObjetoVO).Procedimento;
+  end;
+end;
+{$ENDREGION}
+
+end.

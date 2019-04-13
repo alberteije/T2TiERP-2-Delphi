@@ -1,0 +1,14 @@
+DriverName=Firebird
+Database=localhost:C:\Documents and Settings\T2Ti\Desktop\Desenvolvimento\Banco\MINI.FDB
+RoleName=RoleName
+User_Name=sysdba
+Password=masterkey
+ServerCharSet=win1252
+SQLDialect=3
+ErrorResourceFile=
+LocaleCode=0000
+BlobSize=-1
+CommitRetain=False
+WaitOnLocks=True
+IsolationLevel=ReadCommitted
+Trim Char=true

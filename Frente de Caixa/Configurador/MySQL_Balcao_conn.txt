@@ -1,0 +1,12 @@
+DriverName=MySQL
+HostName=localhost
+Database=mini
+User_Name=root
+Password=root
+ServerCharSet=
+BlobSize=-1
+ErrorResourceFile=
+LocaleCode=0000
+Compressed=False
+Encrypted=False
+ConnectTimeout=60

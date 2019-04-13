@@ -1,0 +1,591 @@
+object UniDatabaseDelayedSearch: TUniDatabaseDelayedSearch
+  Left = 0
+  Top = 0
+  Width = 638
+  Height = 637
+  OnCreate = UniFrameCreate
+  TabOrder = 0
+  ParentRTL = False
+  object UniContainerPanel1: TUniContainerPanel
+    Left = 0
+    Top = 0
+    Width = 638
+    Height = 637
+    Hint = ''
+    ParentColor = False
+    Align = alClient
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 0
+    DesignSize = (
+      638
+      637)
+    object UniLabel1: TUniLabel
+      Left = 8
+      Top = 7
+      Width = 177
+      Height = 13
+      Hint = ''
+      Caption = 'Procure pelo produto desejado:'
+      ParentFont = False
+      Font.Style = [fsBold]
+      TabOrder = 0
+    end
+    object UniEdit1: TUniEdit
+      Left = 8
+      Top = 26
+      Width = 617
+      Hint = ''
+      Text = ''
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 1
+      EmptyText = 'Procure...'
+      CheckChangeDelay = 500
+      ClearButton = True
+      OnChange = UniEdit1Change
+    end
+    object UniDBGrid1: TUniDBGrid
+      Left = 3
+      Top = 54
+      Width = 617
+      Height = 523
+      Hint = ''
+      DataSource = DataSource1
+      Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgConfirmDelete, dgTabs, dgCancelOnExit]
+      WebOptions.Paged = False
+      LoadMask.ShowMessage = False
+      LoadMask.Message = 'Loading data...'
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      TabOrder = 2
+      Columns = <
+        item
+          FieldName = 'GTIN'
+          Title.Caption = 'GTIN'
+          Width = 120
+        end
+        item
+          FieldName = 'CODIGO_INTERNO'
+          Title.Caption = 'C'#243'digo Interno'
+          Width = 100
+        end
+        item
+          FieldName = 'NOME'
+          Title.Caption = 'Nome'
+          Width = 400
+        end
+        item
+          FieldName = 'VALOR_VENDA'
+          Title.Caption = 'Valor'
+          Width = 200
+        end>
+    end
+    object UniLabel2: TUniLabel
+      Left = 449
+      Top = 583
+      Width = 176
+      Height = 42
+      Hint = ''
+      Alignment = taRightJustify
+      Caption = 'UniLabel2'
+      Anchors = [akRight, akBottom]
+      ParentFont = False
+      Font.Height = -35
+      Font.Style = [fsBold]
+      TabOrder = 4
+    end
+    object UniSpeedButton1: TUniSpeedButton
+      Left = 8
+      Top = 583
+      Width = 80
+      Height = 50
+      Hint = ''
+      Caption = 'Add Item'
+      Anchors = [akLeft, akBottom]
+      ParentColor = False
+      Color = clWindow
+      Images = MainForm.UniNativeImageList1
+      ImageIndex = 0
+      TabOrder = 5
+      OnClick = UniSpeedButton1Click
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ClientDataSet1
+    Left = 408
+    Top = 312
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProvider1'
+    AfterScroll = ClientDataSet1AfterScroll
+    Left = 326
+    Top = 312
+    object ClientDataSet1ID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object ClientDataSet1ID_TRIBUT_ICMS_CUSTOM_CAB: TIntegerField
+      FieldName = 'ID_TRIBUT_ICMS_CUSTOM_CAB'
+    end
+    object ClientDataSet1ID_UNIDADE_PRODUTO: TIntegerField
+      FieldName = 'ID_UNIDADE_PRODUTO'
+      Required = True
+    end
+    object ClientDataSet1ID_ALMOXARIFADO: TIntegerField
+      FieldName = 'ID_ALMOXARIFADO'
+    end
+    object ClientDataSet1ID_GRUPO_TRIBUTARIO: TIntegerField
+      FieldName = 'ID_GRUPO_TRIBUTARIO'
+    end
+    object ClientDataSet1ID_MARCA_PRODUTO: TIntegerField
+      FieldName = 'ID_MARCA_PRODUTO'
+    end
+    object ClientDataSet1ID_SUBGRUPO: TIntegerField
+      FieldName = 'ID_SUBGRUPO'
+      Required = True
+    end
+    object ClientDataSet1GTIN: TStringField
+      FieldName = 'GTIN'
+      Size = 14
+    end
+    object ClientDataSet1CODIGO_INTERNO: TStringField
+      FieldName = 'CODIGO_INTERNO'
+      Size = 60
+    end
+    object ClientDataSet1NCM: TStringField
+      FieldName = 'NCM'
+      Size = 8
+    end
+    object ClientDataSet1NOME: TStringField
+      FieldName = 'NOME'
+      Size = 100
+    end
+    object ClientDataSet1DESCRICAO: TMemoField
+      FieldName = 'DESCRICAO'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object ClientDataSet1DESCRICAO_PDV: TStringField
+      FieldName = 'DESCRICAO_PDV'
+      Size = 30
+    end
+    object ClientDataSet1VALOR_COMPRA: TFMTBCDField
+      FieldName = 'VALOR_COMPRA'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1VALOR_VENDA: TFMTBCDField
+      FieldName = 'VALOR_VENDA'
+      DisplayFormat = '#,###,###.00'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1PRECO_VENDA_MINIMO: TFMTBCDField
+      FieldName = 'PRECO_VENDA_MINIMO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1PRECO_SUGERIDO: TFMTBCDField
+      FieldName = 'PRECO_SUGERIDO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1CUSTO_UNITARIO: TFMTBCDField
+      FieldName = 'CUSTO_UNITARIO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1CUSTO_PRODUCAO: TFMTBCDField
+      FieldName = 'CUSTO_PRODUCAO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1CUSTO_MEDIO_LIQUIDO: TFMTBCDField
+      FieldName = 'CUSTO_MEDIO_LIQUIDO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1PRECO_LUCRO_ZERO: TFMTBCDField
+      FieldName = 'PRECO_LUCRO_ZERO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1PRECO_LUCRO_MINIMO: TFMTBCDField
+      FieldName = 'PRECO_LUCRO_MINIMO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1PRECO_LUCRO_MAXIMO: TFMTBCDField
+      FieldName = 'PRECO_LUCRO_MAXIMO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1MARKUP: TFMTBCDField
+      FieldName = 'MARKUP'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1QUANTIDADE_ESTOQUE: TFMTBCDField
+      FieldName = 'QUANTIDADE_ESTOQUE'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1QUANTIDADE_ESTOQUE_ANTERIOR: TFMTBCDField
+      FieldName = 'QUANTIDADE_ESTOQUE_ANTERIOR'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1ESTOQUE_MINIMO: TFMTBCDField
+      FieldName = 'ESTOQUE_MINIMO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1ESTOQUE_MAXIMO: TFMTBCDField
+      FieldName = 'ESTOQUE_MAXIMO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1ESTOQUE_IDEAL: TFMTBCDField
+      FieldName = 'ESTOQUE_IDEAL'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1EXCLUIDO: TStringField
+      FieldName = 'EXCLUIDO'
+      FixedChar = True
+      Size = 1
+    end
+    object ClientDataSet1INATIVO: TStringField
+      FieldName = 'INATIVO'
+      FixedChar = True
+      Size = 1
+    end
+    object ClientDataSet1DATA_CADASTRO: TDateField
+      FieldName = 'DATA_CADASTRO'
+    end
+    object ClientDataSet1IMAGEM: TMemoField
+      FieldName = 'IMAGEM'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object ClientDataSet1EX_TIPI: TStringField
+      FieldName = 'EX_TIPI'
+      FixedChar = True
+      Size = 3
+    end
+    object ClientDataSet1CODIGO_LST: TStringField
+      FieldName = 'CODIGO_LST'
+      FixedChar = True
+      Size = 4
+    end
+    object ClientDataSet1CLASSE_ABC: TStringField
+      FieldName = 'CLASSE_ABC'
+      FixedChar = True
+      Size = 1
+    end
+    object ClientDataSet1IAT: TStringField
+      FieldName = 'IAT'
+      FixedChar = True
+      Size = 1
+    end
+    object ClientDataSet1IPPT: TStringField
+      FieldName = 'IPPT'
+      FixedChar = True
+      Size = 1
+    end
+    object ClientDataSet1TIPO_ITEM_SPED: TStringField
+      FieldName = 'TIPO_ITEM_SPED'
+      FixedChar = True
+      Size = 2
+    end
+    object ClientDataSet1PESO: TFMTBCDField
+      FieldName = 'PESO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1PORCENTO_COMISSAO: TFMTBCDField
+      FieldName = 'PORCENTO_COMISSAO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1PONTO_PEDIDO: TFMTBCDField
+      FieldName = 'PONTO_PEDIDO'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1LOTE_ECONOMICO_COMPRA: TFMTBCDField
+      FieldName = 'LOTE_ECONOMICO_COMPRA'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1ALIQUOTA_ICMS_PAF: TFMTBCDField
+      FieldName = 'ALIQUOTA_ICMS_PAF'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1ALIQUOTA_ISSQN_PAF: TFMTBCDField
+      FieldName = 'ALIQUOTA_ISSQN_PAF'
+      Precision = 20
+      Size = 6
+    end
+    object ClientDataSet1TOTALIZADOR_PARCIAL: TStringField
+      FieldName = 'TOTALIZADOR_PARCIAL'
+      Size = 10
+    end
+    object ClientDataSet1CODIGO_BALANCA: TIntegerField
+      FieldName = 'CODIGO_BALANCA'
+    end
+    object ClientDataSet1DATA_ALTERACAO: TDateField
+      FieldName = 'DATA_ALTERACAO'
+    end
+    object ClientDataSet1TIPO: TStringField
+      FieldName = 'TIPO'
+      FixedChar = True
+      Size = 1
+    end
+    object ClientDataSet1SERVICO: TStringField
+      FieldName = 'SERVICO'
+      FixedChar = True
+      Size = 1
+    end
+  end
+  object SQLTable1: TSQLTable
+    MaxBlobSize = 1
+    SQLConnection = MainForm.SQLConnection
+    TableName = 'produto'
+    Left = 144
+    Top = 312
+    object SQLTable1ID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object SQLTable1ID_TRIBUT_ICMS_CUSTOM_CAB: TIntegerField
+      FieldName = 'ID_TRIBUT_ICMS_CUSTOM_CAB'
+    end
+    object SQLTable1ID_UNIDADE_PRODUTO: TIntegerField
+      FieldName = 'ID_UNIDADE_PRODUTO'
+      Required = True
+    end
+    object SQLTable1ID_ALMOXARIFADO: TIntegerField
+      FieldName = 'ID_ALMOXARIFADO'
+    end
+    object SQLTable1ID_GRUPO_TRIBUTARIO: TIntegerField
+      FieldName = 'ID_GRUPO_TRIBUTARIO'
+    end
+    object SQLTable1ID_MARCA_PRODUTO: TIntegerField
+      FieldName = 'ID_MARCA_PRODUTO'
+    end
+    object SQLTable1ID_SUBGRUPO: TIntegerField
+      FieldName = 'ID_SUBGRUPO'
+      Required = True
+    end
+    object SQLTable1GTIN: TStringField
+      FieldName = 'GTIN'
+      Size = 14
+    end
+    object SQLTable1CODIGO_INTERNO: TStringField
+      FieldName = 'CODIGO_INTERNO'
+      Size = 60
+    end
+    object SQLTable1NCM: TStringField
+      FieldName = 'NCM'
+      Size = 8
+    end
+    object SQLTable1NOME: TStringField
+      FieldName = 'NOME'
+      Size = 100
+    end
+    object SQLTable1DESCRICAO: TMemoField
+      FieldName = 'DESCRICAO'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object SQLTable1DESCRICAO_PDV: TStringField
+      FieldName = 'DESCRICAO_PDV'
+      Size = 30
+    end
+    object SQLTable1VALOR_COMPRA: TFMTBCDField
+      FieldName = 'VALOR_COMPRA'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1VALOR_VENDA: TFMTBCDField
+      FieldName = 'VALOR_VENDA'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1PRECO_VENDA_MINIMO: TFMTBCDField
+      FieldName = 'PRECO_VENDA_MINIMO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1PRECO_SUGERIDO: TFMTBCDField
+      FieldName = 'PRECO_SUGERIDO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1CUSTO_UNITARIO: TFMTBCDField
+      FieldName = 'CUSTO_UNITARIO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1CUSTO_PRODUCAO: TFMTBCDField
+      FieldName = 'CUSTO_PRODUCAO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1CUSTO_MEDIO_LIQUIDO: TFMTBCDField
+      FieldName = 'CUSTO_MEDIO_LIQUIDO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1PRECO_LUCRO_ZERO: TFMTBCDField
+      FieldName = 'PRECO_LUCRO_ZERO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1PRECO_LUCRO_MINIMO: TFMTBCDField
+      FieldName = 'PRECO_LUCRO_MINIMO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1PRECO_LUCRO_MAXIMO: TFMTBCDField
+      FieldName = 'PRECO_LUCRO_MAXIMO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1MARKUP: TFMTBCDField
+      FieldName = 'MARKUP'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1QUANTIDADE_ESTOQUE: TFMTBCDField
+      FieldName = 'QUANTIDADE_ESTOQUE'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1QUANTIDADE_ESTOQUE_ANTERIOR: TFMTBCDField
+      FieldName = 'QUANTIDADE_ESTOQUE_ANTERIOR'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1ESTOQUE_MINIMO: TFMTBCDField
+      FieldName = 'ESTOQUE_MINIMO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1ESTOQUE_MAXIMO: TFMTBCDField
+      FieldName = 'ESTOQUE_MAXIMO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1ESTOQUE_IDEAL: TFMTBCDField
+      FieldName = 'ESTOQUE_IDEAL'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1EXCLUIDO: TStringField
+      FieldName = 'EXCLUIDO'
+      FixedChar = True
+      Size = 1
+    end
+    object SQLTable1INATIVO: TStringField
+      FieldName = 'INATIVO'
+      FixedChar = True
+      Size = 1
+    end
+    object SQLTable1DATA_CADASTRO: TDateField
+      FieldName = 'DATA_CADASTRO'
+    end
+    object SQLTable1IMAGEM: TMemoField
+      FieldName = 'IMAGEM'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object SQLTable1EX_TIPI: TStringField
+      FieldName = 'EX_TIPI'
+      FixedChar = True
+      Size = 3
+    end
+    object SQLTable1CODIGO_LST: TStringField
+      FieldName = 'CODIGO_LST'
+      FixedChar = True
+      Size = 4
+    end
+    object SQLTable1CLASSE_ABC: TStringField
+      FieldName = 'CLASSE_ABC'
+      FixedChar = True
+      Size = 1
+    end
+    object SQLTable1IAT: TStringField
+      FieldName = 'IAT'
+      FixedChar = True
+      Size = 1
+    end
+    object SQLTable1IPPT: TStringField
+      FieldName = 'IPPT'
+      FixedChar = True
+      Size = 1
+    end
+    object SQLTable1TIPO_ITEM_SPED: TStringField
+      FieldName = 'TIPO_ITEM_SPED'
+      FixedChar = True
+      Size = 2
+    end
+    object SQLTable1PESO: TFMTBCDField
+      FieldName = 'PESO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1PORCENTO_COMISSAO: TFMTBCDField
+      FieldName = 'PORCENTO_COMISSAO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1PONTO_PEDIDO: TFMTBCDField
+      FieldName = 'PONTO_PEDIDO'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1LOTE_ECONOMICO_COMPRA: TFMTBCDField
+      FieldName = 'LOTE_ECONOMICO_COMPRA'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1ALIQUOTA_ICMS_PAF: TFMTBCDField
+      FieldName = 'ALIQUOTA_ICMS_PAF'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1ALIQUOTA_ISSQN_PAF: TFMTBCDField
+      FieldName = 'ALIQUOTA_ISSQN_PAF'
+      Precision = 20
+      Size = 6
+    end
+    object SQLTable1TOTALIZADOR_PARCIAL: TStringField
+      FieldName = 'TOTALIZADOR_PARCIAL'
+      Size = 10
+    end
+    object SQLTable1CODIGO_BALANCA: TIntegerField
+      FieldName = 'CODIGO_BALANCA'
+    end
+    object SQLTable1DATA_ALTERACAO: TDateField
+      FieldName = 'DATA_ALTERACAO'
+    end
+    object SQLTable1TIPO: TStringField
+      FieldName = 'TIPO'
+      FixedChar = True
+      Size = 1
+    end
+    object SQLTable1SERVICO: TStringField
+      FieldName = 'SERVICO'
+      FixedChar = True
+      Size = 1
+    end
+  end
+  object DataSetProvider1: TDataSetProvider
+    DataSet = SQLTable1
+    Left = 232
+    Top = 312
+  end
+end

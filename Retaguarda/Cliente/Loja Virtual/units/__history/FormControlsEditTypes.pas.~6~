@@ -1,0 +1,42 @@
+//Contato = SAC
+unit FormControlsEditTypes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, uniGUITypes, uniGUIAbstractClasses,
+  uniGUIClasses, uniGUIFrame, uniEdit, uniGUIBaseClasses, uniPanel, uniSpinEdit,
+  uniSyntaxEditor, uniLabel, uniButton, uniMemo, uniMultiItem, uniComboBox,
+  IdSMTP, IdSSLOpenSSL, IdMessage, IdText, IdAttachmentFile,
+  IdExplicitTLSClientServerBase;
+
+type
+  TUniFormControlsEditTypes = class(TUniFrame)
+    UniContainerPanel1: TUniContainerPanel;
+    UniEdit1: TUniEdit;
+    UniLabel4: TUniLabel;
+    UniMemo1: TUniMemo;
+    UniButton1: TUniButton;
+    UniEdit2: TUniEdit;
+    UniLabel1: TUniLabel;
+    UniLabel2: TUniLabel;
+    UniComboBox3: TUniComboBox;
+    UniLabel3: TUniLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+uses
+  uniGUIForm;
+
+{$R *.dfm}
+
+initialization
+  RegisterClass(TUniFormControlsEditTypes);
+
+end.

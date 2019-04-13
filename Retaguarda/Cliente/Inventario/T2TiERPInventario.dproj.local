@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/07/19 07:30:45.000.162,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Inventario\Tela\UInventarioContagem.pas</Transaction>
+    <Transaction>2016/07/19 07:33:50.000.512,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\AlmoxarifadoVO.pas=</Transaction>
+    <Transaction>2016/07/19 07:37:38.000.496,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\InventarioContagemDetVO.pas</Transaction>
+    <Transaction>2016/07/19 07:37:38.000.631,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\InventarioContagemCabVO.pas</Transaction>
+    <Transaction>2016/07/19 07:37:48.000.133,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\InventarioContagemDetController.pas</Transaction>
+    <Transaction>2016/07/19 07:37:48.000.291,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\InventarioContagemCabController.pas</Transaction>
+    <Transaction>2016/07/19 07:58:56.000.636,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\PcpServicoVO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:56.000.819,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\PcpOpDetalheVO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:56.000.267,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\BancoDTO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:57.000.493,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\PcpInstrucaoOpVO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:57.000.186,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\ViewFichaTecnicaVO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:57.000.341,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\FichaTecnicaVO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:57.000.006,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\PcpOpCabecalhoVO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:57.000.857,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\PcpInstrucaoVO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:58.000.014,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\PcpServicoEquipamentoVO.pas</Transaction>
+    <Transaction>2016/07/19 07:58:58.000.189,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\PcpServicoColaboradorVO.pas</Transaction>
+    <Transaction>2016/07/19 07:59:31.000.015,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\AlmoxarifadoVO.pas</Transaction>
+    <Transaction>2016/07/20 01:52:56.000.883,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Inventario\Tela\UHistoricoReajuste.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,251 @@
+object FContabilLivrosContabeis: TFContabilLivrosContabeis
+  Left = 433
+  Top = 261
+  BorderStyle = bsDialog
+  Caption = 'Livros Cont'#225'beis'
+  ClientHeight = 211
+  ClientWidth = 454
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelCabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 454
+    Height = 65
+    Align = alTop
+    Color = 14537936
+    ParentBackground = False
+    TabOrder = 0
+    object Bevel1: TBevel
+      Left = 61
+      Top = 50
+      Width = 390
+      Height = 6
+    end
+    object Image1: TImage
+      Left = 7
+      Top = 7
+      Width = 48
+      Height = 49
+      ParentShowHint = False
+      ShowHint = False
+      Transparent = True
+    end
+    object Label2: TLabel
+      Left = 62
+      Top = 24
+      Width = 159
+      Height = 23
+      Caption = 'Livros Cont'#225'beis'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object ActionToolBarPrincipal: TActionToolBar
+    AlignWithMargins = True
+    Left = 3
+    Top = 182
+    Width = 448
+    Height = 26
+    ActionManager = ActionManagerLocal
+    Align = alBottom
+    BiDiMode = bdRightToLeft
+    Caption = 'ActionToolBarPrincipal'
+    ColorMap.MenuColor = clMenu
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Orientation = boRightToLeft
+    ParentBiDiMode = False
+    ParentFont = False
+    Spacing = 5
+  end
+  object PageControlItens: TPageControl
+    Left = 0
+    Top = 65
+    Width = 454
+    Height = 114
+    ActivePage = tsDados
+    Align = alClient
+    TabOrder = 2
+    object tsDados: TTabSheet
+      Caption = 'Dados Livros'
+      object PanelDados: TPanel
+        Left = 0
+        Top = 0
+        Width = 446
+        Height = 86
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        DesignSize = (
+          446
+          86)
+        object PanelMestre: TPanel
+          Left = 10
+          Top = 12
+          Width = 431
+          Height = 61
+          Anchors = [akLeft, akTop, akRight]
+          BevelOuter = bvLowered
+          TabOrder = 0
+          object EditPeriodo: TLabeledMaskEdit
+            Left = 9
+            Top = 27
+            Width = 72
+            Height = 21
+            Alignment = taCenter
+            EditLabel.Width = 40
+            EditLabel.Height = 13
+            EditLabel.Caption = 'Per'#237'odo:'
+            MaxLength = 7
+            TabOrder = 0
+            Text = '  /////////'
+            Required = False
+            EditMask = '##/####;1;_'
+            MaskState = [msMasked]
+          end
+        end
+      end
+    end
+  end
+  object ActionManagerLocal: TActionManager
+    ActionBars.ShowHints = False
+    ActionBars = <
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionCancelar
+            Caption = '&Cancelar [F11]'
+            ImageIndex = 10
+            ShortCut = 122
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionSair
+            Caption = '&Sair [F8]'
+            ImageIndex = 12
+            ShortCut = 119
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Action = ActionLivroCaixa
+            Caption = '&Caixa'
+            ImageIndex = 30
+          end
+          item
+            Action = ActionLivroRazao
+            Caption = '&Raz'#227'o'
+            ImageIndex = 32
+          end
+          item
+            Action = ActionLivroBalancete
+            Caption = '&Balancete'
+            ImageIndex = 29
+          end
+          item
+            Action = ActionLivroDiario
+            Caption = '&Di'#225'rio'
+            ImageIndex = 31
+          end>
+        ActionBar = ActionToolBarPrincipal
+      end
+      item
+      end
+      item
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end>
+    DisabledImages = FDataModule.ImagensCadastrosD
+    Images = FDataModule.ImagensCadastros
+    Left = 352
+    Top = 8
+    StyleName = 'Ribbon - Silver'
+    object ActionCancelar: TAction
+      Category = 'Geral'
+      Caption = 'Cancelar [F11]'
+      ImageIndex = 10
+      ShortCut = 122
+      OnExecute = ActionCancelarExecute
+    end
+    object ActionSair: TAction
+      Category = 'Geral'
+      Caption = 'Sair [F8]'
+      ImageIndex = 12
+      ShortCut = 119
+      OnExecute = ActionSairExecute
+    end
+    object ActionLivroDiario: TAction
+      Category = 'Geral'
+      Caption = 'Di'#225'rio'
+      ImageIndex = 31
+      OnExecute = ActionLivroDiarioExecute
+    end
+    object ActionLivroRazao: TAction
+      Category = 'Geral'
+      Caption = 'Raz'#227'o'
+      ImageIndex = 32
+      OnExecute = ActionLivroRazaoExecute
+    end
+    object ActionLivroBalancete: TAction
+      Category = 'Geral'
+      Caption = 'Balancete'
+      ImageIndex = 29
+      OnExecute = ActionLivroBalanceteExecute
+    end
+    object ActionLivroCaixa: TAction
+      Category = 'Geral'
+      Caption = 'Caixa'
+      ImageIndex = 30
+      OnExecute = ActionLivroCaixaExecute
+    end
+  end
+end

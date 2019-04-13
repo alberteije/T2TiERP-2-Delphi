@@ -1,0 +1,592 @@
+-- 17/10 19:04:44:869 - TEF_DIAL Inicializado
+-- 17/10 19:04:44:870 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 19:04:44:870 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 19:04:44:870 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 19:04:44:881 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 19:04:44:883 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 19:04:45:148 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 19:04:45:149 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 19:05:10:811 - TEF_DIAL Inicializado
+-- 17/10 19:05:10:812 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 19:05:10:812 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 19:05:10:813 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 19:05:10:842 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 19:05:10:843 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 19:05:11:095 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 19:05:11:096 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 19:05:11:117 - InfoECF: ineEstadoECF
+-- 17/10 19:05:11:149 -     Ret: V
+-- 17/10 19:05:11:149 - InfoECF: ineSubTotal
+-- 17/10 19:05:11:169 -     Ret: 10,00
+-- 17/10 19:05:11:169 - InfoECF: ineTotalAPagar
+-- 17/10 19:06:20:489 - TEF_DIAL Inicializado
+-- 17/10 19:06:20:489 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 19:06:20:489 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 19:06:20:491 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 19:06:20:530 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 19:06:20:531 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 19:06:21:069 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 19:06:21:069 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 19:06:47:229 - TEF_DIAL Inicializado
+-- 17/10 19:06:47:229 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 19:06:47:229 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 19:06:47:230 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 19:06:47:255 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 19:06:47:257 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 19:06:47:508 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 19:06:47:509 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 19:06:59:948 - InfoECF: ineEstadoECF
+-- 17/10 19:06:59:996 -     Ret: V
+-- 17/10 19:06:59:996 - InfoECF: ineSubTotal
+-- 17/10 19:07:00:028 -     Ret: 10,00
+-- 17/10 19:07:00:028 - InfoECF: ineTotalAPagar
+-- 17/10 19:16:01:293 - TEF_DIAL Inicializado
+-- 17/10 19:16:01:293 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 19:16:01:293 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 19:16:01:294 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 19:16:01:300 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 19:16:01:301 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 19:16:01:552 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 19:16:01:552 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 22:53:22:842 - TEF_DIAL Inicializado
+-- 17/10 22:53:22:845 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 22:53:22:846 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 22:53:22:847 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 22:53:22:904 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 22:53:22:905 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 22:53:23:466 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 22:53:23:487 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:23:22:293 - TEF_DIAL Inicializado
+-- 17/10 23:23:22:295 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:23:22:295 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:23:22:296 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:23:22:341 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:23:22:342 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:23:22:700 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:23:22:700 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:31:48:294 - TEF_DIAL Inicializado
+-- 17/10 23:31:48:294 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:31:48:295 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:31:48:296 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:31:48:350 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:31:48:352 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:31:48:721 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:31:48:722 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:53:54:354 - TEF_DIAL Inicializado
+-- 17/10 23:53:54:355 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:53:54:355 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:53:54:356 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:53:54:371 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:53:54:373 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:53:54:625 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:53:54:627 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:54:06:375 - InfoECF: ineEstadoECF
+-- 17/10 23:54:06:406 -     Ret: P
+-- 17/10 23:54:06:406 - InfoECF: ineSubTotal
+-- 17/10 23:54:06:441 -     Ret: 1,00
+-- 17/10 23:54:06:441 - InfoECF: ineTotalAPagar
+-- 17/10 23:55:06:932 - TEF_DIAL Inicializado
+-- 17/10 23:55:07:020 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:55:07:023 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:55:07:261 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:55:07:294 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:55:07:295 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:55:07:552 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:55:07:553 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:55:30:678 - TEF_DIAL Inicializado
+-- 17/10 23:55:30:678 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:55:30:679 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:55:30:680 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:55:30:684 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:55:30:684 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:55:31:188 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:55:31:190 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:55:31:222 - InfoECF: ineEstadoECF
+-- 17/10 23:55:31:257 -     Ret: P
+-- 17/10 23:55:31:257 - InfoECF: ineSubTotal
+-- 17/10 23:55:31:284 -     Ret: 1,00
+-- 17/10 23:55:31:284 - InfoECF: ineTotalAPagar
+-- 17/10 23:56:14:580 - TEF_DIAL Inicializado
+-- 17/10 23:56:14:580 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:56:14:581 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:56:14:582 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:56:14:626 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:56:14:626 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:56:14:897 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:56:14:897 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:56:22:941 - TEF_DIAL Inicializado
+-- 17/10 23:56:22:941 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:56:22:941 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:56:22:942 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:56:22:945 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:56:22:945 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:56:23:448 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:56:23:450 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:56:23:491 - InfoECF: ineEstadoECF
+-- 17/10 23:56:23:508 -     Ret: P
+-- 17/10 23:56:23:508 - InfoECF: ineSubTotal
+-- 17/10 23:56:23:549 -     Ret: 1,00
+-- 17/10 23:56:23:552 - InfoECF: ineTotalAPagar
+-- 17/10 23:59:10:218 - TEF_DIAL Inicializado
+-- 17/10 23:59:10:219 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:59:10:220 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:59:10:221 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:59:10:255 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:59:10:256 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:59:10:683 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:59:10:684 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:59:52:827 - TEF_DIAL Inicializado
+-- 17/10 23:59:52:827 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 17/10 23:59:52:828 - TEF_DIAL IniciarRequisicao: ATV
+-- 17/10 23:59:52:828 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 17/10 23:59:52:850 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 17/10 23:59:52:851 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 17/10 23:59:53:103 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 17/10 23:59:53:104 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 17/10 23:59:56:358 - InfoECF: ineEstadoECF
+-- 17/10 23:59:56:385 -     Ret: P
+-- 17/10 23:59:56:385 - InfoECF: ineSubTotal
+-- 17/10 23:59:56:434 -     Ret: 1,00
+-- 17/10 23:59:56:435 - InfoECF: ineTotalAPagar
+-- 18/10 00:23:05:921 - TEF_DIAL Inicializado
+-- 18/10 00:23:05:921 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 14:59:05:461 - TEF_DIAL Inicializado
+-- 18/10 14:59:05:497 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 15:02:03:151 - TEF_DIAL Inicializado
+-- 18/10 15:02:03:152 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 15:05:11:453 - TEF_DIAL IniciarRequisicao: NCN
+-- 18/10 15:05:11:457 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:05:12:719 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:05:12:757 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:05:12:758 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:05:15:673 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:05:17:239 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:05:18:599 - TEF_DIAL FinalizarRequisicao: NCN, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:05:18:604 - TEF_DIAL FinalizarRequisicao: NCN, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:05:18:605 - TEF_DIAL FinalizarRequisicao: NCN, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:05:28:963 - TEF_DIAL FinalizarRequisicao: NCN, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:05:30:752 - TEF_DIAL FinalizarRequisicao: NCN, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:05:30:753 - TEF_DIAL DoExibeMsg: Oper: opmOK Mensagem: Última Transação TEF foi cancelada
+
+Valor: 1,00
+-- 18/10 15:05:33:886 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:05:35:839 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:05:35:854 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:05:35:854 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:05:36:810 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:05:37:813 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:05:48:224 - TEF_DIAL Inicializado
+-- 18/10 15:05:48:224 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 15:05:48:224 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:05:57:177 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:06:23:023 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:06:23:023 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:07:26:334 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:08:15:201 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:08:57:738 - InfoECF: ineEstadoECF
+-- 18/10 15:09:04:925 -     Ret: V
+-- 18/10 15:09:04:928 - InfoECF: ineSubTotal
+-- 18/10 15:09:07:101 -     Ret: 10,00
+-- 18/10 15:09:07:101 - InfoECF: ineTotalAPagar
+-- 18/10 15:13:07:262 - TEF_DIAL Inicializado
+-- 18/10 15:13:07:262 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 15:13:07:263 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:13:07:263 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:13:07:276 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:13:07:277 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:13:07:852 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:13:07:948 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:13:16:508 - TEF_DIAL Inicializado
+-- 18/10 15:13:16:509 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 15:13:16:509 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:13:16:509 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:13:16:544 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:13:16:545 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:13:16:797 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:13:16:797 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:13:16:823 - InfoECF: ineEstadoECF
+-- 18/10 15:13:16:856 -     Ret: V
+-- 18/10 15:13:16:856 - InfoECF: ineSubTotal
+-- 18/10 15:13:16:883 -     Ret: 10,00
+-- 18/10 15:13:16:886 - InfoECF: ineTotalAPagar
+-- 18/10 15:13:16:886 -     Ret: 10,00
+-- 18/10 15:13:16:914 - FinalizarCupom, DesbloquearMouseTecladoNoTermino
+-- 18/10 15:13:16:914 - BloquearMouseTeclado: SIM
+-- 18/10 15:13:16:914 - InfoECF: ineEstadoECF
+-- 18/10 15:13:16:958 -     Ret: P
+-- 18/10 15:13:16:958 - InfoECF: ineSubTotal
+-- 18/10 15:13:16:988 -     Ret: 10,00
+-- 18/10 15:13:16:989 - InfoECF: ineTotalAPagar
+-- 18/10 15:13:16:989 -     Ret: 10,00
+-- 18/10 15:13:16:990 - TEF_DIAL ComandarECF: Oper: opeImprimePagamentos
+-- 18/10 15:13:16:990 - InfoECF: ineSubTotal
+-- 18/10 15:13:16:991 -     Ret: 10,00
+-- 18/10 15:13:16:991 - BloquearMouseTeclado: NAO
+-- 18/10 15:15:41:649 - TEF_DIAL Inicializado
+-- 18/10 15:15:41:649 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 15:15:41:650 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:15:41:654 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:15:41:689 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:15:41:690 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:15:42:192 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:15:42:192 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:16:12:222 - TEF_DIAL Inicializado
+-- 18/10 15:16:12:223 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 15:16:12:223 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:16:12:225 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:16:12:295 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:16:12:296 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:16:12:968 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:16:12:969 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:16:22:962 - TEF_DIAL Inicializado
+-- 18/10 15:16:22:962 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 15:16:22:962 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:16:22:963 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:16:22:966 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:16:22:966 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:16:23:471 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:16:23:471 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:16:23:472 - InfoECF: ineEstadoECF
+-- 18/10 15:16:23:498 -     Ret: V
+-- 18/10 15:16:23:501 - InfoECF: ineSubTotal
+-- 18/10 15:16:23:501 -     Ret: 10,00
+-- 18/10 15:16:23:502 - InfoECF: ineTotalAPagar
+-- 18/10 15:16:23:502 -     Ret: 0,00
+-- 18/10 15:16:23:502 - TEF_DIAL IniciarRequisicao: CRT
+-- 18/10 15:16:23:503 - ConfirmarTransacoesAnteriores
+-- 18/10 15:16:23:503 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:16:23:504 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:16:23:532 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:16:23:533 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:16:23:785 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:16:23:786 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:16:23:789 - TEF_DIAL FinalizarRequisicao: CRT, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:16:23:793 - TEF_DIAL FinalizarRequisicao: CRT, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:16:23:794 - TEF_DIAL FinalizarRequisicao: CRT, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:16:24:304 - TEF_DIAL FinalizarRequisicao: CRT, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:16:24:306 - TEF_DIAL FinalizarRequisicao: CRT, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:16:24:306 - TEF_DIAL LerRespostaRequisicao: CRT, Aguardando: C:\Client\resp\intpos.001
+-- 18/10 15:17:14:579 - TEF_DIAL LerRespostaRequisicao: CRT, Fim da Espera de: C:\Client\resp\intpos.001 Recebido
+-- 18/10 15:17:14:582 - TEF_DIAL LerRespostaRequisicao: CRT, Verificando conteudo de: C:\Client\resp\intpos.001
+-- 18/10 15:17:14:583 - TEF_DIAL ProcessarRespostaPagamento: CRT - 54983 Indice: 02 Valor:10,00
+-- 18/10 15:17:14:583 - ACBrTEFD CopiarResposta: CRT - 54983 Arq: C:\Projetos\T2Ti ERP 2.0\Delphi\Frente de Caixa\PAF-ECF\TEF\ACBr_TEF_DIAL_001.tef
+-- 18/10 15:17:14:604 - TEF_DIAL FinalizarResposta: CRT
+-- 18/10 15:17:14:653 - FinalizarCupom, DesbloquearMouseTecladoNoTermino
+-- 18/10 15:17:14:656 - BloquearMouseTeclado: SIM
+-- 18/10 15:17:14:656 - InfoECF: ineEstadoECF
+-- 18/10 15:17:14:683 -     Ret: P
+-- 18/10 15:17:14:685 - InfoECF: ineSubTotal
+-- 18/10 15:17:14:715 -     Ret: 10,00
+-- 18/10 15:17:14:715 - TEF_DIAL ECFPagamento: Indice: 02 Valor: 10,00
+-- 18/10 15:17:14:743 - InfoECF: ineSubTotal
+-- 18/10 15:17:14:795 -     Ret: 0,00
+-- 18/10 15:17:14:797 - TEF_DIAL ComandarECF: Oper: opeFechaCupom
+-- 18/10 15:17:15:042 - InfoECF: ineEstadoECF
+-- 18/10 15:17:15:068 -     Ret: L
+-- 18/10 15:17:15:070 - BloquearMouseTeclado: NAO
+-- 18/10 15:17:15:070 - ImprimirTransacoesPendentes
+-- 18/10 15:17:15:082 - InfoECF: ineEstadoECF
+-- 18/10 15:17:15:104 -     Ret: L
+-- 18/10 15:17:15:105 - BloquearMouseTeclado: SIM
+-- 18/10 15:17:15:105 - TEF_DIAL DoExibeMsg: Oper: opmExibirMsgOperador Mensagem: Transacao OK!
+-- 18/10 15:17:15:106 - TEF_DIAL ECFAbreVinculado: COO: 000005 Indice: 02 Valor: 10,00
+-- 18/10 15:17:15:129 - TEF_DIAL ECFImprimeVia: trVinculado Via: 1
+-- 18/10 15:17:15:886 - TEF_DIAL ComandarECF: Oper: opePulaLinhas
+-- 18/10 15:17:16:221 - TEF_DIAL DoExibeMsg: Oper: opmDestaqueVia Mensagem: Destaque a 1ª Via
+-- 18/10 15:17:19:233 - TEF_DIAL ECFImprimeVia: trVinculado Via: 2
+-- 18/10 15:17:19:869 - TEF_DIAL AguardarTempoMinimoDeExibicao: 4 segundos
+-- 18/10 15:17:20:122 - TEF_DIAL DoExibeMsg: Oper: opmRemoverMsgOperador Mensagem: 
+-- 18/10 15:17:20:122 - TEF_DIAL DoExibeMsg: Oper: opmRemoverMsgCliente Mensagem: 
+-- 18/10 15:17:20:123 - TEF_DIAL ComandarECF: Oper: opeFechaVinculado
+-- 18/10 15:17:20:517 - ConfirmarTransacoesPendentes
+-- 18/10 15:17:20:517 - TEF_DIAL IniciarRequisicao: CNF
+-- 18/10 15:17:20:517 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 15:17:20:519 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:17:20:523 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:17:20:523 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:17:20:778 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:17:20:779 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:17:20:780 - TEF_DIAL FinalizarRequisicao: CNF, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 15:17:20:786 - TEF_DIAL FinalizarRequisicao: CNF, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 15:17:20:786 - TEF_DIAL FinalizarRequisicao: CNF, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 15:17:21:289 - TEF_DIAL FinalizarRequisicao: CNF, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 15:17:21:290 - TEF_DIAL FinalizarRequisicao: CNF, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 15:17:21:291 - BloquearMouseTeclado: NAO
+-- 18/10 17:22:31:808 - TEF_DIAL Inicializado
+-- 18/10 17:22:31:835 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 17:22:31:835 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 17:22:31:836 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:22:31:860 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:22:31:861 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:22:32:112 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:22:32:113 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:23:15:092 - TEF_DIAL Inicializado
+-- 18/10 17:23:15:095 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 17:23:15:095 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 17:23:15:096 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:23:15:101 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:23:15:102 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:23:15:379 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:23:15:380 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:23:30:402 - TEF_DIAL Inicializado
+-- 18/10 17:23:30:402 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 17:23:30:403 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 17:23:30:403 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:23:30:451 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:23:30:451 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:23:30:704 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:23:30:705 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:23:30:705 - TEF_DIAL DesInicializado
+-- 18/10 17:23:34:499 - InfoECF: ineEstadoECF
+-- 18/10 17:23:35:044 -     Ret: V
+-- 18/10 17:23:35:044 - InfoECF: ineSubTotal
+-- 18/10 17:23:35:045 -     Ret: 55,00
+-- 18/10 17:23:35:045 - InfoECF: ineTotalAPagar
+-- 18/10 17:23:35:045 -     Ret: 0,00
+-- 18/10 17:23:35:046 - TEF_DIAL IniciarRequisicao: CRT
+-- 18/10 17:23:45:771 - FinalizarCupom, DesbloquearMouseTecladoNoTermino
+-- 18/10 17:23:45:772 - BloquearMouseTeclado: SIM
+-- 18/10 17:23:45:773 - InfoECF: ineEstadoECF
+-- 18/10 17:23:45:818 -     Ret: P
+-- 18/10 17:23:45:820 - InfoECF: ineSubTotal
+-- 18/10 17:23:45:862 -     Ret: 0,00
+-- 18/10 17:23:45:864 - TEF_DIAL ComandarECF: Oper: opeFechaCupom
+-- 18/10 17:23:46:103 - InfoECF: ineEstadoECF
+-- 18/10 17:23:46:182 -     Ret: L
+-- 18/10 17:23:46:264 - BloquearMouseTeclado: NAO
+-- 18/10 17:24:05:244 - TEF_DIAL Inicializado
+-- 18/10 17:24:05:244 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 17:24:05:247 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 17:24:05:248 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:24:05:306 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:24:05:307 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:24:05:559 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:24:05:559 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:24:22:810 - TEF_DIAL Inicializado
+-- 18/10 17:24:22:810 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 18/10 17:24:22:810 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 17:24:22:811 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:24:22:833 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:24:22:834 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:24:23:086 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:24:23:087 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:24:23:087 - InfoECF: ineEstadoECF
+-- 18/10 17:24:23:524 -     Ret: V
+-- 18/10 17:24:23:525 - InfoECF: ineSubTotal
+-- 18/10 17:24:23:525 -     Ret: 80,00
+-- 18/10 17:24:23:526 - InfoECF: ineTotalAPagar
+-- 18/10 17:24:23:526 -     Ret: 0,00
+-- 18/10 17:24:23:526 - TEF_DIAL IniciarRequisicao: CRT
+-- 18/10 17:24:23:527 - ConfirmarTransacoesAnteriores
+-- 18/10 17:24:23:527 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 17:24:23:529 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:24:23:567 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:24:23:569 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:24:23:820 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:24:23:822 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:24:23:824 - TEF_DIAL FinalizarRequisicao: CRT, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:24:23:829 - TEF_DIAL FinalizarRequisicao: CRT, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:24:23:830 - TEF_DIAL FinalizarRequisicao: CRT, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:24:24:342 - TEF_DIAL FinalizarRequisicao: CRT, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:24:24:343 - TEF_DIAL FinalizarRequisicao: CRT, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:24:24:344 - TEF_DIAL LerRespostaRequisicao: CRT, Aguardando: C:\Client\resp\intpos.001
+-- 18/10 17:24:54:273 - TEF_DIAL LerRespostaRequisicao: CRT, Fim da Espera de: C:\Client\resp\intpos.001 Recebido
+-- 18/10 17:24:54:274 - TEF_DIAL LerRespostaRequisicao: CRT, Verificando conteudo de: C:\Client\resp\intpos.001
+-- 18/10 17:24:54:275 - TEF_DIAL ProcessarRespostaPagamento: CRT - 62663 Indice: 02 Valor:80,00
+-- 18/10 17:24:54:275 - ACBrTEFD CopiarResposta: CRT - 62663 Arq: C:\Projetos\T2Ti ERP 2.0\Delphi\Frente de Caixa\PAF-ECF\TEF\ACBr_TEF_DIAL_001.tef
+-- 18/10 17:24:54:304 - TEF_DIAL FinalizarResposta: CRT
+-- 18/10 17:24:54:633 - FinalizarCupom, DesbloquearMouseTecladoNoTermino
+-- 18/10 17:24:54:634 - BloquearMouseTeclado: SIM
+-- 18/10 17:24:54:634 - InfoECF: ineEstadoECF
+-- 18/10 17:24:54:679 -     Ret: P
+-- 18/10 17:24:54:679 - InfoECF: ineSubTotal
+-- 18/10 17:24:54:712 -     Ret: 80,00
+-- 18/10 17:24:54:712 - TEF_DIAL ECFPagamento: Indice: 02 Valor: 80,00
+-- 18/10 17:24:54:738 - InfoECF: ineSubTotal
+-- 18/10 17:24:54:787 -     Ret: 0,00
+-- 18/10 17:24:54:787 - TEF_DIAL ComandarECF: Oper: opeFechaCupom
+-- 18/10 17:24:55:001 - InfoECF: ineEstadoECF
+-- 18/10 17:24:55:025 -     Ret: L
+-- 18/10 17:24:55:027 - BloquearMouseTeclado: NAO
+-- 18/10 17:24:55:027 - ImprimirTransacoesPendentes
+-- 18/10 17:24:55:032 - InfoECF: ineEstadoECF
+-- 18/10 17:24:55:048 -     Ret: L
+-- 18/10 17:24:55:049 - BloquearMouseTeclado: SIM
+-- 18/10 17:24:55:049 - TEF_DIAL DoExibeMsg: Oper: opmExibirMsgOperador Mensagem: Transacao OK!
+-- 18/10 17:24:55:050 - TEF_DIAL ECFAbreVinculado: COO: 000012 Indice: 02 Valor: 80,00
+-- 18/10 17:24:55:073 - TEF_DIAL ECFImprimeVia: trVinculado Via: 1
+-- 18/10 17:24:55:772 - TEF_DIAL ComandarECF: Oper: opePulaLinhas
+-- 18/10 17:24:56:094 - TEF_DIAL DoExibeMsg: Oper: opmDestaqueVia Mensagem: Destaque a 1ª Via
+-- 18/10 17:24:59:123 - TEF_DIAL ECFImprimeVia: trVinculado Via: 2
+-- 18/10 17:24:59:802 - TEF_DIAL AguardarTempoMinimoDeExibicao: 4 segundos
+-- 18/10 17:25:00:055 - TEF_DIAL DoExibeMsg: Oper: opmRemoverMsgOperador Mensagem: 
+-- 18/10 17:25:00:055 - TEF_DIAL DoExibeMsg: Oper: opmRemoverMsgCliente Mensagem: 
+-- 18/10 17:25:00:055 - TEF_DIAL ComandarECF: Oper: opeFechaVinculado
+-- 18/10 17:25:00:423 - ConfirmarTransacoesPendentes
+-- 18/10 17:25:00:423 - TEF_DIAL IniciarRequisicao: CNF
+-- 18/10 17:25:00:424 - TEF_DIAL IniciarRequisicao: ATV
+-- 18/10 17:25:00:425 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:25:00:430 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:25:00:431 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:25:00:937 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:25:00:938 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:25:00:939 - TEF_DIAL FinalizarRequisicao: CNF, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 18/10 17:25:00:969 - TEF_DIAL FinalizarRequisicao: CNF, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 18/10 17:25:00:970 - TEF_DIAL FinalizarRequisicao: CNF, Aguardando: C:\Client\resp\intpos.sts
+-- 18/10 17:25:01:221 - TEF_DIAL FinalizarRequisicao: CNF, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 18/10 17:25:01:222 - TEF_DIAL FinalizarRequisicao: CNF, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 18/10 17:25:01:223 - BloquearMouseTeclado: NAO
+-- 25/10 02:34:18:375 - TEF_DIAL Inicializado
+-- 25/10 02:34:18:485 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 25/10 02:34:18:486 - TEF_DIAL IniciarRequisicao: ATV
+-- 25/10 02:34:18:491 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:34:18:514 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:34:18:515 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:34:19:101 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:34:19:101 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:34:51:170 - TEF_DIAL Inicializado
+-- 25/10 02:34:51:170 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 25/10 02:34:51:171 - TEF_DIAL IniciarRequisicao: ATV
+-- 25/10 02:34:51:171 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:34:51:205 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:34:51:205 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:34:51:458 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:34:51:459 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:34:51:460 - InfoECF: ineEstadoECF
+-- 25/10 02:34:51:487 -     Ret: V
+-- 25/10 02:34:51:487 - InfoECF: ineSubTotal
+-- 25/10 02:34:51:488 -     Ret: 50,00
+-- 25/10 02:34:51:488 - InfoECF: ineTotalAPagar
+-- 25/10 02:34:51:493 -     Ret: 0,00
+-- 25/10 02:34:51:494 - TEF_DIAL IniciarRequisicao: CRT
+-- 25/10 02:34:51:494 - ConfirmarTransacoesAnteriores
+-- 25/10 02:34:51:496 - TEF_DIAL IniciarRequisicao: ATV
+-- 25/10 02:34:51:498 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:34:51:516 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:34:51:517 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:34:52:020 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:34:52:020 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:34:52:023 - TEF_DIAL FinalizarRequisicao: CRT, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:34:52:048 - TEF_DIAL FinalizarRequisicao: CRT, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:34:52:049 - TEF_DIAL FinalizarRequisicao: CRT, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:34:52:301 - TEF_DIAL FinalizarRequisicao: CRT, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:34:52:303 - TEF_DIAL FinalizarRequisicao: CRT, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:34:52:303 - TEF_DIAL LerRespostaRequisicao: CRT, Aguardando: C:\Client\resp\intpos.001
+-- 25/10 02:37:41:719 - TEF_DIAL LerRespostaRequisicao: CRT, Fim da Espera de: C:\Client\resp\intpos.001 Recebido
+-- 25/10 02:37:41:720 - TEF_DIAL LerRespostaRequisicao: CRT, Verificando conteudo de: C:\Client\resp\intpos.001
+-- 25/10 02:37:41:721 - TEF_DIAL ProcessarRespostaPagamento: CRT - 9288 Indice: 02 Valor:50,00
+-- 25/10 02:37:41:721 - ACBrTEFD CopiarResposta: CRT - 9288 Arq: C:\Projetos\T2Ti ERP 2.0\Delphi\Frente de Caixa\PAF-ECF\TEF\ACBr_TEF_DIAL_001.tef
+-- 25/10 02:37:41:764 - TEF_DIAL FinalizarResposta: CRT
+-- 25/10 02:37:41:782 - FinalizarCupom, DesbloquearMouseTecladoNoTermino
+-- 25/10 02:37:41:784 - BloquearMouseTeclado: SIM
+-- 25/10 02:37:41:784 - InfoECF: ineEstadoECF
+-- 25/10 02:37:41:828 -     Ret: P
+-- 25/10 02:37:41:830 - InfoECF: ineSubTotal
+-- 25/10 02:37:41:870 -     Ret: 50,00
+-- 25/10 02:37:41:870 - TEF_DIAL ECFPagamento: Indice: 02 Valor: 50,00
+-- 25/10 02:37:41:893 - InfoECF: ineSubTotal
+-- 25/10 02:37:41:948 -     Ret: 0,00
+-- 25/10 02:37:41:949 - TEF_DIAL ComandarECF: Oper: opeFechaCupom
+-- 25/10 02:37:42:154 - InfoECF: ineEstadoECF
+-- 25/10 02:37:42:188 -     Ret: L
+-- 25/10 02:37:42:188 - BloquearMouseTeclado: NAO
+-- 25/10 02:37:42:188 - ImprimirTransacoesPendentes
+-- 25/10 02:37:42:189 - InfoECF: ineEstadoECF
+-- 25/10 02:37:42:279 -     Ret: L
+-- 25/10 02:37:42:281 - BloquearMouseTeclado: SIM
+-- 25/10 02:37:42:282 - TEF_DIAL DoExibeMsg: Oper: opmExibirMsgOperador Mensagem: Transacao OK!
+-- 25/10 02:37:42:283 - TEF_DIAL ECFAbreVinculado: COO: 000024 Indice: 02 Valor: 50,00
+-- 25/10 02:37:43:003 - TEF_DIAL ECFImprimeVia: trVinculado Via: 1
+-- 25/10 02:37:43:766 - TEF_DIAL ComandarECF: Oper: opePulaLinhas
+-- 25/10 02:37:44:086 - TEF_DIAL DoExibeMsg: Oper: opmDestaqueVia Mensagem: Destaque a 1ª Via
+-- 25/10 02:37:47:105 - TEF_DIAL ECFImprimeVia: trVinculado Via: 2
+-- 25/10 02:37:47:735 - TEF_DIAL DoExibeMsg: Oper: opmRemoverMsgOperador Mensagem: 
+-- 25/10 02:37:47:735 - TEF_DIAL DoExibeMsg: Oper: opmRemoverMsgCliente Mensagem: 
+-- 25/10 02:37:47:737 - TEF_DIAL ComandarECF: Oper: opeFechaVinculado
+-- 25/10 02:37:48:403 - ConfirmarTransacoesPendentes
+-- 25/10 02:37:48:405 - TEF_DIAL IniciarRequisicao: CNF
+-- 25/10 02:37:48:405 - TEF_DIAL IniciarRequisicao: ATV
+-- 25/10 02:37:48:405 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:37:48:409 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:37:48:410 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:37:48:666 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:37:48:666 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:37:48:668 - TEF_DIAL FinalizarRequisicao: CNF, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:37:48:672 - TEF_DIAL FinalizarRequisicao: CNF, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:37:48:672 - TEF_DIAL FinalizarRequisicao: CNF, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:37:48:924 - TEF_DIAL FinalizarRequisicao: CNF, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:37:48:925 - TEF_DIAL FinalizarRequisicao: CNF, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:37:48:926 - BloquearMouseTeclado: NAO
+-- 25/10 02:40:44:758 - TEF_DIAL Inicializado
+-- 25/10 02:40:44:758 - TEF_DIAL CancelarTransacoesPendentesClass 
+-- 25/10 02:40:44:758 - TEF_DIAL IniciarRequisicao: ATV
+-- 25/10 02:40:44:759 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:40:44:782 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:40:44:782 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:40:45:035 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:40:45:035 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:40:45:037 - InfoECF: ineEstadoECF
+-- 25/10 02:40:45:063 -     Ret: V
+-- 25/10 02:40:45:063 - InfoECF: ineSubTotal
+-- 25/10 02:40:45:066 -     Ret: 90,00
+-- 25/10 02:40:45:066 - InfoECF: ineTotalAPagar
+-- 25/10 02:40:45:067 -     Ret: 0,00
+-- 25/10 02:40:45:067 - TEF_DIAL IniciarRequisicao: CRT
+-- 25/10 02:40:45:069 - ConfirmarTransacoesAnteriores
+-- 25/10 02:40:45:069 - TEF_DIAL IniciarRequisicao: ATV
+-- 25/10 02:40:45:070 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:40:45:081 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:40:45:081 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:40:45:585 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:40:45:586 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:40:45:588 - TEF_DIAL FinalizarRequisicao: CRT, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:40:45:592 - TEF_DIAL FinalizarRequisicao: CRT, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:40:45:593 - TEF_DIAL FinalizarRequisicao: CRT, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:40:45:845 - TEF_DIAL FinalizarRequisicao: CRT, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:40:45:846 - TEF_DIAL FinalizarRequisicao: CRT, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:40:45:847 - TEF_DIAL LerRespostaRequisicao: CRT, Aguardando: C:\Client\resp\intpos.001
+-- 25/10 02:41:53:222 - TEF_DIAL LerRespostaRequisicao: CRT, Fim da Espera de: C:\Client\resp\intpos.001 Recebido
+-- 25/10 02:41:53:224 - TEF_DIAL LerRespostaRequisicao: CRT, Verificando conteudo de: C:\Client\resp\intpos.001
+-- 25/10 02:41:53:225 - TEF_DIAL ProcessarRespostaPagamento: CRT - 9643 Indice: 02 Valor:90,00
+-- 25/10 02:41:53:225 - ACBrTEFD CopiarResposta: CRT - 9643 Arq: C:\Projetos\T2Ti ERP 2.0\Delphi\Frente de Caixa\PAF-ECF\TEF\ACBr_TEF_DIAL_001.tef
+-- 25/10 02:41:53:260 - TEF_DIAL FinalizarResposta: CRT
+-- 25/10 02:41:53:312 - FinalizarCupom, DesbloquearMouseTecladoNoTermino
+-- 25/10 02:41:53:312 - BloquearMouseTeclado: SIM
+-- 25/10 02:41:53:312 - InfoECF: ineEstadoECF
+-- 25/10 02:41:53:364 -     Ret: P
+-- 25/10 02:41:53:366 - InfoECF: ineSubTotal
+-- 25/10 02:41:53:402 -     Ret: 90,00
+-- 25/10 02:41:53:402 - TEF_DIAL ECFPagamento: Indice: 02 Valor: 90,00
+-- 25/10 02:41:53:423 - InfoECF: ineSubTotal
+-- 25/10 02:41:53:530 -     Ret: 0,00
+-- 25/10 02:41:53:531 - TEF_DIAL ComandarECF: Oper: opeFechaCupom
+-- 25/10 02:41:53:748 - InfoECF: ineEstadoECF
+-- 25/10 02:41:53:765 -     Ret: L
+-- 25/10 02:41:53:767 - BloquearMouseTeclado: NAO
+-- 25/10 02:41:53:767 - ImprimirTransacoesPendentes
+-- 25/10 02:41:53:767 - InfoECF: ineEstadoECF
+-- 25/10 02:41:53:850 -     Ret: L
+-- 25/10 02:41:53:855 - BloquearMouseTeclado: SIM
+-- 25/10 02:41:53:855 - TEF_DIAL DoExibeMsg: Oper: opmExibirMsgOperador Mensagem: Transacao OK!
+-- 25/10 02:41:53:858 - TEF_DIAL ECFAbreVinculado: COO: 000026 Indice: 02 Valor: 90,00
+-- 25/10 02:41:54:007 - TEF_DIAL ECFImprimeVia: trVinculado Via: 1
+-- 25/10 02:41:55:674 - TEF_DIAL ComandarECF: Oper: opePulaLinhas
+-- 25/10 02:41:55:993 - TEF_DIAL DoExibeMsg: Oper: opmDestaqueVia Mensagem: Destaque a 1ª Via
+-- 25/10 02:41:59:007 - TEF_DIAL ECFImprimeVia: trVinculado Via: 2
+-- 25/10 02:41:59:642 - TEF_DIAL DoExibeMsg: Oper: opmRemoverMsgOperador Mensagem: 
+-- 25/10 02:41:59:643 - TEF_DIAL DoExibeMsg: Oper: opmRemoverMsgCliente Mensagem: 
+-- 25/10 02:41:59:643 - TEF_DIAL ComandarECF: Oper: opeFechaVinculado
+-- 25/10 02:42:00:074 - ConfirmarTransacoesPendentes
+-- 25/10 02:42:00:074 - TEF_DIAL IniciarRequisicao: CNF
+-- 25/10 02:42:00:074 - TEF_DIAL IniciarRequisicao: ATV
+-- 25/10 02:42:00:075 - TEF_DIAL FinalizarRequisicao: ATV, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:42:00:081 - TEF_DIAL FinalizarRequisicao: ATV, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:42:00:081 - TEF_DIAL FinalizarRequisicao: ATV, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:42:00:630 - TEF_DIAL FinalizarRequisicao: ATV, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:42:00:630 - TEF_DIAL FinalizarRequisicao: ATV, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:42:00:632 - TEF_DIAL FinalizarRequisicao: CNF, Fechando arquivo: C:\Client\req\intpos.tmp
+-- 25/10 02:42:00:660 - TEF_DIAL FinalizarRequisicao: CNF, Renomeando: C:\Client\req\intpos.tmp para: C:\Client\req\intpos.001
+-- 25/10 02:42:00:660 - TEF_DIAL FinalizarRequisicao: CNF, Aguardando: C:\Client\resp\intpos.sts
+-- 25/10 02:42:00:911 - TEF_DIAL FinalizarRequisicao: CNF, Fim da Espera de: C:\Client\resp\intpos.sts Recebido
+-- 25/10 02:42:00:912 - TEF_DIAL FinalizarRequisicao: CNF, Verificando conteudo de: C:\Client\resp\intpos.sts
+-- 25/10 02:42:00:913 - BloquearMouseTeclado: NAO

@@ -1,0 +1,176 @@
+// Simple Web Browser = URLFrame
+unit URLFrameSimpleWebBrowser;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, uniGUITypes, uniGUIAbstractClasses,
+  uniGUIClasses, uniGUIFrame, uniGUIBaseClasses, Menus,
+  uniMainMenu, uniStatusBar, uniButton, uniBitBtn, uniMultiItem, uniComboBox,
+  uniURLFrame, uniLabel, uniPanel, uniPageControl;
+
+type
+  TUniURLFrameSimpleWebBrowser = class(TUniFrame)
+    UniMainContainer: TUniContainerPanel;
+    UniPageControl1: TUniPageControl;
+    UniTabSheet1: TUniTabSheet;
+    UniContainerPanel1: TUniContainerPanel;
+    UniRefBtn1: TUniBitBtn;
+    UniAddBtn1: TUniBitBtn;
+    UniComboBox1: TUniComboBox;
+    UniURLFrame1: TUniURLFrame;
+    procedure UniAddBtn1Click(Sender: TObject);
+    procedure UniComboBox1KeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure UniRefBtn1Click(Sender: TObject);
+    procedure UniTabSheetClose(Sender: TObject; var AllowClose: Boolean);
+    procedure UniComboBox1Select(Sender: TObject);
+  private
+    TabClosing : TUniTabSheet;
+    procedure GoURL(url: string; URLFrame: TUniURLFrame);
+    Procedure PreGoURL(Go : Boolean);
+    procedure OnTabClose(Sender: TComponent; AResult:Integer);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+procedure TUniURLFrameSimpleWebBrowser.GoURL(url: string; URLFrame: TUniURLFrame);
+begin
+  URLFrame.URL := url;
+  UniPageControl1.ActivePage.Caption := url;
+end;
+
+procedure TUniURLFrameSimpleWebBrowser.PreGoURL(Go: Boolean);
+var
+  Frame: TUniURLFrame;
+  URL, TabExt: string;
+  ComboBox : TUniComboBox;
+begin
+  TabExt := IntToStr(UniPageControl1.ActivePageIndex + 1);
+  ComboBox := (Self.FindComponent('uniComboBox'+TabExt) as TUniComboBox);
+  Frame := (Self.FindComponent('uniUrlFrame'+TabExt) as TUniURLFrame);
+
+  if Go then
+  begin
+    URL := ComboBox.Text;
+    if ComboBox.Items.IndexOf(URL)<0 then ComboBox.Items.Add(URL);
+
+    GoURL(URL, Frame);
+  end;
+end;
+
+procedure TUniURLFrameSimpleWebBrowser.UniAddBtn1Click(Sender: TObject);
+var
+  NewTab, ControlTab: TUniTabSheet;
+  Combo: TUniComboBox;
+  UrlFrame : TUniURLFrame;
+  Container : TUniContainerPanel;
+  Extension : string;
+  RefButton,AddButton : TUniBitBtn;
+begin
+  ControlTab := UniPageControl1.Pages[UniPageControl1.PageCount-1];
+  Extension :=  IntToStr(StrToInt(Copy(ControlTab.Name, 12, MaxInt)) + 1);
+
+  NewTab := TUniTabSheet.Create(Self);
+  NewTab.Name := 'UniTabSheet'+Extension;
+  NewTab.Caption := 'NewTab'+Extension;
+  NewTab.PageControl := UniPageControl1;
+  NewTab.Closable := True;
+  NewTab.OnClose := UniTabSheetClose;
+
+  Container := TUniContainerPanel.Create(Self);
+  Container.Parent := NewTab;
+  Container.Name := 'uniContainerPanel'+Extension;
+  Container.Align := alTop;
+  Container.Height := 22;
+  Container.Width := UniContainerPanel1.Width;
+
+  Combo := TUniComboBox.Create(Self);
+  Combo.Parent := Container;
+  Combo.Name := 'uniComboBox'+ Extension;
+  Combo.Text := 'http://';
+  Combo.Align := alClient;
+  Combo.Width := Container.Width - 44;
+  Combo.Anchors := [akLeft,akTop,akRight,akBottom];
+  Combo.Items := UniComboBox1.Items;
+  Combo.OnKeyDown := UniComboBox1KeyDown;
+  Combo.OnSelect := UniComboBox1Select;
+
+  AddButton := TUniBitBtn.Create(Self);
+  AddButton.Parent := Container;
+  AddButton.Name := 'UniAddBtn'+Extension;
+  AddButton.Glyph.LoadFromFile('Images/add.bmp');
+  AddButton.Align := alRight;
+  AddButton.Width := 22;
+  AddButton.OnClick := UniAddBtn1Click;
+
+  RefButton := TUniBitBtn.Create(Self);
+  RefButton.Parent := Container;
+  RefButton.Name := 'UniRefBtn'+Extension;
+  RefButton.Glyph.LoadFromFile('Images/Refresh.bmp');
+  RefButton.Align := alRight;
+  RefButton.Width := 22;
+  RefButton.OnClick := UniRefBtn1Click;
+
+  UrlFrame := TUniURLFrame.Create(Self);
+  UrlFrame.Parent := NewTab;
+  UrlFrame.Name := 'uniUrlFrame'+Extension;
+  UrlFrame.Align := alClient;
+
+  UniPageControl1.ActivePage := NewTab;
+
+end;
+
+procedure TUniURLFrameSimpleWebBrowser.UniRefBtn1Click(Sender: TObject);
+begin
+  PreGoURL(True);
+end;
+
+procedure TUniURLFrameSimpleWebBrowser.UniComboBox1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+var
+  URL:string;
+  UrlFrame: TUniURLFrame;
+  ComboBox : TUniComboBox;
+begin
+  if Key = 13 then
+  begin
+    ComboBox := (Sender as TUniComboBox);
+    URL := ComboBox.Text;
+    if ComboBox.Items.IndexOf(URL)<0 then ComboBox.Items.Add(URL);
+
+    UrlFrame := (Self.FindComponent('uniUrlFrame'+Copy(ComboBox.Name, 12, MaxInt)) as TUniURLFrame);
+    GoURL(URL, UrlFrame);
+  end;
+end;
+
+procedure TUniURLFrameSimpleWebBrowser.UniComboBox1Select(Sender: TObject);
+begin
+  PreGoURL(True);
+end;
+
+procedure TUniURLFrameSimpleWebBrowser.OnTabClose(Sender: TComponent; AResult:Integer);
+begin
+  if AResult = mrYes then
+  begin
+    FreeAndNil(TabClosing);
+  end;
+end;
+
+procedure TUniURLFrameSimpleWebBrowser.UniTabSheetClose(Sender: TObject;
+  var AllowClose: Boolean);
+begin
+  AllowClose:=False;
+  TabClosing := (Sender as TUniTabSheet);
+  MessageDlg('Close Tab?', mtConfirmation, mbYesNo, OnTabClose);
+end;
+
+initialization
+  RegisterClass(TUniURLFrameSimpleWebBrowser);
+end.

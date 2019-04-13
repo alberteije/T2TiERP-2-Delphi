@@ -1,0 +1,172 @@
+inherited FEtiquetaTemplate: TFEtiquetaTemplate
+  Tag = 1
+  Left = 368
+  Top = 180
+  Caption = 'Template'
+  ClientHeight = 506
+  ClientWidth = 863
+  ExplicitWidth = 879
+  ExplicitHeight = 545
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited PageControl: TPageControl
+    Width = 863
+    Height = 475
+    ActivePage = PaginaEdits
+    ExplicitWidth = 863
+    ExplicitHeight = 475
+    inherited PaginaGrid: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 855
+      ExplicitHeight = 447
+      inherited PanelGrid: TPanel
+        Width = 855
+        Height = 447
+        ExplicitWidth = 855
+        ExplicitHeight = 447
+        inherited Grid: TJvDBUltimGrid
+          Width = 855
+          Height = 395
+        end
+        inherited PanelFiltroRapido: TPanel
+          Top = 395
+          Width = 855
+          ExplicitTop = 395
+          ExplicitWidth = 855
+          inherited BotaoConsultar: TSpeedButton
+            Left = 723
+            ExplicitLeft = 879
+          end
+          inherited EditCriterioRapido: TLabeledMaskEdit
+            Width = 554
+            ExplicitWidth = 554
+          end
+        end
+      end
+    end
+    inherited PaginaEdits: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 855
+      ExplicitHeight = 447
+      inherited PanelEdits: TPanel
+        Width = 855
+        Height = 447
+        ExplicitWidth = 855
+        ExplicitHeight = 447
+        object EditIdLayout: TLabeledCalcEdit
+          Left = 19
+          Top = 32
+          Width = 61
+          Height = 21
+          ShowButton = False
+          TabOrder = 0
+          DecimalPlacesAlwaysShown = False
+          OnKeyUp = EditIdLayoutKeyUp
+          CalcEditLabel.Width = 60
+          CalcEditLabel.Height = 13
+          CalcEditLabel.Caption = 'Layout [F1]:'
+        end
+        object EditLayout: TLabeledEdit
+          Left = 82
+          Top = 32
+          Width = 752
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          Color = clInfoBk
+          EditLabel.Width = 6
+          EditLabel.Height = 13
+          EditLabel.Caption = '  '
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object EditTabela: TLabeledEdit
+          Left = 19
+          Top = 77
+          Width = 814
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          EditLabel.Width = 36
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Tabela:'
+          TabOrder = 2
+        end
+        object EditQuantidadeRepeticoes: TLabeledCalcEdit
+          Left = 175
+          Top = 160
+          Width = 150
+          Height = 21
+          ShowButton = False
+          TabOrder = 3
+          DecimalPlacesAlwaysShown = False
+          CalcEditLabel.Width = 116
+          CalcEditLabel.Height = 13
+          CalcEditLabel.Caption = 'Quantidade Repeti'#231#245'es:'
+        end
+        object EditCampo: TLabeledEdit
+          Left = 20
+          Top = 117
+          Width = 814
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          EditLabel.Width = 37
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Campo:'
+          TabOrder = 4
+        end
+        object EditFiltro: TLabeledEdit
+          Left = 19
+          Top = 201
+          Width = 814
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          EditLabel.Width = 28
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Filtro:'
+          TabOrder = 5
+        end
+        object ComboBoxFormato: TLabeledComboBox
+          Left = 20
+          Top = 160
+          Width = 149
+          Height = 21
+          Style = csDropDownList
+          ItemIndex = 0
+          TabOrder = 6
+          Text = '0=EAN'
+          Items.Strings = (
+            '0=EAN'
+            '1=QR Code')
+          ComboBoxLabel.Width = 44
+          ComboBoxLabel.Height = 13
+          ComboBoxLabel.Caption = 'Formato:'
+        end
+      end
+    end
+  end
+  inherited PanelToolBar: TPanel
+    Width = 863
+    ExplicitWidth = 863
+    inherited BotaoSair: TSpeedButton
+      Left = 759
+      ExplicitLeft = 759
+    end
+    inherited BotaoExportar: TSpeedButton
+      Left = 659
+      ExplicitLeft = 815
+    end
+    inherited BotaoImprimir: TSpeedButton
+      Left = 559
+      ExplicitLeft = 715
+    end
+    inherited BotaoSeparador1: TSpeedButton
+      Left = 449
+      ExplicitLeft = 605
+    end
+    inherited BotaoFiltrar: TSpeedButton
+      Left = 459
+      ExplicitLeft = 615
+    end
+  end
+end

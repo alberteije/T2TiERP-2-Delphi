@@ -1,0 +1,88 @@
+{*******************************************************************************
+Title: T2Ti ERP
+Description: Gerador de VO.
+
+The MIT License
+
+Copyright: Copyright (C) 2010 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+       The author may be contacted at:
+           t2ti.com@gmail.com</p>
+
+@author Albert Eije (T2Ti.COM)
+@version 1.0
+*******************************************************************************}
+
+{******************************************************************************
+|* Gerador.exe
+|*
+|* PROPÓSITO: Registro de Alterações
+******************************************************************************}
+
+Símbolo : Significado
+
+[+]     : Novo recurso
+[*]     : Recurso modificado/melhorado
+[-]     : Correção de Bug (assim esperamos)
+
+Versão 1.0.0.4 - Beta  06/04/2012 Alterações Feitas por Fernando Lucio Oliveira - 
+-----------------------------
+[+] Incluido dois diretorios, ficando agora três, um para cada tipo de unit gerada "VO","ControllerCliente","ControllerServidor" .   
+[+] Incluido novo botão "Gerar Conjuto". Com este botão e os campos adicionados acima e possível gerar o conjunto VO e Controller's
+    com apenas um click.
+[*] Alterações layout dos botãoes.
+Albert favor veirificar se tais procede.
+
+
+Versão 1.0.0.3 - Beta  23/07/2011
+-----------------------------
+[*] Alterado métodos "CriarClasseCliente" e "CriarClasseServidor" para evitar que
+    o compilador fique enviando mensagens de aviso ao compilar as classes geradas.
+[+] Incluído campos para informar o Autor e seu Email antes de gerar as classes.
+[*] Alterado método "AdicionaLicenca", fazendo com que o Autor e Email seja capturado
+    dos Edits correspondentes.
+[*] Realizadas algumas alterações para remover mensagens de aviso do compilador.
+
+
+Versão 1.0.0.2 - Beta  09/07/2011
+-----------------------------
+[*] Alterações para corrigir endentação das classes geradas;
+[*] Alterado método "CriarClasseCliente", alterando texto "Ocorreu um erro na exclusão do Banco."
+    para "Ocorreu um erro na exclusão do registro."
+[*] Alterada propriedade do componente "cbxOpcao.Style" para "csDropDownList";
+
+
+Versão 1.0.0.1 - Beta  04/07/2011
+-----------------------------
+[*] Alterada unit DelphiReverse.pas, incluindo conteúdo no método "CriarClasseCliente"
+    conforme post de Sergio Lima Feitosa em http://www.t2ti.com/ead/mod/forum/discuss.php?d=2575;
+
+
+Versão 1.0 - Beta  03/07/2011
+-----------------------------
+[+] Lançamento da 1a versão Beta, e disponibilizada no SVN
+
+	Uma contribuição do colega Sergio Lima Feitosa
+    
+    Conforme post http://www.t2ti.com/ead/mod/forum/discuss.php?d=2575

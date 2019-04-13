@@ -1,0 +1,63 @@
+object FrameMain: TFrameMain
+  Left = 0
+  Top = 0
+  Width = 492
+  Height = 406
+  OnCreate = UniFrameCreate
+  Color = clWhite
+  TabOrder = 0
+  ParentColor = False
+  ParentBackground = False
+  ParentRTL = False
+  object UniContainerPanel1: TUniContainerPanel
+    Left = 0
+    Top = 0
+    Width = 492
+    Height = 390
+    Hint = ''
+    ParentColor = False
+    Color = clWhite
+    Align = alClient
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 0
+    object UniImage1: TUniImage
+      Left = 0
+      Top = 0
+      Width = 492
+      Height = 320
+      Hint = ''
+      Center = True
+      Proportional = True
+      Align = alClient
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Transparent = True
+    end
+    object UniImage2: TUniImage
+      Left = 0
+      Top = 320
+      Width = 492
+      Height = 70
+      Hint = ''
+      Center = True
+      Proportional = True
+      Align = alBottom
+      Anchors = [akLeft, akRight, akBottom]
+    end
+  end
+  object UniLabel2: TUniLabel
+    Left = 0
+    Top = 390
+    Width = 492
+    Height = 16
+    Hint = ''
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'UniLabel2'
+    Align = alBottom
+    Anchors = [akLeft, akRight, akBottom]
+    ParentFont = False
+    Font.Color = clGray
+    Font.Style = [fsBold]
+    TabOrder = 1
+  end
+end

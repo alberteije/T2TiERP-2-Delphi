@@ -1,0 +1,34 @@
+unit UDanfe;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.OleCtnrs;
+
+type
+  TFDanfe = class(TForm)
+    OleContainer1: TOleContainer;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FDanfe: TFDanfe;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFDanfe.FormShow(Sender: TObject);
+begin
+  OleContainer1.LoadFile('somepdf.pdf');
+  OleContainer1.setShowToolbar(false); // Esta opção oculta a barra.
+  OleContainer1.setPageMode('none');
+  OleContainer1.setView('Fit');
+end;
+
+end.

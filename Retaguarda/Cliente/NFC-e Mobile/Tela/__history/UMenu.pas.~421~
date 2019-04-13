@@ -1,0 +1,640 @@
+unit UMenu;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Gestures, System.Actions, FMX.ActnList, FMX.TabControl,
+  FMX.ListView.Types, Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti,
+  System.Bindings.Outputs, Fmx.Bind.Editors, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.Bind.Components, Data.Bind.DBScope,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FMX.ListView,
+  DBXJSON, DBXJSONReflect, DBXCommon, DSHTTPClient, IndyPeerImpl, FMX.Layouts,
+  FMX.Memo, Generics.Collections, Controller, UCliente, FMX.WebBrowser,
+  FMX.Edit, FMX.DateTimeCtrls, UProduto, ACBrNFeDANFEFRDM, ACBrNFeDANFEClass,
+  ACBrNFeDANFEFR, ACBrBase, ACBrDFe, ACBrNFe, NfeConfiguracaoVO,
+  ACBrDFeUtil, pcnConversao, pcnConversaoNFe, SessaoUsuario, Constantes,
+  Biblioteca, Tipos, NfeDetalheVO;
+
+type
+  TFMenu = class(TForm)
+    TabControl1: TTabControl;
+    TabItem4: TTabItem;
+    ToolBar5: TToolBar;
+    lblTitle5: TLabel;
+    ActionList1: TActionList;
+    ChangeTabAction1: TChangeTabAction;
+    ChangeTabAction2: TChangeTabAction;
+    GestureManager1: TGestureManager;
+    BindingsListCliente: TBindingsList;
+    BotaoEmitirNFCe: TSpeedButton;
+    CDSVendaDetalhe: TFDMemTable;
+    ListViewItensNFCe: TListView;
+    BindSourceDB3: TBindSourceDB;
+    LinkListControlToField3: TLinkListControlToField;
+    ACBrNFe: TACBrNFe;
+    ACBrNFeDANFEFR: TACBrNFeDANFEFR;
+    BotaoIncluirItem: TSpeedButton;
+    procedure FormShow(Sender: TObject);
+    procedure BotaoIncluirItemClick(Sender: TObject);
+
+    procedure ConfiguraNfe;
+    procedure TelaPadrao;
+    procedure ConfiguraConstantes;
+
+    procedure InstanciaVendaAtual;
+    procedure IniciaVenda;
+    procedure ParametrosIniciaisVenda;
+    procedure IniciaVendaDeItens;
+    procedure VendeItem;
+    procedure CompoeItemParaVenda;
+    procedure AtualizaTotais;
+    procedure IniciaEncerramentoVenda;
+    procedure ConcluiEncerramentoVenda;
+
+    procedure CancelaInutiliza;
+    procedure GerarXmlNfce;
+    procedure BotaoEmitirNFCeClick(Sender: TObject);
+
+  private
+    function GetSessaoUsuario: TSessaoUsuario;
+  public
+    property Sessao: TSessaoUsuario read GetSessaoUsuario;
+  end;
+
+var
+  FMenu: TFMenu;
+  ItemCupom: Integer;
+  SubTotal, TotalGeral, Desconto, Acrescimo, ValorICMS: Extended;
+  ObjetoNfeConfiguracaoVO: TNfeConfiguracaoVO;
+  VendaDetalhe: TNfeDetalheVO;
+
+
+implementation
+
+{$R *.fmx}
+
+uses ProdutoVO, VendedorVO, NfeNumeroVO, NfeCabecalhoVO, DavCabecalhoVO,
+  UnidadeProdutoVO, UPagamento, UDanfe;
+
+{$REGION 'Procedimentos principais e de infra'}
+procedure TFMenu.FormShow(Sender: TObject);
+begin
+  Sessao.PopulaObjetosPrincipais;
+
+  ConfiguraConstantes;
+
+  ObjetoNfeConfiguracaoVO := TNfeConfiguracaoVO(TController.BuscarObjeto('NfeConfiguracaoController.TNfeConfiguracaoController', 'ConsultaObjeto', ['ID=1'], 'GET'));
+  ConfiguraNfe;
+
+  TelaPadrao;
+end;
+
+function TFMenu.GetSessaoUsuario: TSessaoUsuario;
+begin
+  Result := TSessaoUsuario.Instance;
+end;
+
+procedure TFMenu.ConfiguraNfe;
+begin
+  if ObjetoNfeConfiguracaoVO.SalvarXml = 'S' then
+    ACBrNFe.Configuracoes.Geral.Salvar := True
+  else
+    ACBrNFe.Configuracoes.Geral.Salvar := False;
+
+  ACBrNFe.Configuracoes.WebServices.Uf := ObjetoNfeConfiguracaoVO.WebserviceUf;
+
+  if ObjetoNfeConfiguracaoVO.WebserviceAmbiente = 0 then
+    ACBrNFe.Configuracoes.WebServices.Ambiente := taProducao
+  else
+    ACBrNFe.Configuracoes.WebServices.Ambiente := taHomologacao;
+
+  if ObjetoNfeConfiguracaoVO.WebserviceVisualizar = 'S' then
+    ACBrNFe.Configuracoes.WebServices.Visualizar := True
+  else
+    ACBrNFe.Configuracoes.WebServices.Visualizar := False;
+
+  ACBrNFe.Configuracoes.Arquivos.PathSalvar := ObjetoNfeConfiguracaoVO.CaminhoSalvarXml;
+  ACBrNFe.Configuracoes.Arquivos.PathSchemas := ObjetoNfeConfiguracaoVO.CaminhoSchemas;
+  ACBrNFeDanfeFR.FastFile := ObjetoNfeConfiguracaoVO.CaminhoArquivoDanfe;
+  ACBrNFeDanfeFR.PathPDF := ObjetoNfeConfiguracaoVO.CaminhoSalvarPdf;
+
+  ACBrNFe.Configuracoes.Geral.ModeloDF := moNFCe;
+  ACBrNFe.Configuracoes.Geral.VersaoDF := ve310;
+
+  ACBrNFeDANFEFR.FastFile := 'DANFeNFCe.fr3';
+
+  ACBrNFe.Configuracoes.Certificados.NumeroSerie := ObjetoNfeConfiguracaoVO.CertificadoDigitalSerie;
+
+  ACBrNFe.Configuracoes.Geral.IdCSC := '000001';
+  ACBrNFe.Configuracoes.Geral.CSC := '7F14A1F57FF04520B38329B4EFCAAF77';
+
+  ACBrNFe.Configuracoes.Geral.IncluirQRCodeXMLNFCe := True;
+end;
+
+procedure TFMenu.ConfiguraConstantes;
+begin
+  Constantes.TConstantes.DECIMAIS_QUANTIDADE := Sessao.Configuracao.DecimaisQuantidade;
+  Constantes.TConstantes.DECIMAIS_VALOR := Sessao.Configuracao.DecimaisValor;
+end;
+
+procedure TFMenu.TelaPadrao;
+begin
+  SubTotal := 0;
+  TotalGeral := 0;
+  ValorICMS := 0;
+  Desconto := 0;
+  Acrescimo := 0;
+end;
+{$ENDREGION}
+
+{$REGION 'Procedimentos para controle da venda'}
+procedure TFMenu.InstanciaVendaAtual;
+var
+  NfeNumeroVO: TNfeNumeroVO;
+begin
+  try
+    // instancia venda
+    if not Assigned(Sessao.VendaAtual) then
+    begin
+      Sessao.VendaAtual := TNfeCabecalhoVO.Create;
+
+      //Pega um número
+      NfeNumeroVO := TNfeNumeroVO(TController.BuscarObjeto('NfeNumeroController.TNfeNumeroController', 'ConsultaObjeto', ['1=1'], 'GET'));
+
+      //Gera a chave de acesso
+      Sessao.VendaAtual.ChaveAcesso :=  IntToStr(Sessao.Configuracao.EmpresaVO.CodigoIbgeUf) +
+                                        FormatDateTime('yy', Now) +
+                                        FormatDateTime('mm', Now) +
+                                        Sessao.Configuracao.EmpresaVO.Cnpj +
+                                        '65' +
+                                        NfeNumeroVO.Serie +
+                                        StringOfChar('0', 9 - Length(IntToStr(NfeNumeroVO.Numero))) + IntToStr(NfeNumeroVO.Numero) +
+                                        '1' +
+                                        StringOfChar('0', 8 - Length(IntToStr(NfeNumeroVO.Numero))) + IntToStr(NfeNumeroVO.Numero);
+      Sessao.VendaAtual.DigitoChaveAcesso := Modulo11(Sessao.VendaAtual.ChaveAcesso);
+
+      Sessao.VendaAtual.UfEmitente := Sessao.Configuracao.EmpresaVO.CodigoIbgeUf;
+      Sessao.VendaAtual.CodigoNumerico := StringOfChar('0', 8 - Length(IntToStr(NfeNumeroVO.Numero))) + IntToStr(NfeNumeroVO.Numero);
+      Sessao.VendaAtual.NaturezaOperacao := 'VENDA';
+      Sessao.VendaAtual.CodigoModelo := '65';
+      Sessao.VendaAtual.Serie := NfeNumeroVO.Serie;
+      Sessao.VendaAtual.Numero := StringOfChar('0', 9 - Length(IntToStr(NfeNumeroVO.Numero))) + IntToStr(NfeNumeroVO.Numero);
+      Sessao.VendaAtual.DataHoraEmissao := Now;
+      Sessao.VendaAtual.DataHoraEntradaSaida := Now;
+      Sessao.VendaAtual.TipoOperacao := 1;
+      Sessao.VendaAtual.CodigoMunicipio := Sessao.Configuracao.EmpresaVO.CodigoIbgeCidade;
+      Sessao.VendaAtual.FormatoImpressaoDanfe := 4;
+      Sessao.VendaAtual.TipoEmissao := 1;
+      Sessao.VendaAtual.IdEmpresa := Sessao.Configuracao.EmpresaVO.Id;
+      Sessao.VendaAtual.Ambiente := ObjetoNfeConfiguracaoVO.WebserviceAmbiente;
+      Sessao.VendaAtual.FinalidadeEmissao := 1;
+      Sessao.VendaAtual.ProcessoEmissao := ObjetoNfeConfiguracaoVO.ProcessoEmissao;
+      Sessao.VendaAtual.VersaoProcessoEmissao := ObjetoNfeConfiguracaoVO.VersaoProcessoEmissao;
+      Sessao.VendaAtual.ConsumidorPresenca := 1;
+
+    end;
+  finally
+    FreeAndNil(NfeNumeroVO);
+  end;
+end;
+
+procedure TFMenu.BotaoIncluirItemClick(Sender: TObject);
+begin
+  FProduto.ShowModal;
+  IniciaVendaDeItens;
+end;
+
+procedure TFMenu.BotaoEmitirNFCeClick(Sender: TObject);
+begin
+  IniciaEncerramentoVenda;
+end;
+
+procedure TFMenu.IniciaVenda;
+begin
+  // instancia venda
+  InstanciaVendaAtual;
+
+  ParametrosIniciaisVenda;
+  Sessao.StatusCaixa := scVendaEmAndamento;
+
+  Sessao.VendaAtual.IdNfceMovimento := Sessao.Movimento.Id;
+
+  TController.ExecutarMetodo('VendaController.TVendaController', 'Insere', [Sessao.VendaAtual], 'PUT', 'Objeto');
+  Sessao.LiberaVendaAtual;
+  Sessao.VendaAtual := TNfeCabecalhoVO(TController.ObjetoConsultado);
+
+  lblTitle5.Text := 'NFC-e nº ' + Sessao.VendaAtual.Numero;
+end;
+
+procedure TFMenu.ParametrosIniciaisVenda;
+begin
+  ItemCupom := 0;
+  SubTotal := 0;
+  TotalGeral := 0;
+  ValorICMS := 0;
+end;
+
+procedure TFMenu.IniciaVendaDeItens;
+var
+  Unitario, Quantidade, Total: Extended;
+begin
+    IniciaVenda;
+
+    VendaDetalhe := TNfeDetalheVO.Create;
+    VendaDetalhe.ProdutoVO := TProdutoVO(TController.BuscarObjeto('ProdutoController.TProdutoController', 'ConsultaPorTipo', [FMenu.CDSVendaDetalhe.FieldByName('ID_PRODUTO').AsString, 4], 'GET'));
+
+    if Assigned(VendaDetalhe.ProdutoVO) then
+    begin
+      Unitario := VendaDetalhe.ProdutoVO.ValorVenda;
+      Quantidade := 1;
+      Total := TruncaValor(Unitario * Quantidade, Constantes.TConstantes.DECIMAIS_VALOR);
+
+      VendeItem;
+
+      SubTotal := SubTotal + VendaDetalhe.ValorTotal;
+      TotalGeral := TotalGeral + VendaDetalhe.ValorTotal;
+      ValorICMS := ValorICMS + VendaDetalhe.NfeDetalheImpostoIcmsVO.ValorIcms;
+      AtualizaTotais;
+    end; // if Produto.Id <> 0 then
+end;
+
+procedure TFMenu.VendeItem;
+begin
+  try
+    CompoeItemParaVenda;
+
+    // Imposto
+    VendaDetalhe.NfeDetalheImpostoIcmsVO.OrigemMercadoria := 0; //nacional
+    VendaDetalhe.NfeDetalheImpostoIcmsVO.CstIcms := '00'; //nacional
+    VendaDetalhe.NfeDetalheImpostoIcmsVO.ModalidadeBcIcms := 3; //valor da operação
+    VendaDetalhe.NfeDetalheImpostoIcmsVO.AliquotaIcms := VendaDetalhe.ProdutoVO.AliquotaIcmsPaf;
+    VendaDetalhe.NfeDetalheImpostoIcmsVO.BaseCalculoIcms := VendaDetalhe.ValorTotal;
+    VendaDetalhe.NfeDetalheImpostoIcmsVO.ValorIcms := VendaDetalhe.ValorTotal * VendaDetalhe.ProdutoVO.AliquotaIcmsPaf / 100;
+
+    TController.ExecutarMetodo('VendaController.TVendaController', 'InsereItem', [VendaDetalhe], 'PUT', 'Objeto');
+    FreeAndNil(VendaDetalhe);
+    VendaDetalhe := TNfeDetalheVO(TController.ObjetoConsultado);
+    Sessao.VendaAtual.ListaNfeDetalheVO.Add(VendaDetalhe);
+
+  finally
+  end;
+end;
+
+procedure TFMenu.CompoeItemParaVenda;
+begin
+  inc(ItemCupom);
+  VendaDetalhe.NumeroItem := ItemCupom;
+  VendaDetalhe.IdProduto := VendaDetalhe.ProdutoVO.Id;
+  VendaDetalhe.CFOP := Sessao.Configuracao.CFOP;
+  VendaDetalhe.IdNfeCabecalho := Sessao.VendaAtual.Id;
+  VendaDetalhe.CodigoProduto := VendaDetalhe.ProdutoVO.GTIN;
+  VendaDetalhe.GTIN := VendaDetalhe.ProdutoVO.GTIN;
+  VendaDetalhe.NomeProduto := VendaDetalhe.ProdutoVO.Nome;
+  VendaDetalhe.Ncm := VendaDetalhe.ProdutoVO.Ncm;
+  //VendaDetalhe.ExTipi := StrToInt(VendaDetalhe.ProdutoVO.ExTipi);
+  VendaDetalhe.UnidadeComercial := VendaDetalhe.ProdutoVO.UnidadeProdutoVO.Sigla;
+  VendaDetalhe.UnidadeTributavel := VendaDetalhe.ProdutoVO.UnidadeProdutoVO.Sigla;
+
+  if Sessao.StatusCaixa = scVendaEmAndamento then
+  begin
+    VendaDetalhe.QuantidadeComercial := 1;
+    VendaDetalhe.QuantidadeTributavel := 1;
+    VendaDetalhe.ValorUnitarioComercial := ArredondaTruncaValor('A', VendaDetalhe.ProdutoVO.ValorVenda, 2);;
+    VendaDetalhe.ValorUnitarioTributavel := ArredondaTruncaValor('A', VendaDetalhe.ProdutoVO.ValorVenda, 2);;
+    VendaDetalhe.ValorBrutoProduto := ArredondaTruncaValor('A', VendaDetalhe.QuantidadeComercial * VendaDetalhe.ProdutoVO.ValorVenda, 2);
+    VendaDetalhe.ValorSubtotal := VendaDetalhe.ValorBrutoProduto;
+    // Exercício: implemente o desconto sobre o valor do item de acordo com a sua necessidade
+    VendaDetalhe.ValorDesconto := 0;
+    VendaDetalhe.ValorTotal := VendaDetalhe.ValorSubtotal - VendaDetalhe.ValorDesconto;
+  end;
+end;
+
+procedure TFMenu.AtualizaTotais;
+var
+  DescontoAcrescimo: Extended;
+begin
+  Sessao.VendaAtual.ValorTotalProdutos := SubTotal;
+  Sessao.VendaAtual.ValorDesconto := Desconto;
+  Sessao.VendaAtual.ValorDespesasAcessorias := Acrescimo;
+
+  Sessao.VendaAtual.ValorTotal := TotalGeral - Desconto + Acrescimo;
+  Sessao.VendaAtual.BaseCalculoIcms := Sessao.VendaAtual.ValorTotal;
+  Sessao.VendaAtual.ValorIcms := ValorICMS;
+  DescontoAcrescimo := Acrescimo - Desconto;
+
+  if DescontoAcrescimo < 0 then
+  begin
+    Sessao.VendaAtual.ValorDesconto := -DescontoAcrescimo;
+    Sessao.VendaAtual.ValorDespesasAcessorias := 0;
+  end
+  else if DescontoAcrescimo > 0 then
+  begin
+    Sessao.VendaAtual.ValorDesconto := 0;
+    Sessao.VendaAtual.ValorDespesasAcessorias := DescontoAcrescimo;
+  end
+  else
+  begin
+    Acrescimo := 0;
+    Desconto := 0;
+  end;
+end;
+
+procedure TFMenu.IniciaEncerramentoVenda;
+begin
+  FPagamento.ShowModal;
+end;
+
+procedure TFMenu.ConcluiEncerramentoVenda;
+begin
+  try
+    Sessao.VendaAtual.StatusNota := 4;
+    GerarXmlNfce;
+    ACBrNFe.Enviar(1, False, False);
+    ACBrNFe.NotasFiscais.ImprimirPDF;
+    FDanfe.ShowModal;
+    TController.ExecutarMetodo('VendaController.TVendaController', 'Altera', [Sessao.VendaAtual], 'POST', 'Boolean');
+  finally
+    TelaPadrao;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Demais procedimentos para a NFC-e'}
+procedure TFMenu.CancelaInutiliza;
+var
+  NFCe: TNfeCabecalhoVO;
+  Filtro: String;
+begin
+  Filtro := 'ID = 1';
+  NFCe := TNfeCabecalhoVO(TController.BuscarObjeto('VendaController.TVendaController', 'ConsultaObjeto', [Filtro], 'GET'));
+
+    try
+      if Assigned(NFCe) then
+      begin
+        ACBrNFe.EventoNFe.Evento.Clear;
+        with ACBrNFe.EventoNFe.Evento.Add do
+        begin
+          infEvento.chNFe := NFCe.ChaveAcesso + NFCe.DigitoChaveAcesso;
+          infEvento.CNPJ   := Sessao.Configuracao.EmpresaVO.Cnpj;
+          infEvento.dhEvento := now;
+          infEvento.tpEvento := teCancelamento;
+          // Exercício: analise como informar a justificativa para o cancelamento da nota.
+          infEvento.detEvento.xJust := 'CANCELAMENTO CANCELAMENTO CANCELAMENTO';
+          infEvento.detEvento.nProt := NFCe.CompraPedido;
+        end;
+        ACBrNFe.EnviarEvento(1);
+        NFCe.StatusNota := 6;
+        TController.ExecutarMetodo('VendaController.TVendaController', 'Altera', [NFCe], 'POST', 'Boolean');
+      end;
+    except
+      on E: Exception do
+        ShowMessage('Ocorreu um erro ao tentar cancelar a NFC-e.' + #13 + #13 + E.Message);
+    end;
+end;
+
+procedure TFMenu.GerarXmlNfce;
+var
+  i, j: Integer;
+  OK: Boolean;
+begin
+  try
+    if ACBrNFe.Configuracoes.Certificados.NumeroSerie = '' then
+    begin
+      ObjetoNfeConfiguracaoVO.CertificadoDigitalSerie := ACBrNFe.SSL.SelecionarCertificado;
+    end;
+
+    ACBrNFe.NotasFiscais.Clear;
+    with ACBrNFe.NotasFiscais.Add.NFe do
+    begin
+      { NFe Cabeçalho }
+      Ide.cUF := Sessao.Configuracao.EmpresaVO.CodigoIbgeUf;
+      Ide.cNF := StrToInt(Sessao.VendaAtual.CodigoNumerico);
+      Ide.natOp := Sessao.VendaAtual.NaturezaOperacao;
+      Ide.indPag := TpcnIndicadorPagamento(Sessao.VendaAtual.IndicadorFormaPagamento); // ['0', '1', '2'][ipVista, ipPrazo, ipOutras]
+      Ide.Modelo := StrToInt(Sessao.VendaAtual.CodigoModelo);
+      Ide.Serie := StrToInt(Sessao.VendaAtual.Serie);
+      Ide.nNF := StrToInt(Sessao.VendaAtual.Numero);
+      Ide.dEmi := Now;
+      Ide.dSaiEnt := Now;
+      Ide.hSaiEnt := Now;
+      Ide.tpNF := TpcnTipoNfe(Sessao.VendaAtual.TipoOperacao); // ['0', '1'][tnEntrada, tnSaida]
+      Ide.cMunFG := Sessao.VendaAtual.CodigoMunicipio;
+      Ide.tpImp := tiNFCe;//TpcnTipoImpressao(Sessao.VendaAtual.FormatoImpressaoDanfe);
+      Ide.tpEmis := teNormal;//TpcnTipoEmissao(Sessao.VendaAtual.TipoEmissao);
+      Ide.tpAmb := taHomologacao;//TpcnTipoAmbiente(Sessao.VendaAtual.Ambiente);
+      Ide.finNFe := fnNormal;//TpcnFinalidadeNfe(Sessao.VendaAtual.FinalidadeEmissao);
+      Ide.indFinal := cfConsumidorFinal;
+      Ide.indPres := pcPresencial;
+
+      { NFe Cabeçalho -- Totais }
+      Total.ICMSTot.vBC := Sessao.VendaAtual.BaseCalculoIcms;
+      Total.ICMSTot.vICMS := Sessao.VendaAtual.ValorIcms;
+      Total.ICMSTot.vBCST := Sessao.VendaAtual.BaseCalculoIcmsSt;
+      Total.ICMSTot.vST := Sessao.VendaAtual.ValorIcmsSt;
+      Total.ICMSTot.vProd := Sessao.VendaAtual.ValorTotalProdutos;
+      Total.ICMSTot.vFrete := Sessao.VendaAtual.ValorFrete;
+      Total.ICMSTot.vSeg := Sessao.VendaAtual.ValorSeguro;
+      Total.ICMSTot.vDesc := Sessao.VendaAtual.ValorDesconto;
+      Total.ICMSTot.vII := Sessao.VendaAtual.ValorImpostoImportacao;
+      Total.ICMSTot.vIPI := Sessao.VendaAtual.ValorIpi;
+      Total.ICMSTot.vPIS := Sessao.VendaAtual.ValorPis;
+      Total.ICMSTot.vCOFINS := Sessao.VendaAtual.ValorCofins;
+      Total.ICMSTot.vOutro := Sessao.VendaAtual.ValorDespesasAcessorias;
+      Total.ICMSTot.vNF := Sessao.VendaAtual.ValorTotal;
+
+      // lei da transparencia de impostos
+      // Exercício: avalie se essa informação está sendo repassada corretamente
+      Total.ICMSTot.vTotTrib := Sessao.VendaAtual.ValorIcms;
+
+      Total.ISSQNtot.vServ := Sessao.VendaAtual.ValorServicos;
+      Total.ISSQNtot.vBC := Sessao.VendaAtual.BaseCalculoIssqn;
+      Total.ISSQNtot.vISS := Sessao.VendaAtual.ValorIssqn;
+      Total.ISSQNtot.vPIS := Sessao.VendaAtual.ValorPisIssqn;
+      Total.ISSQNtot.vCOFINS := Sessao.VendaAtual.ValorCofinsIssqn;
+
+      Total.retTrib.vRetPIS := Sessao.VendaAtual.ValorRetidoPis;
+      Total.retTrib.vRetCOFINS := Sessao.VendaAtual.ValorRetidoCofins;
+      Total.retTrib.vRetCSLL := Sessao.VendaAtual.ValorRetidoCsll;
+      Total.retTrib.vBCIRRF := Sessao.VendaAtual.BaseCalculoIrrf;
+      Total.retTrib.vIRRF := Sessao.VendaAtual.ValorRetidoIrrf;
+      Total.retTrib.vBCRetPrev := Sessao.VendaAtual.BaseCalculoPrevidencia;
+      Total.retTrib.vRetPrev := Sessao.VendaAtual.ValorRetidoPrevidencia;
+
+      { Emitente }
+      Emit.CNPJCPF := Sessao.Configuracao.EmpresaVO.Cnpj;
+      Emit.xNome := Sessao.Configuracao.EmpresaVO.RazaoSocial;
+      Emit.xFant := Sessao.Configuracao.EmpresaVO.NomeFantasia;
+      Emit.EnderEmit.xLgr := Sessao.Configuracao.EmpresaVO.EnderecoPrincipal.Logradouro;
+      Emit.EnderEmit.nro := Sessao.Configuracao.EmpresaVO.EnderecoPrincipal.Numero;
+      Emit.EnderEmit.xCpl := Sessao.Configuracao.EmpresaVO.EnderecoPrincipal.Complemento;
+      Emit.EnderEmit.xBairro := Sessao.Configuracao.EmpresaVO.EnderecoPrincipal.Bairro;
+      Emit.EnderEmit.cMun := Sessao.Configuracao.EmpresaVO.CodigoIbgeCidade;
+      Emit.EnderEmit.xMun := Sessao.Configuracao.EmpresaVO.EnderecoPrincipal.Cidade;
+      Emit.EnderEmit.Uf := Sessao.Configuracao.EmpresaVO.EnderecoPrincipal.Uf;
+      Emit.EnderEmit.Cep := StrToInt(Sessao.Configuracao.EmpresaVO.EnderecoPrincipal.Cep);
+      Emit.EnderEmit.cPais := 1058;
+      Emit.EnderEmit.xPais := 'BRASIL';
+      Emit.EnderEmit.Fone := Sessao.Configuracao.EmpresaVO.EnderecoPrincipal.Fone;
+      Emit.Ie := Sessao.Configuracao.EmpresaVO.InscricaoEstadual;
+      Emit.IM := Sessao.Configuracao.EmpresaVO.InscricaoMunicipal;
+      Emit.Crt := StrToCRT(OK, Sessao.Configuracao.EmpresaVO.Crt);
+      Emit.CNAE := Sessao.Configuracao.EmpresaVO.CodigoCnaePrincipal;
+
+      { Destinatario }
+      Dest.CNPJCPF := Sessao.VendaAtual.NfeDestinatarioVO.CpfCnpj;
+      Dest.xNome := Sessao.VendaAtual.NfeDestinatarioVO.Nome;
+      Dest.EnderDest.xLgr := Sessao.VendaAtual.NfeDestinatarioVO.Logradouro;
+      Dest.EnderDest.nro := Sessao.VendaAtual.NfeDestinatarioVO.Numero;
+      Dest.EnderDest.xCpl := Sessao.VendaAtual.NfeDestinatarioVO.Complemento;
+      Dest.EnderDest.xBairro := Sessao.VendaAtual.NfeDestinatarioVO.Bairro;
+      Dest.EnderDest.cMun := Sessao.VendaAtual.NfeDestinatarioVO.CodigoMunicipio;
+      Dest.EnderDest.xMun := Sessao.VendaAtual.NfeDestinatarioVO.NomeMunicipio;
+      Dest.EnderDest.Uf := Sessao.VendaAtual.NfeDestinatarioVO.Uf;
+      if Sessao.VendaAtual.NfeDestinatarioVO.Cep <> '' then
+        Dest.EnderDest.Cep := StrToInt(Sessao.VendaAtual.NfeDestinatarioVO.Cep);
+      Dest.EnderDest.cPais := 1058;
+      Dest.EnderDest.xPais := 'BRASIL';
+      Dest.EnderDest.Fone := Sessao.VendaAtual.NfeDestinatarioVO.Telefone;
+      Dest.Email := Sessao.VendaAtual.NfeDestinatarioVO.Email;
+      Dest.indIEDest := inNaoContribuinte;
+
+      // NFC-e não pode ter FRETE
+      Transp.modFrete := mfSemFrete;
+
+      // Exercício: pegue os pagamentos utilizados na venda e informe para a NFCe
+      with pag.Add do
+      begin
+        tPag := fpDinheiro;
+        vPag := Sessao.VendaAtual.ValorTotal;
+      end;
+
+      { NFe Detalhe }
+      for i := 0 to Sessao.VendaAtual.ListaNfeDetalheVO.Count - 1 do
+      begin
+        with Det.Add do
+        begin
+          Prod.nItem := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NumeroItem;
+          Prod.cProd := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).Gtin;
+          Prod.cEAN := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).Gtin;
+          Prod.xProd := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NomeProduto;
+          Prod.Ncm := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).Ncm;
+          Prod.Cfop := IntToStr(TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).Cfop);
+          Prod.uCom := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).UnidadeComercial;
+          Prod.qCom := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).QuantidadeComercial;
+          Prod.vUnCom := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).ValorUnitarioComercial;
+          Prod.vProd := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).ValorTotal;
+          Prod.cEANTrib := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).GtinUnidadeTributavel;
+          Prod.uTrib := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).UnidadeTributavel;
+          Prod.qTrib := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).QuantidadeTributavel;
+          Prod.vUnTrib := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).ValorUnitarioTributavel;
+          Prod.vFrete := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).ValorFrete;
+          Prod.vSeg := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).ValorSeguro;
+          Prod.vDesc := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).ValorDesconto;
+          Prod.vOutro := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).ValorOutrasDespesas;
+          Prod.IndTot := TpcnIndicadorTotal(TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).EntraTotal); // ['0', '1'], [itNaoSomaTotalNFe, itSomaTotalNFe]
+          infAdProd := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).InformacoesAdicionais; // definir se vira do cadastro de produtos ou se sera digitada, por exemplo informaçao de lotes
+
+          { Detalhes -- Impostos }
+          with Imposto do
+          begin
+
+            // lei da transparencia nos impostos
+            // Exercício: avalie se essa informação está sendo repassada corretamente
+            vTotTrib := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ValorIcms;
+
+            with ICMS do
+            begin
+
+              if Emit.Crt = crtSimplesNacional then
+              begin
+                Csosn := StrToCSOSNIcms(OK, TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.Csosn);
+
+                // csosn 900
+                if TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.Csosn = '900' then
+                begin
+                  orig := TpcnOrigemMercadoria(TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.OrigemMercadoria); // (oeNacional, oeEstrangeiraImportacaoDireta, oeEstrangeiraAdquiridaBrasil)
+                  modBC := TpcnDeterminacaoBaseIcms(TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ModalidadeBcIcms); // (dbiMargemValorAgregado, dbiPauta, dbiPrecoTabelado, dbiValorOperacao)
+                  vBC := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.BaseCalculoIcms;
+                  pRedBC := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.TaxaReducaoBcIcms;
+                  pICMS := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.AliquotaIcms;
+                  vICMS := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ValorIcms;
+                  modBCST := TpcnDeterminacaoBaseIcmsSt(TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ModalidadeBcIcmsSt); // (dbisPrecoTabelado, dbisListaNegativa, dbisListaPositiva, dbisListaNeutra, dbisMargemValorAgregado, dbisPauta)
+                  pMVAST := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.PercentualMvaIcmsSt;
+                  pRedBCST := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.PercentualReducaoBcIcmsSt;
+                  vBCST := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ValorBaseCalculoIcmsSt;
+                  pICMSST := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.AliquotaIcmsSt;
+                  vICMSST := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ValorIcmsSt;
+                  pCredSN := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.AliquotaCreditoIcmsSn;
+                  vCredICMSSN := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ValorCreditoIcmsSn;
+                end;
+              end
+
+              else
+              begin
+                CST := StrToCSTIcms(OK, TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.CstIcms);
+
+                // 00 Tributada integralmente
+                if TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.CstIcms = '00' then
+                begin
+                  orig := TpcnOrigemMercadoria(TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.OrigemMercadoria); // (oeNacional, oeEstrangeiraImportacaoDireta, oeEstrangeiraAdquiridaBrasil)
+                  modBC := TpcnDeterminacaoBaseIcms(TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ModalidadeBcIcms); // (dbiMargemValorAgregado, dbiPauta, dbiPrecoTabelado, dbiValorOperacao)
+                  vBC := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.BaseCalculoIcms;
+                  pICMS := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.AliquotaIcms;
+                  vICMS := TNfeDetalheVO(Sessao.VendaAtual.ListaNfeDetalheVO.Items[i]).NfeDetalheImpostoIcmsVO.ValorIcms;
+                end;
+
+              end;
+            end; // with ICMS do
+
+
+          end; // with Imposto do
+        end; // with Det.Add do
+      end; // for i := 0 to ListaNFeDetalhe.Count - 1 do }
+    end;
+
+    try
+      ACBrNFe.NotasFiscais.Assinar;
+    except
+      on E: Exception do
+        ShowMessage('Ocorreu um erro ao tentar assinar a NF-e.' + #13 + #13 + E.Message);
+    end;
+
+    try
+      ACBrNFe.NotasFiscais.Items[0].GravarXML;
+    except
+      on E: Exception do
+        ShowMessage('Ocorreu um erro ao salvar o arquivo XML da NF-e.' + #13 + #13 + E.Message);
+    end;
+  except
+    on E: Exception do
+      ShowMessage('Ocorreu um erro ao gerar o arquivo XML da NF-e.' + #13 + #13 + E.Message);
+  end;
+end;
+{$ENDREGION}
+
+end.
+
+
+/// EXERCICIO
+///  Converta esse projeto para três camadas e utilize o servidor de aplicações
+///  Faça testes num dispositivo real ou emulador
+///
+/// EXERCICIO
+///  Remova os possíveis códigos VCL da aplicação
+///
+/// EXERCICIO
+///  Implemente o cancelamento do item
+///
+/// EXERCICIO
+///  Implemente o cancelamento da nota
+///
+/// EXERCICIO
+///  Implemente a identificação do cliente
+///
+/// EXERCICIO
+///  Implemente a identificação do vendedor
+///
+///

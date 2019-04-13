@@ -1,0 +1,273 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela Cheque Recebido
+
+The MIT License
+
+Copyright: Copyright (C) 2016 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+@author Albert Eije (t2ti.com@gmail.com)
+@version 2.0
+******************************************************************************* }
+unit UFinChequeRecebido;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, DB, DBClient, Menus, StdCtrls, ExtCtrls, Buttons, Grids,
+  DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, FinChequeRecebidoVO,
+  FinChequeRecebidoController, Tipos, Atributos, Constantes, LabeledCtrls, JvToolEdit,
+  Mask, JvExMask, JvBaseEdits, Math, StrUtils, ActnList, Generics.Collections,
+  RibbonSilverStyleActnCtrls, ActnMan, ToolWin, ActnCtrls, ShellApi, ACBrBoleto,
+  Controller;
+
+type
+  [TFormDescription(TConstantes.MODULO_CONTAS_RECEBER, 'Custódia de Cheques')]
+
+  TFFinChequeRecebido = class(TFTelaCadastro)
+    PanelParcelas: TPanel;
+    PanelMestre: TPanel;
+    EditCpfCnpj: TLabeledEdit;
+    EditTaxaMulta: TLabeledCalcEdit;
+    EditIdContaCaixa: TLabeledCalcEdit;
+    EditContaCaixa: TLabeledEdit;
+    EditNome: TLabeledEdit;
+    EditCodigoBanco: TLabeledEdit;
+    EditCodigoAgencia: TLabeledEdit;
+    EditConta: TLabeledEdit;
+    EditLocalPagamento: TLabeledEdit;
+    ComboBoxLayoutRemessa: TLabeledComboBox;
+    ComboBoxAceite: TLabeledComboBox;
+    ComboBoxEspecie: TLabeledComboBox;
+    EditCarteira: TLabeledEdit;
+    EditCodigoConvenio: TLabeledEdit;
+    EditCodigoCedente: TLabeledEdit;
+    LabeledCalcEdit1: TLabeledCalcEdit;
+    EditNumero: TLabeledCalcEdit;
+    EditDataEmissao: TLabeledDateEdit;
+    EditBomPara: TLabeledDateEdit;
+    EditDataCompensacao: TLabeledDateEdit;
+    GroupBox1: TGroupBox;
+    EditCustodiaData: TLabeledDateEdit;
+    EditCustoriaTarifa: TLabeledCalcEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure EditIdContaCaixaKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+  end;
+
+var
+  FFinChequeRecebido: TFFinChequeRecebido;
+
+implementation
+
+uses ULookup, Biblioteca, UDataModule, ContaCaixaVO, ContaCaixaController;
+{$R *.dfm}
+
+{$REGION 'Infra'}
+procedure TFFinChequeRecebido.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TFinChequeRecebidoVO;
+  ObjetoController := TFinChequeRecebidoController.Create;
+
+  inherited;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFFinChequeRecebido.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    EditIdContaCaixa.SetFocus;
+  end;
+end;
+
+function TFFinChequeRecebido.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditIdContaCaixa.SetFocus;
+  end;
+end;
+
+function TFFinChequeRecebido.DoExcluir: Boolean;
+begin
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('FinChequeRecebidoController.TFinChequeRecebidoController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('FinChequeRecebidoController.TFinChequeRecebidoController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+end;
+
+function TFFinChequeRecebido.DoSalvar: Boolean;
+begin
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TFinChequeRecebidoVO.Create;
+
+      TFinChequeRecebidoVO(ObjetoVO).IdContaCaixa := EditIdContaCaixa.AsInteger;
+      TFinChequeRecebidoVO(ObjetoVO).ContaCaixaNome := EditContaCaixa.Text;
+      TFinChequeRecebidoVO(ObjetoVO).CpfCnpj := EditCpfCnpj.Text;
+      TFinChequeRecebidoVO(ObjetoVO).Nome := EditNome.Text;
+      TFinChequeRecebidoVO(ObjetoVO).CodigoBanco := EditCodigoBanco.Text;
+      TFinChequeRecebidoVO(ObjetoVO).CodigoAgencia := EditCodigoAgencia.Text;
+      TFinChequeRecebidoVO(ObjetoVO).Conta := EditConta.Text;
+      TFinChequeRecebidoVO(ObjetoVO).Numero := EditNumero.AsInteger;
+      TFinChequeRecebidoVO(ObjetoVO).DataEmissao := EditDataEmissao.Date;
+      TFinChequeRecebidoVO(ObjetoVO).BomPara := EditBomPara.Text;
+      TFinChequeRecebidoVO(ObjetoVO).DataCompensacao := EditDataCompensacao.Text;
+      TFinChequeRecebidoVO(ObjetoVO).CustodiaData := EditCustodiaData.Date;
+      TFinChequeRecebidoVO(ObjetoVO).CustodiaTarifa := EditCustoriaTarifa.Value;
+      TFinChequeRecebidoVO(ObjetoVO).Especie := Copy(ComboBoxEspecie.Text, 1, 2);
+      TFinChequeRecebidoVO(ObjetoVO).Carteira := EditCarteira.Text;
+      TFinChequeRecebidoVO(ObjetoVO).CodigoConvenio := EditCodigoConvenio.Text;
+      TFinChequeRecebidoVO(ObjetoVO).CodigoCedente := EditCodigoCedente.Text;
+      TFinChequeRecebidoVO(ObjetoVO).TaxaMulta := EditTaxaMulta.Value;
+
+      if StatusTela = stInserindo then
+      begin
+        TController.ExecutarMetodo('FinChequeRecebidoController.TFinChequeRecebidoController', 'Insere', [TFinChequeRecebidoVO(ObjetoVO)], 'PUT', 'Lista');
+      end
+      else if StatusTela = stEditando then
+      begin
+        if TFinChequeRecebidoVO(ObjetoVO).ToJSONString <> StringObjetoOld then
+        begin
+          TController.ExecutarMetodo('FinChequeRecebidoController.TFinChequeRecebidoController', 'Altera', [TFinChequeRecebidoVO(ObjetoVO)], 'POST', 'Boolean');
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Campos Transientes'}
+procedure TFFinChequeRecebido.EditIdContaCaixaKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdContaCaixa.Value <> 0 then
+      Filtro := 'ID = ' + EditIdContaCaixa.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdContaCaixa.Clear;
+      EditContaCaixa.Clear;
+      if not PopulaCamposTransientes(Filtro, TContaCaixaVO, TContaCaixaController) then
+        PopulaCamposTransientesLookup(TContaCaixaVO, TContaCaixaController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdContaCaixa.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditContaCaixa.Text := CDSTransiente.FieldByName('NOME').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditInstrucao01.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFFinChequeRecebido.GridParaEdits;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := TFinChequeRecebidoVO(TController.BuscarObjeto('FinChequeRecebidoController.TFinChequeRecebidoController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditIdContaCaixa.AsInteger := TFinChequeRecebidoVO(ObjetoVO).IdContaCaixa;
+    EditContaCaixa.Text := TFinChequeRecebidoVO(ObjetoVO).ContaCaixaNome;
+    EditInstrucao01.Text := TFinChequeRecebidoVO(ObjetoVO).Instrucao01;
+    EditInstrucao02.Text := TFinChequeRecebidoVO(ObjetoVO).Instrucao02;
+    EditCaminhoArquivoRemessa.Text := TFinChequeRecebidoVO(ObjetoVO).CaminhoArquivoRemessa;
+    EditCaminhoArquivoRetorno.Text := TFinChequeRecebidoVO(ObjetoVO).CaminhoArquivoRetorno;
+    EditCaminhoArquivoLogotipoBanco.Text := TFinChequeRecebidoVO(ObjetoVO).CaminhoArquivoLogotipo;
+    EditCaminhoArquivoPdfBoleto.Text := TFinChequeRecebidoVO(ObjetoVO).CaminhoArquivoPdf;
+    MemoMensagem.Text := TFinChequeRecebidoVO(ObjetoVO).Mensagem;
+    EditLocalPagamento.Text := TFinChequeRecebidoVO(ObjetoVO).LocalPagamento;
+    ComboBoxLayoutRemessa.Text := TFinChequeRecebidoVO(ObjetoVO).LayoutRemessa;
+    ComboBoxAceite.ItemIndex := AnsiIndexStr(TFinChequeRecebidoVO(ObjetoVO).Aceite, ['S', 'N']);
+    ComboBoxEspecie.ItemIndex := AnsiIndexStr(TFinChequeRecebidoVO(ObjetoVO).Especie, ['DM', 'DS', 'RC', 'NP']);
+    EditCarteira.Text := TFinChequeRecebidoVO(ObjetoVO).Carteira;
+    EditCodigoConvenio.Text := TFinChequeRecebidoVO(ObjetoVO).CodigoConvenio;
+    EditCodigoCedente.Text := TFinChequeRecebidoVO(ObjetoVO).CodigoCedente;
+    EditTaxaMulta.Value := TFinChequeRecebidoVO(ObjetoVO).TaxaMulta;
+
+    // Serializa o objeto para consultar posteriormente se houve alterações
+    FormatSettings.DecimalSeparator := '.';
+    StringObjetoOld := ObjetoVO.ToJSONString;
+    FormatSettings.DecimalSeparator := ',';
+  end;
+end;
+{$ENDREGION}
+
+end.

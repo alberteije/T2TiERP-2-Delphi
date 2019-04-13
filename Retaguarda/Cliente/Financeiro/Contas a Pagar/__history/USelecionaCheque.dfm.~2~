@@ -1,0 +1,370 @@
+object FSelecionaCheque: TFSelecionaCheque
+  Left = 366
+  Top = 220
+  BorderStyle = bsDialog
+  Caption = 'Sele'#231#227'o de Cheque para Pagamento'
+  ClientHeight = 404
+  ClientWidth = 583
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelCabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 583
+    Height = 65
+    Align = alTop
+    Color = 14537936
+    ParentBackground = False
+    TabOrder = 0
+    DesignSize = (
+      583
+      65)
+    object Bevel1: TBevel
+      Left = 61
+      Top = 50
+      Width = 515
+      Height = 6
+      Anchors = [akLeft, akTop, akRight]
+      ExplicitWidth = 415
+    end
+    object Image1: TImage
+      Left = 7
+      Top = 7
+      Width = 48
+      Height = 49
+      ParentShowHint = False
+      ShowHint = False
+      Transparent = True
+    end
+    object Label2: TLabel
+      Left = 62
+      Top = 24
+      Width = 340
+      Height = 23
+      Caption = 'Sele'#231#227'o de Cheque para Pagamento'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object ActionToolBarPrincipal: TActionToolBar
+    AlignWithMargins = True
+    Left = 3
+    Top = 377
+    Width = 577
+    Height = 24
+    ActionManager = ActionManagerLocal
+    Align = alBottom
+    BiDiMode = bdRightToLeft
+    Caption = 'ActionToolBarPrincipal'
+    ColorMap.MenuColor = clMenu
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Orientation = boRightToLeft
+    ParentBiDiMode = False
+    ParentFont = False
+    Spacing = 5
+  end
+  object PageControlItens: TPageControl
+    Left = 0
+    Top = 65
+    Width = 583
+    Height = 309
+    ActivePage = tsDados
+    Align = alClient
+    TabOrder = 2
+    object tsDados: TTabSheet
+      Caption = 'Informa'#231#227'o dos dados e sele'#231#227'o do cheque'
+      object PanelDados: TPanel
+        Left = 0
+        Top = 0
+        Width = 575
+        Height = 281
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        DesignSize = (
+          575
+          281)
+        object Bevel2: TBevel
+          Left = 3
+          Top = 3
+          Width = 569
+          Height = 272
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          ExplicitHeight = 241
+        end
+        object GridCheques: TJvDBUltimGrid
+          Left = 9
+          Top = 141
+          Width = 556
+          Height = 128
+          Anchors = [akLeft, akBottom]
+          DataSource = DSChequesEmSer
+          ReadOnly = True
+          TabOrder = 4
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+          TitleButtons = True
+          AlternateRowColor = 15593713
+          TitleArrow = True
+          SelectColumnsDialogStrings.Caption = 'Select columns'
+          SelectColumnsDialogStrings.OK = '&OK'
+          SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+          CanDelete = False
+          EditControls = <>
+          RowsHeight = 17
+          TitleRowHeight = 17
+          SortWith = swFields
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'NOME_CONTA_CAIXA'
+              Title.Caption = 'Conta Caixa'
+              Width = 300
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'TALAO'
+              Title.Caption = 'Tal'#227'o'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'NUMERO_TALAO'
+              Title.Caption = 'N'#250'mero Tal'#227'o'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'NUMERO_CHEQUE'
+              Title.Caption = 'N'#250'mero Cheque'
+              Visible = True
+            end>
+        end
+        object EditBomPara: TLabeledDateEdit
+          Left = 9
+          Top = 67
+          Width = 138
+          Height = 21
+          ShowNullDate = False
+          TabOrder = 1
+          DateEditLabel.Width = 89
+          DateEditLabel.Height = 13
+          DateEditLabel.Caption = 'Cheque Bom Para:'
+        end
+        object EditValorCheque: TLabeledCalcEdit
+          Left = 9
+          Top = 112
+          Width = 138
+          Height = 21
+          DisplayFormat = ',0.00##'
+          TabOrder = 2
+          DecimalPlacesAlwaysShown = False
+          CalcEditLabel.Width = 83
+          CalcEditLabel.Height = 13
+          CalcEditLabel.Caption = 'Valor do Cheque:'
+        end
+        object MemoHistorico: TLabeledMemo
+          Left = 153
+          Top = 69
+          Width = 412
+          Height = 66
+          Anchors = [akLeft, akBottom]
+          ScrollBars = ssVertical
+          TabOrder = 3
+          MemoLabel.Width = 45
+          MemoLabel.Height = 13
+          MemoLabel.Caption = 'Hist'#243'rico:'
+        end
+        object EditNominalA: TLabeledEdit
+          Left = 9
+          Top = 24
+          Width = 556
+          Height = 21
+          EditLabel.Width = 90
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Cheque Nominal a:'
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object ActionManagerLocal: TActionManager
+    ActionBars.ShowHints = False
+    ActionBars = <
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionCancelar
+            Caption = '&Cancelar [F11]'
+            ImageIndex = 10
+            ShortCut = 122
+          end>
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Action = ActionConfirmar
+            Caption = 'C&onfirmar [F12]'
+            ImageIndex = 9
+          end
+          item
+            Action = ActionCancelar
+            Caption = '&Cancelar [F11]'
+            ImageIndex = 10
+            ShortCut = 122
+          end>
+        ActionBar = ActionToolBarPrincipal
+      end
+      item
+      end
+      item
+      end
+      item
+      end
+      item
+        Items = <
+          item
+            Caption = '-'
+          end
+          item
+            Caption = '-'
+          end>
+      end>
+    DisabledImages = FDataModule.ImagensCadastrosD
+    Images = FDataModule.ImagensCadastros
+    Left = 488
+    Top = 16
+    StyleName = 'Ribbon - Silver'
+    object ActionCancelar: TAction
+      Category = 'Geral'
+      Caption = 'Cancelar [F11]'
+      ImageIndex = 10
+      ShortCut = 122
+      OnExecute = ActionCancelarExecute
+    end
+    object ActionConfirmar: TAction
+      Category = 'Geral'
+      Caption = 'Confirmar [F12]'
+      ImageIndex = 9
+      OnExecute = ActionConfirmarExecute
+    end
+  end
+  object CDSChequesEmSer: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'ID_CONTA_CAIXA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'NOME_CONTA_CAIXA'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'TALAO'
+        DataType = ftString
+        Size = 10
+      end
+      item
+        Name = 'NUMERO_TALAO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'NUMERO_CHEQUE'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_TALAO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_CHEQUE'
+        DataType = ftInteger
+      end>
+    IndexDefs = <>
+    PacketRecords = 0
+    Params = <>
+    StoreDefs = True
+    Left = 385
+    Top = 248
+    Data = {
+      BE0000009619E0BD010000001800000007000000000003000000BE000E49445F
+      434F4E54415F43414958410400010000000000104E4F4D455F434F4E54415F43
+      4149584101004900000001000557494454480200020032000554414C414F0100
+      490000000100055749445448020002000A000C4E554D45524F5F54414C414F04
+      000100000000000D4E554D45524F5F4348455155450400010000000000084944
+      5F54414C414F04000100000000000949445F4348455155450400010000000000
+      0000}
+    object CDSChequesEmSerID_CONTA_CAIXA: TIntegerField
+      FieldName = 'ID_CONTA_CAIXA'
+    end
+    object CDSChequesEmSerNOME_CONTA_CAIXA: TStringField
+      FieldName = 'NOME_CONTA_CAIXA'
+      Size = 50
+    end
+    object CDSChequesEmSerTALAO: TStringField
+      FieldName = 'TALAO'
+      Size = 10
+    end
+    object CDSChequesEmSerNUMERO_TALAO: TIntegerField
+      FieldName = 'NUMERO_TALAO'
+    end
+    object CDSChequesEmSerNUMERO_CHEQUE: TIntegerField
+      FieldName = 'NUMERO_CHEQUE'
+    end
+    object CDSChequesEmSerID_TALAO: TIntegerField
+      FieldName = 'ID_TALAO'
+    end
+    object CDSChequesEmSerID_CHEQUE: TIntegerField
+      FieldName = 'ID_CHEQUE'
+    end
+  end
+  object DSChequesEmSer: TDataSource
+    DataSet = CDSChequesEmSer
+    Left = 281
+    Top = 248
+  end
+end

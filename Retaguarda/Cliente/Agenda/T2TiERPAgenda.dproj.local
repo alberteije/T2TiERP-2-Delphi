@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/03/01 16:36:58.000.232,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Agenda\Tela\UOSStatus.pas=</Transaction>
+    <Transaction>2017/03/01 16:39:45.000.154,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Agenda\Tela\UReuniaoSala.pas</Transaction>
+    <Transaction>2017/03/01 16:43:21.000.224,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\ReuniaoSalaController.pas</Transaction>
+    <Transaction>2017/03/01 16:44:18.000.532,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\ReuniaoSalaVO.pas</Transaction>
+    <Transaction>2017/03/01 16:51:22.000.336,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Agenda\Tela\UAgendaCategoriaCompromisso.pas</Transaction>
+    <Transaction>2017/03/01 16:53:33.000.833,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\AgendaCategoriaCompromissoController.pas</Transaction>
+    <Transaction>2017/03/01 16:53:47.000.205,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\AgendaCategoriaCompromissoVO.pas</Transaction>
+    <Transaction>2017/03/01 17:21:42.000.542,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\AgendaCompromissoController.pas</Transaction>
+    <Transaction>2017/03/01 17:21:51.000.141,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\AgendaCompromissoVO.pas</Transaction>
+    <Transaction>2017/03/01 17:25:51.000.469,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Agenda\Tela\UAgendaCompromisso.pas</Transaction>
+    <Transaction>2017/03/03 08:18:58.000.880,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Agenda\Tela\URecado.pas</Transaction>
+    <Transaction>2017/03/03 08:36:22.000.077,C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Agenda\Tela\URecado.pas=</Transaction>
+    <Transaction>2017/03/03 08:38:15.000.265,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Agenda\Tela\URecado.pas</Transaction>
+    <Transaction>2017/03/03 08:43:56.000.470,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\RecadoDestinatarioController.pas</Transaction>
+    <Transaction>2017/03/03 08:43:56.000.625,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\Controller\RecadoRemetenteController.pas</Transaction>
+    <Transaction>2017/03/03 08:44:05.000.794,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\RecadoDestinatarioVO.pas</Transaction>
+    <Transaction>2017/03/03 08:44:05.000.929,=C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Comum\VO\RecadoRemetenteVO.pas</Transaction>
+  </Transactions>
+</BorlandProject>

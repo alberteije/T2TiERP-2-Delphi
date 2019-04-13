@@ -1,0 +1,254 @@
+{*******************************************************************************
+Title: T2Ti ERP
+Description: Janela Cadastro de Template
+
+The MIT License
+
+Copyright: Copyright (C) 2017 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+       The author may be contacted at:
+           t2ti.com@gmail.com</p>
+
+@author T2Ti
+@version 2.0
+*******************************************************************************}
+unit UEtiquetaTemplate;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, DB, DBClient, Menus, StdCtrls, ExtCtrls, Buttons, Grids,
+  DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, EtiquetaTemplateVO,
+  EtiquetaTemplateController, Tipos, Atributos, Constantes, LabeledCtrls, Mask,
+  JvExMask, JvToolEdit, JvBaseEdits, Controller, Biblioteca, System.Actions,
+  Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan, Vcl.ToolWin,
+  Vcl.ActnCtrls, frxBarcode, frxClass, frxDBSet, StrUtils;
+
+type
+  TFEtiquetaTemplate = class(TFTelaCadastro)
+    EditLayout: TLabeledEdit;
+    EditTabela: TLabeledEdit;
+    EditIdLayout: TLabeledCalcEdit;
+    EditQuantidadeRepeticoes: TLabeledCalcEdit;
+    EditCampo: TLabeledEdit;
+    EditFiltro: TLabeledEdit;
+    ComboBoxFormato: TLabeledComboBox;
+    frxReport: TfrxReport;
+    frxTable: TfrxDBDataset;
+    CDSEtiquetas_Teste: TClientDataSet;
+    CDSEtiquetas_TesteDESCRICAO: TStringField;
+    CDSEtiquetas_TesteCODBARRAS: TStringField;
+    frxBarCodeObject1: TfrxBarCodeObject;
+    ActionToolBar1: TActionToolBar;
+    ActionManager1: TActionManager;
+    ActionGerarEtiquetas: TAction;
+    CDSProduto: TClientDataSet;
+    procedure FormCreate(Sender: TObject);
+    procedure EditIdLayoutKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure ActionGerarEtiquetasExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+  end;
+
+var
+  FEtiquetaTemplate: TFEtiquetaTemplate;
+
+implementation
+
+uses ULookup, EtiquetaLayoutController, EtiquetaLayoutVO, UDataModule,
+ProdutoController, ProdutoVO;
+{$R *.dfm}
+
+{$REGION 'Infra'}
+procedure TFEtiquetaTemplate.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TEtiquetaTemplateVO;
+  ObjetoController := TEtiquetaTemplateController.Create;
+  inherited;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFEtiquetaTemplate.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    EditIdLayout.SetFocus;
+  end;
+end;
+
+function TFEtiquetaTemplate.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditIdLayout.SetFocus;
+  end;
+end;
+
+function TFEtiquetaTemplate.DoExcluir: Boolean;
+begin
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('EtiquetaTemplateController.TEtiquetaTemplateController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('EtiquetaTemplateController.TEtiquetaTemplateController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+end;
+
+function TFEtiquetaTemplate.DoSalvar: Boolean;
+begin
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TEtiquetaTemplateVO.Create;
+
+      TEtiquetaTemplateVO(ObjetoVO).IdEtiquetaLayout := EditIdLayout.AsInteger;
+      TEtiquetaTemplateVO(ObjetoVO).Tabela := EditTabela.Text;
+      TEtiquetaTemplateVO(ObjetoVO).Formato := ComboBoxFormato.ItemIndex;
+      TEtiquetaTemplateVO(ObjetoVO).QuantidadeRepeticoes := EditQuantidadeRepeticoes.AsInteger;
+      TEtiquetaTemplateVO(ObjetoVO).Campo := EditCampo.Text;
+      TEtiquetaTemplateVO(ObjetoVO).Filtro := EditFiltro.Text;
+
+      if StatusTela = stInserindo then
+      begin
+        TController.ExecutarMetodo('EtiquetaTemplateController.TEtiquetaTemplateController', 'Insere', [TEtiquetaTemplateVO(ObjetoVO)], 'PUT', 'Lista');
+      end
+      else if StatusTela = stEditando then
+      begin
+        if TEtiquetaTemplateVO(ObjetoVO).ToJSONString <> StringObjetoOld then
+        begin
+          TController.ExecutarMetodo('EtiquetaTemplateController.TEtiquetaTemplateController', 'Altera', [TEtiquetaTemplateVO(ObjetoVO)], 'POST', 'Boolean');
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles de Grid'}
+procedure TFEtiquetaTemplate.GridParaEdits;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := TEtiquetaTemplateVO(TController.BuscarObjeto('EtiquetaTemplateController.TEtiquetaTemplateController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditIdLayout.AsInteger := TEtiquetaTemplateVO(ObjetoVO).IdEtiquetaLayout;
+    EditTabela.Text := TEtiquetaTemplateVO(ObjetoVO).Tabela;
+    ComboBoxFormato.ItemIndex := TEtiquetaTemplateVO(ObjetoVO).Formato;
+    EditQuantidadeRepeticoes.AsInteger := TEtiquetaTemplateVO(ObjetoVO).QuantidadeRepeticoes;
+    EditCampo.Text := TEtiquetaTemplateVO(ObjetoVO).Campo;
+    EditFiltro.Text := TEtiquetaTemplateVO(ObjetoVO).Filtro;
+
+    // Serializa o objeto para consultar posteriormente se houve alterações
+    FormatSettings.DecimalSeparator := '.';
+    StringObjetoOld := ObjetoVO.ToJSONString;
+    FormatSettings.DecimalSeparator := ',';
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Campos Transientes'}
+procedure TFEtiquetaTemplate.EditIdLayoutKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdLayout.Value <> 0 then
+      Filtro := 'ID = ' + EditIdLayout.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdLayout.Clear;
+      EditLayout.Clear;
+      if not PopulaCamposTransientes(Filtro, TEtiquetaLayoutVO, TEtiquetaLayoutController) then
+        PopulaCamposTransientesLookup(TEtiquetaLayoutVO, TEtiquetaLayoutController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdLayout.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditLayout.Text := CDSTransiente.FieldByName('CODIGO_FABRICANTE').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditTabela.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Actions'}
+procedure TFEtiquetaTemplate.ActionGerarEtiquetasExecute(Sender: TObject);
+begin
+  ConfiguraCDSFromVO(CDSProduto, TProdutoVO);
+  TProdutoController.SetDataSet(CDSProduto);
+  TController.ExecutarMetodo('ProdutoController.TProdutoController', 'Consulta', [EditFiltro.Text, '0', False], 'GET', 'Lista');
+
+  frxReport.LoadFromFile('1.fr3');
+  frxTable.DataSet := CDSProduto;
+  frxReport.ShowReport;
+end;
+{$ENDREGION}
+
+end.

@@ -1,0 +1,17 @@
+object FTabelaSelecionada: TFTabelaSelecionada
+  Left = 333
+  Top = 208
+  Caption = 'Tabela Selecionada'
+  ClientHeight = 394
+  ClientWidth = 940
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+end

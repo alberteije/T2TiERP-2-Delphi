@@ -1,0 +1,1069 @@
+mdemo.exe: 000052FC: 07:14:03 [TUniServerModule]:Server First Init.
+mdemo.exe: 000052FC: 07:14:03 [TUniServerModule]:Starting HTTP Server...
+mdemo.exe: 000052FC: 07:14:03 [TUniServerModule]:HTTP Server Started. Port: 0
+mdemo.exe: 00004138: 07:14:51 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+mdemo.exe: 00004138: 07:15:28 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\biolife.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\biolife.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C02C6
+mdemo.exe: 000052FC: 07:15:56 [TUniServerModule]:Shutting Down Server.
+mdemo.exe: 00004138: 07:15:56 [Indy]:EIdNotConnected : Not Connected : Addr: $006A62A2
+mdemo.exe: 00002848: 07:15:56 [Indy]:EIdNotConnected : Not Connected : Addr: $006A62A2
+mdemo.exe: 00005304: 07:15:56 [Indy]:EIdNotConnected : Not Connected : Addr: $006A62A2
+mdemo.exe: 000052FC: 07:15:57 [TUniServerModule]:HTTP Server Stopped.
+mdemo.exe: 000052FC: 07:15:57 [TUniGUISessionManager]:Terminating Session manager.
+mdemo.exe: 000052FC: 07:15:57 [TUniGUISessionManager]:Stopping Cache Eraser...
+mdemo.exe: 000052FC: 07:15:57 [TUniGUISessionManager]:Cache Eraser Stopped.
+mdemo.exe: 000052FC: 07:15:57 [TUniGUISessionManager]:Destroying Worker Threads.
+mdemo.exe: 000052FC: 07:15:57 [TUniGUISessionManager]:Session manager terminated.
+mdemo.exe: 000052FC: 07:15:57 [TUniServerModule]:Server Shutdown Completed.
+mdemo.exe: 000052FC: 07:15:57 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000051D4: 07:22:42 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000051D4: 07:22:43 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000051D4: 07:22:43 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:44 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:45 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:45 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:45 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:45 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00005064: 07:22:45 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00004528: 07:23:52 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Item.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Item.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C02C6
+T2TiERPLojaVirtual.exe: 00005298: 07:23:57 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\CheckGrid.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\CheckGrid.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C02C6
+T2TiERPLojaVirtual.exe: 00005298: 07:24:04 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\biolife.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\biolife.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C02C6
+T2TiERPLojaVirtual.exe: 00005298: 07:24:19 [Não foi possível encontrar o arquivo 'C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\cache\T2TiERPLojaVirtual_exe\ngn4fqz9J6FF3A9ADA\fddemoSQL.mdb'-127.0.0.1]:EOleException : Não foi possível encontrar o arquivo 'C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\cache\T2TiERPLojaVirtual_exe\ngn4fqz9J6FF3A9ADA\fddemoSQL.mdb' : Addr: $007A96C0
+T2TiERPLojaVirtual.exe: 00005298: 07:24:23 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Country.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Country.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C02C6
+T2TiERPLojaVirtual.exe: 000034F8: 07:26:30 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 00003978: 07:29:36 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $007325CC
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:17 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00003978: 08:15:17 [Indy]:EIdNotConnected : Not Connected : Addr: $006A62A2
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:18 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:18 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:18 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:18 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:18 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:18 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:18 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000051D4: 08:15:18 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00005FE4: 08:15:44 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00005FE4: 08:15:44 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00005FE4: 08:15:44 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00005FE4: 08:15:44 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00005FE4: 08:15:44 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00005CFC: 08:16:24 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C02C6
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:55 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00005CFC: 08:16:56 [Indy]:EIdNotConnected : Not Connected : Addr: $006A62A2
+T2TiERPLojaVirtual.exe: 00005D4C: 08:16:56 [Indy]:EIdNotConnected : Not Connected : Addr: $006A62A2
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:57 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:57 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:57 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:57 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:57 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:57 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:58 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00005FE4: 08:16:58 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00005788: 08:27:11 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00005788: 08:27:11 [TUniServerModule]:Debug Mode = ON
+T2TiERPLojaVirtual.exe: 00005788: 08:27:11 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00005788: 08:27:11 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00005788: 08:27:11 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00005788: 08:27:12 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000060CC: 08:30:48 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006238: 08:32:57 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006238: 08:32:57 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006238: 08:32:58 [TUniServerModule]:Cache Folder Erased. <166> Files deleted.
+T2TiERPLojaVirtual.exe: 00006238: 08:32:58 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006238: 08:32:58 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 0000625C: 08:33:25 [127.0.0.1]:EClassNotFound : Class TUni not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 00006238: 08:35:11 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006238: 08:35:12 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006238: 08:35:12 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006238: 08:35:12 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006238: 08:35:12 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006238: 08:35:12 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006238: 08:35:12 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006238: 08:35:12 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006238: 08:35:12 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 0000639C: 08:35:22 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 0000639C: 08:35:22 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 0000639C: 08:35:22 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 0000639C: 08:35:22 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 0000639C: 08:35:22 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 0000601C: 08:35:51 [127.0.0.1]:EClassNotFound : Class TUni not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:22 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006098: 08:37:23 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 0000601C: 08:37:23 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:23 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:23 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:23 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:23 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:23 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:23 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:24 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 0000639C: 08:37:24 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00000634: 08:37:52 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00000634: 08:37:52 [TUniServerModule]:Debug Mode = ON
+T2TiERPLojaVirtual.exe: 00000634: 08:37:52 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00000634: 08:37:52 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00000634: 08:37:52 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00000634: 08:37:52 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00005FEC: 08:38:04 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000048F0: 08:38:06 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00000AE8: 08:39:17 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C1406
+T2TiERPLojaVirtual.exe: 0000628C: 08:41:01 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 0000628C: 08:41:01 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 0000628C: 08:41:01 [TUniServerModule]:Cache Folder Erased. <172> Files deleted.
+T2TiERPLojaVirtual.exe: 0000628C: 08:41:01 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 0000628C: 08:41:01 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00005EA8: 08:41:02 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00005EA8: 08:41:02 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00005EA8: 08:41:02 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000055E0: 08:46:58 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\cache\T2TiERPLojaVirtual_exe\GKQvv66z17FF3AAFDF\favicon.ico
+T2TiERPLojaVirtual.exe: 00006410: 08:47:07 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006410: 08:47:19 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C1406
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:25 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 0000643C: 08:49:26 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006540: 08:49:26 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006544: 08:49:26 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006548: 08:49:26 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 0000654C: 08:49:26 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:26 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:26 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:26 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:26 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:26 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:26 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:27 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 0000628C: 08:49:27 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006584: 08:49:34 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006584: 08:49:34 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006584: 08:49:34 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006584: 08:49:35 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006584: 08:49:35 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000065A0: 08:49:35 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006584: 08:51:18 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000065A0: 08:51:19 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000065A4: 08:51:19 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006584: 08:51:20 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006584: 08:51:20 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006584: 08:51:20 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006584: 08:51:20 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006584: 08:51:20 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006584: 08:51:20 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006584: 08:51:20 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006584: 08:51:20 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000066BC: 08:51:32 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000066BC: 08:51:32 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000066BC: 08:51:32 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000066BC: 08:51:32 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000066BC: 08:51:32 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000066F4: 08:51:35 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000066F4: 08:51:45 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\LookUp.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\LookUp.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C1406
+T2TiERPLojaVirtual.exe: 000066F4: 08:51:45 [127.0.0.1]:EDatabaseError : ClientDataSet2: Cannot perform this operation on a closed dataset : Addr: $00612BFA
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:03 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000066F0: 08:52:04 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000066F4: 08:52:04 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:04 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:04 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:04 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:04 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:04 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:04 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:04 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000066BC: 08:52:04 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006740: 08:52:16 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006740: 08:52:16 [TUniServerModule]:Debug Mode = ON
+T2TiERPLojaVirtual.exe: 00006740: 08:52:16 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006740: 08:52:16 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006740: 08:52:16 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006740: 08:52:16 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00006788: 08:52:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000067FC: 08:52:58 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000062C0: 08:53:00 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:15 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:15 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:15 [TUniServerModule]:Cache Folder Erased. <6> Files deleted.
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:15 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:15 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000067B0: 08:56:37 [127.0.0.1]:EClassNotFound : Class TUniUSpedFiscal not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 000067B0: 08:56:43 [127.0.0.1]:EClassNotFound : Class TUniUSpedFiscal not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:53 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000064C0: 08:56:53 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000067B0: 08:56:53 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:54 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:54 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:54 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:54 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:54 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:54 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:54 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000062C0: 08:56:54 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006664: 08:58:26 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006664: 08:58:26 [TUniServerModule]:Debug Mode = ON
+T2TiERPLojaVirtual.exe: 00006664: 08:58:26 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006664: 08:58:26 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006664: 08:58:26 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006664: 08:58:26 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000064CC: 08:58:46 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006808: 08:58:47 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006804: 08:58:48 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 0000643C: 08:58:49 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006874: 08:59:26 [127.0.0.1]:EClassNotFound : Class TUniUSpedFiscal not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 0000697C: 09:06:21 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006B24: 09:06:23 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006B1C: 09:06:24 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006B2C: 09:06:26 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000067B4: 09:07:04 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000067B4: 09:07:04 [TUniServerModule]:Debug Mode = ON
+T2TiERPLojaVirtual.exe: 000067B4: 09:07:04 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000067B4: 09:07:04 [TUniServerModule]:Cache Folder Erased. <166> Files deleted.
+T2TiERPLojaVirtual.exe: 000067B4: 09:07:04 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000067B4: 09:07:14 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00006878: 09:07:18 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000060B4: 09:07:18 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000064C8: 09:07:20 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006498: 09:07:20 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006920: 09:07:21 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006904: 09:07:22 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006900: 09:07:23 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006600: 09:09:43 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006600: 09:09:43 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006600: 09:09:45 [TUniServerModule]:Cache Folder Erased. <171> Files deleted.
+T2TiERPLojaVirtual.exe: 00006600: 09:09:45 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006600: 09:09:45 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00006BC4: 09:09:46 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006BC4: 09:09:46 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006BC4: 09:09:46 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006BC4: 09:09:46 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006BC4: 09:09:46 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006BC4: 09:10:30 [127.0.0.1]:EClassNotFound : Class USpedFiscal not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 00006BC4: 09:10:35 [127.0.0.1]:EClassNotFound : Class USpedFiscal not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 00006600: 09:10:43 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006BC4: 09:10:43 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006600: 09:10:44 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006600: 09:10:44 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006600: 09:10:44 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006600: 09:10:44 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006600: 09:10:44 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006600: 09:10:44 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006600: 09:10:44 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006600: 09:10:44 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000065C4: 09:11:01 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000065C4: 09:11:01 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000065C4: 09:11:01 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000065C4: 09:11:01 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000065C4: 09:11:01 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 0000665C: 09:11:01 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000064D4: 09:13:33 [127.0.0.1]:EClassNotFound : Class TUniUSpedFiscal not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 000064D4: 09:13:38 [127.0.0.1]:EClassNotFound : Class TUniUSpedFiscal not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 000065C4: 09:13:59 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006648: 09:14:00 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000064D4: 09:14:00 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000065C4: 09:14:00 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000065C4: 09:14:00 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000065C4: 09:14:00 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000065C4: 09:14:00 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000065C4: 09:14:00 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000065C4: 09:14:00 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000065C4: 09:14:00 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000065C4: 09:14:00 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006AA0: 09:14:33 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006AA0: 09:14:33 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006AA0: 09:14:33 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006AA0: 09:14:34 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006AA0: 09:14:34 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000068E4: 09:15:25 [127.0.0.1]:EClassNotFound : Class TUSpedFiscal not found : Addr: $004B2E6E
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:44 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000068E4: 09:15:45 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000068E8: 09:15:45 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006460: 09:15:45 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:45 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:45 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:45 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:45 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:45 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:45 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:46 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006AA0: 09:15:46 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006D64: 09:18:09 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006D64: 09:18:10 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006D64: 09:18:10 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006D64: 09:18:10 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006D64: 09:18:10 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00006D84: 09:18:11 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006D84: 09:18:11 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006D84: 09:18:11 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006D84: 09:18:11 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006D84: 09:18:11 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006D84: 09:18:46 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C1406
+T2TiERPLojaVirtual.exe: 00006D64: 09:20:58 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006DE8: 09:20:59 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006F70: 09:20:59 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006D64: 09:20:59 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006D64: 09:20:59 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006D64: 09:20:59 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006D64: 09:21:00 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006D64: 09:21:00 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006D64: 09:21:00 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006D64: 09:21:01 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006D64: 09:21:01 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006FA4: 09:21:16 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006FA4: 09:21:16 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006FA4: 09:21:16 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006FA4: 09:21:16 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006FA4: 09:21:16 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00006FC0: 09:21:23 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006FC0: 09:22:09 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C1406
+T2TiERPLojaVirtual.exe: 00006C70: 09:25:12 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:57 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006C70: 09:26:58 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:58 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:58 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:58 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:58 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:58 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:58 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:58 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006FA4: 09:26:58 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006628: 09:27:08 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006628: 09:27:08 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006628: 09:27:08 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006628: 09:27:08 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006628: 09:27:08 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00006DC4: 09:27:38 [Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado-127.0.0.1]:EFOpenError : Cannot open file "C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\CommonPath\Customer.cds". O sistema não pode encontrar o caminho especificado : Addr: $004C1406
+T2TiERPLojaVirtual.exe: 00006628: 09:29:38 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006628: 09:29:38 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006628: 09:29:38 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006628: 09:29:38 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006628: 09:29:38 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006628: 09:29:38 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006628: 09:29:38 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006628: 09:29:39 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006628: 09:29:39 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007094: 09:29:47 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007094: 09:29:47 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007094: 09:29:47 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007094: 09:29:47 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007094: 09:29:47 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000070DC: 09:30:03 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007094: 09:30:52 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000070DC: 09:30:53 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007094: 09:30:53 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007094: 09:30:53 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007094: 09:30:53 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007094: 09:30:53 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007094: 09:30:53 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007094: 09:30:53 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007094: 09:30:53 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007094: 09:30:53 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000071D4: 09:31:40 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000071D4: 09:31:40 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000071D4: 09:31:40 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000071D4: 09:31:40 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000071D4: 09:31:40 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000071F0: 09:31:41 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:23 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000071F0: 09:32:23 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:24 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:24 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:24 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:24 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:24 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:24 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:24 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000071D4: 09:32:24 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000073A0: 09:34:37 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000073A0: 09:34:37 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000073A0: 09:34:37 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000073A0: 09:34:37 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000073A0: 09:34:37 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000073C8: 09:34:40 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000073C8: 09:34:40 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000073C8: 09:34:40 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000073C8: 09:34:41 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000073D8: 09:34:41 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\favicon.ico
+T2TiERPLojaVirtual.exe: 000073C8: 09:34:41 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000073C8: 09:37:53 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:56 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:57 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:57 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:57 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:57 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:57 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:57 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:58 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000073A0: 09:42:58 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007AA4: 10:07:04 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:07:04 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007AA4: 10:07:04 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:07:04 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007AA4: 10:07:04 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:23 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:24 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:24 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:24 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:24 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:24 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:24 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:25 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007AA4: 10:19:25 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007CEC: 10:19:35 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007CEC: 10:19:35 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007CEC: 10:19:35 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007CEC: 10:19:35 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007CEC: 10:19:35 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007D18: 10:19:39 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:30 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00007D18: 10:20:30 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007D24: 10:20:30 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:31 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:31 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:31 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:31 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:31 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:31 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:31 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007CEC: 10:20:31 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007E2C: 10:21:39 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007E2C: 10:21:39 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007E2C: 10:21:39 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007E2C: 10:21:40 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007E2C: 10:21:40 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007E4C: 10:21:41 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007E4C: 10:21:41 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007E4C: 10:21:41 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:44 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00007E4C: 10:22:44 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:45 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:45 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:45 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:45 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:45 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:45 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:45 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007E2C: 10:22:45 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007F1C: 10:23:41 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007F1C: 10:23:41 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007F1C: 10:23:41 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007F1C: 10:23:41 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007F1C: 10:23:41 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007F38: 10:24:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007F54: 10:24:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007F78: 10:24:22 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007F6C: 10:24:22 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007F80: 10:24:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007F7C: 10:24:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007F84: 10:24:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007F9C: 10:24:24 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007FA4: 10:24:26 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007FA0: 10:24:26 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007FB0: 10:24:27 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007FA8: 10:24:27 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007FBC: 10:27:30 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:57 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00007FBC: 10:29:58 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007C68: 10:29:58 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:58 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:58 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:58 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:58 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:58 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:58 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:59 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007F1C: 10:29:59 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007888: 10:30:09 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007888: 10:30:09 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007888: 10:30:09 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007888: 10:30:09 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007888: 10:30:09 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007F30: 10:30:32 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007F1C: 10:30:32 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008004: 10:30:33 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00008018: 10:30:34 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000801C: 10:30:38 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008024: 10:30:38 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008028: 10:30:38 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008030: 10:30:38 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007888: 10:31:24 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 0000802C: 10:31:25 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007888: 10:31:25 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007888: 10:31:25 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007888: 10:31:25 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007888: 10:31:25 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007888: 10:31:25 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007888: 10:31:25 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007888: 10:31:26 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007888: 10:31:26 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000080B4: 10:31:36 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000080B4: 10:31:37 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000080B4: 10:31:37 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000080B4: 10:31:37 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000080B4: 10:31:37 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000080E4: 10:31:41 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000080E4: 10:31:47 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000080E0: 10:31:47 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000080DC: 10:31:47 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000080D8: 10:31:47 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000080D4: 10:31:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000080EC: 10:31:49 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008108: 10:31:50 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000810C: 10:31:50 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:27 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00008110: 10:32:27 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008114: 10:32:27 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:28 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:28 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:28 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:28 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:28 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:28 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:28 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000080B4: 10:32:28 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00008178: 10:32:39 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00008178: 10:32:39 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00008178: 10:32:39 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00008178: 10:32:39 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00008178: 10:32:39 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000081B0: 10:32:51 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000081B0: 10:32:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000081AC: 10:32:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000081A8: 10:32:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000081A4: 10:32:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000081A0: 10:32:55 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008194: 10:32:55 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000081CC: 10:32:55 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000081B4: 10:32:55 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000081D8: 10:35:59 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000081E4: 10:37:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008390: 10:37:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0000839C: 10:37:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008398: 10:37:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000083A4: 10:37:23 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000083A0: 10:37:23 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000083A8: 10:37:23 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000083B0: 10:37:23 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000083B4: 10:40:26 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008178: 10:48:28 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000083B4: 10:48:29 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008178: 10:48:29 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00008178: 10:48:29 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00008178: 10:48:29 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00008178: 10:48:29 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00008178: 10:48:29 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00008178: 10:48:29 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00008178: 10:48:30 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00008178: 10:48:30 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000084B0: 10:48:39 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000084B0: 10:48:40 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000084B0: 10:48:40 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000084B0: 10:48:40 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000084B0: 10:48:40 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000084B0: 10:51:10 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00008184: 10:51:21 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00008184: 10:51:21 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00008184: 10:51:21 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00008184: 10:51:21 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00008184: 10:51:21 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007F84: 10:51:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00006B74: 10:51:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000084A0: 10:51:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000077EC: 10:51:51 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000804C: 10:51:55 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000086EC: 10:51:55 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007CFC: 10:51:55 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008318: 10:51:55 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00005638: 10:53:12 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000084E0: 10:53:12 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000086B0: 10:53:12 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000804C: 10:53:12 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00008578: 10:53:18 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000087BC: 10:53:18 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008504: 10:53:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000077A8: 10:53:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00006B74: 10:56:21 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008184: 11:00:19 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006B74: 11:00:20 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008184: 11:00:20 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00008184: 11:00:20 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00008184: 11:00:20 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00008184: 11:00:20 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00008184: 11:00:20 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00008184: 11:00:20 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00008184: 11:00:20 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00008184: 11:00:20 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006F14: 11:07:49 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006F14: 11:07:50 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006F14: 11:07:50 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006F14: 11:07:50 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006F14: 11:07:50 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00006D84: 11:08:40 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000064C0: 11:08:40 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0000723C: 11:08:40 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00006BEC: 11:08:41 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00006B84: 11:08:43 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00006FA0: 11:08:43 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00006AB4: 11:08:43 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00006FF8: 11:08:43 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000071C0: 11:08:56 [127.0.0.1]:EDatabaseError : CDSCarrinho: Cannot perform this operation on a closed dataset : Addr: $00612BFA
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:14 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000071C0: 11:09:15 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000068B8: 11:09:15 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006F10: 11:09:15 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:15 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:15 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:15 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:15 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:15 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:15 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:16 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006F14: 11:09:16 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00006C80: 11:09:44 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00006C80: 11:09:44 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00006C80: 11:09:44 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00006C80: 11:09:44 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00006C80: 11:09:44 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007268: 11:09:45 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007268: 11:09:56 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007288: 11:09:57 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007258: 11:09:57 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007290: 11:09:57 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000729C: 11:09:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000072A4: 11:09:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000072C0: 11:10:00 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000072A8: 11:10:00 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:10 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 000072B0: 11:11:11 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:11 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:11 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:11 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:11 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:11 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:11 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:15 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00006C80: 11:11:15 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:11 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:11 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:11 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:11 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:11 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007A08: 11:14:12 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007A08: 11:14:13 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007A08: 11:14:13 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007A08: 11:14:13 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007A08: 11:14:13 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007A08: 11:14:13 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007A08: 11:14:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007EA8: 11:14:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007F78: 11:14:18 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007FFC: 11:14:18 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000786C: 11:14:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007F60: 11:14:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007890: 11:14:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007A7C: 11:14:21 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:36 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00008078: 11:14:37 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008134: 11:14:37 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:37 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:37 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:37 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:37 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:37 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:37 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:38 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007E40: 11:14:38 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:06 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:06 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:06 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:07 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:07 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 000084C4: 11:16:08 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000084C4: 11:16:10 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000084C4: 11:16:10 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000084C4: 11:16:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007F18: 11:16:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0000842C: 11:16:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000086FC: 11:16:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000086F8: 11:16:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008214: 11:16:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000053E4: 11:16:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000853C: 11:16:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:49 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00008290: 11:16:50 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000085C4: 11:16:50 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:50 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:50 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:50 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:50 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:50 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:50 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:51 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 0000840C: 11:16:51 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000085E4: 11:18:09 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000085E4: 11:18:09 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000085E4: 11:18:09 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000085E4: 11:18:09 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000085E4: 11:18:09 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00008630: 11:18:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008728: 11:18:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008790: 11:18:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000087A0: 11:18:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00008760: 11:18:18 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000087B8: 11:18:18 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008650: 11:18:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008674: 11:18:19 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:12 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 0000877C: 11:20:13 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:13 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:13 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:13 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:13 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:14 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:14 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:14 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000085E4: 11:20:14 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00008B4C: 11:20:24 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00008B4C: 11:20:24 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00008B4C: 11:20:24 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00008B4C: 11:20:24 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00008B4C: 11:20:24 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00008B64: 11:20:24 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:20:36 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00008B80: 11:20:36 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00008B80: 11:20:36 [TUniServerModule]:Cache Folder Erased. <1> Files deleted.
+T2TiERPLojaVirtual.exe: 00008B80: 11:20:37 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00008B80: 11:20:37 [InitWebServer]:EIdCouldNotBindSocket : Could not bind socket. Address and port are already in use. : Addr: $006A4516
+T2TiERPLojaVirtual.exe: 00008B64: 11:20:44 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008BB0: 11:20:44 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008B6C: 11:20:44 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00008BB4: 11:20:45 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008BB8: 11:20:47 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008BBC: 11:20:47 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008BC0: 11:20:47 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:20 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00008BD0: 11:23:21 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:21 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:21 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:21 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:21 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:21 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:21 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:21 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00008B4C: 11:23:21 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:40 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:41 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:41 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:41 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:41 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:41 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:41 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:41 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00008B80: 11:36:41 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00008094: 11:36:49 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00008094: 11:36:49 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00008094: 11:36:49 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00008094: 11:36:49 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00008094: 11:36:49 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:53 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:53 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:53 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:53 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:54 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:54 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:54 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:54 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:54 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:54 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:54 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:36:55 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C04: 11:37:00 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008820: 11:37:00 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000086EC: 11:37:00 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000601C: 11:37:00 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000888C: 11:37:01 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008358: 11:37:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000062C0: 11:37:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00006A80: 11:37:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00008094: 11:37:32 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00005374: 11:37:32 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008094: 11:37:33 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00008094: 11:37:33 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00008094: 11:37:33 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00008094: 11:37:33 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00008094: 11:37:33 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00008094: 11:37:33 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00008094: 11:37:34 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00008094: 11:37:34 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00004570: 11:39:20 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00004570: 11:39:20 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00004570: 11:39:20 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00004570: 11:39:21 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00004570: 11:39:21 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00005D08: 11:39:21 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00005D08: 11:39:21 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00005D08: 11:39:21 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00005D08: 11:39:21 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00005D08: 11:39:28 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00006824: 11:39:28 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007F58: 11:39:29 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008310: 11:39:29 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007210: 11:39:31 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00006C60: 11:39:31 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00008148: 11:39:31 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007CF0: 11:39:31 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007CF4: 11:39:44 [SQLConnection property required for this operation-127.0.0.1]:EDatabaseError : SQLConnection property required for this operation : Addr: $00612C0F
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00004570: 11:40:03 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000080A8: 11:40:18 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000080A8: 11:40:18 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000080A8: 11:40:18 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000080A8: 11:40:18 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000080A8: 11:40:18 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 0000608C: 11:41:10 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00005F1C: 11:41:11 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 000067A0: 11:41:11 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00003A30: 11:41:11 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000055F0: 11:41:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007D74: 11:41:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0000631C: 11:41:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00005C8C: 11:41:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 000088A4: 11:41:31 [TUniThreadTimer.OnTimer]:EAccessViolation : Access violation at address 00768D24 in module 'T2TiERPLojaVirtual.exe'. Read of address 00000064 : Addr: $00768D24
+T2TiERPLojaVirtual.exe: 00006484: 11:44:16 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:25 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006484: 11:44:26 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:26 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:26 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:26 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:26 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:26 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:26 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:26 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000080A8: 11:44:26 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 000089AC: 11:45:06 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 000089AC: 11:45:06 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 000089AC: 11:45:06 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 000089AC: 11:45:06 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 000089AC: 11:45:06 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 0000669C: 11:45:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00006834: 11:45:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00006BD8: 11:45:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000733C: 11:45:13 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000638C: 11:45:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00008AB0: 11:45:15 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007BD0: 11:45:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008990: 11:45:16 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:09 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00006A30: 11:47:10 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:10 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:10 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:10 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:10 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:10 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:10 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:10 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 000089AC: 11:47:10 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007534: 11:47:25 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007534: 11:47:25 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007534: 11:47:25 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007534: 11:47:25 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007534: 11:47:25 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007EBC: 11:47:31 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000070B8: 11:47:31 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007474: 11:47:32 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007DEC: 11:47:32 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00006F50: 11:47:34 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007ED0: 11:47:34 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00007F60: 11:47:35 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00007F78: 11:47:35 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007CB8: 11:47:56 [127.0.0.1]:EDatabaseError : Cannot access field 'TOTAL' as type Float : Addr: $00615E74
+T2TiERPLojaVirtual.exe: 00007CB8: 11:48:02 [127.0.0.1]:EDatabaseError : Cannot access field 'TOTAL' as type Float : Addr: $00615E74
+T2TiERPLojaVirtual.exe: 00007CB8: 11:48:05 [127.0.0.1]:EDatabaseError : Cannot access field 'TOTAL' as type Float : Addr: $00615E74
+T2TiERPLojaVirtual.exe: 00007534: 11:48:10 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00007FFC: 11:48:10 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007C90: 11:48:10 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007CB8: 11:48:10 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00007534: 11:48:11 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007534: 11:48:11 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007534: 11:48:11 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007534: 11:48:11 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007534: 11:48:11 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007534: 11:48:11 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007534: 11:48:11 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007534: 11:48:11 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:24 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:24 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:24 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:24 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:25 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:26 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:26 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:26 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:26 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:26 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:26 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:27 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:28 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:29 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:58 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00008B80: 11:49:59 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008B84: 11:49:59 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008B7C: 11:49:59 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008684: 11:49:59 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00005F94: 11:49:59 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00008820: 11:49:59 [Indy]:EIdNotConnected : Not Connected : Addr: $006ACC52
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:59 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:59 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:59 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:59 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:59 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:59 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:59 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00004EB4: 11:49:59 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 00007C94: 11:50:11 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 00007C94: 11:50:11 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 00007C94: 11:50:11 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 00007C94: 11:50:11 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 00007C94: 11:50:11 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 0000706C: 11:50:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 000069FC: 11:50:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00003AB8: 11:50:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00008464: 11:50:17 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00007178: 11:50:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 00006B58: 11:50:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 00007AB0: 11:50:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 00005F84: 11:50:20 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 00006360: 11:53:02 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $00738F7C
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:43 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:44 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:44 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:44 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:44 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:44 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:44 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:46 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 00007C94: 14:50:46 [Terminated]:Exit Code: 0
+T2TiERPLojaVirtual.exe: 0000AAC8: 14:51:00 [TUniServerModule]:Server First Init.
+T2TiERPLojaVirtual.exe: 0000AAC8: 14:51:00 [TUniServerModule]:Erasing Cache Folder...
+T2TiERPLojaVirtual.exe: 0000AAC8: 14:51:01 [TUniServerModule]:Cache Folder Erased. <0> Files deleted.
+T2TiERPLojaVirtual.exe: 0000AAC8: 14:51:01 [TUniServerModule]:Starting HTTP Server...
+T2TiERPLojaVirtual.exe: 0000AAC8: 14:51:01 [TUniServerModule]:HTTP Server Started. Port: 0
+T2TiERPLojaVirtual.exe: 0000AB04: 14:51:36 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 0000AB20: 14:51:36 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0000AB44: 14:51:37 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000AB34: 14:51:37 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000AB48: 14:51:40 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 0000AB58: 14:51:40 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0000AB5C: 14:51:40 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000AB60: 14:51:41 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000AB6C: 14:54:13 [127.0.0.1]:EUniSessionException : Invalid session or session Timeout. : Addr: $0073D170
+T2TiERPLojaVirtual.exe: 0000ABF0: 15:22:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 0000ADB0: 15:22:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0000ADBC: 15:22:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000ADC4: 15:22:59 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000ADC8: 15:23:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\css\jquery.jdigiclock.css
+T2TiERPLojaVirtual.exe: 0000ADCC: 15:23:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\jdigiclock\lib\jquery.jdigiclock.js
+T2TiERPLojaVirtual.exe: 0000ADD0: 15:23:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.css
+T2TiERPLojaVirtual.exe: 0000ADD8: 15:23:02 [HandleFileRequest[127.0.0.1]]:File not found: C:\Projetos\T2Ti ERP 2.0\Delphi\Retaguarda\Cliente\Loja Virtual\files\clockdemo\jquery.tzineClock\jquery.tzineClock.js
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:07 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 0000ADD4: 15:23:08 [Indy]:EIdNotConnected : Not Connected : Addr: $006B0E46
+T2TiERPLojaVirtual.exe: 0000ADDC: 15:23:08 [Indy]:EIdNotConnected : Not Connected : Addr: $006B0E46
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:08 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:08 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:08 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:08 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:08 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:08 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:08 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 0000AAC8: 15:23:08 [Terminated]:Exit Code: 0

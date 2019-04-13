@@ -1,0 +1,49 @@
+object FFechaEfetuaPagamento: TFFechaEfetuaPagamento
+  Left = 383
+  Top = 271
+  BorderStyle = bsNone
+  Caption = 'FFechaEfetuaPagamento'
+  ClientHeight = 68
+  ClientWidth = 792
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poDesigned
+  OnClick = FormClick
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object JvPanel1: TJvPanel
+    Left = 0
+    Top = 0
+    Width = 792
+    Height = 68
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -11
+    HotTrackFont.Name = 'Tahoma'
+    HotTrackFont.Style = []
+    Align = alClient
+    Caption = 'Feche a Gaveta    --     Enter ou Esc'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 1500
+    OnTimer = Timer1Timer
+    Left = 40
+  end
+end

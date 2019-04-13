@@ -1,0 +1,268 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela Cadastro de ContaCaixa
+
+The MIT License
+
+Copyright: Copyright (C) 2015 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+t2ti.com@gmail.com
+@author Albert Eije (T2Ti.COM)
+@version 2.0
+******************************************************************************* }
+unit UContaCaixa;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, DB, DBClient, Menus, StdCtrls, ExtCtrls, Buttons, Grids,
+  DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, ContaCaixaVO,
+  ContaCaixaController, Tipos, Atributos, Constantes, LabeledCtrls, JvToolEdit,
+  Mask, JvExMask, JvBaseEdits, Math, StrUtils, Controller;
+
+type
+  [TFormDescription(TConstantes.MODULO_CADASTROS, 'ContaCaixa')]
+
+  TFContaCaixa = class(TFTelaCadastro)
+    BevelEdits: TBevel;
+    EditCodigo: TLabeledEdit;
+    EditNome: TLabeledEdit;
+    EditAgenciaBanco: TLabeledEdit;
+    MemoDescricao: TLabeledMemo;
+    EditIdAgenciaBanco: TLabeledCalcEdit;
+    ComboboxTipo: TLabeledComboBox;
+    EditDigito: TLabeledEdit;
+    EditClassificacaoContabilConta: TLabeledEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure EditIdAgenciaBancoExit(Sender: TObject);
+    procedure EditIdAgenciaBancoKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+
+  end;
+
+var
+  FContaCaixa: TFContaCaixa;
+
+implementation
+
+uses ULookup, Biblioteca, UDataModule, AgenciaBancoVO, AgenciaBancoController, ContabilContaVO, ContabilContaController;
+{$R *.dfm}
+
+{$REGION 'Infra'}
+procedure TFContaCaixa.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TContaCaixaVO;
+  ObjetoController := TContaCaixaController.Create;
+
+  inherited;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFContaCaixa.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    EditIdAgenciaBanco.SetFocus;
+  end;
+end;
+
+function TFContaCaixa.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditIdAgenciaBanco.SetFocus;
+  end;
+end;
+
+function TFContaCaixa.DoExcluir: Boolean;
+begin
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('ContaCaixaController.TContaCaixaController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('ContaCaixaController.TContaCaixaController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+end;
+
+function TFContaCaixa.DoSalvar: Boolean;
+begin
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TContaCaixaVO.Create;
+
+      TContaCaixaVO(ObjetoVO).IdEmpresa := Sessao.Empresa.Id;
+      TContaCaixaVO(ObjetoVO).ClassificacaoContabilConta := EditClassificacaoContabilConta.Text;
+      TContaCaixaVO(ObjetoVO).IdAgenciaBanco := EditIdAgenciaBanco.AsInteger;
+      TContaCaixaVO(ObjetoVO).AgenciaBancoNome := EditAgenciaBanco.Text;
+      TContaCaixaVO(ObjetoVO).Codigo := EditCodigo.Text;
+      TContaCaixaVO(ObjetoVO).Digito := EditDigito.Text;
+      TContaCaixaVO(ObjetoVO).Nome := EditNome.Text;
+      TContaCaixaVO(ObjetoVO).Descricao := MemoDescricao.Text;
+      TContaCaixaVO(ObjetoVO).Tipo := Copy(ComboboxTipo.Text, 1, 1);
+
+      if StatusTela = stInserindo then
+      begin
+        TController.ExecutarMetodo('ContaCaixaController.TContaCaixaController', 'Insere', [TContaCaixaVO(ObjetoVO)], 'PUT', 'Lista');
+      end
+      else if StatusTela = stEditando then
+      begin
+        if TContaCaixaVO(ObjetoVO).ToJSONString <> StringObjetoOld then
+        begin
+          TController.ExecutarMetodo('ContaCaixaController.TContaCaixaController', 'Altera', [TContaCaixaVO(ObjetoVO)], 'POST', 'Boolean');
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFContaCaixa.GridParaEdits;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := TContaCaixaVO(TController.BuscarObjeto('ContaCaixaController.TContaCaixaController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditClassificacaoContabilConta.Text := TContaCaixaVO(ObjetoVO).ClassificacaoContabilConta;
+    EditIdAgenciaBanco.AsInteger := TContaCaixaVO(ObjetoVO).IdAgenciaBanco;
+    EditAgenciaBanco.Text := TContaCaixaVO(ObjetoVO).AgenciaBancoNome;
+    EditCodigo.Text := TContaCaixaVO(ObjetoVO).Codigo;
+    EditDigito.Text := TContaCaixaVO(ObjetoVO).Digito;
+    EditNome.Text := TContaCaixaVO(ObjetoVO).Nome;
+    MemoDescricao.Text := TContaCaixaVO(ObjetoVO).Descricao;
+    ComboboxTipo.ItemIndex := AnsiIndexStr(TContaCaixaVO(ObjetoVO).Tipo, ['C', 'P', 'I', 'X']);
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Campos Transientes'}
+procedure TFContaCaixa.EditIdAgenciaBancoExit(Sender: TObject);
+var
+  Filtro: string;
+begin
+  if EditIdAgenciaBanco.Value <> 0 then
+  begin
+    try
+      Filtro := 'ID = ' + EditIdAgenciaBanco.Text;
+      EditIdAgenciaBanco.Clear;
+      EditAgenciaBanco.Clear;
+      if not PopulaCamposTransientes(Filtro, TAgenciaBancoVO, TAgenciaBancoController) then
+        PopulaCamposTransientesLookup(TAgenciaBancoVO, TAgenciaBancoController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdAgenciaBanco.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditAgenciaBanco.Text := CDSTransiente.FieldByName('NOME').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditIdAgenciaBanco.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end
+  else
+  begin
+    EditAgenciaBanco.Clear;
+  end;
+end;
+
+procedure TFContaCaixa.EditIdAgenciaBancoKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdAgenciaBanco.Value <> 0 then
+      Filtro := 'ID = ' + EditIdAgenciaBanco.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdAgenciaBanco.Clear;
+      EditAgenciaBanco.Clear;
+      if not PopulaCamposTransientes(Filtro, TAgenciaBancoVO, TAgenciaBancoController) then
+        PopulaCamposTransientesLookup(TAgenciaBancoVO, TAgenciaBancoController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdAgenciaBanco.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditAgenciaBanco.Text := CDSTransiente.FieldByName('NOME').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditIdAgenciaBanco.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+end.

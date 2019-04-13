@@ -1,0 +1,9 @@
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:49 [TUniServerModule]:Shutting Down Server.
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:50 [TUniServerModule]:HTTP Server Stopped.
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:50 [TUniGUISessionManager]:Terminating Session manager.
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:50 [TUniGUISessionManager]:Stopping Cache Eraser...
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:50 [TUniGUISessionManager]:Cache Eraser Stopped.
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:50 [TUniGUISessionManager]:Destroying Worker Threads.
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:50 [TUniGUISessionManager]:Session manager terminated.
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:51 [TUniServerModule]:Server Shutdown Completed.
+T2TiERPLojaVirtual.exe: 0002FC6C: 14:04:51 [Terminated]:Exit Code: 0

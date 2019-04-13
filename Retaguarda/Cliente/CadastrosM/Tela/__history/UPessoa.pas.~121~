@@ -1,0 +1,962 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela Cadastro de Pessoas
+
+The MIT License
+
+Copyright: Copyright (C) 2014 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+@author Albert Eije
+@version 2.0
+******************************************************************************* }
+
+unit UPessoa;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, Menus, StdCtrls, ExtCtrls, Buttons, Grids, DBGrids,
+  JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, Mask, JvExMask, JvToolEdit,
+  JvCombobox, LabeledCtrls, DBCtrls, LabeledDBCtrls, DB, DBClient, StrUtils,
+  Math, VO, PessoaFisicaVO, PessoaJuridicaVO, Generics.Collections,
+  Atributos, Constantes, CheckLst, JvExCheckLst, JvCheckListBox, JvBaseEdits,
+  Controller, Actions, ActnList, RibbonSilverStyleActnCtrls,
+  ActnMan, ToolWin, ActnCtrls, Biblioteca,
+
+  PessoaDTO,
+
+  SynCommons,          // framework core
+  mORMot,              // RESTful server & ORM
+  mORMotHttpClient     // HTTP client to a mORMot RESTful server
+
+  ;
+
+type
+
+  [TFormDescription(TConstantes.MODULO_CADASTROS, 'Pessoa')]
+  TFPessoa = class(TFTelaCadastro)
+    ScrollBox: TScrollBox;
+    PageControlDadosPessoa: TPageControl;
+    tsTipoPessoa: TTabSheet;
+    PanelDadosPessoa: TPanel;
+    PageControlTipoPessoa: TPageControl;
+    tsPessoaFisica: TTabSheet;
+    PanelPessoaFisica: TPanel;
+    EditCPF: TLabeledMaskEdit;
+    GroupBoxRG: TGroupBox;
+    EditRGNumero: TLabeledEdit;
+    EditRGEmissao: TLabeledDateEdit;
+    EditRGOrgaoEmissor: TLabeledEdit;
+    EditNascimento: TLabeledDateEdit;
+    RadioGroupSexo: TRadioGroup;
+    LComboBoxEstadoCivil: TLabeledDBLookupComboBox;
+    tsPessoaJuridica: TTabSheet;
+    PanelPessoaJuridica: TPanel;
+    EditFantasia: TLabeledEdit;
+    EditCNPJ: TLabeledMaskEdit;
+    EditInscricaoMunicipal: TLabeledEdit;
+    EditDataConstituicao: TLabeledDateEdit;
+    tsContato: TTabSheet;
+    PanelContatos: TPanel;
+    GridContato: TJvDBUltimGrid;
+    EditNomeMae: TLabeledEdit;
+    EditNaturalidade: TLabeledEdit;
+    EditNacionalidade: TLabeledEdit;
+    ComboBoxRaca: TLabeledComboBox;
+    ComboBoxTipoSangue: TLabeledComboBox;
+    GroupBoxCNH: TGroupBox;
+    EditCNHNumero: TLabeledEdit;
+    EditCNHVencimento: TLabeledDateEdit;
+    ComboBoxCNHCategoria: TLabeledComboBox;
+    GroupBoxTituloEleitoral: TGroupBox;
+    EditTituloNumero: TLabeledEdit;
+    EditTituloZona: TLabeledCalcEdit;
+    EditTituloSecao: TLabeledCalcEdit;
+    EditNomePai: TLabeledEdit;
+    GroupBoxReservista: TGroupBox;
+    EditReservistaNumero: TLabeledEdit;
+    ComboBoxReservistaCategoria: TLabeledComboBox;
+    EditInscricaoEstadual: TLabeledEdit;
+    EditSuframa: TLabeledEdit;
+    ComboBoxTipoRegime: TLabeledComboBox;
+    ComboBoxCRT: TLabeledComboBox;
+    tsEndereco: TTabSheet;
+    PanelEnderecos: TPanel;
+    GridEndereco: TJvDBUltimGrid;
+    PanelPessoaDadosBase: TPanel;
+    EditEmail: TLabeledEdit;
+    EditNome: TLabeledEdit;
+    ComboboxTipoPessoa: TLabeledComboBox;
+    CheckListBoxPessoa: TJvCheckListBox;
+    EditSite: TLabeledEdit;
+    CDSEndereco: TClientDataSet;
+    DSEndereco: TDataSource;
+    CDSContato: TClientDataSet;
+    DSContato: TDataSource;
+    CDSEstadoCivil: TClientDataSet;
+    DSEstadoCivil: TDataSource;
+    ActionToolBar2: TActionToolBar;
+    ActionManager: TActionManager;
+    ActionExcluirContato: TAction;
+    ActionExcluirEndereco: TAction;
+    ActionExcluirTelefone: TAction;
+    ActionToolBar1: TActionToolBar;
+    tsTelefone: TTabSheet;
+    CDSTelefone: TClientDataSet;
+    DSTelefone: TDataSource;
+    PanelTelefones: TPanel;
+    GridTelefone: TJvDBUltimGrid;
+    ActionToolBar3: TActionToolBar;
+    tsCliente: TTabSheet;
+    PanelCliente: TPanel;
+    EditIdSituacaoCliente: TLabeledCalcEdit;
+    EditSituacaoCliente: TLabeledEdit;
+    EditIdAtividadeCliente: TLabeledCalcEdit;
+    EditAtividadeCliente: TLabeledEdit;
+    EditDataDesde: TLabeledDateEdit;
+    EditContaTomador: TLabeledEdit;
+    ComboBoxGeraFinanceiro: TLabeledComboBox;
+    ComboBoxIndicadorPreco: TLabeledComboBox;
+    ComboBoxTipoFrete: TLabeledComboBox;
+    ComboBoxFormaDesconto: TLabeledComboBox;
+    EditDesconto: TLabeledCalcEdit;
+    EditLimiteCredito: TLabeledCalcEdit;
+    MemoObservacao: TLabeledMemo;
+    tsFornecedor: TTabSheet;
+    PanelFornecedor: TPanel;
+    EditIdSituacaoFornecedor: TLabeledCalcEdit;
+    EditSituacaoFornecedor: TLabeledEdit;
+    EditIdAtividadeFornecedor: TLabeledCalcEdit;
+    EditAtividadeFornecedor: TLabeledEdit;
+    LabeledDateEdit1: TLabeledDateEdit;
+    EditContaRemetente: TLabeledEdit;
+    ComboBoxGeraFaturamento: TLabeledComboBox;
+    ComboBoxOptanteSimples: TLabeledComboBox;
+    ComboBoxLocalizacao: TLabeledComboBox;
+    ComboBoxSofreRetencao: TLabeledComboBox;
+    EditPrazoMedioEntrega: TLabeledCalcEdit;
+    EditNumDiasPrimeiroVencimento: TLabeledCalcEdit;
+    EditNumDiasIntervalo: TLabeledCalcEdit;
+    EditQuantidadeParcelas: TLabeledCalcEdit;
+    EditChequeNominal: TLabeledEdit;
+    LabeledMemo1: TLabeledMemo;
+    tsTransportadora: TTabSheet;
+    PanelTransportadora: TPanel;
+    LabeledMemo2: TLabeledMemo;
+    procedure FormCreate(Sender: TObject);
+    procedure ComboboxTipoPessoaChange(Sender: TObject);
+    procedure ActionExcluirContatoExecute(Sender: TObject);
+    procedure ActionExcluirEnderecoExecute(Sender: TObject);
+    procedure ActionExcluirTelefoneExecute(Sender: TObject);
+    procedure ControlaPersistencia(pDataSet: TDataSet);
+    procedure ControlaInsercaoGridInterna(pDataSet: TDataSet; pCampoControle: String);
+    procedure EditIdSituacaoClienteKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure EditIdAtividadeClienteKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure CheckListBoxPessoaClick(Sender: TObject);
+  private
+    { Private declarations }
+    IdTipoPessoa: Integer;
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+    procedure LimparCampos; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+
+    procedure ExibirDadosTipoPessoa;
+    procedure ExibirDadosAgregados;
+    procedure ConfigurarLayoutTela;
+    procedure PopulaComboEstadoCivil(Sender: TObject);
+  end;
+
+var
+  FPessoa: TFPessoa;
+  Objeto: TPessoa;
+
+implementation
+
+uses
+      EstadoCivilController, PessoaController,  EstadoCivilVO, PessoaVO,
+      PessoaContatoVO, PessoaEnderecoVO, PessoaTelefoneVO, SituacaoForCliVO,
+      SituacaoForCliController, AtividadeForCliVO, AtividadeForCliController,
+
+      PessoaContatoDTO, PessoaEnderecoDTO, PessoaTelefoneDTO, PessoaFisicaDTO,
+      PessoaJuridicaDTO;
+{$R *.dfm}
+
+{$Region 'Infra'}
+procedure TFPessoa.FormCreate(Sender: TObject);
+var
+  I: Integer;
+begin
+  ClasseObjetoGridVO := TPessoaVO;
+  ObjetoController := TPessoaController.Create;
+  inherited;
+
+  PopulaComboEstadoCivil(Self);
+
+  // Configura a Grid dos Endereços
+  ConfiguraCDSFromVO(CDSEndereco, TPessoaEnderecoVO);
+  ConfiguraGridFromVO(GridEndereco, TPessoaEnderecoVO);
+
+  // Configura a Grid dos Contatos
+  ConfiguraCDSFromVO(CDSContato, TPessoaContatoVO);
+  ConfiguraGridFromVO(GridContato, TPessoaContatoVO);
+
+  // Configura a Grid dos Telefones
+  ConfiguraCDSFromVO(CDSTelefone, TPessoaTelefoneVO);
+  ConfiguraGridFromVO(GridTelefone, TPessoaTelefoneVO);
+
+  //
+  tsCliente.Visible := False;
+  tsFornecedor.Visible := False;
+  tsTransportadora.Visible := False;
+end;
+
+procedure TFPessoa.ConfigurarLayoutTela;
+begin
+  PageControlDadosPessoa.ActivePageIndex := 0;
+  PanelEdits.Enabled := True;
+
+  if StatusTela = stNavegandoEdits then
+  begin
+    PanelDadosPessoa.Enabled := False;
+    PanelContatos.Enabled := False;
+    PanelEnderecos.Enabled := False;
+    PanelPessoaDadosBase.Enabled := False;
+    PanelTelefones.Enabled := False;
+  end
+  else
+  begin
+    PanelDadosPessoa.Enabled := True;
+    PanelContatos.Enabled := True;
+    PanelEnderecos.Enabled := True;
+    PanelTelefones.Enabled := True;
+    PanelPessoaDadosBase.Enabled := True;
+  end;
+  ExibirDadosTipoPessoa;
+  ExibirDadosAgregados;
+end;
+
+procedure TFPessoa.ExibirDadosAgregados;
+begin
+  if CheckListBoxPessoa.Checked[0] then
+    tsCliente.TabVisible := True
+  else
+    tsCliente.TabVisible := False;
+  //
+  if CheckListBoxPessoa.Checked[1] then
+    tsFornecedor.TabVisible := True
+  else
+    tsFornecedor.TabVisible := False;
+  //
+  if CheckListBoxPessoa.Checked[2] then
+    tsTransportadora.TabVisible := True
+  else
+    tsTransportadora.TabVisible := False;
+end;
+
+procedure TFPessoa.ExibirDadosTipoPessoa;
+begin
+  case ComboboxTipoPessoa.ItemIndex of
+    0:
+      begin
+        PanelPessoaFisica.Parent := PanelDadosPessoa;
+        PanelPessoaFisica.Visible := True;
+        PanelPessoaJuridica.Visible := False;
+      end;
+    1:
+      begin
+        PanelPessoaJuridica.Parent := PanelDadosPessoa;
+        PanelPessoaFisica.Visible := False;
+        PanelPessoaJuridica.Visible := True;
+      end;
+  end;
+end;
+
+procedure TFPessoa.PopulaComboEstadoCivil(Sender: TObject);
+begin
+  ConfiguraCDSFromVO(CDSEstadoCivil, TEstadoCivilVO);
+
+  TEstadoCivilController.SetDataSet(CDSEstadoCivil);
+  TController.ExecutarMetodo('EstadoCivilController.TEstadoCivilController', 'Consulta', ['ID>0', '0', False], 'GET', 'Lista');
+
+  LComboBoxEstadoCivil.ListField := 'NOME';
+  LComboBoxEstadoCivil.KeyField := 'ID'
+end;
+
+procedure TFPessoa.LimparCampos;
+var
+  I: Integer;
+begin
+  inherited;
+
+  // Pessoa
+  ComboboxTipoPessoa.ItemIndex := 0;
+
+  // Pessoa Física
+  RadioGroupSexo.ItemIndex := -1;
+  LComboBoxEstadoCivil.KeyValue := Null;
+
+  // Contatos
+  CDSContato.EmptyDataSet;
+  // Endereços
+  CDSEndereco.EmptyDataSet;
+  // Telefones
+  CDSTelefone.EmptyDataSet;
+
+  // CheckListBox
+  for I := 0 to CheckListBoxPessoa.Items.Count - 1 do
+    CheckListBoxPessoa.Checked[I] := False;
+end;
+
+procedure TFPessoa.ComboboxTipoPessoaChange(Sender: TObject);
+begin
+  ExibirDadosTipoPessoa;
+end;
+
+procedure TFPessoa.CheckListBoxPessoaClick(Sender: TObject);
+begin
+  ExibirDadosAgregados;
+end;
+{$EndRegion 'Infra'}
+
+{$REGION 'Controles CRUD'}
+function TFPessoa.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  if Result then
+  begin
+    ConfigurarLayoutTela;
+    IdTipoPessoa := 0;
+    EditNome.SetFocus;
+    ComboboxTipoPessoa.Enabled := True;
+    ExibirDadosTipoPessoa;
+  end;
+end;
+
+function TFPessoa.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  if Result then
+  begin
+    EditNome.SetFocus;
+    ComboboxTipoPessoa.Enabled := False;
+  end;
+end;
+
+function TFPessoa.DoExcluir: Boolean;
+begin
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('PessoaController.TPessoaController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('PessoaController.TPessoaController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+end;
+
+function TFPessoa.DoSalvar: Boolean;
+var
+  aPessoa: TPessoa;
+  Contato: TPessoa_Contato;
+  Endereco: TPessoa_Endereco;
+begin
+  if EditNome.Text = '' then
+  begin
+    Application.MessageBox('Informe o nome da pessoa.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+    EditNome.SetFocus;
+    Exit(False);
+  end
+  else if ComboboxTipoPessoa.ItemIndex = 0 then
+  begin
+    if EditCPF.Text = '' then
+    begin
+      Application.MessageBox('Informe o CPF da pessoa.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      EditCPF.SetFocus;
+      Exit(False);
+    end
+    else if EditNomeMae.Text = '' then
+    begin
+      Application.MessageBox('Informe o nome da mãe.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      EditNomeMae.SetFocus;
+      Exit(False);
+    end
+    else if LComboBoxEstadoCivil.KeyValue = Null then
+    begin
+      Application.MessageBox('Selecione o estado civil.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      LComboBoxEstadoCivil.SetFocus;
+      Exit(False);
+    end
+  end
+  else if ComboboxTipoPessoa.ItemIndex = 1 then
+  begin
+    if EditCNPJ.Text = '' then
+    begin
+      Application.MessageBox('Informe o CNPJ da pessoa.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      EditCNPJ.SetFocus;
+      Exit(False);
+    end;
+  end;
+
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      //codigo mormot
+      if StatusTela = stInserindo then
+        aPessoa := TPessoa.Create
+      else if StatusTela = stEditando then
+        aPessoa := Objeto; // TPessoa.Create(aClient, TID(IdRegistroSelecionado));
+
+      aPessoa.Nome := EditNome.Text;
+      aPessoa.Tipo := IfThen(ComboboxTipoPessoa.ItemIndex = 0, 'F', 'J');
+      aPessoa.Email := EditEmail.Text;
+      aPessoa.Site := EditSite.Text;
+      aPessoa.Cliente := IfThen(CheckListBoxPessoa.Checked[0], 'S', 'N');
+      aPessoa.Fornecedor := IfThen(CheckListBoxPessoa.Checked[1], 'S', 'N');
+      aPessoa.Colaborador := IfThen(CheckListBoxPessoa.Checked[2], 'S', 'N');
+      aPessoa.Transportadora := IfThen(CheckListBoxPessoa.Checked[3], 'S', 'N');
+
+      // Tipo de Pessoa
+      if aPessoa.Tipo = 'F' then
+      begin
+        aPessoa.PessoaFisicaVO := TPessoa_Fisica.Create;
+        //aPessoa.PessoaFisicaVO.Id := IdTipoPessoa;
+        aPessoa.PessoaFisicaVO.Id_Pessoa := aPessoa.Id;
+        aPessoa.PessoaFisicaVO.CPF := EditCPF.Text;
+        aPessoa.PessoaFisicaVO.Data_Nascimento := EditNascimento.Date;
+        if LComboBoxEstadoCivil.KeyValue <> Null then
+          aPessoa.PessoaFisicaVO.Id_Estado_Civil := LComboBoxEstadoCivil.KeyValue;
+        aPessoa.PessoaFisicaVO.Raca := Copy(ComboBoxRaca.Text, 1, 1);
+        aPessoa.PessoaFisicaVO.Tipo_Sangue := Copy(ComboBoxTipoSangue.Text, 1, 1);
+        aPessoa.PessoaFisicaVO.Naturalidade := EditNaturalidade.Text;
+        aPessoa.PessoaFisicaVO.Nacionalidade := EditNacionalidade.Text;
+        aPessoa.PessoaFisicaVO.Nome_Pai := EditNomePai.Text;
+        aPessoa.PessoaFisicaVO.Nome_Mae := EditNomeMae.Text;
+        aPessoa.PessoaFisicaVO.RG := EditRGNumero.Text;
+        aPessoa.PessoaFisicaVO.Data_Emissao_Rg := EditRGEmissao.Date;
+        aPessoa.PessoaFisicaVO.Orgao_Rg := EditRGOrgaoEmissor.Text;
+        aPessoa.PessoaFisicaVO.Reservista_Numero := EditReservistaNumero.Text;
+        if ComboBoxReservistaCategoria.Text <> '' then
+          aPessoa.PessoaFisicaVO.Reservista_Categoria := StrToInt(ComboBoxReservistaCategoria.Text);
+        case RadioGroupSexo.ItemIndex of
+          0:
+            aPessoa.PessoaFisicaVO.Sexo := 'F';
+          1:
+            aPessoa.PessoaFisicaVO.Sexo := 'M';
+        else
+          aPessoa.PessoaFisicaVO.Sexo := '';
+        end;
+        aPessoa.PessoaFisicaVO.Cnh_Numero := EditCNHNumero.Text;
+        aPessoa.PessoaFisicaVO.Cnh_Vencimento := EditCNHVencimento.Date;
+        aPessoa.PessoaFisicaVO.Cnh_Categoria := ComboBoxCNHCategoria.Text;
+        aPessoa.PessoaFisicaVO.Titulo_Eleitoral_Numero := EditTituloNumero.Text;
+        aPessoa.PessoaFisicaVO.Titulo_Eleitoral_Zona := EditTituloZona.AsInteger;
+        aPessoa.PessoaFisicaVO.Titulo_Eleitoral_Secao := EditTituloSecao.AsInteger;
+      end
+      else if aPessoa.Tipo = 'J' then
+      begin
+        //aPessoa.PessoaJuridicaVO.Id := IdTipoPessoa;
+        aPessoa.PessoaJuridicaVO := TPessoa_Juridica.Create;
+        aPessoa.PessoaJuridicaVO.Id_Pessoa := aPessoa.Id;
+        aPessoa.PessoaJuridicaVO.Fantasia := EditFantasia.Text;
+        aPessoa.PessoaJuridicaVO.Cnpj := EditCNPJ.Text;
+        aPessoa.PessoaJuridicaVO.Inscricao_Estadual := EditInscricaoEstadual.Text;
+        aPessoa.PessoaJuridicaVO.Inscricao_Municipal := EditInscricaoMunicipal.Text;
+        aPessoa.PessoaJuridicaVO.Data_Constituicao := EditDataConstituicao.Date;
+        aPessoa.PessoaJuridicaVO.Suframa := EditSuframa.Text;
+        aPessoa.PessoaJuridicaVO.Tipo_Regime := Copy(ComboBoxTipoRegime.Text, 1, 1);
+        aPessoa.PessoaJuridicaVO.Crt := Copy(ComboBoxCRT.Text, 1, 1);
+      end;
+
+      // Contatos
+      aPessoa.ListaPessoaContatoVO := TObjectList<TPessoa_Contato>.Create;
+      CDSContato.DisableControls;
+      CDSContato.First;
+      while not CDSContato.Eof do
+      begin
+        if (CDSContato.FieldByName('PERSISTE').AsString = 'S') or (CDSContato.FieldByName('ID').AsInteger = 0) then
+        begin
+          Contato := TPessoa_Contato.Create;
+          Contato.Id_Pessoa := aPessoa.Id;
+          Contato.Nome := CDSContato.FieldByName('NOME').AsString;
+          Contato.Email := CDSContato.FieldByName('EMAIL').AsString;
+          Contato.Fone_Comercial := CDSContato.FieldByName('FONE_COMERCIAL').AsString;
+          Contato.Fone_Residencial := CDSContato.FieldByName('FONE_RESIDENCIAL').AsString;
+          Contato.Fone_Celular := CDSContato.FieldByName('FONE_CELULAR').AsString;
+          aPessoa.ListaPessoaContatoVO.Add(Contato);
+        end;
+
+        CDSContato.Next;
+      end;
+      CDSContato.EnableControls;
+
+      // Endereços
+      aPessoa.ListaPessoaEnderecoVO := TObjectList<TPessoa_Endereco>.Create;
+      CDSEndereco.DisableControls;
+      CDSEndereco.First;
+      while not CDSEndereco.Eof do
+      begin
+        if (CDSEndereco.FieldByName('PERSISTE').AsString = 'S') or (CDSEndereco.FieldByName('ID').AsInteger = 0) then
+        begin
+          Endereco := TPessoa_Endereco.Create;
+          Endereco.Id_Pessoa := aPessoa.Id;
+          Endereco.Logradouro := CDSEndereco.FieldByName('LOGRADOURO').AsString;
+          Endereco.Numero := CDSEndereco.FieldByName('NUMERO').AsString;
+          Endereco.Complemento := CDSEndereco.FieldByName('COMPLEMENTO').AsString;
+          Endereco.Bairro := CDSEndereco.FieldByName('BAIRRO').AsString;
+          Endereco.Cidade := CDSEndereco.FieldByName('CIDADE').AsString;
+          Endereco.Cep := CDSEndereco.FieldByName('CEP').AsString;
+          Endereco.Municipio_Ibge := CDSEndereco.FieldByName('MUNICIPIO_IBGE').AsInteger;
+          Endereco.Uf := CDSEndereco.FieldByName('UF').AsString;
+          Endereco.Fone := CDSEndereco.FieldByName('FONE').AsString;
+          Endereco.Principal := IfThen(CDSEndereco.FieldByName('PRINCIPAL').AsString = 'True', 'S', 'N');
+          Endereco.Entrega := IfThen(CDSEndereco.FieldByName('ENTREGA').AsString = 'True', 'S', 'N');
+          Endereco.Cobranca := IfThen(CDSEndereco.FieldByName('COBRANCA').AsString = 'True', 'S', 'N');
+          Endereco.Correspondencia := IfThen(CDSEndereco.FieldByName('CORRESPONDENCIA').AsString = 'True', 'S', 'N');
+          aPessoa.ListaPessoaEnderecoVO.Add(Endereco);
+        end;
+
+        CDSEndereco.Next;
+      end;
+      CDSEndereco.EnableControls;
+
+      if StatusTela = stInserindo then
+        TPessoaController.Insere(aPessoa)// TController.ExecutarMetodo('PessoaController.TPessoaController', 'Insere', [aPessoa], 'PUT', 'Lista')
+      else if StatusTela = stEditando then
+      begin
+        TController.ExecutarMetodo('PessoaController.TPessoaController', 'Altera', [aPessoa], 'POST', 'Boolean');
+      end;
+
+
+      {
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TPessoaVO.Create;
+
+      TPessoaVO(ObjetoVO).Nome := EditNome.Text;
+      TPessoaVO(ObjetoVO).Tipo := IfThen(ComboboxTipoPessoa.ItemIndex = 0, 'F', 'J');
+      TPessoaVO(ObjetoVO).Email := EditEmail.Text;
+      TPessoaVO(ObjetoVO).Site := EditSite.Text;
+      TPessoaVO(ObjetoVO).Cliente := IfThen(CheckListBoxPessoa.Checked[0], 'S', 'N');
+      TPessoaVO(ObjetoVO).Fornecedor := IfThen(CheckListBoxPessoa.Checked[1], 'S', 'N');
+      TPessoaVO(ObjetoVO).Colaborador := IfThen(CheckListBoxPessoa.Checked[2], 'S', 'N');
+      TPessoaVO(ObjetoVO).Transportadora := IfThen(CheckListBoxPessoa.Checked[3], 'S', 'N');
+
+      // Tipo de Pessoa
+      if TPessoaVO(ObjetoVO).Tipo = 'F' then
+      begin
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.Id := IdTipoPessoa;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.IdPessoa := TPessoaVO(ObjetoVO).Id;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.CPF := EditCPF.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.DataNascimento := EditNascimento.Date;
+        if LComboBoxEstadoCivil.KeyValue <> Null then
+          TPessoaVO(ObjetoVO).PessoaFisicaVO.IdEstadoCivil := LComboBoxEstadoCivil.KeyValue;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.Raca := Copy(ComboBoxRaca.Text, 1, 1);
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.TipoSangue := Copy(ComboBoxTipoSangue.Text, 1, 1);
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.Naturalidade := EditNaturalidade.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.Nacionalidade := EditNacionalidade.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.NomePai := EditNomePai.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.NomeMae := EditNomeMae.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.RG := EditRGNumero.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.DataEmissaoRg := EditRGEmissao.Date;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.OrgaoRg := EditRGOrgaoEmissor.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.ReservistaNumero := EditReservistaNumero.Text;
+        if ComboBoxReservistaCategoria.Text <> '' then
+          TPessoaVO(ObjetoVO).PessoaFisicaVO.ReservistaCategoria := StrToInt(ComboBoxReservistaCategoria.Text);
+        case RadioGroupSexo.ItemIndex of
+          0:
+            TPessoaVO(ObjetoVO).PessoaFisicaVO.Sexo := 'F';
+          1:
+            TPessoaVO(ObjetoVO).PessoaFisicaVO.Sexo := 'M';
+        else
+          TPessoaVO(ObjetoVO).PessoaFisicaVO.Sexo := '';
+        end;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.CnhNumero := EditCNHNumero.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.CnhVencimento := EditCNHVencimento.Date;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.CnhCategoria := ComboBoxCNHCategoria.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.TituloEleitoralNumero := EditTituloNumero.Text;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.TituloEleitoralZona := EditTituloZona.AsInteger;
+        TPessoaVO(ObjetoVO).PessoaFisicaVO.TituloEleitoralSecao := EditTituloSecao.AsInteger;
+      end
+      else if TPessoaVO(ObjetoVO).Tipo = 'J' then
+      begin
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.Id := IdTipoPessoa;
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.IdPessoa := TPessoaVO(ObjetoVO).Id;
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.Fantasia := EditFantasia.Text;
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.Cnpj := EditCNPJ.Text;
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.InscricaoEstadual := EditInscricaoEstadual.Text;
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.InscricaoMunicipal := EditInscricaoMunicipal.Text;
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.DataConstituicao := EditDataConstituicao.Date;
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.Suframa := EditSuframa.Text;
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.TipoRegime := Copy(ComboBoxTipoRegime.Text, 1, 1);
+        TPessoaVO(ObjetoVO).PessoaJuridicaVO.Crt := Copy(ComboBoxCRT.Text, 1, 1);
+      end;
+
+      // Contatos
+      TController.PreencherObjectListFromCDS<TPessoaContatoVO>(TPessoaVO(ObjetoVO).ListaPessoaContatoVO, CDSContato);
+
+      // Endereços
+      TController.PreencherObjectListFromCDS<TPessoaEnderecoVO>(TPessoaVO(ObjetoVO).ListaPessoaEnderecoVO, CDSEndereco);
+
+      // Telefones
+      TController.PreencherObjectListFromCDS<TPessoaTelefoneVO>(TPessoaVO(ObjetoVO).ListaPessoaTelefoneVO, CDSTelefone);
+
+      if StatusTela = stInserindo then
+        TController.ExecutarMetodo('PessoaController.TPessoaController', 'Insere', [TPessoaVO(ObjetoVO)], 'PUT', 'Lista')
+      else if StatusTela = stEditando then
+      begin
+        if TPessoaVO(ObjetoVO).ToJSONString <> StringObjetoOld then
+        begin
+          TController.ExecutarMetodo('PessoaController.TPessoaController', 'Altera', [TPessoaVO(ObjetoVO)], 'POST', 'Boolean');
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+      }
+    except
+      Result := False;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grids e ClientDataSets'}
+procedure TFPessoa.GridParaEdits;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    //ObjetoVO := TPessoaVO(TController.BuscarObjeto('PessoaController.TPessoaController', 'ConsultaObjeto', ['ID=' + IdRegistroSelecionado.ToString], 'GET'));
+    // mormot
+    Objeto := TPessoaController.ConsultaDTO(TID(IdRegistroSelecionado))
+  end;
+
+  if Assigned(Objeto) then
+  begin
+    // Pessoa
+    EditNome.Text := Objeto.Nome;
+    ComboboxTipoPessoa.ItemIndex := IfThen(Objeto.Tipo = 'F', 0, 1);
+    EditEmail.Text := Objeto.Email;
+    EditSite.Text := Objeto.Site;
+    if Objeto.Cliente = 'S' then
+      CheckListBoxPessoa.Checked[0] := True;
+    if Objeto.Fornecedor = 'S' then
+      CheckListBoxPessoa.Checked[1] := True;
+    if Objeto.Colaborador = 'S' then
+      CheckListBoxPessoa.Checked[2] := True;
+    if Objeto.Transportadora = 'S' then
+      CheckListBoxPessoa.Checked[3] := True;
+
+    // Tipo Pessoa
+    if (Objeto.Tipo = 'F') and (Assigned(Objeto.PessoaFisicaVO)) then // Pessoa Física
+    begin
+      IdTipoPessoa := Objeto.PessoaFisicaVO.Id;
+      EditCPF.Text := Objeto.PessoaFisicaVO.CPF;
+      EditNascimento.Date := Objeto.PessoaFisicaVO.Data_Nascimento;
+      if Objeto.PessoaFisicaVO.Id_Estado_Civil > 0 then
+        LComboBoxEstadoCivil.KeyValue := Objeto.PessoaFisicaVO.Id_Estado_Civil;
+
+      case AnsiIndexStr(Objeto.PessoaFisicaVO.Raca, ['B', 'N', 'P', 'I']) of
+        0:
+          ComboBoxRaca.ItemIndex := 0;
+        1:
+          ComboBoxRaca.ItemIndex := 1;
+        2:
+          ComboBoxRaca.ItemIndex := 2;
+        3:
+          ComboBoxRaca.ItemIndex := 3;
+      else
+        ComboBoxRaca.ItemIndex := -1;
+      end;
+
+      case AnsiIndexStr(Objeto.PessoaFisicaVO.Tipo_Sangue, ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']) of
+        0:
+          ComboBoxTipoSangue.ItemIndex := 0;
+        1:
+          ComboBoxTipoSangue.ItemIndex := 1;
+        2:
+          ComboBoxTipoSangue.ItemIndex := 2;
+        3:
+          ComboBoxTipoSangue.ItemIndex := 3;
+        4:
+          ComboBoxTipoSangue.ItemIndex := 4;
+        5:
+          ComboBoxTipoSangue.ItemIndex := 5;
+        6:
+          ComboBoxTipoSangue.ItemIndex := 6;
+        7:
+          ComboBoxTipoSangue.ItemIndex := 7;
+      else
+        ComboBoxTipoSangue.ItemIndex := -1;
+      end;
+
+      EditNaturalidade.Text := Objeto.PessoaFisicaVO.Naturalidade;
+      EditNacionalidade.Text := Objeto.PessoaFisicaVO.Nacionalidade;
+      EditNomePai.Text := Objeto.PessoaFisicaVO.Nome_Pai;
+      EditNomeMae.Text := Objeto.PessoaFisicaVO.Nome_Mae;
+      EditRGNumero.Text := Objeto.PessoaFisicaVO.RG;
+      EditRGEmissao.Date := Objeto.PessoaFisicaVO.Data_Emissao_Rg;
+      EditRGOrgaoEmissor.Text := Objeto.PessoaFisicaVO.Orgao_Rg;
+      EditReservistaNumero.Text := Objeto.PessoaFisicaVO.Reservista_Numero;
+      ComboBoxReservistaCategoria.ItemIndex := Objeto.PessoaFisicaVO.Reservista_Categoria - 1;
+
+      case AnsiIndexStr(Objeto.PessoaFisicaVO.Sexo, ['F', 'M']) of
+        0:
+          RadioGroupSexo.ItemIndex := 0;
+        1:
+          RadioGroupSexo.ItemIndex := 1;
+      else
+        RadioGroupSexo.ItemIndex := -1;
+      end;
+
+      EditCNHNumero.Text := Objeto.PessoaFisicaVO.Cnh_Numero;
+      EditCNHVencimento.Date := Objeto.PessoaFisicaVO.Cnh_Vencimento;
+
+      case AnsiIndexStr(Objeto.PessoaFisicaVO.Cnh_Categoria, ['A', 'B', 'C', 'D', 'E']) of
+        0:
+          ComboBoxCNHCategoria.ItemIndex := 0;
+        1:
+          ComboBoxCNHCategoria.ItemIndex := 1;
+        2:
+          ComboBoxCNHCategoria.ItemIndex := 2;
+        3:
+          ComboBoxCNHCategoria.ItemIndex := 3;
+        4:
+          ComboBoxCNHCategoria.ItemIndex := 4;
+      else
+        ComboBoxCNHCategoria.ItemIndex := -1;
+      end;
+
+      EditTituloNumero.Text := Objeto.PessoaFisicaVO.Titulo_Eleitoral_Numero;
+      EditTituloZona.AsInteger := Objeto.PessoaFisicaVO.Titulo_Eleitoral_Zona;
+      EditTituloSecao.AsInteger := Objeto.PessoaFisicaVO.Titulo_Eleitoral_Secao;
+    end
+    else if (Objeto.Tipo = 'J') and (Assigned(Objeto.PessoaJuridicaVO)) then // Pessoa Jurídica
+    begin
+      IdTipoPessoa := Objeto.PessoaJuridicaVO.Id;
+
+      EditFantasia.Text := Objeto.PessoaJuridicaVO.Fantasia;
+      EditCNPJ.Text := Objeto.PessoaJuridicaVO.Cnpj;
+      EditInscricaoEstadual.Text := Objeto.PessoaJuridicaVO.Inscricao_Estadual;
+      EditInscricaoMunicipal.Text := Objeto.PessoaJuridicaVO.Inscricao_Municipal;
+      EditDataConstituicao.Date := Objeto.PessoaJuridicaVO.Data_Constituicao;
+      EditSuframa.Text := Objeto.PessoaJuridicaVO.Suframa;
+
+      case AnsiIndexStr(Objeto.PessoaJuridicaVO.Tipo_Regime, ['1', '2', '3']) of
+        0:
+          ComboBoxTipoRegime.ItemIndex := 0;
+        1:
+          ComboBoxTipoRegime.ItemIndex := 1;
+        2:
+          ComboBoxTipoRegime.ItemIndex := 2;
+      else
+        ComboBoxTipoRegime.ItemIndex := -1;
+      end;
+
+      case AnsiIndexStr(Objeto.PessoaJuridicaVO.Crt, ['1', '2', '3']) of
+        0:
+          ComboBoxCRT.ItemIndex := 0;
+        1:
+          ComboBoxCRT.ItemIndex := 1;
+        2:
+          ComboBoxCRT.ItemIndex := 2;
+      else
+        ComboBoxCRT.ItemIndex := -1;
+      end;
+    end;
+
+    // Preenche as grids internas com os dados das Listas que vieram no objeto
+    TController.TratarRetorno<TPessoa_Endereco>(Objeto.ListaPessoaEnderecoVO, True, True, CDSEndereco);
+    TController.TratarRetorno<TPessoa_Contato>(Objeto.ListaPessoaContatoVO, True, True, CDSContato);
+    TController.TratarRetorno<TPessoa_Telefone>(Objeto.ListaPessoaTelefoneVO, True, True, CDSTelefone);
+  end;
+  ConfigurarLayoutTela;
+end;
+
+procedure TFPessoa.ControlaInsercaoGridInterna(pDataSet: TDataSet; pCampoControle: String);
+begin
+  if Trim(pDataSet.FieldByName(pCampoControle).AsString) = '' then
+    pDataSet.Cancel;
+end;
+
+procedure TFPessoa.ControlaPersistencia(pDataSet: TDataSet);
+begin
+  pDataSet.FieldByName('PERSISTE').AsString := 'S';
+end;
+{$ENDREGION}
+
+{$REGION 'Exclusões Internas'}
+procedure TFPessoa.ActionExcluirContatoExecute(Sender: TObject);
+begin
+  if not CDSContato.IsEmpty then
+  begin
+    if Application.MessageBox('Tem certeza que deseja excluir o registro selecionado?', 'Pergunta do Sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+    begin
+      if StatusTela = stInserindo then
+        CDSContato.Delete
+      else if StatusTela = stEditando then
+      begin
+        TController.ExecutarMetodo('PessoaController.TPessoaController', 'ExcluiContato', [CDSContato.FieldByName('ID').AsInteger], 'DELETE', 'Boolean');
+        if TController.RetornoBoolean then
+          CDSContato.Delete;
+      end;
+    end;
+  end
+  else
+    Application.MessageBox('Não existem dados para serem excluídos.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+
+procedure TFPessoa.ActionExcluirEnderecoExecute(Sender: TObject);
+begin
+  if not CDSEndereco.IsEmpty then
+  begin
+    if Application.MessageBox('Tem certeza que deseja excluir o registro selecionado?', 'Pergunta do Sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+    begin
+      if StatusTela = stInserindo then
+        CDSEndereco.Delete
+      else if StatusTela = stEditando then
+      begin
+        TController.ExecutarMetodo('PessoaController.TPessoaController', 'ExcluiEndereco', [CDSEndereco.FieldByName('ID').AsInteger], 'DELETE', 'Boolean');
+        if TController.RetornoBoolean then
+          CDSEndereco.Delete;
+      end;
+    end;
+  end
+  else
+    Application.MessageBox('Não existem dados para serem excluídos.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+
+procedure TFPessoa.ActionExcluirTelefoneExecute(Sender: TObject);
+begin
+  if not CDSTelefone.IsEmpty then
+  begin
+    if Application.MessageBox('Tem certeza que deseja excluir o registro selecionado?', 'Pergunta do Sistema', MB_YesNo + MB_IconQuestion) = IdYes then
+    begin
+      if StatusTela = stInserindo then
+        CDSTelefone.Delete
+      else if StatusTela = stEditando then
+      begin
+        TController.ExecutarMetodo('PessoaController.TPessoaController', 'ExcluiTelefone', [CDSTelefone.FieldByName('ID').AsInteger], 'DELETE', 'Boolean');
+        if TController.RetornoBoolean then
+          CDSTelefone.Delete;
+      end;
+    end;
+  end
+  else
+    Application.MessageBox('Não existem dados para serem excluídos.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+end;
+{$EndREGION 'Exclusões Internas'}
+
+{$REGION 'Campos Transientes'}
+procedure TFPessoa.EditIdAtividadeClienteKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdAtividadeCliente.Value <> 0 then
+      Filtro := 'ID = ' + EditIdAtividadeCliente.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdAtividadeCliente.Clear;
+      EditAtividadeCliente.Clear;
+      if not PopulaCamposTransientes(Filtro, TAtividadeForCliVO, TAtividadeForCliController) then
+        PopulaCamposTransientesLookup(TAtividadeForCliVO, TAtividadeForCliController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdAtividadeCliente.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditAtividadeCliente.Text := CDSTransiente.FieldByName('NOME').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditIdAtividadeCliente.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+
+
+procedure TFPessoa.EditIdSituacaoClienteKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  Filtro: String;
+begin
+  if Key = VK_F1 then
+  begin
+    if EditIdSituacaoCliente.Value <> 0 then
+      Filtro := 'ID = ' + EditIdSituacaoCliente.Text
+    else
+      Filtro := 'ID=0';
+
+    try
+      EditIdSituacaoCliente.Clear;
+      EditSituacaoCliente.Clear;
+      if not PopulaCamposTransientes(Filtro, TSituacaoForCliVO, TSituacaoForCliController) then
+        PopulaCamposTransientesLookup(TSituacaoForCliVO, TSituacaoForCliController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        EditIdSituacaoCliente.Text := CDSTransiente.FieldByName('ID').AsString;
+        EditSituacaoCliente.Text := CDSTransiente.FieldByName('NOME').AsString;
+      end
+      else
+      begin
+        Exit;
+        EditIdSituacaoCliente.SetFocus;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+end;
+{$ENDREGION}
+
+end.

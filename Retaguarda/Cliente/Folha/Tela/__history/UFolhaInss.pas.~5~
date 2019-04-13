@@ -1,0 +1,310 @@
+{ *******************************************************************************
+Title: T2Ti ERP
+Description: Janela de Retenção do INSS para a Folha de Pagamento
+
+The MIT License
+
+Copyright: Copyright (C) 2016 T2Ti.COM
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+The author may be contacted at:
+t2ti.com@gmail.com</p>
+
+@author Albert Eije (alberteije@gmail.com)
+@version 2.0
+******************************************************************************* }
+unit UFolhaInss;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UTelaCadastro, DB, DBClient, Menus, StdCtrls, ExtCtrls, Buttons, Grids,
+  DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, ComCtrls, FolhaInssVO,
+  FolhaInssController, Tipos, Atributos, Constantes, LabeledCtrls, JvToolEdit,
+  Mask, JvExMask, JvBaseEdits, Math, StrUtils, ActnList, Generics.Collections,
+  RibbonSilverStyleActnCtrls, ActnMan, ToolWin, ActnCtrls, Controller;
+
+type
+  [TFormDescription(TConstantes.MODULO_FOLHA_PAGAMENTO, 'INSS Retenção')]
+
+  TFFolhaInss = class(TFTelaCadastro)
+    DSFolhaInssRetencao: TDataSource;
+    CDSFolhaInssRetencao: TClientDataSet;
+    PanelMestre: TPanel;
+    PageControlItens: TPageControl;
+    tsItens: TTabSheet;
+    PanelItens: TPanel;
+    GridDetalhe: TJvDBUltimGrid;
+    EditCompetencia: TLabeledMaskEdit;
+    CDSFolhaInssRetencaoID: TIntegerField;
+    CDSFolhaInssRetencaoID_FOLHA_INSS: TIntegerField;
+    CDSFolhaInssRetencaoID_FOLHA_INSS_SERVICO: TIntegerField;
+    CDSFolhaInssRetencaoVALOR_MENSAL: TFMTBCDField;
+    CDSFolhaInssRetencaoVALOR_13: TFMTBCDField;
+    procedure FormCreate(Sender: TObject);
+    procedure GridDblClick(Sender: TObject);
+    procedure GridDetalheKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure GridParaEdits; override;
+    procedure LimparCampos; override;
+    procedure ControlaBotoes; override;
+    procedure ControlaPopupMenu; override;
+
+    // Controles CRUD
+    function DoInserir: Boolean; override;
+    function DoEditar: Boolean; override;
+    function DoExcluir: Boolean; override;
+    function DoSalvar: Boolean; override;
+
+    procedure ConfigurarLayoutTela;
+  end;
+
+var
+  FFolhaInss: TFFolhaInss;
+
+implementation
+
+uses FolhaInssServicoVO, FolhaInssServicoController, FolhaInssRetencaoVO;
+{$R *.dfm}
+
+{$REGION 'Controles Infra'}
+procedure TFFolhaInss.FormCreate(Sender: TObject);
+begin
+  ClasseObjetoGridVO := TFolhaInssVO;
+  ObjetoController := TFolhaInssController.Create;
+
+  inherited;
+end;
+
+procedure TFFolhaInss.LimparCampos;
+begin
+  inherited;
+  CDSFolhaInssRetencao.EmptyDataSet;
+end;
+
+procedure TFFolhaInss.ConfigurarLayoutTela;
+begin
+  PanelEdits.Enabled := True;
+
+  if StatusTela = stNavegandoEdits then
+  begin
+    PanelMestre.Enabled := False;
+    PanelItens.Enabled := False;
+  end
+  else
+  begin
+    PanelMestre.Enabled := True;
+    PanelItens.Enabled := True;
+  end;
+end;
+
+procedure TFFolhaInss.ControlaBotoes;
+begin
+  inherited;
+
+  BotaoImprimir.Visible := False;
+end;
+
+procedure TFFolhaInss.ControlaPopupMenu;
+begin
+  inherited;
+
+  MenuImprimir.Visible := False;
+end;
+{$ENDREGION}
+
+{$REGION 'Controles CRUD'}
+function TFFolhaInss.DoInserir: Boolean;
+begin
+  Result := inherited DoInserir;
+
+  ConfigurarLayoutTela;
+  if Result then
+  begin
+    EditCompetencia.SetFocus;
+  end;
+end;
+
+function TFFolhaInss.DoEditar: Boolean;
+begin
+  Result := inherited DoEditar;
+
+  ConfigurarLayoutTela;
+  if Result then
+  begin
+    EditCompetencia.SetFocus;
+  end;
+end;
+
+function TFFolhaInss.DoExcluir: Boolean;
+begin
+  if inherited DoExcluir then
+  begin
+    try
+      TController.ExecutarMetodo('FolhaInssController.TFolhaInssController', 'Exclui', [IdRegistroSelecionado], 'DELETE', 'Boolean');
+      Result := TController.RetornoBoolean;
+    except
+      Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+  if Result then
+    TController.ExecutarMetodo('FolhaInssController.TFolhaInssController', 'Consulta', [Trim(Filtro), Pagina.ToString, False], 'GET', 'Lista');
+
+    TFolhaInssController(ObjetoController).Consulta(Filtro, Pagina);
+end;
+
+function TFFolhaInss.DoSalvar: Boolean;
+var
+  FolhaInssRetencao: TFolhaInssRetencaoVO;
+begin
+  DecimalSeparator := '.';
+  Result := inherited DoSalvar;
+
+  if Result then
+  begin
+    try
+      if not Assigned(ObjetoVO) then
+        ObjetoVO := TFolhaInssVO.Create;
+
+      TFolhaInssVO(ObjetoVO).IdEmpresa := Sessao.IdEmpresa;
+      TFolhaInssVO(ObjetoVO).Competencia := EditCompetencia.Text;
+
+      // Retenções
+      TFolhaInssVO(ObjetoVO).ListaFolhaInssRetencaoVO := TObjectList<TFolhaInssRetencaoVO>.Create;
+      CDSFolhaInssRetencao.DisableControls;
+      CDSFolhaInssRetencao.First;
+      while not CDSFolhaInssRetencao.Eof do
+      begin
+        FolhaInssRetencao := TFolhaInssRetencaoVO.Create;
+        FolhaInssRetencao.Id := CDSFolhaInssRetencaoID.AsInteger;
+        FolhaInssRetencao.IdFolhaInss := TFolhaInssVO(ObjetoVO).Id;
+        FolhaInssRetencao.IdFolhaInssServico := CDSFolhaInssRetencaoID_FOLHA_INSS_SERVICO.AsInteger;
+        FolhaInssRetencao.ValorMensal := CDSFolhaInssRetencaoVALOR_MENSAL.AsFloat;
+        FolhaInssRetencao.Valor13 := CDSFolhaInssRetencaoVALOR_13.AsFloat;
+        TFolhaInssVO(ObjetoVO).ListaFolhaInssRetencaoVO.Add(FolhaInssRetencao);
+        CDSFolhaInssRetencao.Next;
+      end;
+      CDSFolhaInssRetencao.EnableControls;
+
+      if StatusTela = stInserindo then
+        Result := TFolhaInssController(ObjetoController).Insere(TFolhaInssVO(ObjetoVO))
+      else if StatusTela = stEditando then
+      begin
+        if TFolhaInssVO(ObjetoVO).ToJSONString <> TFolhaInssVO(ObjetoOldVO).ToJSONString then
+        begin
+          Result := TFolhaInssController(ObjetoController).Altera(TFolhaInssVO(ObjetoVO), TFolhaInssVO(ObjetoOldVO));
+        end
+        else
+          Application.MessageBox('Nenhum dado foi alterado.', 'Mensagem do Sistema', MB_OK + MB_ICONINFORMATION);
+      end;
+    except
+      Result := False;
+    end;
+  end;
+  DecimalSeparator := ',';
+end;
+{$ENDREGION}
+
+{$REGION 'Controle de Grid'}
+procedure TFFolhaInss.GridDblClick(Sender: TObject);
+begin
+  inherited;
+  ConfigurarLayoutTela;
+end;
+
+procedure TFFolhaInss.GridDetalheKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_F1 then
+  begin
+    try
+      PopulaCamposTransientesLookup(TFolhaInssServicoVO, TFolhaInssServicoController);
+      if CDSTransiente.RecordCount > 0 then
+      begin
+        CDSFolhaInssRetencao.Append;
+        CDSFolhaInssRetencaoID_FOLHA_INSS_SERVICO.AsInteger := CDSTransiente.FieldByName('ID').AsInteger;
+        CDSFolhaInssRetencao.Post;
+      end;
+    finally
+      CDSTransiente.Close;
+    end;
+  end;
+  If Key = VK_RETURN then
+    EditCompetencia.SetFocus;
+end;
+
+procedure TFFolhaInss.GridParaEdits;
+var
+  FolhaInssRetencaoEnumerator: TEnumerator<TFolhaInssRetencaoVO>;
+begin
+  inherited;
+
+  if not CDSGrid.IsEmpty then
+  begin
+    ObjetoVO := ObjetoController.VO<TFolhaInssVO>(IdRegistroSelecionado);
+    if StatusTela = stEditando then
+      ObjetoOldVO := ObjetoController.VO<TFolhaInssVO>(IdRegistroSelecionado);
+  end;
+
+  if Assigned(ObjetoVO) then
+  begin
+    EditCompetencia.Text := TFolhaInssVO(ObjetoVO).Competencia;
+
+    // Retenções
+    FolhaInssRetencaoEnumerator := TFolhaInssVO(ObjetoVO).ListaFolhaInssRetencaoVO.GetEnumerator;
+    try
+      with FolhaInssRetencaoEnumerator do
+      begin
+        while MoveNext do
+        begin
+          CDSFolhaInssRetencao.Append;
+          CDSFolhaInssRetencaoID.AsInteger := Current.id;
+          CDSFolhaInssRetencaoID_FOLHA_INSS_SERVICO.AsInteger := Current.IdFolhaInssServico;
+          CDSFolhaInssRetencaoVALOR_MENSAL.AsFloat := Current.ValorMensal;
+          CDSFolhaInssRetencaoVALOR_13.AsFloat := Current.Valor13;
+          CDSFolhaInssRetencao.Post;
+        end;
+      end;
+    finally
+      FolhaInssRetencaoEnumerator.Free;
+    end;
+
+    TFolhaInssVO(ObjetoVO).ListaFolhaInssRetencaoVO := Nil;
+    if Assigned(TFolhaInssVO(ObjetoOldVO)) then
+      TFolhaInssVO(ObjetoOldVO).ListaFolhaInssRetencaoVO := Nil;
+  end;
+
+  ConfigurarLayoutTela;
+end;
+{$ENDREGION}
+
+end.

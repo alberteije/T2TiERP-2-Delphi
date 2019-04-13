@@ -1,0 +1,17 @@
+program T2TiERPNFCe;
+
+uses
+  FMX.Forms,
+  UMenu in 'Tela\UMenu.pas' {FMenu},
+  UCliente in 'Tela\UCliente.pas' {FCliente},
+  UProduto in 'Tela\UProduto.pas' {FProduto};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFMenu, FMenu);
+  Application.CreateForm(TFCliente, FCliente);
+  Application.CreateForm(TFProduto, FProduto);
+  Application.Run;
+end.

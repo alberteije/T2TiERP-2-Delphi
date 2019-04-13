@@ -1,0 +1,40 @@
+object FCargaPDV: TFCargaPDV
+  Left = 99
+  Top = 297
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'FCargaPDV'
+  ClientHeight = 58
+  ClientWidth = 600
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Gauge1: TGauge
+    Left = 0
+    Top = 0
+    Width = 600
+    Height = 58
+    Align = alClient
+    Progress = 0
+    ExplicitLeft = 152
+    ExplicitTop = 8
+    ExplicitWidth = 100
+    ExplicitHeight = 100
+  end
+  object Timer: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = TimerTimer
+    Left = 24
+    Top = 8
+  end
+end

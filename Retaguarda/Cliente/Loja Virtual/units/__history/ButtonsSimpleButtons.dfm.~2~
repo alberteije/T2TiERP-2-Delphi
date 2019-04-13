@@ -1,0 +1,99 @@
+object UniButtonsSimpleButtons: TUniButtonsSimpleButtons
+  Left = 0
+  Top = 0
+  Width = 453
+  Height = 388
+  TabOrder = 0
+  ParentRTL = False
+  DesignSize = (
+    453
+    388)
+  object UniContainerPanel1: TUniContainerPanel
+    Left = 24
+    Top = 24
+    Width = 409
+    Height = 345
+    Hint = ''
+    ParentColor = False
+    Anchors = []
+    TabOrder = 0
+    object UniButton1: TUniButton
+      Left = 24
+      Top = 16
+      Width = 75
+      Height = 25
+      Hint = ''
+      Caption = 'UniButton1'
+      TabOrder = 0
+    end
+    object UniButton2: TUniButton
+      Left = 128
+      Top = 16
+      Width = 75
+      Height = 25
+      Hint = ''
+      Caption = 'UniButton2'
+      ParentFont = False
+      Font.Style = [fsItalic]
+      TabOrder = 1
+    end
+    object UniButton3: TUniButton
+      Left = 232
+      Top = 16
+      Width = 75
+      Height = 25
+      Hint = ''
+      Caption = 'UniButton3'
+      ParentFont = False
+      Font.Style = [fsBold, fsItalic]
+      TabOrder = 2
+    end
+    object UniButton4: TUniButton
+      Left = 24
+      Top = 64
+      Width = 75
+      Height = 25
+      Hint = ''
+      Caption = 'UniButton4'
+      ParentFont = False
+      Font.Style = [fsBold]
+      TabOrder = 3
+    end
+    object UniButton5: TUniButton
+      Left = 24
+      Top = 112
+      Width = 121
+      Height = 73
+      Hint = ''
+      Caption = 'UniButton5'
+      ParentFont = False
+      Font.Height = -16
+      Font.Style = [fsBold]
+      TabOrder = 4
+    end
+    object UniButton6: TUniButton
+      Left = 24
+      Top = 208
+      Width = 121
+      Height = 25
+      Hint = ''
+      Caption = 'UniButton6'
+      ParentFont = False
+      Font.Color = clGreen
+      TabOrder = 5
+    end
+    object WebBrowser1: TWebBrowser
+      Left = 216
+      Top = 64
+      Width = 300
+      Height = 150
+      TabOrder = 7
+      ControlData = {
+        4C000000021F0000810F00000000000000000000000000000000000000000000
+        000000004C000000000000000000000001000000E0D057007335CF11AE690800
+        2B2E126208000000000000004C0000000114020000000000C000000000000046
+        8000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000100000000000000000000000000000000000000}
+    end
+  end
+end

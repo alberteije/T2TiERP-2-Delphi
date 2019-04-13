@@ -1,0 +1,120 @@
+object UniCompraCarrinho: TUniCompraCarrinho
+  Left = 0
+  Top = 0
+  Width = 638
+  Height = 637
+  TabOrder = 0
+  ParentRTL = False
+  object UniContainerPanel1: TUniContainerPanel
+    Left = 0
+    Top = 0
+    Width = 638
+    Height = 637
+    Hint = ''
+    ParentColor = False
+    Align = alClient
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 0
+    DesignSize = (
+      638
+      637)
+    object UniDBGrid1: TUniDBGrid
+      Left = 3
+      Top = 3
+      Width = 632
+      Height = 574
+      Hint = ''
+      DataSource = DataSource1
+      Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgConfirmDelete, dgTabs, dgCancelOnExit]
+      WebOptions.Paged = False
+      LoadMask.ShowMessage = False
+      LoadMask.Message = 'Loading data...'
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      TabOrder = 0
+      Columns = <
+        item
+          FieldName = 'GTIN'
+          Title.Caption = 'GTIN'
+          Width = 120
+        end
+        item
+          FieldName = 'NOME'
+          Title.Caption = 'Nome'
+          Width = 400
+        end
+        item
+          FieldName = 'QUANTIDADE'
+          Title.Caption = 'Quantidade'
+          Width = 100
+        end
+        item
+          FieldName = 'VALOR'
+          Title.Caption = 'Valor'
+          Width = 200
+        end>
+    end
+    object UniLabel2: TUniLabel
+      Left = 449
+      Top = 583
+      Width = 176
+      Height = 42
+      Hint = ''
+      Alignment = taRightJustify
+      Caption = 'UniLabel2'
+      Anchors = [akRight, akBottom]
+      ParentFont = False
+      Font.Height = -35
+      Font.Style = [fsBold]
+      TabOrder = 2
+    end
+    object UniDBNavigator1: TUniDBNavigator
+      Left = 3
+      Top = 585
+      Width = 329
+      Height = 40
+      Hint = ''
+      DataSource = DataSource1
+      Anchors = [akLeft, akBottom]
+      TabOrder = 3
+    end
+    object UniSpeedButton1: TUniSpeedButton
+      Left = 338
+      Top = 585
+      Width = 79
+      Height = 40
+      Hint = ''
+      Caption = ''
+      Anchors = [akLeft, akBottom]
+      ParentColor = False
+      Color = clWindow
+      TabOrder = 4
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = MainForm.CDSCarrinho
+    Left = 408
+    Top = 312
+  end
+  object UniTimer1: TUniTimer
+    ClientEvent.Strings = (
+      'function(sender)'
+      '{'
+      ' '
+      '}')
+    OnTimer = UniTimer1Timer
+    Left = 352
+    Top = 528
+  end
+  object AdvPayPal1: TAdvPayPal
+    Agent = 'Mozilla/5.001 (windows; U; NT4.0; en-US; rv:1.0) Gecko/25250101'
+    App.CallBackURL = 'http://127.0.0.1:8888/'
+    App.CallBackPort = 8888
+    PersistTokens.Location = plIniFile
+    AuthFormSettings.Caption = 'Authorize'
+    AuthFormSettings.Width = 900
+    AuthFormSettings.Height = 600
+    APIEnvironment = peLive
+    Left = 312
+    Top = 400
+  end
+end

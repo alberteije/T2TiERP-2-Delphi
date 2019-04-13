@@ -1,0 +1,349 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C2F8BA8C-01DD-41B0-AD8B-56E6B3F6DDAD}</ProjectGuid>
+        <ProjectVersion>15.3</ProjectVersion>
+        <MainSource>PafEcf.dpr</MainSource>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>17</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=T2Ti;FileDescription=Paf-Ecf;FileVersion=1.0.0.0;InternalName=;LegalCopyright=Copyright (C) 2010 T2Ti.COM;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_UsePackage>vcl;rtl;vclx;vclimg;vclactnband;dbrtl;vcldb;vcldbx;bdertl;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;VclSmp;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapServer;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;Jcl;JclVcl;JvCoreD14R;JvSystemD14R;JvStdCtrlsD14R;JvAppFrmD14R;JvBandsD14R;JvDBD14R;JvDlgsD14R;JvBDED14R;JvCmpD14R;JvCryptD14R;JvCtrlsD14R;JvCustomD14R;JvDockingD14R;JvDotNetCtrlsD14R;JvEDID14R;JvGlobusD14R;JvHMID14R;JvInterpreterD14R;JvJansD14R;JvManagedThreadsD14R;JvMMD14R;JvNetD14R;JvPageCompsD14R;JvPluginD14R;JvPrintPreviewD14R;JvRuntimeDesignD14R;JvTimeFrameworkD14R;JvValidatorsD14R;JvWizardD14R;JvXPCtrlsD14R;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_DependencyCheckOutputName>PafEcf.exe</DCC_DependencyCheckOutputName>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Platform>x86</DCC_Platform>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Icon_MainIcon>PafEcf_Icon.ico</Icon_MainIcon>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>PafEcf_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="VO\BancoVO.pas"/>
+        <DCCReference Include="VO\CFOPVO.pas"/>
+        <DCCReference Include="VO\ClienteVO.pas"/>
+        <DCCReference Include="VO\DAVDetalheVO.pas"/>
+        <DCCReference Include="VO\PreVendaDetalheVO.pas"/>
+        <DCCReference Include="VO\R02VO.pas"/>
+        <DCCReference Include="VO\R03VO.pas"/>
+        <DCCReference Include="VO\R06VO.pas"/>
+        <DCCReference Include="VO\R07VO.pas"/>
+        <DCCReference Include="VO\SituacaoClienteVO.pas"/>
+        <DCCReference Include="Controller\ProdutoController.pas"/>
+        <DCCReference Include="Controller\VendaController.pas"/>
+        <DCCReference Include="Tela\UCaixa.pas">
+            <Form>FCaixa</Form>
+        </DCCReference>
+        <DCCReference Include="DataModule\UDataModule.pas">
+            <Form>FDataModule</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tela\UDescontoAcrescimo.pas">
+            <Form>FDescontoAcrescimo</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UEfetuaPagamento.pas">
+            <Form>FEfetuaPagamento</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UIdentificaCliente.pas">
+            <Form>FIdentificaCliente</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UImportaCliente.pas">
+            <Form>FImportaCliente</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UImportaNumero.pas">
+            <Form>FImportaNumero</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UIniciaMovimento.pas">
+            <Form>FIniciaMovimento</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UMovimentoAberto.pas">
+            <Form>FMovimentoAberto</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UValorReal.pas">
+            <Form>FValorReal</Form>
+        </DCCReference>
+        <DCCReference Include="VO\ProdutoPromocaoVO.pas"/>
+        <DCCReference Include="Tela\UImportaProduto.pas">
+            <Form>FImportaProduto</Form>
+        </DCCReference>
+        <DCCReference Include="Util\Biblioteca.pas"/>
+        <DCCReference Include="Controller\PreVendaController.pas"/>
+        <DCCReference Include="Controller\DAVController.pas"/>
+        <DCCReference Include="VO\Sintegra60AVO.pas"/>
+        <DCCReference Include="VO\Sintegra60MVO.pas"/>
+        <DCCReference Include="Tela\ULoginGerenteSupervisor.pas">
+            <Form>FLoginGerenteSupervisor</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UVendasPeriodo.pas">
+            <Form>FVendasPeriodo</Form>
+        </DCCReference>
+        <DCCReference Include="VO\R01VO.pas"/>
+        <DCCReference Include="Util\Constantes.pas"/>
+        <DCCReference Include="Tela\UCargaPDV.pas">
+            <Form>FCargaPDV</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UFechaEfetuaPagamento.pas">
+            <Form>FFechaEfetuaPagamento</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UFichaTecnica.pas">
+            <Form>FFichaTecnica</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UParcelamento.pas">
+            <Form>FParcelamento</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\ULocaliza.pas">
+            <Form>FLocaliza</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\USplash.pas">
+            <Form>FSplash</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UEncerraMovimento.pas">
+            <Form>FEncerraMovimento</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UCheques.pas">
+            <Form>FCheques</Form>
+        </DCCReference>
+        <DCCReference Include="VO\LogImportacaoVO.pas"/>
+        <DCCReference Include="Tela\ULogImportacao.pas">
+            <Form>FLogImportacao</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UNotaFiscal.pas">
+            <Form>FNotaFiscal</Form>
+        </DCCReference>
+        <DCCReference Include="VO\DavCabecalhoVO.pas"/>
+        <DCCReference Include="VO\ContasParcelasVO.pas"/>
+        <DCCReference Include="VO\ContasPagarReceberVO.pas"/>
+        <DCCReference Include="VO\NotaFiscalDetalheVO.pas"/>
+        <DCCReference Include="VO\NotaFiscalCabecalhoVO.pas"/>
+        <DCCReference Include="VO\UnidadeProdutoVO.pas"/>
+        <DCCReference Include="VO\PreVendaCabecalhoVO.pas"/>
+        <DCCReference Include="Tela\UPenDrive.pas">
+            <Form>FPenDrive</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UMenuFiscal.pas">
+            <Form>FMenuFiscal</Form>
+        </DCCReference>
+        <DCCReference Include="Tela\UCarregaDAV.pas">
+            <Form>FCarregaDAV</Form>
+        </DCCReference>
+        <DCCReference Include="Util\Atributos.pas"/>
+        <DCCReference Include="VO\JSonVO.pas"/>
+        <DCCReference Include="VO\VO.pas"/>
+        <DCCReference Include="VO\EcfAliquotasVO.pas"/>
+        <DCCReference Include="VO\EcfCaixaVO.pas"/>
+        <DCCReference Include="VO\EcfChequeClienteVO.pas"/>
+        <DCCReference Include="VO\EcfConfiguracaoVO.pas"/>
+        <DCCReference Include="VO\EcfContadorVO.pas"/>
+        <DCCReference Include="VO\EcfDocumentosEmitidosVO.pas"/>
+        <DCCReference Include="VO\EcfEmpresaVO.pas"/>
+        <DCCReference Include="VO\EcfFechamentoVO.pas"/>
+        <DCCReference Include="VO\EcfFuncionarioVO.pas"/>
+        <DCCReference Include="VO\EcfImpressoraVO.pas"/>
+        <DCCReference Include="VO\EcfMovimentoVO.pas"/>
+        <DCCReference Include="VO\EcfOperadorVO.pas"/>
+        <DCCReference Include="VO\EcfPosicaoComponentesVO.pas"/>
+        <DCCReference Include="VO\EcfRecebimentoNaoFiscalVO.pas"/>
+        <DCCReference Include="VO\EcfResolucaoVO.pas"/>
+        <DCCReference Include="VO\EcfSangriaVO.pas"/>
+        <DCCReference Include="VO\EcfSuprimentoVO.pas"/>
+        <DCCReference Include="VO\EcfTipoPagamentoVO.pas"/>
+        <DCCReference Include="VO\EcfTurnoVO.pas"/>
+        <DCCReference Include="VO\EcfVendaCabecalhoVO.pas"/>
+        <DCCReference Include="VO\EcfVendaDetalheVO.pas"/>
+        <DCCReference Include="VO\FichaTecnicaVO.pas"/>
+        <DCCReference Include="Tela\UBase.pas">
+            <Form>FBase</Form>
+        </DCCReference>
+        <DCCReference Include="DataModule\UDataModuleConexao.pas">
+            <Form>FDataModuleConexao</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Util\SessaoUsuario.pas"/>
+        <DCCReference Include="Controller\Controller.pas"/>
+        <DCCReference Include="Util\T2TiORM.pas"/>
+        <DCCReference Include="Util\Tipos.pas"/>
+        <DCCReference Include="Util\Conversor.pas"/>
+        <DCCReference Include="Controller\EcfConfiguracaoController.pas"/>
+        <DCCReference Include="Controller\EcfMovimentoController.pas"/>
+        <DCCReference Include="Controller\EcfSuprimentoController.pas"/>
+        <DCCReference Include="Controller\EcfSangriaController.pas"/>
+        <DCCReference Include="Controller\EcfAliquotasController.pas"/>
+        <DCCReference Include="Controller\BancoController.pas"/>
+        <DCCReference Include="Controller\EcfChequeClienteController.pas"/>
+        <DCCReference Include="Controller\ClienteController.pas"/>
+        <DCCReference Include="Controller\EcfContadorController.pas"/>
+        <DCCReference Include="Controller\EcfFechamentoController.pas"/>
+        <DCCReference Include="Controller\FichaTecnicaController.pas"/>
+        <DCCReference Include="Controller\EcfImpressoraController.pas"/>
+        <DCCReference Include="Controller\NotaFiscalCabecalhoController.pas"/>
+        <DCCReference Include="Controller\NotaFiscalDetalheController.pas"/>
+        <DCCReference Include="Controller\EcfFuncionarioController.pas"/>
+        <DCCReference Include="Controller\EcfTipoPagamentoController.pas"/>
+        <DCCReference Include="Controller\R01Controller.pas"/>
+        <DCCReference Include="VO\EcfConfiguracaoBalancaVO.pas"/>
+        <DCCReference Include="VO\EcfRelatorioGerencialVO.pas"/>
+        <DCCReference Include="VO\EcfConfiguracaoLeitorSerVO.pas"/>
+        <DCCReference Include="VO\EcfTotalTipoPagamentoVO.pas"/>
+        <DCCReference Include="Controller\EcfTotalTipoPagamentoController.pas"/>
+        <DCCReference Include="Controller\EcfTurnoController.pas"/>
+        <DCCReference Include="Tela\ULMF.pas">
+            <Form>FLMF</Form>
+        </DCCReference>
+        <DCCReference Include="VO\ViewTotalPagamentoDataVO.pas"/>
+        <DCCReference Include="VO\ViewTotalPagamentoMovimentoVO.pas"/>
+        <DCCReference Include="Controller\ViewTotalPagamentoMovimentoController.pas"/>
+        <DCCReference Include="Controller\ViewTotalPagamentoDataController.pas"/>
+        <DCCReference Include="Tela\URegistrosPAF.pas">
+            <Form>FRegistrosPAF</Form>
+        </DCCReference>
+        <DCCReference Include="Controller\R02Controller.pas"/>
+        <DCCReference Include="Controller\R06Controller.pas"/>
+        <DCCReference Include="Util\PAFUtil.pas"/>
+        <DCCReference Include="Controller\Sintegra60MController.pas"/>
+        <DCCReference Include="Util\ECFUtil.pas"/>
+        <DCCReference Include="VO\LogssVO.pas"/>
+        <DCCReference Include="Controller\LogssController.pas"/>
+        <DCCReference Include="VO\EcfE3VO.pas"/>
+        <DCCReference Include="Controller\EcfE3Controller.pas"/>
+        <DCCReference Include="VO\EcfProdutoVO.pas"/>
+        <DCCReference Include="Controller\PreVendaDetalheController.pas"/>
+        <DCCReference Include="Controller\DavDetalheController.pas"/>
+        <DCCReference Include="VO\DavDetalheAlteracaoVO.pas"/>
+        <DCCReference Include="Controller\IbptController.pas"/>
+        <DCCReference Include="VO\IbptVO.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">PafEcf.dpr</Source>
+                </Source>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1046</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">T2Ti</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">Paf-Ecf</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright">Copyright (C) 2010 T2Ti.COM</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k190.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp190.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <ModelSupport>False</ModelSupport>
+            <Platforms>
+                <Platform value="Android" ActiveMobileDevice="Nexus4">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

@@ -1,0 +1,91 @@
+unit UPreview;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Buttons, StdCtrls, ExtCtrls, ComCtrls, ActnList, ShellApi,
+  PlatformDefaultStyleActnCtrls, ActnMan, ToolWin, ActnCtrls;
+
+type
+  TFPreview = class(TForm)
+    PrinterSetupDialog1: TPrinterSetupDialog;
+    RichEdit: TRichEdit;
+    SaveDialog1: TSaveDialog;
+    RichEdit2: TRichEdit;
+    ActionManager1: TActionManager;
+    ActionSair: TAction;
+    ActionSalvar: TAction;
+    ActionConfigurarImpressora: TAction;
+    ActionImprimir: TAction;
+    ActionToolBar1: TActionToolBar;
+    ActionValidar: TAction;
+    ActionTransmitir: TAction;
+    procedure ActionSairExecute(Sender: TObject);
+    procedure ActionSalvarExecute(Sender: TObject);
+    procedure ActionConfigurarImpressoraExecute(Sender: TObject);
+    procedure ActionValidarExecute(Sender: TObject);
+    procedure ActionTransmitirExecute(Sender: TObject);
+  private
+  public
+  published
+  end;
+
+var
+  FPreview: TFPreview;
+
+implementation
+
+uses UDataModule;
+
+var
+  F: TextFile;
+{$R *.DFM}
+
+procedure TFPreview.ActionConfigurarImpressoraExecute(Sender: TObject);
+begin
+  PrinterSetupDialog1.execute;
+end;
+
+procedure TFPreview.ActionSairExecute(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TFPreview.ActionSalvarExecute(Sender: TObject);
+begin
+  SaveDialog1.InitialDir := ExtractFilePath(Application.ExeName);
+  if SaveDialog1.execute then
+  begin
+    RichEdit.Lines.SaveToFile(SaveDialog1.FileName);
+  end;
+end;
+
+procedure TFPreview.ActionTransmitirExecute(Sender: TObject);
+var
+  Parametros: String;
+begin
+  { TODO -oT2Ti -cSped : Tem como transmitir o arquivo sem passar pelo PVA do Sped? }
+  try
+    Parametros := '';
+
+    ShellExecute(
+          Handle,
+          'open',
+          'C:\Arquivos de programas\Programas_SPED\Fiscal2\spedFiscal.exe',
+          PChar(Parametros),
+          '',
+          SW_SHOWNORMAL
+          );
+  except
+    Application.MessageBox('Erro ao tentar executar o módulo.', 'Erro do Sistema', MB_OK + MB_ICONERROR);
+  end;
+end;
+
+procedure TFPreview.ActionValidarExecute(Sender: TObject);
+begin
+  { TODO -oT2Ti -cSped : Tem como passar o arquivo para o programa validar automaticamente? }
+  WinExec('C:\Arquivos de programas\Programas_SPED\Contabil22\SPEDContabil.exe', SW_SHOW);
+end;
+
+end.

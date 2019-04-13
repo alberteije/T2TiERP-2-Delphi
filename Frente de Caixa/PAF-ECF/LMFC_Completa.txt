@@ -1,0 +1,66 @@
+S W E D A
+Rua Dona Brígida, 713
+Vila Mariana - São Paulo - SP
+CNPJ: 53.485.215/0001-06
+IE: 111.072.115.110
+              SIMULADOR SWEDA CONNECT/SIM
+--------------------------------------------------------
+25/12/2012  17:13:13                          COO:000052
+                 LEITURA MEMÓRIA FISCAL
+                  REDUÇÃO: 0001 A 0005
+Contador Geral de Operação Não-Fiscal:            000001
+Contador de Reduções Z:                             0001
+Contador de Reinício de Operação:                    001
+Contador de Fita-Detalhe:                         000000
+------------------- REINÍCIO OPERAÇÃO ------------------
+CRO  DATA       HORA
+001# 24/12/2012 15:10:31 
+------------------------ USUÁRIOS ----------------------
+Usuário: 1  CRO: 001   24/12/2012  15:10:13
+CNPJ: 53.485.215/0001-06
+IE: 111.072.115.110
+GT: R$ 18.004,80
+-------------------- REDUÇÕES DIÁRIAS ------------------
+                       Usuário: 1
+CRZ   CRO  COO     DATA        HORA
+                                 VENDA BRUTA DIÁRIA (R$)
+DT=desconto ICMS  DS=desconto ISSQN
+AT=acréscimo ICMS  AS=acréscimo ISSQN
+CT=canc. ICMS  CS=canc. ISSQN
+ON=operação não-fiscal
+--------------------------------------------------------
+0001  001  000025  25/12/2012  14:52:55
+Venda Bruta Diária:                         R$ 10.648,80
+DT=10,00  CT=3.860,80  T05,00%=5.990,36  T07,00%=229,64
+N1=558,00  ON=10,00
+--------------------------------------------------------
+Total do mês DEZEMBRO de 2012:
+Venda Bruta:                                R$ 10.648,80
+DT=10,00  CT=3.860,80  T05,00%=5.990,36  T07,00%=229,64
+N1=558,00  ON=10,00
+--------------------------------------------------------
+Total do período:
+Venda Bruta:                                R$ 10.648,80
+DT=10,00  CT=3.860,80  T05,00%=5.990,36  T07,00%=229,64
+N1=558,00  ON=10,00
+--------------------------------------------------------
+Número de Reduções Restantes:                      3.692
+---------------------- DADOS GERAIS --------------------
+SOFTWARE BÁSICO
+01.00.01 24/12/2012 15:10:13
+MOEDA: R$    24/12/2012 15:10:13
+QUANTIDADE: 3 24/12/2012 15:10:13
+VALOR UNITÁRIO: 3 24/12/2012 15:10:13
+MFD: MFDSW00000000001  
+CODIFICAÇÃO GT
+a partir de 24/12/2012 15:10:13
+0=V, 1=R, 2=A, 3=Y, 4=&, 5=Z, 6=O, 7=E, 8=#, 9=I  
+--------------------------------------------------------
+SWEDA IF ST200
+ECF-IF VERSÃO: 01.00.01 ECF: 001 
+R#VV&#V 25/12/2012 17:13:14
+FAB: 00000000000000000001                             BR
+
+
+
+EADA14BC96744AAF97937273367D8B925893742D14D4973448832ED2F2FBF3E0154BCC12E5A026323121C759F27C1220E1A38D05365866D6E8BBD0AF85C852B9A7853BAB5300169A871F7F989429D7FDC63EA0545E5494B37034B4690D86B2A9EE5A68D3FD654ACF811E980FB45D5AC08CA1A2C09DB06CAB3CC91A9DAF0863D0205
