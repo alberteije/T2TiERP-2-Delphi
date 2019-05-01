@@ -230,19 +230,17 @@
                         </table>
                         <br />
                 </div>
-                    <br /><br />    
                         <h3>Forma de Desenvolvimento Delphi</h3> 
                         <hr />
                         <img src="http://t2ti.com/images/erp/DataSnap.png" />
                         <hr />
                     <br />  
-                        O ERP Delphi será desenvolvido em duas e três camadas. O usuário baixa a camada de visão para sua máquina e se conecta ao servidor de aplicaçoes DataSnap, 
+                        O ERP Delphi foi desenvolvido em duas e três camadas. O usuário baixa a camada de visão para sua máquina e se conecta ao servidor de aplicaçoes DataSnap, 
                         onde estarão armazenadas as classes de negócio. O banco de dados poderá residir na mesma máquina do servidor de aplicações ou em outro 
                         servidor específico para o SGBD. 
                         <br /><br />
-                        O acesso aos dados será feito por padrão com um ORM próprio (T2Ti ORM). Para acessar os bancos de dados utilizaremos DBExpress, Firedac e Zeos.
-                        Além disso, mostraremos como utilizar um ORM comercial disponível no mercado.
+                        O acesso aos dados é feito por padrão com um ORM próprio (T2Ti ORM). Para acessar os bancos de dados utilizamos DBExpress, mas o ORM 
+						pode ser adaptado para funcionar com Firedac e Zeos.
                         <br /><br />
-                        Será também necessário desenvolver parte da aplicação com tecnologia Web (Loja Virtual). 
-                        A tecnologia Web para o Delphi será apresentada no decorrer do treinamento.         
+                        Parte da aplicação é feita com tecnologia Web (Loja Virtual) utilizando o uniGUI. 
 </html>
