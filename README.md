@@ -234,7 +234,7 @@
                         </table>
                         <br />
                 </div>
-                        <h3>Forma de Desenvolvimento Delphi</h3> 
+                        <h3>Forma de Desenvolvimento Delphi [Way we Developed using Delphi]</h3> 
                         <hr />
                         <img src="http://t2ti.com/images/erp/DataSnap.png" />
                         <hr />
@@ -249,10 +249,10 @@
                         Parte da aplicação é feita com tecnologia Web (Loja Virtual) utilizando o uniGUI. 
 	<br /><br />
   <i>
-Delphi ERP was developed in two and three layers. The user downloads the view layer to his machine and connects to the DataSnap application server where the business classes are stored. The database may reside on the same machine as the application server or on another server specific to the DBMS.
+[Delphi ERP was developed in two and three layers. The user downloads the view layer to his machine and connects to the DataSnap application server where the business classes are stored. The database may reside on the same machine as the application server or on another server specific to the DBMS.
 	<br /><br />
 Data access is done by default with an own ORM (T2Ti ORM). To access the databases we use DBExpress, but the ORM can be adapted to work with Firedac and Zeos.
 	<br /><br />
-Part of the application is made using Web technology (Loja Virtual) using uniGUI.  
+Part of the application is made using Web technology (Loja Virtual) using uniGUI.]
   </i>	
 </html>
