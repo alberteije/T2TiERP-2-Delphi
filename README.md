@@ -6,16 +6,7 @@
   Aqui é possível baixar o código fonte do Projeto T2Ti ERP 2.0 em Delphi. 
   Este treinamento formou milhares de desenvolvedores no Brasil e ajudou centenas deles a lançar seu próprio 
   ERP no mercado. Mais informações sobre o treinamento podem ser encontradas no seguinte link: http://t2ti.com/erp2/. 
-	<br /><br />
-<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
-<form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
-<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
-<input type="hidden" name="currency" value="BRL" />
-<input type="hidden" name="receiverEmail" value="alberteije@gmail.com" />
-<input type="hidden" name="iot" value="button" />
-<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
-</form>
-<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->	
+	<br /><br />	
   <i>
   [Here it is possible to download the source code of the Project T2Ti ERP 2.0 in Delphi. This training was made by thousands of developers in Brazil and helped hundreds of them launch their own ERP in the market. More information about the training can be found at the following link: http://t2ti.com/erp2/.]
   </i>	
