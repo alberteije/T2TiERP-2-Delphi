@@ -2,7 +2,7 @@ unit Conversor;
 
 interface
 
-uses Classes, DBXJSON, SysUtils;
+uses Classes, DBXJSON, SysUtils, System.JSON;
 
 type
   TConversor = class

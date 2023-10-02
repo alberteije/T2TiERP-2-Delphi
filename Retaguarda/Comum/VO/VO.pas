@@ -1,45 +1,46 @@
 { *******************************************************************************
-Title: T2Ti ERP
-Description: Classe VO padrão de onde herdam todas as classes de VO
+  Title: T2Ti ERP
+  Description: Classe VO padrão de onde herdam todas as classes de VO
 
-The MIT License
+  The MIT License
 
-Copyright: Copyright (C) 2016 T2Ti.COM
+  Copyright: Copyright (C) 2016 T2Ti.COM
 
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
+  Permission is hereby granted, free of charge, to any person
+  obtaining a copy of this software and associated documentation
+  files (the "Software"), to deal in the Software without
+  restriction, including without limitation the rights to use,
+  copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the
+  Software is furnished to do so, subject to the following
+  conditions:
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  OTHER DEALINGS IN THE SOFTWARE.
 
-The author may be contacted at:
-t2ti.com@gmail.com</p>
+  The author may be contacted at:
+  t2ti.com@gmail.com</p>
 
-@author Albert Eije (T2Ti.COM)
-@version 2.0
-******************************************************************************* }
+  @author Albert Eije (T2Ti.COM)
+  @version 2.0
+  ******************************************************************************* }
 unit VO;
 
 interface
 
 uses
-  DBXJSON, DBXJSONReflect, DBXCommon, RTTI, TypInfo, Atributos, SysUtils, Generics.Collections,
-  Classes;
+  DBXJSON, DBXJSONReflect, DBXCommon, RTTI, TypInfo, Atributos, SysUtils,
+  Generics.Collections,
+  Classes, System.JSON;
 
 type
   TVO = class(TPersistent)
@@ -69,8 +70,8 @@ function VOFromDBXReader(pObj: TVO; pReader: TDBXReader): TVO;
 
 implementation
 
+{$REGION 'Infra'}
 
-{$Region 'Infra'}
 function VOFromDBXReader(pObj: TVO; pReader: TDBXReader): TVO;
 var
   Contexto: TRttiContext;
@@ -142,7 +143,7 @@ begin
               if DBXValue.IsNull then
                 Value := TValue.Empty
               else
-              Value := DBXValue.AsInt64;
+                Value := DBXValue.AsInt64;
             end;
 
           DoubleType, BcdType, CurrencyType:
@@ -206,9 +207,9 @@ begin
     Contexto.Free;
   end;
 end;
-{$EndRegion 'Infra'}
+{$ENDREGION 'Infra'}
+{$REGION 'TVO'}
 
-{$Region 'TVO'}
 constructor TVO.Create;
 begin
   inherited Create;
@@ -269,7 +270,7 @@ begin
     // Clona Informações
     Result := Self.Clone;
 
-     //anula os objetos associados
+    // anula os objetos associados
     Contexto := TRttiContext.Create;
     try
       Tipo := Contexto.GetType(Result.ClassType);
@@ -305,7 +306,6 @@ begin
     Result := Nil;
 end;
 
-
 function TVO.ToJSON: TJSONValue;
 var
   Serializa: TJSONMarshal;
@@ -334,9 +334,9 @@ begin
   else
     Result := '';
 end;
-{$EndRegion 'TVO'}
+{$ENDREGION 'TVO'}
+{$REGION 'TGenericVO<T>'}
 
-{$Region 'TGenericVO<T>'}
 class function TGenericVO<T>.CreateObject: T;
 var
   Contexto: TRttiContext;
@@ -567,6 +567,6 @@ begin
     Result := 0;
   end;
 end;
-{$EndRegion TGenericVO<T> }
+{$ENDREGION TGenericVO<T> }
 
 end.
