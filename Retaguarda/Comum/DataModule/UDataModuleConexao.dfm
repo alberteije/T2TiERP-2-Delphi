@@ -1,5 +1,4 @@
 object FDataModuleConexao: TFDataModuleConexao
-  OldCreateOrder = False
   OnCreate = DataModuleCreate
   Height = 150
   Width = 215

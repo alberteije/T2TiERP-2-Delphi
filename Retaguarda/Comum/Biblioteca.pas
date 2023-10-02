@@ -1,38 +1,38 @@
-{*******************************************************************************
-Title: T2Ti ERP
-Description: Biblioteca de funções.
+{ *******************************************************************************
+  Title: T2Ti ERP
+  Description: Biblioteca de funções.
 
-The MIT License
+  The MIT License
 
-Copyright: Copyright (C) 2014 T2Ti.COM
+  Copyright: Copyright (C) 2014 T2Ti.COM
 
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
+  Permission is hereby granted, free of charge, to any person
+  obtaining a copy of this software and associated documentation
+  files (the "Software"), to deal in the Software without
+  restriction, including without limitation the rights to use,
+  copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the
+  Software is furnished to do so, subject to the following
+  conditions:
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  OTHER DEALINGS IN THE SOFTWARE.
 
-The author may be contacted at:
-t2ti.com@gmail.com</p>
+  The author may be contacted at:
+  t2ti.com@gmail.com</p>
 
-@author Albert Eije (T2Ti.COM)
-@version 1.0
-*******************************************************************************}
+  @author Albert Eije (T2Ti.COM)
+  @version 1.0
+  ******************************************************************************* }
 
 unit Biblioteca;
 
@@ -40,11 +40,11 @@ interface
 
 uses
   Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Windows,
-  Dbtables, Inifiles, DBClient, DB, SqlExpr, DBXMySql, Grids, DBGrids, VO,
+  Inifiles, DBClient, DB, SqlExpr, DBXMySql, Grids, DBGrids, VO,
   IdHashMessageDigest, Constantes, Math, Rtti, TypInfo, JvDBUltimGrid,
-  {$IFDEF VER210} SWSystem, {$ELSE} IWSystem, {$ENDIF} Atributos, StrUtils,
+  Atributos, StrUtils,
   IdGlobal;
-
+// {$IFDEF VER210} SWSystem, {$ELSE} IWSystem, {$ENDIF}         Dbtables
 function Modulo11(Numero: String): String;
 Function ValidaCNPJ(xCNPJ: String): Boolean;
 Function ValidaCPF(xCPF: String): Boolean;
@@ -54,36 +54,43 @@ Function Hora_Seg(Horas: string): LongInt;
 Function Seg_Hora(Seg: LongInt): string;
 Function Minuscula(InString: String): String;
 Function StrZero(Num: Real; Zeros, Deci: integer): string;
-Function OrdenaPinta(xGrid: DBGrids.TDBGrid; Column: DBGrids.TColumn; cds: TClientDataSet): Boolean;
+Function OrdenaPinta(xGrid: DBGrids.TDBGrid; Column: DBGrids.TColumn;
+  cds: TClientDataSet): Boolean;
 Procedure SetTaskBar(Visible: Boolean);
 function MD5File(const fileName: string): string;
 function MD5FileGed(const pArquivo: TStringStream): string;
 function MD5String(const texto: string): string;
 Function TruncaValor(Value: Extended; Casas: integer): Extended;
-Function ArredondaTruncaValor(Operacao: String; Value: Extended; Casas: integer): Extended;
+Function ArredondaTruncaValor(Operacao: String; Value: Extended; Casas: integer)
+  : Extended;
 function UltimoDiaMes(Mdt: TDateTime): String; overload;
 function UltimoDiaMes(pMes: String): String; overload;
-function FormataFloat(Tipo: String; Valor: Extended): string; // Tipo => 'Q'=Quantidade | 'V'=Valor
+function FormataFloat(Tipo: String; Valor: Extended): string;
+// Tipo => 'Q'=Quantidade | 'V'=Valor
 procedure Split(const Delimiter: Char; Input: string; const Strings: TStrings);
 function CriaGuidStr: string;
 function CaminhoApp: string;
 function TextoParaData(pData: string): TDate;
 function DataParaTexto(pData: TDate): string;
-function DateToSQL(pDate: TDateTime; pComAspas: Boolean = True; pComHoras: Boolean = True): string;
-function DatesToSQL(pDataInicial, pDataFinal: TDateTime; pCondicao: string; pIncluirHora: Boolean): string;
-function UFToInt(pUF: String): Integer;
-function IntToUF(pUF: Integer): String;
+function DateToSQL(pDate: TDateTime; pComAspas: Boolean = True;
+  pComHoras: Boolean = True): string;
+function DatesToSQL(pDataInicial, pDataFinal: TDateTime; pCondicao: string;
+  pIncluirHora: Boolean): string;
+function UFToInt(pUF: String): integer;
+function IntToUF(pUF: integer): String;
 function ExtraiCamposFiltro(pFiltro: String): TStringList;
 function VerificaInteiro(Value: String): Boolean;
-function FileSize(FileName: string): Int64;
+function FileSize(fileName: string): Int64;
 function Codifica(Action, Src: String): String;
 function PeriodoAnterior(pMesAno: String): String;
 function PeriodoPosterior(pMesAno: String): String;
-function RetiraMascara(Texto:String): String;
+function RetiraMascara(texto: String): String;
 
 procedure ConfiguraCDSFromVO(pCDS: TClientDataSet; pVOClass: TClassVO);
-procedure AtualizaCaptionGrid(pGrid: TJvDBUltimGrid; pFieldName, pCaption: string);
-procedure ConfiguraTamanhoColunaGrid(pGrid: TJvDBUltimGrid; pFieldName: string; pTamanho: integer; pCaption: String);
+procedure AtualizaCaptionGrid(pGrid: TJvDBUltimGrid;
+  pFieldName, pCaption: string);
+procedure ConfiguraTamanhoColunaGrid(pGrid: TJvDBUltimGrid; pFieldName: string;
+  pTamanho: integer; pCaption: String);
 procedure ConfiguraGridFromVO(pGrid: TJvDBUltimGrid; pVOClass: TClassVO);
 
 var
@@ -258,7 +265,8 @@ Begin
   Result[1] := UpCase(Result[1]);
   For i := 1 To Length(InString) - 1 Do
   Begin
-    If (Result[i] = ' ') Or (Result[i] = '''') Or (Result[i] = '"') Or (Result[i] = '-') Or (Result[i] = '.') Or (Result[i] = '(') Then
+    If (Result[i] = ' ') Or (Result[i] = '''') Or (Result[i] = '"') Or
+      (Result[i] = '-') Or (Result[i] = '.') Or (Result[i] = '(') Then
       Result[i + 1] := UpCase(Result[i + 1]);
     if Result[i] = 'Ç' then
       Result[i] := 'ç';
@@ -293,9 +301,11 @@ begin
   Horas[Pos(':', Horas)] := '[';
   Horas[Pos(':', Horas)] := ']';
   Hor := StrToInt(Copy(Horas, 1, Pos('[', Horas) - 1));
-  Min := StrToInt(Copy(Horas, Pos('[', Horas) + 1, (Pos(']', Horas) - Pos('[', Horas) - 1)));
+  Min := StrToInt(Copy(Horas, Pos('[', Horas) + 1,
+    (Pos(']', Horas) - Pos('[', Horas) - 1)));
   if Pos(':', Horas) > 0 then
-    Seg := StrToInt(Copy(Horas, Pos(']', Horas) + 1, (Pos(':', Horas) - Pos(']', Horas) - 1)))
+    Seg := StrToInt(Copy(Horas, Pos(']', Horas) + 1,
+      (Pos(':', Horas) - Pos(']', Horas) - 1)))
   else
     Seg := StrToInt(Copy(Horas, Pos(']', Horas) + 1, 2));
   Result := Seg + (Hor * 3600) + (Min * 60);
@@ -313,7 +323,8 @@ begin
   Tmp := Seg / 60;
   Min := Round(Int(Tmp));
   Seg := Round(Seg - (Min * 60));
-  Result := StrZero(Hora, 2, 0) + ':' + StrZero(Min, 2, 0) + ':' + StrZero(Seg, 2, 0);
+  Result := StrZero(Hora, 2, 0) + ':' + StrZero(Min, 2, 0) + ':' +
+    StrZero(Seg, 2, 0);
 end;
 
 { converte tudo para minuscula }
@@ -324,7 +335,8 @@ Begin
   Result := LowerCase(InString);
   For i := 1 To Length(InString) - 1 Do
   Begin
-    If (Result[i] = ' ') Or (Result[i] = '''') Or (Result[i] = '"') Or (Result[i] = '-') Or (Result[i] = '.') Or (Result[i] = '(') Then
+    If (Result[i] = ' ') Or (Result[i] = '''') Or (Result[i] = '"') Or
+      (Result[i] = '-') Or (Result[i] = '.') Or (Result[i] = '(') Then
       Result[i] := UpCase(Result[i]);
     if Result[i] = 'Ç' then
       Result[i] := 'ç';
@@ -381,7 +393,8 @@ begin
 {$WARNINGS ON}
 end;
 
-Function OrdenaPinta(xGrid: DBGrids.TDBGrid; Column: DBGrids.TColumn; cds: TClientDataSet): Boolean;
+Function OrdenaPinta(xGrid: DBGrids.TDBGrid; Column: DBGrids.TColumn;
+  cds: TClientDataSet): Boolean;
 const
   idxDefault = 'DEFAULT_ORDER';
 var
@@ -439,7 +452,8 @@ begin
     if bolUsed then
       cds.DeleteIndex(Column.Field.FieldName);
     try
-      cds.AddIndex(Column.Field.FieldName, Column.Field.FieldName, idOptions, VDescendField, '', 0);
+      cds.AddIndex(Column.Field.FieldName, Column.Field.FieldName, idOptions,
+        VDescendField, '', 0);
       strColumn := Column.Field.FieldName;
     except
       // se índice indeterminado, seta o padrão
@@ -524,7 +538,8 @@ begin
   Result := StrToFloat(sValor);
 end;
 
-Function ArredondaTruncaValor(Operacao: String; Value: Extended; Casas: integer): Extended;
+Function ArredondaTruncaValor(Operacao: String; Value: Extended; Casas: integer)
+  : Extended;
 Var
   sValor: String;
   nPos: integer;
@@ -575,7 +590,8 @@ begin
   Result := IntToStr(dia)
 end;
 
-function FormataFloat(Tipo: String; Valor: Extended): string; // Tipo => 'Q'=Quantidade | 'V'=Valor
+function FormataFloat(Tipo: String; Valor: Extended): string;
+// Tipo => 'Q'=Quantidade | 'V'=Valor
 var
   i: integer;
   Mascara: String;
@@ -614,7 +630,7 @@ end;
 
 function CaminhoApp: string;
 begin
-  Result := gsAppPath;
+  Result := ExtractFilePath(GetCurrentDir); // gsAppPath
 end;
 
 function TextoParaData(pData: string): TDate;
@@ -642,7 +658,8 @@ begin
     Result := '0000-00-00';
 end;
 
-function DateToSQL(pDate: TDateTime; pComAspas: Boolean = True; pComHoras: Boolean = True): string;
+function DateToSQL(pDate: TDateTime; pComAspas: Boolean = True;
+  pComHoras: Boolean = True): string;
 var
   ano, mes, dia, Hora, Minuto, Segundo, MileSegundo: word;
 begin
@@ -654,7 +671,8 @@ begin
 
   if ((Hora + Minuto + Segundo) > 0) and (pComHoras) then
   begin
-    Result := Result + ' ' + IntToStr(Hora) + ':' + IntToStr(Minuto) + ':' + IntToStr(Segundo);
+    Result := Result + ' ' + IntToStr(Hora) + ':' + IntToStr(Minuto) + ':' +
+      IntToStr(Segundo);
   end;
 
   if pComAspas then
@@ -663,17 +681,21 @@ begin
   end;
 end;
 
-function DatesToSQL(pDataInicial, pDataFinal: TDateTime; pCondicao: string; pIncluirHora: Boolean): string;
+function DatesToSQL(pDataInicial, pDataFinal: TDateTime; pCondicao: string;
+  pIncluirHora: Boolean): string;
 begin
   if (pDataInicial > 0) and (pDataFinal > 0) then
   begin
     if pIncluirHora then
     begin
-      Result := pCondicao + ' BETWEEN ' + QuotedStr(DateToSQL(pDataInicial, False, False) + ' 00:00:00') + ' AND ' + QuotedStr(DateToSQL(pDataFinal, False, False) + ' 23:59:59');
+      Result := pCondicao + ' BETWEEN ' +
+        QuotedStr(DateToSQL(pDataInicial, False, False) + ' 00:00:00') + ' AND '
+        + QuotedStr(DateToSQL(pDataFinal, False, False) + ' 23:59:59');
     end
     else
     begin
-      Result := pCondicao + ' BETWEEN ' + DateToSQL(pDataInicial, True, False) + ' AND ' + DateToSQL(pDataFinal, True, False);
+      Result := pCondicao + ' BETWEEN ' + DateToSQL(pDataInicial, True, False) +
+        ' AND ' + DateToSQL(pDataFinal, True, False);
     end;
   end
   else if (pDataInicial > 0) and (pDataFinal = 0) then
@@ -682,7 +704,8 @@ begin
   begin
     if pIncluirHora then
     begin
-      Result := pCondicao + ' <= ' + QuotedStr(DateToSQL(pDataFinal, False, False) + ' 23:59:59');
+      Result := pCondicao + ' <= ' +
+        QuotedStr(DateToSQL(pDataFinal, False, False) + ' 23:59:59');
     end
     else
     begin
@@ -855,35 +878,36 @@ begin
   end;
 end;
 
-function FileSize(FileName: string): Int64;
+function FileSize(fileName: string): Int64;
 var
   SearchRec: TSearchRec;
 begin
-  if FindFirst(FileName, faAnyFile, SearchRec) = 0 then // se achou o arquivo
+  if FindFirst(fileName, faAnyFile, SearchRec) = 0 then // se achou o arquivo
     // SearchRec.Size funciona legal para arquivos menores que 2GB
-    Result := Int64(SearchRec.FindData.nFileSizeHigh) shl Int64(32) + // calcula o tamanho
+    Result := Int64(SearchRec.FindData.nFileSizeHigh) shl Int64(32) +
+    // calcula o tamanho
       Int64(SearchRec.FindData.nFileSizeLow)
   else
     Result := 0;
-//  FindClose(SearchRec); // fecha
+  // FindClose(SearchRec); // fecha
 end;
 
 function Codifica(Action, Src: String): String;
-Label Fim; //Função para criptografar e descriptografar string's
+Label Fim; // Função para criptografar e descriptografar string's
 var
-  KeyLen : Integer;
-  KeyPos : Integer;
-  OffSet : Integer;
-  Dest, Key : String;
-  SrcPos : Integer;
-  SrcAsc : Integer;
-  TmpSrcAsc : Integer;
-  Range : Integer;
+  KeyLen: integer;
+  KeyPos: integer;
+  OffSet: integer;
+  Dest, Key: String;
+  SrcPos: integer;
+  SrcAsc: integer;
+  TmpSrcAsc: integer;
+  Range: integer;
 begin
   try
     if (Src = '') Then
     begin
-      Result:= '';
+      Result := '';
       Goto Fim;
     end;
     Key := 'YUQL23KL23DF90WI5E1JAS467NMCXXL6JAOAUWWMCL0AOMM4A4VZYW9KHJUI2347EJHJKDF3424SKL K3LAKDJSL9RTIKJ';
@@ -897,86 +921,90 @@ begin
     begin
       Randomize;
       OffSet := Random(Range);
-      Dest := Format('%1.2x',[OffSet]);
+      Dest := Format('%1.2x', [OffSet]);
       for SrcPos := 1 to Length(Src) do
       begin
         Application.ProcessMessages;
         SrcAsc := (Ord(Src[SrcPos]) + OffSet) Mod 255;
-        if KeyPos < KeyLen then KeyPos := KeyPos + 1 else KeyPos := 1;
+        if KeyPos < KeyLen then
+          KeyPos := KeyPos + 1
+        else
+          KeyPos := 1;
         SrcAsc := SrcAsc Xor Ord(Key[KeyPos]);
-        Dest := Dest + Format('%1.2x',[SrcAsc]);
+        Dest := Dest + Format('%1.2x', [SrcAsc]);
         OffSet := SrcAsc;
       end;
     end
     Else if (Action = UpperCase('D')) then
     begin
-      OffSet := StrToInt('$'+ copy(Src,1,2));
+      OffSet := StrToInt('$' + Copy(Src, 1, 2));
       SrcPos := 3;
-    repeat
-      SrcAsc := StrToInt('$'+ copy(Src,SrcPos,2));
-      if (KeyPos < KeyLen) Then KeyPos := KeyPos + 1 else KeyPos := 1;
-      TmpSrcAsc := SrcAsc Xor Ord(Key[KeyPos]);
-      if TmpSrcAsc <= OffSet then TmpSrcAsc := 255 + TmpSrcAsc - OffSet
-      else TmpSrcAsc := TmpSrcAsc - OffSet;
-      Dest := Dest + Chr(TmpSrcAsc);
-      OffSet := SrcAsc;
-      SrcPos := SrcPos + 2;
-    until (SrcPos >= Length(Src));
+      repeat
+        SrcAsc := StrToInt('$' + Copy(Src, SrcPos, 2));
+        if (KeyPos < KeyLen) Then
+          KeyPos := KeyPos + 1
+        else
+          KeyPos := 1;
+        TmpSrcAsc := SrcAsc Xor Ord(Key[KeyPos]);
+        if TmpSrcAsc <= OffSet then
+          TmpSrcAsc := 255 + TmpSrcAsc - OffSet
+        else
+          TmpSrcAsc := TmpSrcAsc - OffSet;
+        Dest := Dest + Chr(TmpSrcAsc);
+        OffSet := SrcAsc;
+        SrcPos := SrcPos + 2;
+      until (SrcPos >= Length(Src));
     end;
-    Result:= Dest;
-    Fim:
+    Result := Dest;
+  Fim:
   Except
-    Result:= '1';
+    Result := '1';
   end;
 end;
 
 function PeriodoAnterior(pMesAno: String): String;
 var
-  Mes, Ano: Integer;
+  mes, ano: integer;
 begin
-  Mes := StrToInt(Copy(pMesAno, 1, 2));
-  Ano := StrToInt(Copy(pMesAno, 4, 4));
-  if Mes = 1 then
+  mes := StrToInt(Copy(pMesAno, 1, 2));
+  ano := StrToInt(Copy(pMesAno, 4, 4));
+  if mes = 1 then
   begin
-    Mes := 12;
-    Ano := Ano - 1;
-    Result := IntToStr(Mes) + '/' + IntToStr(Ano);
+    mes := 12;
+    ano := ano - 1;
+    Result := IntToStr(mes) + '/' + IntToStr(ano);
   end
   else
-    Result := StringOfChar('0', 2 - Length(IntToStr(Mes - 1))) + IntToStr(Mes - 1) + '/' + IntToStr(Ano);
+    Result := StringOfChar('0', 2 - Length(IntToStr(mes - 1))) +
+      IntToStr(mes - 1) + '/' + IntToStr(ano);
 end;
 
 function PeriodoPosterior(pMesAno: String): String;
 var
-  Mes, Ano: Integer;
+  mes, ano: integer;
 begin
-  Mes := StrToInt(Copy(pMesAno, 1, 2));
-  Ano := StrToInt(Copy(pMesAno, 4, 4));
-  if Mes = 12 then
+  mes := StrToInt(Copy(pMesAno, 1, 2));
+  ano := StrToInt(Copy(pMesAno, 4, 4));
+  if mes = 12 then
   begin
-    Mes := 1;
-    Ano := Ano + 1;
-    Result := IntToStr(Mes) + '/' + IntToStr(Ano);
+    mes := 1;
+    ano := ano + 1;
+    Result := IntToStr(mes) + '/' + IntToStr(ano);
   end
   else
-    Result := StringOfChar('0', 2 - Length(IntToStr(Mes + 1))) + IntToStr(Mes + 1) + '/' + IntToStr(Ano);
+    Result := StringOfChar('0', 2 - Length(IntToStr(mes + 1))) +
+      IntToStr(mes + 1) + '/' + IntToStr(ano);
 end;
 
-function RetiraMascara(Texto: String): String;
+function RetiraMascara(texto: String): String;
 begin
-  Result := Texto;
-  Result := StringReplace(Result,'*','',[rfReplaceAll]);
-  Result := StringReplace(Result,'.','',[rfReplaceAll]);
-  Result := StringReplace(Result,'-','',[rfReplaceAll]);
-  Result := StringReplace(Result,'/','',[rfReplaceAll]);
-  Result := StringReplace(Result,'\','',[rfReplaceAll]);
+  Result := texto;
+  Result := StringReplace(Result, '*', '', [rfReplaceAll]);
+  Result := StringReplace(Result, '.', '', [rfReplaceAll]);
+  Result := StringReplace(Result, '-', '', [rfReplaceAll]);
+  Result := StringReplace(Result, '/', '', [rfReplaceAll]);
+  Result := StringReplace(Result, '\', '', [rfReplaceAll]);
 end;
-
-
-
-
-
-
 
 procedure ConfiguraCDSFromVO(pCDS: TClientDataSet; pVOClass: TClassVO);
 var
@@ -1028,13 +1056,15 @@ begin
 
           if Propriedade.PropertyType.TypeKind in [tkString, tkUString] then
           begin
-            pCDS.FieldDefs.add((Atributo as Atributos.TColumn).Name, ftString, LengthAtributo(Atributo as Atributos.TColumn));
+            pCDS.FieldDefs.add((Atributo as Atributos.TColumn).Name, ftString,
+              LengthAtributo(Atributo as Atributos.TColumn));
           end
           else if Propriedade.PropertyType.TypeKind in [tkFloat] then
           begin
             NomeTipo := LowerCase(Propriedade.PropertyType.Name);
             if NomeTipo = 'tdatetime' then
-              pCDS.FieldDefs.add((Atributo as Atributos.TColumn).Name, ftDateTime)
+              pCDS.FieldDefs.add((Atributo as Atributos.TColumn).Name,
+                ftDateTime)
             else
               pCDS.FieldDefs.add((Atributo as Atributos.TColumn).Name, ftFloat);
           end
@@ -1066,13 +1096,17 @@ begin
         begin
           // Máscaras
           if Propriedade.PropertyType.TypeKind in [tkInt64, tkInteger] then
-            TNumericField(pCDS.FieldByName(NomeTipo)).DisplayFormat := (Atributo as Atributos.TFormatter).Formatter;
+            TNumericField(pCDS.FieldByName(NomeTipo)).DisplayFormat :=
+              (Atributo as Atributos.TFormatter).Formatter;
           if Propriedade.PropertyType.TypeKind in [tkFloat] then
-            TNumericField(pCDS.FieldByName(NomeTipo)).DisplayFormat := (Atributo as Atributos.TFormatter).Formatter;
+            TNumericField(pCDS.FieldByName(NomeTipo)).DisplayFormat :=
+              (Atributo as Atributos.TFormatter).Formatter;
           if Propriedade.PropertyType.TypeKind in [tkString, tkUString] then
-            TStringField(pCDS.FieldByName(NomeTipo)).EditMask := (Atributo as Atributos.TFormatter).Formatter;
+            TStringField(pCDS.FieldByName(NomeTipo)).EditMask :=
+              (Atributo as Atributos.TFormatter).Formatter;
           // Alinhamento
-          TStringField(pCDS.FieldByName(NomeTipo)).Alignment := (Atributo as TFormatter).Alignment;
+          TStringField(pCDS.FieldByName(NomeTipo)).Alignment :=
+            (Atributo as TFormatter).Alignment;
         end;
       end;
     end;
@@ -1101,30 +1135,36 @@ begin
 
         if Atributo is TId then
         begin
-          if (Atributo as TId).LocalDisplayContainsOneTheseItems([ldGrid, ldLookup]) then
+          if (Atributo as TId).LocalDisplayContainsOneTheseItems
+            ([ldGrid, ldLookup]) then
           begin
             AtualizaCaptionGrid(pGrid, (Atributo as TId).NameField, 'ID');
           end
           else
           begin
-            ConfiguraTamanhoColunaGrid(pGrid, (Atributo as TId).NameField, -1, 'ID');
+            ConfiguraTamanhoColunaGrid(pGrid, (Atributo as TId).NameField,
+              -1, 'ID');
           end;
         end
 
         else if Atributo is TColumn then
         begin
-          if (Atributo as TColumn).LocalDisplayContainsOneTheseItems([ldGrid, ldLookup]) then
+          if (Atributo as TColumn).LocalDisplayContainsOneTheseItems
+            ([ldGrid, ldLookup]) then
           begin
-            AtualizaCaptionGrid(pGrid, (Atributo as TColumn).Name, (Atributo as TColumn).Caption);
+            AtualizaCaptionGrid(pGrid, (Atributo as TColumn).Name,
+              (Atributo as TColumn).Caption);
 
             if (Atributo as TColumn).Length > 0 then
             begin
-              ConfiguraTamanhoColunaGrid(pGrid, (Atributo as TColumn).Name, (Atributo as TColumn).Length, (Atributo as TColumn).Caption);
+              ConfiguraTamanhoColunaGrid(pGrid, (Atributo as TColumn).Name,
+                (Atributo as TColumn).Length, (Atributo as TColumn).Caption);
             end;
           end
           else
           begin
-            ConfiguraTamanhoColunaGrid(pGrid, (Atributo as TColumn).Name, -1, (Atributo as TColumn).Caption);
+            ConfiguraTamanhoColunaGrid(pGrid, (Atributo as TColumn).Name, -1,
+              (Atributo as TColumn).Caption);
           end;
         end;
 
@@ -1135,9 +1175,8 @@ begin
   end;
 end;
 
-
-
-procedure AtualizaCaptionGrid(pGrid: TJvDBUltimGrid; pFieldName, pCaption: string);
+procedure AtualizaCaptionGrid(pGrid: TJvDBUltimGrid;
+  pFieldName, pCaption: string);
 var
   i: integer;
 begin
@@ -1153,7 +1192,8 @@ begin
   end;
 end;
 
-procedure ConfiguraTamanhoColunaGrid(pGrid: TJvDBUltimGrid; pFieldName: string; pTamanho: integer; pCaption: String);
+procedure ConfiguraTamanhoColunaGrid(pGrid: TJvDBUltimGrid; pFieldName: string;
+  pTamanho: integer; pCaption: String);
 var
   i: integer;
 begin

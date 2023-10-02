@@ -4,70 +4,101 @@ uses
   FastMM4,
   FastMM4Messages,
   Forms,
-  SA in 'SA.pas' {FSA},
+  SA in 'SA.pas' {FSA} ,
   Controller in 'Controller.pas',
   DSServerClass in 'DSServerClass.pas',
   Constantes in '..\Comum\Constantes.pas',
   Biblioteca in '..\Comum\Biblioteca.pas',
   SessaoUsuario in 'SessaoUsuario.pas',
   Atributos in '..\Comum\Atributos.pas',
-  UDataModule in 'UDataModule.pas' {FDataModule: TDataModule},
+  UDataModule in 'UDataModule.pas' {FDataModule: TDataModule} ,
   T2TiORM in '..\Comum\T2TiORM.pas',
-  UDataModuleConexao in '..\Comum\DataModule\UDataModuleConexao.pas' {FDataModuleConexao: TDataModule},
+  UDataModuleConexao
+    in '..\Comum\DataModule\UDataModuleConexao.pas' {FDataModuleConexao: TDataModule} ,
   AlmoxarifadoController in '..\Comum\Controller\AlmoxarifadoController.pas',
   EstadoCivilController in '..\Comum\Controller\EstadoCivilController.pas',
   NcmController in '..\Comum\Controller\NcmController.pas',
   NFeCalculoController in '..\Comum\Controller\NFeCalculoController.pas',
-  NfeConfiguracaoController in '..\Comum\Controller\NfeConfiguracaoController.pas',
+  NfeConfiguracaoController
+    in '..\Comum\Controller\NfeConfiguracaoController.pas',
   NfeNumeroController in '..\Comum\Controller\NfeNumeroController.pas',
   PessoaController in '..\Comum\Controller\PessoaController.pas',
   ProdutoController in '..\Comum\Controller\ProdutoController.pas',
   ProdutoMarcaController in '..\Comum\Controller\ProdutoMarcaController.pas',
-  ProdutoSubGrupoController in '..\Comum\Controller\ProdutoSubGrupoController.pas',
-  TributGrupoTributarioController in '..\Comum\Controller\TributGrupoTributarioController.pas',
-  TributIcmsCustomCabController in '..\Comum\Controller\TributIcmsCustomCabController.pas',
-  TributOperacaoFiscalController in '..\Comum\Controller\TributOperacaoFiscalController.pas',
-  UnidadeProdutoController in '..\Comum\Controller\UnidadeProdutoController.pas',
-  VendaCabecalhoController in '..\Comum\Controller\VendaCabecalhoController.pas',
-  ViewTributacaoCofinsController in '..\Comum\Controller\ViewTributacaoCofinsController.pas',
-  ViewTributacaoIcmsController in '..\Comum\Controller\ViewTributacaoIcmsController.pas',
-  ViewTributacaoIcmsCustomController in '..\Comum\Controller\ViewTributacaoIcmsCustomController.pas',
-  ViewTributacaoIpiController in '..\Comum\Controller\ViewTributacaoIpiController.pas',
-  ViewTributacaoIssController in '..\Comum\Controller\ViewTributacaoIssController.pas',
-  ViewTributacaoPisController in '..\Comum\Controller\ViewTributacaoPisController.pas',
-  ServerContainer in 'ServerContainer.pas' {FServerContainer: TDataModule},
+  ProdutoSubGrupoController
+    in '..\Comum\Controller\ProdutoSubGrupoController.pas',
+  TributGrupoTributarioController
+    in '..\Comum\Controller\TributGrupoTributarioController.pas',
+  TributIcmsCustomCabController
+    in '..\Comum\Controller\TributIcmsCustomCabController.pas',
+  TributOperacaoFiscalController
+    in '..\Comum\Controller\TributOperacaoFiscalController.pas',
+  UnidadeProdutoController
+    in '..\Comum\Controller\UnidadeProdutoController.pas',
+  VendaCabecalhoController
+    in '..\Comum\Controller\VendaCabecalhoController.pas',
+  ViewTributacaoCofinsController
+    in '..\Comum\Controller\ViewTributacaoCofinsController.pas',
+  ViewTributacaoIcmsController
+    in '..\Comum\Controller\ViewTributacaoIcmsController.pas',
+  ViewTributacaoIcmsCustomController
+    in '..\Comum\Controller\ViewTributacaoIcmsCustomController.pas',
+  ViewTributacaoIpiController
+    in '..\Comum\Controller\ViewTributacaoIpiController.pas',
+  ViewTributacaoIssController
+    in '..\Comum\Controller\ViewTributacaoIssController.pas',
+  ViewTributacaoPisController
+    in '..\Comum\Controller\ViewTributacaoPisController.pas',
+  ServerContainer in 'ServerContainer.pas' {FServerContainer: TDataModule} ,
   Conversor in '..\Comum\Conversor.pas',
   UsuarioController in '..\Comum\Controller\UsuarioController.pas',
-  ViewSessaoEmpresaController in '..\Comum\Controller\ViewSessaoEmpresaController.pas',
+  ViewSessaoEmpresaController
+    in '..\Comum\Controller\ViewSessaoEmpresaController.pas',
   EmpresaController in '..\Comum\Controller\EmpresaController.pas',
-  ViewPessoaClienteController in '..\Comum\Controller\ViewPessoaClienteController.pas',
-  ViewPessoaTransportadoraController in '..\Comum\Controller\ViewPessoaTransportadoraController.pas',
+  ViewPessoaClienteController
+    in '..\Comum\Controller\ViewPessoaClienteController.pas',
+  ViewPessoaTransportadoraController
+    in '..\Comum\Controller\ViewPessoaTransportadoraController.pas',
   SpedFiscalController in '..\Comum\Controller\SpedFiscalController.pas',
   ContadorController in '..\Comum\Controller\ContadorController.pas',
   SintegraController in '..\Comum\Controller\SintegraController.pas',
   PreVendaController in '..\Comum\Controller\PreVendaController.pas',
-  PreVendaDetalheController in '..\Comum\Controller\PreVendaDetalheController.pas',
+  PreVendaDetalheController
+    in '..\Comum\Controller\PreVendaDetalheController.pas',
   DAVController in '..\Comum\Controller\DAVController.pas',
   DavDetalheController in '..\Comum\Controller\DavDetalheController.pas',
   NfeCabecalhoController in '..\Comum\Controller\NfeCabecalhoController.pas',
-  ControleEstoqueController in '..\Comum\Controller\ControleEstoqueController.pas',
-  ViewPessoaFornecedorController in '..\Comum\Controller\ViewPessoaFornecedorController.pas',
-  TributConfiguraOfGtController in '..\Comum\Controller\TributConfiguraOfGtController.pas',
-  TipoReceitaDipiController in '..\Comum\Controller\TipoReceitaDipiController.pas',
+  ControleEstoqueController
+    in '..\Comum\Controller\ControleEstoqueController.pas',
+  ViewPessoaFornecedorController
+    in '..\Comum\Controller\ViewPessoaFornecedorController.pas',
+  TributConfiguraOfGtController
+    in '..\Comum\Controller\TributConfiguraOfGtController.pas',
+  TipoReceitaDipiController
+    in '..\Comum\Controller\TipoReceitaDipiController.pas',
   CstIpiController in '..\Comum\Controller\CstIpiController.pas',
   CstCofinsController in '..\Comum\Controller\CstCofinsController.pas',
   EfdTabela435Controller in '..\Comum\Controller\EfdTabela435Controller.pas',
   CstPisController in '..\Comum\Controller\CstPisController.pas',
-  ViewCompraReqItemCotadoController in '..\Comum\Controller\ViewCompraReqItemCotadoController.pas',
-  ViewCompraMapaComparativoController in '..\Comum\Controller\ViewCompraMapaComparativoController.pas',
-  CompraTipoRequisicaoController in '..\Comum\Controller\CompraTipoRequisicaoController.pas',
-  CompraTipoPedidoController in '..\Comum\Controller\CompraTipoPedidoController.pas',
-  CompraRequisicaoDetalheController in '..\Comum\Controller\CompraRequisicaoDetalheController.pas',
-  CompraRequisicaoController in '..\Comum\Controller\CompraRequisicaoController.pas',
-  CompraPedidoDetalheController in '..\Comum\Controller\CompraPedidoDetalheController.pas',
+  ViewCompraReqItemCotadoController
+    in '..\Comum\Controller\ViewCompraReqItemCotadoController.pas',
+  ViewCompraMapaComparativoController
+    in '..\Comum\Controller\ViewCompraMapaComparativoController.pas',
+  CompraTipoRequisicaoController
+    in '..\Comum\Controller\CompraTipoRequisicaoController.pas',
+  CompraTipoPedidoController
+    in '..\Comum\Controller\CompraTipoPedidoController.pas',
+  CompraRequisicaoDetalheController
+    in '..\Comum\Controller\CompraRequisicaoDetalheController.pas',
+  CompraRequisicaoController
+    in '..\Comum\Controller\CompraRequisicaoController.pas',
+  CompraPedidoDetalheController
+    in '..\Comum\Controller\CompraPedidoDetalheController.pas',
   CompraPedidoController in '..\Comum\Controller\CompraPedidoController.pas',
-  CompraFornecedorCotacaoController in '..\Comum\Controller\CompraFornecedorCotacaoController.pas',
-  CompraCotacaoDetalheController in '..\Comum\Controller\CompraCotacaoDetalheController.pas',
+  CompraFornecedorCotacaoController
+    in '..\Comum\Controller\CompraFornecedorCotacaoController.pas',
+  CompraCotacaoDetalheController
+    in '..\Comum\Controller\CompraCotacaoDetalheController.pas',
   CompraCotacaoController in '..\Comum\Controller\CompraCotacaoController.pas',
   WmsOrdemSeparacaoCabVO in '..\Comum\VO\WmsOrdemSeparacaoCabVO.pas',
   WmsRecebimentoDetalheVO in '..\Comum\VO\WmsRecebimentoDetalheVO.pas',
@@ -87,7 +118,8 @@ uses
   RecadoRemetenteVO in '..\Comum\VO\RecadoRemetenteVO.pas',
   RecadoDestinatarioVO in '..\Comum\VO\RecadoDestinatarioVO.pas',
   AgendaCompromissoVO in '..\Comum\VO\AgendaCompromissoVO.pas',
-  AgendaCategoriaCompromissoVO in '..\Comum\VO\AgendaCategoriaCompromissoVO.pas',
+  AgendaCategoriaCompromissoVO
+    in '..\Comum\VO\AgendaCategoriaCompromissoVO.pas',
   ReuniaoSalaVO in '..\Comum\VO\ReuniaoSalaVO.pas',
   CteCabecalhoVO in '..\Comum\VO\CteCabecalhoVO.pas',
   NfeCabecalhoVO in '..\Comum\VO\NfeCabecalhoVO.pas',
@@ -154,7 +186,8 @@ uses
   PcpServicoColaboradorVO in '..\Comum\VO\PcpServicoColaboradorVO.pas',
   EstoqueReajusteCabecalhoVO in '..\Comum\VO\EstoqueReajusteCabecalhoVO.pas',
   EstoqueReajusteDetalheVO in '..\Comum\VO\EstoqueReajusteDetalheVO.pas',
-  RequisicaoInternaCabecalhoVO in '..\Comum\VO\RequisicaoInternaCabecalhoVO.pas',
+  RequisicaoInternaCabecalhoVO
+    in '..\Comum\VO\RequisicaoInternaCabecalhoVO.pas',
   RequisicaoInternaDetalheVO in '..\Comum\VO\RequisicaoInternaDetalheVO.pas',
   VendaCondicoesPagamentoVO in '..\Comum\VO\VendaCondicoesPagamentoVO.pas',
   VendaCabecalhoVO in '..\Comum\VO\VendaCabecalhoVO.pas',
@@ -165,8 +198,10 @@ uses
   VendaCondicoesParcelasVO in '..\Comum\VO\VendaCondicoesParcelasVO.pas',
   VendaComissaoVO in '..\Comum\VO\VendaComissaoVO.pas',
   ContratoVO in '..\Comum\VO\ContratoVO.pas',
-  ContratoSolicitacaoServicoVO in '..\Comum\VO\ContratoSolicitacaoServicoVO.pas',
-  ViewContratoDadosContratanteVO in '..\Comum\VO\ViewContratoDadosContratanteVO.pas',
+  ContratoSolicitacaoServicoVO
+    in '..\Comum\VO\ContratoSolicitacaoServicoVO.pas',
+  ViewContratoDadosContratanteVO
+    in '..\Comum\VO\ViewContratoDadosContratanteVO.pas',
   ContratoTemplateVO in '..\Comum\VO\ContratoTemplateVO.pas',
   TipoContratoVO in '..\Comum\VO\TipoContratoVO.pas',
   ContratoTipoServicoVO in '..\Comum\VO\ContratoTipoServicoVO.pas',
@@ -191,9 +226,11 @@ uses
   SocioVO in '..\Comum\VO\SocioVO.pas',
   ContabilLivroVO in '..\Comum\VO\ContabilLivroVO.pas',
   ContabilDreCabecalhoVO in '..\Comum\VO\ContabilDreCabecalhoVO.pas',
-  ContabilEncerramentoExeCabVO in '..\Comum\VO\ContabilEncerramentoExeCabVO.pas',
+  ContabilEncerramentoExeCabVO
+    in '..\Comum\VO\ContabilEncerramentoExeCabVO.pas',
   ContabilIndiceVO in '..\Comum\VO\ContabilIndiceVO.pas',
-  ContabilLancamentoCabecalhoVO in '..\Comum\VO\ContabilLancamentoCabecalhoVO.pas',
+  ContabilLancamentoCabecalhoVO
+    in '..\Comum\VO\ContabilLancamentoCabecalhoVO.pas',
   ContabilLancamentoDetalheVO in '..\Comum\VO\ContabilLancamentoDetalheVO.pas',
   ContabilLancamentoOrcadoVO in '..\Comum\VO\ContabilLancamentoOrcadoVO.pas',
   AidfAimdfVO in '..\Comum\VO\AidfAimdfVO.pas',
@@ -205,21 +242,24 @@ uses
   RegistroCartorioVO in '..\Comum\VO\RegistroCartorioVO.pas',
   EmpresaCnaeVO in '..\Comum\VO\EmpresaCnaeVO.pas',
   SocioDependenteVO in '..\Comum\VO\SocioDependenteVO.pas',
-  SocioParticipacaoSocietariaVO in '..\Comum\VO\SocioParticipacaoSocietariaVO.pas',
+  SocioParticipacaoSocietariaVO
+    in '..\Comum\VO\SocioParticipacaoSocietariaVO.pas',
   ContabilTermoVO in '..\Comum\VO\ContabilTermoVO.pas',
   ContabilParametroVO in '..\Comum\VO\ContabilParametroVO.pas',
   ContabilLoteVO in '..\Comum\VO\ContabilLoteVO.pas',
   ContabilLancamentoPadraoVO in '..\Comum\VO\ContabilLancamentoPadraoVO.pas',
   ContabilIndiceValorVO in '..\Comum\VO\ContabilIndiceValorVO.pas',
   ContabilFechamentoVO in '..\Comum\VO\ContabilFechamentoVO.pas',
-  ContabilEncerramentoExeDetVO in '..\Comum\VO\ContabilEncerramentoExeDetVO.pas',
+  ContabilEncerramentoExeDetVO
+    in '..\Comum\VO\ContabilEncerramentoExeDetVO.pas',
   ContabilDreDetalheVO in '..\Comum\VO\ContabilDreDetalheVO.pas',
   FolhaLancamentoCabecalhoVO in '..\Comum\VO\FolhaLancamentoCabecalhoVO.pas',
   FeriasPeriodoAquisitivoVO in '..\Comum\VO\FeriasPeriodoAquisitivoVO.pas',
   GuiasAcumuladasVO in '..\Comum\VO\GuiasAcumuladasVO.pas',
   FolhaPppVO in '..\Comum\VO\FolhaPppVO.pas',
   FolhaValeTransporteVO in '..\Comum\VO\FolhaValeTransporteVO.pas',
-  EmpresaTransporteItinerarioVO in '..\Comum\VO\EmpresaTransporteItinerarioVO.pas',
+  EmpresaTransporteItinerarioVO
+    in '..\Comum\VO\EmpresaTransporteItinerarioVO.pas',
   FolhaAfastamentoVO in '..\Comum\VO\FolhaAfastamentoVO.pas',
   FolhaInssVO in '..\Comum\VO\FolhaInssVO.pas',
   FolhaLancamentoDetalheVO in '..\Comum\VO\FolhaLancamentoDetalheVO.pas',
@@ -273,9 +313,11 @@ uses
   ViewFinChequeEmitidoVO in '..\Comum\VO\ViewFinChequeEmitidoVO.pas',
   FinChequeRecebidoVO in '..\Comum\VO\FinChequeRecebidoVO.pas',
   ViewFinResumoTesourariaVO in '..\Comum\VO\ViewFinResumoTesourariaVO.pas',
-  ViewFinChequeNaoCompensadoVO in '..\Comum\VO\ViewFinChequeNaoCompensadoVO.pas',
+  ViewFinChequeNaoCompensadoVO
+    in '..\Comum\VO\ViewFinChequeNaoCompensadoVO.pas',
   FinFechamentoCaixaBancoVO in '..\Comum\VO\FinFechamentoCaixaBancoVO.pas',
-  ViewFinMovimentoCaixaBancoVO in '..\Comum\VO\ViewFinMovimentoCaixaBancoVO.pas',
+  ViewFinMovimentoCaixaBancoVO
+    in '..\Comum\VO\ViewFinMovimentoCaixaBancoVO.pas',
   ViewFinFluxoCaixaVO in '..\Comum\VO\ViewFinFluxoCaixaVO.pas',
   FinLancamentoReceberVO in '..\Comum\VO\FinLancamentoReceberVO.pas',
   FinCobrancaVO in '..\Comum\VO\FinCobrancaVO.pas',
@@ -284,7 +326,8 @@ uses
   ViewFinLancamentoReceberVO in '..\Comum\VO\ViewFinLancamentoReceberVO.pas',
   FinParcelaReceberVO in '..\Comum\VO\FinParcelaReceberVO.pas',
   FinParcelaRecebimentoVO in '..\Comum\VO\FinParcelaRecebimentoVO.pas',
-  FinLctoReceberNtFinanceiraVO in '..\Comum\VO\FinLctoReceberNtFinanceiraVO.pas',
+  FinLctoReceberNtFinanceiraVO
+    in '..\Comum\VO\FinLctoReceberNtFinanceiraVO.pas',
   FinLancamentoPagarVO in '..\Comum\VO\FinLancamentoPagarVO.pas',
   FinParcelaPagarVO in '..\Comum\VO\FinParcelaPagarVO.pas',
   CompraRequisicaoVO in '..\Comum\VO\CompraRequisicaoVO.pas',
@@ -303,12 +346,15 @@ uses
   FinTipoPagamentoVO in '..\Comum\VO\FinTipoPagamentoVO.pas',
   FinTipoRecebimentoVO in '..\Comum\VO\FinTipoRecebimentoVO.pas',
   OrcamentoFluxoCaixaVO in '..\Comum\VO\OrcamentoFluxoCaixaVO.pas',
-  OrcamentoFluxoCaixaPeriodoVO in '..\Comum\VO\OrcamentoFluxoCaixaPeriodoVO.pas',
+  OrcamentoFluxoCaixaPeriodoVO
+    in '..\Comum\VO\OrcamentoFluxoCaixaPeriodoVO.pas',
   PlanoNaturezaFinanceiraVO in '..\Comum\VO\PlanoNaturezaFinanceiraVO.pas',
-  ViewFinTotalRecebimentosDiaVO in '..\Comum\VO\ViewFinTotalRecebimentosDiaVO.pas',
+  ViewFinTotalRecebimentosDiaVO
+    in '..\Comum\VO\ViewFinTotalRecebimentosDiaVO.pas',
   ViewFinTotalPagamentosDiaVO in '..\Comum\VO\ViewFinTotalPagamentosDiaVO.pas',
   OrcamentoEmpresarialVO in '..\Comum\VO\OrcamentoEmpresarialVO.pas',
-  OrcamentoFluxoCaixaDetalheVO in '..\Comum\VO\OrcamentoFluxoCaixaDetalheVO.pas',
+  OrcamentoFluxoCaixaDetalheVO
+    in '..\Comum\VO\OrcamentoFluxoCaixaDetalheVO.pas',
   OrcamentoDetalheVO in '..\Comum\VO\OrcamentoDetalheVO.pas',
   OrcamentoPeriodoVO in '..\Comum\VO\OrcamentoPeriodoVO.pas',
   CompraRequisicaoDetalheVO in '..\Comum\VO\CompraRequisicaoDetalheVO.pas',
@@ -327,7 +373,8 @@ uses
   ProdutoSubGrupoVO in '..\Comum\VO\ProdutoSubGrupoVO.pas',
   ViewCompraReqItemCotadoVO in '..\Comum\VO\ViewCompraReqItemCotadoVO.pas',
   CompraReqCotacaoDetalheVO in '..\Comum\VO\CompraReqCotacaoDetalheVO.pas',
-  CompraCotacaoPedidoDetalheVO in '..\Comum\VO\CompraCotacaoPedidoDetalheVO.pas',
+  CompraCotacaoPedidoDetalheVO
+    in '..\Comum\VO\CompraCotacaoPedidoDetalheVO.pas',
   ConvenioVO in '..\Comum\VO\ConvenioVO.pas',
   BancoVO in '..\Comum\VO\BancoVO.pas',
   UnidadeProdutoVO in '..\Comum\VO\UnidadeProdutoVO.pas',
@@ -434,8 +481,10 @@ uses
   UsuarioVO in '..\Comum\VO\UsuarioVO.pas',
   PessoaVO in '..\Comum\VO\PessoaVO.pas',
   NfeDetEspecificoArmamentoVO in '..\Comum\VO\NfeDetEspecificoArmamentoVO.pas',
-  NfeDetEspecificoCombustivelVO in '..\Comum\VO\NfeDetEspecificoCombustivelVO.pas',
-  NfeDetEspecificoMedicamentoVO in '..\Comum\VO\NfeDetEspecificoMedicamentoVO.pas',
+  NfeDetEspecificoCombustivelVO
+    in '..\Comum\VO\NfeDetEspecificoCombustivelVO.pas',
+  NfeDetEspecificoMedicamentoVO
+    in '..\Comum\VO\NfeDetEspecificoMedicamentoVO.pas',
   NfeDetEspecificoVeiculoVO in '..\Comum\VO\NfeDetEspecificoVeiculoVO.pas',
   NfeDuplicataVO in '..\Comum\VO\NfeDuplicataVO.pas',
   NfeFaturaVO in '..\Comum\VO\NfeFaturaVO.pas',
@@ -451,7 +500,8 @@ uses
   NfeTransporteVolumeLacreVO in '..\Comum\VO\NfeTransporteVolumeLacreVO.pas',
   NfeTransporteVolumeVO in '..\Comum\VO\NfeTransporteVolumeVO.pas',
   NfeCteReferenciadoVO in '..\Comum\VO\NfeCteReferenciadoVO.pas',
-  NfeCupomFiscalReferenciadoVO in '..\Comum\VO\NfeCupomFiscalReferenciadoVO.pas',
+  NfeCupomFiscalReferenciadoVO
+    in '..\Comum\VO\NfeCupomFiscalReferenciadoVO.pas',
   NfeDestinatarioVO in '..\Comum\VO\NfeDestinatarioVO.pas',
   NfeDetalheImpostoCofinsVO in '..\Comum\VO\NfeDetalheImpostoCofinsVO.pas',
   NfeDetalheImpostoIcmsVO in '..\Comum\VO\NfeDetalheImpostoIcmsVO.pas',
@@ -503,4 +553,5 @@ begin
   Application.CreateForm(TFDataModule, FDataModule);
   Application.CreateForm(TFServerContainer, FServerContainer);
   Application.Run;
+
 end.
